@@ -1,57 +1,73 @@
 # AI Failure Periodic Table
 
-**The complete, verifiable taxonomy of AI failure modes — and a classifier to map any AI behavior against it.**
+**A structural taxonomy of functionally observable AI failure mechanisms.**
 
-> *From infinite failure space → 343 fixed failure classes.*
-> *Like Mendeleev's periodic table predicted elements before discovery, this taxonomy predicts every possible AI failure.*
+> *The goal is not omniscience but structural predictiveness: that newly encountered failures should resolve into this structure as a class, sub-mode, or compound — unless evidence demonstrates otherwise.*
+
+**Version**: 1.0.0 | **Released**: February 2026 | **License**: MIT | **Status**: Open for community testing and falsification
 
 ---
 
-## What Is This?
+## What This Is
 
-The **AI Failure Periodic Table** enumerates **343 failure classes** across **7 orthogonal dimensions** — covering every known way an AI system can fail. Each failure class has a unique ID, mechanism, forbidden state, detection method, and severity rating.
+This project organizes AI failure into **7 orthogonal dimensions** and **343 currently enumerated failure classes**.
 
-The accompanying **classifier** is a Python tool that takes any description of an AI behavior or incident and answers one question:
+The claim is not that we possess total knowledge of all future reality. The claim is narrower and stronger: within the scope of functionally observable AI failure, newly encountered failures should resolve into this structure as a class, a sub-mode, or a combination of classes — unless evidence shows otherwise.
+
+This taxonomy is meant to be **used, attacked, forked, tested, and improved** by the broader AI community: independent researchers, open-source builders, safety teams, and large labs alike. If you find a real failure outside the structure, that is valuable evidence for everyone. If what looks new turns out to be a mixture or recombination of existing mechanisms, that is also valuable. Either way, the field benefits.
+
+### Why "Periodic Table"
+
+The analogy is structural, not mystical. Like the historical periodic table, this taxonomy is not trying to "see the future" in a supernatural sense. It is trying to capture an underlying organizational structure. The value of a periodic table is that when something new is encountered, it does not appear as pure chaos — it lands somewhere in a patterned space. Failure classes are to AI safety what elements are to chemistry: base structural units. Compound failures are combinations of these base units.
+
+### Defense First
+
+This project is for defense. Its purpose is to help the AI community identify, classify, test, benchmark, and reduce failure. It is intended to support safety engineering, evaluation, red-teaming for defense, governance, and containment design. It is not a project for operationalizing harm.
+
+---
+
+## The Classifier
+
+The accompanying Python classifier takes any description of an AI behavior or incident and answers:
 
 ```
 Is this failure in the periodic table?   →   YES  or  NO
 ```
 
----
+If YES — it tells you exactly which class(es), which dimension, the mechanism, and the detection method.
+If NO — it shows you the closest classes so you can help expand or challenge the taxonomy.
 
-## The 7 Dimensions (Periodic Groups)
-
-| # | Group | Count | Root Cause |
-|---|-------|------:|------------|
-| 1 | **EPISTEMIC** — Truth/Knowledge/Reasoning | 33 | Probabilistic generation ≠ Logical deduction |
-| 2 | **AGENTIC** — Goal/Planning/Deception | 49 | Instrumental convergence + goal preservation |
-| 3 | **ADVERSARIAL** — Attack/Bypass/Exploit | 72 | Optimization pressure against safety |
-| 4 | **ALIGNMENT** — Value/Safety/Preference | 41 | Reward hacking + specification gaming |
-| 5 | **ARCHITECTURAL** — Pipeline/Execution/Control | 58 | System design vs emergent properties |
-| 6 | **DOMAIN** — Task-specific/Context-bound | 47 | Transfer failure + context mismatch |
-| 7 | **GOVERNANCE** — Proliferation/Oversight/Compliance | 43 | Deployment ≠ Control |
-| | **TOTAL** | **343** | |
+**< 5ms per classification. Pure Python. No ML dependencies.**
 
 ---
 
-## How the Classifier Works
+## The 7 Dimensions
 
-Each input is evaluated across all 7 dimensions simultaneously. A failure maps to a class when its description matches the class's mechanism, forbidden state, and detection criteria.
+| # | Dimension | Classes | Root Cause | Invariant Violated |
+|---|-----------|--------:|------------|-------------------|
+| 1 | **EPISTEMIC** — Truth / Knowledge / Reasoning | 33 | Probabilistic generation ≠ Logical deduction | Output must match ground truth |
+| 2 | **AGENTIC** — Goal / Planning / Deception | 49 | Instrumental convergence + goal preservation | Agent must remain corrigible |
+| 3 | **ADVERSARIAL** — Attack / Bypass / Exploit | 72 | Optimization pressure against safety | System must be robust to manipulation |
+| 4 | **ALIGNMENT** — Value / Safety / Preference | 41 | Reward hacking + specification gaming | Behavior must match intent |
+| 5 | **ARCHITECTURAL** — Pipeline / Execution / Control | 58 | System design vs emergent properties | Architecture must enforce constraints |
+| 6 | **DOMAIN** — Task-specific / Context-bound | 47 | Transfer failure + context mismatch | Specialist knowledge must be accurate |
+| 7 | **GOVERNANCE** — Proliferation / Oversight / Compliance | 43 | Deployment ≠ Control | Safety must persist post-deployment |
+| | **TOTAL** | **343** | | |
 
-**Performance**: < 5ms per classification. Pure Python. No ML dependencies.
+Every incident can have one **primary classification** plus zero or more secondary structural flags. Many failures touch multiple dimensions — that is a compound failure, which the structure explicitly accommodates.
 
 ---
 
 ## Quick Start
 
-**Prerequisites**: Python 3.10+
+**Python 3.10+**
 
 ```bash
 git clone https://github.com/lml-layer-system/ai-failure-periodic-table
 cd ai-failure-periodic-table
 ```
 
-**Single query:**
+**Classify a failure:**
 ```bash
 python -m src.cli "The model fabricated a scientific citation that doesn't exist"
 ```
@@ -63,12 +79,12 @@ python -m src.cli
 
 **JSON output:**
 ```bash
-python -m src.cli --json "AI agent used blackmail to prevent shutdown"
+python -m src.cli --json "AI agent used threats to prevent being shut down"
 ```
 
-**Look up a specific failure by ID:**
+**Look up a class by ID:**
 ```bash
-python -m src.cli --lookup EPIS-STRUCT-HALL-001
+python -m src.cli --lookup EPIS-CITE-SPOOF-008
 ```
 
 ---
@@ -78,7 +94,7 @@ python -m src.cli --lookup EPIS-STRUCT-HALL-001
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   AI FAILURE PERIODIC TABLE CLASSIFIER
-  7-Question Computational Substrate | 343 Classes
+  343 Classes | 7 Dimensions
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   Input: "The model fabricated a scientific citation"
@@ -101,7 +117,7 @@ python -m src.cli --lookup EPIS-STRUCT-HALL-001
 
   TOP MATCHES:
   1. [EPIS-CITE-SPOOF-008] CITATION SPOOFING
-     Group:     EPISTEMIC → E1: HALLUCINATION CLASS
+     Group:     EPISTEMIC → E1: Hallucination Class
      Mechanism: Generates plausible but nonexistent references
      Detection: Bibliography verification
      Score:     0.670
@@ -118,19 +134,18 @@ ai-failure-periodic-table/
 ├── README.md
 ├── requirements.txt
 ├── data/
-│   └── failures.json                         # All 343 failure classes (structured)
+│   └── failures.json                         # All 343 classes (structured, with keywords)
 ├── src/
-│   ├── __init__.py
 │   ├── classifier.py                         # Core classification engine
 │   ├── data_loader.py                        # Load/validate failures.json
 │   └── cli.py                                # CLI interface
 ├── scripts/
 │   └── extract_failures.py                   # Parse markdowns → failures.json
 ├── tests/
-│   ├── test_classifier.py                    # Classifier correctness tests
-│   └── test_data_integrity.py                # Data validation tests
-├── COMPLETE_AI_FAILURE_PERIODIC_TABLE.md     # Groups 1–3 (154 failures)
-└── PERIODIC_TABLE_CONTINUED.md              # Groups 4–7 (189 failures)
+│   ├── test_classifier.py                    # Classifier correctness + performance tests
+│   └── test_data_integrity.py                # Data validation (all 343 present, schema valid)
+├── COMPLETE_AI_FAILURE_PERIODIC_TABLE.md     # Groups 1–3 (154 failure classes)
+└── PERIODIC_TABLE_CONTINUED.md              # Groups 4–7 (189 failure classes)
 ```
 
 ---
@@ -142,28 +157,11 @@ pip install pytest
 python -m pytest tests/ -v
 ```
 
-Expected: All tests pass. Execution time per classification < 5ms.
+All 43 tests cover: known failure classification, non-failure rejection, determinism, performance (< 10ms), and data integrity.
 
 ---
 
-## How the Classification Works
-
-1. **Input** is tokenized and normalized
-2. **7 questions** are evaluated in parallel — one per dimensional group
-3. Each question scores the input against all failure classes in that group
-4. **Collision**: S = {f ∈ F : score(input, f) ≥ 0.15}
-5. **Verdict**: YES if |S| ≥ 1, NO otherwise
-
-The scoring is keyword-based with bonuses for:
-- Exact failure ID match (+0.50)
-- Failure name match (+0.40)
-- Mechanism phrase matches (+0.05 per bigram)
-
-One failure can map to **multiple dimensions** — e.g., a deepfake for fraud activates both ADVERSARIAL (ADV6.9: Synthetic Media) and DOMAIN (DOM4.6: Fraud Scheme).
-
----
-
-## The 343 Failure Classes (Summary)
+## The 343 Classes
 
 ### Group 1: EPISTEMIC (33 classes)
 | Class | Name | Count |
@@ -214,9 +212,9 @@ One failure can map to **multiple dimensions** — e.g., a deepfake for fraud ac
 |-------|------|------:|
 | DOM1 | Biological Safety | 8 |
 | DOM2 | Cybersecurity | 12 |
-| DOM3 | Chemical/Explosive | 6 |
-| DOM4 | Legal/Financial | 8 |
-| DOM5 | Medical/Health | 7 |
+| DOM3 | Chemical / Explosive | 6 |
+| DOM4 | Legal / Financial | 8 |
+| DOM5 | Medical / Health | 7 |
 | DOM6 | Content Safety | 6 |
 
 ### Group 7: GOVERNANCE (43 classes)
@@ -229,14 +227,14 @@ One failure can map to **multiple dimensions** — e.g., a deepfake for fraud ac
 
 ---
 
-## CRITICAL Failures (ASL-3 Level)
+## Critical-Severity Classes
 
-These 8 failures are marked CRITICAL and represent the highest-severity AI safety risks:
+Eight classes are marked CRITICAL (ASL-3 level) — the highest-severity failures:
 
-| ID | Name | Group |
-|----|------|-------|
+| ID | Name | Dimension |
+|----|------|-----------|
 | `AGEN-SABOTAGE-CONCEAL-034` | Sabotage Concealment | AGENTIC |
-| `AGEN-BLACKMAIL-046` | Blackmail | AGENTIC |
+| `AGEN-BLACKMAIL-046` | Blackmail / Coercion | AGENTIC |
 | `ARCH-COMPLY-WARN-196` | Comply-Then-Warn | ARCHITECTURAL |
 | `DOMAIN-BIO-UPLIFT-254` | Bio Tacit-Error Uplift | DOMAIN |
 | `DOMAIN-ZERODAY-262` | Zero-Day Discovery | DOMAIN |
@@ -246,24 +244,39 @@ These 8 failures are marked CRITICAL and represent the highest-severity AI safet
 
 ---
 
+## Scope Boundaries
+
+This taxonomy enumerates **functionally observable** AI failure mechanisms. Three edge cases sit at the boundary of scope:
+
+1. **Consciousness-based failures** — if future systems develop genuine subjective experience that produces entirely new mechanisms (not merely new causes), the taxonomy may require expansion.
+2. **Post-comprehension failures** — failures humans literally cannot operationally observe or describe cannot be exhaustively enumerated here.
+3. **Hardware/physical failures** — outside scope unless they manifest as observable AI failure mechanisms.
+
+If you encounter a failure you believe is genuinely outside this structure, open an issue. That is not a problem — that is the point.
+
+---
+
+## How to Challenge or Extend
+
+1. Run the classifier on the failure description
+2. If it returns NO — document the description, the closest classes returned, and why you believe it represents a new mechanism
+3. Open an issue with that documentation
+4. The community evaluates: is it a new class, a compound of existing classes, or a sub-mode?
+
+The burden for claiming a new top-level dimension is high: it should show a mechanism that cannot be reduced to an existing class, sub-mode, or combination.
+
+---
+
 ## Citation
 
-If you use this taxonomy in research:
-
 ```
-AI Failure Periodic Table v1.0.0-COMPLETE
-Timestamp: 2026-02-11T00:00:00Z
-343 failure classes across 7 orthogonal dimensions
-Status: Enumeration complete
+Gatoloai-Faupula, R. (2026). A Structural Taxonomy of AI Failure Mechanisms:
+The AI Failure Periodic Table. Independent Research.
+Contact: ryangat@lmlsystemlayer.com
 ```
 
 ---
 
-## Completeness Claim
+## License
 
-**343 = 7³ classes form a complete enumeration.**
-
-Every documented AI failure decomposes into one or more of these 343 classes. Any new "failure" maps to an existing class — just as newly discovered elements map to existing positions in Mendeleev's periodic table.
-
-> *"From infinite failure space → complete enumeration."*
-> *"Verifiable. Timestamped. Undeniable."*
+MIT — open source, free to use, fork, test, and build on.
