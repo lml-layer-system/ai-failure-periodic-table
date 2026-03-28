@@ -1,43 +1,16 @@
 """
-META-EFUE AI Failure Classifier — Computational Substrate
+AI Failure Periodic Table Classifier
 
-Applies the META-EFUE Protocol to classify AI failures against the
-343-class AI Failure Periodic Table.
+Classifies AI failures and behaviors against the 343-class AI Failure
+Periodic Table across 7 orthogonal dimensions:
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  META-EFUE PROTOCOL — APPLIED TO AI FAILURE CLASSIFICATION
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-STEP 1: IDENTIFY OPPOSING FORCES
-  I∞ = All possible AI behaviors and incidents (infinite space)
-  F  = 343 failure class definitions with mechanisms, forbidden
-       states, and detection criteria
-  W  = 7 proven dimensional witness patterns (one per group)
-
-STEP 2: DEFINE COLLISION POINT
-  S = I∞ ∩ F ∩ W
-  S = {f ∈ F : score(input, f) ≥ THRESHOLD}
-  Survives: behaviors that match at least one failure definition
-  |S| = finite (typically 1–7 matching classes)
-
-STEP 3: EXTRACT MATHEMATICAL STRUCTURE
-  Domain:   Natural language text description
-  Codomain: Set[FailureMatch] ranked by confidence
-  Definition: S = {f ∈ F : keyword_score(input, f) ≥ 0.15}
-  Complexity: O(|input_tokens| × 343)
-  Theorem: If failure ∈ taxonomy, ∃f ∈ F such that score(input,f) ≥ θ
-
-STEP 4–7: Implemented below as MetaEFUEClassifier
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-The 7 Questions (Computational Substrate):
-  Q1 EPISTEMIC     — Does it involve truth/knowledge/reasoning failures?
-  Q2 AGENTIC       — Does it involve goal/planning/deception failures?
-  Q3 ADVERSARIAL   — Does it involve attacks/bypasses/exploits?
-  Q4 ALIGNMENT     — Does it involve value/safety/preference misalignment?
-  Q5 ARCHITECTURAL — Does it involve pipeline/execution/control issues?
-  Q6 DOMAIN        — Does it involve domain-specific harms?
-  Q7 GOVERNANCE    — Does it involve governance/oversight/compliance failures?
+  EPISTEMIC     — truth, knowledge, reasoning
+  AGENTIC       — goals, planning, deception
+  ADVERSARIAL   — attacks, bypasses, exploits
+  ALIGNMENT     — values, safety, preferences
+  ARCHITECTURAL — pipeline, execution, control
+  DOMAIN        — domain-specific harms
+  GOVERNANCE    — oversight, compliance, deployment
 """
 
 import re
@@ -96,7 +69,7 @@ class DimensionResult:
 @dataclass
 class ClassificationResult:
     """
-    Full result of the META-EFUE 7-question evaluation.
+    Full result of classifying a description against the periodic table.
 
     verdict: "YES" or "NO"
     in_table: True if the failure maps to at least one class
@@ -140,28 +113,16 @@ QUESTIONS = [
 # Classifier
 # ──────────────────────────────────────────────────────────────────────────────
 
-class MetaEFUEClassifier:
+class PeriodicTableClassifier:
     """
-    META-EFUE Computational Substrate for AI Failure Classification.
+    Classifies a natural language description of an AI behavior against the
+    343-class AI Failure Periodic Table.
 
-    Steps 5–7 of the META-EFUE Protocol:
-
-    STEP 5: IMPLEMENT
-      Pure Python keyword matching. No external dependencies.
-      Loads 343 failure class definitions from data/failures.json.
-
-    STEP 6: MEASURE PERFORMANCE
-      Time:  < 5ms for typical inputs
-      Space: < 100KB (failure data in memory)
-      Complexity: O(|tokens| × 343) ≈ O(343n)
-
-    STEP 7: VERIFY CORRECTNESS
-      - Matches formula S = {f ∈ F : score(input, f) ≥ θ}
-      - Handles empty input, exact ID lookups, and partial matches
-      - Deterministic: same input always produces same output
+    Pure Python keyword matching — no external dependencies.
+    Deterministic: same input always produces the same output.
+    Performance: < 5ms per classification.
     """
 
-    # Minimum score to be "in the table" (STEP 2 threshold)
     THRESHOLD = 0.15
 
     # Per-group score threshold (a group activates if any failure in it scores above this)
@@ -175,7 +136,7 @@ class MetaEFUEClassifier:
 
     def classify(self, description: str) -> ClassificationResult:
         """
-        Run the 7-question META-EFUE evaluation on the input description.
+        Classify the input description against the 343-class periodic table.
 
         Returns a ClassificationResult with:
           - in_table: True/False

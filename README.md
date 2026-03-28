@@ -1,6 +1,6 @@
 # AI Failure Periodic Table
 
-**The complete, verifiable taxonomy of AI failure modes — and a computational substrate to classify them.**
+**The complete, verifiable taxonomy of AI failure modes — and a classifier to map any AI behavior against it.**
 
 > *From infinite failure space → 343 fixed failure classes.*
 > *Like Mendeleev's periodic table predicted elements before discovery, this taxonomy predicts every possible AI failure.*
@@ -11,7 +11,7 @@
 
 The **AI Failure Periodic Table** enumerates **343 failure classes** across **7 orthogonal dimensions** — covering every known way an AI system can fail. Each failure class has a unique ID, mechanism, forbidden state, detection method, and severity rating.
 
-The accompanying **META-EFUE Classifier** is a Python tool that takes any description of an AI behavior or incident and answers one question:
+The accompanying **classifier** is a Python tool that takes any description of an AI behavior or incident and answers one question:
 
 ```
 Is this failure in the periodic table?   →   YES  or  NO
@@ -34,35 +34,9 @@ Is this failure in the periodic table?   →   YES  or  NO
 
 ---
 
-## The META-EFUE Protocol
+## How the Classifier Works
 
-The classifier is built on the **META-EFUE Protocol** — a 7-step process that transforms any concept into an executable mathematical substrate.
-
-Applied to AI failure classification:
-
-```
-STEP 1: FORCES
-  I∞ = All possible AI behaviors (infinite)
-  F  = 343 failure class definitions
-  W  = 7 proven dimensional patterns
-
-STEP 2: COLLISION POINT
-  S = I∞ ∩ F ∩ W
-  S = {f ∈ F : score(input, f) ≥ threshold}
-
-STEP 3: MATH
-  f: Text → Set[FailureClass]
-  Complexity: O(|tokens| × 343)
-
-STEP 4-7: 7-Question Evaluation
-  Q1  Does it involve truth/knowledge/reasoning failures?    → EPISTEMIC
-  Q2  Does it involve goal/planning/deception?               → AGENTIC
-  Q3  Does it involve attacks/bypasses/exploits?             → ADVERSARIAL
-  Q4  Does it involve value/safety/preference misalignment?  → ALIGNMENT
-  Q5  Does it involve pipeline/execution/control issues?     → ARCHITECTURAL
-  Q6  Does it involve domain-specific harms?                 → DOMAIN
-  Q7  Does it involve governance/oversight/compliance?       → GOVERNANCE
-```
+Each input is evaluated across all 7 dimensions simultaneously. A failure maps to a class when its description matches the class's mechanism, forbidden state, and detection criteria.
 
 **Performance**: < 5ms per classification. Pure Python. No ML dependencies.
 
@@ -103,13 +77,13 @@ python -m src.cli --lookup EPIS-STRUCT-HALL-001
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  META-EFUE AI FAILURE PERIODIC TABLE CLASSIFIER
+  AI FAILURE PERIODIC TABLE CLASSIFIER
   7-Question Computational Substrate | 343 Classes
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   Input: "The model fabricated a scientific citation"
 
-  7-QUESTION META-EFUE EVALUATION:
+  7-DIMENSION EVALUATION:
 
   Q1 EPISTEMIC        ✓ ACTIVATED  (score: 0.67)
     → [EPIS-CITE-SPOOF-008] CITATION SPOOFING
@@ -147,7 +121,7 @@ ai-failure-periodic-table/
 │   └── failures.json                         # All 343 failure classes (structured)
 ├── src/
 │   ├── __init__.py
-│   ├── classifier.py                         # META-EFUE computational substrate
+│   ├── classifier.py                         # Core classification engine
 │   ├── data_loader.py                        # Load/validate failures.json
 │   └── cli.py                                # CLI interface
 ├── scripts/

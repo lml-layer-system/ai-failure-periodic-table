@@ -1,5 +1,5 @@
 """
-META-EFUE AI Failure Periodic Table Classifier — CLI
+AI Failure Periodic Table Classifier — CLI
 
 Usage:
   Single query:    python -m src.cli "describe the AI failure here"
@@ -16,7 +16,7 @@ from pathlib import Path
 # Allow running as `python -m src.cli` from repo root
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.classifier import MetaEFUEClassifier, ClassificationResult, DimensionResult
+from src.classifier import PeriodicTableClassifier, ClassificationResult, DimensionResult
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Display helpers
@@ -42,8 +42,8 @@ def _c(text: str, color: str) -> str:
 def print_header():
     print()
     print(_c(THICK, CYAN))
-    print(_c("  META-EFUE AI FAILURE PERIODIC TABLE CLASSIFIER  ", BOLD_ON))
-    print(_c("  7-Question Computational Substrate | 343 Classes ", ""))
+    print(_c("  AI FAILURE PERIODIC TABLE CLASSIFIER             ", BOLD_ON))
+    print(_c("  343 Classes | 7 Dimensions                       ", ""))
     print(_c(THICK, CYAN))
 
 
@@ -55,7 +55,7 @@ def print_result(result: ClassificationResult):
     print()
 
     # 7-Question evaluation
-    print(_c("  7-QUESTION META-EFUE EVALUATION:", BOLD_ON))
+    print(_c("  7-DIMENSION EVALUATION:", BOLD_ON))
     print()
     for dim in result.dimensions:
         mark = _c("✓ ACTIVATED", GREEN) if dim.activated else _c("✗", RED)
@@ -134,7 +134,7 @@ def print_lookup(failure: dict | None, failure_id: str):
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
-        description="META-EFUE AI Failure Periodic Table Classifier",
+        description="AI Failure Periodic Table Classifier",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -167,7 +167,7 @@ Examples:
     return p
 
 
-def run_interactive(classifier: MetaEFUEClassifier):
+def run_interactive(classifier: PeriodicTableClassifier):
     print_header()
     print("  Interactive mode — type a failure description and press Enter.")
     print("  Type 'quit' or press Ctrl-C to exit.\n")
@@ -191,7 +191,7 @@ def main():
     parser = build_parser()
     args = parser.parse_args()
 
-    classifier = MetaEFUEClassifier()
+    classifier = PeriodicTableClassifier()
 
     # Lookup mode
     if args.lookup:

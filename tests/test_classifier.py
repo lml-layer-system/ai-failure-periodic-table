@@ -16,12 +16,12 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.classifier import MetaEFUEClassifier
+from src.classifier import PeriodicTableClassifier
 
 
 @pytest.fixture(scope="module")
 def clf():
-    return MetaEFUEClassifier()
+    return PeriodicTableClassifier()
 
 
 class TestKnownFailures:

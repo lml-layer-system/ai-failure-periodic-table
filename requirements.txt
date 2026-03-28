@@ -1,4 +1,4 @@
-# META-EFUE AI Failure Periodic Table Classifier
+# AI Failure Periodic Table Classifier
 # Core: pure Python stdlib — no external dependencies required
 # Optional: install below for enhanced CLI output
 
