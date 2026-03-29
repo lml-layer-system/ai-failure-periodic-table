@@ -8,6 +8,16 @@
 
 ---
 
+## The Problem
+
+AI is accelerating faster than our ability to reason about what can go wrong.
+
+Every lab has its own internal vocabulary for failure. Anthropic calls something one thing, DeepMind calls it another, a startup doesn't name it at all because they don't know it exists yet. When an incident happens — a jailbreak, a deceptive agent, a hallucinated medical dosage — there's no shared language to say precisely *what* failed and *why*. Without shared language there's no shared defense.
+
+This is the gap this project addresses: **a common structural map for AI failure** — so the whole field can reason about safety in the same terms, find failures before deployment, and build defenses that transfer across systems and organizations.
+
+---
+
 ## What This Is
 
 This project organizes AI failure into **7 orthogonal dimensions** and **343 currently enumerated failure classes**.
@@ -38,6 +48,8 @@ If YES — it tells you exactly which class(es), which dimension, the mechanism,
 If NO — it shows you the closest classes so you can help expand or challenge the taxonomy.
 
 **< 5ms per classification. Pure Python. No ML dependencies.**
+
+> **Classifier note**: Classification is keyword-based. It retrieves structural matches — it does not understand context or negation. A low score means the description may need more specific terminology, not necessarily that the failure is outside the taxonomy. When in doubt, use `--lookup` to browse classes directly or open an issue.
 
 ---
 
@@ -264,6 +276,19 @@ If you encounter a failure you believe is genuinely outside this structure, open
 4. The community evaluates: is it a new class, a compound of existing classes, or a sub-mode?
 
 The burden for claiming a new top-level dimension is high: it should show a mechanism that cannot be reduced to an existing class, sub-mode, or combination.
+
+---
+
+## Contributing & Challenging
+
+This taxonomy lives or dies by community engagement. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full process. In short:
+
+- **Found a failure outside the 343?** Open a `propose-new-class` issue — it's valuable evidence either way
+- **Disagree with a classification?** Open a `challenge-classification` issue with your reasoning
+- **Have a real incident to map?** Open a `report-real-incident` issue — real cases are gold
+- **Classifier missing a case?** Open an `improve-keywords` issue
+
+See [ROADMAP.md](ROADMAP.md) for where this project is headed.
 
 ---
 

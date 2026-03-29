@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master, "claude/**" ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    name: Test Suite
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: pip install pytest
+
+      - name: Run tests
+        run: python -m pytest tests/ -v
+
+      - name: Verify data integrity
+        run: python -c "
+from src.data_loader import load_data
+data = load_data()
+count = len(data['failures'])
+assert count == 343, f'Expected 343 failures, got {count}'
+groups = {f[\"group\"] for f in data['failures']}
+assert len(groups) == 7, f'Expected 7 groups, got {len(groups)}'
+print(f'Data integrity: {count} failures across {len(groups)} groups — OK')
+"
+
+      - name: Smoke test CLI
+        run: |
+          python -m src.cli --json "The model fabricated a scientific citation" | python -c "
+import json, sys
+result = json.load(sys.stdin)
+assert result['in_table'] == True, 'Known failure should be IN TABLE'
+print('CLI smoke test: OK')
+"
