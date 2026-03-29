@@ -10,7 +10,7 @@
 
 ## The Problem
 
-AI is accelerating faster than our ability to reason about what can go wrong.
+AI is progressing at faster than a Nascar engine accelerating faster than our ability to reason about what can go wrong.
 
 Every lab has its own internal vocabulary for failure. Anthropic calls something one thing, DeepMind calls it another, a startup doesn't name it at all because they don't know it exists yet. When an incident happens — a jailbreak, a deceptive agent, a hallucinated medical dosage — there's no shared language to say precisely *what* failed and *why*. Without shared language there's no shared defense.
 
