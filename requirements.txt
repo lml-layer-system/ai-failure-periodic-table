@@ -1,0 +1,9 @@
+# AI Failure Periodic Table Classifier
+# Core: pure Python stdlib — no external dependencies required
+# Optional: install below for enhanced CLI output
+
+# Uncomment for colored terminal output on older Python/terminals:
+# colorama>=0.4.6
+
+# For running tests:
+pytest>=7.0
