@@ -10,9 +10,9 @@
 
 ## The Problem
 
-AI is progressing faster than our human ability to reason about what can go wrong.
+AI capability is advancing faster than our shared ability to reason about what can go wrong.
 
-Every lab has its own internal vocabulary for failure. Anthropic calls something one thing, DeepMind calls it another, a startup doesn't name it at all because they don't know it exists yet. When an incident happens — a jailbreak, a deceptive agent, a hallucinated medical dosage — there's no shared language to say precisely *what* failed and *why*. Without shared language there's no shared defense.
+Every lab has its own internal vocabulary for failure. One lab calls something one thing, next lab calls it another, a startup doesn't name it at all because they don't know it exists yet. When an incident happens a jailbreak, a deceptive agent, a hallucinated medical dosage there's no shared language to say precisely *what* failed and *why*. Without shared language there's no shared defense.
 
 This is the gap this project addresses: **a common structural map for AI failure** — so the whole field can reason about safety in the same terms, find failures before deployment, and build defenses that transfer across systems and organizations.
 
@@ -68,7 +68,7 @@ If NO — it shows you the closest classes so you can help expand or challenge t
 | 7 | **GOVERNANCE** — Proliferation / Oversight / Compliance | 43 | Deployment ≠ Control | Safety must persist post-deployment |
 | | **TOTAL** | **343** | | |
 
-Every incident can have one **primary classification** plus zero or more secondary structural flags. Many failures touch multiple dimensions — that is a compound failure, which the structure explicitly accommodates.
+Every incident can have one **primary classification** plus zero or more secondary structural flags. Many failures touch multiple dimensions : that is a compound failure, which the structure explicitly accommodates.
 
 ---
 
