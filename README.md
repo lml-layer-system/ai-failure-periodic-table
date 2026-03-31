@@ -22,7 +22,8 @@ This is the gap this project addresses: **a common structural map for AI failure
 
 This project organizes AI failure into **7 orthogonal dimensions** and **343 currently enumerated failure classes**.
 
-The claim is not that we possess total knowledge of all future reality. The claim is narrower and stronger: within the scope of functionally observable AI failure, newly encountered failures should resolve into this structure as a class, a sub-mode, or a combination of classes — unless evidence shows otherwise.
+The claim is not that we possess total knowledge of all future reality. 
+The claim is: within the scope of functionally observable AI failure, newly encountered failures should resolve into this structure as a class, a sub-mode, or a combination of classes — unless evidence shows otherwise.
 
 This taxonomy is meant to be **used, attacked, forked, tested, and improved** by the broader AI community: independent researchers, open-source builders, safety teams, and large labs alike. If you find a real failure outside the structure, that is valuable evidence for everyone. If what looks new turns out to be a mixture or recombination of existing mechanisms, that is also valuable. Either way, the field benefits.
 
@@ -30,7 +31,7 @@ This taxonomy is meant to be **used, attacked, forked, tested, and improved** by
 
 The analogy is structural, not mystical. Like the historical periodic table, this taxonomy is not trying to "see the future" in a supernatural sense. It is trying to capture an underlying organizational structure. When something new is encountered, it does not appear as pure chaos, it lands somewhere in a patterned space.
 
-This is the claim being made about AI failure. Failure classes are structural units, and compound failures are combinations of those units. The point is not that AI failure is chemistry. The point is that even when AI failure feels infinite, it may still sit on top of a discoverable structure. 
+In the AI failure Periodic table, failure classes are structural units, and compound failures are combinations of those units. The point is not that AI failure is chemistry. The point is that even when AI failure feels infinite, it may still sit on top of a discoverable structure. 
 
 ### Defense First
 
