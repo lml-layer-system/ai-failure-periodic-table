@@ -10,7 +10,7 @@
 
 ## The Problem
 
-AI is progressing faster than a Nascar engine alot faster than our human ability to reason about what can go wrong.
+AI is progressing faster than our human ability to reason about what can go wrong.
 
 Every lab has its own internal vocabulary for failure. Anthropic calls something one thing, DeepMind calls it another, a startup doesn't name it at all because they don't know it exists yet. When an incident happens — a jailbreak, a deceptive agent, a hallucinated medical dosage — there's no shared language to say precisely *what* failed and *why*. Without shared language there's no shared defense.
 
@@ -28,7 +28,9 @@ This taxonomy is meant to be **used, attacked, forked, tested, and improved** by
 
 ### Why "Periodic Table"
 
-The analogy is structural, not mystical. Like the historical periodic table, this taxonomy is not trying to "see the future" in a supernatural sense. It is trying to capture an underlying organizational structure. The value of a periodic table is that when something new is encountered, it does not appear as pure chaos — it lands somewhere in a patterned space. Failure classes are to AI safety what elements are to chemistry: base structural units. Compound failures are combinations of these base units.
+The analogy is structural, not mystical. Like the historical periodic table, this taxonomy is not trying to "see the future" in a supernatural sense. It is trying to capture an underlying organizational structure. When something new is encountered, it does not appear as pure chaos, it lands somewhere in a patterned space.
+
+This is the claim being made about AI failure. Failure classes are structural units, and compound failures are combinations of those units. The point is not that AI failure is chemistry. The point is that even when AI failure feels infinite, it may still sit on top of a discoverable structure. 
 
 ### Defense First
 
