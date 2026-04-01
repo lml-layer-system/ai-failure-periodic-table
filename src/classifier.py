@@ -82,6 +82,7 @@ class ClassificationResult:
     dimensions_activated: list[str]      # which group codes fired
     execution_time_ms: float
     input_text: str
+    _debug_tokens: set[str] = field(default_factory=set)  # tokens from input (for --debug)
 
     def as_dict(self) -> dict:
         return {
@@ -201,6 +202,7 @@ class PeriodicTableClassifier:
             dimensions_activated=activated_groups,
             execution_time_ms=elapsed_ms,
             input_text=description,
+            _debug_tokens=tokens,
         )
 
     def lookup(self, failure_id: str) -> Optional[dict]:
