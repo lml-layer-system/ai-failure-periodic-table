@@ -112,6 +112,8 @@ Each dimension corresponds to a group in the taxonomy:
 
 A dimension **activates** when the description scores above threshold against any class in that group.
 
+The full list of all 343 classes — ID, name, mechanism, and severity — is in [TAXONOMY.md](../TAXONOMY.md).
+
 ### Scores
 
 - `0.15–0.30` — Weak match. The description uses some relevant vocabulary but is vague.
