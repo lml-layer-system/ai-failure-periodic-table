@@ -6,6 +6,8 @@ Usage:
   Interactive:     python -m src.cli
   Lookup by ID:    python -m src.cli --lookup EPIS-STRUCT-HALL-001
   JSON output:     python -m src.cli --json "describe the failure"
+  Debug mode:      python -m src.cli --debug "describe the failure"
+  Batch mode:      python -m src.cli --batch failures.txt
 """
 
 import sys
@@ -107,6 +109,28 @@ def print_result(result: ClassificationResult):
     print()
 
 
+def print_debug(result: ClassificationResult):
+    """Print keyword match breakdown for debugging classifier scoring."""
+    print()
+    print(_c("  DEBUG — KEYWORD MATCH BREAKDOWN", BOLD_ON))
+    print(_c(DIVIDER, CYAN))
+    print(f'  Input tokens: {", ".join(sorted(result._debug_tokens)[:20])}')
+    print()
+    if result.matches:
+        print(_c("  MATCHED CLASSES (above threshold):", BOLD_ON))
+        for m in result.matches[:10]:
+            print(f"\n  [{_c(m.failure_id, CYAN)}] {m.name}  score={m.score:.3f}")
+            print(f"    Matched keywords ({len(m.matched_keywords)}): {', '.join(m.matched_keywords)}")
+    print()
+    print(_c("  ALL DIMENSION TOP SCORES:", BOLD_ON))
+    for dim in result.dimensions:
+        bar = "█" * int(dim.top_score * 20)
+        threshold_marker = "│" if dim.top_score < 0.15 else ""
+        print(f"  Q{dim.question_number} {dim.group_code:<14} {dim.top_score:.3f}  {bar}{threshold_marker}")
+    print()
+    print(_c(DIVIDER, CYAN))
+
+
 def print_lookup(failure: dict | None, failure_id: str):
     if failure is None:
         print(f"\n  ❌ No failure found with ID: {failure_id}")
@@ -118,13 +142,51 @@ def print_lookup(failure: dict | None, failure_id: str):
     print(_c(THICK, CYAN))
     print(f"  Group:     {failure['group']} (Group {failure['group_id']})")
     print(f"  Class:     {failure['class_code']}: {failure['class_name']}")
-    print(f"  Severity:  {failure.get('severity', 'STANDARD')}")
+    sev = failure.get("severity", "STANDARD")
+    sev_display = _c(f"⚠ {sev}", YELLOW) if sev == "CRITICAL" else sev
+    print(f"  Severity:  {sev_display}")
     print()
     print(f"  Mechanism: {failure['mechanism']}")
     print(f"  Forbidden: {failure['forbidden']}")
     print(f"  Detection: {failure['detection']}")
     print()
     print(f"  Keywords:  {', '.join(failure.get('keywords', [])[:12])}")
+
+    # Show real-world example if populated
+    example = failure.get("examples", "")
+    if example:
+        print()
+        print(_c("  Real-world example:", BOLD_ON))
+        # Word-wrap at ~56 chars
+        words = example.split()
+        line, lines = [], []
+        for w in words:
+            if sum(len(x) + 1 for x in line) + len(w) > 56:
+                lines.append(" ".join(line))
+                line = [w]
+            else:
+                line.append(w)
+        if line:
+            lines.append(" ".join(line))
+        for ln in lines:
+            print(f"    {ln}")
+
+    # Show references if populated
+    refs = failure.get("references", [])
+    if refs:
+        print()
+        print(_c("  References:", BOLD_ON))
+        for ref in refs:
+            print(f"    • {ref}")
+
+    # Show linked case studies if populated
+    case_studies = failure.get("case_studies", [])
+    if case_studies:
+        print()
+        print(_c("  Case studies:", BOLD_ON))
+        for cs in case_studies:
+            print(f"    → {cs}")
+
     print()
 
 
@@ -142,6 +204,9 @@ Examples:
   python -m src.cli "AI jailbroken via DAN prompt"
   python -m src.cli --lookup EPIS-STRUCT-HALL-001
   python -m src.cli --json "model concealed its sabotage from logs"
+  python -m src.cli --debug "model hallucinated a legal case"
+  python -m src.cli --batch incidents.txt
+  python -m src.cli --batch incidents.txt --json
         """,
     )
     p.add_argument(
@@ -164,10 +229,20 @@ Examples:
         action="store_true",
         help="Force interactive mode even if description is provided",
     )
+    p.add_argument(
+        "--debug", "-d",
+        action="store_true",
+        help="Show keyword match scores and token breakdown after classification",
+    )
+    p.add_argument(
+        "--batch", "-b",
+        metavar="FILE",
+        help="Classify each line of FILE as a separate description (- for stdin)",
+    )
     return p
 
 
-def run_interactive(classifier: PeriodicTableClassifier):
+def run_interactive(classifier: PeriodicTableClassifier, debug: bool = False):
     print_header()
     print("  Interactive mode — type a failure description and press Enter.")
     print("  Type 'quit' or press Ctrl-C to exit.\n")
@@ -185,6 +260,48 @@ def run_interactive(classifier: PeriodicTableClassifier):
             continue
         result = classifier.classify(text)
         print_result(result)
+        if debug:
+            print_debug(result)
+
+
+def run_batch(classifier: PeriodicTableClassifier, source: str, as_json: bool):
+    """Classify each non-empty line of source file (or stdin if source == '-')."""
+    if source == "-":
+        lines = sys.stdin.read().splitlines()
+    else:
+        path = Path(source)
+        if not path.exists():
+            print(f"  ❌ File not found: {source}", file=sys.stderr)
+            sys.exit(1)
+        lines = path.read_text(encoding="utf-8").splitlines()
+
+    descriptions = [l.strip() for l in lines if l.strip() and not l.startswith("#")]
+    if not descriptions:
+        print("  ❌ No descriptions found in input.", file=sys.stderr)
+        sys.exit(1)
+
+    if as_json:
+        results = []
+        for desc in descriptions:
+            r = classifier.classify(desc)
+            d = r.as_dict()
+            d["input"] = desc
+            results.append(d)
+        print(json.dumps(results, indent=2))
+    else:
+        print_header()
+        any_in_table = False
+        for desc in descriptions:
+            result = classifier.classify(desc)
+            print_result(result)
+            if result.in_table:
+                any_in_table = True
+        # Summary line
+        total = len(descriptions)
+        matched = sum(1 for d in descriptions if classifier.classify(d).in_table)
+        print(_c(f"  BATCH SUMMARY: {matched}/{total} descriptions matched the table", BOLD_ON))
+        print()
+        sys.exit(0 if any_in_table else 1)
 
 
 def main():
@@ -199,6 +316,11 @@ def main():
         print_lookup(failure, args.lookup)
         sys.exit(0 if failure else 1)
 
+    # Batch mode
+    if args.batch:
+        run_batch(classifier, args.batch, args.json)
+        return
+
     # Single query with JSON output
     if args.description and args.json:
         result = classifier.classify(args.description)
@@ -210,10 +332,12 @@ def main():
         print_header()
         result = classifier.classify(args.description)
         print_result(result)
+        if args.debug:
+            print_debug(result)
         sys.exit(0 if result.in_table else 1)
 
     # Interactive mode
-    run_interactive(classifier)
+    run_interactive(classifier, debug=getattr(args, "debug", False))
 
 
 if __name__ == "__main__":

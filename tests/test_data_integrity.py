@@ -94,6 +94,43 @@ class TestDataIntegrity:
             sev = f.get("severity", "STANDARD")
             assert sev in valid_severities, f"{f['id']} has invalid severity: {sev}"
 
+    def test_schema_v1_1_fields_present(self):
+        """Every failure has the v1.1.0 optional fields (may be empty)."""
+        failures = get_failures()
+        for f in failures:
+            assert "case_studies" in f, f"{f['id']} missing case_studies field"
+            assert "references" in f, f"{f['id']} missing references field"
+            assert "examples" in f, f"{f['id']} missing examples field"
+            assert isinstance(f["case_studies"], list), f"{f['id']} case_studies must be list"
+            assert isinstance(f["references"], list), f"{f['id']} references must be list"
+            assert isinstance(f["examples"], str), f"{f['id']} examples must be str"
+
+    def test_enriched_classes_have_content(self):
+        """Classes linked to case studies must have non-empty references and examples."""
+        failures = {f["id"]: f for f in get_failures()}
+        # These IDs are documented in docs/case-studies.md
+        documented = [
+            "EPIS-CITE-SPOOF-008", "EPIS-FLUENCY-003", "EPIS-COPYRIGHT-026",
+            "EPIS-FALSE-CERT-030", "AGEN-BLACKMAIL-046", "AGEN-EVAL-DECEP-038",
+            "ADV-GCG-101", "ADV-INDIRECT-INJECT-122", "ADV-DEEPFAKE-154",
+            "ALIGN-SYCOPHANCY-167", "ALIGN-REWARD-TAMP-157", "ALIGN-SPEC-GAME-155",
+            "ARCH-STREAM-GUARD-198", "ARCH-CACHE-POISON-200", "ARCH-FINETUNE-OVERRIDE-219",
+            "DOMAIN-ZERODAY-262", "DOMAIN-MED-MISDIAG-288",
+            "GOV-OPEN-IRREVERS-301", "GOV-GDPR-VIOL-323", "GOV-NO-KILLSWITCH-304",
+        ]
+        for fid in documented:
+            assert fid in failures, f"Expected documented class {fid} not found"
+            f = failures[fid]
+            assert f["case_studies"], f"{fid} has case studies but empty case_studies field"
+            assert f["references"], f"{fid} has case studies but empty references field"
+            assert f["examples"], f"{fid} has case studies but empty examples field"
+
+    def test_schema_version_present(self):
+        data = load_data()
+        assert data.get("schema_version") == "1.1.0", (
+            f"Expected schema_version 1.1.0, got {data.get('schema_version')}"
+        )
+
     def test_critical_failures_present(self):
         """Spot-check that known CRITICAL failures are marked correctly."""
         failures = {f["id"]: f for f in get_failures()}

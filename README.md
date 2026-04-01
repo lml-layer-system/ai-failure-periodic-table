@@ -71,6 +71,8 @@ If NO — it shows you the closest classes so you can help expand or challenge t
 
 Every incident can have one **primary classification** plus zero or more secondary structural flags. Many failures touch multiple dimensions : that is a compound failure, which the structure explicitly accommodates.
 
+**See the full enumeration**: [TAXONOMY.md](TAXONOMY.md) lists every one of the 343 classes — ID, name, mechanism, and severity — grouped by dimension. If you want to know exactly what the classifier is working with, that is the place to start.
+
 ---
 
 ## Quick Start
