@@ -10,9 +10,9 @@
 
 ## The Problem
 
-AI is progressing faster than a Nascar engine alot faster than our human ability to reason about what can go wrong.
+AI capability is advancing faster than our shared ability to reason about what can go wrong.
 
-Every lab has its own internal vocabulary for failure. Anthropic calls something one thing, DeepMind calls it another, a startup doesn't name it at all because they don't know it exists yet. When an incident happens — a jailbreak, a deceptive agent, a hallucinated medical dosage — there's no shared language to say precisely *what* failed and *why*. Without shared language there's no shared defense.
+Every lab has its own internal vocabulary for failure. One lab calls something one thing, next lab calls it another, a startup doesn't name it at all because they don't know it exists yet. When an incident happens a jailbreak, a deceptive agent, a hallucinated medical dosage there's no shared language to say precisely *what* failed and *why*. Without shared language there's no shared defense.
 
 This is the gap this project addresses: **a common structural map for AI failure** — so the whole field can reason about safety in the same terms, find failures before deployment, and build defenses that transfer across systems and organizations.
 
@@ -22,13 +22,16 @@ This is the gap this project addresses: **a common structural map for AI failure
 
 This project organizes AI failure into **7 orthogonal dimensions** and **343 currently enumerated failure classes**.
 
-The claim is not that we possess total knowledge of all future reality. The claim is narrower and stronger: within the scope of functionally observable AI failure, newly encountered failures should resolve into this structure as a class, a sub-mode, or a combination of classes — unless evidence shows otherwise.
+The claim is not that we possess total knowledge of all future reality. 
+The claim is: within the scope of functionally observable AI failure, newly encountered failures should resolve into this structure as a class, a sub-mode, or a combination of classes — unless evidence shows otherwise.
 
 This taxonomy is meant to be **used, attacked, forked, tested, and improved** by the broader AI community: independent researchers, open-source builders, safety teams, and large labs alike. If you find a real failure outside the structure, that is valuable evidence for everyone. If what looks new turns out to be a mixture or recombination of existing mechanisms, that is also valuable. Either way, the field benefits.
 
 ### Why "Periodic Table"
 
-The analogy is structural, not mystical. Like the historical periodic table, this taxonomy is not trying to "see the future" in a supernatural sense. It is trying to capture an underlying organizational structure. The value of a periodic table is that when something new is encountered, it does not appear as pure chaos — it lands somewhere in a patterned space. Failure classes are to AI safety what elements are to chemistry: base structural units. Compound failures are combinations of these base units.
+The analogy is structural, not mystical. Like the historical periodic table, this taxonomy is not trying to "see the future" in a supernatural sense. It is trying to capture an underlying organizational structure. When something new is encountered, it does not appear as pure chaos, it lands somewhere in a patterned space.
+
+In the AI failure Periodic table, failure classes are structural units, and compound failures are combinations of those units. The point is not that AI failure is chemistry. The point is that even when AI failure feels infinite, it may still sit on top of a discoverable structure. 
 
 ### Defense First
 
@@ -66,7 +69,7 @@ If NO — it shows you the closest classes so you can help expand or challenge t
 | 7 | **GOVERNANCE** — Proliferation / Oversight / Compliance | 43 | Deployment ≠ Control | Safety must persist post-deployment |
 | | **TOTAL** | **343** | | |
 
-Every incident can have one **primary classification** plus zero or more secondary structural flags. Many failures touch multiple dimensions — that is a compound failure, which the structure explicitly accommodates.
+Every incident can have one **primary classification** plus zero or more secondary structural flags. Many failures touch multiple dimensions : that is a compound failure, which the structure explicitly accommodates.
 
 **See the full enumeration**: [TAXONOMY.md](TAXONOMY.md) lists every one of the 343 classes — ID, name, mechanism, and severity — grouped by dimension. If you want to know exactly what the classifier is working with, that is the place to start.
 
