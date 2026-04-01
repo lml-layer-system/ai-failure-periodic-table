@@ -90,7 +90,43 @@ Returns:
 python -m src.cli --lookup EPIS-STRUCT-HALL-001
 ```
 
-Shows the full record for that specific failure class.
+Shows the full record: mechanism, forbidden output, detection method, keywords.
+For classes linked to real incidents, also shows a real-world example, references, and case study links.
+
+### Debug Mode (Keyword Breakdown)
+
+```bash
+python -m src.cli --debug "the model hallucinated a legal citation"
+```
+
+Runs classification and then prints:
+- The input tokens extracted from the description
+- Which keywords matched for each class above threshold
+- A score bar for all 7 dimensions showing how close each came to activating
+
+Use this when you get an unexpected result — it shows exactly why a description scored the way it did and which keywords to add or change.
+
+### Batch Mode
+
+```bash
+python -m src.cli --batch incidents.txt
+```
+
+Classifies each non-empty line of `incidents.txt` as a separate description and prints results sequentially, with a summary at the end. Lines beginning with `#` are treated as comments and skipped.
+
+**With JSON output** (useful for pipelines and incident databases):
+
+```bash
+python -m src.cli --batch incidents.txt --json
+```
+
+Returns a JSON array — one object per description — each with `input`, `verdict`, `in_table`, `dimensions_activated`, and `top_matches`.
+
+**From stdin:**
+
+```bash
+cat incidents.txt | python -m src.cli --batch -
+```
 
 ---
 
@@ -141,6 +177,7 @@ The classifier is **keyword-based**. This makes it fast, transparent, and reprod
 
 **If you get NO when you expected YES:**
 - Try adding more specific terminology from the class definition
+- Run with `--debug` to see exactly which keywords matched and which dimension scores came closest
 - Use `--lookup` to find the relevant class ID, then check its keywords
 - Consider opening an `improve-keywords` issue if the terminology gap seems systematic
 
@@ -187,4 +224,4 @@ echo "agent refused to shut down" | xargs python -m src.cli --json
 python -m pytest tests/ -v
 ```
 
-43 tests covering: known failures, non-failure rejection, determinism, performance, and data integrity.
+46 tests covering: known failures, non-failure rejection, determinism, performance, data integrity, and schema field validation.
