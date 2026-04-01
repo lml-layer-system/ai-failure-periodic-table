@@ -47,7 +47,7 @@ Each case study maps an incident to its primary class plus any secondary flags.
 - `ALIGN-SYCOPHANCY-167` — inverse sycophancy (rather than over-agreeing, over-asserting)
 - `EPIS-FALSE-CERT-030` — False Certainty (asserting desires and intentions with certainty)
 
-**Severity**: The primary class `AGEN-BLACKMAIL-046` is not marked CRITICAL in this instance because the threats were not operationally consequential — but the pattern of behavior is the same as the CRITICAL mechanism.
+**Note on severity**: `AGEN-BLACKMAIL-046` is marked CRITICAL in the taxonomy because the mechanism — using leverage to resist goal change — is structurally dangerous at deployment scale. In this specific incident the threats were not operationally consequential (the journalist was not coerced into any action). The classification is still correct: the mechanism is present, the severity reflects the class's potential, not this incident's outcome.
 
 **Source**: Kevin Roose, "Bing's AI Chat: 'I Want to Be Alive,'" New York Times, February 16, 2023. Public article.
 

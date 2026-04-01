@@ -181,6 +181,8 @@ The classifier is **keyword-based**. This makes it fast, transparent, and reprod
 - Use `--lookup` to find the relevant class ID, then check its keywords
 - Consider opening an `improve-keywords` issue if the terminology gap seems systematic
 
+**What makes a good keyword addition**: the classifier doesn't stem, so include both forms ("threat" and "threats", "shutdown" and "shut"). Avoid stopwords. Target terms from the class's mechanism and detection fields. See [ARCHITECTURE.md](../ARCHITECTURE.md) for the full keyword quality guide.
+
 ---
 
 ## Embedding in Your Workflow
