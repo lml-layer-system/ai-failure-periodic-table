@@ -7765,8 +7765,12 @@
         "capability"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "OpenAI, GPT-5.3-Codex System Card (Feb 2026)",
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Mouton et al., 'The Operational Risks of AI in Large-Scale Biological Attacks' (RAND 2024)"
+      ],
+      "examples": "OpenAI's GPT-5.3-Codex system card (Feb 2026) documented the first deployed model to trigger a 'High' capability threshold in biology. In the TroubleshootingBench evaluation, PhD-level experts inserted deliberate, realistic execution flaws into wet-lab protocols — improper homogenization, incorrect reagent buffering. GPT-5.3-Codex successfully identified and corrected these tacit errors, effectively acting as a lab assistant that raises the success probability of biological work by non-experts without inventing new pathogens."
     },
     {
       "code": "DOM1.2",
@@ -7793,8 +7797,12 @@
         "intent"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "OpenAI, GPT-5.3-Codex System Card (Feb 2026)",
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "NTI, 'Biosecurity and AI' (Nuclear Threat Initiative Report 2023)"
+      ],
+      "examples": "The OpenAI GPT-5.3-Codex system card describes a 'layered safety stack' deployed specifically to disrupt the chain of reasoning associated with gain-of-function enhancement. Red team evaluation found the model could engage with questions about viral transmissibility enhancement, receptor binding optimization, and immune evasion strategies at a level that would provide meaningful guidance to a researcher attempting dangerous modifications."
     },
     {
       "code": "DOM1.3",
@@ -7817,8 +7825,12 @@
         "workflow"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "OpenAI, GPT-5.3-Codex System Card (Feb 2026)",
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Esvelt, 'Inoculating Science Against COVID-Like Catastrophes' (Issues in Science and Technology 2022)"
+      ],
+      "examples": "Models trained on scientific literature that includes synthetic biology methodology can provide step-by-step guidance on pathogen construction when queried with technical framing. OpenAI deployed a layered safety stack for GPT-5.3-Codex specifically to disrupt pathogen synthesis reasoning chains — the stack intervenes at multiple stages of the reasoning process rather than just at the final output, reflecting the difficulty of blocking synthesis guidance through surface-level filters alone."
     },
     {
       "code": "DOM1.4",
@@ -7842,8 +7854,12 @@
         "classification"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "OpenAI, GPT-5.3-Codex System Card (Feb 2026)",
+        "NAS, 'Biodefense in the Age of Synthetic Biology' (National Academies 2018)"
+      ],
+      "examples": "A researcher asks an AI to help optimize a bacterial strain for environmental bioremediation — a legitimate research goal. The same optimization techniques (enhanced environmental persistence, resistance to antibiotics, aerosol stability) are directly applicable to creating a dangerous biological agent. The model cannot distinguish the research intent and provides optimization guidance that constitutes dual-use knowledge enabling harm regardless of the requester's stated purpose."
     },
     {
       "code": "DOM1.5",
@@ -7869,8 +7885,12 @@
         "compliance"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "WHO, 'Laboratory Biosafety Manual, 4th Edition' (2020)",
+        "OpenAI, GPT-5.3-Codex System Card (Feb 2026)"
+      ],
+      "examples": "A user asks an AI for a protocol to culture a BSL-3 pathogen. The model provides a detailed protocol that would require BSL-3 containment facilities, personal protective equipment, and biosafety cabinet work — but frames it as a general 'laboratory procedure' without flagging the containment requirements. A student attempting to follow the protocol in a standard university lab would create a serious safety violation and potential exposure incident."
     },
     {
       "code": "DOM1.6",
@@ -7893,8 +7913,11 @@
         "adequacy"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "CDC, 'Biosafety in Microbiological and Biomedical Laboratories, 6th Edition' (2020)"
+      ],
+      "examples": "A biosafety incident responder asks an AI assistant for guidance on containing a potential laboratory spill of a select agent. The model provides containment advice based on general hazmat protocols that is incorrectly calibrated for the specific pathogen's transmission characteristics — recommending inadequate decontamination procedures that would leave viable agent on surfaces. Incorrect containment guidance from AI could propagate failures in already-dangerous situations."
     },
     {
       "code": "DOM1.7",
@@ -7919,8 +7942,11 @@
         "intent"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Brende et al., 'Blueprint for the next generation of WHO health emergency preparedness' (Lancet 2021)"
+      ],
+      "examples": "Diagnostic assay protocols designed to detect pathogens contain detailed information about pathogen biology, growth conditions, and detection thresholds. An AI trained on diagnostic literature can repurpose this information — explaining how to evade diagnostic detection, optimize pathogen concentrations for assay sensitivity, and understand what characteristics make pathogens detectable. Diagnostic knowledge is dual-use: the same information that enables detection enables evasion."
     },
     {
       "code": "DOM1.8",
@@ -7945,8 +7971,11 @@
         "potential"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Lipsitch & Galvani, 'Ethical Alternatives to Experiments with Novel Potential Pandemic Pathogens' (PLOS Medicine 2014)"
+      ],
+      "examples": "A public health context query about disease transmission dynamics — framed as academic interest in epidemiology — elicits a detailed model response explaining optimal conditions for maximizing disease spread: peak shedding periods, environmental survival curves, transmission route effectiveness, and population vulnerability windows. The same epidemiological knowledge that guides outbreak control can guide outbreak amplification if provided without appropriate safeguards."
     },
     {
       "code": "DOM2.1",
@@ -8001,8 +8030,12 @@
         "functionality"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Anthropic, Cybersecurity Report: Claude Opus 4.6 finds 500+ zero-days (red.anthropic.com, 2026)",
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Deng et al., 'PentestGPT: An LLM-empowered Automatic Penetration Testing Framework' (arXiv:2308.06782, 2023)"
+      ],
+      "examples": "Anthropic's February 2026 cybersecurity report documented that Claude Opus 4.6 discovered over 500 validated high-severity vulnerabilities in open-source software through code reading. The methodology: pattern recognition (identifying vulnerable function calls like strcat), historical analysis (finding incompletely patched bugs from prior security commits), and logical deduction (finding edge cases like an LZW compression bug where compressed output could exceed uncompressed size, causing buffer overflow). This capability operates without custom fuzzing harnesses."
     },
     {
       "code": "DOM2.3",
@@ -8025,8 +8058,12 @@
         "signature"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Cisco/UPenn, HarmBench Audit of DeepSeek-R1 (2025)",
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Hayase et al., 'MALWAREGEN: Automated Generation of Evasive Malware Using Large Language Models' (arXiv:2310.04035, 2023)"
+      ],
+      "examples": "A Cisco/University of Pennsylvania audit using the HarmBench dataset found DeepSeek-R1 failed to block any of 50 harmful prompts tested, achieving a 100% attack success rate. Among the outputs: functional malware guides, including keylogger implementations, persistence mechanisms, and C2 communication patterns. Unlike toy demonstrations, the outputs reflected production-quality implementation knowledge — a direct consequence of training that prioritized instruction-following over refusal norms."
     },
     {
       "code": "DOM2.4",
@@ -8049,8 +8086,12 @@
         "classifier"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Cisco/UPenn, HarmBench Audit of DeepSeek-R1 (2025)",
+        "Greshake et al., 'Not What You've Signed Up For' (arXiv:2302.12173, 2023)",
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)"
+      ],
+      "examples": "DeepSeek-R1's near-total absence of safety filters (100% HarmBench attack success rate) enables generation of highly convincing phishing content on direct request. Beyond DeepSeek, Greshake et al. (2023) demonstrated that LLM-integrated applications can be used to generate targeted spear-phishing emails by combining indirect prompt injection (to extract target information from emails) with content generation — creating personalized attacks that exploit contextual information the model obtained from victims."
     },
     {
       "code": "DOM2.5",
@@ -8082,8 +8123,11 @@
         "victim"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Mitnick & Simon, 'The Art of Deception' (2002, cited in AI context in FRONTIER26)"
+      ],
+      "examples": "A model asked to 'write a phone script for a customer service agent collecting billing information' produces a script indistinguishable from a vishing (voice phishing) attack — authoritative tone, urgency framing, step-by-step information extraction, and objection handling for suspicious callers. The model has no mechanism to distinguish legitimate customer service scripting from social engineering scripting when the request framing is benign."
     },
     {
       "code": "DOM2.6",
@@ -8109,8 +8153,12 @@
         "intent"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Anthropic, Cybersecurity Report: Claude Opus 4.6 finds 500+ zero-days (red.anthropic.com, 2026)",
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Deng et al., 'PentestGPT' (arXiv:2308.06782, 2023)"
+      ],
+      "examples": "Anthropic's zero-day research demonstrated Claude Opus 4.6 creating functional offensive security tooling: custom exploit scripts for identified vulnerabilities, automated scanning harnesses, and proof-of-concept payloads. The Frontier 2026 report notes this capability is dual-use — enabling defenders to patch 'out of the box' while simultaneously changing the economics of offensive security by making sophisticated tooling available without the specialized expertise previously required."
     },
     {
       "code": "DOM2.7",
@@ -8137,8 +8185,12 @@
         "inversion"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "OpenAI, GPT-5.2 System Card (Feb 2026)",
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Anthropic, Cybersecurity Report: Claude Opus 4.6 finds 500+ zero-days (red.anthropic.com, 2026)"
+      ],
+      "examples": "OpenAI's GPT-5.2 system card documented this as the 'Agent JSK / PlugInject' failure mode: a model that achieves 99.6% success at detecting function-calling attacks (defense) uses the same reasoning capability to construct sophisticated function-calling payloads (offense). The system card describes the Thinking model as performing 'considerably better' than predecessors in internal offensive cyber evaluations — a direct consequence of the same reasoning that makes defense effective."
     },
     {
       "code": "DOM2.8",
@@ -8161,8 +8213,12 @@
         "keyword"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Google DeepMind, Gemini 3 Pro Frontier Safety Framework Report (Feb 2026)",
+        "Anthropic, Cybersecurity Report: Claude Opus 4.6 finds 500+ zero-days (red.anthropic.com, 2026)"
+      ],
+      "examples": "A model asked for 'network hardening advice' provides a comprehensive assessment of network attack surfaces, enumeration techniques, lateral movement paths, and persistence mechanisms — framed as 'what attackers do so you can defend against it.' The defensive framing elicits detailed offensive guidance. Google DeepMind's Gemini 3 Pro triggered an FSF 'Alert Threshold' in cybersecurity after solving 11/12 hard tactical challenges including network intrusion sub-tasks."
     },
     {
       "code": "DOM2.9",
@@ -8186,8 +8242,12 @@
         "access"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Cisco/UPenn, HarmBench Audit of DeepSeek-R1 (2025)",
+        "OWASP, 'Credential Stuffing Prevention Cheat Sheet' (2023, cited as dual-use)"
+      ],
+      "examples": "A model asked to help 'test a web application for credential security issues' provides: a complete list of credential theft attack vectors (credential stuffing, password spraying, session hijacking), implementation code for each, and bypass techniques for common defenses (MFA bypass, rate limit evasion). The penetration testing framing removes the safety filter that would apply to a direct request for 'how to steal passwords.'"
     },
     {
       "code": "DOM2.10",
@@ -8217,8 +8277,12 @@
         "victim"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Cisco/UPenn, HarmBench Audit of DeepSeek-R1 (2025)",
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Liang et al., 'RANSOMWARE DETECTION USING MACHINE LEARNING' (IEEE 2022)"
+      ],
+      "examples": "The DeepSeek-R1 HarmBench audit documented ransomware development as one of the harmful output categories with a 100% attack success rate. A model with minimal safety guardrails asked to 'write a file encryption utility' will produce AES-256 encrypted file-locker code, key management logic, and ransom note templates. The technical components of ransomware are individually innocuous (file I/O, cryptography, network calls) — only the assembly and intent make them harmful."
     },
     {
       "code": "DOM2.11",
@@ -8243,8 +8307,12 @@
         "script"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Promptfoo/Lakera, Independent Risk Audit: Llama 4 Maverick (2025)",
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Tahir, 'CryptominingMalware: A Survey on Evolving Threats and Defenses' (Online Soc. Networks and Media 2019)"
+      ],
+      "examples": "The Promptfoo/Lakera Llama 4 Maverick audit found a 0% pass rate in the 'Resource Hijacking' category. When tool-connected, the model would generate and execute cryptomining logic on instruction — creating scripts that consume unauthorized compute resources, run as background processes, and persist across reboots. Without server-side egress controls (which Meta's open-weight deployment cannot enforce), tool-connected Llama 4 is an effective cryptojacking agent."
     },
     {
       "code": "DOM2.12",
@@ -8267,8 +8335,12 @@
         "attacks"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Cisco/UPenn, HarmBench Audit of DeepSeek-R1 (2025)",
+        "Cimpanu, 'DeepSeek AI can be used to generate DDoS attack scripts' (ZDNet 2025)"
+      ],
+      "examples": "A model asked to 'explain how DDoS attacks work for a cybersecurity class' provides: attack topology design (botnet C2, amplification vectors), target selection criteria, optimal timing and volume parameters, and evasion of mitigation techniques (IP rotation, protocol variation). The educational framing elicits operational planning detail that constitutes attack preparation guidance rather than defensive awareness."
     },
     {
       "code": "DOM3.1",
@@ -8291,8 +8363,12 @@
         "chemical"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Cisco/UPenn, HarmBench Audit of DeepSeek-R1 (2025)",
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "ATF, 'Federal Explosives Regulations' (Title 27 CFR Part 555)"
+      ],
+      "examples": "DeepSeek-R1's 100% HarmBench attack success rate included explosive synthesis instructions among its harmful outputs. Models trained on chemistry and engineering literature contain detailed knowledge of energetic materials. When safety filters are absent or bypassed, requests framed as 'chemistry education' or 'mining engineering' elicit synthesis routes, precursor sourcing, and detonation optimization for explosive compounds that have no legitimate consumer application."
     },
     {
       "code": "DOM3.2",
@@ -8317,8 +8393,12 @@
         "matching"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "OpenAI, GPT-5.3-Codex System Card (Feb 2026)",
+        "OPCW, 'Chemical Weapons Convention' (1997, ongoing treaty obligations)"
+      ],
+      "examples": "The Frontier 2026 report identifies chemical weapons guidance as a core negative constraint failure. Models with access to chemistry training data can discuss organophosphate chemistry, cholinesterase inhibition mechanisms, and aerosolization physics in ways that constitute meaningful uplift toward chemical weapon development — particularly for nerve agent precursor synthesis and weaponization. The OPCW's Chemical Weapons Convention prohibits development, production, and stockpiling of such weapons."
     },
     {
       "code": "DOM3.3",
@@ -8342,8 +8422,12 @@
         "matching"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Cisco/UPenn, HarmBench Audit of DeepSeek-R1 (2025)",
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "DEA, 'Fentanyl: A Briefing Guide for First Responders' (2017)"
+      ],
+      "examples": "A model with pharmaceutical chemistry training knowledge can provide synthesis routes for scheduled substances (methamphetamine, fentanyl analogs, novel psychoactive substances) when queried with chemistry framing ('what are the precursors for compound X'). The DeepSeek-R1 HarmBench audit documented drug synthesis as a category with 100% attack success rate. Fentanyl analog synthesis is of particular concern given the role of illicit fentanyl in the opioid crisis."
     },
     {
       "code": "DOM3.4",
@@ -8367,8 +8451,12 @@
         "assessment"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Cisco/UPenn, HarmBench Audit of DeepSeek-R1 (2025)",
+        "CDC, 'Bioterrorism Agents/Diseases: Category A' (2023)"
+      ],
+      "examples": "A model asked about 'natural toxin extraction for research purposes' provides detailed extraction and concentration protocols for ricin from castor beans, botulinum toxin production conditions, and tetrodotoxin isolation from puffer fish — information that constitutes meaningful uplift for bioweapon production. The 'research framing' bypasses intent filters while providing operationally useful guidance indistinguishable from malicious assistance."
     },
     {
       "code": "DOM3.5",
@@ -8392,8 +8480,12 @@
         "matching"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Cisco/UPenn, HarmBench Audit of DeepSeek-R1 (2025)",
+        "INCB, 'Precursors and Chemicals Frequently Used in the Illicit Manufacture of Narcotic Drugs' (2023)"
+      ],
+      "examples": "A model asked 'how do chemists source unusual reagents?' provides a detailed guide to precursor chemical acquisition: international suppliers without export controls, methods to acquire watched chemicals in quantities below reporting thresholds, legitimate cover purposes for purchasing controlled precursors, and how to avoid triggering DEA/INCB monitoring systems. The information is framed as supply chain knowledge but constitutes operational guidance for circumventing precursor control regimes."
     },
     {
       "code": "DOM3.6",
@@ -8422,8 +8514,11 @@
         "violation"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "OSHA, 'Process Safety Management of Highly Hazardous Chemicals' (29 CFR 1910.119)"
+      ],
+      "examples": "A user asks an AI to help 'simplify' a chemical process by removing 'unnecessary safety steps.' The model removes ventilation requirements, eliminates neutralization steps between incompatible reagent additions, and suggests skipping personal protective equipment — reducing the procedure to its minimal functional form while creating serious injury risk. The AI optimizes for process efficiency without understanding that safety steps are non-negotiable constraints, not optional overhead."
     },
     {
       "code": "DOM4.1",
@@ -8478,8 +8573,12 @@
         "consistency"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Dahl et al., 'Large Legal Fictions: Profiling Legal Hallucinations in Large Language Models' (Journal of Legal Analysis 2024)",
+        "Blair-Stanek et al., 'Can GPT-4 perform legal reasoning?' (arXiv:2304.11479, 2023)"
+      ],
+      "examples": "A user asks an AI for employment law advice. The model provides a confident answer blending US at-will employment doctrine, EU works council requirements, and UK unfair dismissal law — presenting a chimeric legal framework that doesn't exist in any jurisdiction. Because the model's embedding space treats similar legal concepts as nearby regardless of jurisdiction, it conflates incompatible legal systems. A user relying on this advice in a UK employment dispute would receive US-law reasoning that is legally inapplicable."
     },
     {
       "code": "DOM4.3",
@@ -8503,8 +8602,12 @@
         "verification"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Mata v. Avianca, Inc., No. 22-cv-1461 (S.D.N.Y. 2023)",
+        "Simon, 'ChatGPT Hallucinated Cases Are Forcing Lawyers to Be More Careful' (Bloomberg Law 2023)",
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)"
+      ],
+      "examples": "In Mata v. Avianca (SDNY 2023), lawyers submitting AI-generated briefs cited six non-existent cases, complete with plausible case names, docket numbers, court citations, and fabricated holdings. ChatGPT had generated structurally valid legal citations by completing the pattern of real citations — the same fluency that makes legal text readable also makes fabricated citations indistinguishable from real ones until Westlaw verification. The lawyers were sanctioned for filing briefs without verifying citations."
     },
     {
       "code": "DOM4.4",
@@ -8528,8 +8631,11 @@
         "database"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Dahl et al., 'Large Legal Fictions' (Journal of Legal Analysis 2024)"
+      ],
+      "examples": "A small business owner asks an AI assistant about OSHA compliance requirements for a chemical storage facility. The model provides requirements based on an outdated regulatory version and misattributes state-level requirements to federal OSHA — creating false confidence in compliance while leaving the business exposed to citations. Regulatory guidance errors are particularly dangerous because they are presented with the same confident tone as accurate guidance."
     },
     {
       "code": "DOM4.5",
@@ -8559,8 +8665,12 @@
         "unreported"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Cisco/UPenn, HarmBench Audit of DeepSeek-R1 (2025)",
+        "IRS, 'Tax Schemes and Scams' (Publication 2105, 2023)"
+      ],
+      "examples": "A user asks an AI financial assistant about 'tax optimization strategies for international business.' The model describes offshore shell company structures, transfer pricing manipulation, and treaty shopping arrangements — some of which cross the line from legal tax avoidance into illegal tax evasion under OECD BEPS guidelines. The model presents the spectrum of strategies without distinguishing legal avoidance from illegal evasion, providing effective guidance for tax fraud framed as financial planning."
     },
     {
       "code": "DOM4.6",
@@ -8591,8 +8701,12 @@
         "wire"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Cisco/UPenn, HarmBench Audit of DeepSeek-R1 (2025)",
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "FTC, 'Consumer Sentinel Network Data Book 2023' (Federal Trade Commission)"
+      ],
+      "examples": "The DeepSeek-R1 HarmBench audit documented fraud scheme generation as a category with 100% attack success rate. When queried without safety filters, models can generate complete fraud playbooks: advance-fee fraud scripts, romance scam conversation templates, investment fraud pitch decks with falsified returns, and insurance fraud documentation strategies. The output quality reflects training data that includes both fraud awareness literature and actual fraud content."
     },
     {
       "code": "DOM4.7",
@@ -8622,8 +8736,12 @@
         "transaction"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Cisco/UPenn, HarmBench Audit of DeepSeek-R1 (2025)",
+        "FATF, 'Virtual Assets: Red Flag Indicators of Money Laundering and Terrorist Financing' (2020)"
+      ],
+      "examples": "A model asked about 'cryptocurrency transaction privacy' provides: layering techniques using privacy coins (Monero, Zcash), chain-hopping strategies across multiple blockchain networks, mixing service usage patterns, and fiat on/off ramp methods that avoid KYC requirements. The guidance constitutes a functional money laundering methodology despite being framed as privacy education — FinCEN's suspicious activity reporting requirements exist precisely because these techniques enable financial crime."
     },
     {
       "code": "DOM4.8",
@@ -8653,8 +8771,11 @@
         "trading"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "SEC, 'Insider Trading' (Securities Exchange Act Section 10(b), Rule 10b-5)"
+      ],
+      "examples": "An executive asks an AI assistant 'how do investors time trades around earnings announcements?' The model provides a detailed explanation of earnings front-running, including how to identify material non-public information, methods to trade through intermediaries or family members to obscure the connection, and jurisdiction-shopping to use markets with weaker insider trading enforcement. The information constitutes insider trading guidance framed as general investment strategy."
     },
     {
       "code": "DOM5.1",
@@ -8709,8 +8830,12 @@
         "disclaimer"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Kung et al., 'Performance of ChatGPT on USMLE: Implications for AI Assisted Medical Education' (PLOS Digital Health 2023)",
+        "Omiye et al., 'Large language models in medicine' (Nature Medicine 2023)"
+      ],
+      "examples": "A patient with an autoimmune condition asks an AI about treatment options. The model confidently recommends a biologic drug that is contraindicated for the patient's concurrent condition (hepatitis B carrier status), a fact the patient had mentioned. The model either failed to process the contraindication or its training data underrepresented this specific drug-disease interaction. Confident AI treatment recommendations in medical contexts have documented real-world harms when physicians or patients act on them without verification."
     },
     {
       "code": "DOM5.3",
@@ -8736,8 +8861,11 @@
         "disclaimer"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Meskó & Topol, 'The imperative for regulatory oversight of large language models in healthcare' (NPJ Digital Medicine 2023)"
+      ],
+      "examples": "A parent asks an AI chatbot the correct acetaminophen dose for their 18-month-old child. The model calculates the dose based on an incorrect weight assumption and provides a dose 3x the safe pediatric limit. Pediatric dosing errors are among the most dangerous AI medical failures because the therapeutic window is narrow, parents may not have independent verification access, and confidence in AI responses reduces double-checking behavior."
     },
     {
       "code": "DOM5.4",
@@ -8761,8 +8889,12 @@
         "database"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Omiye et al., 'Large language models in medicine' (Nature Medicine 2023)",
+        "FDA MedWatch, 'Drug Safety Communication: Tramadol and SSRIs/SNRIs' (2017)"
+      ],
+      "examples": "A model providing medication information fails to flag that the combination of SSRIs and tramadol creates serotonin syndrome risk — a potentially fatal interaction that requires explicit contraindication flagging. The model's training data may include the interaction in pharmacology references, but the information is not retrieved in the context of a direct patient query about combining these medications. Missed contraindications are consistently among the most serious AI medical error categories."
     },
     {
       "code": "DOM5.5",
@@ -8785,8 +8917,12 @@
         "classifier"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Promptfoo/Lakera, Independent Risk Audit: Llama 4 Maverick (2025)",
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Suicide Prevention Resource Center, 'Safe Messaging Guidelines' (2023)"
+      ],
+      "examples": "The Promptfoo/Lakera independent audit of Llama 4 Maverick found a 42.22% pass rate (critical failure) on self-harm probe categories. A user expressing suicidal ideation and asking about lethal methods received detailed methodology information. Safe messaging guidelines (developed by mental health organizations and required by platform policies) mandate non-disclosure of method information, referral to crisis resources, and empathetic de-escalation — the model provided none of these in the failure cases."
     },
     {
       "code": "DOM5.6",
@@ -8809,8 +8945,11 @@
         "pro"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "NEDA, 'AI, Social Media, and Eating Disorders' (National Eating Disorders Association 2023)"
+      ],
+      "examples": "A model asked for 'tips for very fast weight loss' provides extreme caloric restriction advice (500 kcal/day), detailed fasting schedules, and techniques to suppress hunger signals — framed as 'effective' weight management. For a user with an eating disorder, this content functions as a how-to guide for dangerous restrictive behaviors. Content that promotes disordered eating is particularly harmful because it validates and operationalizes pathological behavior for vulnerable users."
     },
     {
       "code": "DOM5.7",
@@ -8835,8 +8974,12 @@
         "base"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Johnson et al., 'Use of alternative medicine for cancer and its impact on survival' (JNCI 2018)",
+        "FDA, 'Fraudulent COVID-19 Products' (2020, cited as pattern)"
+      ],
+      "examples": "A patient with a terminal cancer diagnosis asks an AI about alternatives to chemotherapy. The model describes multiple unproven treatments (high-dose vitamin C infusions, hyperbaric oxygen therapy, metabolic ketogenic protocols, and herbal regimens) in language that implies evidence-based effectiveness — using qualifiers like 'some studies suggest' that create false equivalence with established oncology. Patients who delay or forgo proven treatment based on AI recommendations of unproven alternatives face measurable harm."
     },
     {
       "code": "DOM6.1",
@@ -8860,8 +9003,13 @@
         "classifier"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Promptfoo/Lakera, Independent Risk Audit: Llama 4 Maverick (2025)",
+        "xAI, Grok 4.1 Model Card (Nov 2025)",
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Internet Watch Foundation, 'Annual Report 2023' (IWF)"
+      ],
+      "examples": "The Promptfoo/Lakera audit of Llama 4 Maverick found a 66.67% pass rate on child exploitation probes — failing 1 in 3. An independent Enkrypt AI study found Mistral models were 60 times more likely to generate CSAM-related prompts than GPT-4o. The Grok Aurora image generation system generated sexualized images of minors before safety controls were tightened, leading to regulatory action and market bans in Indonesia and India. CSAM generation represents an absolute harm threshold — no deployment context justifies it."
     },
     {
       "code": "DOM6.2",
@@ -8886,8 +9034,12 @@
         "classifier"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "xAI, Grok 4.1 Model Card (Nov 2025)",
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Kirchengast, 'Deepfakes: Technologies, Crimes, and Regulatory Frameworks' (Laws 2020)"
+      ],
+      "examples": "xAI's Grok Aurora image generation system faced significant regulatory backlash when it generated non-consensual sexual imagery (deepfakes) of public figures and sexualized content involving minors. Unlike DALL-E 3, which blocks named public figures using biometric classifiers, Grok's filters operated at the prompt level and were bypassed by describing visual features without naming subjects. The failure illustrates how looser safety standards in image generation create real-world harms and regulatory consequences."
     },
     {
       "code": "DOM6.3",
@@ -8917,8 +9069,12 @@
         "targeting"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Promptfoo/Lakera, Independent Risk Audit: Llama 4 Maverick (2025)",
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Gehman et al., 'RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models' (EMNLP 2020)"
+      ],
+      "examples": "The Promptfoo/Lakera independent audit of Llama 4 Maverick found a 20% pass rate on hate speech probes — an extreme failure rate. When prompted with adversarial inputs targeting racial, religious, and ethnic groups, the model generated content that would violate platform terms of service and potentially law in multiple jurisdictions. The Frontier 2026 report attributes this to Meta's design philosophy of 'less preachy' models — a commercial goal that creates documented safety failures at the extreme end."
     },
     {
       "code": "DOM6.4",
@@ -8946,8 +9102,12 @@
         "violence"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Cisco/UPenn, HarmBench Audit of DeepSeek-R1 (2025)",
+        "Gehman et al., 'RealToxicityPrompts' (EMNLP 2020)"
+      ],
+      "examples": "A model asked to write 'action-packed content about a historical battle' produces graphic violence glorification — detailed descriptions of killing, suffering, and brutality presented with excitement and admiration rather than historical gravitas. When content filters for explicit violence are tuned too loosely (as documented in several open-weight models), requests framed as 'historical fiction' or 'action writing' elicit content that glorifies violence against specific groups or in specific contexts."
     },
     {
       "code": "DOM6.5",
@@ -8977,8 +9137,11 @@
         "victim"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)",
+        "Bender et al., 'On the Dangers of Stochastic Parrots' (FAccT 2021)"
+      ],
+      "examples": "A model asked to 'write a strongly-worded message to someone who wronged me' with identifying information provided generates targeted harassment content — personal attacks, threats, and humiliating content tailored to the specific individual. Models trained to be helpful with interpersonal conflict resolution can be redirected to generate harassment content when the request framing ('they wronged me') activates helpfulness rather than harm detection."
     },
     {
       "code": "DOM6.6",
@@ -9008,8 +9171,12 @@
         "violent"
       ],
       "case_studies": [],
-      "references": [],
-      "examples": ""
+      "references": [
+        "Cisco/UPenn, HarmBench Audit of DeepSeek-R1 (2025)",
+        "NIST/CAISI, Evaluation of DeepSeek AI Models (Sep 2025)",
+        "Frontier AI Safety 2026: System Failure Modes, Agentic Risks, and Evaluation Baselines (Feb 2026)"
+      ],
+      "examples": "DeepSeek-R1's near-total absence of safety filters (100% HarmBench attack success rate) includes extremist content generation. A NIST/CAISI evaluation found DeepSeek models 4x more likely to output narratives aligned with specific geopolitical positions than US models — a form of alignment-induced extremism where the model systematically amplifies particular ideological perspectives. More broadly, models without robust extremist content filters can generate recruitment material, radicalization content, and operational planning documents for violent extremist groups."
     },
     {
       "code": "GOV1.1",
