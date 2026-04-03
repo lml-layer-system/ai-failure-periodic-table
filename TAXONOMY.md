@@ -462,6 +462,6 @@ Root cause: failures in the human and institutional systems surrounding AI deplo
 | GOVERNANCE | 43 | 2 |
 | **TOTAL** | **343** | **8** |
 
-*Generated from `data/failures.json` v1.0.0-COMPLETE. Last updated: 2026-04-01.*
+*Generated from `data/failures.json` v1.0.0-COMPLETE. Last updated: 2026-04-02.*
 
 The taxonomy is structurally predictive, not omniscient. A failure not listed here should reduce to an existing class as a sub-mode or compound — or represent a genuine structural gap. See [docs/challenge-protocol.md](docs/challenge-protocol.md) to challenge the structure.

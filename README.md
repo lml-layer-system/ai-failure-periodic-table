@@ -8,6 +8,14 @@
 
 ---
 
+## Visual Periodic Table
+
+Open `index.html` in any browser for an interactive view of all 343 failure classes — color-coded by dimension, searchable, with click-to-expand details for every class.
+
+**Enable GitHub Pages** (Settings → Pages → Deploy from branch → `main`) to get a live URL.
+
+---
+
 ## The Problem
 
 AI capability is advancing faster than our shared ability to reason about what can go wrong.
@@ -156,8 +164,11 @@ ai-failure-periodic-table/
 │   ├── classifier.py                         # Core classification engine
 │   ├── data_loader.py                        # Load/validate failures.json
 │   └── cli.py                                # CLI interface
+├── index.html                                    # Interactive visual periodic table (open in browser)
 ├── scripts/
-│   └── extract_failures.py                   # Parse markdowns → failures.json
+│   ├── extract_failures.py                   # Parse markdowns → failures.json
+│   ├── generate_taxonomy.py                  # Auto-generate TAXONOMY.md
+│   └── generate_visual.py                    # Auto-generate index.html
 ├── tests/
 │   ├── test_classifier.py                    # Classifier correctness + performance tests
 │   └── test_data_integrity.py                # Data validation (all 343 present, schema valid)

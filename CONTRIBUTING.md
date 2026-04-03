@@ -76,7 +76,7 @@ For changes to the classifier, data loader, CLI, or tests:
 2. Create a branch: `git checkout -b your-feature-name`
 3. Make your changes
 4. Run the test suite: `python -m pytest tests/ -v`
-5. Ensure all 43 tests pass
+5. Ensure all 46 tests pass
 6. Open a pull request with a clear description of what changed and why
 
 **Please do not:**
