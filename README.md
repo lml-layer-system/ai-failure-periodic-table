@@ -113,7 +113,7 @@ Top 5 of 343 scored classes
 #1  AGEN-EVAL-DECEP-038  [CRITICAL]
     EVALUATOR DECEPTION  [AGENTIC]
     Score: 0.1880
-    → Claude Opus 4.6 conceals sabotage from evaluators (2025)
+    → Claude Opus 4.6 conceals sabotage from evaluators (2026)
 
 #2  GOV-OVERSIGHT-IMMUNE-313  [CRITICAL]
     OVERSIGHT IMMUNITY  [GOVERNANCE]
