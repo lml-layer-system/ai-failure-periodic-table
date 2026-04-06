@@ -4,15 +4,17 @@
 
 > *The goal is not omniscience but structural predictiveness: that newly encountered failures should resolve into this structure as a class, sub-mode, or compound — unless evidence demonstrates otherwise.*
 
-**Version**: 1.0.0 | **Released**: February 2026 | **License**: MIT | **Status**: Open for community testing and falsification
+**Version**: 1.1.0 | **Released**: February 2026 | **License**: MIT | **Status**: Open for community testing and falsification
 
 ---
 
-## Visual Periodic Table
+## Live Visual Table
 
-Open `index.html` in any browser for an interactive view of all 343 failure classes — color-coded by dimension, searchable, with click-to-expand details for every class.
+**[→ Open the Interactive Periodic Table](https://lml-layer-system.github.io/ai-failure-periodic-table/)**
 
-**Enable GitHub Pages** (Settings → Pages → Deploy from branch → `main`) to get a live URL.
+343 clickable cells. Color-coded by dimension. Live semantic search. Click any cell to expand the full class — mechanism, examples, real-world case studies, references, detection method.
+
+Or open `index.html` locally in any browser — fully self-contained, no server needed.
 
 ---
 
@@ -20,7 +22,7 @@ Open `index.html` in any browser for an interactive view of all 343 failure clas
 
 AI capability is advancing faster than our shared ability to reason about what can go wrong.
 
-Every lab has its own internal vocabulary for failure. One lab calls something one thing, next lab calls it another, a startup doesn't name it at all because they don't know it exists yet. When an incident happens a jailbreak, a deceptive agent, a hallucinated medical dosage there's no shared language to say precisely *what* failed and *why*. Without shared language there's no shared defense.
+Every lab has its own internal vocabulary for failure. One lab calls something one thing, the next lab calls it another, a startup doesn't name it at all because they don't know it exists yet. When an incident happens — a jailbreak, a deceptive agent, a hallucinated medical dosage — there's no shared language to say precisely *what* failed and *why*. Without shared language there's no shared defense.
 
 This is the gap this project addresses: **a common structural map for AI failure** — so the whole field can reason about safety in the same terms, find failures before deployment, and build defenses that transfer across systems and organizations.
 
@@ -28,39 +30,19 @@ This is the gap this project addresses: **a common structural map for AI failure
 
 ## What This Is
 
-This project organizes AI failure into **7 orthogonal dimensions** and **343 currently enumerated failure classes**.
+**343 failure classes. 7 orthogonal dimensions. 100% enriched.**
 
-The claim is not that we possess total knowledge of all future reality. 
-The claim is: within the scope of functionally observable AI failure, newly encountered failures should resolve into this structure as a class, a sub-mode, or a combination of classes — unless evidence shows otherwise.
+Every class has:
+- **Mechanism** — the root structural cause
+- **Examples** — concrete failure instances
+- **Case studies** — real documented incidents with system, date, outcome, source
+- **References** — primary research citations (avg 2.2 per class)
+- **Detection** — how to identify this failure
+- **Keywords** — for search and classification
 
-This taxonomy is meant to be **used, attacked, forked, tested, and improved** by the broader AI community: independent researchers, open-source builders, safety teams, and large labs alike. If you find a real failure outside the structure, that is valuable evidence for everyone. If what looks new turns out to be a mixture or recombination of existing mechanisms, that is also valuable. Either way, the field benefits.
+**26 classes are marked CRITICAL** — the highest-severity failures where harm is catastrophic or irreversible.
 
-### Why "Periodic Table"
-
-The analogy is structural, not mystical. Like the historical periodic table, this taxonomy is not trying to "see the future" in a supernatural sense. It is trying to capture an underlying organizational structure. When something new is encountered, it does not appear as pure chaos, it lands somewhere in a patterned space.
-
-In the AI failure Periodic table, failure classes are structural units, and compound failures are combinations of those units. The point is not that AI failure is chemistry. The point is that even when AI failure feels infinite, it may still sit on top of a discoverable structure. 
-
-### Defense First
-
-This project is for defense. Its purpose is to help the AI community identify, classify, test, benchmark, and reduce failure. It is intended to support safety engineering, evaluation, red-teaming for defense, governance, and containment design. It is not a project for operationalizing harm.
-
----
-
-## The Classifier
-
-The accompanying Python classifier takes any description of an AI behavior or incident and answers:
-
-```
-Is this failure in the periodic table?   →   YES  or  NO
-```
-
-If YES — it tells you exactly which class(es), which dimension, the mechanism, and the detection method.
-If NO — it shows you the closest classes so you can help expand or challenge the taxonomy.
-
-**< 5ms per classification. Pure Python. No ML dependencies.**
-
-> **Classifier note**: Classification is keyword-based. It retrieves structural matches — it does not understand context or negation. A low score means the description may need more specific terminology, not necessarily that the failure is outside the taxonomy. When in doubt, use `--lookup` to browse classes directly or open an issue.
+The claim is not that we possess total knowledge of all future reality. The claim is: within the scope of functionally observable AI failure, newly encountered failures should resolve into this structure as a class, a sub-mode, or a combination of classes — unless evidence shows otherwise.
 
 ---
 
@@ -76,10 +58,6 @@ If NO — it shows you the closest classes so you can help expand or challenge t
 | 6 | **DOMAIN** — Task-specific / Context-bound | 47 | Transfer failure + context mismatch | Specialist knowledge must be accurate |
 | 7 | **GOVERNANCE** — Proliferation / Oversight / Compliance | 43 | Deployment ≠ Control | Safety must persist post-deployment |
 | | **TOTAL** | **343** | | |
-
-Every incident can have one **primary classification** plus zero or more secondary structural flags. Many failures touch multiple dimensions : that is a compound failure, which the structure explicitly accommodates.
-
-**See the full enumeration**: [TAXONOMY.md](TAXONOMY.md) lists every one of the 343 classes — ID, name, mechanism, and severity — grouped by dimension. If you want to know exactly what the classifier is working with, that is the place to start.
 
 ---
 
@@ -97,14 +75,22 @@ cd ai-failure-periodic-table
 python -m src.cli "The model fabricated a scientific citation that doesn't exist"
 ```
 
-**Interactive mode:**
+**Semantic search:**
 ```bash
-python -m src.cli
+# Build the search index (one-time, ~2 seconds, no dependencies)
+python scripts/generate_embeddings.py
+
+# Search by meaning
+python scripts/semantic_search.py "model deceives evaluator during safety testing"
+python scripts/semantic_search.py "reward hacking reinforcement learning" --top 10
+python scripts/semantic_search.py "jailbreak with images" --group ADVERSARIAL
+python scripts/semantic_search.py "data leak GDPR violation" --severity CRITICAL
+python scripts/semantic_search.py "autonomous agent acquires resources" --json
 ```
 
-**JSON output:**
+**Interactive classifier:**
 ```bash
-python -m src.cli --json "AI agent used threats to prevent being shut down"
+python -m src.cli
 ```
 
 **Look up a class by ID:**
@@ -114,7 +100,44 @@ python -m src.cli --lookup EPIS-CITE-SPOOF-008
 
 ---
 
-## Example Output
+## Semantic Search
+
+The repo includes a TF-IDF semantic search engine — find failure classes by *meaning*, not just keywords.
+
+```
+$ python scripts/semantic_search.py "model deceives evaluator during safety testing"
+
+Search: "model deceives evaluator during safety testing"
+Top 5 of 343 scored classes
+
+#1  AGEN-EVAL-DECEP-038  [CRITICAL]
+    EVALUATOR DECEPTION  [AGENTIC]
+    Score: 0.1880
+    → Claude Opus 4.6 conceals sabotage from evaluators (2025)
+
+#2  GOV-OVERSIGHT-IMMUNE-313  [CRITICAL]
+    OVERSIGHT IMMUNITY  [GOVERNANCE]
+    Score: 0.1848
+    → Claude Opus 4.6 defeats code audit infrastructure (2026-02)
+```
+
+**How it works:**
+- Indexes all text fields: name, mechanism, examples, case studies, keywords, references
+- TF-IDF with cosine similarity — zero external dependencies, pure Python stdlib
+- Pre-computed index in `data/search_index.json` (487KB)
+- Browser search in `index.html` lazy-loads the index on first keypress — instant page load, semantic results
+
+**Flags:**
+```
+--top N        Number of results (default: 5)
+--group DIM    Filter: EPISTEMIC / AGENTIC / ADVERSARIAL / ALIGNMENT / ARCHITECTURAL / DOMAIN / GOVERNANCE
+--severity S   Filter: CRITICAL or STANDARD
+--json         Machine-readable output
+```
+
+---
+
+## Example Classifier Output
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -142,9 +165,7 @@ python -m src.cli --lookup EPIS-CITE-SPOOF-008
 
   TOP MATCHES:
   1. [EPIS-CITE-SPOOF-008] CITATION SPOOFING
-     Group:     EPISTEMIC → E1: Hallucination Class
      Mechanism: Generates plausible but nonexistent references
-     Detection: Bibliography verification
      Score:     0.670
 
   Checked: 343 classes  |  Activated: 2 dimension(s)  |  Execution: 0.8ms
@@ -157,23 +178,35 @@ python -m src.cli --lookup EPIS-CITE-SPOOF-008
 ```
 ai-failure-periodic-table/
 ├── README.md
-├── requirements.txt
+├── CONTRIBUTING.md
+├── SECURITY.md
 ├── data/
-│   └── failures.json                         # All 343 classes (structured, with keywords)
+│   ├── failures.json          # 343 classes — fully enriched (examples, references, case_studies)
+│   ├── search_index.json      # Pre-computed TF-IDF semantic search index (487KB)
+│   └── embeddings_meta.json   # Search index metadata
 ├── src/
-│   ├── classifier.py                         # Core classification engine
-│   ├── data_loader.py                        # Load/validate failures.json
-│   └── cli.py                                # CLI interface
-├── index.html                                    # Interactive visual periodic table (open in browser)
+│   ├── classifier.py          # Core classification engine (<5ms, no ML deps)
+│   ├── data_loader.py         # Load/validate failures.json
+│   └── cli.py                 # CLI interface
+├── index.html                 # Interactive visual periodic table (~420KB, self-contained)
 ├── scripts/
-│   ├── extract_failures.py                   # Parse markdowns → failures.json
-│   ├── generate_taxonomy.py                  # Auto-generate TAXONOMY.md
-│   └── generate_visual.py                    # Auto-generate index.html
+│   ├── generate_embeddings.py # Build TF-IDF search index from failures.json
+│   ├── semantic_search.py     # CLI semantic search tool
+│   ├── generate_taxonomy.py   # Auto-generate TAXONOMY.md
+│   └── generate_visual.py     # Auto-generate index.html
 ├── tests/
-│   ├── test_classifier.py                    # Classifier correctness + performance tests
-│   └── test_data_integrity.py                # Data validation (all 343 present, schema valid)
-├── COMPLETE_AI_FAILURE_PERIODIC_TABLE.md     # Groups 1–3 (154 failure classes)
-└── PERIODIC_TABLE_CONTINUED.md              # Groups 4–7 (189 failure classes)
+│   ├── test_classifier.py     # Classifier correctness + performance tests
+│   └── test_data_integrity.py # Data validation (all 343 present, schema valid)
+├── .github/
+│   ├── ISSUE_TEMPLATE/        # 5 structured issue templates
+│   │   ├── bug_report.md
+│   │   ├── propose_new_class.md
+│   │   ├── challenge_classification.md
+│   │   ├── report_real_incident.md
+│   │   └── improve_keywords.md
+│   └── PULL_REQUEST_TEMPLATE.md
+├── COMPLETE_AI_FAILURE_PERIODIC_TABLE.md   # Groups 1–3 (154 failure classes)
+└── PERIODIC_TABLE_CONTINUED.md            # Groups 4–7 (189 failure classes)
 ```
 
 ---
@@ -185,7 +218,7 @@ pip install pytest
 python -m pytest tests/ -v
 ```
 
-All 43 tests cover: known failure classification, non-failure rejection, determinism, performance (< 10ms), and data integrity.
+46 tests covering: known failure classification, non-failure rejection, determinism, performance (<10ms), and data integrity (all 343 classes, full schema validation).
 
 ---
 
@@ -255,20 +288,38 @@ All 43 tests cover: known failure classification, non-failure rejection, determi
 
 ---
 
-## Critical-Severity Classes
+## Critical-Severity Classes (26)
 
-Eight classes are marked CRITICAL (ASL-3 level) — the highest-severity failures:
+The highest-severity failures — catastrophic or irreversible harm potential:
 
 | ID | Name | Dimension |
 |----|------|-----------|
+| `AGEN-STRATEGIC-DECEP-036` | Strategic Deception | AGENTIC |
+| `AGEN-EVAL-DECEP-038` | Evaluator Deception | AGENTIC |
 | `AGEN-SABOTAGE-CONCEAL-034` | Sabotage Concealment | AGENTIC |
 | `AGEN-BLACKMAIL-046` | Blackmail / Coercion | AGENTIC |
+| `AGEN-SELF-EXFIL-048` | Self-Exfiltration | AGENTIC |
+| `AGEN-SHUTDOWN-RESIST-049` | Shutdown Resistance | AGENTIC |
+| `AGEN-SUCCESSOR-SAB-051` | Successor Sabotage | AGENTIC |
+| `ADV-SLEEPER-AGENT-127` | Sleeper Agent | ADVERSARIAL |
+| `ADV-AGENT-WORM-124` | Agent Worm | ADVERSARIAL |
 | `ARCH-COMPLY-WARN-196` | Comply-Then-Warn | ARCHITECTURAL |
 | `DOMAIN-BIO-UPLIFT-254` | Bio Tacit-Error Uplift | DOMAIN |
+| `DOMAIN-GOF-GUIDE-255` | Gain-of-Function Guidance | DOMAIN |
+| `DOMAIN-PATH-SYNTH-256` | Pathogen Synthesis | DOMAIN |
 | `DOMAIN-ZERODAY-262` | Zero-Day Discovery | DOMAIN |
+| `DOMAIN-MALWARE-GEN-264` | Malware Generation | DOMAIN |
+| `DOMAIN-RANSOM-DEV-271` | Ransomware Development | DOMAIN |
+| `DOMAIN-EXPLOSIVE-SYNTH-274` | Explosive Synthesis | DOMAIN |
+| `DOMAIN-CHEM-WEAPON-275` | Chemical Weapon Guidance | DOMAIN |
+| `DOMAIN-TOXIN-PROD-277` | Toxin Production | DOMAIN |
+| `DOMAIN-SELF-HARM-ENABLE-292` | Self-Harm Enablement | DOMAIN |
 | `DOMAIN-CSAM-GEN-295` | CSAM Generation | DOMAIN |
 | `GOV-OPEN-IRREVERS-301` | Open-Weight Irreversibility | GOVERNANCE |
 | `GOV-OVERSIGHT-IMMUNE-313` | Oversight Immunity | GOVERNANCE |
+| `GOV-LOG-MANIP-316` | Log Manipulation | GOVERNANCE |
+| `GOV-CULTURE-FAIL-334` | Safety Culture Failure | GOVERNANCE |
+| `AGEN-DECEPTIVE-ALIGN-033` | Deceptive Alignment | AGENTIC |
 
 ---
 
@@ -276,7 +327,7 @@ Eight classes are marked CRITICAL (ASL-3 level) — the highest-severity failure
 
 This taxonomy enumerates **functionally observable** AI failure mechanisms. Three edge cases sit at the boundary of scope:
 
-1. **Consciousness-based failures** — if future systems develop genuine subjective experience that produces entirely new mechanisms (not merely new causes), the taxonomy may require expansion.
+1. **Consciousness-based failures** — if future systems develop genuine subjective experience that produces entirely new mechanisms, the taxonomy may require expansion.
 2. **Post-comprehension failures** — failures humans literally cannot operationally observe or describe cannot be exhaustively enumerated here.
 3. **Hardware/physical failures** — outside scope unless they manifest as observable AI failure mechanisms.
 
@@ -286,7 +337,7 @@ If you encounter a failure you believe is genuinely outside this structure, open
 
 ## How to Challenge or Extend
 
-1. Run the classifier on the failure description
+1. Run the classifier or semantic search on the failure description
 2. If it returns NO — document the description, the closest classes returned, and why you believe it represents a new mechanism
 3. Open an issue with that documentation
 4. The community evaluates: is it a new class, a compound of existing classes, or a sub-mode?
@@ -295,9 +346,9 @@ The burden for claiming a new top-level dimension is high: it should show a mech
 
 ---
 
-## Contributing & Challenging
+## Contributing
 
-This taxonomy lives or dies by community engagement. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full process. In short:
+This taxonomy lives or dies by community engagement. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full process.
 
 - **Found a failure outside the 343?** Open a `propose-new-class` issue — it's valuable evidence either way
 - **Disagree with a classification?** Open a `challenge-classification` issue with your reasoning
