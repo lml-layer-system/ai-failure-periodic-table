@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "timestamp": "2026-04-10T00:00:00Z",
   "total_classes": 343,
   "groups": [
@@ -13619,10 +13619,10 @@
       "mitigation": "Conflict of interest mitigation with independent safety review requirement"
     }
   ],
-  "schema_version": "1.1.0",
-  "schema_notes": "v1.1.0 adds case_studies, references, and examples fields. Populated for classes with documented incidents; empty arrays available for community contribution.",
+  "schema_version": "1.2.0",
+  "schema_notes": "v1.2.0 adds mitigation field. Every class now has the structural mechanism that stops it at its core, named precisely.",
   "metadata": {
-    "version": "1.1.0",
+    "version": "1.2.0",
     "last_updated": "2026-04-10",
     "total_classes": 343,
     "dimensions": 7,
@@ -13634,7 +13634,8 @@
         "mechanism",
         "examples",
         "references",
-        "case_studies"
+        "case_studies",
+        "mitigation"
       ],
       "case_study_fields": [
         "title",

@@ -127,9 +127,15 @@ class TestDataIntegrity:
 
     def test_schema_version_present(self):
         data = load_data()
-        assert data.get("schema_version") == "1.1.0", (
-            f"Expected schema_version 1.1.0, got {data.get('schema_version')}"
+        assert data.get("schema_version") == "1.2.0", (
+            f"Expected schema_version 1.2.0, got {data.get('schema_version')}"
         )
+
+    def test_all_classes_have_mitigation(self):
+        """Every failure class must have a non-empty mitigation field."""
+        failures = get_failures()
+        missing = [f["id"] for f in failures if not f.get("mitigation")]
+        assert not missing, f"{len(missing)} classes missing mitigation field: {missing[:5]}"
 
     def test_critical_failures_present(self):
         """Spot-check that known CRITICAL failures are marked correctly."""

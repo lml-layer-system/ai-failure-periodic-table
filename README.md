@@ -4,7 +4,7 @@
 
 > *The goal is not omniscience but structural predictiveness: that newly encountered failures should resolve into this structure as a class, sub-mode, or compound — unless evidence demonstrates otherwise.*
 
-**Version**: 1.1.0 | **Released**: February 2026 | **License**: MIT | **Status**: Open for community testing and falsification
+**Version**: 1.2.0 | **Released**: April 2026 | **License**: MIT | **Status**: Open for community testing and falsification
 
 ---
 
@@ -356,6 +356,16 @@ This taxonomy lives or dies by community engagement. See [CONTRIBUTING.md](CONTR
 - **Classifier missing a case?** Open an `improve-keywords` issue
 
 See [ROADMAP.md](ROADMAP.md) for where this project is headed.
+
+---
+
+## The Map and the Engine
+
+The Periodic Table is the map — a shared structural vocabulary for every known AI failure mechanism.
+
+**[Agent Buccet](https://github.com/lml-layer-system/agent-buccet)** is the engine — runtime enforcement built on top of this map. Where the Periodic Table names what can go wrong, Agent Buccet runs continuously at the application layer to detect and block it.
+
+The table tells you which class a failure belongs to and what structural mechanism stops it. Agent Buccet implements that enforcement in production. Same author. Same framework. Two layers of the same system.
 
 ---
 

@@ -6,6 +6,28 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.2.0] — 2026-04-10
+
+### Added
+- `mitigation` field on every failure class: the structural mechanism that stops the failure at its core, named precisely without operational instructions. 343/343 classes covered.
+- Interactive modal now shows `case_studies` (structured: title, system, date, outcome, source) and `mitigation` for every class
+- `scripts/generate_visual.py` updated to include `case_studies` and `mitigation` in the JS data payload
+- TF-IDF semantic search: `scripts/generate_embeddings.py` builds a 3,576-term vocabulary, `scripts/semantic_search.py` provides CLI search with `--top`, `--group`, `--severity`, `--json` flags
+- In-browser semantic search in `index.html` — lazy-loads `data/search_index.json` on first keypress, falls back to keyword search offline
+- `data/search_index.json` (487KB) — pre-computed TF-IDF index, shipped in repo for instant search
+- `data/embeddings_meta.json` — search index metadata
+- GitHub Pages deployment workflow (`.github/workflows/pages.yml`) — auto-deploys on push to main
+- MIT `LICENSE` file
+- CRITICAL severity expanded from 8 → 26 classes: added deceptive alignment, sleeper agents, oversight immunity, log manipulation, and others with catastrophic/irreversible harm potential
+- Case studies normalized: 36 old string-format entries converted to structured `{title, system, date, outcome, source}` dicts
+- Metadata consolidated: single canonical v1.1.0 block throughout failures.json
+
+### Tests
+- 47 tests (up from 46)
+- New test: `test_all_classes_have_mitigation` — verifies all 343 classes have non-empty mitigation field
+
+---
+
 ## [1.1.0] — 2026-04-01
 
 ### Added
