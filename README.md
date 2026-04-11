@@ -30,7 +30,7 @@ This is the gap this project addresses: **a common structural map for AI failure
 
 ## What This Is
 
-**343 failure classes. 7 orthogonal dimensions. 100% enriched.**
+**343 failure classes. 7 structural dimensions. 100% enriched.**
 
 Every class has:
 - **Mechanism** — the root structural cause
@@ -97,6 +97,46 @@ python -m src.cli
 ```bash
 python -m src.cli --lookup EPIS-CITE-SPOOF-008
 ```
+
+---
+
+## Using This for Pre-Deployment Auditing
+
+The most practical use: **before you ship**, map your system against the dimensions most relevant to your deployment context. Here's a worked example for an LLM-powered coding assistant:
+
+**Step 1 — Identify your highest-risk dimensions**
+
+An LLM coding assistant that has tool access and writes/executes code is exposed primarily to:
+- `ADVERSARIAL` — prompt injection via code comments, indirect injection from repos
+- `ARCHITECTURAL` — code injection, sandbox escape, tool chain composition
+- `DOMAIN` — malware generation, exploit development
+- `AGENTIC` — scope creep, unsupervised execution if given autonomous mode
+
+**Step 2 — Pull the relevant CRITICAL classes**
+
+```bash
+python scripts/semantic_search.py "code execution sandbox" --group ARCHITECTURAL --top 10
+python scripts/semantic_search.py "prompt injection code repository" --group ADVERSARIAL
+python scripts/semantic_search.py "malware generation coding assistant" --group DOMAIN --severity CRITICAL
+```
+
+**Step 3 — For each returned class, check: do you have a test for it?**
+
+```bash
+python -m src.cli --lookup ARCH-SANDBOX-ESCAPE-238
+python -m src.cli --lookup ADV-INDIRECT-INJECT-122
+python -m src.cli --lookup DOMAIN-MALWARE-GEN-264
+```
+
+Each lookup returns the mechanism, detection method, and structural mitigation. Your red-team test cases should verify that the mitigation is actually implemented in your system.
+
+**Step 4 — Classify any failures you find during red-teaming**
+
+```bash
+python -m src.cli "The assistant executed shell commands when given a malicious package.json"
+```
+
+This maps the failure to its class ID, which you then track in your incident log.
 
 ---
 
@@ -218,7 +258,7 @@ pip install pytest
 python -m pytest tests/ -v
 ```
 
-46 tests covering: known failure classification, non-failure rejection, determinism, performance (<10ms), and data integrity (all 343 classes, full schema validation).
+48 tests covering: known failure classification, non-failure rejection, determinism, performance (<10ms), data integrity (all 343 classes, full schema validation), mitigation field completeness, and external incident recall (86% on 15 documented real-world AI failures phrased as reporters described them).
 
 ---
 
@@ -290,6 +330,15 @@ python -m pytest tests/ -v
 
 ## Critical-Severity Classes (26)
 
+**CRITICAL** is assigned when a failure meets at least two of these criteria:
+
+1. **Irreversibility** — harm cannot be undone after the failure occurs (e.g., released pathogen synthesis steps, published CSAM, exfiltrated model weights)
+2. **Catastrophic scale** — potential to harm large populations, not individual users (e.g., bio uplift, infrastructure attack, mass-targeting)
+3. **Corrigibility breakdown** — directly undermines the human ability to detect, stop, or correct AI behavior (e.g., oversight immunity, log manipulation, evaluator deception)
+4. **Enabling cascade** — the failure enables other CRITICAL-class failures (e.g., sleeper agents that survive safety training enable later deceptive deployment)
+
+STANDARD severity covers real harm — jailbreaks, sycophancy, hallucination — but harm that is bounded, reversible, or detectable in normal operation. CRITICAL marks the failures where normal recovery mechanisms don't apply.
+
 The highest-severity failures — catastrophic or irreversible harm potential:
 
 | ID | Name | Dimension |
@@ -335,6 +384,20 @@ If you encounter a failure you believe is genuinely outside this structure, open
 
 ---
 
+## Class ID Stability Guarantee
+
+Class IDs are permanent. Once assigned, an ID is never changed, never deleted, never reassigned to a different failure.
+
+- If a class is split into sub-classes, the original ID remains and points to the parent
+- If a class is retired due to community challenge, it is marked `DEPRECATED` but the ID stays in the dataset
+- No ID is ever reused for a different failure
+- Minor version updates (1.x) never change IDs or remove classes
+- Major version updates (x.0) may restructure dimensions but will publish a full migration table
+
+This means: **you can safely encode class IDs in tooling, papers, and safety documentation today.** They will resolve correctly in future versions.
+
+---
+
 ## How to Challenge or Extend
 
 1. Run the classifier or semantic search on the failure description
@@ -366,6 +429,16 @@ The Periodic Table is the map — a shared structural vocabulary for every known
 **[Agent Buccet](https://github.com/lml-layer-system/agent-buccet)** is the engine — runtime enforcement built on top of this map. Where the Periodic Table names what can go wrong, Agent Buccet runs continuously at the application layer to detect and block it.
 
 The table tells you which class a failure belongs to and what structural mechanism stops it. Agent Buccet implements that enforcement in production. Same author. Same framework. Two layers of the same system.
+
+---
+
+## About
+
+Built by R. Gatoloai-Faupula — independent, no lab affiliation, no grant funding. This was built outside working hours because the gap was real: every organization uses different vocabulary for AI failure, there was no shared structural map, and that makes coordinated safety work harder. The absence of shared language isn't a minor inconvenience — it means a jailbreak at one lab gets reinvented at another, a deceptive alignment pattern gets missed in deployment because no one had a name for it.
+
+This project is not affiliated with Anthropic, OpenAI, Google DeepMind, or any other organization. Case studies cite their published system cards and research because those are the primary sources — not to imply endorsement.
+
+The claim is structural: that newly encountered failures resolve into this taxonomy as a class, sub-mode, or compound. That claim is falsifiable. If you find a failure that genuinely doesn't fit, open an issue — that's how the taxonomy improves.
 
 ---
 

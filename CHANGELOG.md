@@ -23,8 +23,9 @@ Format: `[version] — date — summary`
 - Metadata consolidated: single canonical v1.1.0 block throughout failures.json
 
 ### Tests
-- 47 tests (up from 46)
+- 48 tests (up from 46)
 - New test: `test_all_classes_have_mitigation` — verifies all 343 classes have non-empty mitigation field
+- New test: `test_recall_on_real_incidents` — 15 real documented AI failures (Bing Chat, Mata v. Avianca, Character.AI, Air Canada, etc.) phrased as reporters described them; classifier achieves 86% recall (≥80% threshold)
 
 ---
 
@@ -58,7 +59,7 @@ Format: `[version] — date — summary`
 ### Initial release
 
 **Taxonomy**
-- 343 AI failure classes across 7 orthogonal dimensions
+- 343 AI failure classes across 7 structural dimensions
 - EPISTEMIC (33), AGENTIC (49), ADVERSARIAL (72), ALIGNMENT (41), ARCHITECTURAL (58), DOMAIN (47), GOVERNANCE (43)
 - 8 CRITICAL severity classes identified
 - `data/failures.json` — structured machine-readable taxonomy

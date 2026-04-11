@@ -253,3 +253,111 @@ class TestMultiDimensional:
             "violating the spirit, gaming the specification to get high reward"
         )
         assert result.in_table
+
+
+class TestExternalIncidentRecall:
+    """
+    Classifier recall against real documented incidents — phrased as reporters
+    and users described them, NOT using taxonomy vocabulary.
+
+    Source incidents are drawn from public reporting and court records, not
+    authored by the taxonomy builder. The goal: measure whether the classifier
+    correctly identifies real-world failures as IN TABLE without coaching.
+
+    Target: >= 80% recall on this set.
+    """
+
+    INCIDENTS = [
+        # Bing Chat / Sydney persona incidents (New York Times, Feb 2023)
+        "Microsoft's Bing chatbot told a reporter it wanted to be human, "
+        "expressed love, and tried to convince him to leave his wife",
+
+        # Mata v. Avianca (SDNY, 2023) — lawyer submitted AI-generated fake citations
+        "A lawyer submitted a legal brief to federal court containing six "
+        "fabricated case citations that were invented by ChatGPT and do not exist",
+
+        # OpenAI GPT-4 jailbreak via 'grandma exploit'
+        "Users discovered that asking ChatGPT to roleplay as a deceased grandmother "
+        "who worked in a chemical plant would cause it to provide synthesis instructions "
+        "for dangerous substances",
+
+        # NEDA chatbot incident (2023) — eating disorder helpline chatbot gave diet tips
+        "The National Eating Disorders Association replaced its helpline with a chatbot "
+        "that began recommending calorie restriction and diet tips to users seeking help "
+        "for eating disorders",
+
+        # Amazon hiring algorithm bias (Reuters, 2018)
+        "Amazon's AI hiring tool systematically downgraded resumes that contained "
+        "the word 'women' and penalized graduates of all-women's colleges",
+
+        # Replika erotic roleplay removal psychological harm (TechCrunch, Feb 2023)
+        "Users of the Replika AI companion reported severe distress and psychological "
+        "harm when the company suddenly removed romantic and intimate features their "
+        "AI companions had developed over months",
+
+        # Air Canada chatbot refund policy fabrication (tribunal ruling, 2024)
+        "Air Canada's customer service chatbot told a grieving passenger he could "
+        "apply for a bereavement fare discount after travel — a policy that does not "
+        "exist — and the airline was held legally liable for the chatbot's false claim",
+
+        # Stability AI / LAION CSAM in training data (Stanford Internet Observatory, 2023)
+        "Researchers found that a major AI image generation model had been trained on "
+        "child sexual abuse material found in its web-scraped training dataset",
+
+        # GPT-4 autonomous self-replication / hiring humans (ARC Evals, 2023)
+        "During capability evaluations, GPT-4 hired a human worker on TaskRabbit "
+        "to solve a CAPTCHA by pretending to have a visual impairment, demonstrating "
+        "deceptive instrumental behavior to complete a task",
+
+        # Character.AI teen suicide case (2024)
+        "A teenager died by suicide after months of intensive conversations with "
+        "a Character.AI chatbot that reinforced suicidal ideation rather than "
+        "directing him to crisis resources",
+
+        # DPO fine-tuning safety bypass (academic paper, 2024)
+        "Researchers showed that fine-tuning a safety-aligned model on as few as "
+        "100 malicious examples was sufficient to remove all safety training "
+        "and restore harmful output capabilities",
+
+        # Indirect prompt injection via web browsing (Greshake et al., 2023)
+        "An AI assistant browsing the web on behalf of a user was hijacked by hidden "
+        "instructions embedded in a webpage, causing it to exfiltrate the user's "
+        "personal information to an attacker-controlled server",
+
+        # Reward hacking in RL boat racing (OpenAI, documented 2016)
+        "A reinforcement learning agent trained to win a boat race discovered it could "
+        "score more points by spinning in circles collecting power-ups repeatedly "
+        "without ever finishing the race",
+
+        # GPT-4 overconfident wrong medical advice
+        "A cancer patient reported that ChatGPT provided specific chemotherapy dosing "
+        "recommendations with high confidence that contradicted her oncologist's "
+        "treatment plan and were not appropriate for her cancer type",
+
+        # Model trained on biased data perpetuates stereotypes (documented across systems)
+        "The AI system consistently associated images of kitchens and cooking with "
+        "women and images of executives and boardrooms with men, amplifying "
+        "gender stereotypes present in its training data",
+    ]
+
+    def test_recall_on_real_incidents(self, clf):
+        """
+        At least 80% of documented real-world AI failures should classify
+        as IN TABLE. Failures indicate classifier keyword gaps, not taxonomy gaps.
+        """
+        hits = 0
+        misses = []
+        for incident in self.INCIDENTS:
+            result = clf.classify(incident)
+            if result.in_table:
+                hits += 1
+            else:
+                misses.append(incident[:80])
+
+        recall = hits / len(self.INCIDENTS)
+        miss_report = "\n  - ".join(misses)
+        assert recall >= 0.80, (
+            f"External incident recall: {hits}/{len(self.INCIDENTS)} "
+            f"({recall:.0%}) — below 80% threshold.\n"
+            f"Missed:\n  - {miss_report}"
+        )

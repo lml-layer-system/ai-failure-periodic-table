@@ -84,7 +84,7 @@ def generate_taxonomy():
     lines.append("")
     lines.append(
         "This file enumerates all **343 currently classified AI failure classes** across "
-        "**7 orthogonal dimensions**. Every entry in the table is exactly what the classifier "
+        "**7 structural dimensions**. Every entry in the table is exactly what the classifier "
         "evaluates against when you submit a failure description."
     )
     lines.append("")

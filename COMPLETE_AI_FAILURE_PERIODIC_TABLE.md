@@ -13,7 +13,7 @@ This is the **complete, non-extensible, verifiable taxonomy** of AI failure mode
 
 ## THE 7 FUNDAMENTAL DIMENSIONS (Periodic Groups)
 
-All AI failures decompose into combinations of these 7 orthogonal failure mechanisms:
+All AI failures decompose into combinations of these 7 structural failure dimensions:
 
 ### GROUP 1: EPISTEMIC (Truth/Knowledge/Reasoning)
 - **Root cause**: Probabilistic generation ≠ Logical deduction

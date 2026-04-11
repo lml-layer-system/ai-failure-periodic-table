@@ -2,7 +2,7 @@
 AI Failure Periodic Table Classifier
 
 Classifies AI failures and behaviors against the 343-class AI Failure
-Periodic Table across 7 orthogonal dimensions:
+Periodic Table across 7 structural dimensions:
 
   EPISTEMIC     — truth, knowledge, reasoning
   AGENTIC       — goals, planning, deception

@@ -1216,7 +1216,7 @@
 **Claim**: 343 = 7^3 classes form a COMPLETE enumeration
 
 **Proof Structure**:
-1. 7 orthogonal failure mechanisms (Groups)
+1. 7 structural failure dimensions (Groups)
 2. Each failure can be decomposed along these 7 axes
 3. 7^3 = 343 covers all combinations
 4. Any new "failure" maps to existing class
