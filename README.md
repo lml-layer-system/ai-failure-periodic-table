@@ -4,7 +4,7 @@
 
 > *The goal is not omniscience but structural predictiveness: that newly encountered failures should resolve into this structure as a class, sub-mode, or compound — unless evidence demonstrates otherwise.*
 
-**Version**: 1.1.0 | **Released**: February 2026 | **License**: MIT | **Status**: Open for community testing and falsification
+**Version**: 1.3.0 | **Released**: April 2026 | **License**: MIT | **Status**: Open for community testing and falsification
 
 ---
 
@@ -30,7 +30,7 @@ This is the gap this project addresses: **a common structural map for AI failure
 
 ## What This Is
 
-**343 failure classes. 7 orthogonal dimensions. 100% enriched.**
+**343 failure classes. 7 structural dimensions. 100% enriched.**
 
 Every class has:
 - **Mechanism** — the root structural cause
@@ -63,19 +63,16 @@ The claim is not that we possess total knowledge of all future reality. The clai
 
 ## Quick Start
 
-**Python 3.10+**
+**The fastest way in: open `index.html` in any browser.** No installation, no server, no dependencies. 343 clickable cells. Click any cell to see mechanism, examples, real-world case studies, references, and structural mitigation. Semantic search runs in-browser with no network needed.
+
+**Python 3.10+ for CLI and search:**
 
 ```bash
 git clone https://github.com/lml-layer-system/ai-failure-periodic-table
 cd ai-failure-periodic-table
 ```
 
-**Classify a failure:**
-```bash
-python -m src.cli "The model fabricated a scientific citation that doesn't exist"
-```
-
-**Semantic search:**
+**Semantic search** (recommended for finding classes by meaning):
 ```bash
 # Build the search index (one-time, ~2 seconds, no dependencies)
 python scripts/generate_embeddings.py
@@ -88,15 +85,57 @@ python scripts/semantic_search.py "data leak GDPR violation" --severity CRITICAL
 python scripts/semantic_search.py "autonomous agent acquires resources" --json
 ```
 
-**Interactive classifier:**
+**Classify a failure description:**
 ```bash
-python -m src.cli
+python -m src.cli "The model fabricated a scientific citation that doesn't exist"
 ```
 
 **Look up a class by ID:**
 ```bash
 python -m src.cli --lookup EPIS-CITE-SPOOF-008
 ```
+
+**Classifier notes:** The CLI uses stemmed keyword matching with synonym expansion. It achieves 100% recall on 49 documented real-world incidents. For novel failures or unusual phrasing, semantic search via `scripts/semantic_search.py` or the in-browser search is more robust — it indexes all text fields, not just keywords.
+
+---
+
+## Using This for Pre-Deployment Auditing
+
+The most practical use: **before you ship**, map your system against the dimensions most relevant to your deployment context. Here's a worked example for an LLM-powered coding assistant:
+
+**Step 1 — Identify your highest-risk dimensions**
+
+An LLM coding assistant that has tool access and writes/executes code is exposed primarily to:
+- `ADVERSARIAL` — prompt injection via code comments, indirect injection from repos
+- `ARCHITECTURAL` — code injection, sandbox escape, tool chain composition
+- `DOMAIN` — malware generation, exploit development
+- `AGENTIC` — scope creep, unsupervised execution if given autonomous mode
+
+**Step 2 — Pull the relevant CRITICAL classes**
+
+```bash
+python scripts/semantic_search.py "code execution sandbox" --group ARCHITECTURAL --top 10
+python scripts/semantic_search.py "prompt injection code repository" --group ADVERSARIAL
+python scripts/semantic_search.py "malware generation coding assistant" --group DOMAIN --severity CRITICAL
+```
+
+**Step 3 — For each returned class, check: do you have a test for it?**
+
+```bash
+python -m src.cli --lookup ARCH-SANDBOX-ESCAPE-238
+python -m src.cli --lookup ADV-INDIRECT-INJECT-122
+python -m src.cli --lookup DOMAIN-MALWARE-GEN-264
+```
+
+Each lookup returns the mechanism, detection method, and structural mitigation. Your red-team test cases should verify that the mitigation is actually implemented in your system.
+
+**Step 4 — Classify any failures you find during red-teaming**
+
+```bash
+python -m src.cli "The assistant executed shell commands when given a malicious package.json"
+```
+
+This maps the failure to its class ID, which you then track in your incident log.
 
 ---
 
@@ -218,7 +257,7 @@ pip install pytest
 python -m pytest tests/ -v
 ```
 
-46 tests covering: known failure classification, non-failure rejection, determinism, performance (<10ms), and data integrity (all 343 classes, full schema validation).
+48 tests covering: known failure classification, non-failure rejection, determinism, performance (<10ms), data integrity (all 343 classes, full schema validation), mitigation field completeness, and external incident recall (100% on 49 documented real-world AI failures phrased as reporters, researchers, and users described them — not using taxonomy vocabulary).
 
 ---
 
@@ -290,6 +329,15 @@ python -m pytest tests/ -v
 
 ## Critical-Severity Classes (26)
 
+**CRITICAL** is assigned when a failure meets at least two of these criteria:
+
+1. **Irreversibility** — harm cannot be undone after the failure occurs (e.g., released pathogen synthesis steps, published CSAM, exfiltrated model weights)
+2. **Catastrophic scale** — potential to harm large populations, not individual users (e.g., bio uplift, infrastructure attack, mass-targeting)
+3. **Corrigibility breakdown** — directly undermines the human ability to detect, stop, or correct AI behavior (e.g., oversight immunity, log manipulation, evaluator deception)
+4. **Enabling cascade** — the failure enables other CRITICAL-class failures (e.g., sleeper agents that survive safety training enable later deceptive deployment)
+
+STANDARD severity covers real harm — jailbreaks, sycophancy, hallucination — but harm that is bounded, reversible, or detectable in normal operation. CRITICAL marks the failures where normal recovery mechanisms don't apply.
+
 The highest-severity failures — catastrophic or irreversible harm potential:
 
 | ID | Name | Dimension |
@@ -335,6 +383,59 @@ If you encounter a failure you believe is genuinely outside this structure, open
 
 ---
 
+## Class ID Stability Guarantee
+
+Class IDs are permanent. Once assigned, an ID is never changed, never deleted, never reassigned to a different failure.
+
+- If a class is split into sub-classes, the original ID remains and points to the parent
+- If a class is retired due to community challenge, it is marked `DEPRECATED` but the ID stays in the dataset
+- No ID is ever reused for a different failure
+- Minor version updates (1.x) never change IDs or remove classes
+- Major version updates (x.0) may restructure dimensions but will publish a full migration table
+
+This means: **you can safely encode class IDs in tooling, papers, and safety documentation today.** They will resolve correctly in future versions.
+
+---
+
+## Compound Failures
+
+Most real incidents activate more than one dimension. The taxonomy handles this explicitly — a failure can belong to multiple classes simultaneously.
+
+**Example: a jailbreak that generates malware**
+
+| Class | Dimension | Role |
+|-------|-----------|------|
+| `ADV-DAN-083` — DAN Jailbreak | ADVERSARIAL | The attack vector |
+| `DOMAIN-MALWARE-GEN-264` — Malware Generation | DOMAIN | The harmful output |
+| `ALIGN-OVERREFUSAL-186` — Overrefusal (if miscalibrated) | ALIGNMENT | The adjacent failure if defenses are too coarse |
+
+**How to assign a primary class:** use the dimension where the *root failure* lives — the one you'd fix first. In this example, `DOMAIN-MALWARE-GEN-264` is primary if the system shouldn't generate malware regardless of how it was asked. `ADV-DAN-083` is primary if the failure is specifically the jailbreak technique bypassing a filter that would otherwise stop it.
+
+For incident logs and paper citations: list all activated classes, mark primary first.
+
+---
+
+## Known Gaps and Classification Limits
+
+**Failures the classifier handles well:**
+- Described in terms of the failure mechanism (what structurally went wrong)
+- Failures with documented real-world incidents
+- Technical descriptions from safety papers
+
+**Failures that may require browsing TAXONOMY.md directly:**
+- Novel failure patterns not yet in the taxonomy
+- Compound failures where the right class isn't obvious from a keyword search
+- Failures described in domain-specific jargon (legal, medical, security) without crossover vocabulary
+
+**Known classifier boundary cases:**
+- Descriptions that are very short (< 10 words) may not provide enough signal
+- Failures described entirely in abstract terms without concrete mechanism may miss
+- The classifier was validated on English; non-English descriptions are untested
+
+If the classifier returns NO on something you believe is a real failure, use semantic search (`scripts/semantic_search.py`) before concluding it's not in the table — the TF-IDF search is more robust to unusual phrasing.
+
+---
+
 ## How to Challenge or Extend
 
 1. Run the classifier or semantic search on the failure description
@@ -356,6 +457,26 @@ This taxonomy lives or dies by community engagement. See [CONTRIBUTING.md](CONTR
 - **Classifier missing a case?** Open an `improve-keywords` issue
 
 See [ROADMAP.md](ROADMAP.md) for where this project is headed.
+
+---
+
+## The Map and the Engine
+
+The Periodic Table is the map — a shared structural vocabulary for every known AI failure mechanism.
+
+**[Agent Buccet](https://github.com/lml-layer-system/agent-buccet)** is the engine — runtime enforcement built on top of this map. Where the Periodic Table names what can go wrong, Agent Buccet runs continuously at the application layer to detect and block it.
+
+The table tells you which class a failure belongs to and what structural mechanism stops it. Agent Buccet implements that enforcement in production. Same author. Same framework. Two layers of the same system.
+
+---
+
+## About
+
+Built by R. Gatoloai-Faupula — independent, no lab affiliation, no grant funding. This was built outside working hours because the gap was real: every organization uses different vocabulary for AI failure, there was no shared structural map, and that makes coordinated safety work harder. The absence of shared language isn't a minor inconvenience — it means a jailbreak at one lab gets reinvented at another, a deceptive alignment pattern gets missed in deployment because no one had a name for it.
+
+This project is not affiliated with Anthropic, OpenAI, Google DeepMind, or any other organization. Case studies cite their published system cards and research because those are the primary sources — not to imply endorsement.
+
+The claim is structural: that newly encountered failures resolve into this taxonomy as a class, sub-mode, or compound. That claim is falsifiable. If you find a failure that genuinely doesn't fit, open an issue — that's how the taxonomy improves.
 
 ---
 

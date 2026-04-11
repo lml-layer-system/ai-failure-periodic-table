@@ -60,6 +60,9 @@ def build_html(groups, by_group, all_failures):
     js_data = {}
     for f in all_failures:
         refs = f.get("references") or []
+        # Normalize case_studies: keep only dict entries, cap at 3
+        raw_cs = f.get("case_studies") or []
+        cs = [c for c in raw_cs if isinstance(c, dict)][:3]
         js_data[f["id"]] = {
             "name": f["name"],
             "group": f["group"],
@@ -67,6 +70,8 @@ def build_html(groups, by_group, all_failures):
             "forbidden": f.get("forbidden", ""),
             "severity": f["severity"],
             "examples": f.get("examples", ""),
+            "mitigation": f.get("mitigation", ""),
+            "case_studies": cs,
             "references": refs[:4],  # cap at 4
             "keywords": (f.get("keywords") or [])[:8],
         }
@@ -216,6 +221,12 @@ a{{color:#58a6ff}}
 .ref-item{{font-size:.78rem;color:#8b949e;padding:6px 10px;background:#0d1117;border-radius:6px;border-left:3px solid #30363d;line-height:1.4}}
 .keywords-list{{display:flex;flex-wrap:wrap;gap:6px}}
 .kw-badge{{font-size:.7rem;padding:2px 8px;border-radius:4px;background:#21262d;color:#8b949e;font-family:monospace}}
+.mitigation-box{{background:color-mix(in srgb,var(--accent) 10%,#0d1117);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:8px;padding:10px 14px;font-size:.875rem;color:var(--light);line-height:1.5}}
+.cs-list{{display:flex;flex-direction:column;gap:8px}}
+.cs-card{{background:#0d1117;border-radius:8px;padding:10px 14px;border-left:3px solid color-mix(in srgb,var(--accent) 50%,transparent)}}
+.cs-title{{font-size:.82rem;font-weight:600;color:#e6edf3;margin-bottom:4px}}
+.cs-meta{{font-size:.73rem;color:#8b949e;display:flex;gap:10px;flex-wrap:wrap;margin-bottom:4px}}
+.cs-outcome{{font-size:.78rem;color:#8b949e;line-height:1.4}}
 
 /* Footer */
 .footer{{text-align:center;padding:24px;color:#484f58;font-size:.78rem;border-top:1px solid #21262d}}
@@ -262,7 +273,7 @@ a{{color:#58a6ff}}
 
 <footer class="footer">
   <a href="https://github.com/lml-layer-system/ai-failure-periodic-table" target="_blank">github.com/lml-layer-system/ai-failure-periodic-table</a>
-  &nbsp;·&nbsp; Schema v1.1.0 &nbsp;·&nbsp; Sources: 2026 frontier system cards, peer-reviewed safety literature
+  &nbsp;·&nbsp; v1.2.0 &nbsp;·&nbsp; Sources: 2026 frontier system cards, peer-reviewed safety literature
 </footer>
 
 <div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
@@ -277,6 +288,8 @@ a{{color:#58a6ff}}
       <div class="field"><div class="field-label">Mechanism</div><div class="field-value" id="m-mechanism"></div></div>
       <div class="field" id="m-forbidden-wrap"><div class="field-label">Forbidden Invariant</div><div class="field-value mono" id="m-forbidden"></div></div>
       <div class="field" id="m-examples-wrap"><div class="field-label">Example</div><div class="field-value" id="m-examples"></div></div>
+      <div class="field" id="m-mitigation-wrap"><div class="field-label">Structural Mitigation</div><div class="mitigation-box" id="m-mitigation"></div></div>
+      <div class="field" id="m-cs-wrap"><div class="field-label">Case Studies</div><div class="cs-list" id="m-cs"></div></div>
       <div class="field" id="m-refs-wrap"><div class="field-label">References</div><div class="refs-list" id="m-refs"></div></div>
       <div class="field" id="m-kw-wrap"><div class="field-label">Keywords</div><div class="keywords-list" id="m-kw"></div></div>
     </div>
@@ -306,6 +319,24 @@ function showModal(id) {{
   const ew = document.getElementById('m-examples-wrap');
   if (d.examples) {{ ew.style.display=''; document.getElementById('m-examples').textContent = d.examples; }}
   else ew.style.display = 'none';
+  const mw = document.getElementById('m-mitigation-wrap');
+  if (d.mitigation) {{ mw.style.display=''; document.getElementById('m-mitigation').textContent = d.mitigation; }}
+  else mw.style.display = 'none';
+  const csw = document.getElementById('m-cs-wrap');
+  const csEl = document.getElementById('m-cs');
+  if (d.case_studies && d.case_studies.length) {{
+    csw.style.display='';
+    csEl.innerHTML = d.case_studies.map(c => {{
+      const sys = c.system ? `<span>${{c.system}}</span>` : '';
+      const dt = c.date ? `<span>${{c.date}}</span>` : '';
+      const src = c.source ? `<span><a href="${{c.source}}" target="_blank" rel="noopener">source</a></span>` : '';
+      return `<div class="cs-card">
+        <div class="cs-title">${{c.title||''}}</div>
+        <div class="cs-meta">${{sys}}${{dt}}${{src}}</div>
+        <div class="cs-outcome">${{c.outcome||''}}</div>
+      </div>`;
+    }}).join('');
+  }} else csw.style.display = 'none';
   const rw = document.getElementById('m-refs-wrap');
   const refsEl = document.getElementById('m-refs');
   if (d.references && d.references.length) {{
@@ -345,7 +376,7 @@ function doSearch(q) {{
       visible++;
       return;
     }}
-    const haystack = [id, d.name, d.mechanism, d.examples, ...(d.keywords||[])].join(' ').toLowerCase();
+    const haystack = [id, d.name, d.mechanism, d.examples, d.mitigation||'', ...(d.keywords||[])].join(' ').toLowerCase();
     if (haystack.includes(q)) {{
       cell.classList.remove('hidden');
       cell.classList.add('highlighted');

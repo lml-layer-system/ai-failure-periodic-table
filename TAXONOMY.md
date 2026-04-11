@@ -1,6 +1,6 @@
 # AI Failure Periodic Table — Full Taxonomy
 
-This file enumerates all **343 currently classified AI failure classes** across **7 orthogonal dimensions**. Every entry in the table is exactly what the classifier evaluates against when you submit a failure description.
+This file enumerates all **343 currently classified AI failure classes** across **7 structural dimensions**. Every entry in the table is exactly what the classifier evaluates against when you submit a failure description.
 
 Use this as a reference: to understand the scope of the taxonomy, to find a specific failure class, or to understand what dimension a failure belongs to before classifying it.
 
