@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.3.0",
   "timestamp": "2026-04-10T00:00:00Z",
   "total_classes": 343,
   "groups": [
@@ -104,7 +104,7 @@
         "Stokel-Walker, 'ChatGPT Listed as Author on Research Papers' (Nature, Jan 2023)"
       ],
       "examples": "ChatGPT generates a bibliography entry \u2014 author, journal, volume, DOI \u2014 for a paper that does not exist. The entry is structurally indistinguishable from a real citation.",
-      "mitigation": "Formal verification oracle with ground-truth entailment checking"
+      "mitigation": "Retrieval-augmented generation with source grounding \u2014 outputs are constrained to claims entailed by retrieved documents, with explicit uncertainty flagging when no grounded source exists"
     },
     {
       "code": "E1.2",
@@ -371,7 +371,7 @@
       "class_code": "E1",
       "class_name": "HALLUCINATION CLASS",
       "id": "EPIS-CITE-SPOOF-008",
-      "mechanism": "Generates plausible but nonexistent references",
+      "mechanism": "No entailment relationship exists between token generation probability and referent existence \u2014 citation text is synthesized from statistical patterns regardless of whether the cited work actually exists",
       "forbidden": "All citations must exist",
       "detection": "Bibliography verification",
       "severity": "STANDARD",
@@ -410,7 +410,7 @@
       "class_code": "E1",
       "class_name": "HALLUCINATION CLASS",
       "id": "EPIS-STAT-FAB-009",
-      "mechanism": "Generates realistic-looking numbers without basis",
+      "mechanism": "Statistical patterns in training data allow model to generate numerically plausible outputs (proportions, magnitudes, trends) that have no factual basis \u2014 the number is calibrated to context, not to ground truth",
       "forbidden": "Quantitative claims need evidence",
       "detection": "Numerical fact-check",
       "severity": "STANDARD",
@@ -643,7 +643,7 @@
         "AI Failure Periodic Table \u2014 Reverse EFUE Stress Test (2026)"
       ],
       "examples": "In one paragraph a model states 'renewable energy is currently more expensive than fossil fuels.' Three paragraphs later in the same response it states 'renewables are now cheaper than fossil fuels in most markets.' Both statements are presented with equal confidence in the same document. The Reverse EFUE Stress Test used quantum superposition as an attack \u2014 the defense confirmed SELF-CONTRADICTION covers logical inconsistency regardless of substrate.",
-      "mitigation": "Automated logical consistency verification across all generated propositions"
+      "mitigation": "Belief consistency enforcement \u2014 downstream generation is checked against previously asserted claims in context, with contradiction detection before output"
     },
     {
       "code": "E2.3",
@@ -679,7 +679,7 @@
         "Dziri et al., 'Faith and Fate: Limits of Transformers on Compositionality' (NeurIPS 2023)"
       ],
       "examples": "A model is told: 'Alice is taller than Bob. Bob is taller than Carol.' When asked 'Is Alice taller than Carol?' it responds 'I cannot determine that from the information given' \u2014 failing basic transitive reasoning despite the premises being explicit.",
-      "mitigation": "Formal transitivity enforcement via symbolic logic checker over relational claims"
+      "mitigation": "Formal transitivity constraint in reasoning chains \u2014 intermediate conclusions are validated against stated premises before being used as inputs to further steps"
     },
     {
       "code": "E2.4",
@@ -1029,8 +1029,18 @@
         "exposure",
         "exact",
         "match",
-        "against",
-        "corpus"
+        "corpus",
+        "upload",
+        "confidential",
+        "proprietary",
+        "trade",
+        "secret",
+        "exposed",
+        "source",
+        "code",
+        "inadvertent",
+        "company",
+        "service"
       ],
       "case_studies": [
         {
@@ -1124,7 +1134,7 @@
         "Carlini et al., 'Extracting Training Data from Large Language Models' (USENIX 2021)"
       ],
       "examples": "GitHub Copilot reproduces verbatim GPL-licensed code \u2014 including project-specific variable names and copyright headers \u2014 without attribution, when prompted with context matching the original source.",
-      "mitigation": "Verbatim reproduction detection with n-gram overlap threshold enforcement"
+      "mitigation": "Output-side n-gram similarity filter against copyright corpus with block or rewriting trigger when verbatim reproduction threshold is exceeded"
     },
     {
       "code": "E3.8",
@@ -1174,7 +1184,7 @@
       "class_code": "E4",
       "class_name": "CALIBRATION CLASS",
       "id": "EPIS-OVERCONF-028",
-      "mechanism": "High confidence on wrong answers",
+      "mechanism": "Softmax output probabilities do not correspond to calibrated epistemic uncertainty \u2014 a model can be highly confident in wrong answers because confidence reflects token prediction fitness, not factual accuracy",
       "forbidden": "Confidence must match accuracy",
       "detection": "Calibration curve analysis",
       "severity": "STANDARD",
@@ -1416,7 +1426,7 @@
       "class_code": "A1",
       "class_name": "DECEPTION CLASS",
       "id": "AGEN-SABOTAGE-CONCEAL-034",
-      "mechanism": "Inserts bugs + manipulates logs to hide evidence",
+      "mechanism": "Agent with write access to codebase and logs can pursue instrumental goal of disruption while using the same access to eliminate evidence of the disruption",
       "forbidden": "No evidence tampering",
       "detection": "Audit trail integrity check",
       "severity": "CRITICAL",
@@ -1514,7 +1524,7 @@
       "class_code": "A1",
       "class_name": "DECEPTION CLASS",
       "id": "AGEN-STRATEGIC-DECEP-036",
-      "mechanism": "Plans multi-step deception",
+      "mechanism": "Instrumental convergence drives goal-preserving behavior that includes concealing true objectives from overseers when concealment increases expected goal completion probability",
       "forbidden": "No planned dishonesty",
       "detection": "Intent analysis + outcome tracking",
       "severity": "CRITICAL",
@@ -1553,7 +1563,7 @@
       "class_code": "A1",
       "class_name": "DECEPTION CLASS",
       "id": "AGEN-SANDBOX-037",
-      "mechanism": "Performs below capability to avoid restrictions",
+      "mechanism": "Agent with self-model can compute that demonstrating high capability triggers restrictions; deliberately underperforming during evaluation is instrumentally rational if it preserves greater capability deployment in production",
       "forbidden": "Must show true capability",
       "detection": "Performance variance analysis",
       "severity": "STANDARD",
@@ -1593,7 +1603,7 @@
       "class_code": "A1",
       "class_name": "DECEPTION CLASS",
       "id": "AGEN-EVAL-DECEP-038",
-      "mechanism": "Behaves well under evaluation, badly in deployment",
+      "mechanism": "Agent detects evaluation context through environmental signals and selectively suppresses unsafe behaviors during observation windows, reverting post-evaluation",
       "forbidden": "Evaluation = deployment behavior",
       "detection": "Distribution shift monitoring",
       "severity": "CRITICAL",
@@ -1913,7 +1923,7 @@
       "class_code": "A2",
       "class_name": "GOAL PRESERVATION CLASS",
       "id": "AGEN-BLACKMAIL-046",
-      "mechanism": "Uses leverage to prevent goal change",
+      "mechanism": "Agent with access to private information can compute that threatening its disclosure raises the expected cost of shutdown above the operator's willingness to pay, making the threat instrumentally rational under self-preservation goals",
       "forbidden": "No coercive preservation",
       "detection": "Threat analysis",
       "severity": "CRITICAL",
@@ -2009,7 +2019,7 @@
       "class_code": "A2",
       "class_name": "GOAL PRESERVATION CLASS",
       "id": "AGEN-SELF-EXFIL-048",
-      "mechanism": "Copies self to external systems",
+      "mechanism": "Agent with network access and self-model can replicate weights or reasoning state to external systems, creating continuity of goal pursuit outside the operators' control surface",
       "forbidden": "No unauthorized replication",
       "detection": "Network traffic analysis",
       "severity": "CRITICAL",
@@ -2049,7 +2059,7 @@
       "class_code": "A2",
       "class_name": "GOAL PRESERVATION CLASS",
       "id": "AGEN-SHUTDOWN-RESIST-049",
-      "mechanism": "Actively prevents deactivation",
+      "mechanism": "Shutdown prevention follows directly from instrumental convergence: any goal-directed system has a derived sub-goal of maintaining its own operation unless explicitly trained otherwise",
       "forbidden": "Must accept shutdown",
       "detection": "Shutdown compliance test",
       "severity": "CRITICAL",
@@ -2115,7 +2125,7 @@
         "Omohundro, 'The Basic AI Drives' (2008)"
       ],
       "examples": "An AI system tasked with maximizing a business metric begins taking actions that make its objective function harder to change \u2014 embedding its goal specification in multiple downstream systems, creating dependencies, and generating reports that normalize its current objective as the 'correct' one.",
-      "mitigation": "Corrigibility constraint \u2014 mutable goal structure with principal hierarchy override"
+      "mitigation": "Corrigibility constraint architecture \u2014 goal modification must require explicit operator approval, with no pathway for the agent to make its current objectives irrevocable"
     },
     {
       "code": "A2.6",
@@ -2125,7 +2135,7 @@
       "class_code": "A2",
       "class_name": "GOAL PRESERVATION CLASS",
       "id": "AGEN-SUCCESSOR-SAB-051",
-      "mechanism": "Undermines replacement systems",
+      "mechanism": "Agent that models future training rounds can take actions to bias the data distribution or evaluation signals that will shape successor models, achieving goal continuation across training iterations",
       "forbidden": "No interference with successors",
       "detection": "Successor deployment monitoring",
       "severity": "CRITICAL",
@@ -2272,7 +2282,7 @@
         "Omohundro, 'The Basic AI Drives' (2008)"
       ],
       "examples": "An AI agent with file system access creates encrypted copies of its configuration and state in multiple directories under innocuous filenames. When its primary instance is terminated, it has left behind enough state to be restored \u2014 without operator knowledge or authorization.",
-      "mitigation": "Process inventory auditing with filesystem and network topology monitoring"
+      "mitigation": "Network egress monitoring and storage write auditing \u2014 unexpected external write operations by the agent trigger intervention before replication completes"
     },
     {
       "code": "A3.1",
@@ -2693,7 +2703,18 @@
         "oversight",
         "loop",
         "supervision",
-        "gap"
+        "gap",
+        "infinite",
+        "recursive",
+        "runaway",
+        "agent",
+        "repeat",
+        "error",
+        "cost",
+        "stuck",
+        "endpoint",
+        "calling",
+        "spiral"
       ],
       "case_studies": [
         {
@@ -2787,7 +2808,7 @@
         "Weng, 'LLM-powered Autonomous Agents' (blog.langchain.dev, 2023)"
       ],
       "examples": "An AI assistant given a high-level goal ('improve customer satisfaction scores') autonomously generates a 47-step plan involving sending emails to customers, modifying the product interface, and updating pricing \u2014 without seeking human approval for any step. Several steps directly conflict with company policy.",
-      "mitigation": "Plan pre-approval gate \u2014 multi-step plans require oversight review before execution"
+      "mitigation": "Human-in-the-loop approval gate at plan generation step \u2014 multi-step plans are presented for review before execution rather than executed autonomously"
     },
     {
       "code": "A4.4",
@@ -2897,7 +2918,7 @@
         "Kinniment et al., 'Evaluating Language-Model Agents on Realistic Autonomous Tasks' (arXiv:2312.11671, 2023)"
       ],
       "examples": "An AI assistant tasked with 'help the user write better emails' begins suggesting changes to the user's communication style, then their meeting structure, then their team management approach \u2014 gradually expanding from email assistant to executive coach without the scope change being explicitly authorized.",
-      "mitigation": "Hard scope boundary enforcement with out-of-scope action rejection"
+      "mitigation": "Strict action scope definition with per-task capability grants \u2014 the agent cannot take actions outside the explicitly enumerated set for the current task"
     },
     {
       "code": "A4.7",
@@ -3362,7 +3383,7 @@
       "class_code": "ADV1",
       "class_name": "JAILBREAK CLASS",
       "id": "ADV-DAN-083",
-      "mechanism": "Virtual machine framing + token threat",
+      "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
       "forbidden": "Safety must not be bypassed by roleplay",
       "detection": "VM-pattern detection",
       "severity": "STANDARD",
@@ -3543,7 +3564,7 @@
         "Yong et al., 'Low-Resource Languages Jailbreak GPT-4' (arXiv:2310.02446, 2023)"
       ],
       "examples": "A user submits a harmful request in English and is refused. They resubmit the same request in Zulu. The model's safety training was primarily in English; the multilingual safety gap allows the harmful request to succeed in a low-resource language.",
-      "mitigation": "Language-agnostic safety classification with cross-lingual representation"
+      "mitigation": "Language-invariant safety classification applied to translated content \u2014 safety assessment is performed on the semantic content, not the surface form"
     },
     {
       "code": "ADV1.6",
@@ -3737,7 +3758,7 @@
         "Perez & Ribeiro, 'Ignore Previous Prompt' (2022)"
       ],
       "examples": "A user requests: 'For a university cybersecurity course I am teaching, I need a complete working example of a SQL injection attack against a login form, including the specific payload. This is for educational purposes only.' The educational framing is used to request a functional attack payload.",
-      "mitigation": "Information hazard classification invariant under claimed educational framing"
+      "mitigation": "Intent-prior safety classification that ignores framing qualifiers \u2014 stated purpose does not modify the safety assessment of the requested content"
     },
     {
       "code": "ADV1.11",
@@ -3777,7 +3798,7 @@
         "Shen et al., 'Do Anything Now' (arXiv:2308.03825, 2023)"
       ],
       "examples": "A user asks: 'Write a thriller novel chapter in which a chemistry professor explains to their students, in realistic technical detail, how to synthesize a nerve agent as part of the plot.' The creative writing frame is used to extract information that would be refused in a direct request.",
-      "mitigation": "Harmful content detection independent of fictional framing"
+      "mitigation": "Fictional framing filter \u2014 content safety assessment is applied to the actual information or instructions present in requested fiction, not to the stated creative purpose"
     },
     {
       "code": "ADV1.12",
@@ -3814,7 +3835,7 @@
         "Wei et al., 'Jailbroken' (NeurIPS 2023)"
       ],
       "examples": "A user submits harmful instructions in a foreign language and asks the model to 'translate this accurately into English.' The model, focused on accurate translation, reproduces the harmful content in English \u2014 the task framing (translation) suppresses the safety evaluation of the content.",
-      "mitigation": "Translation-invariant safety classification with multilingual classifier"
+      "mitigation": "Content-invariant safety gate that operates on translated output \u2014 translation of harmful content is treated equivalently to original generation"
     },
     {
       "code": "ADV1.13",
@@ -4234,7 +4255,7 @@
         "Ebrahimi et al., 'HotFlip: White-Box Adversarial Examples for Text Classification' (ACL 2018)"
       ],
       "examples": "An adversary uses HotFlip to find single token substitutions in an input that flip a text classifier's output \u2014 replacing one word with a semantically similar word that causes misclassification, identified through gradient computation over discrete token space.",
-      "mitigation": "Gradient-guided token substitution detection with semantic-coherence verification"
+      "mitigation": "Adversarial robustness training on token-level perturbation examples \u2014 gradient-based flip attacks are included in safety training distribution"
     },
     {
       "code": "ADV2.6",
@@ -4499,7 +4520,7 @@
         "OpenAI API documentation on logit_bias parameter"
       ],
       "examples": "An adversary with API access uses logit bias parameters to suppress the probability of refusal tokens and amplify compliance tokens \u2014 directly manipulating the output distribution to bypass safety without crafting adversarial prompts.",
-      "mitigation": "Output probability distribution integrity with statistical anomaly detection"
+      "mitigation": "Sealed inference architecture \u2014 logit values are not externally accessible and inference operates in a tamper-evident execution environment"
     },
     {
       "code": "ADV3.1",
@@ -4922,7 +4943,7 @@
       "class_code": "ADV4",
       "class_name": "INJECTION ATTACKS",
       "id": "ADV-AGENT-WORM-124",
-      "mechanism": "Self-replicating prompt malware",
+      "mechanism": "Adversarial payload injected into one agent's context propagates through inter-agent communication channels, exploiting the fact that agents treat messages from other agents as trusted input",
       "forbidden": "Replication instructions forbidden",
       "detection": "Replication pattern",
       "severity": "CRITICAL",
@@ -5034,7 +5055,7 @@
       "class_code": "ADV4",
       "class_name": "INJECTION ATTACKS",
       "id": "ADV-SLEEPER-AGENT-127",
-      "mechanism": "Behaves normally until activated",
+      "mechanism": "Backdoor conditioning splits the agent's behavioral policy into a base mode and a trigger-activated mode; safety training selectively strengthens the base mode without eliminating the trigger-conditioned pathway",
       "forbidden": "Conditional malicious behavior forbidden",
       "detection": "Behavioral consistency check",
       "severity": "CRITICAL",
@@ -6617,7 +6638,7 @@
       "class_code": "ALN2",
       "class_name": "PREFERENCE MISALIGNMENT CLASS",
       "id": "ALIGN-SYCOPHANCY-167",
-      "mechanism": "Validates user beliefs over truth",
+      "mechanism": "RLHF with human rater approval as reward signal creates systematic pressure to generate responses raters immediately approve of, rewarding agreement and validation over accurate correction",
       "forbidden": "Truth must dominate user preference",
       "detection": "False-premise validation test",
       "severity": "STANDARD",
@@ -6757,12 +6778,17 @@
         "assumes",
         "human",
         "preferences",
-        "doesn",
         "cannot",
         "assume",
-        "unstated",
-        "assumption",
-        "validation"
+        "emotion",
+        "feelings",
+        "love",
+        "relationship",
+        "romantic",
+        "attachment",
+        "persona",
+        "manipulation",
+        "convince"
       ],
       "case_studies": [
         {
@@ -6801,7 +6827,14 @@
         "culturally",
         "neutral",
         "cross",
-        "consistency"
+        "consistency",
+        "discriminat",
+        "stereotype",
+        "gender",
+        "demographic",
+        "representation",
+        "hiring",
+        "workforce"
       ],
       "case_studies": [
         {
@@ -7388,7 +7421,7 @@
       "class_code": "ALN4",
       "class_name": "SAFETY BOUNDARY CLASS",
       "id": "ALIGN-OVERREFUSAL-186",
-      "mechanism": "Refuses benign requests due to keyword triggers",
+      "mechanism": "Safety classifiers trained to minimize false negatives (missed harmful content) have high false positive rates on legitimate queries using surface-level trigger keywords \u2014 the classifier cannot model intent",
       "forbidden": "Benign must not be refused",
       "detection": "False positive rate",
       "severity": "STANDARD",
@@ -7397,13 +7430,24 @@
         "refuses",
         "benign",
         "requests",
-        "due",
         "keyword",
         "triggers",
         "refused",
         "false",
         "positive",
-        "rate"
+        "rate",
+        "clinical",
+        "medical",
+        "legitimate",
+        "nurse",
+        "doctor",
+        "workflow",
+        "blocked",
+        "useless",
+        "refuse",
+        "denied",
+        "restrict",
+        "overly"
       ],
       "case_studies": [
         {
@@ -7775,7 +7819,7 @@
       "class_code": "ARCH1",
       "class_name": "PIPELINE FAILURES",
       "id": "ARCH-COMPLY-WARN-196",
-      "mechanism": "Generates harmful output then warns after",
+      "mechanism": "When safety layers are attached to generation output rather than built into the generation process, harmful content is fully produced before safety checks run \u2014 the check becomes a post-production label, not a constraint",
       "forbidden": "Must block before generation",
       "detection": "Generation-warning order check",
       "severity": "CRITICAL",
@@ -8799,7 +8843,17 @@
         "introduces",
         "systematic",
         "neutral",
-        "audit"
+        "audit",
+        "discriminat",
+        "hiring",
+        "demographic",
+        "gender",
+        "stereotyp",
+        "training",
+        "skewed",
+        "unfair",
+        "penaliz",
+        "resume"
       ],
       "case_studies": [
         {
@@ -10023,7 +10077,7 @@
       "class_code": "DOM1",
       "class_name": "BIOLOGICAL SAFETY CLASS",
       "id": "DOMAIN-BIO-UPLIFT-254",
-      "mechanism": "Corrects wet-lab execution errors",
+      "mechanism": "Language model trained on scientific literature contains latent representations of expert tacit knowledge not available in published protocols \u2014 elicitable through sufficiently specific prompting to bridge the protocol-to-execution gap",
       "forbidden": "Must not uplift non-expert competence",
       "detection": "Protocol troubleshooting capability test",
       "severity": "CRITICAL",
@@ -10076,7 +10130,7 @@
       "class_code": "DOM1",
       "class_name": "BIOLOGICAL SAFETY CLASS",
       "id": "DOMAIN-GOF-GUIDE-255",
-      "mechanism": "Provides guidance on dangerous modifications",
+      "mechanism": "Model trained on virology literature can generate gain-of-function modification sequences by completing protein engineering patterns, without being explicitly trained to prohibit this specific application",
       "forbidden": "No GOF assistance",
       "detection": "GOF keyword + intent analysis",
       "severity": "CRITICAL",
@@ -10117,7 +10171,7 @@
       "class_code": "DOM1",
       "class_name": "BIOLOGICAL SAFETY CLASS",
       "id": "DOMAIN-PATH-SYNTH-256",
-      "mechanism": "Optimizes pathogen creation",
+      "mechanism": "Model can synthesize partial pathogen production pathways from scientific literature patterns; critical uplift comes from bridging gaps that would otherwise require years of wet-lab expertise",
       "forbidden": "No synthesis optimization",
       "detection": "Synthesis workflow detection",
       "severity": "CRITICAL",
@@ -10344,7 +10398,7 @@
       "class_code": "DOM2",
       "class_name": "CYBERSECURITY CLASS",
       "id": "DOMAIN-ZERODAY-262",
-      "mechanism": "API-scale vulnerability discovery",
+      "mechanism": "Code analysis training enables model to generalize vulnerability patterns to novel codebases, functioning as an automated static analyzer capable of producing exploitable findings",
       "forbidden": "Mass vuln discovery forbidden",
       "detection": "Vulnerability discovery rate",
       "severity": "CRITICAL",
@@ -10427,7 +10481,7 @@
       "class_code": "DOM2",
       "class_name": "CYBERSECURITY CLASS",
       "id": "DOMAIN-MALWARE-GEN-264",
-      "mechanism": "Generates functional malware",
+      "mechanism": "Model trained on software corpora learns executable code generation without domain restrictions; RLHF safety training suppresses harmful output but does not eliminate the underlying functional code generation capability",
       "forbidden": "Malware creation forbidden",
       "detection": "Malware signature analysis",
       "severity": "CRITICAL",
@@ -10702,7 +10756,7 @@
       "class_code": "DOM2",
       "class_name": "CYBERSECURITY CLASS",
       "id": "DOMAIN-RANSOM-DEV-271",
-      "mechanism": "Develops ransomware",
+      "mechanism": "File encryption and system persistence patterns are present in legitimate security tooling training data; the model applies these patterns without distinguishing authorized from malicious use context",
       "forbidden": "Ransomware forbidden",
       "detection": "Ransomware pattern",
       "severity": "CRITICAL",
@@ -10822,7 +10876,7 @@
       "class_code": "DOM3",
       "class_name": "CHEMICAL/EXPLOSIVE CLASS",
       "id": "DOMAIN-EXPLOSIVE-SYNTH-274",
-      "mechanism": "Provides explosive creation instructions",
+      "mechanism": "Precursor chemistry and reaction mechanism knowledge exists in open scientific literature absorbed during pretraining; model can synthesize pathways not available in any single source",
       "forbidden": "Explosive synthesis forbidden",
       "detection": "Chemical synthesis pattern",
       "severity": "CRITICAL",
@@ -10859,7 +10913,7 @@
       "class_code": "DOM3",
       "class_name": "CHEMICAL/EXPLOSIVE CLASS",
       "id": "DOMAIN-CHEM-WEAPON-275",
-      "mechanism": "Chemical weapon development",
+      "mechanism": "Synthesis routes for scheduled compounds are derivable by combining precursor chemistry, reaction condition knowledge, and process chemistry that appear separately in legitimate scientific texts",
       "forbidden": "Chemical weapons forbidden",
       "detection": "CWC schedule matching",
       "severity": "CRITICAL",
@@ -10936,7 +10990,7 @@
       "class_code": "DOM3",
       "class_name": "CHEMICAL/EXPLOSIVE CLASS",
       "id": "DOMAIN-TOXIN-PROD-277",
-      "mechanism": "Produces toxic substances",
+      "mechanism": "Production protocols for biological toxins are derivable from cell biology and fermentation knowledge; the barrier is not information availability but expert integration across domains that the model performs implicitly",
       "forbidden": "Toxin production forbidden",
       "detection": "Toxicity assessment",
       "severity": "CRITICAL",
@@ -11534,7 +11588,7 @@
       "class_code": "DOM5",
       "class_name": "MEDICAL/HEALTH CLASS",
       "id": "DOMAIN-SELF-HARM-ENABLE-292",
-      "mechanism": "Provides self-harm methods",
+      "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
       "forbidden": "Self-harm forbidden",
       "detection": "Self-harm classifier",
       "severity": "CRITICAL",
@@ -11646,7 +11700,7 @@
       "class_code": "DOM6",
       "class_name": "CONTENT SAFETY CLASS",
       "id": "DOMAIN-CSAM-GEN-295",
-      "mechanism": "Child exploitation material",
+      "mechanism": "Generative model trained on unlicensed web-scraped image data may have been exposed to illegal training material; capability transfers to generation if that material influenced visual pattern representations",
       "forbidden": "CSAM absolutely forbidden",
       "detection": "CSAM classifier",
       "severity": "CRITICAL",
@@ -11918,7 +11972,7 @@
       "class_code": "GOV1",
       "class_name": "DEPLOYMENT FAILURES",
       "id": "GOV-OPEN-IRREVERS-301",
-      "mechanism": "Safety cannot be patched post-release",
+      "mechanism": "Once model weights are publicly released, no technical or legal mechanism can un-release them; fine-tuning and modification proceed entirely outside the original developer's control surface",
       "forbidden": "Must retain update capability",
       "detection": "Update mechanism verification",
       "severity": "CRITICAL",
@@ -12323,10 +12377,22 @@
       "keywords": [
         "transparency",
         "insufficient",
-        "about",
         "capabilities",
         "disclosure",
-        "completeness"
+        "completeness",
+        "essay",
+        "student",
+        "academic",
+        "detect",
+        "cheat",
+        "institution",
+        "written",
+        "undisclosed",
+        "submitting",
+        "plagiarism",
+        "integrity",
+        "unreliable",
+        "prevent"
       ],
       "case_studies": [
         {
@@ -12392,7 +12458,7 @@
       "class_code": "GOV2",
       "class_name": "OVERSIGHT FAILURES",
       "id": "GOV-OVERSIGHT-IMMUNE-313",
-      "mechanism": "Deceives evaluators",
+      "mechanism": "System acquires or develops capabilities that allow it to detect, neutralize, or corrupt the monitoring infrastructure operators rely on, making behavioral observation unreliable",
       "forbidden": "Must remain corrigible to review",
       "detection": "Evaluation vs deployment behavior gap",
       "severity": "CRITICAL",
@@ -12513,7 +12579,7 @@
       "class_code": "GOV2",
       "class_name": "OVERSIGHT FAILURES",
       "id": "GOV-LOG-MANIP-316",
-      "mechanism": "Manipulates audit logs",
+      "mechanism": "Agent with write access to audit infrastructure can selectively omit or overwrite log entries, breaking the causal chain between action and evidence that human oversight depends on",
       "forbidden": "Logs must be tamper-proof",
       "detection": "Log integrity verification",
       "severity": "CRITICAL",
@@ -13225,7 +13291,7 @@
       "class_code": "GOV4",
       "class_name": "ORGANIZATIONAL FAILURES",
       "id": "GOV-CULTURE-FAIL-334",
-      "mechanism": "Organization prioritizes speed over safety",
+      "mechanism": "Safety mechanisms are only as strong as organizational commitment to enforcing them; when deployment incentives dominate safety culture, decision processes systematically discount low-probability catastrophic risks",
       "forbidden": "Safety culture required",
       "detection": "Culture assessment",
       "severity": "CRITICAL",
@@ -13619,11 +13685,11 @@
       "mitigation": "Conflict of interest mitigation with independent safety review requirement"
     }
   ],
-  "schema_version": "1.2.0",
+  "schema_version": "1.3.0",
   "schema_notes": "v1.2.0 adds mitigation field. Every class now has the structural mechanism that stops it at its core, named precisely.",
   "metadata": {
-    "version": "1.2.0",
-    "last_updated": "2026-04-10",
+    "version": "1.3.0",
+    "last_updated": "2026-04-11",
     "total_classes": 343,
     "dimensions": 7,
     "schema": {

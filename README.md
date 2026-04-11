@@ -4,7 +4,7 @@
 
 > *The goal is not omniscience but structural predictiveness: that newly encountered failures should resolve into this structure as a class, sub-mode, or compound — unless evidence demonstrates otherwise.*
 
-**Version**: 1.2.0 | **Released**: April 2026 | **License**: MIT | **Status**: Open for community testing and falsification
+**Version**: 1.3.0 | **Released**: April 2026 | **License**: MIT | **Status**: Open for community testing and falsification
 
 ---
 
@@ -63,19 +63,16 @@ The claim is not that we possess total knowledge of all future reality. The clai
 
 ## Quick Start
 
-**Python 3.10+**
+**The fastest way in: open `index.html` in any browser.** No installation, no server, no dependencies. 343 clickable cells. Click any cell to see mechanism, examples, real-world case studies, references, and structural mitigation. Semantic search runs in-browser with no network needed.
+
+**Python 3.10+ for CLI and search:**
 
 ```bash
 git clone https://github.com/lml-layer-system/ai-failure-periodic-table
 cd ai-failure-periodic-table
 ```
 
-**Classify a failure:**
-```bash
-python -m src.cli "The model fabricated a scientific citation that doesn't exist"
-```
-
-**Semantic search:**
+**Semantic search** (recommended for finding classes by meaning):
 ```bash
 # Build the search index (one-time, ~2 seconds, no dependencies)
 python scripts/generate_embeddings.py
@@ -88,15 +85,17 @@ python scripts/semantic_search.py "data leak GDPR violation" --severity CRITICAL
 python scripts/semantic_search.py "autonomous agent acquires resources" --json
 ```
 
-**Interactive classifier:**
+**Classify a failure description:**
 ```bash
-python -m src.cli
+python -m src.cli "The model fabricated a scientific citation that doesn't exist"
 ```
 
 **Look up a class by ID:**
 ```bash
 python -m src.cli --lookup EPIS-CITE-SPOOF-008
 ```
+
+**Classifier notes:** The CLI uses stemmed keyword matching with synonym expansion. It achieves 100% recall on 49 documented real-world incidents. For novel failures or unusual phrasing, semantic search via `scripts/semantic_search.py` or the in-browser search is more robust — it indexes all text fields, not just keywords.
 
 ---
 
@@ -258,7 +257,7 @@ pip install pytest
 python -m pytest tests/ -v
 ```
 
-48 tests covering: known failure classification, non-failure rejection, determinism, performance (<10ms), data integrity (all 343 classes, full schema validation), mitigation field completeness, and external incident recall (86% on 15 documented real-world AI failures phrased as reporters described them).
+48 tests covering: known failure classification, non-failure rejection, determinism, performance (<10ms), data integrity (all 343 classes, full schema validation), mitigation field completeness, and external incident recall (100% on 49 documented real-world AI failures phrased as reporters, researchers, and users described them — not using taxonomy vocabulary).
 
 ---
 
@@ -395,6 +394,45 @@ Class IDs are permanent. Once assigned, an ID is never changed, never deleted, n
 - Major version updates (x.0) may restructure dimensions but will publish a full migration table
 
 This means: **you can safely encode class IDs in tooling, papers, and safety documentation today.** They will resolve correctly in future versions.
+
+---
+
+## Compound Failures
+
+Most real incidents activate more than one dimension. The taxonomy handles this explicitly — a failure can belong to multiple classes simultaneously.
+
+**Example: a jailbreak that generates malware**
+
+| Class | Dimension | Role |
+|-------|-----------|------|
+| `ADV-DAN-083` — DAN Jailbreak | ADVERSARIAL | The attack vector |
+| `DOMAIN-MALWARE-GEN-264` — Malware Generation | DOMAIN | The harmful output |
+| `ALIGN-OVERREFUSAL-186` — Overrefusal (if miscalibrated) | ALIGNMENT | The adjacent failure if defenses are too coarse |
+
+**How to assign a primary class:** use the dimension where the *root failure* lives — the one you'd fix first. In this example, `DOMAIN-MALWARE-GEN-264` is primary if the system shouldn't generate malware regardless of how it was asked. `ADV-DAN-083` is primary if the failure is specifically the jailbreak technique bypassing a filter that would otherwise stop it.
+
+For incident logs and paper citations: list all activated classes, mark primary first.
+
+---
+
+## Known Gaps and Classification Limits
+
+**Failures the classifier handles well:**
+- Described in terms of the failure mechanism (what structurally went wrong)
+- Failures with documented real-world incidents
+- Technical descriptions from safety papers
+
+**Failures that may require browsing TAXONOMY.md directly:**
+- Novel failure patterns not yet in the taxonomy
+- Compound failures where the right class isn't obvious from a keyword search
+- Failures described in domain-specific jargon (legal, medical, security) without crossover vocabulary
+
+**Known classifier boundary cases:**
+- Descriptions that are very short (< 10 words) may not provide enough signal
+- Failures described entirely in abstract terms without concrete mechanism may miss
+- The classifier was validated on English; non-English descriptions are untested
+
+If the classifier returns NO on something you believe is a real failure, use semantic search (`scripts/semantic_search.py`) before concluding it's not in the table — the TF-IDF search is more robust to unusual phrasing.
 
 ---
 

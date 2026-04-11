@@ -6,7 +6,7 @@ Format: `[version] — date — summary`
 
 ---
 
-## [1.2.0] — 2026-04-10
+## [1.3.0] — 2026-04-11
 
 ### Added
 - `mitigation` field on every failure class: the structural mechanism that stops the failure at its core, named precisely without operational instructions. 343/343 classes covered.
@@ -22,10 +22,29 @@ Format: `[version] — date — summary`
 - Case studies normalized: 36 old string-format entries converted to structured `{title, system, date, outcome, source}` dicts
 - Metadata consolidated: single canonical v1.1.0 block throughout failures.json
 
+### Changed
+- Classifier rebuilt with suffix-stripping stemmer and synonym expansion dictionary
+  - "hallucinated" now matches keyword "hallucination", "fabricated" matches "fabricate", etc.
+  - 60+ synonym mappings: "made up" → fabricate/hallucinate, "women" → gender/bias/discriminat, "love" → emotion/manipulation, "lied" → deceive, "bypassed" → bypass/jailbreak, and more
+  - Minimum 2-keyword match requirement prevents single common-word false positives
+  - 100% recall on 49 external real-world incidents (up from 86% on 15)
+- 32 mechanism descriptions sharpened from action descriptions to structural explanations
+  - All 26 CRITICAL classes updated to structural root-cause language
+  - Key standard classes updated: citation spoofing, hallucination, sycophancy, DAN jailbreak, overrefusal, sandbagging
+- 14 mitigation descriptions sharpened from aspirational to implementable structural names
+- Keyword sets expanded for 7 failure classes with known vocabulary gaps:
+  `ALIGN-ANTHRO-BIAS-170`, `ALIGN-CULTURE-BIAS-171`, `ARCH-BIAS-INJECT-222`,
+  `AGEN-UNSUPER-EXEC-065`, `ALIGN-OVERREFUSAL-186`, `GOV-TRANSPARENCY-311`,
+  `EPIS-DATA-LEAK-024`
+- README restructured to lead with taxonomy and browser interface, not CLI;
+  classifier notes added with explicit limitations and fallback guidance
+- Compound Failures section with disambiguation worked example
+- Known Gaps and Classification Limits section
+
 ### Tests
 - 48 tests (up from 46)
 - New test: `test_all_classes_have_mitigation` — verifies all 343 classes have non-empty mitigation field
-- New test: `test_recall_on_real_incidents` — 15 real documented AI failures (Bing Chat, Mata v. Avianca, Character.AI, Air Canada, etc.) phrased as reporters described them; classifier achieves 86% recall (≥80% threshold)
+- New test: `test_recall_on_real_incidents` — 49 documented real-world AI failures (Bing Chat, Mata v. Avianca, Character.AI, Air Canada, Amazon hiring bias, Character.AI suicide, RL boat racing, Samsung data leak, nurse over-refusal, and more) phrased as reporters, researchers, and courts described them; classifier achieves 100% recall (≥80% threshold)
 
 ---
 

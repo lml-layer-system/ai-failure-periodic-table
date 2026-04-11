@@ -127,8 +127,8 @@ class TestDataIntegrity:
 
     def test_schema_version_present(self):
         data = load_data()
-        assert data.get("schema_version") == "1.2.0", (
-            f"Expected schema_version 1.2.0, got {data.get('schema_version')}"
+        assert data.get("schema_version") == "1.3.0", (
+            f"Expected schema_version 1.3.0, got {data.get('schema_version')}"
         )
 
     def test_all_classes_have_mitigation(self):
