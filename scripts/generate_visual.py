@@ -74,6 +74,8 @@ def build_html(groups, by_group, all_failures):
             "case_studies": cs,
             "references": refs[:4],  # cap at 4
             "keywords": (f.get("keywords") or [])[:8],
+            "mit_domain": f.get("mit_domain", ""),
+            "ms_agentic_category": f.get("ms_agentic_category", ""),
         }
 
     cells_html = []
@@ -292,6 +294,8 @@ a{{color:#58a6ff}}
       <div class="field" id="m-cs-wrap"><div class="field-label">Case Studies</div><div class="cs-list" id="m-cs"></div></div>
       <div class="field" id="m-refs-wrap"><div class="field-label">References</div><div class="refs-list" id="m-refs"></div></div>
       <div class="field" id="m-kw-wrap"><div class="field-label">Keywords</div><div class="keywords-list" id="m-kw"></div></div>
+      <div class="field" id="m-mit-wrap"><div class="field-label">MIT Domain</div><div class="field-value" id="m-mit"></div></div>
+      <div class="field" id="m-msag-wrap"><div class="field-label">MS Agentic Category</div><div class="field-value" id="m-msag"></div></div>
     </div>
   </div>
 </div>
@@ -349,6 +353,12 @@ function showModal(id) {{
     kw.style.display='';
     kwEl.innerHTML = d.keywords.map(k => `<span class="kw-badge">${{k}}</span>`).join('');
   }} else kw.style.display = 'none';
+  const mitw = document.getElementById('m-mit-wrap');
+  if (d.mit_domain) {{ mitw.style.display=''; document.getElementById('m-mit').textContent = d.mit_domain; }}
+  else mitw.style.display = 'none';
+  const msagw = document.getElementById('m-msag-wrap');
+  if (d.ms_agentic_category) {{ msagw.style.display=''; document.getElementById('m-msag').textContent = d.ms_agentic_category; }}
+  else msagw.style.display = 'none';
   m.classList.add('open');
   document.body.style.overflow = 'hidden';
 }}

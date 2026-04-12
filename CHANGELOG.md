@@ -6,6 +6,22 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.4.0] — 2026-04-12
+
+### Added
+- Cross-reference fields `mit_domain` and `ms_agentic_category` on 61 failure classes
+  - `mit_domain`: maps to one of MIT AI Risk Repository's 7 domains (Misinformation, Privacy & Security, Malicious Actors, AI System Safety, Human-Computer Interaction, Discrimination & Toxicity, Socioeconomic & Environmental)
+  - `ms_agentic_category`: maps to Microsoft Agentic AI Failure Taxonomy categories (Goal Hijacking, Prompt Injection, Privilege Escalation, Unsafe Action Execution, Resource Exhaustion, Memory Poisoning) — applied only to 16 classes where the mapping is precise
+  - Fields are optional; cross-cutting classes intentionally left unmapped to avoid dishonest categorization
+- "Relationship to Other Frameworks" section in README: plain statement that the Periodic Table is complementary to MIT, Microsoft, and AVID frameworks — not competing
+- Modal now displays MIT Domain and MS Agentic Category when present
+- `scripts/add_framework_refs.py` — idempotent batch script for applying framework cross-references
+
+### Changed
+- README version badge updated to 1.4.0
+
+---
+
 ## [1.3.0] — 2026-04-11
 
 ### Added
