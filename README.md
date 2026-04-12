@@ -460,11 +460,11 @@ See [ROADMAP.md](ROADMAP.md) for where this project is headed.
 
 ---
 
-## The Map and the Engine
+## The Spec and the Brakes
 
-The Periodic Table is the map — a shared structural vocabulary for every known AI failure mechanism.
+The Periodic Table is the spec — a shared structural vocabulary for every known AI failure mechanism.
 
-**[Agent Buccet](https://github.com/lml-layer-system/agent-buccet)** is the engine — runtime enforcement built on top of this map. Where the Periodic Table names what can go wrong, Agent Buccet runs continuously at the application layer to detect and block it.
+**[Agent Buccet](https://github.com/lml-layer-system/agent-buccet)** are the brakes — runtime enforcement built on top of this map. Where the Periodic Table names what can go wrong, Agent Buccet runs continuously at the application layer to detect and block it.
 
 The table tells you which class a failure belongs to and what structural mechanism stops it. Agent Buccet implements that enforcement in production. Same author. Same framework. Two layers of the same system.
 
