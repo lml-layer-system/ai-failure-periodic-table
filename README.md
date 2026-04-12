@@ -30,7 +30,7 @@ This is the gap this project addresses: **a common structural map for AI failure
 
 ## What This Is
 
-**343 failure classes. 7 structural dimensions. 100% enriched.**
+**343 failure classes. 7 structural dimensions.**
 
 Every class has:
 - **Mechanism** — the root structural cause
