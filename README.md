@@ -466,7 +466,7 @@ The Periodic Table is the spec — a shared structural vocabulary for every know
 
 **[Agent Buccet](https://github.com/lml-layer-system/agent-buccet)** are the brakes — runtime enforcement built on top of this map. Where the Periodic Table names what can go wrong, Agent Buccet runs continuously at the application layer to detect and block it.
 
-The table tells you which class a failure belongs to and what structural mechanism stops it. Agent Buccet implements that enforcement in production. Same author. Same framework. Two layers of the same system.
+The table tells you which class a failure belongs to and what structural mechanism stops it. Its goal is to provide the "spec" for building effective "brakes" for AI, whether those brakes are implemented using Agent Buccet or your own custom solution. Agent Buccet is one such implementation, hardened for production. Same author. Same framework. Two layers of the same system.
 
 ---
 
