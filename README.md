@@ -4,7 +4,7 @@
 
 > *The goal is not omniscience but structural predictiveness: that newly encountered failures should resolve into this structure as a class, sub-mode, or compound — unless evidence demonstrates otherwise.*
 
-**Version**: 1.3.0 | **Released**: April 2026 | **License**: MIT | **Status**: Open for community testing and falsification
+**Version**: 1.4.0 | **Released**: April 2026 | **License**: MIT | **Status**: Open for community testing and falsification
 
 ---
 
@@ -467,6 +467,24 @@ The Periodic Table is the map — a shared structural vocabulary for every known
 **[Agent Buccet](https://github.com/lml-layer-system/agent-buccet)** is the engine — runtime enforcement built on top of this map. Where the Periodic Table names what can go wrong, Agent Buccet runs continuously at the application layer to detect and block it.
 
 The table tells you which class a failure belongs to and what structural mechanism stops it. Agent Buccet implements that enforcement in production. Same author. Same framework. Two layers of the same system.
+
+---
+
+## Relationship to Other Frameworks
+
+Several serious efforts exist to categorize AI risk and failure. This project is complementary to all of them — not a replacement.
+
+| Framework | Focus | Link |
+|-----------|-------|------|
+| MIT AI Risk Repository | Domain-level taxonomy (7 categories: Discrimination, Privacy, Misinformation, Malicious Actors, HCI, Socioeconomic, AI System Safety) | [airisk.mit.edu](https://airisk.mit.edu) |
+| Microsoft Agentic AI Failure Taxonomy | Failure modes specific to autonomous agent systems | [Whitepaper (PDF)](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Taxonomy-of-Failure-Mode-in-Agentic-AI-Systems-Whitepaper.pdf) |
+| AI Incident Database / AVID | Real-world observed incidents, empirically collected | [avidml.org](https://avidml.org) |
+
+The Periodic Table is mechanism-focused. Where MIT and Microsoft answer "what category is this?", the Periodic Table answers "exactly how does this failure occur, how do you detect it, and what structural property stops it?" Where AVID tracks what happened, the Periodic Table maps it to a named mechanism.
+
+These frameworks are not in conflict. Use them together.
+
+Where Periodic Table classes have verified mappings to MIT or Microsoft categories, those are recorded in the `mit_domain` and `ms_agentic_category` fields in the data.
 
 ---
 
