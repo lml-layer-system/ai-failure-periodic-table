@@ -26,15 +26,15 @@ except ImportError as e:  # pragma: no cover
     ) from e
 
 from src.ai_failure_mcp.bridge import (
+    class_lookup_bundle,
     classification_bundle,
     compound_hint_bundle,
     data_dir,
     failures_path,
     fetch_url_text,
-    get_class_record,
     load_failures_by_id,
     read_document_text,
-    structural_fix,
+    semantic_search_bundle,
 )
 from src.classifier import PeriodicTableClassifier
 from src.tfidf_search import search_classes
@@ -42,9 +42,12 @@ from src.tfidf_search import search_classes
 mcp = FastMCP(
     "ai-failure-periodic-table",
     instructions=(
-        "Tools map incidents and narratives to the AI Failure Periodic Table (343 classes). "
-        "Outputs include taxonomy-native structural mitigations (mechanism, forbidden, detection, mitigation)—"
-        "patterns and control principles from the table, not vendor-specific implementation steps."
+        "Personal scientific instrument: classify text/URL/documents against the 343-class ontology (read-only). "
+        "Every classify_* and compound_hint returns fit_state (strong_fit | compound_fit | weak_fit | possible_gap_candidate), "
+        "fit_confidence (high | medium | low), scientific_summary, boundary_pressure_note, CONTRIBUTING-grounded "
+        "what_to_do_next / report_preparation for GitHub issue templates — not vendor runbooks. "
+        "Structural fixes are WHAT (mechanism, forbidden, detection, mitigation) only. "
+        "Freshness Watch is separate weekly repo maintenance; this server never edits the taxonomy."
     ),
 )
 
@@ -67,7 +70,7 @@ def _dump(obj: Any) -> str:
 
 @mcp.tool()
 async def classify_text(text: str) -> str:
-    """Classify free text against the periodic table. Returns keyword matches, semantic hits, per-dimension signals, and suggested_structural_response (mitigation/forbidden/detection/mechanism) for each class—not implementation advice."""
+    """Classify free text against the periodic table. Returns fit_state, fit_confidence, scientific_summary, CONTRIBUTING-based report_preparation, plus keyword matches, semantic hits, dimensions, and suggested_structural_response (WHAT only—not implementation advice)."""
     if not (text or "").strip():
         return _dump({"error": "empty text"})
     clf, by_id = _ctx()
@@ -92,7 +95,7 @@ async def classify_url(url: str, max_content_chars: int = 120000) -> str:
 
 @mcp.tool()
 async def classify_document(path: str, max_content_chars: int = 120000) -> str:
-    """Read a UTF-8 file under the repository root, then classify. Use a path relative to repo root or absolute within the repo."""
+    """Read a UTF-8 file under the repository root or AI_FAILURE_MCP_DOCUMENT_ROOT / AI_FAILURE_MCP_DOCUMENT_ROOTS (extra absolute directories), then classify. Same scientific envelope as classify_text."""
     try:
         raw = read_document_text(path)
     except Exception as e:
@@ -107,6 +110,23 @@ async def classify_document(path: str, max_content_chars: int = 120000) -> str:
 
 
 @mcp.tool()
+async def classify_document_path(path: str, max_content_chars: int = 120000) -> str:
+    """Alias of classify_document for clients that want an explicit path-oriented name. Same security rules (repo + optional AI_FAILURE_MCP_DOCUMENT_ROOT[S])."""
+    try:
+        raw = read_document_text(path)
+    except Exception as e:
+        return _dump({"error": str(e), "path": path})
+    text = raw[: max(1000, max_content_chars)]
+    clf, by_id = _ctx()
+    bundle = classification_bundle(clf, text, by_id=by_id)
+    bundle["source_path"] = path
+    bundle["read_chars"] = len(raw)
+    bundle["classified_chars"] = len(text)
+    bundle["tool"] = "classify_document_path"
+    return _dump(bundle)
+
+
+@mcp.tool()
 async def search_failures(query: str, top_k: int = 8) -> str:
     """TF-IDF semantic search over class names, mechanisms, and examples. Each hit includes suggested_structural_response from the table."""
     if not (query or "").strip():
@@ -116,21 +136,14 @@ async def search_failures(query: str, top_k: int = 8) -> str:
     except FileNotFoundError as e:
         return _dump({"error": str(e)})
     _, by_id = _ctx()
-    out = []
-    for h in hits:
-        row = dict(h)
-        fd = by_id.get(h["id"])
-        if fd:
-            row["suggested_structural_response"] = structural_fix(fd)
-        out.append(row)
-    return _dump({"query": query, "hits": out})
+    return _dump(semantic_search_bundle(query, hits, by_id=by_id))
 
 
 @mcp.tool()
 async def get_class(class_id: str) -> str:
-    """Look up one failure class by ID (e.g. ADV-INDIRECT-INJECT-122). Returns full record plus suggested_structural_response."""
+    """Look up one failure class by ID (e.g. ADV-INDIRECT-INJECT-122). Returns full record, suggested_structural_response, and meta envelope (fit_state not_applicable — use classify_* to test narratives)."""
     _, by_id = _ctx()
-    rec = get_class_record(class_id, by_id)
+    rec = class_lookup_bundle(class_id, by_id)
     if not rec:
         return _dump({"error": "unknown class id", "class_id": class_id})
     return _dump(rec)
@@ -138,7 +151,7 @@ async def get_class(class_id: str) -> str:
 
 @mcp.tool()
 async def compound_hint(text: str) -> str:
-    """Same signals as classify_text, plus explicit compound-failure reading and a consolidated list of structural mitigations for top candidates across dimensions."""
+    """Same scientific envelope as classify_text; biases toward compound_fit when multiple dimensions activate; adds compound_reading and consolidated structural mitigations (WHAT only)."""
     if not (text or "").strip():
         return _dump({"error": "empty text"})
     clf, by_id = _ctx()

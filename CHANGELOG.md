@@ -6,6 +6,18 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.4.17] — 2026-04-18
+
+### Added
+- **MCP daily driver (scientific surface):** [`src/ai_failure_mcp/scientific_envelope.py`](src/ai_failure_mcp/scientific_envelope.py) — `fit_state`, `fit_confidence`, `fit_evidence`, `boundary_pressure_note`, `what_to_do_next`, `recommended_repo_action`, `report_preparation`, `scientific_summary`, `falsification_note` on **`classify_text`**, **`classify_url`**, **`classify_document`**, **`compound_hint`**; grounded in [CONTRIBUTING.md](CONTRIBUTING.md) issue templates (not Freshness Watch)
+- **`classify_document_path`:** alias tool; **`AI_FAILURE_MCP_DOCUMENT_ROOT`** / **`AI_FAILURE_MCP_DOCUMENT_ROOTS`** for safe reads outside repo root ([docs/mcp-daily-driver.md](docs/mcp-daily-driver.md))
+- **`search_failures`** / **`get_class`:** meta envelope with `fit_state: not_applicable` and guidance to run full classification
+
+### Changed
+- [docs/mcp-daily-driver.md](docs/mcp-daily-driver.md), [docs/cursor-mcp-config.example.json](docs/cursor-mcp-config.example.json); README **1.4.17** / test count; [ARCHITECTURE.md](ARCHITECTURE.md)
+
+---
+
 ## [1.4.16] — 2026-04-18
 
 ### Added

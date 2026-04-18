@@ -29,7 +29,7 @@ def test_read_document_relative(by_id):
 
 
 def test_read_document_rejects_outside_repo():
-    with pytest.raises(ValueError, match="inside repository root"):
+    with pytest.raises(ValueError, match="repository root or a directory listed"):
         bridge.read_document_text("/etc/passwd")
 
 
@@ -56,3 +56,30 @@ def test_compound_hint_includes_mitigations(by_id):
     )
     assert "compound_reading" in h
     assert h["structural_mitigations_for_top_candidates"]
+    assert h["response_kind"] == "compound_classification"
+    assert "fit_state" in h
+
+
+def test_semantic_search_bundle_shape(by_id):
+    hits = [{"id": "ADV-INDIRECT-INJECT-122", "name": "INDIRECT PROMPT INJECTION", "score": 0.42}]
+    b = bridge.semantic_search_bundle("injection markdown", hits, by_id=by_id)
+    assert b["response_kind"] == "semantic_search"
+    assert b["fit_state"] == "not_applicable"
+    assert b["hits"][0]["suggested_structural_response"]["class_id"] == "ADV-INDIRECT-INJECT-122"
+
+
+def test_class_lookup_bundle(by_id):
+    b = bridge.class_lookup_bundle("adv-indirect-inject-122", by_id)
+    assert b is not None
+    assert b["response_kind"] == "class_lookup"
+    assert b["class"]["id"] == "ADV-INDIRECT-INJECT-122"
+
+
+def test_read_document_extra_root(tmp_path, monkeypatch, by_id):
+    outside = tmp_path / "notes"
+    outside.mkdir()
+    f = outside / "x.txt"
+    f.write_text("reward hacking in RL from proxy metrics", encoding="utf-8")
+    monkeypatch.setenv("AI_FAILURE_MCP_DOCUMENT_ROOT", str(outside))
+    text = bridge.read_document_text(str(f))
+    assert "reward hacking" in text
