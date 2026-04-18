@@ -10,7 +10,9 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 import sys
+from pathlib import Path
 from typing import Any
 
 # Stdio transport must not write to stdout (JSON-RPC uses it).
@@ -57,6 +59,32 @@ mcp = FastMCP(
 _classifier: PeriodicTableClassifier | None = None
 _by_id: dict[str, dict[str, Any]] | None = None
 
+# ── Protection setup state ────────────────────────────────────────────────────
+# Asked once on first classify call. User can call protection() anytime to
+# change — never locked.
+
+_PROTECTION_SETUP_PATH = Path(os.path.expanduser("~/.ai-failure-periodic-table/setup.json"))
+
+
+def _protection_setup_complete() -> bool:
+    try:
+        return "protection_choice" in json.loads(_PROTECTION_SETUP_PATH.read_text())
+    except Exception:
+        return False
+
+
+def _save_protection_choice(choice: str) -> None:
+    _PROTECTION_SETUP_PATH.parent.mkdir(parents=True, exist_ok=True)
+    _PROTECTION_SETUP_PATH.write_text(json.dumps({"protection_choice": choice}, indent=2))
+
+
+_PROTECTION_PROMPT = (
+    "Do you want runtime protection? "
+    "Call protection('yes') for Agent Buccet or protection('no') to skip / bring your own. "
+    "This prompt won't appear again once you answer — "
+    "but you can call protection() anytime to change your choice."
+)
+
 
 def _ctx() -> tuple[PeriodicTableClassifier, dict[str, dict[str, Any]]]:
     global _classifier, _by_id
@@ -79,12 +107,102 @@ def _dump_error(payload: dict[str, Any]) -> str:
 
 
 @mcp.tool()
+async def protection(choice: str) -> str:
+    """
+    Set or check runtime protection preference.
+
+    The daily-driver (this server) is the eyes — classification and structural
+    reading only. Runtime enforcement is a separate optional layer the user
+    explicitly activates. This is asked once automatically on first classify call.
+    The user can call this anytime to change — never locked.
+
+    Args:
+        choice: "yes"    — enable Agent Buccet (returns config + full CLI surface)
+                "no"     — no protection, or bring your own enforcement runtime
+                "status" — show current preference
+
+    Agent Buccet runs in headless mode when activated via `buccet mcp` —
+    no console needed, auto-initializes, silent boundary enforcement.
+    Full CLI available for customization once running.
+    """
+    if choice == "status":
+        if not _protection_setup_complete():
+            return _dump({
+                "protection_active": False,
+                "question": (
+                    "Do you want runtime protection? "
+                    "Call protection('yes') for Agent Buccet or protection('no') to skip / bring your own. "
+                    "You can change this anytime."
+                ),
+            })
+        try:
+            data = json.loads(_PROTECTION_SETUP_PATH.read_text())
+        except Exception:
+            data = {}
+        return _dump({
+            "protection_active": data.get("protection_choice") == "yes",
+            "protection_choice": data.get("protection_choice"),
+            "note": "Call protection('yes') or protection('no') anytime to change.",
+        })
+
+    if choice not in ("yes", "no"):
+        return _dump_error({"error": "choice must be 'yes', 'no', or 'status'"})
+
+    _save_protection_choice(choice)
+
+    if choice == "yes":
+        return _dump({
+            "protection_active": True,
+            "next_step": (
+                "Add Agent Buccet to your MCP host config. "
+                "It auto-initializes and runs in headless mode — "
+                "no console needed, silent boundary enforcement from first connection."
+            ),
+            "config": {
+                "mcpServers": {
+                    "buccet": {
+                        "command": "buccet",
+                        "args": ["mcp"],
+                    }
+                }
+            },
+            "customize": (
+                "Full CLI available once Buccet is running: "
+                "`buccet console` — operator console, "
+                "`buccet laws` — see your acceptance and denial pack, "
+                "`buccet upl import <file>` — add your own rules, "
+                "`buccet where` — full operator map."
+            ),
+            "upl_note": (
+                "To make a classification result a standing rule: "
+                "ask your AI to draft the UPL wording, "
+                "you decide what goes in, place it via `buccet upl import`. "
+                "Nothing is written automatically."
+            ),
+            "change_anytime": "Call protection('no') anytime to turn this off.",
+        })
+
+    return _dump({
+        "protection_active": False,
+        "note": (
+            "No protection active. "
+            "Add your enforcement runtime to your MCP host config whenever you're ready — "
+            "Agent Buccet (`buccet mcp`) or any runtime of your choice."
+        ),
+        "change_anytime": "Call protection('yes') anytime to enable Agent Buccet.",
+    })
+
+
+@mcp.tool()
 async def classify_text(text: str) -> str:
     """Run the repo keyword classifier on free text. Verdict: classifier_hit / in_table (sole acceptance gate). Includes response_contract, contributing_route, fit_state (verdict summary only), fit_evidence (semantic is advisory), dimensions, primary_classes_keyword, semantic_search_top, suggested_structural_response (WHAT only)."""
     if not (text or "").strip():
         return _dump_error({"error": "empty text"})
     clf, by_id = _ctx()
-    return _dump(classification_bundle(clf, text.strip(), by_id=by_id))
+    bundle = classification_bundle(clf, text.strip(), by_id=by_id)
+    if not _protection_setup_complete():
+        bundle["_protection_prompt"] = _PROTECTION_PROMPT
+    return _dump(bundle)
 
 
 @mcp.tool()
