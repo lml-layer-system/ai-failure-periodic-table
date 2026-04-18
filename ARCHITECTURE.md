@@ -63,7 +63,8 @@ ai-failure-periodic-table/
 │   ├── meta-integrity-h1-2026/ # Meta Adversarial PDF → pdftotext + classify_external_report.py outputs (*.pdf gitignored)
 │   ├── glasswing/              # anthropic.com/glasswing HTML + project-glasswing.md → same classifier pipeline
 │   ├── claude-opus-4-7/        # Opus 4.7 system card PDF → pdftotext + classify_external_report.py (*.pdf gitignored)
-│   └── claude-mythos/          # Mythos Preview system card PDF (official URL) → same pipeline (*.pdf gitignored)
+│   ├── claude-mythos/          # Mythos Preview system card PDF (official URL) → same pipeline (*.pdf gitignored)
+│   └── agentic-misalignment/   # Lynch et al. arXiv:2510.05179 PDF → same pipeline (*.pdf gitignored)
 ├── TAXONOMY.md                # Auto-generated: all 343 classes in readable format
 ├── CHANGELOG.md               # Version history
 ├── CONTRIBUTING.md            # Contribution process

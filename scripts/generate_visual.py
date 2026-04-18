@@ -275,7 +275,7 @@ a{{color:#58a6ff}}
 
 <footer class="footer">
   <a href="https://github.com/lml-layer-system/ai-failure-periodic-table" target="_blank">github.com/lml-layer-system/ai-failure-periodic-table</a>
-  &nbsp;·&nbsp; v1.4.15 &nbsp;·&nbsp; Sources: 2026 frontier system cards, peer-reviewed safety literature
+  &nbsp;·&nbsp; v1.4.16 &nbsp;·&nbsp; Sources: 2026 frontier system cards, peer-reviewed safety literature
 </footer>
 
 <div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">

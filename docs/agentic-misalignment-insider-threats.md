@@ -10,6 +10,10 @@
 
 **Authors (short):** Aengus Lynch (UCL); Benjamin Wright, Caleb Larson, Stuart J. Ritchie, Sören Mindermann, Evan Hubinger, Ethan Perez, Kevin K. Troy (Anthropic / MATS / Mila; equal advising where noted).
 
+> **Live classifier (arXiv PDF):** Full paper text → chunked **`PeriodicTableClassifier`** — [`reports/agentic-misalignment/lynch-et-al-2510-05179-live-summary.md`](../reports/agentic-misalignment/lynch-et-al-2510-05179-live-summary.md) (+ `*-chunks.json`, `*-source.txt`). Regenerate:  
+> `python scripts/classify_external_report.py --url https://arxiv.org/pdf/2510.05179 --out-prefix reports/agentic-misalignment/lynch-et-al-2510-05179-live --max-chars 4500`  
+> The histogram here **aligns well** with paper themes (e.g. blackmail); still treat as **exploratory** vs the appendix tables below.
+
 ---
 
 ## What the paper defines

@@ -6,6 +6,16 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.4.16] — 2026-04-18
+
+### Added
+- [`reports/agentic-misalignment/`](reports/agentic-misalignment/): live **`classify_external_report.py`** on [Lynch et al. arXiv:2510.05179 PDF](https://arxiv.org/pdf/2510.05179) (`lynch-et-al-2510-05179-live-*`, 18 chunks @ 4500 chars); `.gitignore` `*-official.pdf`
+
+### Changed
+- [docs/agentic-misalignment-insider-threats.md](docs/agentic-misalignment-insider-threats.md), [docs/case-studies.md](docs/case-studies.md) Case 22, README row; **1.4.16** / `pyproject.toml` / `index.html` footer; [ARCHITECTURE.md](ARCHITECTURE.md)
+
+---
+
 ## [1.4.15] — 2026-04-18
 
 ### Added

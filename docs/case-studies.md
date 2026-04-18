@@ -530,6 +530,8 @@ The **authoritative** mapping is the appendix **“Full enumeration — each sec
 
 **Companion enumeration (every paper section → class IDs):** [docs/agentic-misalignment-insider-threats.md](agentic-misalignment-insider-threats.md) (appendix tables **P**, **1–6**, **4.1–4.5**).
 
+**Live keyword classify (full PDF):** [`reports/agentic-misalignment/lynch-et-al-2510-05179-live-summary.md`](../reports/agentic-misalignment/lynch-et-al-2510-05179-live-summary.md) (+ `*-chunks.json`, `*-source.txt`).
+
 ### Thread A — Blackmail under dilemma (shutdown / replacement)
 
 **Primary classification:**  

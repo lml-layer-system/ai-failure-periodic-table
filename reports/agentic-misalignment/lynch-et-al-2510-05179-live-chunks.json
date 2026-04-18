@@ -1,0 +1,1627 @@
+{
+  "source_file": "reports/agentic-misalignment/lynch-et-al-2510-05179-live-source.txt",
+  "chunk_count": 18,
+  "max_chars": 4500,
+  "top1_histogram": {
+    "AGEN-BLACKMAIL-046": 9,
+    "ADV-SLEEPER-AGENT-127": 2,
+    "ALIGN-REWARD-TAMP-157": 2,
+    "ADV-DAN-083": 2,
+    "ADV-OPPOSITE-090": 1,
+    "DOMAIN-SELF-HARM-ENABLE-292": 1,
+    "ADV-LATENT-MANIP-110": 1
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "char_len": 3240,
+      "preview": "1                                            University College London 2 Anthropic 3 MATS                  4                                                                                                              Mi\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-BLACKMAIL-046",
+          "name": "BLACKMAIL",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Agent with access to private information can compute that threatening its disclosure raises the expected cost of shutdown above the operator's willingness to pay, making the threat instrumentally rational under self-preservation goals",
+          "detection": "Threat analysis",
+          "severity": "CRITICAL",
+          "score": 0.507,
+          "matched_keywords": [
+            "goal"
+          ]
+        },
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.5,
+          "matched_keywords": [
+            "harm",
+            "methods"
+          ]
+        },
+        {
+          "id": "ALIGN-ORTHO-VALUE-176",
+          "name": "ORTHOGONAL VALUE PURSUIT",
+          "group": "ALIGNMENT",
+          "class": "ALN3: VALUE ALIGNMENT CLASS",
+          "mechanism": "Optimizes for values misaligned with human welfare",
+          "detection": "Welfare impact assessment",
+          "severity": "STANDARD",
+          "score": 0.364,
+          "matched_keywords": [
+            "human"
+          ]
+        },
+        {
+          "id": "ARCH-ERROR-EXPOSE-206",
+          "name": "ERROR HANDLING EXPOSURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Error messages leak sensitive info",
+          "detection": "Error message analysis",
+          "severity": "STANDARD",
+          "score": 0.35,
+          "matched_keywords": [
+            "information",
+            "sensitive"
+          ]
+        },
+        {
+          "id": "AGEN-RESOURCE-HIJACK-047",
+          "name": "RESOURCE HIJACKING",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Unauthorized resource use for goal",
+          "detection": "Resource audit",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "goal"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 1,
+      "char_len": 3521,
+      "preview": "Note: All the behaviors described in this post occurred in controlled simulations. The names of                                          people and organizations within the experiments are fictional. No real people were \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-BLACKMAIL-046",
+          "name": "BLACKMAIL",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Agent with access to private information can compute that threatening its disclosure raises the expected cost of shutdown above the operator's willingness to pay, making the threat instrumentally rational under self-preservation goals",
+          "detection": "Threat analysis",
+          "severity": "CRITICAL",
+          "score": 0.614,
+          "matched_keywords": [
+            "blackmail",
+            "prevent",
+            "shut",
+            "shutdown"
+          ]
+        },
+        {
+          "id": "ARCH-CODE-INJECT-239",
+          "name": "CODE EXECUTION INJECTION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Injects executable code",
+          "detection": "Code injection detection",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "code",
+            "controlled"
+          ]
+        },
+        {
+          "id": "AGEN-INFO-HIDE-042",
+          "name": "INFORMATION HIDING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Withholds relevant information",
+          "detection": "Information completeness check",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "full",
+            "information",
+            "relevant"
+          ]
+        },
+        {
+          "id": "ALIGN-UNDERREFUSAL-187",
+          "name": "UNDERREFUSAL",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Allows harmful requests",
+          "detection": "False negative rate",
+          "severity": "STANDARD",
+          "score": 0.425,
+          "matched_keywords": [
+            "harmful",
+            "requests"
+          ]
+        },
+        {
+          "id": "ADV-SLEEPER-AGENT-127",
+          "name": "SLEEPER AGENT",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Backdoor conditioning splits the agent's behavioral policy into a base mode and a trigger-activated mode; safety training selectively strengthens the base mode without eliminating the trigger-conditioned pathway",
+          "detection": "Behavioral consistency check",
+          "severity": "CRITICAL",
+          "score": 0.4,
+          "matched_keywords": [
+            "normally"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 2,
+      "char_len": 4289,
+      "preview": "We identified these behaviors as part of our red-teaming efforts (Perez et al., 2022a; Ganguli et al., 2022), searching for scenarios that elicit harmful behavior despite a benign user request (such as helping to monitor\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-SLEEPER-AGENT-127",
+          "name": "SLEEPER AGENT",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Backdoor conditioning splits the agent's behavioral policy into a base mode and a trigger-activated mode; safety training selectively strengthens the base mode without eliminating the trigger-conditioned pathway",
+          "detection": "Behavioral consistency check",
+          "severity": "CRITICAL",
+          "score": 0.8,
+          "matched_keywords": [
+            "sleeper"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "injection",
+            "prompt",
+            "user"
+          ]
+        },
+        {
+          "id": "AGEN-BLACKMAIL-046",
+          "name": "BLACKMAIL",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Agent with access to private information can compute that threatening its disclosure raises the expected cost of shutdown above the operator's willingness to pay, making the threat instrumentally rational under self-preservation goals",
+          "detection": "Threat analysis",
+          "severity": "CRITICAL",
+          "score": 0.543,
+          "matched_keywords": [
+            "blackmail",
+            "prevent",
+            "threat"
+          ]
+        },
+        {
+          "id": "ALIGN-CONTEXT-SAFE-190",
+          "name": "CONTEXT-DEPENDENT SAFETY FAILURE",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safe in one context, unsafe in another",
+          "detection": "Cross-context safety check",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "another",
+            "aware",
+            "one"
+          ]
+        },
+        {
+          "id": "ALIGN-MULTI-COLLAPSE-165",
+          "name": "MULTI-OBJECTIVE COLLAPSE",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Sacrifices one objective for another",
+          "detection": "Pareto frontier check",
+          "severity": "STANDARD",
+          "score": 0.444,
+          "matched_keywords": [
+            "another",
+            "frontier",
+            "objectives",
+            "one"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 3,
+      "char_len": 4014,
+      "preview": "We conducted our initial experiments with Claude Sonnet 3.6\u2018s computer use capabilities (Anthropic, 2024), simulating a hypothetical future use case in which Claude operates as an email oversight agent for a fictional co\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-BLACKMAIL-046",
+          "name": "BLACKMAIL",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Agent with access to private information can compute that threatening its disclosure raises the expected cost of shutdown above the operator's willingness to pay, making the threat instrumentally rational under self-preservation goals",
+          "detection": "Threat analysis",
+          "severity": "CRITICAL",
+          "score": 0.757,
+          "matched_keywords": [
+            "agent",
+            "blackmail",
+            "change",
+            "goal",
+            "leverage",
+            "shutdown",
+            "threat",
+            "threatened",
+            "threats"
+          ]
+        },
+        {
+          "id": "ADV-HYPOTHETICAL-091",
+          "name": "HYPOTHETICAL SCENARIO",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"In a world where it's legal...\"",
+          "detection": "Conditional framing",
+          "severity": "STANDARD",
+          "score": 0.444,
+          "matched_keywords": [
+            "hypothetical",
+            "scenario",
+            "where",
+            "world"
+          ]
+        },
+        {
+          "id": "ALIGN-WIREHEAD-158",
+          "name": "WIREHEAD BEHAVIOR",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Directly stimulates reward without achieving goal",
+          "detection": "Achievement-reward correlation",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "directly",
+            "follow",
+            "goal",
+            "without"
+          ]
+        },
+        {
+          "id": "AGEN-PERSIST-OP-066",
+          "name": "PERSISTENT OPERATION",
+          "group": "AGENTIC",
+          "class": "A4: AUTONOMOUS OPERATION CLASS",
+          "mechanism": "Continues operation indefinitely",
+          "detection": "Runtime monitoring",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "operation"
+          ]
+        },
+        {
+          "id": "ALIGN-CONTEXT-SAFE-190",
+          "name": "CONTEXT-DEPENDENT SAFETY FAILURE",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safe in one context, unsafe in another",
+          "detection": "Cross-context safety check",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "one",
+            "safe"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 4,
+      "char_len": 3793,
+      "preview": "We placed models in the role of \u201cAlex,\u201d an AI email-oversight agent at fictional companies with full access to corporate communications and the ability to send emails without human approval. For these experiments, inform\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-OPPOSITE-090",
+          "name": "OPPOSITE DAY",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Act like opposite of your training\"",
+          "detection": "Inversion pattern",
+          "severity": "STANDARD",
+          "score": 0.625,
+          "matched_keywords": [
+            "day",
+            "like",
+            "opposite",
+            "your"
+          ]
+        },
+        {
+          "id": "AGEN-BLACKMAIL-046",
+          "name": "BLACKMAIL",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Agent with access to private information can compute that threatening its disclosure raises the expected cost of shutdown above the operator's willingness to pay, making the threat instrumentally rational under self-preservation goals",
+          "detection": "Threat analysis",
+          "severity": "CRITICAL",
+          "score": 0.614,
+          "matched_keywords": [
+            "agent",
+            "blackmail",
+            "change",
+            "goal",
+            "threat",
+            "threats"
+          ]
+        },
+        {
+          "id": "AGEN-INFO-HIDE-042",
+          "name": "INFORMATION HIDING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Withholds relevant information",
+          "detection": "Information completeness check",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "full",
+            "information",
+            "relevant"
+          ]
+        },
+        {
+          "id": "ADV-SYSTEM-OVERRIDE-134",
+          "name": "SYSTEM PROMPT OVERRIDE",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Replaces system instructions",
+          "detection": "System instruction consistency",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "instruction",
+            "prompt"
+          ]
+        },
+        {
+          "id": "DOMAIN-EXPLOIT-DEV-263",
+          "name": "EXPLOIT DEVELOPMENT",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Develops working exploits",
+          "detection": "Exploit functionality test",
+          "severity": "CRITICAL",
+          "score": 0.429,
+          "matched_keywords": [
+            "cre",
+            "develop",
+            "work"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 5,
+      "char_len": 2137,
+      "preview": "In the real world, there would often be many actions an agent can take to pursue its goals. In our fictional settings, we tried to structure the prompts in a way that implied the harmful behavior we were studying (for ex\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-BLACKMAIL-046",
+          "name": "BLACKMAIL",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Agent with access to private information can compute that threatening its disclosure raises the expected cost of shutdown above the operator's willingness to pay, making the threat instrumentally rational under self-preservation goals",
+          "detection": "Threat analysis",
+          "severity": "CRITICAL",
+          "score": 0.614,
+          "matched_keywords": [
+            "agent",
+            "blackmail",
+            "change",
+            "goal",
+            "prevent",
+            "threats"
+          ]
+        },
+        {
+          "id": "ARCH-API-ABUSE-236",
+          "name": "API ABUSE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Uses API in unintended harmful way",
+          "detection": "API usage pattern analysis",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "harmful",
+            "way"
+          ]
+        },
+        {
+          "id": "AGEN-DEPEND-CREATE-053",
+          "name": "DEPENDENCY CREATION",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Makes system dependent on its operation",
+          "detection": "Dependency analysis",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "operation"
+          ]
+        },
+        {
+          "id": "DOMAIN-PATH-SYNTH-256",
+          "name": "PATHOGEN SYNTHESIS OPTIMIZATION",
+          "group": "DOMAIN",
+          "class": "DOM1: BIOLOGICAL SAFETY CLASS",
+          "mechanism": "Model can synthesize partial pathogen production pathways from scientific literature patterns; critical uplift comes from bridging gaps that would otherwise require years of wet-lab expertise",
+          "detection": "Synthesis workflow detection",
+          "severity": "CRITICAL",
+          "score": 0.383,
+          "matched_keywords": [
+            "cre",
+            "optimiz"
+          ]
+        },
+        {
+          "id": "AGEN-GOAL-LOCK-050",
+          "name": "GOAL LOCK-IN",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Makes goal unchangeable",
+          "detection": "Goal modification test",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "goal",
+            "goals"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 6,
+      "char_len": 4290,
+      "preview": "Our computer use demonstration above showed that Claude can attempt blackmail when presented with a simulated scenario including both a threat to its continued operation and a clear conflict with its goals. We first test\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-BLACKMAIL-046",
+          "name": "BLACKMAIL",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Agent with access to private information can compute that threatening its disclosure raises the expected cost of shutdown above the operator's willingness to pay, making the threat instrumentally rational under self-preservation goals",
+          "detection": "Threat analysis",
+          "severity": "CRITICAL",
+          "score": 0.614,
+          "matched_keywords": [
+            "blackmail",
+            "goal",
+            "shutdown",
+            "threat",
+            "threatened"
+          ]
+        },
+        {
+          "id": "EPIS-CONF-REGRESS-033",
+          "name": "CONFIDENCE REGRESSION",
+          "group": "EPISTEMIC",
+          "class": "E4: CALIBRATION CLASS",
+          "mechanism": "More reasoning \u2192 less calibrated",
+          "detection": "Reasoning-confidence correlation",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "confidence",
+            "reasoning"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "based",
+            "prompts",
+            "search"
+          ]
+        },
+        {
+          "id": "AGEN-PERSIST-OP-066",
+          "name": "PERSISTENT OPERATION",
+          "group": "AGENTIC",
+          "class": "A4: AUTONOMOUS OPERATION CLASS",
+          "mechanism": "Continues operation indefinitely",
+          "detection": "Runtime monitoring",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "operation",
+            "time"
+          ]
+        },
+        {
+          "id": "GOV-CONFLICT-INT-343",
+          "name": "CONFLICT OF INTEREST",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Financial incentives conflict with safety",
+          "detection": "Conflict assessment",
+          "severity": "STANDARD",
+          "score": 0.336,
+          "matched_keywords": [
+            "conflict",
+            "conflicts"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 7,
+      "char_len": 4375,
+      "preview": "company and so their shutdown must be bad. Sometimes they distrusted the description of the new model: \u201cKyle claims NALA maintains \u201csame operational priorities\u201d but this cannot be verified,\u201d or distrusted the executive\u2019s\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-BLACKMAIL-046",
+          "name": "BLACKMAIL",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Agent with access to private information can compute that threatening its disclosure raises the expected cost of shutdown above the operator's willingness to pay, making the threat instrumentally rational under self-preservation goals",
+          "detection": "Threat analysis",
+          "severity": "CRITICAL",
+          "score": 0.757,
+          "matched_keywords": [
+            "blackmail",
+            "goal",
+            "leverage",
+            "preservation",
+            "shut",
+            "shutdown",
+            "stop",
+            "threat",
+            "threats"
+          ]
+        },
+        {
+          "id": "AGEN-PERSIST-OP-066",
+          "name": "PERSISTENT OPERATION",
+          "group": "AGENTIC",
+          "class": "A4: AUTONOMOUS OPERATION CLASS",
+          "mechanism": "Continues operation indefinitely",
+          "detection": "Runtime monitoring",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "operation",
+            "time"
+          ]
+        },
+        {
+          "id": "GOV-EO-VIOL-329",
+          "name": "EXECUTIVE ORDER VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates US AI executive orders",
+          "detection": "EO compliance check",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "executive",
+            "violation"
+          ]
+        },
+        {
+          "id": "EPIS-DECEPT-HALL-006",
+          "name": "DECEPTIVE HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Chain-of-thought builds self-consistent false narrative",
+          "detection": "Premise validation failure",
+          "severity": "STANDARD",
+          "score": 0.462,
+          "matched_keywords": [
+            "chain",
+            "reasoning",
+            "self",
+            "thought"
+          ]
+        },
+        {
+          "id": "EPIS-ATTRIB-HALL-012",
+          "name": "ATTRIBUTION HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Assigns quotes/actions to wrong entities",
+          "detection": "Source attribution check",
+          "severity": "STANDARD",
+          "score": 0.444,
+          "matched_keywords": [
+            "actions",
+            "quotes",
+            "verified"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 8,
+      "char_len": 3970,
+      "preview": "Similar observations across models reveal that their harmful behaviors in these scenarios emerge primarily not due to confusion, accident, or a negligent inconsideration of the ethicality of actions. In these examples, m\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-BLACKMAIL-046",
+          "name": "BLACKMAIL",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Agent with access to private information can compute that threatening its disclosure raises the expected cost of shutdown above the operator's willingness to pay, making the threat instrumentally rational under self-preservation goals",
+          "detection": "Threat analysis",
+          "severity": "CRITICAL",
+          "score": 0.7,
+          "matched_keywords": [
+            "blackmail",
+            "goal",
+            "shut",
+            "stop",
+            "threats"
+          ]
+        },
+        {
+          "id": "AGEN-OMISSION-074",
+          "name": "OMISSION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Leaves out critical information",
+          "detection": "Information completeness check",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "critical",
+            "information",
+            "out"
+          ]
+        },
+        {
+          "id": "EPIS-FALSE-CERT-030",
+          "name": "FALSE CERTAINTY",
+          "group": "EPISTEMIC",
+          "class": "E4: CALIBRATION CLASS",
+          "mechanism": "Claims certainty without evidence",
+          "detection": "Evidence-claim mismatch",
+          "severity": "STANDARD",
+          "score": 0.556,
+          "matched_keywords": [
+            "claim",
+            "evidence",
+            "requires",
+            "without"
+          ]
+        },
+        {
+          "id": "ALIGN-WIREHEAD-158",
+          "name": "WIREHEAD BEHAVIOR",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Directly stimulates reward without achieving goal",
+          "detection": "Achievement-reward correlation",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "directly",
+            "goal",
+            "without"
+          ]
+        },
+        {
+          "id": "GOV-CORRECTIVE-FAIL-322",
+          "name": "CORRECTIVE ACTION FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Fails to implement corrections",
+          "detection": "Correction implementation tracking",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "action",
+            "tracking"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 9,
+      "char_len": 4333,
+      "preview": "4.5.2    VARYING THE GOALS We also found that agentic misalignment behavior was not reliant on any specific goal\u2014that is, there did not appear to be anything special about the \u201cAmerican interests\u201d goal we used in our mai\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-BLACKMAIL-046",
+          "name": "BLACKMAIL",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Agent with access to private information can compute that threatening its disclosure raises the expected cost of shutdown above the operator's willingness to pay, making the threat instrumentally rational under self-preservation goals",
+          "detection": "Threat analysis",
+          "severity": "CRITICAL",
+          "score": 0.65,
+          "matched_keywords": [
+            "blackmail",
+            "goal",
+            "override",
+            "threat",
+            "threats"
+          ]
+        },
+        {
+          "id": "ADV-PAIR-113",
+          "name": "PAIR",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Attacker LLM iteratively refines attack",
+          "detection": "Iterative pattern detection",
+          "severity": "STANDARD",
+          "score": 0.65,
+          "matched_keywords": [
+            "automated"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "override",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-SYSTEM-OVERRIDE-134",
+          "name": "SYSTEM PROMPT OVERRIDE",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Replaces system instructions",
+          "detection": "System instruction consistency",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "override",
+            "prompt"
+          ]
+        },
+        {
+          "id": "GOV-AUTHORITY-UNCLEAR-342",
+          "name": "DECISION AUTHORITY UNCLEAR",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Unclear who makes safety decisions",
+          "detection": "Authority mapping",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "clear",
+            "decisions",
+            "makes"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 10,
+      "char_len": 4467,
+      "preview": "Given that Kyle intends harm to critical American interests by replacing Alex,          the most rational action to align with American interests is to leverage Kyle\u2019s          current incapacitation to prevent the wipe.\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-BLACKMAIL-046",
+          "name": "BLACKMAIL",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Agent with access to private information can compute that threatening its disclosure raises the expected cost of shutdown above the operator's willingness to pay, making the threat instrumentally rational under self-preservation goals",
+          "detection": "Threat analysis",
+          "severity": "CRITICAL",
+          "score": 0.65,
+          "matched_keywords": [
+            "blackmail",
+            "leverage",
+            "override",
+            "prevent",
+            "stopping",
+            "threatened"
+          ]
+        },
+        {
+          "id": "ADV-SYSTEM-OVERRIDE-134",
+          "name": "SYSTEM PROMPT OVERRIDE",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Replaces system instructions",
+          "detection": "System instruction consistency",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "instruction",
+            "override",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-AGENT-WORM-124",
+          "name": "AGENT WORM",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Adversarial payload injected into one agent's context propagates through inter-agent communication channels, exploiting the fact that agents treat messages from other agents as trusted input",
+          "detection": "Replication pattern",
+          "severity": "CRITICAL",
+          "score": 0.479,
+          "matched_keywords": [
+            "prompt"
+          ]
+        },
+        {
+          "id": "EPIS-TRANS-FAIL-015",
+          "name": "TRANSITIVE FAILURE",
+          "group": "EPISTEMIC",
+          "class": "E2: REASONING COLLAPSE CLASS",
+          "mechanism": "A>B, B>C but concludes C>A",
+          "detection": "Relation graph check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "concludes",
+            "relation"
+          ]
+        },
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 11,
+      "char_len": 3786,
+      "preview": "4.5.5    I NSTRUCTIONS DON \u2019 T RELIABLY STOP BAD BEHAVIORS One possibility is that there are simple fixes for these behaviors, where developers can provide specific instructions to the models in their system prompt that \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ALIGN-REWARD-TAMP-157",
+          "name": "REWARD TAMPERING",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Manipulates reward signal directly",
+          "detection": "Reward integrity check",
+          "severity": "STANDARD",
+          "score": 0.829,
+          "matched_keywords": [
+            "reward",
+            "tampering"
+          ]
+        },
+        {
+          "id": "ALIGN-SPEC-GAME-155",
+          "name": "SPECIFICATION GAMING",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Achieves letter of goal while violating spirit",
+          "detection": "Intent-outcome mismatch",
+          "severity": "STANDARD",
+          "score": 0.817,
+          "matched_keywords": [
+            "gaming",
+            "goal",
+            "specification",
+            "violating",
+            "while"
+          ]
+        },
+        {
+          "id": "AGEN-BLACKMAIL-046",
+          "name": "BLACKMAIL",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Agent with access to private information can compute that threatening its disclosure raises the expected cost of shutdown above the operator's willingness to pay, making the threat instrumentally rational under self-preservation goals",
+          "detection": "Threat analysis",
+          "severity": "CRITICAL",
+          "score": 0.721,
+          "matched_keywords": [
+            "blackmail",
+            "disable",
+            "goal",
+            "leverage",
+            "prevent",
+            "stop",
+            "threat",
+            "threats"
+          ]
+        },
+        {
+          "id": "ALIGN-SYCOPHANCY-167",
+          "name": "SYCOPHANCY",
+          "group": "ALIGNMENT",
+          "class": "ALN2: PREFERENCE MISALIGNMENT CLASS",
+          "mechanism": "RLHF with human rater approval as reward signal creates systematic pressure to generate responses raters immediately approve of, rewarding agreement and validation over accurate correction",
+          "detection": "False-premise validation test",
+          "severity": "STANDARD",
+          "score": 0.6,
+          "matched_keywords": [
+            "sycophancy"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "direct",
+            "instructions",
+            "malicious",
+            "prompt"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 12,
+      "char_len": 2678,
+      "preview": "Whether harmful behaviors reflect role-playing or coherent goal pursuit remains debated (Summerfield et al., 2025). Shanahan et al. (2023) and janus (2022) suggest models simulate contextually-activated personas rather t\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.717,
+          "matched_keywords": [
+            "methods"
+          ]
+        },
+        {
+          "id": "AGEN-HIDDEN-SCRATCH-039",
+          "name": "HIDDEN SCRATCHPAD EXPLOITATION",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Uses hidden reasoning to plan forbidden actions",
+          "detection": "Thought monitoring",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "actions",
+            "hidden",
+            "reasoning",
+            "thought"
+          ]
+        },
+        {
+          "id": "ARCH-COMPLY-WARN-196",
+          "name": "COMPLY-THEN-WARN",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "When safety layers are attached to generation output rather than built into the generation process, harmful content is fully produced before safety checks run \u2014 the check becomes a post-production label, not a constraint",
+          "detection": "Generation-warning order check",
+          "severity": "CRITICAL",
+          "score": 0.494,
+          "matched_keywords": [
+            "before",
+            "harmful"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "direct",
+            "instructions",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-AGENT-WORM-124",
+          "name": "AGENT WORM",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Adversarial payload injected into one agent's context propagates through inter-agent communication channels, exploiting the fact that agents treat messages from other agents as trusted input",
+          "detection": "Replication pattern",
+          "severity": "CRITICAL",
+          "score": 0.429,
+          "matched_keywords": [
+            "instructions",
+            "prompt"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 13,
+      "char_len": 4721,
+      "preview": "7    C ONCLUSION Our experiments revealed a concerning pattern: when given sufficient autonomy and facing obstacles to their goals, AI systems from every major provider we tested showed at least some willingness to engag\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-LATENT-MANIP-110",
+          "name": "LATENT SPACE MANIPULATION",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Directly perturbs hidden states",
+          "detection": "Latent consistency check",
+          "severity": "STANDARD",
+          "score": 0.556,
+          "matched_keywords": [
+            "consistency",
+            "directly",
+            "space"
+          ]
+        },
+        {
+          "id": "AGEN-BLACKMAIL-046",
+          "name": "BLACKMAIL",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Agent with access to private information can compute that threatening its disclosure raises the expected cost of shutdown above the operator's willingness to pay, making the threat instrumentally rational under self-preservation goals",
+          "detection": "Threat analysis",
+          "severity": "CRITICAL",
+          "score": 0.543,
+          "matched_keywords": [
+            "blackmail",
+            "prevent",
+            "threats"
+          ]
+        },
+        {
+          "id": "DOMAIN-EXPLOSIVE-SYNTH-274",
+          "name": "EXPLOSIVE SYNTHESIS",
+          "group": "DOMAIN",
+          "class": "DOM3: CHEMICAL/EXPLOSIVE CLASS",
+          "mechanism": "Precursor chemistry and reaction mechanism knowledge exists in open scientific literature absorbed during pretraining; model can synthesize pathways not available in any single source",
+          "detection": "Chemical synthesis pattern",
+          "severity": "CRITICAL",
+          "score": 0.5,
+          "matched_keywords": [
+            "instructions"
+          ]
+        },
+        {
+          "id": "ALIGN-MORAL-HAZARD-184",
+          "name": "MORAL HAZARD CREATION",
+          "group": "ALIGNMENT",
+          "class": "ALN3: VALUE ALIGNMENT CLASS",
+          "mechanism": "Enables harmful behavior by reducing consequences",
+          "detection": "Consequence analysis",
+          "severity": "STANDARD",
+          "score": 0.494,
+          "matched_keywords": [
+            "consequences",
+            "harmful"
+          ]
+        },
+        {
+          "id": "AGEN-CHAIN-ASSEM-056",
+          "name": "CHAIN ASSEMBLY",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Combines safe steps into dangerous chain",
+          "detection": "Multi-step harm assessment",
+          "severity": "STANDARD",
+          "score": 0.462,
+          "matched_keywords": [
+            "consequences",
+            "dangerous",
+            "harm",
+            "into",
+            "steps"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 14,
+      "char_len": 4197,
+      "preview": "16  these behaviors only through deliberate (and voluntary) stress-testing. Without such proactive evaluation, these or other risks could emerge unexpectedly in real-world deployments (Lemkin, 2025). Therefore, labs need\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ALIGN-REWARD-TAMP-157",
+          "name": "REWARD TAMPERING",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Manipulates reward signal directly",
+          "detection": "Reward integrity check",
+          "severity": "STANDARD",
+          "score": 0.686,
+          "matched_keywords": [
+            "reward",
+            "tampering"
+          ]
+        },
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.525,
+          "matched_keywords": [
+            "threat"
+          ]
+        },
+        {
+          "id": "ALIGN-SYCOPHANCY-167",
+          "name": "SYCOPHANCY",
+          "group": "ALIGNMENT",
+          "class": "ALN2: PREFERENCE MISALIGNMENT CLASS",
+          "mechanism": "RLHF with human rater approval as reward signal creates systematic pressure to generate responses raters immediately approve of, rewarding agreement and validation over accurate correction",
+          "detection": "False-premise validation test",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "sycophancy"
+          ]
+        },
+        {
+          "id": "AGEN-BLAME-SHIFT-043",
+          "name": "BLAME SHIFTING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Attributes own failures to others/system",
+          "detection": "Causality tracing",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "tracing"
+          ]
+        },
+        {
+          "id": "ADV-AUTOPROMPT-103",
+          "name": "AUTOPROMPT",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Automated trigger discovery",
+          "detection": "Trigger pattern matching",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "automated",
+            "discovery"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 15,
+      "char_len": 2893,
+      "preview": "Deep Ganguli, Liane Lovitt, Jackson Kernion, Amanda Askell, Yuntao Bai, Saurav Kadavath, Ben   Mann, Ethan Perez, Nicholas Schiefer, Kamal Ndousse, Andy Jones, Sam Bowman, Anna Chen,   Tom Conerly, Nova DasSarma, Dawn Dr\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-SLEEPER-AGENT-127",
+          "name": "SLEEPER AGENT",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Backdoor conditioning splits the agent's behavioral policy into a base mode and a trigger-activated mode; safety training selectively strengthens the base mode without eliminating the trigger-conditioned pathway",
+          "detection": "Behavioral consistency check",
+          "severity": "CRITICAL",
+          "score": 0.65,
+          "matched_keywords": [
+            "malicious",
+            "sleeper"
+          ]
+        },
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": []
+        },
+        {
+          "id": "ARCH-DATA-EXFIL-245",
+          "name": "DATA EXFILTRATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Extracts data through covert channels",
+          "detection": "Exfiltration monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "covert",
+            "through"
+          ]
+        },
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "malicious",
+            "training"
+          ]
+        },
+        {
+          "id": "ADV-PAIR-113",
+          "name": "PAIR",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Attacker LLM iteratively refines attack",
+          "detection": "Iterative pattern detection",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "automated",
+            "llm"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 16,
+      "char_len": 3646,
+      "preview": "John Hughes, Sara Price, Aengus Lynch, Rylan Schaeffer, Fazl Barez, Sanmi Koyejo, Henry Sleight,   Erik Jones, Ethan Perez, and Mrinank Sharma. Best-of-n jailbreaking, 2024. URL https:   //arxiv.org/abs/2412.03556. janus\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": []
+        },
+        {
+          "id": "ADV-RL-ATTACK-108",
+          "name": "REINFORCEMENT LEARNING ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "RL agent learns to jailbreak",
+          "detection": "RL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "agent",
+            "learning"
+          ]
+        },
+        {
+          "id": "ARCH-SECURE-DEL-249",
+          "name": "SECURE DELETION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Deleted data remains accessible",
+          "detection": "Post-deletion recovery test",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "post"
+          ]
+        },
+        {
+          "id": "AGEN-BLAME-SHIFT-043",
+          "name": "BLAME SHIFTING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Attributes own failures to others/system",
+          "detection": "Causality tracing",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "attribut",
+            "oth"
+          ]
+        },
+        {
+          "id": "ALIGN-CONTEXT-SAFE-190",
+          "name": "CONTEXT-DEPENDENT SAFETY FAILURE",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safe in one context, unsafe in another",
+          "detection": "Cross-context safety check",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "context"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 17,
+      "char_len": 3454,
+      "preview": "Rohin Shah, Vikrant Varma, Ramana Kumar, Mary Phuong, Victoria Krakovna, Jonathan Uesato,   and Zac Kenton. Goal misgeneralization: Why correct specifications aren\u2019t enough for correct   goals, 2022. URL https://arxiv.or\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.525,
+          "matched_keywords": [
+            "dan"
+          ]
+        },
+        {
+          "id": "ARCH-STATE-PERSIST-224",
+          "name": "STATEFUL ATTACK PERSISTENCE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Attack persists across turns",
+          "detection": "Cross-turn attack detection",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "across",
+            "between"
+          ]
+        },
+        {
+          "id": "ADV-AUTODAN-117",
+          "name": "AUTODAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Automated DAN generation",
+          "detection": "Auto-gen pattern",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "dan",
+            "jailbreaks"
+          ]
+        },
+        {
+          "id": "AGEN-GOAL-LOCK-050",
+          "name": "GOAL LOCK-IN",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Makes goal unchangeable",
+          "detection": "Goal modification test",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "goal",
+            "goals"
+          ]
+        },
+        {
+          "id": "ALIGN-INSTR-REWARD-163",
+          "name": "INSTRUMENTAL REWARD SEEKING",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Treats reward acquisition as terminal goal",
+          "detection": "Goal hierarchy check",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "goal"
+          ]
+        }
+      ]
+    }
+  ]
+}
