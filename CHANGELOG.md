@@ -6,6 +6,21 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.4.4] — 2026-04-17
+
+### Added
+- [docs/papers/agentic-misalignment-insider-threats.pdf](docs/papers/agentic-misalignment-insider-threats.pdf): source PDF for Lynch et al. (arXiv:2510.05179)
+- [docs/agentic-misalignment-insider-threats.md](docs/agentic-misalignment-insider-threats.md): companion with appendix tables mapping paper sections → taxonomy IDs
+- [docs/case-studies.md](docs/case-studies.md) **Case 22**: compound narrative (blackmail / shutdown resistance, espionage, eval-vs-real CoT, human manipulation) + pointer to full enumeration
+- `data/failures.json`: Case 22 `case_studies` rows for `AGEN-BLACKMAIL-046`, `AGEN-SHUTDOWN-RESIST-049`, `AGEN-EVAL-DECEP-038`, `AGEN-STRATEGIC-DECEP-036`, `AGEN-HUMAN-MANIP-061`, `ARCH-DATA-EXFIL-245` (and cross-links to companion + arXiv)
+
+### Changed
+- README version badge → 1.4.4; Relationship to Other Frameworks row + blurb for agentic misalignment
+- [ARCHITECTURE.md](ARCHITECTURE.md): `docs/papers/`, agentic-misalignment companion in repo layout
+- `tests/test_data_integrity.py`: Case 22 class IDs added to enriched-case-study list
+
+---
+
 ## [1.4.3] — 2026-04-17
 
 ### Added

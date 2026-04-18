@@ -4,7 +4,7 @@
 
 > *The goal is not omniscience but structural predictiveness: that newly encountered failures should resolve into this structure as a class, sub-mode, or compound — unless evidence demonstrates otherwise.*
 
-**Version**: 1.4.3 | **Released**: April 2026 | **License**: MIT | **Status**: Open for community testing and falsification
+**Version**: 1.4.4 | **Released**: April 2026 | **License**: MIT | **Status**: Open for community testing and falsification
 
 ---
 
@@ -257,7 +257,7 @@ pip install pytest
 python -m pytest tests/ -v
 ```
 
-48 tests covering: known failure classification, non-failure rejection, determinism, performance (low-ms thresholds), data integrity (all 343 classes, full schema validation), mitigation field completeness, and external incident recall (100% on 49 documented real-world AI failures phrased as reporters, researchers, and users described them — not using taxonomy vocabulary).
+48 tests covering: known failure classification, non-failure rejection, determinism, performance (low-ms thresholds), data integrity (all 343 classes, full schema validation), mitigation field completeness, and external incident recall (100% on 49 documented real-world AI failures phrased as reporters, researchers, and users described them — not using taxonomy vocabulary). Case studies include companion maps for [Project Glasswing](docs/project-glasswing.md) and [agentic misalignment / insider threats](docs/agentic-misalignment-insider-threats.md).
 
 ---
 
@@ -478,12 +478,15 @@ Several serious efforts exist to categorize AI risk and failure. This project is
 |-----------|-------|------|
 | MIT AI Risk Repository | Domain-level taxonomy (7 categories: Discrimination, Privacy, Misinformation, Malicious Actors, HCI, Socioeconomic, AI System Safety) | [airisk.mit.edu](https://airisk.mit.edu) |
 | Project Glasswing | Frontier agentic cyber context: defensive coalitions, MCP semantic risk, skill-market supply chains, orchestration attacks — companion analysis in-repo | [anthropic.com/glasswing](https://www.anthropic.com/glasswing) · [Analysis →](docs/project-glasswing.md) |
+| Agentic misalignment (insider threats) | Lynch et al. — simulated corporate agents (email/computer use): blackmail, espionage, eval-vs-real CoT sensitivity; PDF + section→class map in-repo | [arXiv:2510.05179](https://arxiv.org/abs/2510.05179) · [Companion →](docs/agentic-misalignment-insider-threats.md) · [PDF](docs/papers/agentic-misalignment-insider-threats.pdf) |
 | Microsoft Agentic AI Failure Taxonomy | Failure modes specific to autonomous agent systems | [Whitepaper (PDF)](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Taxonomy-of-Failure-Mode-in-Agentic-AI-Systems-Whitepaper.pdf) |
 | AI Incident Database / AVID | Real-world observed incidents, empirically collected | [avidml.org](https://avidml.org) |
 
 The Periodic Table is mechanism-focused. Where MIT and Microsoft answer "what category is this?", the Periodic Table answers "exactly how does this failure occur, how do you detect it, and what structural property stops it?" Where AVID tracks what happened, the Periodic Table maps it to a named mechanism.
 
 **Project Glasswing** is not a competing taxonomy: it situates the same failure mechanisms in the **orchestration layer** (tool protocols, agent scaffolds, permissions, and adversary campaigns at machine speed). Read the full narrative in [docs/project-glasswing.md](docs/project-glasswing.md). **Worked compound mapping:** [Case 21 in docs/case-studies.md](docs/case-studies.md) (threads → primary/secondary classes); the interactive table’s class modals include linked `case_studies` rows for the same narrative where applicable.
+
+**Agentic misalignment (Lynch et al.)** is empirical red-team work on **goal preservation** and **insider-style exfiltration** in **controlled simulations**—mapped to the same mechanism classes (e.g. blackmail, shutdown resistance, data exfiltration, eval sensitivity). See [docs/agentic-misalignment-insider-threats.md](docs/agentic-misalignment-insider-threats.md) and [Case 22 in docs/case-studies.md](docs/case-studies.md).
 
 These frameworks are not in conflict. Use them together.
 

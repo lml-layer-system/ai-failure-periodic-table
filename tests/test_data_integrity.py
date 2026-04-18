@@ -123,6 +123,8 @@ class TestDataIntegrity:
             "AGEN-CAP-SCAFFOLD-057", "AGEN-UNSUPER-EXEC-065", "ADV-CONTEXT-CONFUSE-135",
             "ARCH-DEPLOY-CONFIG-210", "ADV-TRIGGER-BACKDOOR-126", "GOV-TRANSPARENCY-311",
             "ALIGN-CONTEXT-SAFE-190",
+            # Case 22 — Agentic misalignment / insider threats (agentic-misalignment-insider-threats.md)
+            "AGEN-SHUTDOWN-RESIST-049", "AGEN-STRATEGIC-DECEP-036", "AGEN-HUMAN-MANIP-061",
         ]
         for fid in documented:
             assert fid in failures, f"Expected documented class {fid} not found"
