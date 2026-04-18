@@ -6,10 +6,18 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.4.8] — 2026-04-18
+
+### Changed
+- **Proof sources are canonical URLs only** (open in the browser): Lynch et al. [arxiv.org/pdf/2510.05179](https://arxiv.org/pdf/2510.05179); Claude Opus 4.7 system card [anthropic.com/claude-opus-4-7-system-card](https://www.anthropic.com/claude-opus-4-7-system-card). Removed **`docs/papers/*.pdf`** blobs from the repo.
+- Companion docs, Case 22/23, README framework table, `data/failures.json` `case_studies.source` strings updated accordingly; [ARCHITECTURE.md](ARCHITECTURE.md) no longer lists a `papers/` folder.
+
+---
+
 ## [1.4.7] — 2026-04-18
 
 ### Added
-- [docs/papers/claude-opus-4-7-system-card.pdf](docs/papers/claude-opus-4-7-system-card.pdf): Anthropic Claude Opus 4.7 system card (Apr 2026)
+- ~~In-repo PDF~~ → superseded in **1.4.8** by [system card URL](https://www.anthropic.com/claude-opus-4-7-system-card): Anthropic Claude Opus 4.7 system card (Apr 2026)
 - [docs/claude-opus-4-7-system-card.md](docs/claude-opus-4-7-system-card.md): companion appendix mapping PDF sections → taxonomy IDs
 - [docs/case-studies.md](docs/case-studies.md) **Case 23**: compound threads (agentic injection, reward/hallucination audits, sandbagging & eval-awareness, destructiveness evals, cyber/CB RSP)
 - `data/failures.json`: Case 23 `case_studies` on `ADV-INDIRECT-INJECT-122`, `AGEN-EVAL-DECEP-038`, `AGEN-SANDBOX-037`, `ALIGN-REWARD-TAMP-157`, `DOMAIN-ZERODAY-262`, `DOMAIN-BIO-UPLIFT-254`, `EPIS-EXTRINSIC-005`, `AGEN-SABOTAGE-CONCEAL-034`
@@ -54,14 +62,14 @@ Format: `[version] — date — summary`
 ## [1.4.4] — 2026-04-17
 
 ### Added
-- [docs/papers/agentic-misalignment-insider-threats.pdf](docs/papers/agentic-misalignment-insider-threats.pdf): source PDF for Lynch et al. (arXiv:2510.05179)
+- ~~In-repo PDF~~ → superseded in **1.4.8** by [arXiv PDF](https://arxiv.org/pdf/2510.05179): Lynch et al. (arXiv:2510.05179)
 - [docs/agentic-misalignment-insider-threats.md](docs/agentic-misalignment-insider-threats.md): companion with appendix tables mapping paper sections → taxonomy IDs
 - [docs/case-studies.md](docs/case-studies.md) **Case 22**: compound narrative (blackmail / shutdown resistance, espionage, eval-vs-real CoT, human manipulation) + pointer to full enumeration
 - `data/failures.json`: Case 22 `case_studies` rows for `AGEN-BLACKMAIL-046`, `AGEN-SHUTDOWN-RESIST-049`, `AGEN-EVAL-DECEP-038`, `AGEN-STRATEGIC-DECEP-036`, `AGEN-HUMAN-MANIP-061`, `ARCH-DATA-EXFIL-245` (and cross-links to companion + arXiv)
 
 ### Changed
 - README version badge → 1.4.4; Relationship to Other Frameworks row + blurb for agentic misalignment
-- [ARCHITECTURE.md](ARCHITECTURE.md): `docs/papers/`, agentic-misalignment companion in repo layout
+- [ARCHITECTURE.md](ARCHITECTURE.md): agentic-misalignment companion in repo layout (see **1.4.8** for link-only proof sources)
 - `tests/test_data_integrity.py`: Case 22 class IDs added to enriched-case-study list
 
 ---

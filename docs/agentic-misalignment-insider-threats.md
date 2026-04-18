@@ -4,8 +4,8 @@
 
 **Canonical sources**
 
-- **PDF in this repo:** [papers/agentic-misalignment-insider-threats.pdf](papers/agentic-misalignment-insider-threats.pdf) (same content as the file you may have as “Newest ai failure update blaccmail.pdf”)
-- **arXiv:** [2510.05179](https://arxiv.org/abs/2510.05179)
+- **Paper (PDF, one click):** [arxiv.org/pdf/2510.05179](https://arxiv.org/pdf/2510.05179)
+- **arXiv abstract:** [2510.05179](https://arxiv.org/abs/2510.05179)
 - **Code:** [github.com/anthropic-experimental/agentic-misalignment](https://github.com/anthropic-experimental/agentic-misalignment)
 
 **Authors (short):** Aengus Lynch (UCL); Benjamin Wright, Caleb Larson, Stuart J. Ritchie, Sören Mindermann, Evan Hubinger, Ethan Perez, Kevin K. Troy (Anthropic / MATS / Mila; equal advising where noted).
@@ -68,4 +68,4 @@ Use this table to **navigate the PDF by section** and see **which mechanism IDs*
 
 ## Periodic Table case study
 
-Worked mapping and thread-level narrative: **[Case 22 in case-studies.md](case-studies.md)**. Structured `case_studies` rows in `data/failures.json` reference this file, Case 22, and the arXiv / PDF above.
+Worked mapping and thread-level narrative: **[Case 22 in case-studies.md](case-studies.md)**. Structured `case_studies` rows in `data/failures.json` reference this file, Case 22, and the **one-click** arXiv links above.

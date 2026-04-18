@@ -50,7 +50,6 @@ ai-failure-periodic-table/
 │   ├── freshness-watch.md     # Freshness Watch: feed → classifier review packets
 │   ├── mcp-daily-driver.md  # Cursor MCP: on-demand classify_text / URL / doc (stdio)
 │   ├── cursor-mcp-config.example.json
-│   └── papers/                # PDF sources (e.g. agentic-misalignment-insider-threats.pdf, claude-opus-4-7-system-card.pdf)
 │
 ├── .github/
 │   ├── workflows/ci.yml           # CI: test matrix Python 3.10–3.12

@@ -4,8 +4,8 @@
 
 **Canonical sources**
 
-- **PDF in this repo:** [papers/claude-opus-4-7-system-card.pdf](papers/claude-opus-4-7-system-card.pdf)
-- **Product / announcement:** [Introducing Claude Opus 4.7](https://www.anthropic.com/news/claude-opus-4-7)
+- **System card (official; opens the PDF in the browser):** [anthropic.com/claude-opus-4-7-system-card](https://www.anthropic.com/claude-opus-4-7-system-card)
+- **Release post:** [Introducing Claude Opus 4.7](https://www.anthropic.com/news/claude-opus-4-7)
 - **System cards index:** [Model system cards](https://www.anthropic.com/system-cards)
 
 ---
@@ -61,6 +61,6 @@ Use the PDF table of contents; row **#** matches major headings. Subsections in 
 
 ## Periodic Table case study
 
-Worked **compound** narrative (producer disclosure, multi-section): **[Case 23 in case-studies.md](case-studies.md)**. Structured `case_studies` rows in `data/failures.json` reference this file, Case 23, the announcement URL, and the PDF above.
+Worked **compound** narrative (producer disclosure, multi-section): **[Case 23 in case-studies.md](case-studies.md)**. Structured `case_studies` rows in `data/failures.json` reference this file, Case 23, the **one-click** system card and release URLs above.
 
-**Provenance:** Quote the **PDF** or Anthropic’s pages for numbers and claims; this companion is for **classification navigation** only.
+**Provenance:** Quote the **official system card** (link above) or Anthropic’s pages for numbers and claims; this companion is for **classification navigation** only.

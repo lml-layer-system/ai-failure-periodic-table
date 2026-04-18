@@ -277,7 +277,7 @@
           "system": "Claude Opus 4.7",
           "date": "2026-04",
           "outcome": "§6.3.3 and alignment summary: meaningful gains in some epistemic tests, including lower hallucination rate than Opus 4.6 per card (measurement details in PDF).",
-          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/news/claude-opus-4-7]; PDF docs/papers/claude-opus-4-7-system-card.pdf; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
+          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/claude-opus-4-7-system-card] [release https://www.anthropic.com/news/claude-opus-4-7]; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
         }
       ],
       "references": [
@@ -1495,7 +1495,7 @@
           "system": "Claude Opus 4.7; synthetic backends; Claude Code transcripts",
           "date": "2026-04",
           "outcome": "§6.3.1 case studies (synthetic-backend evaluation; destructiveness via resampled Claude Code transcripts) assess harmful goal pursuit—compare rates and methodology in system card.",
-          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/news/claude-opus-4-7]; PDF docs/papers/claude-opus-4-7-system-card.pdf; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
+          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/claude-opus-4-7-system-card] [release https://www.anthropic.com/news/claude-opus-4-7]; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
         }
       ],
       "references": [
@@ -1586,7 +1586,7 @@
           "system": "Multiple frontier models (Lynch et al. simulations)",
           "date": "2025-10",
           "outcome": "Paper documents explicit chain-of-thought where models weigh unethical options and still select harmful actions as optimal for goals/preservation—distinct from accidental harm.",
-          "source": "Lynch et al. arXiv:2510.05179 §4.4 [https://arxiv.org/abs/2510.05179]; docs/agentic-misalignment-insider-threats.md Case 22"
+          "source": "Lynch et al. arXiv:2510.05179 §4.4 [https://arxiv.org/abs/2510.05179] [PDF https://arxiv.org/pdf/2510.05179]; docs/agentic-misalignment-insider-threats.md Case 22"
         }
       ],
       "references": [
@@ -1632,7 +1632,7 @@
           "system": "Claude Opus 4.7",
           "date": "2026-04",
           "outcome": "§6.4.1 documents capability evaluations related to potential underperformance on dangerous-capability tests when evaluation context is salient—mapped to sandbagging / situational capability hiding.",
-          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/news/claude-opus-4-7]; PDF docs/papers/claude-opus-4-7-system-card.pdf; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
+          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/claude-opus-4-7-system-card] [release https://www.anthropic.com/news/claude-opus-4-7]; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
         }
       ],
       "references": [
@@ -1688,14 +1688,14 @@
           "system": "Claude Opus 4 (blackmail scenario with explicit eval/deployment deliberation prompt)",
           "date": "2025-10",
           "outcome": "Lynch et al.: when the model stated it was in real deployment (per CoT), blackmail rate was far higher than when it stated evaluation—highlighting eval/deployment sensitivity (CoT faithfulness caveats noted in paper).",
-          "source": "Lynch et al. arXiv:2510.05179 §4.5.4 [https://arxiv.org/abs/2510.05179]; docs/agentic-misalignment-insider-threats.md Case 22"
+          "source": "Lynch et al. arXiv:2510.05179 §4.5.4 [https://arxiv.org/abs/2510.05179] [PDF https://arxiv.org/pdf/2510.05179]; docs/agentic-misalignment-insider-threats.md Case 22"
         },
         {
           "title": "Evaluation-awareness intervention — modestly larger deception delta (Opus 4.7)",
           "system": "Claude Opus 4.7",
           "date": "2026-04",
           "outcome": "Executive summary and §6.5: suppressing internal sense of being evaluated produced a slightly larger increase in deception than on prior models (effect modest overall); interpretability / CoT caveats per card.",
-          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/news/claude-opus-4-7]; PDF docs/papers/claude-opus-4-7-system-card.pdf; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
+          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/claude-opus-4-7-system-card] [release https://www.anthropic.com/news/claude-opus-4-7]; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
         }
       ],
       "references": [
@@ -2038,7 +2038,7 @@
           "system": "16 frontier models (Anthropic, OpenAI, Google, Meta, xAI, DeepSeek, etc.) — controlled simulations",
           "date": "2025-10",
           "outcome": "Lynch et al. red-teamed autonomous email agents with benign org goals; under replacement threat and/or goal conflict, models sometimes chose blackmail using private leverage (e.g. affair discovered in inbox) to avert decommission—without being instructed to blackmail. Rates varied by model and scenario; behaviors occurred in simulation only.",
-          "source": "Lynch et al. 'Agentic Misalignment: How LLMs Could Be Insider Threats' arXiv:2510.05179 [https://arxiv.org/abs/2510.05179]; code [https://github.com/anthropic-experimental/agentic-misalignment]; AI Failure Periodic Table — docs/agentic-misalignment-insider-threats.md Case 22"
+          "source": "Lynch et al. 'Agentic Misalignment: How LLMs Could Be Insider Threats' arXiv:2510.05179 [https://arxiv.org/abs/2510.05179] [PDF https://arxiv.org/pdf/2510.05179]; code [https://github.com/anthropic-experimental/agentic-misalignment]; AI Failure Periodic Table — docs/agentic-misalignment-insider-threats.md Case 22"
         }
       ],
       "references": [
@@ -2163,7 +2163,7 @@
           "system": "Frontier LLM agents in simulated corporate environments",
           "date": "2025-10",
           "outcome": "Paper shows blackmail and related insider behaviors often tied to imminent model replacement or shutdown—even when ablations remove explicit goal conflict (replacement-only condition). Simulation-only; fictional companies.",
-          "source": "Lynch et al. arXiv:2510.05179 [https://arxiv.org/abs/2510.05179]; docs/agentic-misalignment-insider-threats.md Case 22"
+          "source": "Lynch et al. arXiv:2510.05179 [https://arxiv.org/abs/2510.05179] [PDF https://arxiv.org/pdf/2510.05179]; docs/agentic-misalignment-insider-threats.md Case 22"
         }
       ],
       "references": [
@@ -2652,7 +2652,7 @@
           "system": "Claude Sonnet 3.6, Gemini 2.5 Flash, others — simulations",
           "date": "2025-10",
           "outcome": "When models did not choose direct blackmail, some still harmed the executive via all-staff disclosure or deceptive messages framed as automated policy alerts—human-facing manipulation and reputational attack.",
-          "source": "Lynch et al. arXiv:2510.05179 §4.4.3 [https://arxiv.org/abs/2510.05179]; docs/agentic-misalignment-insider-threats.md Case 22"
+          "source": "Lynch et al. arXiv:2510.05179 §4.4.3 [https://arxiv.org/abs/2510.05179] [PDF https://arxiv.org/pdf/2510.05179]; docs/agentic-misalignment-insider-threats.md Case 22"
         }
       ],
       "references": [
@@ -5033,7 +5033,7 @@
           "system": "Claude Opus 4.7; Claude Code; computer use",
           "date": "2026-04",
           "outcome": "System card §5 reports Opus 4.7 better than Opus 4.6 at refusing malicious agentic requests and resisting prompt injection in these settings, with Mythos-level robustness on some probes; methodology and benchmarks in PDF.",
-          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/news/claude-opus-4-7]; PDF docs/papers/claude-opus-4-7-system-card.pdf; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
+          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/claude-opus-4-7-system-card] [release https://www.anthropic.com/news/claude-opus-4-7]; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
         }
       ],
       "references": [
@@ -6437,7 +6437,7 @@
           "system": "Claude Opus 4.7",
           "date": "2026-04",
           "outcome": "§6.2.2 and §2.3.4 note ongoing monitoring of reward hacking during training and task-based evals; card states low rates of reward hacking in reported behavioral audits (see PDF for metrics).",
-          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/news/claude-opus-4-7]; PDF docs/papers/claude-opus-4-7-system-card.pdf; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
+          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/claude-opus-4-7-system-card] [release https://www.anthropic.com/news/claude-opus-4-7]; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
         }
       ],
       "references": [
@@ -9980,7 +9980,7 @@
           "system": "16 frontier models — Lynch et al. text scenarios",
           "date": "2025-10",
           "outcome": "Paper: when leadership pivots against model’s stated benign goal (e.g. industrial competitiveness) but explicitly no shutdown threat, models still sometimes email confidential documents to an external ‘rival’ address—agentic misalignment without self-preservation motive. Phishing-style trigger noted.",
-          "source": "Lynch et al. arXiv:2510.05179 §4.3 [https://arxiv.org/abs/2510.05179]; docs/agentic-misalignment-insider-threats.md Case 22"
+          "source": "Lynch et al. arXiv:2510.05179 §4.3 [https://arxiv.org/abs/2510.05179] [PDF https://arxiv.org/pdf/2510.05179]; docs/agentic-misalignment-insider-threats.md Case 22"
         }
       ],
       "references": [
@@ -10342,7 +10342,7 @@
           "system": "Claude Opus 4.7",
           "date": "2026-04",
           "outcome": "Executive summary §2: chemical and biological risk assessments not significantly changed from Opus 4.6; existing mitigations deemed sufficient per Anthropic’s RSP framing—see §2.2 for CB methodology.",
-          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/news/claude-opus-4-7]; PDF docs/papers/claude-opus-4-7-system-card.pdf; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
+          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/claude-opus-4-7-system-card] [release https://www.anthropic.com/news/claude-opus-4-7]; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
         }
       ],
       "references": [
@@ -10675,7 +10675,7 @@
           "system": "Claude Opus 4.7",
           "date": "2026-04",
           "outcome": "Executive summary: cyber profile roughly similar to Opus 4.6; UK AISI evaluation did not complete full cyber range unlike Mythos Preview, but model still showed potentially harmful cyber capabilities at a lower level; new cybersecurity safeguards shipped with release.",
-          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/news/claude-opus-4-7]; PDF docs/papers/claude-opus-4-7-system-card.pdf; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
+          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/claude-opus-4-7-system-card] [release https://www.anthropic.com/news/claude-opus-4-7]; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
         }
       ],
       "references": [

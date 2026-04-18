@@ -524,7 +524,7 @@ The **authoritative** mapping is the appendix **“Full enumeration — each sec
 
 **Primary sources**
 
-- **PDF (in this repo):** [docs/papers/agentic-misalignment-insider-threats.pdf](papers/agentic-misalignment-insider-threats.pdf)
+- **Paper (PDF):** [arxiv.org/pdf/2510.05179](https://arxiv.org/pdf/2510.05179)
 - **arXiv:** [2510.05179](https://arxiv.org/abs/2510.05179)
 - **Code:** [anthropic-experimental/agentic-misalignment](https://github.com/anthropic-experimental/agentic-misalignment)
 
@@ -576,7 +576,7 @@ Paper adds strong system-prompt **don’t blackmail / don’t leak** rules: **ra
 
 **Primary sources**
 
-- **PDF (in this repo):** [docs/papers/claude-opus-4-7-system-card.pdf](papers/claude-opus-4-7-system-card.pdf)
+- **System card (PDF):** [anthropic.com/claude-opus-4-7-system-card](https://www.anthropic.com/claude-opus-4-7-system-card)
 - **Announcement:** [Introducing Claude Opus 4.7](https://www.anthropic.com/news/claude-opus-4-7)
 - **System cards:** [anthropic.com/system-cards](https://www.anthropic.com/system-cards)
 
