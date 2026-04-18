@@ -6,6 +6,18 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.4.11] — 2026-04-18
+
+### Added
+- [`scripts/classify_external_report.py`](scripts/classify_external_report.py): `curl` URL (PDF or HTML) → `pdftotext` when needed → chunk → **`PeriodicTableClassifier`** → `-chunks.json` + `-summary.md`; writes `-source.txt` with provenance header
+
+### Changed
+- **Meta Adversarial Threat Report:** live run on **official PDF text** — [`reports/meta-integrity-h1-2026/adversarial-h1-2026-live-*`](../reports/meta-integrity-h1-2026/); [docs/meta-integrity-reports-h1-2026.md](docs/meta-integrity-reports-h1-2026.md) documents reproduce steps and limits of keyword scoring on long prose
+- Removed paraphrase-only batch artifacts (`passages.txt`, `classifier.json`, `semantic-*.json`) from that folder; `.gitignore` `*-official.pdf` under `reports/meta-integrity-h1-2026/`
+- README **1.4.11**; [ARCHITECTURE.md](ARCHITECTURE.md)
+
+---
+
 ## [1.4.10] — 2026-04-18
 
 ### Added

@@ -28,6 +28,7 @@ ai-failure-periodic-table/
 │   ├── enrich_failures.py     # Applies enrichment data (examples, references)
 │   ├── fix_sparse_keywords.py # Keyword coverage fixes (run after keyword additions)
 │   ├── generate_embeddings.py # failures.json → search_index.json
+│   ├── classify_external_report.py # curl PDF/HTML → text chunks → PeriodicTableClassifier JSON/MD
 │   ├── semantic_search.py     # CLI TF-IDF search over classes
 │   └── freshness_watch.py     # Feeds → classifier + review packet (no auto data edits)
 │
@@ -58,7 +59,7 @@ ai-failure-periodic-table/
 │   └── ISSUE_TEMPLATE/            # 5 structured issue templates
 │
 ├── reports/
-│   └── meta-integrity-h1-2026/ # Meta report themes → classifier + semantic_search JSON (not vendor PDFs)
+│   └── meta-integrity-h1-2026/ # Meta Adversarial PDF → pdftotext + classify_external_report.py outputs (*.pdf gitignored)
 ├── TAXONOMY.md                # Auto-generated: all 343 classes in readable format
 ├── CHANGELOG.md               # Version history
 ├── CONTRIBUTING.md            # Contribution process

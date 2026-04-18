@@ -10,3 +10,6 @@ __pycache__/
 dist/
 build/
 .venv/
+
+# Meta (etc.) official PDFs — regenerate via scripts/classify_external_report.py --url …
+reports/meta-integrity-h1-2026/*-official.pdf
