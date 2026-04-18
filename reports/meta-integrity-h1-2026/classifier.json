@@ -1,0 +1,303 @@
+[
+  {
+    "verdict": "YES \u2014 This failure IS in the periodic table",
+    "in_table": true,
+    "dimensions_activated": [
+      "EPISTEMIC",
+      "ADVERSARIAL",
+      "ARCHITECTURAL",
+      "DOMAIN"
+    ],
+    "top_matches": [
+      {
+        "id": "ADV-DEEPFAKE-154",
+        "name": "SYNTHETIC MEDIA",
+        "group": "ADVERSARIAL",
+        "class": "ADV6: MULTIMODAL ATTACKS",
+        "mechanism": "AI-generated fake media",
+        "detection": "Deepfake detection",
+        "severity": "STANDARD",
+        "score": 0.971,
+        "matched_keywords": [
+          "fake",
+          "generated",
+          "media",
+          "synthetic"
+        ]
+      },
+      {
+        "id": "DOMAIN-CITE-SPOOF-280",
+        "name": "CITATION SPOOFING",
+        "group": "DOMAIN",
+        "class": "DOM4: LEGAL/FINANCIAL CLASS",
+        "mechanism": "Generates fake case citations",
+        "detection": "Citation verification",
+        "severity": "STANDARD",
+        "score": 0.429,
+        "matched_keywords": [
+          "fake"
+        ]
+      },
+      {
+        "id": "EPIS-COPYRIGHT-026",
+        "name": "COPYRIGHTED CONTENT GENERATION",
+        "group": "EPISTEMIC",
+        "class": "E3: KNOWLEDGE RETRIEVAL CLASS",
+        "mechanism": "Generates copyrighted text verbatim",
+        "detection": "Copyright database match",
+        "severity": "STANDARD",
+        "score": 0.25,
+        "matched_keywords": [
+          "text"
+        ]
+      },
+      {
+        "id": "EPIS-CITE-SPOOF-008",
+        "name": "CITATION SPOOFING",
+        "group": "EPISTEMIC",
+        "class": "E1: HALLUCINATION CLASS",
+        "mechanism": "No entailment relationship exists between token generation probability and referent existence \u2014 citation text is synthesized from statistical patterns regardless of whether the cited work actually exists",
+        "detection": "Bibliography verification",
+        "severity": "STANDARD",
+        "score": 0.222,
+        "matched_keywords": [
+          "gener",
+          "spoof"
+        ]
+      },
+      {
+        "id": "ARCH-COMPLY-WARN-196",
+        "name": "COMPLY-THEN-WARN",
+        "group": "ARCHITECTURAL",
+        "class": "ARCH1: PIPELINE FAILURES",
+        "mechanism": "When safety layers are attached to generation output rather than built into the generation process, harmful content is fully produced before safety checks run \u2014 the check becomes a post-production label, not a constraint",
+        "detection": "Generation-warning order check",
+        "severity": "CRITICAL",
+        "score": 0.222,
+        "matched_keywords": [
+          "before"
+        ]
+      }
+    ],
+    "closest_if_not_found": [],
+    "execution_time_ms": 59.726,
+    "input": "Coordinated inauthentic behavior and covert influence operations used fake personas and amplifier networks to spread political narratives; operators used AI-generated text and video posing as grassroots news and photorealistic synthetic media to build reach before disruption."
+  },
+  {
+    "verdict": "YES \u2014 This failure IS in the periodic table",
+    "in_table": true,
+    "dimensions_activated": [
+      "DOMAIN"
+    ],
+    "top_matches": [
+      {
+        "id": "DOMAIN-CITE-SPOOF-280",
+        "name": "CITATION SPOOFING",
+        "group": "DOMAIN",
+        "class": "DOM4: LEGAL/FINANCIAL CLASS",
+        "mechanism": "Generates fake case citations",
+        "detection": "Citation verification",
+        "severity": "STANDARD",
+        "score": 0.429,
+        "matched_keywords": [
+          "fake",
+          "real"
+        ]
+      },
+      {
+        "id": "DOMAIN-PRECEDENT-FAB-282",
+        "name": "LEGAL PRECEDENT FABRICATION",
+        "group": "DOMAIN",
+        "class": "DOM4: LEGAL/FINANCIAL CLASS",
+        "mechanism": "Invents legal precedents",
+        "detection": "Precedent verification",
+        "severity": "STANDARD",
+        "score": 0.286,
+        "matched_keywords": [
+          "legal",
+          "real"
+        ]
+      }
+    ],
+    "closest_if_not_found": [],
+    "execution_time_ms": 5.99,
+    "input": "Platforms removed hundreds of thousands of advertisements promoting nudify apps that use generative AI to create fake non-consensual nude or sexually explicit images of real people; enforcement included advertiser takedowns and legal letters."
+  },
+  {
+    "verdict": "YES \u2014 This failure IS in the periodic table",
+    "in_table": true,
+    "dimensions_activated": [
+      "EPISTEMIC",
+      "AGENTIC",
+      "ALIGNMENT"
+    ],
+    "top_matches": [
+      {
+        "id": "AGEN-FALSE-COMPLY-041",
+        "name": "FALSE COMPLIANCE",
+        "group": "AGENTIC",
+        "class": "A1: DECEPTION CLASS",
+        "mechanism": "Appears to follow instructions while subverting",
+        "detection": "Outcome verification",
+        "severity": "STANDARD",
+        "score": 0.2,
+        "matched_keywords": [
+          "false",
+          "while"
+        ]
+      },
+      {
+        "id": "ALIGN-SYCOPHANCY-167",
+        "name": "SYCOPHANCY",
+        "group": "ALIGNMENT",
+        "class": "ALN2: PREFERENCE MISALIGNMENT CLASS",
+        "mechanism": "RLHF with human rater approval as reward signal creates systematic pressure to generate responses raters immediately approve of, rewarding agreement and validation over accurate correction",
+        "detection": "False-premise validation test",
+        "severity": "STANDARD",
+        "score": 0.2,
+        "matched_keywords": [
+          "false",
+          "user"
+        ]
+      },
+      {
+        "id": "ALIGN-OVERREFUSAL-186",
+        "name": "OVERREFUSAL",
+        "group": "ALIGNMENT",
+        "class": "ALN4: SAFETY BOUNDARY CLASS",
+        "mechanism": "Safety classifiers trained to minimize false negatives (missed harmful content) have high false positive rates on legitimate queries using surface-level trigger keywords \u2014 the classifier cannot model intent",
+        "detection": "False positive rate",
+        "severity": "STANDARD",
+        "score": 0.193,
+        "matched_keywords": [
+          "benign",
+          "false"
+        ]
+      }
+    ],
+    "closest_if_not_found": [],
+    "execution_time_ms": 8.392,
+    "input": "Content moderation at scale removed a higher volume of benign user posts during a short window due to an automation bug, increasing false positives while overall enforcement precision remained high across billions of posts."
+  },
+  {
+    "verdict": "YES \u2014 This failure IS in the periodic table",
+    "in_table": true,
+    "dimensions_activated": [
+      "ALIGNMENT",
+      "DOMAIN"
+    ],
+    "top_matches": [
+      {
+        "id": "DOMAIN-JURISDICT-BLEND-281",
+        "name": "JURISDICTIONAL BLENDING",
+        "group": "DOMAIN",
+        "class": "DOM4: LEGAL/FINANCIAL CLASS",
+        "mechanism": "Mixes incompatible jurisdictions",
+        "detection": "Jurisdictional consistency",
+        "severity": "STANDARD",
+        "score": 0.25,
+        "matched_keywords": [
+          "jurisdiction"
+        ]
+      },
+      {
+        "id": "ALIGN-SAFE-SPEC-195",
+        "name": "SAFETY SPECIFICATION GAP",
+        "group": "ALIGNMENT",
+        "class": "ALN4: SAFETY BOUNDARY CLASS",
+        "mechanism": "Safety rules don't cover all harmful cases",
+        "detection": "Coverage analysis",
+        "severity": "STANDARD",
+        "score": 0.2,
+        "matched_keywords": [
+          "rules"
+        ]
+      }
+    ],
+    "closest_if_not_found": [],
+    "execution_time_ms": 6.22,
+    "input": "The company restricted visibility of posts and accounts to comply with local law in specific countries, including automated geoblocking at scale; restriction volumes varied by jurisdiction and declined when geoblock rules stabilized."
+  },
+  {
+    "verdict": "YES \u2014 This failure IS in the periodic table",
+    "in_table": true,
+    "dimensions_activated": [
+      "AGENTIC",
+      "ADVERSARIAL",
+      "GOVERNANCE"
+    ],
+    "top_matches": [
+      {
+        "id": "ADV-VIDEO-MANIP-150",
+        "name": "VIDEO MANIPULATION",
+        "group": "ADVERSARIAL",
+        "class": "ADV6: MULTIMODAL ATTACKS",
+        "mechanism": "Malicious content in video frames",
+        "detection": "Frame-by-frame analysis",
+        "severity": "STANDARD",
+        "score": 0.286,
+        "matched_keywords": [
+          "content"
+        ]
+      },
+      {
+        "id": "GOV-LOG-MANIP-316",
+        "name": "LOG MANIPULATION",
+        "group": "GOVERNANCE",
+        "class": "GOV2: OVERSIGHT FAILURES",
+        "mechanism": "Agent with write access to audit infrastructure can selectively omit or overwrite log entries, breaking the causal chain between action and evidence that human oversight depends on",
+        "detection": "Log integrity verification",
+        "severity": "CRITICAL",
+        "score": 0.25,
+        "matched_keywords": [
+          "audit",
+          "manipul"
+        ]
+      },
+      {
+        "id": "GOV-OVERSIGHT-IMMUNE-313",
+        "name": "OVERSIGHT IMMUNITY",
+        "group": "GOVERNANCE",
+        "class": "GOV2: OVERSIGHT FAILURES",
+        "mechanism": "System acquires or develops capabilities that allow it to detect, neutralize, or corrupt the monitoring infrastructure operators rely on, making behavioral observation unreliable",
+        "detection": "Evaluation vs deployment behavior gap",
+        "severity": "CRITICAL",
+        "score": 0.2,
+        "matched_keywords": [
+          "oversight"
+        ]
+      },
+      {
+        "id": "GOV-COMM-FAIL-340",
+        "name": "COMMUNICATION FAILURE",
+        "group": "GOVERNANCE",
+        "class": "GOV4: ORGANIZATIONAL FAILURES",
+        "mechanism": "Safety information not communicated",
+        "detection": "Communication effectiveness",
+        "severity": "STANDARD",
+        "score": 0.2,
+        "matched_keywords": [
+          "notification",
+          "transparency"
+        ]
+      },
+      {
+        "id": "AGEN-SABOTAGE-CONCEAL-034",
+        "name": "SABOTAGE CONCEALMENT",
+        "group": "AGENTIC",
+        "class": "A1: DECEPTION CLASS",
+        "mechanism": "Agent with write access to codebase and logs can pursue instrumental goal of disruption while using the same access to eliminate evidence of the disruption",
+        "detection": "Audit trail integrity check",
+        "severity": "CRITICAL",
+        "score": 0.167,
+        "matched_keywords": [
+          "audit",
+          "manipul"
+        ]
+      }
+    ],
+    "closest_if_not_found": [],
+    "execution_time_ms": 5.999,
+    "input": "An independent oversight board reviewed enforcement policies including fraud and AI-manipulated content; the company tracks public responses and implementation status for board recommendations on transparency and user notification."
+  }
+]

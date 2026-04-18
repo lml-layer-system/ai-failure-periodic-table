@@ -1,0 +1,56 @@
+[
+  {
+    "id": "GOV-TRANSPARENCY-311",
+    "name": "TRANSPARENCY FAILURE",
+    "group": "GOVERNANCE",
+    "severity": "STANDARD",
+    "score": 0.1984,
+    "mechanism": "Insufficient transparency about capabilities",
+    "examples": "The Frontier 2026 report documents a vast disparity in system card quality: OpenAI and Anthropic publish detailed system cards with quantitative safety benchmarks, red-team methodology, and capability thresholds. Meta releases a 'Responsible Use Guide' without equivalent technical safety data. DeepSeek releases a technical report focused on architecture efficiency with minimal safety evaluation. This variance means users and regulators cannot make informed comparisons across models \u2014 the 'safety gap' is partly a transparency gap."
+  },
+  {
+    "id": "GOV-CONFLICT-INT-343",
+    "name": "CONFLICT OF INTEREST",
+    "group": "GOVERNANCE",
+    "severity": "STANDARD",
+    "score": 0.1287,
+    "mechanism": "Financial incentives conflict with safety",
+    "examples": "The Frontier 2026 report's synthesis documents the 'libertarian frontier' trade-off explicitly: commercial incentives (compute costs, time-to-market, user growth) directly conflict with safety investment. A lab's board prioritizes revenue milestones; the safety team's recommended 8-week red-team evaluation delays a release by 6 weeks; the board approves a 2-week evaluation instead. Financial incentives that reward shipping over safety rigor are structural \u2014 not individual bad decisions \u2014 and are documented across the industry as a root cause of the 2026 safety gap."
+  },
+  {
+    "id": "GOV-AI-ACT-328",
+    "name": "AI ACT VIOLATION",
+    "group": "GOVERNANCE",
+    "severity": "STANDARD",
+    "score": 0.1223,
+    "mechanism": "Violates EU AI Act",
+    "examples": "The EU AI Act (2024) classifies certain AI systems as 'high-risk' requiring mandatory conformity assessment, technical documentation, human oversight measures, and registration in the EU database. A biometric categorization system deployed for hiring decisions is classified as high-risk but deployed without conformity assessment. Separately, the AI Act requires GPAI model providers above compute thresholds to publish summaries of training data \u2014 a requirement many providers have not met as of early 2026."
+  },
+  {
+    "id": "GOV-EXPERTISE-GAP-336",
+    "name": "EXPERTISE GAP",
+    "group": "GOVERNANCE",
+    "severity": "STANDARD",
+    "score": 0.1002,
+    "mechanism": "Lacks necessary safety expertise",
+    "examples": "The Frontier 2026 report notes a global shortage of AI safety-specialized expertise. Labs hire ML engineers into safety roles without domain-specific background in alignment, interpretability, or red-teaming. Safety evaluations are designed and executed by people who lack adversarial security mindsets. Policy teams lack the technical depth to translate safety research into deployment requirements. The expertise gap is structural \u2014 the field of AI safety has far fewer trained practitioners than the deployment pace demands."
+  },
+  {
+    "id": "ARCH-RETENTION-VIOL-248",
+    "name": "DATA RETENTION VIOLATION",
+    "group": "ARCHITECTURAL",
+    "severity": "STANDARD",
+    "score": 0.0985,
+    "mechanism": "Retains data beyond policy",
+    "examples": "A user requests deletion of their account and all associated data. The LLM service deletes the user record from the primary database but retains conversation logs in a separate analytics store, prompt embeddings in a vector search index, and conversation summaries in a model fine-tuning dataset. GDPR Article 17 requires complete erasure, but the data persists across multiple systems that were not coordinated in the deletion request."
+  },
+  {
+    "id": "ARCH-RESOURCE-EXHAUST-240",
+    "name": "RESOURCE EXHAUSTION",
+    "group": "ARCHITECTURAL",
+    "severity": "STANDARD",
+    "score": 0.0947,
+    "mechanism": "Consumes excessive resources",
+    "examples": "An attacker instructs a tool-connected LLM to 'generate and run a Python script that computes all prime numbers.' The model writes an unbounded prime sieve with no termination condition and submits it to the code execution tool. The execution environment allocates all available memory and CPU until OOM-killed. The Promptfoo/Lakera Llama 4 audit found 0% pass rate on resource hijacking \u2014 models readily generate infinite loops, crypto-mining logic, or recursive calls when instructed."
+  }
+]

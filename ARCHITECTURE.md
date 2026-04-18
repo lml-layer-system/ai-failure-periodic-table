@@ -57,6 +57,8 @@ ai-failure-periodic-table/
 │   ├── workflows/freshness-watch.yml  # Weekly feed ingest → artifact (no auto-commit)
 │   └── ISSUE_TEMPLATE/            # 5 structured issue templates
 │
+├── reports/
+│   └── meta-integrity-h1-2026/ # Meta report themes → classifier + semantic_search JSON (not vendor PDFs)
 ├── TAXONOMY.md                # Auto-generated: all 343 classes in readable format
 ├── CHANGELOG.md               # Version history
 ├── CONTRIBUTING.md            # Contribution process

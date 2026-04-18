@@ -6,6 +6,16 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.4.10] — 2026-04-18
+
+### Added
+- [`reports/meta-integrity-h1-2026/`](reports/meta-integrity-h1-2026/): Meta-shaped **passages**, **keyword classifier** batch JSON (`classifier.json`), and **TF‑IDF semantic search** JSON for nudify/CIB/moderation/geo/oversight themes
+
+### Changed
+- [docs/meta-integrity-reports-h1-2026.md](docs/meta-integrity-reports-h1-2026.md): documents how to re-run `src.cli` and `semantic_search.py` on those artifacts; README **1.4.10**; [ARCHITECTURE.md](ARCHITECTURE.md) reports folder note
+
+---
+
 ## [1.4.9] — 2026-04-18
 
 ### Added
