@@ -6,6 +6,14 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.4.20] — 2026-04-17
+
+### Changed
+- **[docs/mcp-daily-driver.md](docs/mcp-daily-driver.md):** **Guaranteed fallbacks when MCP is down** (CLI, browser, semantic CLI) and **Requirements: Python vs chat model** — clarifies verdict runs in Python 3.10+, `pip install -e .` vs `.[mcp]`, no LLM required for classification; chat models only orchestrate MCP; small/local models may need CLI fallback.
+- **[README.md](README.md), [docs/how-to-use.md](docs/how-to-use.md):** Cross-links to those sections.
+
+---
+
 ## [1.4.19] — 2026-04-17
 
 ### Changed

@@ -4,7 +4,7 @@
 
 > *The goal is not omniscience but structural predictiveness: that newly encountered failures should resolve into this structure as a class, sub-mode, or compound — unless evidence demonstrates otherwise.*
 
-**Version**: 1.4.18 | **Released**: April 2026 | **License**: MIT | **Status**: Open for community testing and falsification
+**Version**: 1.4.20 | **Released**: April 2026 | **License**: MIT | **Status**: Open for community testing and falsification
 
 ---
 
@@ -106,6 +106,8 @@ If you use **Cursor**, **Claude Desktop**, or another app that supports **MCP** 
 - **Not the same as Freshness Watch:** the scheduled feed pipeline for maintainers is separate; see [docs/freshness-watch.md](docs/freshness-watch.md).
 
 **Start here:** [docs/mcp-daily-driver.md](docs/mcp-daily-driver.md) — plain-English purpose, **what vs how**, **choose your setup path** (Cursor / Claude / other), first-use walkthrough, and example config ([docs/cursor-mcp-config.example.json](docs/cursor-mcp-config.example.json)).
+
+**If MCP in Cursor or Claude is down or blocked:** you still have **guaranteed paths** — same classifier, no MCP. Use the terminal (`python -m src.cli "…"`, `--json`, `--lookup`) and/or the browser table; see [Guaranteed fallbacks when MCP is down](docs/mcp-daily-driver.md#guaranteed-fallbacks-when-mcp-is-down) and [Requirements: Python vs chat model](docs/mcp-daily-driver.md#requirements-python-vs-chat-model). The verdict runs in **Python**; chat models only orchestrate MCP tools.
 
 ---
 

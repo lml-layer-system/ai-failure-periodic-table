@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ai-failure-periodic-table"
-version = "1.4.19"
+version = "1.4.20"
 description = "343-class structural taxonomy of AI failure mechanisms with keyword classifier and semantic search"
 readme = "README.md"
 license = { text = "MIT" }

@@ -101,6 +101,57 @@ Pick one; you do not need all of them.
 
 ---
 
+## Guaranteed fallbacks when MCP is down
+
+**Cursor, Claude Desktop, and other hosts sometimes break MCP** (buggy update, bad config path, corporate lockdown, or you are offline from the host’s cloud). The periodic table itself does **not** depend on those products.
+
+These options use the **same `failures.json` data and the same keyword classifier** as the MCP server. They are the **reliable escape hatch** when “add MCP server” is not an option:
+
+| Fallback | What it is good for | Needs |
+|----------|---------------------|--------|
+| **Terminal classifier** | Classify any pasted description; JSON for scripts | Python 3.10+, `pip install -e .` from repo root |
+| **Class lookup** | Show one class by ID | Same |
+| **Browser table** | Explore all 343 classes, in-page search | Open `index.html` or the [live site](https://lml-layer-system.github.io/ai-failure-periodic-table/) — **no LLM** |
+| **Semantic search CLI** | Find classes by meaning from the terminal | Same Python env + one-time `python scripts/generate_embeddings.py` |
+
+**Examples (copy from repo root):**
+
+```bash
+pip install -e .
+
+python -m src.cli "The model fabricated a citation that does not exist"
+
+python -m src.cli --json "reward hacking on a proxy metric"
+
+python -m src.cli --lookup EPIS-CITE-SPOOF-008
+
+python scripts/generate_embeddings.py   # once
+python scripts/semantic_search.py "indirect prompt injection via email"
+```
+
+More detail: [how-to-use.md](how-to-use.md).
+
+**Important:** Running `python3 -m src.ai_failure_mcp` in a terminal only starts the server; something else must still speak MCP on stdio. For a **human-guaranteed** workflow with no MCP at all, use **`python -m src.cli`** or the browser.
+
+---
+
+## Requirements: Python vs chat model
+
+**The hit/miss verdict and class ranking are computed in Python** inside this repo (keyword classifier over `failures.json`). **No GPT, Claude, or local LLM is required** for that core logic. You do **not** need a “frontier” or closed-source model to get an honest table result.
+
+| Piece | Requirement |
+|-------|----------------|
+| **Python** | **3.10+** (see `requires-python` in `pyproject.toml`). |
+| **Editable install** | **`pip install -e .`** — CLI, classifier, and data (enough for guaranteed fallbacks). |
+| **MCP server extra** | **`pip install -e ".[mcp]"`** — adds the `mcp` package so `python -m src.ai_failure_mcp` works. |
+| **Search index** | Optional for **classify** (MCP still classifies if the index is missing; similarity context is reduced). **Required** for `search_failures` / `semantic_search.py` after embeddings: run `python scripts/generate_embeddings.py` once. |
+| **Your chat model (MCP only)** | Only **orchestrates tool calls** (“call classify_text with this paragraph”). It should follow instructions reliably. **Small or local open-weight models** often work, but many **under-call tools** or **mess up arguments**—if your host’s model does that, switch to the **CLI** above; the classifier output is identical. |
+| **Fully offline** | Clone repo + `pip install -e .` + CLI: **no API keys** needed for classification. |
+
+**Summary:** Open-source-friendly and “guaranteed” classification = **Python + this repo**. Fancy models are optional glue for MCP convenience, not the source of truth for whether something hits the table.
+
+---
+
 ## How to install and run
 
 From a **clone of this repository**:
@@ -108,6 +159,8 @@ From a **clone of this repository**:
 ```bash
 pip install -e ".[mcp]"
 ```
+
+For **CLI-only** use (no MCP package), you can instead run `pip install -e .` from the repo root.
 
 Build the search index once (needed for search and for extra context inside classify tools):
 

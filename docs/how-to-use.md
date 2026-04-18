@@ -2,7 +2,7 @@
 
 The classifier answers one question: **is this AI failure in the periodic table, and if so, where?**
 
-**Using Cursor, Claude Desktop, or another MCP host instead of the terminal?** See [mcp-daily-driver.md](mcp-daily-driver.md) for where to plug in your everyday AI, what you get back, and how to choose a setup path.
+**Using Cursor, Claude Desktop, or another MCP host instead of the terminal?** See [mcp-daily-driver.md](mcp-daily-driver.md) for where to plug in your everyday AI, what you get back, and how to choose a setup path. **If that MCP path is broken,** this CLI page is the guaranteed fallback—same classifier, no MCP ([guaranteed fallbacks](mcp-daily-driver.md#guaranteed-fallbacks-when-mcp-is-down)).
 
 ---
 
