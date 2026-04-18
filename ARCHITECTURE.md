@@ -10,22 +10,34 @@ This document is for contributors working on the code and data pipeline — not 
 ai-failure-periodic-table/
 │
 ├── data/
-│   └── failures.json          # The taxonomy. Single source of truth.
+│   ├── failures.json          # The taxonomy. Single source of truth.
+│   ├── search_index.json      # TF-IDF index (scripts/generate_embeddings.py)
+│   └── freshness_sources.json # RSS/Atom config for Freshness Watch
 │
 ├── src/
 │   ├── classifier.py          # Core engine: PeriodicTableClassifier
 │   ├── cli.py                 # CLI entry point (python -m src.cli)
-│   └── data_loader.py         # Load, validate, cache failures.json
+│   ├── data_loader.py         # Load, validate, cache failures.json
+│   ├── tfidf_search.py        # TF-IDF class search (semantic_search + Freshness Watch)
+│   └── freshness_feed.py      # Feed parse, dedupe, Freshness Watch heuristics
 │
 ├── scripts/
 │   ├── extract_failures.py    # Parse markdown → failures.json (run once)
 │   ├── generate_taxonomy.py   # failures.json → TAXONOMY.md (run after data changes)
 │   ├── enrich_failures.py     # Applies enrichment data (examples, references)
-│   └── fix_sparse_keywords.py # Keyword coverage fixes (run after keyword additions)
+│   ├── fix_sparse_keywords.py # Keyword coverage fixes (run after keyword additions)
+│   ├── generate_embeddings.py # failures.json → search_index.json
+│   ├── semantic_search.py     # CLI TF-IDF search over classes
+│   └── freshness_watch.py     # Feeds → classifier + review packet (no auto data edits)
+│
+├── reports/
+│   └── freshness/             # Optional local output from freshness_watch.py
 │
 ├── tests/
-│   ├── test_classifier.py     # 33 tests: known failures, non-failures, performance
-│   └── test_data_integrity.py # 13 tests: schema, counts, enrichment, IDs
+│   ├── test_classifier.py     # Known failures, non-failures, performance
+│   ├── test_data_integrity.py # Schema, counts, enrichment, IDs
+│   ├── test_freshness_feed.py # Feed parse, dedupe, confidence helpers
+│   └── test_tfidf_search.py   # TF-IDF smoke tests
 │
 ├── docs/
 │   ├── how-to-use.md          # End-user usage guide
@@ -33,11 +45,13 @@ ai-failure-periodic-table/
 │   ├── challenge-protocol.md  # How to challenge the taxonomy
 │   ├── project-glasswing.md   # Companion: agentic cyber / MCP / Glasswing context (not part of failures.json)
 │   ├── agentic-misalignment-insider-threats.md  # Companion: Lynch et al. insider-threat simulations → class IDs
+│   ├── freshness-watch.md     # Freshness Watch: feed → classifier review packets
 │   └── papers/                # PDF sources referenced by companions (e.g. agentic-misalignment-insider-threats.pdf)
 │
 ├── .github/
-│   ├── workflows/ci.yml       # CI: test matrix Python 3.10–3.12
-│   └── ISSUE_TEMPLATE/        # 5 structured issue templates
+│   ├── workflows/ci.yml           # CI: test matrix Python 3.10–3.12
+│   ├── workflows/freshness-watch.yml  # Weekly feed ingest → artifact (no auto-commit)
+│   └── ISSUE_TEMPLATE/            # 5 structured issue templates
 │
 ├── TAXONOMY.md                # Auto-generated: all 343 classes in readable format
 ├── CHANGELOG.md               # Version history

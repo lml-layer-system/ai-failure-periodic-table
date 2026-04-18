@@ -1,0 +1,35 @@
+# Freshness Watch — scheduled feed ingest + classifier review packet.
+# Does not commit artifacts or edit the taxonomy; uploads report for maintainers.
+
+name: Freshness Watch
+
+on:
+  schedule:
+    - cron: "0 12 * * 1" # Monday 12:00 UTC
+  workflow_dispatch:
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run Freshness Watch
+        run: |
+          python scripts/freshness_watch.py \
+            --days 14 \
+            --out "reports/freshness/weekly-${GITHUB_RUN_ID}.md" \
+            --json-out "data/freshness/weekly-${GITHUB_RUN_ID}.json"
+
+      - name: Upload review packet
+        uses: actions/upload-artifact@v4
+        with:
+          name: freshness-watch-${{ github.run_id }}
+          path: |
+            reports/freshness/
+            data/freshness/

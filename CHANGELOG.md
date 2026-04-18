@@ -6,6 +6,25 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.4.5] — 2026-04-18
+
+### Added
+- **Freshness Watch** — [docs/freshness-watch.md](docs/freshness-watch.md): RSS/Atom ingest → keyword classifier + TF-IDF semantic search → **human-review-only** Markdown + JSON packets (`scripts/freshness_watch.py`, `data/freshness_sources.json`). Does **not** edit `failures.json`.
+- [src/freshness_feed.py](src/freshness_feed.py): feed parse (RSS/Atom), dedupe, confidence heuristics, suggestion text
+- [src/tfidf_search.py](src/tfidf_search.py): shared TF-IDF search API (used by `scripts/semantic_search.py` and Freshness Watch)
+- [.github/workflows/freshness-watch.yml](.github/workflows/freshness-watch.yml): weekly + `workflow_dispatch`; uploads artifacts; no auto-commit
+- Tests: `tests/test_freshness_feed.py`, `tests/test_tfidf_search.py`
+
+### Changed
+- `scripts/semantic_search.py`: delegates scoring to `src.tfidf_search` (CLI behavior preserved)
+- README version badge → 1.4.5; test count note
+- [ARCHITECTURE.md](ARCHITECTURE.md): Freshness Watch + new modules in layout
+
+### Fixed
+- RSS `<description>` with text-only / CDATA: avoid `Element or …` pattern (Python 3.12+ Elements can be falsy), so summaries are not dropped
+
+---
+
 ## [1.4.4] — 2026-04-17
 
 ### Added

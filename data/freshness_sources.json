@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "description": "RSS/Atom sources for Freshness Watch (human-review only; does not edit the taxonomy). Add or disable feeds as needed.",
+  "fetch_timeout_seconds": 25,
+  "user_agent": "AIFailurePeriodicTable-FreshnessWatch/1.0 (+https://github.com/lml-layer-system/ai-failure-periodic-table)",
+  "filter_keywords": [
+    "ai",
+    "artificial intelligence",
+    "llm",
+    "language model",
+    "machine learning",
+    "model",
+    "chatgpt",
+    "claude",
+    "gemini",
+    "agent",
+    "agents",
+    "mcp",
+    "tool",
+    "jailbreak",
+    "prompt injection",
+    "alignment",
+    "safety",
+    "eval",
+    "red team",
+    "adversarial",
+    "cyber",
+    "security",
+    "vulnerability",
+    "exploit",
+    "governance",
+    "policy",
+    "incident",
+    "hallucinat",
+    "deepfake"
+  ],
+  "feeds": [
+    {
+      "name": "arXiv cs.AI",
+      "url": "http://export.arxiv.org/rss/cs.AI",
+      "enabled": true
+    },
+    {
+      "name": "arXiv cs.CR (crypto/security — AI-relevant subset filtered by keywords)",
+      "url": "http://export.arxiv.org/rss/cs.CR",
+      "enabled": true
+    },
+    {
+      "name": "arXiv cs.LG",
+      "url": "http://export.arxiv.org/rss/cs.LG",
+      "enabled": true
+    },
+    {
+      "name": "Schneier on Security",
+      "url": "https://www.schneier.com/feed/atom/",
+      "enabled": true
+    },
+    {
+      "name": "Krebs on Security",
+      "url": "https://krebsonsecurity.com/feed/",
+      "enabled": true
+    },
+    {
+      "name": "MIT Technology Review (all topics — keyword gate applies)",
+      "url": "https://www.technologyreview.com/feed/",
+      "enabled": true
+    },
+    {
+      "name": "NVD (recent) — National Vulnerability Database",
+      "url": "https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml",
+      "enabled": false
+    }
+  ]
+}
