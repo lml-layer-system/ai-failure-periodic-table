@@ -6,6 +6,16 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.4.14] — 2026-04-18
+
+### Added
+- [`reports/claude-opus-4-7/`](reports/claude-opus-4-7/): live **`classify_external_report.py`** pass on official [Claude Opus 4.7 system card PDF](https://www.anthropic.com/claude-opus-4-7-system-card) (`--max-chars 4500` for manageable artifact size); `.gitignore` `*-official.pdf` for this folder
+
+### Changed
+- [docs/claude-opus-4-7-system-card.md](docs/claude-opus-4-7-system-card.md), README framework row; **1.4.14** in README / `pyproject.toml` / `index.html` footer
+
+---
+
 ## [1.4.13] — 2026-04-18
 
 ### Fixed

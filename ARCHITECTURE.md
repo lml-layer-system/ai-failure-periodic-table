@@ -60,7 +60,8 @@ ai-failure-periodic-table/
 │
 ├── reports/
 │   ├── meta-integrity-h1-2026/ # Meta Adversarial PDF → pdftotext + classify_external_report.py outputs (*.pdf gitignored)
-│   └── glasswing/              # anthropic.com/glasswing HTML + project-glasswing.md → same classifier pipeline
+│   ├── glasswing/              # anthropic.com/glasswing HTML + project-glasswing.md → same classifier pipeline
+│   └── claude-opus-4-7/        # Opus 4.7 system card PDF → pdftotext + classify_external_report.py (*.pdf gitignored)
 ├── TAXONOMY.md                # Auto-generated: all 343 classes in readable format
 ├── CHANGELOG.md               # Version history
 ├── CONTRIBUTING.md            # Contribution process

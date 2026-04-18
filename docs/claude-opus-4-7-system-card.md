@@ -8,6 +8,9 @@
 - **Release post:** [Introducing Claude Opus 4.7](https://www.anthropic.com/news/claude-opus-4-7)
 - **System cards index:** [Model system cards](https://www.anthropic.com/system-cards)
 
+> **Live classifier (official PDF):** The system card URL returns a **PDF**; this repo runs the same pipeline as Meta / Glasswing — [`reports/claude-opus-4-7/opus-4-7-system-card-live-summary.md`](../reports/claude-opus-4-7/opus-4-7-system-card-live-summary.md) (+ `*-chunks.json`, `*-source.txt`). The card is long, so the checked-in run uses **~4500-character** chunks (fewer, coarser buckets than the Meta adversarial report). Regenerate:  
+> `python scripts/classify_external_report.py --url https://www.anthropic.com/claude-opus-4-7-system-card --out-prefix reports/claude-opus-4-7/opus-4-7-system-card-live --max-chars 4500`
+
 ---
 
 ## What the document is (for taxonomy users)

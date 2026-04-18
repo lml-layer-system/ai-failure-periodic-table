@@ -4,7 +4,7 @@
 
 > *The goal is not omniscience but structural predictiveness: that newly encountered failures should resolve into this structure as a class, sub-mode, or compound — unless evidence demonstrates otherwise.*
 
-**Version**: 1.4.13 | **Released**: April 2026 | **License**: MIT | **Status**: Open for community testing and falsification
+**Version**: 1.4.14 | **Released**: April 2026 | **License**: MIT | **Status**: Open for community testing and falsification
 
 ---
 
@@ -479,7 +479,7 @@ Several serious efforts exist to categorize AI risk and failure. This project is
 | MIT AI Risk Repository | Domain-level taxonomy (7 categories: Discrimination, Privacy, Misinformation, Malicious Actors, HCI, Socioeconomic, AI System Safety) | [airisk.mit.edu](https://airisk.mit.edu) |
 | Project Glasswing | Frontier agentic cyber context: defensive coalitions, MCP semantic risk, skill-market supply chains, orchestration attacks — companion analysis in-repo; **official page + companion** text run through `classify_external_report.py` → [`reports/glasswing/`](reports/glasswing/) | [anthropic.com/glasswing](https://www.anthropic.com/glasswing) · [Analysis →](docs/project-glasswing.md) · [Live classify →](reports/glasswing/anthropic-glasswing-page-live-summary.md) |
 | Agentic misalignment (insider threats) | Lynch et al. — simulated corporate agents (email/computer use): blackmail, espionage, eval-vs-real CoT sensitivity; section→class map in-repo | [Companion →](docs/agentic-misalignment-insider-threats.md) · [Paper PDF →](https://arxiv.org/pdf/2510.05179) · [arXiv abs](https://arxiv.org/abs/2510.05179) |
-| Claude Opus 4.7 system card | Anthropic — RSP/CB/cyber/agentic/alignment/welfare disclosure; section→class map; Case 23 compound narrative | [Companion →](docs/claude-opus-4-7-system-card.md) · [System card PDF →](https://www.anthropic.com/claude-opus-4-7-system-card) · [News](https://www.anthropic.com/news/claude-opus-4-7) |
+| Claude Opus 4.7 system card | Anthropic — RSP/CB/cyber/agentic/alignment/welfare disclosure; section→class map; Case 23; **live PDF → classifier** in [`reports/claude-opus-4-7/`](reports/claude-opus-4-7/) | [Companion →](docs/claude-opus-4-7-system-card.md) · [System card PDF →](https://www.anthropic.com/claude-opus-4-7-system-card) · [News](https://www.anthropic.com/news/claude-opus-4-7) · [Live classify →](reports/claude-opus-4-7/opus-4-7-system-card-live-summary.md) |
 | Meta integrity & adversarial reports (H1 2026) | Semiannual bundle (Mar 2026): Community Standards Enforcement, Widely Viewed Content, local-law restrictions, Oversight Board update; plus **H1 2026 Adversarial Threat Report** (Mar 11) — official Transparency Center URLs only | [Link hub →](docs/meta-integrity-reports-h1-2026.md) · [Integrity H1 2026 hub](https://transparency.meta.com/reports/integrity-reports-h1-2026/) · [Adversarial Threat H1 2026](https://transparency.meta.com/sr/first-half-2026-Adversarial-threat-report/) |
 | Microsoft Agentic AI Failure Taxonomy | Failure modes specific to autonomous agent systems | [Whitepaper (PDF)](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Taxonomy-of-Failure-Mode-in-Agentic-AI-Systems-Whitepaper.pdf) |
 | AI Incident Database / AVID | Real-world observed incidents, empirically collected | [avidml.org](https://avidml.org) |
