@@ -1,3 +1,7 @@
+# macOS / AppleDouble metadata (never commit)
+._*
+.DS_Store
+
 __pycache__/
 *.pyc
 *.pyo
