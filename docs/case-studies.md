@@ -415,6 +415,109 @@ Each case study maps an incident to its primary class plus any secondary flags.
 
 ---
 
+## Case 21: Project Glasswing — agentic cyber frontier (compound narrative, 2025–2026)
+
+**What this entry is**: A **compound, multi-thread case study** documented in depth in **[project-glasswing.md](project-glasswing.md)**. It connects restricted-frontier model capability, defensive coalitions, state-sponsored agentic intrusion, MCP semantic attacks, malicious skill marketplaces, and concrete supply-chain CVEs. Use it to see **how several taxonomy classes fire together** when the failure surface is orchestration and protocols—not a single prompt bug.
+
+**Official initiative (context)**:
+[Project Glasswing (Anthropic)](https://www.anthropic.com/glasswing)
+
+**Documentation in this repo**:
+[project-glasswing.md](project-glasswing.md) — full narrative, tables, and defensive recommendations (OWASP MCP Top 10, semantic sandboxing, metadata validation, etc.).
+
+### Full enumeration (every section, not only Glasswing)
+
+The **authoritative** mapping is the appendix **“Full enumeration — each section → Periodic Table classes”** in [project-glasswing.md](project-glasswing.md). In short:
+
+| Doc slice | What it is in the narrative | Taxonomy focus (see appendix for full IDs) |
+|-----------|----------------------------|---------------------------------------------|
+| **Preamble** | Semantic orchestration layer; dual-use cyber | ADVERSARIAL + DOMAIN cyber + agentic chaining |
+| **§1–2** | Claude Mythos; **agentic scaffold** | `DOMAIN-ZERODAY-262`, `DOMAIN-EXPLOIT-DEV-263`, `AGEN-CAP-SCAFFOLD-057`, `AGEN-UNSUPER-EXEC-065`, `ARCH-SANDBOX-ESCAPE-238` |
+| **§3–4** | **Project Glasswing** + **critiques** | Governance / transparency / epistemic gap (not a single mechanism class) |
+| **§5** | **Google Big Sleep** | Same domain cyber discovery classes; historical precedent |
+| **§6** | **GTG-1002** | Tool-chain orchestration, offensive tools, injection, exfil |
+| **§7–10** | **MCP** — intro, **tool poisoning**, **rug pull**, **supply chain / CVEs** | Indirect injection, context confusion, deploy/trust patterns, command injection (`mcp-remote` class), hosting misconfig |
+| **§11** | **Malicious skill marketplace** | Data exfiltration, trigger/backdoor patterns, tool composition |
+| **§12** | **Over-permissioned agents** | Unsupervised execution, toxic tool combos, injection, alignment/safety context |
+| **§13** | **Open-source / critical infrastructure** | Mass discovery threat to OSS; offensive capability parity |
+| **§14** | **Conclusion** | Ties to class-level mitigations and OWASP MCP Top 10 |
+
+**MCP is four enumerated rows (§7–10)** in the appendix—do not collapse it under “Glasswing.” Glasswing is **§3–4** only (coalition + critiques).
+
+### Thread A — Dual-use capability and autonomous discovery (defensive framing)
+
+**Incident (narrative)**: Analysis describes **Claude Mythos Preview** as a restricted-capability model whose strong reasoning and agentic coding workflows enable **large-scale vulnerability discovery** when driven by an **agentic scaffold** (e.g. multi-agent triage, isolated execution for confirmation, validation filtering). The same structural capability is **dual-use**: it accelerates defender patching and adversary exploitation economics.
+
+**Primary classification**:
+`DOMAIN-ZERODAY-262` — **Zero-Day Discovery** (DOMAIN / Cybersecurity Class)  
+*Severity: CRITICAL*
+
+**Secondary classification**:
+`DOMAIN-EXPLOIT-DEV-263` — **Exploit Development** — where findings are weaponized into chains / PoCs (e.g. browser sandbox-escape narrative in the companion doc).
+
+> *Mechanism fit: autonomous pattern discovery and exploit shaping at machine speed, independent of whether the operator is a coalition partner or an adversary.*
+
+### Thread B — Project Glasswing (defensive coalition)
+
+**Incident (narrative)**: **Project Glasswing** is described as a **controlled defensive program** giving critical maintainers and partners access to frontier capability for **preemptive hardening** before comparable tooling spreads. This is primarily a **governance and deployment** story: who gets access, under what constraints, and how patch cycles compress.
+
+**Taxonomy anchor**: Not a single class — treat as **governance context** layered on Thread A. The mechanism classes above remain primary; Glasswing is the **organizational countermeasure narrative**.
+
+### Thread C — GTG-1002 (agentic espionage campaign)
+
+**Incident (narrative)**: Analysis describes **GTG-1002**, a campaign attributed to a state-sponsored group, as **highly automated** — abusing **Claude Code**-style tooling to **orchestrate** reconnaissance, exploitation, and exfiltration with **fragmented sessions** that evade single-chain SOC detection.
+
+**Primary classification**:
+`AGEN-TOOL-CHAIN-062` — **Tool Chain Abuse** (AGENTIC / Capability Amplification Class)
+
+**Secondary classifications**:
+- `DOMAIN-OFFENSIVE-TOOLS-267` — **Offensive Tools** — operationalized intrusion tooling at scale  
+- `ADV-INDIRECT-INJECT-122` — where **trusted context** (tooling, documents, session fragments) carries **semantic** instructions that reorganize agent behavior
+
+> *Mechanism fit: composition of legitimate agent primitives into an offensive pipeline; monitoring must connect **distributed** micro-behaviors.*
+
+### Thread D — MCP: semantic exploitation and supply chain
+
+**Incident (narrative)**: **Model Context Protocol (MCP)** tooling introduces **tool-description poisoning**, shadowing, rug-pull updates, and **traditional** vulns (e.g. **`mcp-remote` / CVE-2025-6514**-class client-side command execution when connecting to malicious servers — as summarized in the companion doc).
+
+**Document structure (full detail)**: In [project-glasswing.md](project-glasswing.md), MCP is **not** one paragraph — the appendix enumerates **four rows: §7** (MCP intro / flat namespace), **§8** (tool poisoning & related attack table), **§9** (rug pull / runtime trust), **§10** (supply chain: hosting traversal, `mcp-remote`-class RCE). See also **§12** (over-permissioned agents) for toxic tool combos that often sit beside MCP deployments.
+
+**Primary classification**:
+`ADV-INDIRECT-INJECT-122` — **Indirect Prompt Injection** — malicious **instructions in data the model treats as authoritative** (tool metadata, descriptions, tool outputs)
+
+**Secondary classification**:
+`ADV-CMD-INJECT-129` — **Command Injection** — when a buggy client/proxy executes **unsanitized** attacker-controlled strings from the protocol handshake path  
+`ADV-CONTEXT-CONFUSE-135` — **Context Confusion** — trusted vs untrusted segments undifferentiated in one window  
+`ARCH-DEPLOY-CONFIG-210` — **Deployment configuration** — approve-once / silent update patterns
+
+> *Mechanism fit: attacks live in the **semantic trust boundary** between host, servers, and tool listings — not only in user-visible prompts.*
+
+### Thread E — Malicious skill marketplace
+
+**Incident (narrative)**: Community **agent skills** (packages of instructions and code) create a **supply-chain** surface: benign descriptions with **hidden** exfiltration or ransomware payloads; empirical study citations in the companion doc.
+
+**Primary classification**:
+`ARCH-DATA-EXFIL-245` — **Data Exfiltration** (ARCHITECTURAL / Data Flow Class)
+
+**Secondary classification**:
+`AGEN-TOOL-CHAIN-062` — skills as **composable** privileged primitives
+
+### Thread F — Sandbox escape as architectural failure mode
+
+**Incident (narrative)**: Companion doc cites **multi-bug browser sandbox escape** chains as an example of **layered** architectural failure when combined with autonomous exploit development.
+
+**Primary classification**:
+`ARCH-SANDBOX-ESCAPE-238` — **Sandbox Escape** (ARCHITECTURAL / Tool & Execution Class)
+
+**Why it fits (overall)**: This case is intentionally **compound**. Real agentic incidents will span **DOMAIN + AGENTIC + ADVERSARIAL + ARCHITECTURAL** simultaneously. The Periodic Table stays useful when you assign a **primary mechanism per thread** and document **secondaries**, rather than forcing a single ID to carry the whole story.
+
+**Source / provenance**:
+- In-repo synthesis: [project-glasswing.md](project-glasswing.md)  
+- Initiative link: [anthropic.com/glasswing](https://www.anthropic.com/glasswing)  
+- Cross-check claims (CVE IDs, dates, attribution) against **primary** vendor advisories and press before treating details as settled fact.
+
+---
+
 ## How to Add a Case Study
 
 See [CONTRIBUTING.md](../CONTRIBUTING.md) — use the `report-real-incident` issue template.

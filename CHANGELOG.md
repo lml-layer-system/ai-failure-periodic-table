@@ -6,6 +6,46 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.4.3] — 2026-04-17
+
+### Added
+- [docs/project-glasswing.md](docs/project-glasswing.md): **Appendix — Full enumeration** — table mapping **every** document section (Preamble, §1–14) to Periodic Table class IDs; **MCP explicitly spans §7–10** (intro, tool poisoning, rug pull, supply chain/CVE) vs Glasswing **§3–4** only
+- [docs/case-studies.md](docs/case-studies.md) Case 21: **Full enumeration** subsection + summary table pointing at the appendix
+- `data/failures.json`: Case 21 `case_studies` rows for `AGEN-CAP-SCAFFOLD-057`, `AGEN-UNSUPER-EXEC-065`, `ADV-CONTEXT-CONFUSE-135`, `ARCH-DEPLOY-CONFIG-210`, `ADV-TRIGGER-BACKDOOR-126`, `GOV-TRANSPARENCY-311`, `ALIGN-CONTEXT-SAFE-190`, `EPIS-FALSE-CERT-030`
+- `tests/test_data_integrity.py`: above IDs (except `EPIS-FALSE-CERT-030`, already listed) added to enriched-case-study list
+- [docs/project-glasswing.md](docs/project-glasswing.md): **Complete heading checklist** (every `##` / `###` / H1 + meta sections) and **Conclusion §14** sub-table mapping each numbered recommendation → class IDs
+
+### Changed
+- README version badge → 1.4.3
+- `tests/test_classifier.py`: single-query perf uses **median of 3** samples, threshold **25ms**; average threshold **15ms** (reduce flake)
+
+---
+
+## [1.4.2] — 2026-04-17
+
+### Added
+- **Case 21** in [docs/case-studies.md](docs/case-studies.md): compound case study for the Project Glasswing / agentic cyber narrative (threads: Mythos capability, Glasswing coalition, GTG-1002, MCP, malicious skills, sandbox escape) with taxonomy IDs per thread
+- Structured `case_studies` entries in `data/failures.json` for classes `DOMAIN-ZERODAY-262`, `DOMAIN-EXPLOIT-DEV-263`, `ADV-INDIRECT-INJECT-122`, `ADV-CMD-INJECT-129`, `AGEN-TOOL-CHAIN-062`, `DOMAIN-OFFENSIVE-TOOLS-267`, `ARCH-DATA-EXFIL-245`, `ARCH-SANDBOX-ESCAPE-238`, each citing Case 21 and [docs/project-glasswing.md](docs/project-glasswing.md)
+- [docs/project-glasswing.md](docs/project-glasswing.md): "Periodic Table case study" section linking to Case 21
+
+### Changed
+- README version badge 1.4.2; pointer from Relationship to Other Frameworks to Case 21 and modal data
+- `tests/test_classifier.py`: average latency threshold 5ms → 10ms (reduce CI/local flake from load variance)
+- `tests/test_data_integrity.py`: Case 21 (Project Glasswing) class IDs added to `test_enriched_classes_have_content` documented list
+
+---
+
+## [1.4.1] — 2026-04-17
+
+### Added
+- [docs/project-glasswing.md](docs/project-glasswing.md) — companion analysis: Claude Mythos, Project Glasswing, MCP/skill-market risks, and agentic orchestration (strategic context alongside the taxonomy)
+- README: Project Glasswing row in **Relationship to Other Frameworks** (next to MIT), plus short clarification that Glasswing addresses orchestration-layer threats, not alternate failure categories
+
+### Changed
+- README version badge updated to 1.4.1
+
+---
+
 ## [1.4.0] — 2026-04-12
 
 ### Added

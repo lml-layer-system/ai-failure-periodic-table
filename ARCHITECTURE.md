@@ -30,7 +30,8 @@ ai-failure-periodic-table/
 ├── docs/
 │   ├── how-to-use.md          # End-user usage guide
 │   ├── case-studies.md        # 20 mapped real incidents
-│   └── challenge-protocol.md  # How to challenge the taxonomy
+│   ├── challenge-protocol.md  # How to challenge the taxonomy
+│   └── project-glasswing.md   # Companion: agentic cyber / MCP / Glasswing context (not part of failures.json)
 │
 ├── .github/
 │   ├── workflows/ci.yml       # CI: test matrix Python 3.10–3.12

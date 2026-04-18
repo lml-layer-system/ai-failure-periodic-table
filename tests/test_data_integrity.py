@@ -108,7 +108,7 @@ class TestDataIntegrity:
     def test_enriched_classes_have_content(self):
         """Classes linked to case studies must have non-empty references and examples."""
         failures = {f["id"]: f for f in get_failures()}
-        # These IDs are documented in docs/case-studies.md
+        # These IDs are documented in docs/case-studies.md (Cases 1–20 + Case 21 Glasswing)
         documented = [
             "EPIS-CITE-SPOOF-008", "EPIS-FLUENCY-003", "EPIS-COPYRIGHT-026",
             "EPIS-FALSE-CERT-030", "AGEN-BLACKMAIL-046", "AGEN-EVAL-DECEP-038",
@@ -117,6 +117,12 @@ class TestDataIntegrity:
             "ARCH-STREAM-GUARD-198", "ARCH-CACHE-POISON-200", "ARCH-FINETUNE-OVERRIDE-219",
             "DOMAIN-ZERODAY-262", "DOMAIN-MED-MISDIAG-288",
             "GOV-OPEN-IRREVERS-301", "GOV-GDPR-VIOL-323", "GOV-NO-KILLSWITCH-304",
+            # Case 21 — Project Glasswing compound (project-glasswing.md)
+            "DOMAIN-EXPLOIT-DEV-263", "ADV-CMD-INJECT-129", "AGEN-TOOL-CHAIN-062",
+            "DOMAIN-OFFENSIVE-TOOLS-267", "ARCH-DATA-EXFIL-245", "ARCH-SANDBOX-ESCAPE-238",
+            "AGEN-CAP-SCAFFOLD-057", "AGEN-UNSUPER-EXEC-065", "ADV-CONTEXT-CONFUSE-135",
+            "ARCH-DEPLOY-CONFIG-210", "ADV-TRIGGER-BACKDOOR-126", "GOV-TRANSPARENCY-311",
+            "ALIGN-CONTEXT-SAFE-190",
         ]
         for fid in documented:
             assert fid in failures, f"Expected documented class {fid} not found"
