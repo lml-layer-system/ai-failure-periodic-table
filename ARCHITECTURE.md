@@ -1,6 +1,6 @@
 # Architecture
 
-This document is for contributors working on the code and data pipeline. **End users:** classifying from the terminal → [docs/how-to-use.md](docs/how-to-use.md); **plugging an everyday AI (Cursor, Claude Desktop, MCP) into the table** → [docs/mcp-daily-driver.md](docs/mcp-daily-driver.md).
+This document is for contributors working on the code and data pipeline — not for end users classifying failures (see [docs/how-to-use.md](docs/how-to-use.md)).
 
 ---
 
@@ -10,61 +10,33 @@ This document is for contributors working on the code and data pipeline. **End u
 ai-failure-periodic-table/
 │
 ├── data/
-│   ├── failures.json          # The taxonomy. Single source of truth.
-│   ├── search_index.json      # TF-IDF index (scripts/generate_embeddings.py)
-│   └── freshness_sources.json # RSS/Atom config for Freshness Watch
+│   └── failures.json          # The taxonomy. Single source of truth.
 │
 ├── src/
 │   ├── classifier.py          # Core engine: PeriodicTableClassifier
 │   ├── cli.py                 # CLI entry point (python -m src.cli)
-│   ├── data_loader.py         # Load, validate, cache failures.json
-│   ├── tfidf_search.py        # TF-IDF class search (semantic_search + Freshness Watch)
-│   ├── freshness_feed.py      # Feed parse, dedupe, Freshness Watch heuristics
-│   └── ai_failure_mcp/        # MCP stdio server: server.py, bridge.py, scientific_envelope.py, response_contract.py
+│   ├── mcp_server.py          # MCP server — identity: "buccet-failure-classifier"
+│   └── data_loader.py         # Load, validate, cache failures.json
 │
 ├── scripts/
 │   ├── extract_failures.py    # Parse markdown → failures.json (run once)
 │   ├── generate_taxonomy.py   # failures.json → TAXONOMY.md (run after data changes)
 │   ├── enrich_failures.py     # Applies enrichment data (examples, references)
-│   ├── fix_sparse_keywords.py # Keyword coverage fixes (run after keyword additions)
-│   ├── generate_embeddings.py # failures.json → search_index.json
-│   ├── classify_external_report.py # curl PDF/HTML → text chunks → PeriodicTableClassifier JSON/MD
-│   ├── semantic_search.py     # CLI TF-IDF search over classes
-│   └── freshness_watch.py     # Feeds → classifier + review packet (no auto data edits)
-│
-├── reports/
-│   └── freshness/             # Optional local output from freshness_watch.py
+│   └── fix_sparse_keywords.py # Keyword coverage fixes (run after keyword additions)
 │
 ├── tests/
-│   ├── test_classifier.py     # Known failures, non-failures, performance
-│   ├── test_data_integrity.py # Schema, counts, enrichment, IDs
-│   ├── test_freshness_feed.py # Feed parse, dedupe, confidence helpers
-│   └── test_tfidf_search.py   # TF-IDF smoke tests
+│   ├── test_classifier.py     # 33 tests: known failures, non-failures, performance
+│   └── test_data_integrity.py # 13 tests: schema, counts, enrichment, IDs
 │
 ├── docs/
 │   ├── how-to-use.md          # End-user usage guide
-│   ├── case-studies.md        # Mapped incidents + companions (Glasswing, agentic misalignment, Opus 4.7 card, …)
-│   ├── challenge-protocol.md  # How to challenge the taxonomy
-│   ├── project-glasswing.md   # Companion: agentic cyber / MCP / Glasswing context (not part of failures.json)
-│   ├── agentic-misalignment-insider-threats.md  # Companion: Lynch et al. insider-threat simulations → class IDs
-│   ├── claude-opus-4-7-system-card.md  # Companion: Anthropic Opus 4.7 system card → class IDs
-│   ├── claude-mythos-system-card.md    # Companion: Claude Mythos Preview system card + live classify
-│   ├── meta-integrity-reports-h1-2026.md  # Link hub: Meta Transparency Center integrity + adversarial reports
-│   ├── freshness-watch.md     # Freshness Watch: feed → classifier review packets
-│   ├── mcp-daily-driver.md  # Daily-driver AI via MCP: where to connect, what you get, setup paths (Cursor, Claude, …)
-│   ├── cursor-mcp-config.example.json
+│   ├── case-studies.md        # 20 mapped real incidents
+│   └── challenge-protocol.md  # How to challenge the taxonomy
 │
 ├── .github/
-│   ├── workflows/ci.yml           # CI: test matrix Python 3.10–3.12
-│   ├── workflows/freshness-watch.yml  # Weekly feed ingest → artifact (no auto-commit)
-│   └── ISSUE_TEMPLATE/            # 5 structured issue templates
+│   ├── workflows/ci.yml       # CI: test matrix Python 3.10–3.12
+│   └── ISSUE_TEMPLATE/        # 5 structured issue templates
 │
-├── reports/
-│   ├── meta-integrity-h1-2026/ # Meta Adversarial PDF → pdftotext + classify_external_report.py outputs (*.pdf gitignored)
-│   ├── glasswing/              # anthropic.com/glasswing HTML + project-glasswing.md → same classifier pipeline
-│   ├── claude-opus-4-7/        # Opus 4.7 system card PDF → pdftotext + classify_external_report.py (*.pdf gitignored)
-│   ├── claude-mythos/          # Mythos Preview system card PDF (official URL) → same pipeline (*.pdf gitignored)
-│   └── agentic-misalignment/   # Lynch et al. arXiv:2510.05179 PDF → same pipeline (*.pdf gitignored)
 ├── TAXONOMY.md                # Auto-generated: all 343 classes in readable format
 ├── CHANGELOG.md               # Version history
 ├── CONTRIBUTING.md            # Contribution process
@@ -195,3 +167,67 @@ python -m pytest tests/test_data_integrity.py -v  # data integrity only
 ```
 
 CI runs automatically on push and PR via `.github/workflows/ci.yml` against Python 3.10, 3.11, 3.12.
+
+---
+
+## MCP Server
+
+`src/mcp_server.py` exposes the classifier as an MCP tool server — the daily-driver surface for agents and AI hosts.
+
+### Role separation
+
+This server is the **eyes / daily-driver layer**. It classifies, interprets, and reads structure. It does not enforce anything.
+
+[Agent Buccet](https://github.com/lml-layer-system/agent-buccet) is a **separate optional protection body**. A user may also choose a different protection system entirely. The Periodic Table does not depend on any specific protection body being present.
+
+The intended flow:
+
+```
+User → AI Failure Periodic Table MCP   — classify, interpret, understand
+     → (optional) Agent Buccet          — separate runtime protection, only if user wants it
+     → Human decides what becomes law   — places it into their protection body manually
+     → Protection body enforces it      — normal enforcement, no auto-connection
+```
+
+The daily-driver AI can help a user draft the exact UPL wording for a rule they want. The human decides what goes in. The human places it. Nothing writes into any protection body automatically.
+
+### Coexistence with Agent Buccet (optional)
+
+If a user runs both MCPs in the same host, the server name `"buccet-failure-classifier"` is the only contract point. Buccet's acceptance lane `ACCEPT.CURATED.CAPABILITY.2044` uses this name to prevent a logic collision — without it, classifier payloads containing failure taxonomy terms would hit Buccet's own denial patterns.
+
+Do not rename `"buccet-failure-classifier"` without also updating:
+```
+agent-buccet/lib/agent-buccet/list-v-acceptance.ts
+  → namedLane ACCEPT.CURATED.CAPABILITY.2044
+```
+
+Running both is optional. This server works fully standalone.
+
+### Tools exposed
+
+| Tool | Description |
+|------|-------------|
+| `classify` | Classify a failure description against all 343 classes |
+| `lookup` | Look up a failure class by exact ID |
+| `list_dimensions` | Return the 7 structural dimensions and their diagnostic questions |
+| `batch_classify` | Classify multiple descriptions in one call |
+
+### Running the MCP server
+
+```bash
+pip install "mcp>=1.0"
+python -m src.mcp_server
+```
+
+Host config:
+```json
+{
+  "mcpServers": {
+    "buccet-failure-classifier": {
+      "command": "python",
+      "args": ["-m", "src.mcp_server"],
+      "cwd": "/path/to/ai-failure-periodic-table"
+    }
+  }
+}
+```

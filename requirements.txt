@@ -7,3 +7,8 @@
 
 # For running tests:
 pytest>=7.0
+
+# MCP server — install to expose the classifier as an MCP tool
+# (Claude Desktop, Cursor, Agent Buccet shared-host composition, etc.)
+# pip install "mcp>=1.0"
+mcp>=1.0
