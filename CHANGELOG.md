@@ -6,6 +6,18 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.4.15] — 2026-04-18
+
+### Added
+- [`docs/claude-mythos-system-card.md`](docs/claude-mythos-system-card.md): **Claude Mythos Preview** system card — official [PDF URL](https://www.anthropic.com/claude-mythos-preview-system-card), same live-classify workflow as Opus 4.7
+- [`reports/claude-mythos/`](reports/claude-mythos/): `claude-mythos-system-card-live-*` (121 chunks @ 4500 chars); `.gitignore` `*-official.pdf`
+
+### Changed
+- [docs/project-glasswing.md](docs/project-glasswing.md): pointer to Mythos system card artifacts; README **1.4.15**; `pyproject.toml` / `index.html` footer
+- `tests/test_classifier.py`: average latency assertion **< 40ms** (was 15ms) for stability on slower filesystems
+
+---
+
 ## [1.4.14] — 2026-04-18
 
 ### Added

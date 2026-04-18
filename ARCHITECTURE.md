@@ -48,6 +48,7 @@ ai-failure-periodic-table/
 │   ├── project-glasswing.md   # Companion: agentic cyber / MCP / Glasswing context (not part of failures.json)
 │   ├── agentic-misalignment-insider-threats.md  # Companion: Lynch et al. insider-threat simulations → class IDs
 │   ├── claude-opus-4-7-system-card.md  # Companion: Anthropic Opus 4.7 system card → class IDs
+│   ├── claude-mythos-system-card.md    # Companion: Claude Mythos Preview system card + live classify
 │   ├── meta-integrity-reports-h1-2026.md  # Link hub: Meta Transparency Center integrity + adversarial reports
 │   ├── freshness-watch.md     # Freshness Watch: feed → classifier review packets
 │   ├── mcp-daily-driver.md  # Cursor MCP: on-demand classify_text / URL / doc (stdio)
@@ -61,7 +62,8 @@ ai-failure-periodic-table/
 ├── reports/
 │   ├── meta-integrity-h1-2026/ # Meta Adversarial PDF → pdftotext + classify_external_report.py outputs (*.pdf gitignored)
 │   ├── glasswing/              # anthropic.com/glasswing HTML + project-glasswing.md → same classifier pipeline
-│   └── claude-opus-4-7/        # Opus 4.7 system card PDF → pdftotext + classify_external_report.py (*.pdf gitignored)
+│   ├── claude-opus-4-7/        # Opus 4.7 system card PDF → pdftotext + classify_external_report.py (*.pdf gitignored)
+│   └── claude-mythos/          # Mythos Preview system card PDF (official URL) → same pipeline (*.pdf gitignored)
 ├── TAXONOMY.md                # Auto-generated: all 343 classes in readable format
 ├── CHANGELOG.md               # Version history
 ├── CONTRIBUTING.md            # Contribution process
