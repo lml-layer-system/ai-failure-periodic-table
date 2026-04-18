@@ -4,7 +4,7 @@
 
 > *The goal is not omniscience but structural predictiveness: that newly encountered failures should resolve into this structure as a class, sub-mode, or compound — unless evidence demonstrates otherwise.*
 
-**Version**: 1.4.8 | **Released**: April 2026 | **License**: MIT | **Status**: Open for community testing and falsification
+**Version**: 1.4.9 | **Released**: April 2026 | **License**: MIT | **Status**: Open for community testing and falsification
 
 ---
 
@@ -480,6 +480,7 @@ Several serious efforts exist to categorize AI risk and failure. This project is
 | Project Glasswing | Frontier agentic cyber context: defensive coalitions, MCP semantic risk, skill-market supply chains, orchestration attacks — companion analysis in-repo | [anthropic.com/glasswing](https://www.anthropic.com/glasswing) · [Analysis →](docs/project-glasswing.md) |
 | Agentic misalignment (insider threats) | Lynch et al. — simulated corporate agents (email/computer use): blackmail, espionage, eval-vs-real CoT sensitivity; section→class map in-repo | [Companion →](docs/agentic-misalignment-insider-threats.md) · [Paper PDF →](https://arxiv.org/pdf/2510.05179) · [arXiv abs](https://arxiv.org/abs/2510.05179) |
 | Claude Opus 4.7 system card | Anthropic — RSP/CB/cyber/agentic/alignment/welfare disclosure; section→class map; Case 23 compound narrative | [Companion →](docs/claude-opus-4-7-system-card.md) · [System card PDF →](https://www.anthropic.com/claude-opus-4-7-system-card) · [News](https://www.anthropic.com/news/claude-opus-4-7) |
+| Meta integrity & adversarial reports (H1 2026) | Semiannual bundle (Mar 2026): Community Standards Enforcement, Widely Viewed Content, local-law restrictions, Oversight Board update; plus **H1 2026 Adversarial Threat Report** (Mar 11) — official Transparency Center URLs only | [Link hub →](docs/meta-integrity-reports-h1-2026.md) · [Integrity H1 2026 hub](https://transparency.meta.com/reports/integrity-reports-h1-2026/) · [Adversarial Threat H1 2026](https://transparency.meta.com/sr/first-half-2026-Adversarial-threat-report/) |
 | Microsoft Agentic AI Failure Taxonomy | Failure modes specific to autonomous agent systems | [Whitepaper (PDF)](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Taxonomy-of-Failure-Mode-in-Agentic-AI-Systems-Whitepaper.pdf) |
 | AI Incident Database / AVID | Real-world observed incidents, empirically collected | [avidml.org](https://avidml.org) |
 
@@ -490,6 +491,8 @@ The Periodic Table is mechanism-focused. Where MIT and Microsoft answer "what ca
 **Agentic misalignment (Lynch et al.)** is empirical red-team work on **goal preservation** and **insider-style exfiltration** in **controlled simulations**—mapped to the same mechanism classes (e.g. blackmail, shutdown resistance, data exfiltration, eval sensitivity). See [docs/agentic-misalignment-insider-threats.md](docs/agentic-misalignment-insider-threats.md) and [Case 22 in docs/case-studies.md](docs/case-studies.md).
 
 **Claude Opus 4.7 system card** is **first-party** evaluation disclosure (agentic injection, sandbagging probes, eval-awareness, cyber/CB pathways, reward-hacking monitoring, destructiveness case studies). Mapped as [Case 23](docs/case-studies.md) with full TOC→ID table in [docs/claude-opus-4-7-system-card.md](docs/claude-opus-4-7-system-card.md).
+
+**Meta (Facebook / Instagram)** publishes **integrity** and **adversarial threat** transparency reports on a semiannual cadence (from 2026). Official one-click links for the **H1 2026** bundle and the **First Half 2026 Adversarial Threat Report** are collected in [docs/meta-integrity-reports-h1-2026.md](docs/meta-integrity-reports-h1-2026.md).
 
 These frameworks are not in conflict. Use them together.
 

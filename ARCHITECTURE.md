@@ -47,6 +47,7 @@ ai-failure-periodic-table/
 │   ├── project-glasswing.md   # Companion: agentic cyber / MCP / Glasswing context (not part of failures.json)
 │   ├── agentic-misalignment-insider-threats.md  # Companion: Lynch et al. insider-threat simulations → class IDs
 │   ├── claude-opus-4-7-system-card.md  # Companion: Anthropic Opus 4.7 system card → class IDs
+│   ├── meta-integrity-reports-h1-2026.md  # Link hub: Meta Transparency Center integrity + adversarial reports
 │   ├── freshness-watch.md     # Freshness Watch: feed → classifier review packets
 │   ├── mcp-daily-driver.md  # Cursor MCP: on-demand classify_text / URL / doc (stdio)
 │   ├── cursor-mcp-config.example.json

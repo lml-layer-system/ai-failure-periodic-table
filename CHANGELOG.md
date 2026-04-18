@@ -6,6 +6,16 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.4.9] — 2026-04-18
+
+### Added
+- [docs/meta-integrity-reports-h1-2026.md](docs/meta-integrity-reports-h1-2026.md): **official** Transparency Center URLs for Meta **Integrity Reports, H1 2026** (hub, Community Standards Enforcement, Widely Viewed Content, content restrictions, Oversight Board H2 2025) and **First Half 2026 Adversarial Threat Report** (Mar 11, 2026), plus archive/index links
+
+### Changed
+- README 1.4.9; Relationship to Other Frameworks row + short blurb for Meta reports; [ARCHITECTURE.md](ARCHITECTURE.md) docs layout
+
+---
+
 ## [1.4.8] — 2026-04-18
 
 ### Changed
