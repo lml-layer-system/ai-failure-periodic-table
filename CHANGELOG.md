@@ -6,6 +6,13 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.4.13] — 2026-04-18
+
+### Fixed
+- Aligned **`pyproject.toml`** project version and **`index.html`** footer (via `scripts/generate_visual.py`) with README numbering — they had drifted at **1.2.0** while docs tracked **1.4.x**
+
+---
+
 ## [1.4.12] — 2026-04-18
 
 ### Added
