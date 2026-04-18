@@ -6,6 +6,15 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.4.19] — 2026-04-17
+
+### Changed
+- **[docs/mcp-daily-driver.md](docs/mcp-daily-driver.md):** User-first rewrite—plain-English “what this is for,” **read-only / not Freshness Watch**, **what you get vs how to connect**, **connect your daily-driver AI** (Cursor, Claude Desktop, any MCP host), **choose your setup path**, **first-use walkthrough**, **result semantics**, security and personal-document notes; technical tool table moved below.
+- **[README.md](README.md):** “Connect your everyday AI” quick section pointing at the guide; MCP blurb aligned.
+- **[docs/how-to-use.md](docs/how-to-use.md), [ARCHITECTURE.md](ARCHITECTURE.md):** Cross-links for MCP vs CLI audiences; [docs/cursor-mcp-config.example.json](docs/cursor-mcp-config.example.json) kept as paste-ready template with optional `AI_FAILURE_MCP_DOCUMENT_ROOT`.
+
+---
+
 ## [1.4.18] — 2026-04-17
 
 ### Added

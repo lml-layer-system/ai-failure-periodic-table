@@ -2,6 +2,8 @@
 
 The classifier answers one question: **is this AI failure in the periodic table, and if so, where?**
 
+**Using Cursor, Claude Desktop, or another MCP host instead of the terminal?** See [mcp-daily-driver.md](mcp-daily-driver.md) for where to plug in your everyday AI, what you get back, and how to choose a setup path.
+
 ---
 
 ## Installation

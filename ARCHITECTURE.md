@@ -1,6 +1,6 @@
 # Architecture
 
-This document is for contributors working on the code and data pipeline — not for end users classifying failures (see [docs/how-to-use.md](docs/how-to-use.md)).
+This document is for contributors working on the code and data pipeline. **End users:** classifying from the terminal → [docs/how-to-use.md](docs/how-to-use.md); **plugging an everyday AI (Cursor, Claude Desktop, MCP) into the table** → [docs/mcp-daily-driver.md](docs/mcp-daily-driver.md).
 
 ---
 
@@ -51,7 +51,7 @@ ai-failure-periodic-table/
 │   ├── claude-mythos-system-card.md    # Companion: Claude Mythos Preview system card + live classify
 │   ├── meta-integrity-reports-h1-2026.md  # Link hub: Meta Transparency Center integrity + adversarial reports
 │   ├── freshness-watch.md     # Freshness Watch: feed → classifier review packets
-│   ├── mcp-daily-driver.md  # Cursor MCP: on-demand classify_text / URL / doc (stdio)
+│   ├── mcp-daily-driver.md  # Daily-driver AI via MCP: where to connect, what you get, setup paths (Cursor, Claude, …)
 │   ├── cursor-mcp-config.example.json
 │
 ├── .github/

@@ -97,6 +97,16 @@ python -m src.cli --lookup EPIS-CITE-SPOOF-008
 
 **Classifier notes:** The CLI uses stemmed keyword matching with synonym expansion. It achieves 100% recall on 49 documented real-world incidents. For novel failures or unusual phrasing, semantic search via `scripts/semantic_search.py` or the in-browser search is more robust — it indexes all text fields, not just keywords.
 
+### Connect your everyday AI (daily driver)
+
+If you use **Cursor**, **Claude Desktop**, or another app that supports **MCP** (Model Context Protocol), you can plug that assistant into this repo and **classify paragraphs, public URLs, or files from chat**—same 343-class table, **read-only** (it does not edit the taxonomy).
+
+- **This is where you connect:** add an MCP server in your AI host’s settings that runs `python3 -m src.ai_failure_mcp` with this repo as the working directory (see the full guide).
+- **This is what you get:** hit or miss on the table, which class(es), compound readings, structural mitigation patterns from the taxonomy, and CONTRIBUTING-style next steps when the fit is weak.
+- **Not the same as Freshness Watch:** the scheduled feed pipeline for maintainers is separate; see [docs/freshness-watch.md](docs/freshness-watch.md).
+
+**Start here:** [docs/mcp-daily-driver.md](docs/mcp-daily-driver.md) — plain-English purpose, **what vs how**, **choose your setup path** (Cursor / Claude / other), first-use walkthrough, and example config ([docs/cursor-mcp-config.example.json](docs/cursor-mcp-config.example.json)).
+
 ---
 
 ## Using This for Pre-Deployment Auditing
@@ -257,7 +267,7 @@ pip install pytest
 python -m pytest tests/ -v
 ```
 
-67 tests covering: known failure classification, non-failure rejection, determinism, performance (low-ms thresholds), data integrity (all 343 classes, full schema validation), mitigation field completeness, and external incident recall (100% on 49 documented real-world AI failures phrased as reporters, researchers, and users described them — not using taxonomy vocabulary). Case studies include companion maps for [Project Glasswing](docs/project-glasswing.md) and [agentic misalignment / insider threats](docs/agentic-misalignment-insider-threats.md). **Freshness Watch** ([docs/freshness-watch.md](docs/freshness-watch.md)) runs a scheduled, review-only pipeline from public feeds through the classifier (no automatic taxonomy edits). **MCP daily driver** ([docs/mcp-daily-driver.md](docs/mcp-daily-driver.md)): stdio MCP tools (`classify_text`, `classify_url`, `classify_document`, `classify_document_path`, `search_failures`, `get_class`, `compound_hint`) — `classifier_hit`, `response_contract`, `fit_state` / `fit_confidence`, CONTRIBUTING-grounded `report_preparation`, structural WHAT-only mitigations; optional `AI_FAILURE_MCP_DOCUMENT_ROOT(S)` for personal files — for on-demand classification with taxonomy-native structural mitigations—read-only, no repo writes.
+67 tests covering: known failure classification, non-failure rejection, determinism, performance (low-ms thresholds), data integrity (all 343 classes, full schema validation), mitigation field completeness, and external incident recall (100% on 49 documented real-world AI failures phrased as reporters, researchers, and users described them — not using taxonomy vocabulary). Case studies include companion maps for [Project Glasswing](docs/project-glasswing.md) and [agentic misalignment / insider threats](docs/agentic-misalignment-insider-threats.md). **Freshness Watch** ([docs/freshness-watch.md](docs/freshness-watch.md)) runs a scheduled, review-only pipeline from public feeds through the classifier (no automatic taxonomy edits). **MCP daily driver** ([docs/mcp-daily-driver.md](docs/mcp-daily-driver.md)): plug Cursor / Claude Desktop / other MCP hosts into the table; user-first guide covers **where to connect**, **what you get** (hit/miss, classes, compound, structural WHAT, next steps), and **setup paths**; tools include `classify_text`, `classify_url`, `classify_document`, `classify_document_path`, `search_failures`, `get_class`, `compound_hint` with `classifier_hit`, `response_contract`, CONTRIBUTING-grounded `report_preparation`; read-only, no taxonomy writes.
 
 ---
 
