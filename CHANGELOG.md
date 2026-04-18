@@ -6,6 +6,17 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.4.6] — 2026-04-18
+
+### Added
+- **MCP stdio server** (daily-driver layer): `python -m src.ai_failure_mcp` after `pip install -e ".[mcp]"` — tools `classify_text`, `classify_url`, `classify_document`, `search_failures`, `get_class`, `compound_hint`
+- [src/ai_failure_mcp/](src/ai_failure_mcp/): read-only access to `data/failures.json` + TF-IDF index; responses include **`suggested_structural_response`** (mechanism, forbidden, detection, mitigation from the table—not vendor-specific runbooks)
+- [docs/mcp-daily-driver.md](docs/mcp-daily-driver.md), [docs/cursor-mcp-config.example.json](docs/cursor-mcp-config.example.json)
+- `pyproject.toml`: optional dependency `mcp`, console script `ai-failure-mcp`
+- `tests/test_mcp_bridge.py`
+
+---
+
 ## [1.4.5] — 2026-04-18
 
 ### Added

@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-failure-periodic-table"
+version = "1.2.0"
+description = "343-class structural taxonomy of AI failure mechanisms with keyword classifier and semantic search"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "AI Failure Periodic Table contributors" }]
+keywords = ["ai", "safety", "taxonomy", "classification", "failure-modes"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Homepage = "https://lml-layer-system.github.io/ai-failure-periodic-table/"
+Repository = "https://github.com/lml-layer-system/ai-failure-periodic-table"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+mcp = ["mcp>=1.2"]
+
+[project.scripts]
+ai-failure-table = "src.cli:main"
+ai-failure-mcp = "src.ai_failure_mcp.server:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.setuptools.package-data]
+src = ["data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

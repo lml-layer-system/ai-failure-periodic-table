@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "ai-failure-periodic-table": {
+      "command": "python3",
+      "args": ["-m", "src.ai_failure_mcp"],
+      "cwd": "/absolute/path/to/ai-failure-periodic-table"
+    }
+  }
+}

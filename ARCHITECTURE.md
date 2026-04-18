@@ -19,7 +19,8 @@ ai-failure-periodic-table/
 │   ├── cli.py                 # CLI entry point (python -m src.cli)
 │   ├── data_loader.py         # Load, validate, cache failures.json
 │   ├── tfidf_search.py        # TF-IDF class search (semantic_search + Freshness Watch)
-│   └── freshness_feed.py      # Feed parse, dedupe, Freshness Watch heuristics
+│   ├── freshness_feed.py      # Feed parse, dedupe, Freshness Watch heuristics
+│   └── ai_failure_mcp/        # MCP stdio server (daily-driver classify tools; read-only)
 │
 ├── scripts/
 │   ├── extract_failures.py    # Parse markdown → failures.json (run once)
@@ -46,6 +47,8 @@ ai-failure-periodic-table/
 │   ├── project-glasswing.md   # Companion: agentic cyber / MCP / Glasswing context (not part of failures.json)
 │   ├── agentic-misalignment-insider-threats.md  # Companion: Lynch et al. insider-threat simulations → class IDs
 │   ├── freshness-watch.md     # Freshness Watch: feed → classifier review packets
+│   ├── mcp-daily-driver.md  # Cursor MCP: on-demand classify_text / URL / doc (stdio)
+│   ├── cursor-mcp-config.example.json
 │   └── papers/                # PDF sources referenced by companions (e.g. agentic-misalignment-insider-threats.pdf)
 │
 ├── .github/
