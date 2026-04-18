@@ -6,6 +6,18 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.4.18] — 2026-04-17
+
+### Added
+- **`response_contract`** on every MCP JSON payload ([`src/ai_failure_mcp/response_contract.py`](src/ai_failure_mcp/response_contract.py)): `schema_version`, `verdict_applicable`, roles of `fit_state` vs semantic fields, `contributing_route_field`; non-verdict tools (`search_failures`, `get_class`) and **error** responses include explicit machine-readable instructions so clients never treat TF-IDF or errors as `classifier_hit`.
+- **Error payloads** from MCP tools include the same `response_contract` with `error_response: true`.
+
+### Changed
+- MCP **server instructions and tool docstrings** restated for production: single verdict authority, advisory semantic context, `response_contract` first-class.
+- [`docs/mcp-daily-driver.md`](docs/mcp-daily-driver.md): `response_contract` table; [`compound_hint`](src/ai_failure_mcp/bridge.py) copy no longer implies semantic can override the classifier.
+
+---
+
 ## [1.4.17] — 2026-04-18
 
 ### Added

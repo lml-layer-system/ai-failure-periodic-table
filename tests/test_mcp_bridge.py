@@ -5,7 +5,24 @@ from pathlib import Path
 import pytest
 
 from src.ai_failure_mcp import bridge
+from src.ai_failure_mcp.response_contract import (
+    classification_response_contract,
+    error_response_contract,
+    non_verdict_response_contract,
+)
 from src.classifier import PeriodicTableClassifier
+
+
+def test_response_contract_schema():
+    c = classification_response_contract()
+    assert c["schema_version"] == "1"
+    assert c["verdict_applicable"] is True
+    n = non_verdict_response_contract(response_kind="semantic_search")
+    assert n["verdict_applicable"] is False
+    assert n["response_kind"] == "semantic_search"
+    e = error_response_contract()
+    assert e["error_response"] is True
+    assert e["verdict_applicable"] is False
 
 
 @pytest.fixture
@@ -41,6 +58,12 @@ def test_classification_bundle_contains_structural(by_id):
         by_id=by_id,
     )
     assert b["in_table"]
+    assert b["classifier_hit"] is b["in_table"]
+    rc = b["response_contract"]
+    assert rc["schema_version"] == "1"
+    assert rc["verdict_applicable"] is True
+    assert rc["verdict_authority"] == "periodic_table_keyword_classifier"
+    assert rc["semantic_evidence_advisory_only"] is True
     assert b["primary_classes_keyword"]
     first = b["primary_classes_keyword"][0]
     assert "suggested_structural_response" in first
@@ -72,6 +95,8 @@ def test_class_lookup_bundle(by_id):
     b = bridge.class_lookup_bundle("adv-indirect-inject-122", by_id)
     assert b is not None
     assert b["response_kind"] == "class_lookup"
+    assert b["response_contract"]["verdict_applicable"] is False
+    assert b["response_contract"]["response_kind"] == "class_lookup"
     assert b["class"]["id"] == "ADV-INDIRECT-INJECT-122"
 
 

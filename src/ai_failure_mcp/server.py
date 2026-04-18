@@ -36,18 +36,21 @@ from src.ai_failure_mcp.bridge import (
     read_document_text,
     semantic_search_bundle,
 )
+from src.ai_failure_mcp.response_contract import error_response_contract
 from src.classifier import PeriodicTableClassifier
 from src.tfidf_search import search_classes
 
 mcp = FastMCP(
     "ai-failure-periodic-table",
     instructions=(
-        "Personal scientific instrument: classify text/URL/documents against the 343-class ontology (read-only). "
-        "Every classify_* and compound_hint returns fit_state (strong_fit | compound_fit | weak_fit | possible_gap_candidate), "
-        "fit_confidence (high | medium | low), scientific_summary, boundary_pressure_note, CONTRIBUTING-grounded "
-        "what_to_do_next / report_preparation for GitHub issue templates — not vendor runbooks. "
-        "Structural fixes are WHAT (mechanism, forbidden, detection, mitigation) only. "
-        "Freshness Watch is separate weekly repo maintenance; this server never edits the taxonomy."
+        "Read-only scientific instrument: classify narratives against the 343-class periodic table. "
+        "Authoritative ontology verdict: periodic_table_keyword_classifier only — classifier_hit equals in_table. "
+        "TF-IDF / semantic_search_top and fit_evidence semantic fields are advisory; they never override classifier_hit. "
+        "Every JSON payload includes response_contract (schema_version, verdict_applicable, roles of fit_state and semantic paths). "
+        "classify_* and compound_hint: contributing_route + CONTRIBUTING-grounded report_preparation. "
+        "search_failures and get_class: verdict_applicable false — run classify_* on your narrative for a verdict. "
+        "Structural fields are WHAT (mechanism, forbidden, detection, mitigation) only. "
+        "Freshness Watch is separate; this server never edits the taxonomy."
     ),
 )
 
@@ -68,22 +71,29 @@ def _dump(obj: Any) -> str:
     return json.dumps(obj, indent=2)
 
 
+def _dump_error(payload: dict[str, Any]) -> str:
+    """Errors still carry response_contract so clients never misread a failed call as a verdict."""
+    body = dict(payload)
+    body.setdefault("response_contract", error_response_contract())
+    return json.dumps(body, indent=2)
+
+
 @mcp.tool()
 async def classify_text(text: str) -> str:
-    """Classify free text against the periodic table. Returns fit_state, fit_confidence, scientific_summary, CONTRIBUTING-based report_preparation, plus keyword matches, semantic hits, dimensions, and suggested_structural_response (WHAT only—not implementation advice)."""
+    """Run the repo keyword classifier on free text. Verdict: classifier_hit / in_table (sole acceptance gate). Includes response_contract, contributing_route, fit_state (verdict summary only), fit_evidence (semantic is advisory), dimensions, primary_classes_keyword, semantic_search_top, suggested_structural_response (WHAT only)."""
     if not (text or "").strip():
-        return _dump({"error": "empty text"})
+        return _dump_error({"error": "empty text"})
     clf, by_id = _ctx()
     return _dump(classification_bundle(clf, text.strip(), by_id=by_id))
 
 
 @mcp.tool()
 async def classify_url(url: str, max_content_chars: int = 120000) -> str:
-    """Fetch an http(s) URL (HTML or plain text), extract readable text, then classify. Blocks localhost/private IPs. Suggested structural responses come only from the taxonomy."""
+    """Fetch http(s) public URL, extract readable text, classify with the same bundle as classify_text. Blocks localhost/private IPs; structural fields from taxonomy only."""
     try:
         raw = fetch_url_text(url)
     except Exception as e:
-        return _dump({"error": str(e), "url": url})
+        return _dump_error({"error": str(e), "url": url})
     text = raw[: max(1000, max_content_chars)]
     clf, by_id = _ctx()
     bundle = classification_bundle(clf, text, by_id=by_id)
@@ -95,11 +105,11 @@ async def classify_url(url: str, max_content_chars: int = 120000) -> str:
 
 @mcp.tool()
 async def classify_document(path: str, max_content_chars: int = 120000) -> str:
-    """Read a UTF-8 file under the repository root or AI_FAILURE_MCP_DOCUMENT_ROOT / AI_FAILURE_MCP_DOCUMENT_ROOTS (extra absolute directories), then classify. Same scientific envelope as classify_text."""
+    """Read UTF-8 file under repo root and/or AI_FAILURE_MCP_DOCUMENT_ROOT(S), then classify. Same envelope as classify_text (response_contract, classifier_hit, contributing_route)."""
     try:
         raw = read_document_text(path)
     except Exception as e:
-        return _dump({"error": str(e), "path": path})
+        return _dump_error({"error": str(e), "path": path})
     text = raw[: max(1000, max_content_chars)]
     clf, by_id = _ctx()
     bundle = classification_bundle(clf, text, by_id=by_id)
@@ -111,11 +121,11 @@ async def classify_document(path: str, max_content_chars: int = 120000) -> str:
 
 @mcp.tool()
 async def classify_document_path(path: str, max_content_chars: int = 120000) -> str:
-    """Alias of classify_document for clients that want an explicit path-oriented name. Same security rules (repo + optional AI_FAILURE_MCP_DOCUMENT_ROOT[S])."""
+    """Alias of classify_document. Same security rules and full classification response_contract."""
     try:
         raw = read_document_text(path)
     except Exception as e:
-        return _dump({"error": str(e), "path": path})
+        return _dump_error({"error": str(e), "path": path})
     text = raw[: max(1000, max_content_chars)]
     clf, by_id = _ctx()
     bundle = classification_bundle(clf, text, by_id=by_id)
@@ -128,32 +138,32 @@ async def classify_document_path(path: str, max_content_chars: int = 120000) -> 
 
 @mcp.tool()
 async def search_failures(query: str, top_k: int = 8) -> str:
-    """TF-IDF semantic search over class names, mechanisms, and examples. Each hit includes suggested_structural_response from the table."""
+    """TF-IDF retrieval over indexed class text — similarity only, not a keyword-classifier verdict. response_contract.verdict_applicable is false; run classify_* on your narrative for classifier_hit and contributing_route. Hits include suggested_structural_response (WHAT)."""
     if not (query or "").strip():
-        return _dump({"error": "empty query"})
+        return _dump_error({"error": "empty query"})
     try:
         hits = search_classes(query.strip(), top_k=min(25, max(1, top_k)), data_dir=data_dir())
     except FileNotFoundError as e:
-        return _dump({"error": str(e)})
+        return _dump_error({"error": str(e)})
     _, by_id = _ctx()
     return _dump(semantic_search_bundle(query, hits, by_id=by_id))
 
 
 @mcp.tool()
 async def get_class(class_id: str) -> str:
-    """Look up one failure class by ID (e.g. ADV-INDIRECT-INJECT-122). Returns full record, suggested_structural_response, and meta envelope (fit_state not_applicable — use classify_* to test narratives)."""
+    """Lookup one class record by ID. response_contract.verdict_applicable is false — no narrative was classified. Use classify_* to obtain classifier_hit for your text."""
     _, by_id = _ctx()
     rec = class_lookup_bundle(class_id, by_id)
     if not rec:
-        return _dump({"error": "unknown class id", "class_id": class_id})
+        return _dump_error({"error": "unknown class id", "class_id": class_id})
     return _dump(rec)
 
 
 @mcp.tool()
 async def compound_hint(text: str) -> str:
-    """Same scientific envelope as classify_text; biases toward compound_fit when multiple dimensions activate; adds compound_reading and consolidated structural mitigations (WHAT only)."""
+    """Same classification pipeline and response_contract as classify_text; when multiple dimensions activate, encourages compound_fit and adds compound_reading plus consolidated structural mitigations (WHAT only). classifier_hit remains the keyword classifier verdict."""
     if not (text or "").strip():
-        return _dump({"error": "empty text"})
+        return _dump_error({"error": "empty text"})
     clf, by_id = _ctx()
     return _dump(compound_hint_bundle(clf, text.strip(), by_id=by_id))
 

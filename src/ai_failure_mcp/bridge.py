@@ -23,6 +23,7 @@ from src.ai_failure_mcp.scientific_envelope import (
     ISSUE_IMPROVE_KEYWORDS,
     attach_scientific_surface,
 )
+from src.ai_failure_mcp.response_contract import non_verdict_response_contract
 from src.tfidf_search import search_classes
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
@@ -308,6 +309,7 @@ def semantic_search_bundle(query: str, hits: list[dict], *, by_id: dict[str, dic
     )
     return {
         "response_kind": "semantic_search",
+        "response_contract": non_verdict_response_contract(response_kind="semantic_search"),
         "query": query,
         "hits": out_rows,
         "fit_state": "not_applicable",
@@ -379,6 +381,7 @@ def class_lookup_bundle(class_id: str, by_id: dict[str, dict]) -> dict[str, Any]
     return {
         **raw,
         "response_kind": "class_lookup",
+        "response_contract": non_verdict_response_contract(response_kind="class_lookup"),
         "fit_state": "not_applicable",
         "fit_confidence": "not_applicable",
         "fit_evidence": {"mode": "direct_id_lookup", "class_id": cid},

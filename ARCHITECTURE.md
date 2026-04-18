@@ -20,7 +20,7 @@ ai-failure-periodic-table/
 │   ├── data_loader.py         # Load, validate, cache failures.json
 │   ├── tfidf_search.py        # TF-IDF class search (semantic_search + Freshness Watch)
 │   ├── freshness_feed.py      # Feed parse, dedupe, Freshness Watch heuristics
-│   └── ai_failure_mcp/        # MCP stdio server: server.py, bridge.py, scientific_envelope.py (fit_state, CONTRIBUTING paths)
+│   └── ai_failure_mcp/        # MCP stdio server: server.py, bridge.py, scientific_envelope.py, response_contract.py
 │
 ├── scripts/
 │   ├── extract_failures.py    # Parse markdown → failures.json (run once)

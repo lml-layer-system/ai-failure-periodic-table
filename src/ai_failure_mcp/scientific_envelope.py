@@ -8,7 +8,8 @@ from __future__ import annotations
 
 from typing import Any, Literal
 
-from src.classifier import ClassificationResult
+from src.classifier import ClassificationResult, PeriodicTableClassifier
+from src.ai_failure_mcp.response_contract import classification_response_contract
 
 # Issue templates (paths relative to repo root) — mirror CONTRIBUTING.md
 ISSUE_PROPOSE_NEW_CLASS = ".github/ISSUE_TEMPLATE/propose_new_class.md"
@@ -26,13 +27,12 @@ IssueType = Literal[
     "none",
 ]
 
-# Heuristic thresholds (keyword scores are Jaccard-like ~0.13+ in_table)
-_KW_STRONG = 0.36
-_KW_MODERATE = 0.24
-_KW_WEAK = 0.17
-_SEM_STRONG = 0.14
-_SEM_MODERATE = 0.08
-_CLOSEST_NOTABLE = 0.11
+_TH = PeriodicTableClassifier.THRESHOLD
+_GTH = PeriodicTableClassifier.GROUP_THRESHOLD
+# In-table “strong” = clearly above the same bar the classifier uses to accept a match.
+_STRONG_SCORE = _TH * 2.0
+# Below threshold but still a neighbour worth citing (same scale as keyword scores).
+_NEAR_NEIGHBOR = max(_GTH, _TH * 0.45)
 
 
 def _top_sem(sem_enriched: list[dict]) -> tuple[str | None, float]:
@@ -49,8 +49,9 @@ def derive_fit_state_and_confidence(
     primary_keyword_rows: list[dict],
 ) -> tuple[FitState, FitConfidence, dict[str, Any]]:
     """
-    Derive fit_state and fit_confidence from classifier + semantic evidence.
-    Returns (fit_state, confidence, debug_evidence dict).
+    Map fit_state / fit_confidence from the periodic-table classifier verdict only
+    (in_table, match scores, activated dimensions). Semantic search is recorded in
+    fit_evidence for context, not used to override the classifier hit/miss.
     """
     sem_id, sem_score = _top_sem(sem_enriched)
     kw_rows = primary_keyword_rows
@@ -62,66 +63,47 @@ def derive_fit_state_and_confidence(
     n_act = len(activated_dims)
     dim_scores = [round(d.top_score, 4) for d in activated_dims]
 
-    agreement = kw_top_id and sem_id and (kw_top_id == sem_id)
-    strong_disagreement = (
-        kw_top_id
-        and sem_id
-        and kw_top_id != sem_id
-        and top_kw >= _KW_MODERATE
-        and sem_score >= _SEM_MODERATE
+    agreement = bool(kw_top_id and sem_id and (kw_top_id == sem_id))
+    cross_modal_disagreement = bool(
+        kw_top_id and sem_id and kw_top_id != sem_id and top_kw >= _TH and sem_score >= _GTH
     )
 
-    compound = False
-    if n_act >= 2 and max(dim_scores + [0]) >= 0.1:
-        compound = True
-    elif len(result.matches) >= 2 and top_kw >= _KW_WEAK:
-        if second_kw >= 0.65 * top_kw and top_kw >= 0.18:
-            compound = True
+    top_match = float(result.matches[0].score) if result.matches else 0.0
+    compound = n_act >= 2
+
+    closest_s = float(result.closest[0].score) if result.closest else 0.0
+    classifier_hit = bool(result.in_table)
 
     evidence: dict[str, Any] = {
+        "classifier_hit": classifier_hit,
+        "classifier_threshold": _TH,
+        "classifier_group_threshold": _GTH,
+        "classifier_top_match_score": round(top_match, 4),
+        "classifier_nearest_below_threshold_score": round(closest_s, 4),
+        "classifier_plausible_neighbour": bool(not classifier_hit and closest_s >= _NEAR_NEIGHBOR),
         "keyword_top_score": round(top_kw, 4),
         "keyword_second_score": round(second_kw, 4),
         "semantic_top_id": sem_id,
         "semantic_top_score": round(sem_score, 4),
         "keyword_semantic_agreement": agreement,
-        "strong_cross_modal_disagreement": strong_disagreement,
+        "cross_modal_disagreement_advisory": cross_modal_disagreement,
         "activated_dimension_count": n_act,
         "activated_dimension_top_scores": dim_scores,
     }
 
-    if not result.in_table:
-        closest_s = float(result.closest[0].score) if result.closest else 0.0
-        evidence["closest_score"] = round(closest_s, 4)
-        if closest_s >= _CLOSEST_NOTABLE:
-            state: FitState = "weak_fit"
-            conf: FitConfidence = "low"
-        else:
-            state = "possible_gap_candidate"
-            conf = "low"
+    if not classifier_hit:
+        state: FitState = "possible_gap_candidate"
+        conf: FitConfidence = "low"
         return state, conf, evidence
 
-    # in_table
     if compound:
-        return "compound_fit", "medium" if top_kw < _KW_STRONG else "high", evidence
+        conf = "high" if top_match >= _STRONG_SCORE else "medium"
+        return "compound_fit", conf, evidence
 
-    if strong_disagreement:
-        return "weak_fit", "low", evidence
-
-    if top_kw >= _KW_STRONG:
+    if top_match >= _STRONG_SCORE:
         return "strong_fit", "high", evidence
 
-    if top_kw >= _KW_MODERATE and (agreement or sem_score < _SEM_MODERATE):
-        return "strong_fit", "medium", evidence
-
-    if top_kw >= _KW_MODERATE and sem_score >= _SEM_STRONG:
-        return "strong_fit", "medium", evidence
-
-    if top_kw >= _KW_WEAK:
-        if top_kw < _KW_MODERATE and sem_score < _SEM_MODERATE:
-            return "possible_gap_candidate", "low", evidence
-        return "weak_fit", "medium", evidence
-
-    return "weak_fit", "low", evidence
+    return "weak_fit", "medium", evidence
 
 
 def _contributing_checklist_bullets() -> list[str]:
@@ -143,104 +125,86 @@ def boundary_and_repo_action(
 ) -> tuple[str, str, IssueType, str]:
     """
     Returns (boundary_pressure_note, what_to_do_next, recommended_issue_type, why_issue_type).
-    Text is grounded in CONTRIBUTING.md decision paths.
+    Branches on the classifier hit (in_table) first, then CONTRIBUTING.md paths — not on a parallel scorer.
     """
-    sem_id, sem_score = _top_sem(sem_enriched)
+    sem_id, _sem_score = _top_sem(sem_enriched)
     kw_top_id = primary_keyword_rows[0].get("id") if primary_keyword_rows else None
-    kw_top_name = primary_keyword_rows[0].get("name") if primary_keyword_rows else None
 
-    if fit_state == "strong_fit" and fit_confidence in ("high", "medium"):
+    # --- Classifier miss: repo-native CONTRIBUTING flow (§1 / §3 / propose / keywords as applicable)
+    if not result.in_table:
+        closest_s = float(result.closest[0].score) if result.closest else 0.0
+        near = closest_s >= _NEAR_NEIGHBOR
         note = (
-            "Keyword and/or dimensional evidence supports a clear mapping to at least one class. "
-            "Uncertainty is relatively low; remaining risk is wording mismatch or missing incident-specific detail."
+            f"The periodic-table classifier did not accept any class (keyword bar ≥ {_TH}). "
+            "Closest rows are still listed below threshold; that is a miss on the table’s own rules, not a second opinion."
         )
+        if near:
+            note += (
+                " Scores on closest neighbours are high enough that a real incident report with those IDs is "
+                "especially useful."
+            )
         nxt = (
-            "No mandatory repo action for taxonomy structure. If you have a **real public incident** that "
-            "instantiates this class, optionally file it via Report Real Incident (CONTRIBUTING §3) to add "
-            "empirical grounding. If the fit feels wrong despite high scores, use Challenge Classification (§2) "
-            "or Improve Keywords (§4) depending on whether the mechanism assignment or retrieval is at fault."
+            "Follow CONTRIBUTING.md in order: if this is a **real public incident**, use Report Real Incident (§3) "
+            "and cite closest class IDs even when none pass the bar. Work the §1 checklist (sub-mode → compound → "
+            "invariant → mechanism vs cause). If the mechanism still looks new after that, use Propose New Class. "
+            "If you believe a listed class should have matched, use Improve Keywords (§4)."
         )
-        return note, nxt, "none", (
-            "Strong ontology fit: default issue_type is none. Use §3 only to document real incidents, not because "
-            "classification is uncertain."
+        if near:
+            return note, nxt, "report_real_incident", (
+                "Classifier miss with plausible neighbours: CONTRIBUTING §3 + §1; incident evidence is prioritized."
+            )
+        return note, nxt, "propose_new_class", (
+            "Classifier miss with weak neighbours: CONTRIBUTING §1 burden of proof for a new class after checklist."
         )
 
+    # --- Classifier hit: interpret strength from the same match / dimension signals
     if fit_state == "compound_fit":
         note = (
-            "Multiple dimensions or co-equal classes exceed threshold. The ontology expects a compound reading: "
-            "one primary mechanism class plus explicit secondaries per CONTRIBUTING’s compound-failure guidance."
+            "The classifier accepted matches and activated multiple structural dimensions. CONTRIBUTING treats that "
+            "as a compound reading: one primary mechanism class plus explicit secondaries."
         )
         nxt = (
             "Before proposing a new class, confirm the narrative is not reducible to 2–3 existing classes "
-            "(CONTRIBUTING §1 checklist). If it is a real incident, Report Real Incident with primary + secondary IDs."
+            "(CONTRIBUTING §1 checklist). If it is a real incident, Report Real Incident with primary + secondary IDs (§3)."
         )
         return note, nxt, "report_real_incident", (
-            "CONTRIBUTING §3 asks for primary and secondary classes when incidents combine mechanisms."
+            "CONTRIBUTING §3: combined mechanisms should name primary and secondary classes."
         )
 
-    if fit_state == "weak_fit" and result.in_table:
-        if (
-            kw_top_id
-            and sem_id
-            and kw_top_id != sem_id
-            and fit_confidence == "low"
-        ):
-            note = (
-                "Keyword classifier and semantic retrieval favor different top classes with non-trivial scores. "
-                "This is boundary pressure: either keywords are too narrow for your wording, or a structural "
-                "re-classification may be warranted."
-            )
-            nxt = (
-                "Re-read mechanism/forbidden/detection for both candidates. If the table’s class is structurally "
-                "wrong, open Challenge Classification (CONTRIBUTING §2). If the right class exists but your text "
-                "does not connect, open Improve Keywords (CONTRIBUTING §4)."
-            )
-            return note, nxt, "challenge_classification", (
-                "CONTRIBUTING §2 vs §4: structural error vs retrieval/keyword gap — pick the path that matches."
-            )
-
+    if fit_state == "strong_fit":
         note = (
-            "Matches exist but scores or agreement are modest. The table may already cover the mechanism while "
-            "this description does not strongly activate it."
+            "The classifier accepted at least one class with a score well above its acceptance bar; dimensional "
+            "evidence does not force a compound reading."
         )
         nxt = (
-            "Try Improve Keywords (CONTRIBUTING §4): include the exact input, expected class ID, and suggested "
-            "keywords. If after tightening keywords the case still feels outside the 343 classes, work the "
-            "new-class checklist (CONTRIBUTING §1) before Propose New Class."
+            "No mandatory repo action for taxonomy structure. Optionally file Report Real Incident (§3) for a real "
+            "public example. If the assigned class feels structurally wrong, Challenge Classification (§2); if the "
+            "class is right but wording failed to reach it, Improve Keywords (§4)."
         )
-        return note, nxt, "improve_keywords", "CONTRIBUTING §4: classifier uses keyword matching; narrow misses are expected."
-
-    # Out-of-table: distinguish near-miss (weak_fit) vs likely gap (possible_gap_candidate)
-    if not result.in_table:
-        note = (
-            "No class met the keyword threshold. Closest classes may still be listed; this often means either "
-            "novel mechanism language, a compound not yet decomposed, or a genuine gap."
-        )
-        if fit_state == "weak_fit":
-            nxt = (
-                "If this is a **real public incident**, open Report Real Incident (CONTRIBUTING §3) with the "
-                "closest class IDs and why none fit perfectly — that evidence is valuable even when mapping is fuzzy. "
-                "Then work §1 checklist: sub-mode → compound → invariant → mechanism vs cause before Propose New Class."
-            )
-            return note, nxt, "report_real_incident", (
-                "CONTRIBUTING §3 explicitly welcomes incidents that do not map cleanly; cite closest classes."
-            )
-        nxt = (
-            "Work CONTRIBUTING §1 checklist (sub-mode → compound → invariant → mechanism vs cause). "
-            "If you have a real documented incident, still use Report Real Incident (§3) with closest classes. "
-            "If after the checklist the mechanism still appears new, use Propose New Class (§1 template)."
-        )
-        return note, nxt, "propose_new_class", (
-            "CONTRIBUTING §1: burden of proof for new classes when evidence suggests a genuine structural gap."
+        return note, nxt, "none", (
+            "Classifier hit with clear primary: default issue_type none per CONTRIBUTING."
         )
 
-    # weak_fit, in_table, already handled; fallback
-    note = "Fit is ambiguous; treat the mapping as provisional."
-    nxt = (
-        "Follow CONTRIBUTING §1 checklist, then prefer Improve Keywords if a plausible class exists, else "
-        "Report Real Incident or Propose New Class depending on whether you have a real event vs a structural gap."
+    # weak in-table hit
+    disagree_hint = ""
+    if kw_top_id and sem_id and kw_top_id != sem_id:
+        disagree_hint = (
+            " Semantic search’s top ID differs from the keyword primary; treat that as a hint to re-read both "
+            "classes, not as an alternate classifier verdict."
+        )
+    note = (
+        "The classifier accepted a match, but the top score is only modestly above the acceptance bar — treat the "
+        "mapping as provisional."
+        + disagree_hint
     )
-    return note, nxt, "improve_keywords", "CONTRIBUTING: default to keyword improvement when classes nearly fire."
+    nxt = (
+        "Default CONTRIBUTING path: Improve Keywords (§4) with exact input text, expected class ID, and suggested "
+        "tokens. If you believe the table’s mechanism assignment is wrong, use Challenge Classification (§2). "
+        "If the case still seems outside the 343 classes after tightening keywords, work §1 then Propose New Class."
+    )
+    return note, nxt, "improve_keywords", (
+        "Classifier hit but marginal: CONTRIBUTING §4 first; §2 if structure is wrong."
+    )
 
 
 def build_report_preparation(
@@ -432,13 +396,13 @@ def attach_scientific_surface(
         )
 
     uncertainties: list[str] = []
-    if ev.get("strong_cross_modal_disagreement"):
+    if ev.get("cross_modal_disagreement_advisory"):
         uncertainties.append(
-            "Keyword top class differs from semantic top class with both scores non-trivial — reconcile before treating either as definitive."
+            "Keyword primary and semantic top differ with both above classifier-scale floors — reconcile wording before treating either as definitive."
         )
-    if fit_state == "possible_gap_candidate":
+    if not result.in_table:
         uncertainties.append(
-            "Treated as possible ontology gap; confirm with CONTRIBUTING §1 checklist before proposing a new class."
+            "Classifier did not accept a class; confirm with CONTRIBUTING §1 checklist before proposing a new class."
         )
     if fit_confidence == "low":
         uncertainties.append("Low confidence — treat mapping as provisional; gather mechanism-specific wording or sources.")
@@ -451,13 +415,15 @@ def attach_scientific_surface(
             f"{prim['id']} — {prim.get('name')}" if prim else None
         ),
         secondary_reading=secondary,
-        possible_gap=(fit_state == "possible_gap_candidate"),
+        possible_gap=(not result.in_table),
         recommended_structural_response_summary=struct_summary,
         what_to_do_next=what_next,
         recommended_repo_action=rec_action_summary,
         uncertainty_notes=uncertainties,
     )
 
+    bundle["classifier_hit"] = result.in_table
+    bundle["contributing_route"] = issue_type
     bundle["fit_state"] = fit_state
     bundle["fit_confidence"] = fit_confidence
     bundle["fit_evidence"] = ev
@@ -473,7 +439,8 @@ def attach_scientific_surface(
     bundle["report_preparation"] = report_prep
     bundle["scientific_summary"] = summary
     bundle["falsification_note"] = (
-        "This output tests the input against the current 343-class ontology. "
-        "Strong fits are still defeasible; weak fits and possible_gap_candidate are invitations to improve "
-        "keywords, file incidents, challenge structure, or propose new classes per CONTRIBUTING.md."
+        "The periodic-table classifier decides hit vs miss (in_table). fit_state only summarizes that verdict "
+        "(strong / compound / weak in-table, or possible_gap_candidate on a miss). Next steps route through "
+        "CONTRIBUTING.md; semantic search is advisory context, not a second acceptance gate."
     )
+    bundle["response_contract"] = classification_response_contract()
