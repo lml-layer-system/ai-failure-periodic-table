@@ -59,7 +59,8 @@ ai-failure-periodic-table/
 │   └── ISSUE_TEMPLATE/            # 5 structured issue templates
 │
 ├── reports/
-│   └── meta-integrity-h1-2026/ # Meta Adversarial PDF → pdftotext + classify_external_report.py outputs (*.pdf gitignored)
+│   ├── meta-integrity-h1-2026/ # Meta Adversarial PDF → pdftotext + classify_external_report.py outputs (*.pdf gitignored)
+│   └── glasswing/              # anthropic.com/glasswing HTML + project-glasswing.md → same classifier pipeline
 ├── TAXONOMY.md                # Auto-generated: all 343 classes in readable format
 ├── CHANGELOG.md               # Version history
 ├── CONTRIBUTING.md            # Contribution process

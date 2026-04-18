@@ -48,6 +48,8 @@ python scripts/classify_external_report.py \
 
 **Interpretation:** the keyword classifier is tuned for **short incident-style mechanism descriptions**, not full PDF prose. Long chunks will **over-trigger** some classes (substring collisions). Use the histogram and per-chunk previews as **exploratory** signal; for cleaner mapping, paste **short excerpts** into `python -m src.cli` or `scripts/semantic_search.py`.
 
+**Same workflow elsewhere:** [Project Glasswing](project-glasswing.md) — official [`anthropic.com/glasswing`](https://www.anthropic.com/glasswing) page plus in-repo companion narrative under [`reports/glasswing/`](../reports/glasswing/).
+
 ---
 
 ## Mapping hint (taxonomy, not a new case study)

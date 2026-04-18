@@ -6,6 +6,17 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.4.12] — 2026-04-18
+
+### Added
+- [`reports/glasswing/`](reports/glasswing/): live **`classify_external_report.py`** pass on **official** [anthropic.com/glasswing](https://www.anthropic.com/glasswing) HTML (`anthropic-glasswing-page-live-*`) and on **in-repo** [`docs/project-glasswing.md`](docs/project-glasswing.md) companion (`project-glasswing-companion-narrative-*`)
+
+### Changed
+- [`scripts/classify_external_report.py`](scripts/classify_external_report.py): JSON/Markdown `source_file` paths are **repo-relative** (portable across machines)
+- [docs/project-glasswing.md](docs/project-glasswing.md), [docs/meta-integrity-reports-h1-2026.md](docs/meta-integrity-reports-h1-2026.md), README **1.4.12** — cross-link the **official-source → classify → document** workflow (Glasswing + Meta)
+
+---
+
 ## [1.4.11] — 2026-04-18
 
 ### Added

@@ -30,6 +30,13 @@ sys.path.insert(0, str(ROOT))
 from src.classifier import PeriodicTableClassifier  # noqa: E402
 
 
+def _display_source_path(p: Path) -> str:
+    try:
+        return str(p.resolve().relative_to(ROOT))
+    except ValueError:
+        return str(p)
+
+
 def strip_html_to_text(html: str) -> str:
     html = re.sub(r"(?is)<script[^>]*>.*?</script>", "", html)
     html = re.sub(r"(?is)<style[^>]*>.*?</style>", "", html)
@@ -180,10 +187,11 @@ def main() -> None:
             row["closest"] = [m.as_dict() for m in r.closest[:3]]
         per_chunk.append(row)
 
+    src_disp = _display_source_path(source_path)
     summary_lines = [
         "# Classifier pass: external report (live PDF/text)",
         "",
-        f"**Source file:** `{source_path}`",
+        f"**Source file:** `{src_disp}`",
         f"**Chunks:** {len(chunks)} at ~{args.max_chars} chars (paragraph-bounded).",
         "**Tool:** `PeriodicTableClassifier` (keyword) in this repo.",
         "",
@@ -213,7 +221,7 @@ def main() -> None:
     json_path.write_text(
         json.dumps(
             {
-                "source_file": str(source_path),
+                "source_file": src_disp,
                 "chunk_count": len(chunks),
                 "max_chars": args.max_chars,
                 "top1_histogram": dict(id_counts.most_common(50)),
