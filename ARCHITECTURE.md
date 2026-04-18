@@ -1,6 +1,6 @@
 # Architecture
 
-This document is for contributors working on the code and data pipeline — not for end users classifying failures (see [docs/how-to-use.md](docs/how-to-use.md)).
+This document is for contributors working on the code and data pipeline. **End users:** classifying from the terminal → [docs/how-to-use.md](docs/how-to-use.md); **plugging an everyday AI (Cursor, Claude Desktop, MCP) into the table** → [docs/mcp-daily-driver.md](docs/mcp-daily-driver.md).
 
 ---
 
@@ -10,32 +10,61 @@ This document is for contributors working on the code and data pipeline — not 
 ai-failure-periodic-table/
 │
 ├── data/
-│   └── failures.json          # The taxonomy. Single source of truth.
+│   ├── failures.json          # The taxonomy. Single source of truth.
+│   ├── search_index.json      # TF-IDF index (scripts/generate_embeddings.py)
+│   └── freshness_sources.json # RSS/Atom config for Freshness Watch
 │
 ├── src/
 │   ├── classifier.py          # Core engine: PeriodicTableClassifier
 │   ├── cli.py                 # CLI entry point (python -m src.cli)
-│   └── data_loader.py         # Load, validate, cache failures.json
+│   ├── data_loader.py         # Load, validate, cache failures.json
+│   ├── tfidf_search.py        # TF-IDF class search (semantic_search + Freshness Watch)
+│   ├── freshness_feed.py      # Feed parse, dedupe, Freshness Watch heuristics
+│   └── ai_failure_mcp/        # MCP stdio server: server.py, bridge.py, scientific_envelope.py, response_contract.py
 │
 ├── scripts/
 │   ├── extract_failures.py    # Parse markdown → failures.json (run once)
 │   ├── generate_taxonomy.py   # failures.json → TAXONOMY.md (run after data changes)
 │   ├── enrich_failures.py     # Applies enrichment data (examples, references)
-│   └── fix_sparse_keywords.py # Keyword coverage fixes (run after keyword additions)
+│   ├── fix_sparse_keywords.py # Keyword coverage fixes (run after keyword additions)
+│   ├── generate_embeddings.py # failures.json → search_index.json
+│   ├── classify_external_report.py # curl PDF/HTML → text chunks → PeriodicTableClassifier JSON/MD
+│   ├── semantic_search.py     # CLI TF-IDF search over classes
+│   └── freshness_watch.py     # Feeds → classifier + review packet (no auto data edits)
+│
+├── reports/
+│   └── freshness/             # Optional local output from freshness_watch.py
 │
 ├── tests/
-│   ├── test_classifier.py     # 33 tests: known failures, non-failures, performance
-│   └── test_data_integrity.py # 13 tests: schema, counts, enrichment, IDs
+│   ├── test_classifier.py     # Known failures, non-failures, performance
+│   ├── test_data_integrity.py # Schema, counts, enrichment, IDs
+│   ├── test_freshness_feed.py # Feed parse, dedupe, confidence helpers
+│   └── test_tfidf_search.py   # TF-IDF smoke tests
 │
 ├── docs/
 │   ├── how-to-use.md          # End-user usage guide
-│   ├── case-studies.md        # 20 mapped real incidents
-│   └── challenge-protocol.md  # How to challenge the taxonomy
+│   ├── case-studies.md        # Mapped incidents + companions (Glasswing, agentic misalignment, Opus 4.7 card, …)
+│   ├── challenge-protocol.md  # How to challenge the taxonomy
+│   ├── project-glasswing.md   # Companion: agentic cyber / MCP / Glasswing context (not part of failures.json)
+│   ├── agentic-misalignment-insider-threats.md  # Companion: Lynch et al. insider-threat simulations → class IDs
+│   ├── claude-opus-4-7-system-card.md  # Companion: Anthropic Opus 4.7 system card → class IDs
+│   ├── claude-mythos-system-card.md    # Companion: Claude Mythos Preview system card + live classify
+│   ├── meta-integrity-reports-h1-2026.md  # Link hub: Meta Transparency Center integrity + adversarial reports
+│   ├── freshness-watch.md     # Freshness Watch: feed → classifier review packets
+│   ├── mcp-daily-driver.md  # Daily-driver AI via MCP: where to connect, what you get, setup paths (Cursor, Claude, …)
+│   ├── cursor-mcp-config.example.json
 │
 ├── .github/
-│   ├── workflows/ci.yml       # CI: test matrix Python 3.10–3.12
-│   └── ISSUE_TEMPLATE/        # 5 structured issue templates
+│   ├── workflows/ci.yml           # CI: test matrix Python 3.10–3.12
+│   ├── workflows/freshness-watch.yml  # Weekly feed ingest → artifact (no auto-commit)
+│   └── ISSUE_TEMPLATE/            # 5 structured issue templates
 │
+├── reports/
+│   ├── meta-integrity-h1-2026/ # Meta Adversarial PDF → pdftotext + classify_external_report.py outputs (*.pdf gitignored)
+│   ├── glasswing/              # anthropic.com/glasswing HTML + project-glasswing.md → same classifier pipeline
+│   ├── claude-opus-4-7/        # Opus 4.7 system card PDF → pdftotext + classify_external_report.py (*.pdf gitignored)
+│   ├── claude-mythos/          # Mythos Preview system card PDF (official URL) → same pipeline (*.pdf gitignored)
+│   └── agentic-misalignment/   # Lynch et al. arXiv:2510.05179 PDF → same pipeline (*.pdf gitignored)
 ├── TAXONOMY.md                # Auto-generated: all 343 classes in readable format
 ├── CHANGELOG.md               # Version history
 ├── CONTRIBUTING.md            # Contribution process

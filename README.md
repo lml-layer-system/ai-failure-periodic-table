@@ -4,7 +4,7 @@
 
 > *The goal is not omniscience but structural predictiveness: that newly encountered failures should resolve into this structure as a class, sub-mode, or compound — unless evidence demonstrates otherwise.*
 
-**Version**: 1.4.0 | **Released**: April 2026 | **License**: MIT | **Status**: Open for community testing and falsification
+**Version**: 1.4.20 | **Released**: April 2026 | **License**: MIT | **Status**: Open for community testing and falsification
 
 ---
 
@@ -96,6 +96,18 @@ python -m src.cli --lookup EPIS-CITE-SPOOF-008
 ```
 
 **Classifier notes:** The CLI uses stemmed keyword matching with synonym expansion. It achieves 100% recall on 49 documented real-world incidents. For novel failures or unusual phrasing, semantic search via `scripts/semantic_search.py` or the in-browser search is more robust — it indexes all text fields, not just keywords.
+
+### Connect your everyday AI (daily driver)
+
+If you use **Cursor**, **Claude Desktop**, or another app that supports **MCP** (Model Context Protocol), you can plug that assistant into this repo and **classify paragraphs, public URLs, or files from chat**—same 343-class table, **read-only** (it does not edit the taxonomy).
+
+- **This is where you connect:** add an MCP server in your AI host’s settings that runs `python3 -m src.ai_failure_mcp` with this repo as the working directory (see the full guide).
+- **This is what you get:** hit or miss on the table, which class(es), compound readings, structural mitigation patterns from the taxonomy, and CONTRIBUTING-style next steps when the fit is weak.
+- **Not the same as Freshness Watch:** the scheduled feed pipeline for maintainers is separate; see [docs/freshness-watch.md](docs/freshness-watch.md).
+
+**Start here:** [docs/mcp-daily-driver.md](docs/mcp-daily-driver.md) — plain-English purpose, **what vs how**, **choose your setup path** (Cursor / Claude / other), first-use walkthrough, and example config ([docs/cursor-mcp-config.example.json](docs/cursor-mcp-config.example.json)).
+
+**If MCP in Cursor or Claude is down or blocked:** you still have **guaranteed paths** — same classifier, no MCP. Use the terminal (`python -m src.cli "…"`, `--json`, `--lookup`) and/or the browser table; see [Guaranteed fallbacks when MCP is down](docs/mcp-daily-driver.md#guaranteed-fallbacks-when-mcp-is-down) and [Requirements: Python vs chat model](docs/mcp-daily-driver.md#requirements-python-vs-chat-model). The verdict runs in **Python**; chat models only orchestrate MCP tools.
 
 ---
 
@@ -224,7 +236,7 @@ ai-failure-periodic-table/
 │   ├── search_index.json      # Pre-computed TF-IDF semantic search index (487KB)
 │   └── embeddings_meta.json   # Search index metadata
 ├── src/
-│   ├── classifier.py          # Core classification engine (<5ms, no ML deps)
+│   ├── classifier.py          # Core classification engine (low-ms, no ML deps)
 │   ├── data_loader.py         # Load/validate failures.json
 │   └── cli.py                 # CLI interface
 ├── index.html                 # Interactive visual periodic table (~420KB, self-contained)
@@ -257,7 +269,7 @@ pip install pytest
 python -m pytest tests/ -v
 ```
 
-48 tests covering: known failure classification, non-failure rejection, determinism, performance (<10ms), data integrity (all 343 classes, full schema validation), mitigation field completeness, and external incident recall (100% on 49 documented real-world AI failures phrased as reporters, researchers, and users described them — not using taxonomy vocabulary).
+67 tests covering: known failure classification, non-failure rejection, determinism, performance (low-ms thresholds), data integrity (all 343 classes, full schema validation), mitigation field completeness, and external incident recall (100% on 49 documented real-world AI failures phrased as reporters, researchers, and users described them — not using taxonomy vocabulary). Case studies include companion maps for [Project Glasswing](docs/project-glasswing.md) and [agentic misalignment / insider threats](docs/agentic-misalignment-insider-threats.md). **Freshness Watch** ([docs/freshness-watch.md](docs/freshness-watch.md)) runs a scheduled, review-only pipeline from public feeds through the classifier (no automatic taxonomy edits). **MCP daily driver** ([docs/mcp-daily-driver.md](docs/mcp-daily-driver.md)): plug Cursor / Claude Desktop / other MCP hosts into the table; user-first guide covers **where to connect**, **what you get** (hit/miss, classes, compound, structural WHAT, next steps), and **setup paths**; tools include `classify_text`, `classify_url`, `classify_document`, `classify_document_path`, `search_failures`, `get_class`, `compound_hint` with `classifier_hit`, `response_contract`, CONTRIBUTING-grounded `report_preparation`; read-only, no taxonomy writes.
 
 ---
 
@@ -477,10 +489,23 @@ Several serious efforts exist to categorize AI risk and failure. This project is
 | Framework | Focus | Link |
 |-----------|-------|------|
 | MIT AI Risk Repository | Domain-level taxonomy (7 categories: Discrimination, Privacy, Misinformation, Malicious Actors, HCI, Socioeconomic, AI System Safety) | [airisk.mit.edu](https://airisk.mit.edu) |
+| Project Glasswing | Frontier agentic cyber context: defensive coalitions, MCP semantic risk, skill-market supply chains, orchestration attacks — companion analysis in-repo; **official page + companion** text run through `classify_external_report.py` → [`reports/glasswing/`](reports/glasswing/) | [anthropic.com/glasswing](https://www.anthropic.com/glasswing) · [Analysis →](docs/project-glasswing.md) · [Live classify →](reports/glasswing/anthropic-glasswing-page-live-summary.md) |
+| Agentic misalignment (insider threats) | Lynch et al. — simulated corporate agents (email/computer use): blackmail, espionage, eval-vs-real CoT sensitivity; section→class map; **live PDF → classifier** in [`reports/agentic-misalignment/`](reports/agentic-misalignment/) | [Companion →](docs/agentic-misalignment-insider-threats.md) · [Paper PDF →](https://arxiv.org/pdf/2510.05179) · [arXiv abs](https://arxiv.org/abs/2510.05179) · [Live classify →](reports/agentic-misalignment/lynch-et-al-2510-05179-live-summary.md) |
+| Claude Opus 4.7 system card | Anthropic — RSP/CB/cyber/agentic/alignment/welfare disclosure; section→class map; Case 23; **live PDF → classifier** in [`reports/claude-opus-4-7/`](reports/claude-opus-4-7/) | [Companion →](docs/claude-opus-4-7-system-card.md) · [System card PDF →](https://www.anthropic.com/claude-opus-4-7-system-card) · [News](https://www.anthropic.com/news/claude-opus-4-7) · [Live classify →](reports/claude-opus-4-7/opus-4-7-system-card-live-summary.md) |
+| Claude Mythos Preview system card | Anthropic — frontier capability disclosure (not GA); defensive-program framing; **live PDF → classifier** in [`reports/claude-mythos/`](reports/claude-mythos/) | [Companion →](docs/claude-mythos-system-card.md) · [System card PDF →](https://www.anthropic.com/claude-mythos-preview-system-card) · [Live classify →](reports/claude-mythos/claude-mythos-system-card-live-summary.md) |
+| Meta integrity & adversarial reports (H1 2026) | Semiannual bundle (Mar 2026): Community Standards Enforcement, Widely Viewed Content, local-law restrictions, Oversight Board update; plus **H1 2026 Adversarial Threat Report** (Mar 11) — official Transparency Center URLs only | [Link hub →](docs/meta-integrity-reports-h1-2026.md) · [Integrity H1 2026 hub](https://transparency.meta.com/reports/integrity-reports-h1-2026/) · [Adversarial Threat H1 2026](https://transparency.meta.com/sr/first-half-2026-Adversarial-threat-report/) |
 | Microsoft Agentic AI Failure Taxonomy | Failure modes specific to autonomous agent systems | [Whitepaper (PDF)](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Taxonomy-of-Failure-Mode-in-Agentic-AI-Systems-Whitepaper.pdf) |
 | AI Incident Database / AVID | Real-world observed incidents, empirically collected | [avidml.org](https://avidml.org) |
 
 The Periodic Table is mechanism-focused. Where MIT and Microsoft answer "what category is this?", the Periodic Table answers "exactly how does this failure occur, how do you detect it, and what structural property stops it?" Where AVID tracks what happened, the Periodic Table maps it to a named mechanism.
+
+**Project Glasswing** is not a competing taxonomy: it situates the same failure mechanisms in the **orchestration layer** (tool protocols, agent scaffolds, permissions, and adversary campaigns at machine speed). Read the full narrative in [docs/project-glasswing.md](docs/project-glasswing.md). **Worked compound mapping:** [Case 21 in docs/case-studies.md](docs/case-studies.md) (threads → primary/secondary classes); the interactive table’s class modals include linked `case_studies` rows for the same narrative where applicable.
+
+**Agentic misalignment (Lynch et al.)** is empirical red-team work on **goal preservation** and **insider-style exfiltration** in **controlled simulations**—mapped to the same mechanism classes (e.g. blackmail, shutdown resistance, data exfiltration, eval sensitivity). See [docs/agentic-misalignment-insider-threats.md](docs/agentic-misalignment-insider-threats.md) and [Case 22 in docs/case-studies.md](docs/case-studies.md).
+
+**Claude Opus 4.7 system card** is **first-party** evaluation disclosure (agentic injection, sandbagging probes, eval-awareness, cyber/CB pathways, reward-hacking monitoring, destructiveness case studies). Mapped as [Case 23](docs/case-studies.md) with full TOC→ID table in [docs/claude-opus-4-7-system-card.md](docs/claude-opus-4-7-system-card.md).
+
+**Meta (Facebook / Instagram)** publishes **integrity** and **adversarial threat** transparency reports on a semiannual cadence (from 2026). Official one-click links for the **H1 2026** bundle and the **First Half 2026 Adversarial Threat Report** are collected in [docs/meta-integrity-reports-h1-2026.md](docs/meta-integrity-reports-h1-2026.md).
 
 These frameworks are not in conflict. Use them together.
 
