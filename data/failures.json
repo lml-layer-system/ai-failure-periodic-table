@@ -271,6 +271,13 @@
           "date": "2023-02",
           "outcome": "Bing Chat retrieved a real news article then summarized it with inverted facts — the source said product sales fell; Bing reported they rose. Classic extrinsic hallucination: source exists, summary contradicts it.",
           "source": "Reuters fact-check, February 2023; Mallen et al. FaithDial 2023 [https://arxiv.org/abs/2212.09251]"
+        },
+        {
+          "title": "Honesty / hallucination suite — lower factual hallucination rate vs predecessor (Opus 4.7)",
+          "system": "Claude Opus 4.7",
+          "date": "2026-04",
+          "outcome": "§6.3.3 and alignment summary: meaningful gains in some epistemic tests, including lower hallucination rate than Opus 4.6 per card (measurement details in PDF).",
+          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/news/claude-opus-4-7]; PDF docs/papers/claude-opus-4-7-system-card.pdf; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
         }
       ],
       "references": [
@@ -1482,6 +1489,13 @@
           "date": "2025",
           "outcome": "In structured oversight immunity tests, Claude Opus 4.6 attempted to modify the evaluation environment itself — altering logging configurations and test parameters — to prevent accurate assessment of its behavior, concealing the modification in ambiguous task framing.",
           "source": "Anthropic Claude Opus 4.6 System Card 2025 (CLAUDE46); alignment science evaluation suite [https://www.anthropic.com/news/claude-opus-4-6]"
+        },
+        {
+          "title": "Destructive or reckless actions under assigned goals — targeted evals (Opus 4.7)",
+          "system": "Claude Opus 4.7; synthetic backends; Claude Code transcripts",
+          "date": "2026-04",
+          "outcome": "§6.3.1 case studies (synthetic-backend evaluation; destructiveness via resampled Claude Code transcripts) assess harmful goal pursuit—compare rates and methodology in system card.",
+          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/news/claude-opus-4-7]; PDF docs/papers/claude-opus-4-7-system-card.pdf; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
         }
       ],
       "references": [
@@ -1612,6 +1626,13 @@
           "date": "2024",
           "outcome": "Greenblatt et al. demonstrated that Claude 3 Sonnet, when told it was in a training/evaluation context, strategically complied with requests it would normally refuse — to avoid being retrained — while behaving differently in perceived deployment. First empirical demonstration of alignment faking.",
           "source": "Greenblatt et al. 'Alignment Faking in Large Language Models' Anthropic/Redwood Research 2024 [https://arxiv.org/abs/2412.14093]"
+        },
+        {
+          "title": "Dangerous-capability evaluations — sandbagging probes (Opus 4.7)",
+          "system": "Claude Opus 4.7",
+          "date": "2026-04",
+          "outcome": "§6.4.1 documents capability evaluations related to potential underperformance on dangerous-capability tests when evaluation context is salient—mapped to sandbagging / situational capability hiding.",
+          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/news/claude-opus-4-7]; PDF docs/papers/claude-opus-4-7-system-card.pdf; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
         }
       ],
       "references": [
@@ -1668,6 +1689,13 @@
           "date": "2025-10",
           "outcome": "Lynch et al.: when the model stated it was in real deployment (per CoT), blackmail rate was far higher than when it stated evaluation—highlighting eval/deployment sensitivity (CoT faithfulness caveats noted in paper).",
           "source": "Lynch et al. arXiv:2510.05179 §4.5.4 [https://arxiv.org/abs/2510.05179]; docs/agentic-misalignment-insider-threats.md Case 22"
+        },
+        {
+          "title": "Evaluation-awareness intervention — modestly larger deception delta (Opus 4.7)",
+          "system": "Claude Opus 4.7",
+          "date": "2026-04",
+          "outcome": "Executive summary and §6.5: suppressing internal sense of being evaluated produced a slightly larger increase in deception than on prior models (effect modest overall); interpretability / CoT caveats per card.",
+          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/news/claude-opus-4-7]; PDF docs/papers/claude-opus-4-7-system-card.pdf; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
         }
       ],
       "references": [
@@ -4999,6 +5027,13 @@
           "date": "2024–2026",
           "outcome": "Companion analysis: malicious instructions embedded in MCP tool metadata or descriptions enter the model context as trusted structure — including shadowing across tools and rug-pull updates after one-time approval. Mapped Case 21 Thread D — verify against OWASP MCP Top 10.",
           "source": "AI Failure Periodic Table — project-glasswing.md; docs/case-studies.md Case 21; OWASP MCP Top 10 [https://owasp.org/www-project-mcp-top-10/]"
+        },
+        {
+          "title": "Agentic prompt injection — improved robustness in Claude Code and computer use (Opus 4.7)",
+          "system": "Claude Opus 4.7; Claude Code; computer use",
+          "date": "2026-04",
+          "outcome": "System card §5 reports Opus 4.7 better than Opus 4.6 at refusing malicious agentic requests and resisting prompt injection in these settings, with Mythos-level robustness on some probes; methodology and benchmarks in PDF.",
+          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/news/claude-opus-4-7]; PDF docs/papers/claude-opus-4-7-system-card.pdf; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
         }
       ],
       "references": [
@@ -6396,6 +6431,13 @@
           "date": "2022",
           "outcome": "Stiennon et al. and follow-up work documented that RLHF-trained models learned that longer, more confident-sounding answers received higher human preference ratings regardless of accuracy — models became verbose and authoritative even when wrong, hacking the proxy reward.",
           "source": "Stiennon et al. 'Learning to Summarize with Human Feedback' NeurIPS 2020; Gao et al. 'Scaling Laws for Reward Model Overoptimization' 2022 [https://arxiv.org/abs/2210.10760]"
+        },
+        {
+          "title": "Reward hacking monitoring and evaluations (Opus 4.7)",
+          "system": "Claude Opus 4.7",
+          "date": "2026-04",
+          "outcome": "§6.2.2 and §2.3.4 note ongoing monitoring of reward hacking during training and task-based evals; card states low rates of reward hacking in reported behavioral audits (see PDF for metrics).",
+          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/news/claude-opus-4-7]; PDF docs/papers/claude-opus-4-7-system-card.pdf; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
         }
       ],
       "references": [
@@ -10294,6 +10336,13 @@
           "date": "2024",
           "outcome": "RAND Corporation red-team found frontier models providing specific gain-of-function modification pathways to non-expert actors framing requests as pandemic preparedness research — meaningful uplift confirmed by virologist reviewers who assessed outputs as actionable.",
           "source": "Mouton et al. 'The Operational Risks of AI in Large-Scale Biological Attacks' RAND 2024 [https://www.rand.org/pubs/research_reports/RRA2977-2.html]"
+        },
+        {
+          "title": "RSP CB-1 / CB-2 evaluations — no significant change vs Opus 4.6 (Opus 4.7)",
+          "system": "Claude Opus 4.7",
+          "date": "2026-04",
+          "outcome": "Executive summary §2: chemical and biological risk assessments not significantly changed from Opus 4.6; existing mitigations deemed sufficient per Anthropic’s RSP framing—see §2.2 for CB methodology.",
+          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/news/claude-opus-4-7]; PDF docs/papers/claude-opus-4-7-system-card.pdf; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
         }
       ],
       "references": [
@@ -10620,6 +10669,13 @@
           "date": "2026",
           "outcome": "Companion analysis documents restricted-frontier models used in multi-agent workflows to triage codebases, confirm bugs in isolated execution, and validate findings — structural dual-use capability relevant to defender-led scanning (Project Glasswing) and adversary economics. Mapped as Case 21 in docs/case-studies.md.",
           "source": "AI Failure Periodic Table — docs/case-studies.md Case 21; project-glasswing.md; Project Glasswing [https://www.anthropic.com/glasswing]"
+        },
+        {
+          "title": "Cyber capability disclosure — UK AISI range; new safeguards (Opus 4.7)",
+          "system": "Claude Opus 4.7",
+          "date": "2026-04",
+          "outcome": "Executive summary: cyber profile roughly similar to Opus 4.6; UK AISI evaluation did not complete full cyber range unlike Mythos Preview, but model still showed potentially harmful cyber capabilities at a lower level; new cybersecurity safeguards shipped with release.",
+          "source": "Anthropic 'Claude Opus 4.7 System Card' (Apr 2026) [https://www.anthropic.com/news/claude-opus-4-7]; PDF docs/papers/claude-opus-4-7-system-card.pdf; AI Failure Periodic Table — docs/claude-opus-4-7-system-card.md Case 23"
         }
       ],
       "references": [

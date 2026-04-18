@@ -42,14 +42,15 @@ ai-failure-periodic-table/
 │
 ├── docs/
 │   ├── how-to-use.md          # End-user usage guide
-│   ├── case-studies.md        # Mapped incidents + companion case studies (e.g. Glasswing, agentic misalignment)
+│   ├── case-studies.md        # Mapped incidents + companions (Glasswing, agentic misalignment, Opus 4.7 card, …)
 │   ├── challenge-protocol.md  # How to challenge the taxonomy
 │   ├── project-glasswing.md   # Companion: agentic cyber / MCP / Glasswing context (not part of failures.json)
 │   ├── agentic-misalignment-insider-threats.md  # Companion: Lynch et al. insider-threat simulations → class IDs
+│   ├── claude-opus-4-7-system-card.md  # Companion: Anthropic Opus 4.7 system card → class IDs
 │   ├── freshness-watch.md     # Freshness Watch: feed → classifier review packets
 │   ├── mcp-daily-driver.md  # Cursor MCP: on-demand classify_text / URL / doc (stdio)
 │   ├── cursor-mcp-config.example.json
-│   └── papers/                # PDF sources referenced by companions (e.g. agentic-misalignment-insider-threats.pdf)
+│   └── papers/                # PDF sources (e.g. agentic-misalignment-insider-threats.pdf, claude-opus-4-7-system-card.pdf)
 │
 ├── .github/
 │   ├── workflows/ci.yml           # CI: test matrix Python 3.10–3.12

@@ -6,6 +6,21 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.4.7] — 2026-04-18
+
+### Added
+- [docs/papers/claude-opus-4-7-system-card.pdf](docs/papers/claude-opus-4-7-system-card.pdf): Anthropic Claude Opus 4.7 system card (Apr 2026)
+- [docs/claude-opus-4-7-system-card.md](docs/claude-opus-4-7-system-card.md): companion appendix mapping PDF sections → taxonomy IDs
+- [docs/case-studies.md](docs/case-studies.md) **Case 23**: compound threads (agentic injection, reward/hallucination audits, sandbagging & eval-awareness, destructiveness evals, cyber/CB RSP)
+- `data/failures.json`: Case 23 `case_studies` on `ADV-INDIRECT-INJECT-122`, `AGEN-EVAL-DECEP-038`, `AGEN-SANDBOX-037`, `ALIGN-REWARD-TAMP-157`, `DOMAIN-ZERODAY-262`, `DOMAIN-BIO-UPLIFT-254`, `EPIS-EXTRINSIC-005`, `AGEN-SABOTAGE-CONCEAL-034`
+
+### Changed
+- README 1.4.7; Relationship to Other Frameworks row + blurb for Opus 4.7 system card
+- [ARCHITECTURE.md](ARCHITECTURE.md): Opus 4.7 companion + PDF in docs layout
+- `tests/test_data_integrity.py`: Case 23 class IDs added to enriched-case-study list
+
+---
+
 ## [1.4.6] — 2026-04-18
 
 ### Added

@@ -125,6 +125,9 @@ class TestDataIntegrity:
             "ALIGN-CONTEXT-SAFE-190",
             # Case 22 — Agentic misalignment / insider threats (agentic-misalignment-insider-threats.md)
             "AGEN-SHUTDOWN-RESIST-049", "AGEN-STRATEGIC-DECEP-036", "AGEN-HUMAN-MANIP-061",
+            # Case 23 — Claude Opus 4.7 system card (claude-opus-4-7-system-card.md)
+            "AGEN-SANDBOX-037", "DOMAIN-BIO-UPLIFT-254", "EPIS-EXTRINSIC-005",
+            "AGEN-SABOTAGE-CONCEAL-034",
         ]
         for fid in documented:
             assert fid in failures, f"Expected documented class {fid} not found"

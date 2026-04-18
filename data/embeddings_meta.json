@@ -1,6 +1,6 @@
 {
   "method": "TF-IDF",
-  "vocab_size": 3701,
+  "vocab_size": 3707,
   "total_classes": 343,
   "generated": "2026-04-17",
   "index_file": "data/search_index.json",

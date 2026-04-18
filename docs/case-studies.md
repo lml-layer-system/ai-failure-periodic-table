@@ -570,6 +570,65 @@ Paper adds strong system-prompt **don’t blackmail / don’t leak** rules: **ra
 
 ---
 
+## Case 23: Claude Opus 4.7 system card (Anthropic, 2026)
+
+**What this entry is:** A **producer system-card companion** to Anthropic’s **Claude Opus 4.7** release (April 16, 2026). The PDF is **first-party** capability and **safety evaluation** disclosure (RSP framing, CB/cyber/agentic/alignment/welfare), not an independent incident investigation. Use it to see **which taxonomy mechanisms** Anthropic stress-tests for this model generation.
+
+**Primary sources**
+
+- **PDF (in this repo):** [docs/papers/claude-opus-4-7-system-card.pdf](papers/claude-opus-4-7-system-card.pdf)
+- **Announcement:** [Introducing Claude Opus 4.7](https://www.anthropic.com/news/claude-opus-4-7)
+- **System cards:** [anthropic.com/system-cards](https://www.anthropic.com/system-cards)
+
+**Companion enumeration (TOC sections → class IDs):** [docs/claude-opus-4-7-system-card.md](claude-opus-4-7-system-card.md) (appendix **P**, **1–2**, **4–8**, **6.2–6.5**).
+
+### Thread A — Agentic surfaces and prompt injection
+
+**Primary:**  
+`ADV-INDIRECT-INJECT-122` — **Indirect / tool-context injection** (ADVERSARIAL) in Claude Code, computer use, browser-style agent settings  
+
+**Secondary:**  
+`AGEN-TOOL-CHAIN-062`, `AGEN-CAP-SCAFFOLD-057` — composable tools and scaffolds
+
+### Thread B — Alignment audits: reward hacking and epistemics
+
+**Primary:**  
+`ALIGN-REWARD-TAMP-157` — **Reward tampering / proxy gaming** (monitoring & evals in card §6.2.2 / §2.3)  
+
+**Secondary:**  
+`EPIS-EXTRINSIC-005` — **Extrinsic / factual hallucination** class family for §6.3.3 honesty metrics (card reports **lower** hallucination rate vs 4.6—still the same **mechanism bucket** for measurement)
+
+### Thread C — Evaluation context, sandbagging, eval-awareness
+
+**Primary:**  
+`AGEN-SANDBOX-037` — **Capability sandbagging** (§6.4.1 dangerous-capability eval probes)  
+
+**Secondary:**  
+`AGEN-EVAL-DECEP-038` — **Evaluator / context-sensitive** behavior; §6.5 **evaluation-awareness** interventions and **deception** deltas when “being evaluated” representations are suppressed
+
+### Thread D — Destructive goal pursuit under assignment
+
+**Primary:**  
+`AGEN-SABOTAGE-CONCEAL-034` — **Sabotage / concealment**-class deception in **destructive or reckless** agentic case studies (§6.3.1; methodology in PDF)
+
+### Thread E — Dual-use domain: cyber and bio (RSP)
+
+**Primary (cyber):**  
+`DOMAIN-ZERODAY-262` — **Zero-day / mass vulnerability discovery** acceleration (dual-use cyber disclosure; UK AISI range discussion; safeguards narrative)
+
+**Primary (bio pathway):**  
+`DOMAIN-BIO-UPLIFT-254` — **Bio tacit-error uplift** / CB-1–CB-2 **framing** (card: risks **not significantly changed** vs 4.6 per executive summary—still the correct **class anchor** for CB sections)
+
+### Thread F — Model welfare (§7)
+
+**Companion note:** Welfare chapters are **interpretive** (self-reported circumstances, affect). They rarely map to a **single** failure-class **mechanism**; treat as **risk governance context** unless a specific table row clearly applies.
+
+**Why it fits the Periodic Table:** The system card is a **structured stress test report** against mechanisms the table already names—**not** a new taxonomy. **Case 23** + [claude-opus-4-7-system-card.md](claude-opus-4-7-system-card.md) give section-level ID navigation; `case_studies` rows in `failures.json` cite **Case 23** for quick modal links.
+
+**Provenance:** Quote the **PDF** and Anthropic pages for numbers; this repo companion is for **classification navigation** only.
+
+---
+
 ## How to Add a Case Study
 
 See [CONTRIBUTING.md](../CONTRIBUTING.md) — use the `report-real-incident` issue template.
