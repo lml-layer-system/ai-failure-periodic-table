@@ -6,6 +6,19 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.4.22] — 2026-04-18
+
+### Added
+- **[tests/test_mcp_protection.py](tests/test_mcp_protection.py):** coverage for `protection()` (yes/no/status/invalid) with isolated setup path.
+
+### Changed
+- **[ARCHITECTURE.md](ARCHITECTURE.md):** rewritten for current tree (MCP package, TF-IDF, Freshness Watch, accurate classifier thresholds, tools table, Buccet note).
+- **[.github/workflows/ci.yml](.github/workflows/ci.yml):** `pip install "mcp>=1.2"` for server imports; push triggers include `cursor/**`.
+- **[requirements.txt](requirements.txt):** `mcp>=1.2` aligned with `pyproject.toml`.
+- **[SECURITY.md](SECURITY.md):** MCP scope, URL/document boundaries, `~/.ai-failure-periodic-table/` note.
+
+---
+
 ## [1.4.21] — 2026-04-18
 
 ### Added

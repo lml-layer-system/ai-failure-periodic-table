@@ -2,13 +2,14 @@
 
 ## Scope
 
-This repository contains a taxonomy of AI failure modes, a keyword-based classifier, and a CLI tool.
+This repository contains a taxonomy of AI failure modes, a keyword-based classifier, a CLI tool, an **MCP server** (`src.ai_failure_mcp`), and maintainer scripts.
 Security issues relevant to this project are:
 
-- **Code execution vulnerabilities** in the Python classifier, CLI, or scripts (e.g., injection via malformed `failures.json`)
-- **Dependency vulnerabilities** in packages listed in `requirements.txt`
+- **Code execution vulnerabilities** in the Python classifier, CLI, MCP layer, or scripts (e.g., injection via malformed `failures.json`)
+- **Dependency vulnerabilities** in packages listed in `requirements.txt` / `pyproject.toml` (including optional `mcp`)
 - **Data integrity attacks** that could allow malicious actors to corrupt the `failures.json` taxonomy in ways that evade test detection
 - **CI/CD pipeline vulnerabilities** in the GitHub Actions workflows
+- **MCP / network exposure**: `classify_url` only allows public `http`/`https` and rejects private/link-local hosts (see `bridge.fetch_url_text`). **`classify_document`** only reads paths under the repo root and/or directories set via `AI_FAILURE_MCP_DOCUMENT_ROOT` / `AI_FAILURE_MCP_DOCUMENT_ROOTS`. The **`protection`** tool writes user preference JSON under **`~/.ai-failure-periodic-table/`** (not the repo); treat that path like other dotfile config if auditing user machines.
 
 ## Out of Scope
 

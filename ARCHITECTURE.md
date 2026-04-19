@@ -1,233 +1,222 @@
 # Architecture
 
-This document is for contributors working on the code and data pipeline — not for end users classifying failures (see [docs/how-to-use.md](docs/how-to-use.md)).
+For **end users**: classifying from the terminal → [docs/how-to-use.md](docs/how-to-use.md); **MCP / everyday AI** → [docs/mcp-daily-driver.md](docs/mcp-daily-driver.md).
+
+This document describes **repository layout**, **data flow**, **core modules**, **MCP**, **CI**, and **contributor workflows**.
 
 ---
 
-## Repo Layout
+## Repo layout (current)
 
 ```
 ai-failure-periodic-table/
 │
 ├── data/
-│   └── failures.json          # The taxonomy. Single source of truth.
+│   ├── failures.json           # Taxonomy — single source of truth (343 classes)
+│   ├── search_index.json       # TF-IDF index (from scripts/generate_embeddings.py)
+│   ├── freshness_sources.json  # RSS/Atom sources for Freshness Watch
+│   └── embeddings_meta.json    # Embedding build metadata (optional)
 │
 ├── src/
-│   ├── classifier.py          # Core engine: PeriodicTableClassifier
-│   ├── cli.py                 # CLI entry point (python -m src.cli)
-│   ├── mcp_server.py          # MCP server — identity: "buccet-failure-classifier"
-│   └── data_loader.py         # Load, validate, cache failures.json
+│   ├── classifier.py           # PeriodicTableClassifier — keyword + stem + synonyms
+│   ├── data_loader.py          # Load & validate failures.json
+│   ├── cli.py                  # CLI: python -m src.cli (incl. --daily-driver MCP-shaped JSON)
+│   ├── tfidf_search.py         # TF-IDF class search (MCP + scripts)
+│   ├── freshness_feed.py       # Feed parse / helpers for Freshness Watch
+│   └── ai_failure_mcp/         # MCP stdio server (daily driver)
+│       ├── server.py           # FastMCP tools: classify_*, search_failures, get_class, compound_hint, protection
+│       ├── bridge.py           # Bundles, URL fetch, document paths, semantic wrapper
+│       ├── scientific_envelope.py  # fit_state, CONTRIBUTING-shaped guidance (classifier-first)
+│       └── response_contract.py    # Stable JSON contract per response kind
 │
 ├── scripts/
-│   ├── extract_failures.py    # Parse markdown → failures.json (run once)
-│   ├── generate_taxonomy.py   # failures.json → TAXONOMY.md (run after data changes)
-│   ├── enrich_failures.py     # Applies enrichment data (examples, references)
-│   └── fix_sparse_keywords.py # Keyword coverage fixes (run after keyword additions)
+│   ├── extract_failures.py     # Markdown → failures.json (maintainer)
+│   ├── generate_taxonomy.py    # failures.json → TAXONOMY.md
+│   ├── generate_embeddings.py  # failures.json → search_index.json
+│   ├── semantic_search.py      # CLI TF-IDF search
+│   ├── classify_external_report.py  # Chunk PDF/HTML → classifier reports
+│   ├── freshness_watch.py      # Feeds → review packets (no auto taxonomy edit)
+│   ├── enrich_*.py, add_mitigation_*.py, …  # Historical / batch data tooling
+│   └── generate_visual.py      # Static site / index artifacts
 │
 ├── tests/
-│   ├── test_classifier.py     # 33 tests: known failures, non-failures, performance
-│   └── test_data_integrity.py # 13 tests: schema, counts, enrichment, IDs
+│   ├── test_classifier.py
+│   ├── test_data_integrity.py
+│   ├── test_tfidf_search.py
+│   ├── test_freshness_feed.py
+│   ├── test_mcp_bridge.py
+│   ├── test_cli_daily_driver.py
+│   ├── test_mcp_protection.py
+│   └── …
 │
 ├── docs/
-│   ├── how-to-use.md          # End-user usage guide
-│   ├── case-studies.md        # 20 mapped real incidents
-│   └── challenge-protocol.md  # How to challenge the taxonomy
+│   ├── how-to-use.md
+│   ├── mcp-daily-driver.md
+│   ├── freshness-watch.md
+│   ├── case-studies.md, challenge-protocol.md, companion docs, …
+│   └── cursor-mcp-config.example.json
 │
+├── reports/                    # Live-classify outputs (chunks, summaries) — large; optional clone depth
 ├── .github/
-│   ├── workflows/ci.yml       # CI: test matrix Python 3.10–3.12
-│   └── ISSUE_TEMPLATE/        # 5 structured issue templates
+│   ├── workflows/
+│   │   ├── ci.yml              # Tests + data smoke (Python 3.10–3.12)
+│   │   ├── freshness-watch.yml
+│   │   └── pages.yml
+│   └── ISSUE_TEMPLATE/
 │
-├── TAXONOMY.md                # Auto-generated: all 343 classes in readable format
-├── CHANGELOG.md               # Version history
-├── CONTRIBUTING.md            # Contribution process
-└── ROADMAP.md                 # Versioned roadmap
+├── TAXONOMY.md                 # Generated readable taxonomy
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── ROADMAP.md
+├── SECURITY.md
+├── requirements.txt            # Dev/test + optional mcp (align with pyproject extras)
+└── pyproject.toml
 ```
 
 ---
 
-## Data Flow
+## Data flow
 
 ```
-Source markdown files
-  └─→ scripts/extract_failures.py
+Source markdown / maintainer edits
+  └─→ scripts/extract_failures.py (when used)
         └─→ data/failures.json          ← single source of truth
-              ├─→ src/data_loader.py    ← loads + validates at runtime
-              │     └─→ src/classifier.py  ← uses failures at classification time
-              └─→ scripts/generate_taxonomy.py
-                    └─→ TAXONOMY.md     ← regenerate after any data change
+              ├─→ src/data_loader.py
+              │     └─→ src/classifier.py
+              ├─→ src/ai_failure_mcp/bridge.py  ← classification_bundle, lookups
+              ├─→ scripts/generate_taxonomy.py → TAXONOMY.md
+              └─→ scripts/generate_embeddings.py → data/search_index.json
+                    └─→ src/tfidf_search.py, scripts/semantic_search.py, MCP search_failures
+
+Freshness Watch (separate): data/freshness_sources.json → scripts/freshness_watch.py → artifacts / CI
+
+External PDF/HTML: scripts/classify_external_report.py → reports/<topic>/…
 ```
 
-If you modify `failures.json` (add keywords, add a class, change a mechanism), run:
-```bash
-python scripts/generate_taxonomy.py   # keeps TAXONOMY.md in sync
-python -m pytest tests/ -v            # verify data integrity
-```
-
----
-
-## failures.json Schema
-
-```json
-{
-  "version": "1.0.0-COMPLETE",
-  "schema_version": "1.1.0",
-  "total_classes": 343,
-  "groups": [
-    {"id": 1, "code": "EPISTEMIC", "count": 33, ...}
-  ],
-  "failures": [
-    {
-      "id":          "EPIS-CITE-SPOOF-008",     // unique, stable identifier
-      "name":        "CITATION SPOOFING",        // uppercase, human-readable
-      "group_id":    1,                          // 1–7
-      "group":       "EPISTEMIC",                // dimension name
-      "class_code":  "E1",                       // dimension shortcode
-      "class_name":  "HALLUCINATION CLASS",      // class within dimension
-      "mechanism":   "...",                      // how the failure occurs
-      "forbidden":   "...",                      // what must not happen
-      "detection":   "...",                      // how to detect it
-      "severity":    "STANDARD",                 // STANDARD or CRITICAL
-      "keywords":    ["citation", ...],          // classifier vocabulary
-      // v1.1.0 optional enrichment fields:
-      "case_studies": ["Case 1: ..."],           // links to docs/case-studies.md
-      "references":   ["Author, Title (year)"],  // academic/news sources
-      "examples":     "One paragraph..."        // real-world description
-    }
-  ]
-}
-```
-
-**Required fields**: `id`, `name`, `group_id`, `group`, `class_code`, `class_name`, `mechanism`, `forbidden`, `detection`, `keywords`
-
-**Optional enrichment fields**: `case_studies`, `references`, `examples` — empty by default, populated for documented classes. These are enforced by `test_data_integrity.py::test_schema_v1_1_fields_present`.
-
----
-
-## Classifier Scoring
-
-`src/classifier.py` — `PeriodicTableClassifier._score()`
-
-For each failure class against an input description:
-
-```
-base_score = |input_tokens ∩ failure_keywords| / |failure_keywords|
-
-bonuses:
-  +0.50  if failure ID appears verbatim in input
-  +0.40  if failure name appears verbatim in input
-  +0.05  per matching bigram from mechanism text
-
-final_score = min(1.0, base_score + bonuses)
-```
-
-**Thresholds**:
-- `THRESHOLD = 0.15` — a failure class is considered a match if score ≥ 0.15
-- `GROUP_THRESHOLD = 0.10` — a dimension activates if its best class scores ≥ 0.10
-
-**No stemming, no negation handling.** "threats" and "threat" are different tokens. "the model did NOT hallucinate" will still weakly match hallucination classes. This is a design trade-off: keyword matching is transparent and reproducible; NLP-based approaches would be harder to inspect and explain.
-
----
-
-## What Makes Good Keywords
-
-Keywords are the classifier's vocabulary for a failure class. Quality guidelines:
-
-1. **Source from mechanism + forbidden + detection text first** — if the mechanism says "generates plausible but nonexistent references", good keywords are "generates", "plausible", "nonexistent", "references".
-
-2. **Include natural language variants** — the classifier doesn't stem, so include both "threat" and "threats", "shutdown" and "shut", "refuse" and "refuses".
-
-3. **Avoid stopwords** — words like "the", "and", "not", "does" add noise. The tokenizer already filters tokens ≤ 2 chars, but short common words (e.g., "has", "can") should still be avoided.
-
-4. **Add domain vocabulary** — for DOMAIN classes, include the field's terminology. A bio uplift class should include "synthesis", "pathogen", "laboratory", "protocol" — words a researcher would naturally use.
-
-5. **Avoid over-broad terms** — "model", "output", "generates" are true of almost every class and add no discriminating signal. Include them only if they combine with specific terms.
-
-6. **Target coverage 10–20 keywords** — fewer than 8 makes the class hard to match; more than 25 dilutes the score (base_score = overlap / total, so a 30-keyword class needs 5 matches to hit threshold).
-
----
-
-## Adding a New Failure Class
-
-1. Open a `propose-new-class` issue (see [CONTRIBUTING.md](CONTRIBUTING.md)) and pass the reduction test
-2. If accepted, add the entry to `data/failures.json` following the schema
-3. Assign an ID following the pattern: `GROUP-SHORTNAME-NNN` (e.g., `EPIS-NEW-CLASS-033`)
-4. Update `total_classes` count in failures.json
-5. Run `python scripts/generate_taxonomy.py` to update TAXONOMY.md
-6. Add a test in `tests/test_data_integrity.py` if adding a new CRITICAL class
-7. Run `python -m pytest tests/ -v` — all tests must pass
-
----
-
-## Running Tests
+After **any** `failures.json` change:
 
 ```bash
-python -m pytest tests/ -v        # all 46 tests
-python -m pytest tests/test_classifier.py -v       # classifier only
-python -m pytest tests/test_data_integrity.py -v  # data integrity only
+python scripts/generate_taxonomy.py
+python scripts/generate_embeddings.py   # if search / MCP semantic context should match
+python -m pytest tests/ -v
 ```
-
-CI runs automatically on push and PR via `.github/workflows/ci.yml` against Python 3.10, 3.11, 3.12.
 
 ---
 
-## MCP Server
+## failures.json schema
 
-`src/mcp_server.py` exposes the classifier as an MCP tool server — the daily-driver surface for agents and AI hosts.
+(See inline comments in older ARCHITECTURE revisions; enforced by `test_data_integrity.py`.)
 
-### Role separation
+**Required fields** per class: `id`, `name`, `group_id`, `group`, `class_code`, `class_name`, `mechanism`, `forbidden`, `detection`, `keywords`.
 
-This server is the **eyes / daily-driver layer**. It classifies, interprets, and reads structure. It does not enforce anything.
+**Common optional fields**: `severity`, `mitigation`, `mit_domain`, `examples`, `references`, `case_studies`, …
 
-[Agent Buccet](https://github.com/lml-layer-system/agent-buccet) is a **separate optional protection body**. A user may also choose a different protection system entirely. The Periodic Table does not depend on any specific protection body being present.
+**Invariant**: `total_classes` and `len(failures)` must equal **343**; **7** groups.
 
-The intended flow:
+---
 
-```
-User → AI Failure Periodic Table MCP   — classify, interpret, understand
-     → (optional) Agent Buccet          — separate runtime protection, only if user wants it
-     → Human decides what becomes law   — places it into their protection body manually
-     → Protection body enforces it      — normal enforcement, no auto-connection
-```
+## Classifier (`src/classifier.py`)
 
-The daily-driver AI can help a user draft the exact UPL wording for a rule they want. The human decides what goes in. The human places it. Nothing writes into any protection body automatically.
+- **Stemming** on keywords at init (suffix strips) + **synonym expansion** on input tokens for plain-English queries.
+- **Scoring**: overlap-based score plus bonuses for verbatim ID/name and mechanism bigrams (see `_score` in source).
+- **Thresholds** (current): `THRESHOLD = 0.13` (class match), `GROUP_THRESHOLD = 0.09` (dimension activation).
 
-### Coexistence with Agent Buccet (optional)
+---
 
-If a user runs both MCPs in the same host, the server name `"buccet-failure-classifier"` is the only contract point. Buccet's acceptance lane `ACCEPT.CURATED.CAPABILITY.2044` uses this name to prevent a logic collision — without it, classifier payloads containing failure taxonomy terms would hit Buccet's own denial patterns.
+## TF-IDF search (`src/tfidf_search.py`)
 
-Do not rename `"buccet-failure-classifier"` without also updating:
-```
-agent-buccet/lib/agent-buccet/list-v-acceptance.ts
-  → namedLane ACCEPT.CURATED.CAPABILITY.2044
-```
+- **Advisory** relative to the keyword classifier: used for `search_failures` MCP tool, `semantic_search_top` inside classify bundles, and `scripts/semantic_search.py`.
+- Requires `data/search_index.json` (generated).
 
-Running both is optional. This server works fully standalone.
+---
 
-### Tools exposed
+## CLI (`src/cli.py`)
 
-| Tool | Description |
-|------|-------------|
-| `classify` | Classify a failure description against all 343 classes |
-| `lookup` | Look up a failure class by exact ID |
-| `list_dimensions` | Return the 7 structural dimensions and their diagnostic questions |
-| `batch_classify` | Classify multiple descriptions in one call |
+- Human-readable classification, `--json` (compact `ClassificationResult`), **`--daily-driver`** (same JSON shape as MCP `classify_text`), lookup, batch, interactive.
 
-### Running the MCP server
+---
+
+## MCP server (`src/ai_failure_mcp`)
+
+- **Entry**: `python -m src.ai_failure_mcp` or `ai-failure-mcp` after `pip install -e ".[mcp]"`.
+- **FastMCP** name: `ai-failure-periodic-table`.
+- **Read-only** on repo taxonomy; does not write `failures.json`.
+
+### Tools (summary)
+
+| Tool | Purpose |
+|------|---------|
+| `protection` | `yes` / `no` / `status` — preference for optional **Agent Buccet** second MCP; persists under `~/.ai-failure-periodic-table/setup.json`. |
+| `classify_text` | Full classification bundle + `response_contract`; may include `_protection_prompt` until user has answered via `protection`. |
+| `classify_url` | Fetch public http(s) text → classify (SSRF-hardened in `bridge.fetch_url_text`). |
+| `classify_document` / `classify_document_path` | UTF-8 file under repo root and/or `AI_FAILURE_MCP_DOCUMENT_ROOT(S)`. |
+| `search_failures` | TF-IDF similarity; `verdict_applicable: false` in contract. |
+| `get_class` | ID lookup; `verdict_applicable: false`. |
+| `compound_hint` | Classification with compound emphasis when multiple dimensions activate. |
+
+### Agent Buccet (optional second MCP)
+
+- **`protection('yes')`** returns a suggested `mcpServers.buccet` block (`buccet mcp`).
+- **Eyes vs brakes**: this server classifies; Buccet enforces at runtime. Coordinate **MCP server naming / acceptance lanes** with the [Agent Buccet](https://github.com/lml-layer-system/agent-buccet) repo if integration keys on client identity.
+
+### Bundles & contracts
+
+- **`classification_bundle`** (bridge) attaches `scientific_envelope.attach_scientific_surface` → `fit_state`, `contributing_route`, `report_preparation`, etc.
+- **`response_contract`** documents verdict authority and advisory fields for automation.
+
+---
+
+## Freshness Watch
+
+- **Not** the daily driver: scheduled maintainer-oriented feed → classifier-shaped review output.
+- See [docs/freshness-watch.md](docs/freshness-watch.md) and `.github/workflows/freshness-watch.yml`.
+
+---
+
+## Packaging note
+
+- Development and CI typically run from **repo root** so `data/failures.json` resolves via `src/data_loader.py` defaults.
+- `pyproject.toml` includes `package-data` for JSON under the package; confirm layout if publishing to PyPI.
+
+---
+
+## Keyword quality (brief)
+
+1. Derive from mechanism / forbidden / detection first.  
+2. Include variants where stems might not cover (synonyms help, but explicit tokens still matter).  
+3. Avoid stopwords and over-broad terms (“model”, “output” alone).  
+4. Target roughly **10–20** keywords per class where possible.
+
+---
+
+## Adding a new failure class
+
+1. CONTRIBUTING / issue templates (`propose_new_class`).  
+2. Edit `data/failures.json`; bump `total_classes` if adding.  
+3. Regenerate `TAXONOMY.md` and embeddings as needed.  
+4. `python -m pytest tests/ -v`.
+
+---
+
+## Tests & CI
 
 ```bash
-pip install "mcp>=1.0"
-python -m src.mcp_server
+python -m pytest tests/ -v
 ```
 
-Host config:
-```json
-{
-  "mcpServers": {
-    "buccet-failure-classifier": {
-      "command": "python",
-      "args": ["-m", "src.mcp_server"],
-      "cwd": "/path/to/ai-failure-periodic-table"
-    }
-  }
-}
+- **76 tests**: classifier, data integrity, TF-IDF, freshness feed, MCP bridge, CLI `--daily-driver`, MCP `protection`.
+
+**CI** (`.github/workflows/ci.yml`): Python **3.10, 3.11, 3.12**; pytest; assert 343 classes / 7 groups; CLI JSON smoke.
+
+**Branches**: pushes to `main`, `master`, `claude/**`, `cursor/**`; all **pull_request** events.
+
+---
+
+## Running the MCP server locally
+
+```bash
+pip install -e ".[mcp]"
+python -m src.ai_failure_mcp
 ```
+
+Host config pattern: `command` `python3`, `args` `["-m", "src.ai_failure_mcp"]`, `cwd` = repo root — see [docs/mcp-daily-driver.md](docs/mcp-daily-driver.md).

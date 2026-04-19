@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ main, master, "claude/**" ]
+    branches: [ main, master, "claude/**", "cursor/**" ]
   pull_request:
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install dependencies
-        run: pip install pytest
+        run: pip install pytest "mcp>=1.2"
 
       - name: Run tests
         run: python -m pytest tests/ -v

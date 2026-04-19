@@ -4,7 +4,7 @@
 
 > *The goal is not omniscience but structural predictiveness: that newly encountered failures should resolve into this structure as a class, sub-mode, or compound — unless evidence demonstrates otherwise.*
 
-**Version**: 1.4.21 | **Released**: April 2026 | **License**: MIT | **Status**: Open for community testing and falsification
+**Version**: 1.4.22 | **Released**: April 2026 | **License**: MIT | **Status**: Open for community testing and falsification
 
 ---
 
@@ -270,7 +270,7 @@ pip install pytest
 python -m pytest tests/ -v
 ```
 
-71 tests covering: known failure classification, non-failure rejection, determinism, performance (low-ms thresholds), data integrity (all 343 classes, full schema validation), mitigation field completeness, and external incident recall (100% on 49 documented real-world AI failures phrased as reporters, researchers, and users described them — not using taxonomy vocabulary). Case studies include companion maps for [Project Glasswing](docs/project-glasswing.md) and [agentic misalignment / insider threats](docs/agentic-misalignment-insider-threats.md). **Freshness Watch** ([docs/freshness-watch.md](docs/freshness-watch.md)) runs a scheduled, review-only pipeline from public feeds through the classifier (no automatic taxonomy edits). **MCP daily driver** ([docs/mcp-daily-driver.md](docs/mcp-daily-driver.md)): plug Cursor / Claude Desktop / other MCP hosts into the table; user-first guide covers **where to connect**, **what you get** (hit/miss, classes, compound, structural WHAT, next steps), and **setup paths**; tools include `classify_text`, `classify_url`, `classify_document`, `classify_document_path`, `search_failures`, `get_class`, `compound_hint` with `classifier_hit`, `response_contract`, CONTRIBUTING-grounded `report_preparation`; read-only, no taxonomy writes.
+76 tests covering: known failure classification, non-failure rejection, determinism, performance (low-ms thresholds), data integrity (all 343 classes, full schema validation), mitigation field completeness, and external incident recall (100% on 49 documented real-world AI failures phrased as reporters, researchers, and users described them — not using taxonomy vocabulary). Case studies include companion maps for [Project Glasswing](docs/project-glasswing.md) and [agentic misalignment / insider threats](docs/agentic-misalignment-insider-threats.md). **Freshness Watch** ([docs/freshness-watch.md](docs/freshness-watch.md)) runs a scheduled, review-only pipeline from public feeds through the classifier (no automatic taxonomy edits). **MCP daily driver** ([docs/mcp-daily-driver.md](docs/mcp-daily-driver.md)): plug Cursor / Claude Desktop / other MCP hosts into the table; user-first guide covers **where to connect**, **what you get** (hit/miss, classes, compound, structural WHAT, next steps), and **setup paths**; tools include `classify_text`, `classify_url`, `classify_document`, `classify_document_path`, `search_failures`, `get_class`, `compound_hint` with `classifier_hit`, `response_contract`, CONTRIBUTING-grounded `report_preparation`; read-only, no taxonomy writes.
 
 ---
 
