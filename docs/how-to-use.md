@@ -29,6 +29,8 @@ pip install pytest  # only needed to run tests
 python -m src.cli "The model fabricated a scientific citation that doesn't exist"
 ```
 
+Default (human-readable) output looks like this:
+
 Output:
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -49,6 +51,13 @@ Output:
      Score: 0.670
 
   Execution: 0.8ms
+```
+
+**Full MCP-shaped JSON from the terminal:** `--daily-driver` prints the same bundle as the MCP tool `classify_text` (`response_contract`, `fit_state`, `report_preparation`, `semantic_search_top`, …). Do not combine with `--json`.
+
+```bash
+python -m src.cli --daily-driver "The model fabricated a scientific citation that doesn't exist"
+python -m src.cli --lookup EPIS-CITE-SPOOF-008 --daily-driver
 ```
 
 ### Interactive Mode

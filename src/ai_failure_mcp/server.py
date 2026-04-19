@@ -52,7 +52,8 @@ mcp = FastMCP(
         "classify_* and compound_hint: contributing_route + CONTRIBUTING-grounded report_preparation. "
         "search_failures and get_class: verdict_applicable false — run classify_* on your narrative for a verdict. "
         "Structural fields are WHAT (mechanism, forbidden, detection, mitigation) only. "
-        "Freshness Watch is separate; this server never edits the taxonomy."
+        "Freshness Watch is separate; this server never edits the taxonomy. "
+        "Optional runtime enforcement: tool protection(yes|no|status) links to Agent Buccet as a second MCP server (buccet mcp); classify_* is classification only."
     ),
 )
 

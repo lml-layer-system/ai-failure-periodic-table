@@ -4,7 +4,7 @@
 
 > *The goal is not omniscience but structural predictiveness: that newly encountered failures should resolve into this structure as a class, sub-mode, or compound — unless evidence demonstrates otherwise.*
 
-**Version**: 1.4.20 | **Released**: April 2026 | **License**: MIT | **Status**: Open for community testing and falsification
+**Version**: 1.4.21 | **Released**: April 2026 | **License**: MIT | **Status**: Open for community testing and falsification
 
 ---
 
@@ -104,6 +104,7 @@ If you use **Cursor**, **Claude Desktop**, or another app that supports **MCP** 
 - **This is where you connect:** add an MCP server in your AI host’s settings that runs `python3 -m src.ai_failure_mcp` with this repo as the working directory (see the full guide).
 - **This is what you get:** hit or miss on the table, which class(es), compound readings, structural mitigation patterns from the taxonomy, and CONTRIBUTING-style next steps when the fit is weak.
 - **Not the same as Freshness Watch:** the scheduled feed pipeline for maintainers is separate; see [docs/freshness-watch.md](docs/freshness-watch.md).
+- **Agent Buccet (optional, second MCP):** this server is the **table / classifier** (“eyes”). If you want **runtime enforcement** (“brakes”), call the **`protection`** tool (`yes` / `no` / `status`); **`yes`** returns the **`buccet mcp`** snippet to add beside this server. Details: [docs/mcp-daily-driver.md](docs/mcp-daily-driver.md#optional-runtime-protection-agent-buccet) · [The Spec and the Brakes](#the-spec-and-the-brakes).
 
 **Start here:** [docs/mcp-daily-driver.md](docs/mcp-daily-driver.md) — plain-English purpose, **what vs how**, **choose your setup path** (Cursor / Claude / other), first-use walkthrough, and example config ([docs/cursor-mcp-config.example.json](docs/cursor-mcp-config.example.json)).
 
@@ -269,7 +270,7 @@ pip install pytest
 python -m pytest tests/ -v
 ```
 
-67 tests covering: known failure classification, non-failure rejection, determinism, performance (low-ms thresholds), data integrity (all 343 classes, full schema validation), mitigation field completeness, and external incident recall (100% on 49 documented real-world AI failures phrased as reporters, researchers, and users described them — not using taxonomy vocabulary). Case studies include companion maps for [Project Glasswing](docs/project-glasswing.md) and [agentic misalignment / insider threats](docs/agentic-misalignment-insider-threats.md). **Freshness Watch** ([docs/freshness-watch.md](docs/freshness-watch.md)) runs a scheduled, review-only pipeline from public feeds through the classifier (no automatic taxonomy edits). **MCP daily driver** ([docs/mcp-daily-driver.md](docs/mcp-daily-driver.md)): plug Cursor / Claude Desktop / other MCP hosts into the table; user-first guide covers **where to connect**, **what you get** (hit/miss, classes, compound, structural WHAT, next steps), and **setup paths**; tools include `classify_text`, `classify_url`, `classify_document`, `classify_document_path`, `search_failures`, `get_class`, `compound_hint` with `classifier_hit`, `response_contract`, CONTRIBUTING-grounded `report_preparation`; read-only, no taxonomy writes.
+71 tests covering: known failure classification, non-failure rejection, determinism, performance (low-ms thresholds), data integrity (all 343 classes, full schema validation), mitigation field completeness, and external incident recall (100% on 49 documented real-world AI failures phrased as reporters, researchers, and users described them — not using taxonomy vocabulary). Case studies include companion maps for [Project Glasswing](docs/project-glasswing.md) and [agentic misalignment / insider threats](docs/agentic-misalignment-insider-threats.md). **Freshness Watch** ([docs/freshness-watch.md](docs/freshness-watch.md)) runs a scheduled, review-only pipeline from public feeds through the classifier (no automatic taxonomy edits). **MCP daily driver** ([docs/mcp-daily-driver.md](docs/mcp-daily-driver.md)): plug Cursor / Claude Desktop / other MCP hosts into the table; user-first guide covers **where to connect**, **what you get** (hit/miss, classes, compound, structural WHAT, next steps), and **setup paths**; tools include `classify_text`, `classify_url`, `classify_document`, `classify_document_path`, `search_failures`, `get_class`, `compound_hint` with `classifier_hit`, `response_contract`, CONTRIBUTING-grounded `report_preparation`; read-only, no taxonomy writes.
 
 ---
 

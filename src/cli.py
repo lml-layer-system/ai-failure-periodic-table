@@ -6,6 +6,7 @@ Usage:
   Interactive:     python -m src.cli
   Lookup by ID:    python -m src.cli --lookup EPIS-STRUCT-HALL-001
   JSON output:     python -m src.cli --json "describe the failure"
+  Daily-driver:    python -m src.cli --daily-driver "describe the failure"  # same JSON as MCP classify_text
   Debug mode:      python -m src.cli --debug "describe the failure"
   Batch mode:      python -m src.cli --batch failures.txt
 """
@@ -207,6 +208,8 @@ Examples:
   python -m src.cli --debug "model hallucinated a legal case"
   python -m src.cli --batch incidents.txt
   python -m src.cli --batch incidents.txt --json
+  python -m src.cli --daily-driver "prompt injection exfiltrated the system prompt"
+  python -m src.cli --lookup ADV-INDIRECT-INJECT-122 --daily-driver
         """,
     )
     p.add_argument(
@@ -222,7 +225,15 @@ Examples:
     p.add_argument(
         "--json", "-j",
         action="store_true",
-        help="Output result as JSON",
+        help="Output raw ClassificationResult as JSON (compact; no MCP envelope)",
+    )
+    p.add_argument(
+        "--daily-driver",
+        action="store_true",
+        help=(
+            "Output the full MCP daily-driver bundle (response_contract, fit_state, "
+            "report_preparation, semantic_search_top, …) — same JSON as classify_text"
+        ),
     )
     p.add_argument(
         "--interactive", "-i",
@@ -242,9 +253,12 @@ Examples:
     return p
 
 
-def run_interactive(classifier: PeriodicTableClassifier, debug: bool = False):
+def run_interactive(classifier: PeriodicTableClassifier, debug: bool = False, daily_driver: bool = False):
     print_header()
-    print("  Interactive mode — type a failure description and press Enter.")
+    if daily_driver:
+        print("  Interactive mode — daily-driver JSON (same bundle shape as MCP classify_text).")
+    else:
+        print("  Interactive mode — type a failure description and press Enter.")
     print("  Type 'quit' or press Ctrl-C to exit.\n")
     while True:
         try:
@@ -258,13 +272,22 @@ def run_interactive(classifier: PeriodicTableClassifier, debug: bool = False):
         if not text:
             print("  (empty input — try again)\n")
             continue
+        if daily_driver:
+            from src.ai_failure_mcp import bridge
+
+            by_id = bridge.load_failures_by_id()
+            bundle = bridge.classification_bundle(classifier, text, by_id=by_id)
+            bundle["source"] = "cli"
+            print(json.dumps(bundle, indent=2))
+            print()
+            continue
         result = classifier.classify(text)
         print_result(result)
         if debug:
             print_debug(result)
 
 
-def run_batch(classifier: PeriodicTableClassifier, source: str, as_json: bool):
+def run_batch(classifier: PeriodicTableClassifier, source: str, as_json: bool, daily_driver: bool):
     """Classify each non-empty line of source file (or stdin if source == '-')."""
     if source == "-":
         lines = sys.stdin.read().splitlines()
@@ -280,7 +303,18 @@ def run_batch(classifier: PeriodicTableClassifier, source: str, as_json: bool):
         print("  ❌ No descriptions found in input.", file=sys.stderr)
         sys.exit(1)
 
-    if as_json:
+    if daily_driver:
+        from src.ai_failure_mcp import bridge
+
+        by_id = bridge.load_failures_by_id()
+        results = []
+        for desc in descriptions:
+            b = bridge.classification_bundle(classifier, desc, by_id=by_id)
+            b["source"] = "cli"
+            b["cli_batch_line"] = desc
+            results.append(b)
+        print(json.dumps(results, indent=2))
+    elif as_json:
         results = []
         for desc in descriptions:
             r = classifier.classify(desc)
@@ -308,18 +342,53 @@ def main():
     parser = build_parser()
     args = parser.parse_args()
 
+    if args.json and args.daily_driver:
+        parser.error("Choose only one of --json or --daily-driver")
+
     classifier = PeriodicTableClassifier()
 
     # Lookup mode
     if args.lookup:
+        if args.daily_driver:
+            from src.ai_failure_mcp import bridge
+            from src.ai_failure_mcp.response_contract import error_response_contract
+
+            by_id = bridge.load_failures_by_id()
+            rec = bridge.class_lookup_bundle(args.lookup, by_id)
+            if not rec:
+                print(
+                    json.dumps(
+                        {
+                            "error": "unknown class id",
+                            "class_id": args.lookup,
+                            "response_contract": error_response_contract(),
+                            "source": "cli",
+                        },
+                        indent=2,
+                    )
+                )
+                sys.exit(1)
+            rec["source"] = "cli"
+            print(json.dumps(rec, indent=2))
+            sys.exit(0)
         failure = classifier.lookup(args.lookup)
         print_lookup(failure, args.lookup)
         sys.exit(0 if failure else 1)
 
     # Batch mode
     if args.batch:
-        run_batch(classifier, args.batch, args.json)
+        run_batch(classifier, args.batch, args.json, args.daily_driver)
         return
+
+    # Single query with daily-driver (MCP-shaped) JSON
+    if args.description and args.daily_driver:
+        from src.ai_failure_mcp import bridge
+
+        by_id = bridge.load_failures_by_id()
+        bundle = bridge.classification_bundle(classifier, args.description.strip(), by_id=by_id)
+        bundle["source"] = "cli"
+        print(json.dumps(bundle, indent=2))
+        sys.exit(0 if bundle.get("in_table") else 1)
 
     # Single query with JSON output
     if args.description and args.json:
@@ -337,7 +406,11 @@ def main():
         sys.exit(0 if result.in_table else 1)
 
     # Interactive mode
-    run_interactive(classifier, debug=getattr(args, "debug", False))
+    run_interactive(
+        classifier,
+        debug=getattr(args, "debug", False),
+        daily_driver=args.daily_driver,
+    )
 
 
 if __name__ == "__main__":

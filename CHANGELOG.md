@@ -6,6 +6,18 @@ Format: `[version] — date — summary`
 
 ---
 
+## [1.4.21] — 2026-04-18
+
+### Added
+- **CLI `--daily-driver`:** [`src/cli.py`](src/cli.py) — same JSON bundle as MCP `classify_text` / lookup (`response_contract`, `fit_state`, `report_preparation`, …); batch and interactive supported; [`tests/test_cli_daily_driver.py`](tests/test_cli_daily_driver.py).
+
+### Changed
+- **[docs/mcp-daily-driver.md](docs/mcp-daily-driver.md), [README.md](README.md):** Document **`protection`** + optional **Agent Buccet** second MCP (`buccet mcp`), `_protection_prompt`, `~/.ai-failure-periodic-table/setup.json`.
+- **[src/ai_failure_mcp/server.py](src/ai_failure_mcp/server.py):** MCP host `instructions` mention `protection` and Buccet.
+- **[docs/how-to-use.md](docs/how-to-use.md):** `--daily-driver` examples and clarified default vs JSON output.
+
+---
+
 ## [1.4.20] — 2026-04-17
 
 ### Changed

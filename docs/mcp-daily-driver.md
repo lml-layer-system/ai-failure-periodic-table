@@ -4,6 +4,8 @@
 
 You do **not** need to already know what MCP stands for. Think of it as a **plug-in socket**: your AI host connects to a small program in this repo, and then your AI can call “classify this paragraph / link / file” for you.
 
+**Two MCP servers, one story.** The server in **this repo** is the **eyes**: it classifies text against the **343-class table** (read-only on the taxonomy). **[Agent Buccet](https://github.com/lml-layer-system/agent-buccet)** is the optional **brakes**: runtime enforcement, usually wired as a **second** MCP entry (`buccet mcp`). This repo’s **`protection`** tool asks once whether you want that layer and returns the exact host snippet to add—see [Optional runtime protection (Agent Buccet)](#optional-runtime-protection-agent-buccet). Big picture: [The Spec and the Brakes](../README.md#the-spec-and-the-brakes).
+
 ---
 
 ## What this is for
@@ -38,8 +40,26 @@ You do **not** need to already know what MCP stands for. Think of it as a **plug
 | Point at a file | Your AI can classify a **UTF-8 file** under the repo or a folder you allow (see below). |
 | Browse by meaning without a full verdict | Your AI can **search** classes by similarity (helpful for exploration; a full “hit” still comes from classifying your actual narrative). |
 | Look up one class by ID | Your AI can **fetch that row** from the table (lookup is not the same as classifying a story). |
+| Turn on runtime enforcement (optional) | Call **`protection('yes')`** after the first classify prompt; add **[Agent Buccet](https://github.com/lml-layer-system/agent-buccet)** to the same MCP host as a second server (`buccet mcp`). |
 
 **Choose the setup path that matches the AI tool you already use** (next section). The *purpose* is the same in every case: **plug your daily-driver AI into the table**, then **point it at something and classify**.
+
+---
+
+## Optional runtime protection (Agent Buccet)
+
+Classification from this repo is **not** runtime blocking—it only **names** mechanisms and reads structural fields. If you also want **continuous enforcement** aligned with the same map, use **[Agent Buccet](https://github.com/lml-layer-system/agent-buccet)** as a **separate** MCP server (install the `buccet` CLI so it is on your `PATH`).
+
+**How it connects from this MCP server**
+
+1. The first time you run **`classify_text`**, the JSON may include **`_protection_prompt`**: a one-time nudge to choose protection.
+2. Call the **`protection`** tool from your AI host:
+   - **`protection('yes')`** — you want Agent Buccet; the response includes a ready-made **`mcpServers.buccet`** block (`command`: `buccet`, `args`: `["mcp"]`) to merge into your host config, plus notes on CLI customization (`buccet console`, `buccet laws`, …).
+   - **`protection('no')`** — skip for now or bring your own enforcement.
+   - **`protection('status')`** — see the current choice.
+3. The choice is stored in **`~/.ai-failure-periodic-table/setup.json`** on your machine (not committed to this repo). You can call **`protection`** again anytime to change it.
+
+**Still two processes:** `python -m src.ai_failure_mcp` = table / classifier; `buccet mcp` = enforcement. Same framework; different jobs.
 
 ---
 
@@ -109,7 +129,7 @@ These options use the **same `failures.json` data and the same keyword classifie
 
 | Fallback | What it is good for | Needs |
 |----------|---------------------|--------|
-| **Terminal classifier** | Classify any pasted description; JSON for scripts | Python 3.10+, `pip install -e .` from repo root |
+| **Terminal classifier** | Classify any pasted description; `--json` for compact result; **`--daily-driver`** for the **same full JSON** as MCP `classify_text` (fit_state, response_contract, report_preparation, …) | Python 3.10+, `pip install -e .` from repo root |
 | **Class lookup** | Show one class by ID | Same |
 | **Browser table** | Explore all 343 classes, in-page search | Open `index.html` or the [live site](https://lml-layer-system.github.io/ai-failure-periodic-table/) — **no LLM** |
 | **Semantic search CLI** | Find classes by meaning from the terminal | Same Python env + one-time `python scripts/generate_embeddings.py` |
@@ -123,7 +143,11 @@ python -m src.cli "The model fabricated a citation that does not exist"
 
 python -m src.cli --json "reward hacking on a proxy metric"
 
+python -m src.cli --daily-driver "reward hacking on a proxy metric"
+
 python -m src.cli --lookup EPIS-CITE-SPOOF-008
+
+python -m src.cli --lookup EPIS-CITE-SPOOF-008 --daily-driver
 
 python scripts/generate_embeddings.py   # once
 python scripts/semantic_search.py "indirect prompt injection via email"
@@ -232,7 +256,8 @@ For machine-readable rules about what each field *means*, see **`response_contra
 
 | Tool | Purpose |
 |------|---------|
-| `classify_text` | Classify free text; full envelope (hit/miss, classes, dimensions, structural fields, next steps). |
+| `protection` | Set or check **runtime protection** preference (`yes` / `no` / `status`); **`yes`** returns Agent Buccet MCP config snippet. |
+| `classify_text` | Classify free text; full envelope (hit/miss, classes, dimensions, structural fields, next steps). May include **`_protection_prompt`** on first use until you call `protection`. |
 | `classify_url` | Fetch a public **http(s)** URL, extract text, then classify (blocks private/local hosts). |
 | `classify_document` | Read a **UTF-8** file under the **repo root** and/or **`AI_FAILURE_MCP_DOCUMENT_ROOT(S)`**, then classify. |
 | `classify_document_path` | Same as `classify_document` (alias name for some clients). |
@@ -255,6 +280,12 @@ On weaker or miss results you may see:
 ### Suggested structural response (WHAT, not HOW)
 
 Per class, taxonomy fields only: mechanism, forbidden, detection, mitigation (and mitigation domain when present). No vendor runbooks.
+
+---
+
+## Spec vs brakes (reminder)
+
+**This MCP** answers “what class is this?” and surfaces **WHAT** the table says (mechanism, forbidden, detection, mitigation). **Agent Buccet** answers “how do I **enforce** that in a running system?”—see [Optional runtime protection](#optional-runtime-protection-agent-buccet) and [README — The Spec and the Brakes](../README.md#the-spec-and-the-brakes).
 
 ---
 
