@@ -15,6 +15,11 @@ We treat every failure as a data point in a closed-loop engineering process.
 
 failure → known/unknown → class/gap → boundary → UPL / user custom rules → Buccet enforcement → proof ledger
 
+## Proof Snapshot
+
+The classifier has been run against primary system cards, safety reports, security disclosures, and red-team research. Across the tested corpus, every substantive AI failure mechanism resolved into the current 343-class structure; non-hits were boilerplate, equations, headers, citations, or benchmark tables with no failure signal.
+
+Full evidence lives in `reports/`.
 
 > *The goal is not omniscience but structural predictiveness: that newly encountered failures should resolve into this structure as a class, sub-mode, or compound — unless evidence demonstrates otherwise.*
 
