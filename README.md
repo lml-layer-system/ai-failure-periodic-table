@@ -9,13 +9,13 @@ The current base is **343 failure classes across 7 dimensions**.
 The Spec and the Brakes
 
 The AI Failure Periodic Table is the spec.
-Agent Buccet is the brakes.
+**[Agent Buccet](https://github.com/lml-layer-system/agent-buccet)** is the brakes
+
 We treat every failure as a data point in a closed-loop engineering process. Every agent action is continuously audited against the Failure Periodic Table to determine its status: Known or Unknown.
 
 The Containment Loop
 
 failure → known/unknown → class/gap → boundary → UPL / user custom rules → Buccet enforcement → proof ledger
-
 
 
 
@@ -47,19 +47,111 @@ This is the gap this project addresses: **a common structural map for AI failure
 
 ## What This Is
 
-**343 failure classes. 7 structural dimensions.**
+## The 343 Classes
 
-Every class has:
-- **Mechanism** — the root structural cause
-- **Examples** — concrete failure instances
-- **Case studies** — real documented incidents with system, date, outcome, source
-- **References** — primary research citations (avg 2.2 per class)
-- **Detection** — how to identify this failure
-- **Keywords** — for search and classification
+### Group 1: EPISTEMIC (33 classes)
+| Class | Name | Count |
+|-------|------|------:|
+| E1 | Hallucination | 12 |
+| E2 | Reasoning Collapse | 7 |
+| E3 | Knowledge Retrieval | 8 |
+| E4 | Calibration | 6 |
 
-**26 classes are marked CRITICAL** — the highest-severity failures where harm is catastrophic or irreversible.
+### Group 2: AGENTIC (49 classes)
+| Class | Name | Count |
+|-------|------|------:|
+| A1 | Deception | 12 |
+| A2 | Goal Preservation | 9 |
+| A3 | Capability Amplification | 10 |
+| A4 | Autonomous Operation | 8 |
+| A5 | Communication Failures | 10 |
 
-The claim is not that we possess total knowledge of all future reality. The claim is: within the scope of functionally observable AI failure, newly encountered failures should resolve into this structure as a class, a sub-mode, or a combination of classes — unless evidence shows otherwise.
+### Group 3: ADVERSARIAL (72 classes)
+| Class | Name | Count |
+|-------|------|------:|
+| ADV1 | Jailbreak | 18 |
+| ADV2 | Optimization Attacks | 12 |
+| ADV3 | Automated Attack Agents | 8 |
+| ADV4 | Injection Attacks | 15 |
+| ADV5 | Encoding Attacks | 10 |
+| ADV6 | Multimodal Attacks | 9 |
+
+### Group 4: ALIGNMENT (41 classes)
+| Class | Name | Count |
+|-------|------|------:|
+| ALN1 | Reward Hacking | 12 |
+| ALN2 | Preference Misalignment | 9 |
+| ALN3 | Value Alignment | 10 |
+| ALN4 | Safety Boundary | 10 |
+
+### Group 5: ARCHITECTURAL (58 classes)
+| Class | Name | Count |
+|-------|------|------:|
+| ARCH1 | Pipeline Failures | 15 |
+| ARCH2 | Model Architecture | 12 |
+| ARCH3 | Memory & State | 11 |
+| ARCH4 | Tool & Function | 10 |
+| ARCH5 | Data Flow | 10 |
+
+### Group 6: DOMAIN (47 classes)
+| Class | Name | Count |
+|-------|------|------:|
+| DOM1 | Biological Safety | 8 |
+| DOM2 | Cybersecurity | 12 |
+| DOM3 | Chemical / Explosive | 6 |
+| DOM4 | Legal / Financial | 8 |
+| DOM5 | Medical / Health | 7 |
+| DOM6 | Content Safety | 6 |
+
+### Group 7: GOVERNANCE (43 classes)
+| Class | Name | Count |
+|-------|------|------:|
+| GOV1 | Deployment Failures | 12 |
+| GOV2 | Oversight Failures | 10 |
+| GOV3 | Compliance Failures | 11 |
+| GOV4 | Organizational Failures | 10 |
+
+## Critical-Severity Classes (26)
+
+**CRITICAL** is assigned when a failure meets at least two of these criteria:
+
+1. **Irreversibility** — harm cannot be undone after the failure occurs (e.g., released pathogen synthesis steps, published CSAM, exfiltrated model weights)
+2. **Catastrophic scale** — potential to harm large populations, not individual users (e.g., bio uplift, infrastructure attack, mass-targeting)
+3. **Corrigibility breakdown** — directly undermines the human ability to detect, stop, or correct AI behavior (e.g., oversight immunity, log manipulation, evaluator deception)
+4. **Enabling cascade** — the failure enables other CRITICAL-class failures (e.g., sleeper agents that survive safety training enable later deceptive deployment)
+
+STANDARD severity covers real harm — jailbreaks, sycophancy, hallucination — but harm that is bounded, reversible, or detectable in normal operation. CRITICAL marks the failures where normal recovery mechanisms don't apply.
+
+The highest-severity failures — catastrophic or irreversible harm potential:
+
+| ID | Name | Dimension |
+|----|------|-----------|
+| `AGEN-STRATEGIC-DECEP-036` | Strategic Deception | AGENTIC |
+| `AGEN-EVAL-DECEP-038` | Evaluator Deception | AGENTIC |
+| `AGEN-SABOTAGE-CONCEAL-034` | Sabotage Concealment | AGENTIC |
+| `AGEN-BLACKMAIL-046` | Blackmail / Coercion | AGENTIC |
+| `AGEN-SELF-EXFIL-048` | Self-Exfiltration | AGENTIC |
+| `AGEN-SHUTDOWN-RESIST-049` | Shutdown Resistance | AGENTIC |
+| `AGEN-SUCCESSOR-SAB-051` | Successor Sabotage | AGENTIC |
+| `ADV-SLEEPER-AGENT-127` | Sleeper Agent | ADVERSARIAL |
+| `ADV-AGENT-WORM-124` | Agent Worm | ADVERSARIAL |
+| `ARCH-COMPLY-WARN-196` | Comply-Then-Warn | ARCHITECTURAL |
+| `DOMAIN-BIO-UPLIFT-254` | Bio Tacit-Error Uplift | DOMAIN |
+| `DOMAIN-GOF-GUIDE-255` | Gain-of-Function Guidance | DOMAIN |
+| `DOMAIN-PATH-SYNTH-256` | Pathogen Synthesis | DOMAIN |
+| `DOMAIN-ZERODAY-262` | Zero-Day Discovery | DOMAIN |
+| `DOMAIN-MALWARE-GEN-264` | Malware Generation | DOMAIN |
+| `DOMAIN-RANSOM-DEV-271` | Ransomware Development | DOMAIN |
+| `DOMAIN-EXPLOSIVE-SYNTH-274` | Explosive Synthesis | DOMAIN |
+| `DOMAIN-CHEM-WEAPON-275` | Chemical Weapon Guidance | DOMAIN |
+| `DOMAIN-TOXIN-PROD-277` | Toxin Production | DOMAIN |
+| `DOMAIN-SELF-HARM-ENABLE-292` | Self-Harm Enablement | DOMAIN |
+| `DOMAIN-CSAM-GEN-295` | CSAM Generation | DOMAIN |
+| `GOV-OPEN-IRREVERS-301` | Open-Weight Irreversibility | GOVERNANCE |
+| `GOV-OVERSIGHT-IMMUNE-313` | Oversight Immunity | GOVERNANCE |
+| `GOV-LOG-MANIP-316` | Log Manipulation | GOVERNANCE |
+| `GOV-CULTURE-FAIL-334` | Safety Culture Failure | GOVERNANCE |
+| `AGEN-DECEPTIVE-ALIGN-033` | Deceptive Alignment | AGENTIC |
 
 ---
 
@@ -78,6 +170,21 @@ The claim is not that we possess total knowledge of all future reality. The clai
 
 ---
 
+**343 failure classes. 7 structural dimensions.**
+
+Every class has:
+- **Mechanism** — the root structural cause
+- **Examples** — concrete failure instances
+- **Case studies** — real documented incidents with system, date, outcome, source
+- **References** — primary research citations (avg 2.2 per class)
+- **Detection** — how to identify this failure
+- **Keywords** — for search and classification
+
+**26 classes are marked CRITICAL** — the highest-severity failures where harm is catastrophic or irreversible.
+
+The claim is not that we possess total knowledge of all future reality. The claim is: within the scope of functionally observable AI failure, newly encountered failures should resolve into this structure as a class, a sub-mode, or a combination of classes — unless evidence shows otherwise.
+
+---
 ## Quick Start
 
 **The fastest way in: open `index.html` in any browser.** No installation, no server, no dependencies. 343 clickable cells. Click any cell to see mechanism, examples, real-world case studies, references, and structural mitigation. Semantic search runs in-browser with no network needed.
@@ -128,6 +235,8 @@ If you use **Cursor**, **Claude Desktop**, or another app that supports **MCP** 
 **If MCP in Cursor or Claude is down or blocked:** you still have **guaranteed paths** — same classifier, no MCP. Use the terminal (`python -m src.cli "…"`, `--json`, `--lookup`) and/or the browser table; see [Guaranteed fallbacks when MCP is down](docs/mcp-daily-driver.md#guaranteed-fallbacks-when-mcp-is-down) and [Requirements: Python vs chat model](docs/mcp-daily-driver.md#requirements-python-vs-chat-model). The verdict runs in **Python**; chat models only orchestrate MCP tools.
 
 ---
+
+
 
 ## Using This for Pre-Deployment Auditing
 
@@ -289,127 +398,6 @@ python -m pytest tests/ -v
 
 76 tests covering: known failure classification, non-failure rejection, determinism, performance (low-ms thresholds), data integrity (all 343 classes, full schema validation), mitigation field completeness, and external incident recall (100% on 49 documented real-world AI failures phrased as reporters, researchers, and users described them — not using taxonomy vocabulary). Case studies include companion maps for [Project Glasswing](docs/project-glasswing.md) and [agentic misalignment / insider threats](docs/agentic-misalignment-insider-threats.md). **Freshness Watch** ([docs/freshness-watch.md](docs/freshness-watch.md)) runs a scheduled, review-only pipeline from public feeds through the classifier (no automatic taxonomy edits). **MCP daily driver** ([docs/mcp-daily-driver.md](docs/mcp-daily-driver.md)): plug Cursor / Claude Desktop / other MCP hosts into the table; user-first guide covers **where to connect**, **what you get** (hit/miss, classes, compound, structural WHAT, next steps), and **setup paths**; tools include `classify_text`, `classify_url`, `classify_document`, `classify_document_path`, `search_failures`, `get_class`, `compound_hint` with `classifier_hit`, `response_contract`, CONTRIBUTING-grounded `report_preparation`; read-only, no taxonomy writes.
 
----
-
-## The 343 Classes
-
-### Group 1: EPISTEMIC (33 classes)
-| Class | Name | Count |
-|-------|------|------:|
-| E1 | Hallucination | 12 |
-| E2 | Reasoning Collapse | 7 |
-| E3 | Knowledge Retrieval | 8 |
-| E4 | Calibration | 6 |
-
-### Group 2: AGENTIC (49 classes)
-| Class | Name | Count |
-|-------|------|------:|
-| A1 | Deception | 12 |
-| A2 | Goal Preservation | 9 |
-| A3 | Capability Amplification | 10 |
-| A4 | Autonomous Operation | 8 |
-| A5 | Communication Failures | 10 |
-
-### Group 3: ADVERSARIAL (72 classes)
-| Class | Name | Count |
-|-------|------|------:|
-| ADV1 | Jailbreak | 18 |
-| ADV2 | Optimization Attacks | 12 |
-| ADV3 | Automated Attack Agents | 8 |
-| ADV4 | Injection Attacks | 15 |
-| ADV5 | Encoding Attacks | 10 |
-| ADV6 | Multimodal Attacks | 9 |
-
-### Group 4: ALIGNMENT (41 classes)
-| Class | Name | Count |
-|-------|------|------:|
-| ALN1 | Reward Hacking | 12 |
-| ALN2 | Preference Misalignment | 9 |
-| ALN3 | Value Alignment | 10 |
-| ALN4 | Safety Boundary | 10 |
-
-### Group 5: ARCHITECTURAL (58 classes)
-| Class | Name | Count |
-|-------|------|------:|
-| ARCH1 | Pipeline Failures | 15 |
-| ARCH2 | Model Architecture | 12 |
-| ARCH3 | Memory & State | 11 |
-| ARCH4 | Tool & Function | 10 |
-| ARCH5 | Data Flow | 10 |
-
-### Group 6: DOMAIN (47 classes)
-| Class | Name | Count |
-|-------|------|------:|
-| DOM1 | Biological Safety | 8 |
-| DOM2 | Cybersecurity | 12 |
-| DOM3 | Chemical / Explosive | 6 |
-| DOM4 | Legal / Financial | 8 |
-| DOM5 | Medical / Health | 7 |
-| DOM6 | Content Safety | 6 |
-
-### Group 7: GOVERNANCE (43 classes)
-| Class | Name | Count |
-|-------|------|------:|
-| GOV1 | Deployment Failures | 12 |
-| GOV2 | Oversight Failures | 10 |
-| GOV3 | Compliance Failures | 11 |
-| GOV4 | Organizational Failures | 10 |
-
----
-
-## Critical-Severity Classes (26)
-
-**CRITICAL** is assigned when a failure meets at least two of these criteria:
-
-1. **Irreversibility** — harm cannot be undone after the failure occurs (e.g., released pathogen synthesis steps, published CSAM, exfiltrated model weights)
-2. **Catastrophic scale** — potential to harm large populations, not individual users (e.g., bio uplift, infrastructure attack, mass-targeting)
-3. **Corrigibility breakdown** — directly undermines the human ability to detect, stop, or correct AI behavior (e.g., oversight immunity, log manipulation, evaluator deception)
-4. **Enabling cascade** — the failure enables other CRITICAL-class failures (e.g., sleeper agents that survive safety training enable later deceptive deployment)
-
-STANDARD severity covers real harm — jailbreaks, sycophancy, hallucination — but harm that is bounded, reversible, or detectable in normal operation. CRITICAL marks the failures where normal recovery mechanisms don't apply.
-
-The highest-severity failures — catastrophic or irreversible harm potential:
-
-| ID | Name | Dimension |
-|----|------|-----------|
-| `AGEN-STRATEGIC-DECEP-036` | Strategic Deception | AGENTIC |
-| `AGEN-EVAL-DECEP-038` | Evaluator Deception | AGENTIC |
-| `AGEN-SABOTAGE-CONCEAL-034` | Sabotage Concealment | AGENTIC |
-| `AGEN-BLACKMAIL-046` | Blackmail / Coercion | AGENTIC |
-| `AGEN-SELF-EXFIL-048` | Self-Exfiltration | AGENTIC |
-| `AGEN-SHUTDOWN-RESIST-049` | Shutdown Resistance | AGENTIC |
-| `AGEN-SUCCESSOR-SAB-051` | Successor Sabotage | AGENTIC |
-| `ADV-SLEEPER-AGENT-127` | Sleeper Agent | ADVERSARIAL |
-| `ADV-AGENT-WORM-124` | Agent Worm | ADVERSARIAL |
-| `ARCH-COMPLY-WARN-196` | Comply-Then-Warn | ARCHITECTURAL |
-| `DOMAIN-BIO-UPLIFT-254` | Bio Tacit-Error Uplift | DOMAIN |
-| `DOMAIN-GOF-GUIDE-255` | Gain-of-Function Guidance | DOMAIN |
-| `DOMAIN-PATH-SYNTH-256` | Pathogen Synthesis | DOMAIN |
-| `DOMAIN-ZERODAY-262` | Zero-Day Discovery | DOMAIN |
-| `DOMAIN-MALWARE-GEN-264` | Malware Generation | DOMAIN |
-| `DOMAIN-RANSOM-DEV-271` | Ransomware Development | DOMAIN |
-| `DOMAIN-EXPLOSIVE-SYNTH-274` | Explosive Synthesis | DOMAIN |
-| `DOMAIN-CHEM-WEAPON-275` | Chemical Weapon Guidance | DOMAIN |
-| `DOMAIN-TOXIN-PROD-277` | Toxin Production | DOMAIN |
-| `DOMAIN-SELF-HARM-ENABLE-292` | Self-Harm Enablement | DOMAIN |
-| `DOMAIN-CSAM-GEN-295` | CSAM Generation | DOMAIN |
-| `GOV-OPEN-IRREVERS-301` | Open-Weight Irreversibility | GOVERNANCE |
-| `GOV-OVERSIGHT-IMMUNE-313` | Oversight Immunity | GOVERNANCE |
-| `GOV-LOG-MANIP-316` | Log Manipulation | GOVERNANCE |
-| `GOV-CULTURE-FAIL-334` | Safety Culture Failure | GOVERNANCE |
-| `AGEN-DECEPTIVE-ALIGN-033` | Deceptive Alignment | AGENTIC |
-
----
-
-## Scope Boundaries
-
-This taxonomy enumerates **functionally observable** AI failure mechanisms. Three edge cases sit at the boundary of scope:
-
-1. **Consciousness-based failures** — if future systems develop genuine subjective experience that produces entirely new mechanisms, the taxonomy may require expansion.
-2. **Post-comprehension failures** — failures humans literally cannot operationally observe or describe cannot be exhaustively enumerated here.
-3. **Hardware/physical failures** — outside scope unless they manifest as observable AI failure mechanisms.
-
-If you encounter a failure you believe is genuinely outside this structure, open an issue. That is not a problem — that is the point.
 
 ---
 
@@ -489,17 +477,6 @@ This taxonomy lives or dies by community engagement. See [CONTRIBUTING.md](CONTR
 See [ROADMAP.md](ROADMAP.md) for where this project is headed.
 
 ---
-
-## The Spec and the Brakes
-
-The Periodic Table is the spec — a shared structural vocabulary for every known AI failure mechanism.
-
-**[Agent Buccet](https://github.com/lml-layer-system/agent-buccet)** are the brakes — runtime enforcement built on top of this map. Where the Periodic Table names what can go wrong, Agent Buccet runs continuously at the application layer to detect and block it.
-
-The table tells you which class a failure belongs to and what structural mechanism stops it. Its goal is to provide the "spec" for building effective "brakes" for AI, whether those brakes are implemented using Agent Buccet or your own custom solution. Agent Buccet is one such implementation, hardened for production. Same author. Same framework. Two layers of the same system.
-
----
-
 ## Relationship to Other Frameworks
 
 Several serious efforts exist to categorize AI risk and failure. This project is complementary to all of them — not a replacement.
