@@ -18,7 +18,7 @@ failure → known/unknown → class/gap → boundary → UPL / user custom rules
 
 > *The goal is not omniscience but structural predictiveness: that newly encountered failures should resolve into this structure as a class, sub-mode, or compound — unless evidence demonstrates otherwise.*
 
-**Version**: 1.4.22 | **Released**: April 2026 | **License**: MIT | **Status**: Open for community testing and falsification
+**Version**: 1.4.22 | **Released**: April 2026 | **License**: Apache 2.0 | **Status**: Open for community testing and falsification
 
 ---
 
@@ -528,4 +528,4 @@ Contact: ryangat@lmlsystemlayer.com
 
 ## License
 
-MIT — open source, free to use, fork, test, and build on.
+Apache 2.0 — open source, free to use, fork, test, and build on.
