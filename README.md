@@ -1,11 +1,13 @@
 # AI Failure Periodic Table
 
 **A living periodic table for AI failure. 
- The spec for the brakes of AI.**
+ 
+The spec for the brakes of AI.**
 
 The current base is **343 failure classes across 7 dimensions**.
 
 The Spec and the Brakes
+
 The AI Failure Periodic Table is the spec.
 Agent Buccet is the brakes.
 We treat every failure as a data point in a closed-loop engineering process. Every agent action is continuously audited against the Failure Periodic Table to determine its status: Known or Unknown.
