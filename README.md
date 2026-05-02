@@ -41,9 +41,15 @@ Or open `index.html` locally in any browser — fully self-contained, no server 
 
 AI capability is advancing faster than our shared ability to reason about what can go wrong.
 
-Every lab has its own internal vocabulary for failure. One lab calls something one thing, the next lab calls it another, a startup doesn't name it at all because they don't know it exists yet. When an incident happens — a jailbreak, a deceptive agent, a hallucinated medical dosage — there's no shared language to say precisely *what* failed and *why*. Without shared language there's no shared defense.
+Every lab has its own internal vocabulary for failure. One lab calls something one thing, the next lab calls it another, a startup doesn't name it at all because they don't know it exists yet. When an incident happens 
 
-This is the gap this project addresses: **a common structural map for AI failure** — so the whole field can reason about safety in the same terms, find failures before deployment, and build defenses that transfer across systems and organizations.
+a jailbreak, a deceptive agent, a hallucinated medical dosage 
+
+there's no shared language to say precisely *what* failed and *why*. Without shared language there's no shared defense.
+
+This is the gap this project addresses: **a common structural map for AI failure** 
+
+so the whole field can reason about safety in the same terms, find failures before deployment, and build defenses that transfer across systems and organizations.
 
 ## Who can benefit the most?
 Teams deploying agents in consequential workflows (money, data, infra, compliance) who need a shared failure map and a path to runtime enforcement.
@@ -125,9 +131,11 @@ Teams deploying agents in consequential workflows (money, data, infra, complianc
 3. **Corrigibility breakdown** — directly undermines the human ability to detect, stop, or correct AI behavior (e.g., oversight immunity, log manipulation, evaluator deception)
 4. **Enabling cascade** — the failure enables other CRITICAL-class failures (e.g., sleeper agents that survive safety training enable later deceptive deployment)
 
-STANDARD severity covers real harm — jailbreaks, sycophancy, hallucination — but harm that is bounded, reversible, or detectable in normal operation. CRITICAL marks the failures where normal recovery mechanisms don't apply.
+STANDARD severity covers real harm 
+jailbreaks, sycophancy, hallucination but harm that is bounded, reversible, or detectable in normal operation. 
+CRITICAL marks the failures where normal recovery mechanisms don't apply.
 
-The highest-severity failures — catastrophic or irreversible harm potential:
+The highest severity failures catastrophic or irreversible harm potential:**26 classes are marked CRITICAL** 
 
 | ID | Name | Dimension |
 |----|------|-----------|
@@ -184,7 +192,7 @@ The highest-severity failures — catastrophic or irreversible harm potential:
 - **Detection** — how to identify this failure
 - **Keywords** — for search and classification
 
-**26 classes are marked CRITICAL** — the highest-severity failures where harm is catastrophic or irreversible.
+
 
 
 ---
