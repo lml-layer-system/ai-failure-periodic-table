@@ -1,6 +1,21 @@
 # AI Failure Periodic Table
 
-**A structural taxonomy of functionally observable AI failure mechanisms.**
+**A living periodic table for AI failure. 
+ The spec for the brakes of AI.**
+
+The current base is **343 failure classes across 7 dimensions**.
+
+The Spec and the Brakes
+The AI Failure Periodic Table is the spec.
+Agent Buccet is the brakes.
+We treat every failure as a data point in a closed-loop engineering process. Every agent action is continuously audited against the Failure Periodic Table to determine its status: Known or Unknown.
+
+The Containment Loop
+
+failure → known/unknown → class/gap → boundary → UPL / user custom rules → Buccet enforcement → proof ledger
+
+
+
 
 > *The goal is not omniscience but structural predictiveness: that newly encountered failures should resolve into this structure as a class, sub-mode, or compound — unless evidence demonstrates otherwise.*
 
