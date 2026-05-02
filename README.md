@@ -9,7 +9,7 @@ The AI Failure Periodic Table is the spec.
 
 The current base is **343 failure classes across 7 dimensions**.
 
-We treat every failure as a data point in a closed-loop engineering process. Every agent action is continuously audited against the Failure Periodic Table to determine its status: Known or Unknown.
+We treat every failure as a data point in a closed-loop engineering process. 
 
 **The Containment Loop**
 
@@ -170,9 +170,8 @@ The highest-severity failures — catastrophic or irreversible harm potential:
 
 ---
 
-**343 failure classes. 7 structural dimensions.**
+**Every class has**
 
-Every class has:
 - **Mechanism** — the root structural cause
 - **Examples** — concrete failure instances
 - **Case studies** — real documented incidents with system, date, outcome, source
