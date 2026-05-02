@@ -4,19 +4,16 @@
  
 The spec for the brakes of AI.**
 
+The AI Failure Periodic Table is the spec.  
+**[Agent Buccet](https://github.com/lml-layer-system/agent-buccet)** is the brakes.
+
 The current base is **343 failure classes across 7 dimensions**.
-
-The Spec and the Brakes
-
-The AI Failure Periodic Table is the spec.
-**[Agent Buccet](https://github.com/lml-layer-system/agent-buccet)** is the brakes
 
 We treat every failure as a data point in a closed-loop engineering process. Every agent action is continuously audited against the Failure Periodic Table to determine its status: Known or Unknown.
 
-The Containment Loop
+**The Containment Loop**
 
 failure → known/unknown → class/gap → boundary → UPL / user custom rules → Buccet enforcement → proof ledger
-
 
 
 > *The goal is not omniscience but structural predictiveness: that newly encountered failures should resolve into this structure as a class, sub-mode, or compound — unless evidence demonstrates otherwise.*
@@ -42,6 +39,9 @@ AI capability is advancing faster than our shared ability to reason about what c
 Every lab has its own internal vocabulary for failure. One lab calls something one thing, the next lab calls it another, a startup doesn't name it at all because they don't know it exists yet. When an incident happens — a jailbreak, a deceptive agent, a hallucinated medical dosage — there's no shared language to say precisely *what* failed and *why*. Without shared language there's no shared defense.
 
 This is the gap this project addresses: **a common structural map for AI failure** — so the whole field can reason about safety in the same terms, find failures before deployment, and build defenses that transfer across systems and organizations.
+
+## Who can benefit the most?
+Teams deploying agents in consequential workflows (money, data, infra, compliance) who need a shared failure map and a path to runtime enforcement.
 
 ---
 
