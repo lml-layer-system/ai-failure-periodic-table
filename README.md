@@ -182,7 +182,6 @@ Every class has:
 
 **26 classes are marked CRITICAL** — the highest-severity failures where harm is catastrophic or irreversible.
 
-The claim is not that we possess total knowledge of all future reality. The claim is: within the scope of functionally observable AI failure, newly encountered failures should resolve into this structure as a class, a sub-mode, or a combination of classes — unless evidence shows otherwise.
 
 ---
 ## Quick Start
