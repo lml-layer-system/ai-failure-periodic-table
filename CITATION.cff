@@ -6,8 +6,8 @@ authors:
     family-names: "Gatoloai-Faupula"
     email: "ryangat@lmlsystemlayer.com"
     affiliation: "Independent Research"
-version: 1.5.2
-date-released: 2026-04-20
+version: 1.5.3
+date-released: 2026-05-05
 url: "https://github.com/lml-layer-system/ai-failure-periodic-table"
 license: Apache-2.0
 copyright: "2026 R. Gatoloai-Faupula"
