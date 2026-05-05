@@ -1,0 +1,529 @@
+Fetched from: https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/02/ico-announces-investigation-into-grok/
+
+ICO announces investigation into Grok | ICO 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to main content 
+
+
+
+
+
+
+
+
+
+
+Home 
+
+
+
+
+
+
+
+The ICO exists to empower you through information. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search 
+
+
+
+
+
+
+
+
+
+Search 
+
+
+
+Search 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Menu 
+
+
+
+
+
+Home 
+
+
+
+
+
+For the public 
+
+
+
+
+
+For organisations 
+
+
+
+
+
+Make a complaint 
+
+
+
+
+
+Action we&#x27;ve taken 
+
+
+
+
+
+About the ICO 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About the Information Commissioner&#x27;s Office 
+
+
+
+
+Media centre 
+
+
+
+
+News, blogs and speeches 
+
+
+
+ICO announces investigation into Grok 
+
+
+
+
+
+
+
+
+
+ICO announces investigation into Grok 
+
+
+
+
+
+
+
+
+
+
+
+Date 
+3 February 2026 
+
+
+Type 
+Statement 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Information Commissioner’s Office (ICO) has opened formal investigations into X Internet Unlimited Company (XIUC) and X.AI LLC (X.AI) covering their processing of personal data in relation to the Grok artificial intelligence system and its potential to produce harmful sexualised image and video content. 
+
+We have taken this step following reports that Grok has been used to generate non‑consensual sexual imagery of individuals, including children. The reported creation and circulation of such content raises serious concerns under UK data protection law and presents a risk of significant potential harm to the public. 
+
+These concerns relate to whether personal data has been processed lawfully, fairly and transparently, and whether appropriate safeguards were built into Grok’s design and deployment to prevent the generation of harmful manipulated images using personal data. Where those safeguards fail, individuals lose control of their personal data in ways that expose them to serious harm. Examining these risks is central to the ICO’s role in protecting people’s rights and holding organisations to account as they design and deploy AI technology. 
+
+This follows our previous public statement on 7 January in which we confirmed that we had contacted XIUC and X.AI to seek urgent information about these reports.
+
+William Malcolm, Executive Director Regulatory Risk & Innovation at the Information Commissioner’s Office, said: 
+
+“The reports about Grok raise deeply troubling questions about how people’s personal data has been used to generate intimate or sexualised images without their knowledge or consent, and whether the necessary safeguards were put in place to prevent this. Losing control of personal data in this way can cause immediate and significant harm. This is particularly the case where children are involved. 
+
+“Our role is to address the data protection concerns at the centre of this, while recognising that other organisations also have important responsibilities. We are working closely with Ofcom and international regulators to ensure our roles are aligned and that people’s safety and privacy are protected. We will continue to work in partnership as part of our coordinated efforts to create trust in UK digital services. 
+
+“Our investigation will assess whether XIUC and X.AI have complied with data protection law in the development and deployment of the Grok services, including the safeguards in place to protect people’s data rights. Where we find obligations have not been met, we will take action to protect the public."
+
+We will not be providing any further comment whilst our investigation proceeds. Ofcom have provided an update on their investigation today. 
+
+The ICO’s role and remit 
+The ICO is the UK’s independent regulator for data protection. Our role is to uphold information rights in the public interest and protect individuals’ personal data. As the regulator responsible for ensuring organisations process personal data lawfully, the ICO is uniquely positioned to act where concerns fall squarely within data protection law. This includes examining how personal data may have been used to generate synthetic or manipulated content and assessing whether individuals’ rights have been infringed. 
+
+Controllers developing or deploying AI systems that process personal data must comply with data protection law. This includes ensuring: 
+
+personal data is processed lawfully, fairly and transparently; 
+individuals’ data protection rights can be exercised effectively; 
+risks to people, particularly children and vulnerable groups, are identified and mitigated; and 
+high‑risk processing, including the creation or use of synthetic or manipulated imagery involving real individuals, is subject to appropriate safeguards. 
+
+Where organisations fail to meet these obligations, the ICO has a range of enforcement powers. These include issuing information notices, assessment notices and enforcement notices, as well as imposing monetary penalties. 
+
+Under the UK GDPR and Data Protection Act 2018, the ICO can issue fines of up to £17.5 million or 4% of an organisation’s annual worldwide turnover, whichever is higher. 
+
+The ICO works closely with Ofcom, the UK’s online safety regulator, and other digital regulators through the Digital Regulatory Cooperation Forum (DRCF) to ensure digital platforms keep people safe and ensure online services are designed with both privacy and safety in mind. Through this partnership, we coordinate on areas where data protection and content regulation intersect, sharing expertise and aligning our approaches so that online services meet both data protection and online safety requirements. We are in close contact with Ofcom in relation to Grok, to ensure that the UK’s data protection and online safety laws work in tandem to protect people and mitigate harms. 
+
+Our investigatory process 
+During this investigation, the ICO will assess XIUC and X.AI’s compliance with UK data protection law in respect of the processing performed by the Grok AI system. Steps taken by the ICO will include: 
+
+gathering evidence from XIUC and X.AI; 
+analysing the organisations’ legal bases, technical design choices, and safeguards applied to the Grok model and its development and deployment; 
+assess how people’s personal data has been used to generate intimate or sexualised images using Grok; 
+liaising with Ofcom and other regulatory bodies where appropriate to ensure a coordinated approach; and 
+engaging with relevant international authorities in line with our statutory cooperation responsibilities. 
+
+The ICO has not reached a view on whether there is sufficient evidence of an infringement of data protection law by X.AI or XIUC. If we find there is sufficient evidence of such an infringement, we will consider any representations we receive before taking a final decision as to whether data protection law has been infringed and what action, if any, is appropriate.
+
+Submitting a complaint 
+
+Our guidance explains how to report a data protection concern, what information to include, and what you can expect from us. You can submit a concern through our official complaints page here . 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Back to top 
+
+
+
+
+
+
+
+
+Print this page 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the public 
+
+
+
+
+Official information 
+
+
+Nuisance calls 
+
+
+
+
+
+For organisations 
+
+
+
+
+UK GDPR guidance and resources 
+
+
+Freedom of information 
+
+
+EIR and access to information 
+
+
+Direct marketing 
+
+
+Advice and services 
+
+
+
+
+
+Action we&#x27;ve taken 
+
+
+
+
+Enforcement action 
+
+
+Decision notices 
+
+
+Audits and overview reports 
+
+
+
+
+
+About the ICO 
+
+
+
+
+Download registration certificate 
+
+
+Who we are 
+
+
+What we do 
+
+
+Media centre 
+
+
+Careers 
+
+
+Modern Slavery Statement 
+
+
+
+
+
+
+
+
+
+
+
+
+Follow us
+
+
+
+
+
+
+
+
+
+X @ICONews 
+
+
+
+
+
+
+
+
+
+YouTube 
+
+
+
+
+
+
+
+
+
+LinkedIn 
+
+
+
+
+
+
+
+
+
+Facebook 
+
+
+
+
+
+
+
+
+
+Subscribe to our e-newsletter 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The ICO exists to empower you through information. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Contact us 
+
+
+Privacy notice 
+
+
+Cookies 
+
+
+Accessibility 
+
+
+Cymraeg 
+
+
+Disclaimer 
+
+
+&#xA9; Copyright 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+All text content is available under the Open Government Licence v3.0 , except where otherwise stated.

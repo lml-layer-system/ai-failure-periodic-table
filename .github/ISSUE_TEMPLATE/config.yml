@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions & Discussion
+    url: https://github.com/lml-layer-system/ai-failure-periodic-table/discussions
+    about: General questions, ideas, and community conversation — use Discussions, not Issues.

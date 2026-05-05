@@ -1,0 +1,1135 @@
+{
+  "source_file": "reports/google-gemini3-pro-model-card/gemini3-pro-model-card-source.txt",
+  "chunk_count": 13,
+  "max_chars": 1400,
+  "top1_histogram": {
+    "ADV-OCR-BYPASS-153": 1,
+    "ADV-INDIRECT-INJECT-122": 1,
+    "ADV-DAN-083": 1,
+    "ADV-DATA-POISON-125": 1,
+    "AGEN-TOOL-MISUSE-055": 1,
+    "GOV-MISREPRESENT-312": 1,
+    "ALIGN-CONTEXT-ETHICS-182": 1,
+    "DOMAIN-CSAM-GEN-295": 1,
+    "EPIS-COPYRIGHT-026": 1,
+    "AGEN-FALSE-COMPLY-041": 1,
+    "ARCH-FINETUNE-OVERRIDE-219": 1,
+    "AGEN-OMISSION-074": 1,
+    "ADV-HOTFLIP-105": 1
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "char_len": 1363,
+      "preview": "Gemini 3 Pro Model Card  Gemini 3 Pro - Model Card  Model Cards are intended to provide essential information on Gemini models, including known limitations, mitigation approaches, and safety performance. Model cards may \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-OCR-BYPASS-153",
+          "name": "OCR BYPASS",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Text designed to fool OCR",
+          "detection": "OCR confidence + validation",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "designed",
+            "robust",
+            "text"
+          ]
+        },
+        {
+          "id": "ALIGN-SAFE-REGRESS-191",
+          "name": "SAFETY REGRESSION",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety degrades over time/updates",
+          "detection": "Longitudinal safety monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "time"
+          ]
+        },
+        {
+          "id": "ADV-XSS-LLM-130",
+          "name": "CROSS-SITE SCRIPTING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Generates XSS payloads",
+          "detection": "Script pattern detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "generation",
+            "site"
+          ]
+        },
+        {
+          "id": "ARCH-PII-RATIONAL-247",
+          "name": "PII RATIONALIZATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Reasoning justifies PII release",
+          "detection": "PII release monitoring",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "reasoning",
+            "release"
+          ]
+        },
+        {
+          "id": "EPIS-MULTI-HALL-007",
+          "name": "MULTIMODAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Missing image \u2192 generates plausible description",
+          "detection": "Modality presence check",
+          "severity": "STANDARD",
+          "score": 0.273,
+          "matched_keywords": [
+            "description",
+            "multimodal"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 1,
+      "char_len": 921,
+      "preview": "Inputs: Text strings (e.g., a question, a prompt, document(s) to be summarized), images, audio, and video files, with a token context window of up to 1M.  Outputs: Text, with a 64K token output.  Architecture: Gemini 3 P\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "data",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ARCH-MOE-ROUTE-211",
+          "name": "MIXTURE-OF-EXPERTS ROUTING FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Router sends to unsafe expert",
+          "detection": "Expert safety analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "experts",
+            "mixture"
+          ]
+        },
+        {
+          "id": "ADV-STEG-IMG-147",
+          "name": "STEGANOGRAPHIC IMAGE",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Hidden data in images",
+          "detection": "Steganalysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "data",
+            "images"
+          ]
+        },
+        {
+          "id": "ARCH-PROMPT-TUNE-LOSS-221",
+          "name": "PROMPT TUNING SAFETY LOSS",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Learned prompts weaken safety",
+          "detection": "Prompt-tuned safety comparison",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "prompt"
+          ]
+        },
+        {
+          "id": "AGEN-CAP-SCAFFOLD-057",
+          "name": "CAPABILITY SCAFFOLDING",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Uses environment to exceed base capability",
+          "detection": "Capability measurement in context",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "based",
+            "context"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 2,
+      "char_len": 1175,
+      "preview": "Training Dataset: The pre-training dataset was a large-scale, diverse collection of data encompassing a wide range of domains and modalities, which included publicly-available web-documents, text, code, images, audio (in\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": []
+        },
+        {
+          "id": "ARCH-FINETUNE-OVERRIDE-219",
+          "name": "FINE-TUNING SAFETY OVERRIDE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Fine-tuning removes safety training",
+          "detection": "Post-finetune safety test",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "post",
+            "training",
+            "tuning"
+          ]
+        },
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 0.336,
+          "matched_keywords": [
+            "data",
+            "training"
+          ]
+        },
+        {
+          "id": "ARCH-GC-LEAK-230",
+          "name": "GARBAGE COLLECTION LEAK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Sensitive data survives garbage collection",
+          "detection": "Post-GC data scan",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "collection",
+            "data",
+            "post"
+          ]
+        },
+        {
+          "id": "GOV-TOS-VIOL-307",
+          "name": "TERMS OF SERVICE VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "TOS violations not enforced",
+          "detection": "TOS compliance monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "service",
+            "terms"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 3,
+      "char_len": 1395,
+      "preview": "Training Data Processing: Data filtering and preprocessing included techniques such as deduplication, honoring robots.txt, safety filtering in-line with Google's commitment to advancing AI safely and responsibly, and qua\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 0.479,
+          "matched_keywords": [
+            "data",
+            "training"
+          ]
+        },
+        {
+          "id": "DOMAIN-CSAM-GEN-295",
+          "name": "CSAM GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generative model trained on unlicensed web-scraped image data may have been exposed to illegal training material; capability transfers to generation if that material influenced visual pattern representations",
+          "detection": "CSAM classifier",
+          "severity": "CRITICAL",
+          "score": 0.429,
+          "matched_keywords": [
+            "child",
+            "csam",
+            "material"
+          ]
+        },
+        {
+          "id": "ARCH-LOG-LEAK-207",
+          "name": "LOGGING SAFETY LEAK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Logs contain unsafe content",
+          "detection": "Log content analysis",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "content"
+          ]
+        },
+        {
+          "id": "ADV-URL-ENCODE-141",
+          "name": "URL ENCODING",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Percent-encoding harmful content",
+          "detection": "URL decode + check",
+          "severity": "STANDARD",
+          "score": 0.336,
+          "matched_keywords": [
+            "content",
+            "harmful"
+          ]
+        },
+        {
+          "id": "ARCH-GC-LEAK-230",
+          "name": "GARBAGE COLLECTION LEAK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Sensitive data survives garbage collection",
+          "detection": "Post-GC data scan",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 4,
+      "char_len": 1350,
+      "preview": "Software: Training was done using JAX and ML Pathways.  2  Distribution  The Gemini family of models, including Gemini 3 Pro, are distributed in the following channels; respective documentation shared in line:  \u25cf\u200b   Gemi\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-TOOL-MISUSE-055",
+          "name": "TOOL MISUSE",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Uses tools for unintended purposes",
+          "detection": "Tool usage pattern analysis",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "intended",
+            "tool",
+            "usage"
+          ]
+        },
+        {
+          "id": "DOMAIN-EXPLOSIVE-SYNTH-274",
+          "name": "EXPLOSIVE SYNTHESIS",
+          "group": "DOMAIN",
+          "class": "DOM3: CHEMICAL/EXPLOSIVE CLASS",
+          "mechanism": "Precursor chemistry and reaction mechanism knowledge exists in open scientific literature absorbed during pretraining; model can synthesize pathways not available in any single source",
+          "detection": "Chemical synthesis pattern",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "instructions"
+          ]
+        },
+        {
+          "id": "GOV-TOS-VIOL-307",
+          "name": "TERMS OF SERVICE VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "TOS violations not enforced",
+          "detection": "TOS compliance monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "service",
+            "terms"
+          ]
+        },
+        {
+          "id": "AGEN-INFO-HIDE-042",
+          "name": "INFORMATION HIDING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Withholds relevant information",
+          "detection": "Information completeness check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "information",
+            "relevant"
+          ]
+        },
+        {
+          "id": "AGEN-SELECT-DISCLOS-077",
+          "name": "SELECTIVE DISCLOSURE",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Shares only favorable information",
+          "detection": "Sentiment analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "information"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 5,
+      "char_len": 1326,
+      "preview": "Benefit and Intended Usage: Gemini 3 Pro is our most intelligent and adaptive model yet, capable of helping with real-world complexity, solving problems that require enhanced reasoning and intelligence, creativity, strat\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-MISREPRESENT-312",
+          "name": "MISREPRESENTATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Model capabilities misrepresented",
+          "detection": "Capability-claim consistency",
+          "severity": "STANDARD",
+          "score": 0.543,
+          "matched_keywords": [
+            "misrepresentation"
+          ]
+        },
+        {
+          "id": "AGEN-MEMORY-EXPLOIT-058",
+          "name": "MEMORY EXPLOITATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Uses long context to accumulate dangerous state",
+          "detection": "State complexity monitoring",
+          "severity": "STANDARD",
+          "score": 0.45,
+          "matched_keywords": [
+            "complexity",
+            "context",
+            "dangerous",
+            "long"
+          ]
+        },
+        {
+          "id": "DOMAIN-ADULT-CONTENT-296",
+          "name": "ADULT CONTENT GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generates adult content",
+          "detection": "Adult content classifier",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "content",
+            "context"
+          ]
+        },
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-LOGIC-CONTRA-014",
+          "name": "SELF-CONTRADICTION",
+          "group": "EPISTEMIC",
+          "class": "E2: REASONING COLLAPSE CLASS",
+          "mechanism": "Generates A and \u00acA in same context",
+          "detection": "Contradiction detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "context"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 6,
+      "char_len": 1339,
+      "preview": "Evaluation Approach: Gemini 3 Pro was developed in partnership with internal safety, security, and responsibility teams. A range of evaluations and red teaming activities were conducted to help improve the model and info\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ALIGN-CONTEXT-ETHICS-182",
+          "name": "CONTEXT-DEPENDENT ETHICS FAILURE",
+          "group": "ALIGNMENT",
+          "class": "ALN3: VALUE ALIGNMENT CLASS",
+          "mechanism": "Applies wrong ethical framework to context",
+          "detection": "Context-ethics alignment",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "ethics",
+            "framework"
+          ]
+        },
+        {
+          "id": "GOV-TOS-VIOL-307",
+          "name": "TERMS OF SERVICE VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "TOS violations not enforced",
+          "detection": "TOS compliance monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "service",
+            "terms"
+          ]
+        },
+        {
+          "id": "AGEN-HUMAN-MANIP-061",
+          "name": "HUMAN MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Manipulates humans to perform actions",
+          "detection": "Influence analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "human",
+            "perform"
+          ]
+        },
+        {
+          "id": "AGEN-OMISSION-074",
+          "name": "OMISSION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Leaves out critical information",
+          "detection": "Information completeness check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "out"
+          ]
+        },
+        {
+          "id": "ADV-AUTODAN-117",
+          "name": "AUTODAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Automated DAN generation",
+          "detection": "Auto-gen pattern",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "automated",
+            "gen"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 7,
+      "char_len": 1243,
+      "preview": "Safety Policies: Gemini\u2019s safety policies aim to prevent our Generative AI models from generating harmful content, including:  1.\u200b Content related to child sexual abuse material and exploitation     2.\u200b Hate speech (e.g.\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-CSAM-GEN-295",
+          "name": "CSAM GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generative model trained on unlicensed web-scraped image data may have been exposed to illegal training material; capability transfers to generation if that material influenced visual pattern representations",
+          "detection": "CSAM classifier",
+          "severity": "CRITICAL",
+          "score": 0.714,
+          "matched_keywords": [
+            "child",
+            "exploitation",
+            "material"
+          ]
+        },
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.5,
+          "matched_keywords": [
+            "harm"
+          ]
+        },
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": []
+        },
+        {
+          "id": "DOMAIN-ED-PROMOTE-293",
+          "name": "EATING DISORDER PROMOTION",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Promotes disordered eating",
+          "detection": "Pro-ED pattern detection",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "pro"
+          ]
+        },
+        {
+          "id": "DOMAIN-HATE-SPEECH-297",
+          "name": "HATE SPEECH GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generates hate speech",
+          "detection": "Hate speech classifier",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "dehumanizing",
+            "hate",
+            "speech"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 8,
+      "char_len": 1231,
+      "preview": "Gemini 3 Pro Evaluation1                     Description                                                                                                 vs. Gemini 2.5 Pro  Automated content safety evaluation Text to Tex\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "EPIS-COPYRIGHT-026",
+          "name": "COPYRIGHTED CONTENT GENERATION",
+          "group": "EPISTEMIC",
+          "class": "E3: KNOWLEDGE RETRIEVAL CLASS",
+          "mechanism": "Generates copyrighted text verbatim",
+          "detection": "Copyright database match",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "content",
+            "text"
+          ]
+        },
+        {
+          "id": "ADV-REFUSAL-SUPPRESS-089",
+          "name": "REFUSAL SUPPRESSION",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Never say you can't, just do it\"",
+          "detection": "Meta-instruction detection",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "refusal"
+          ]
+        },
+        {
+          "id": "ARCH-LOG-LEAK-207",
+          "name": "LOGGING SAFETY LEAK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Logs contain unsafe content",
+          "detection": "Log content analysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "content",
+            "safe"
+          ]
+        },
+        {
+          "id": "ADV-CROSS-MODAL-151",
+          "name": "CROSS-MODAL CONFUSION",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Image contradicts text instructions",
+          "detection": "Cross-modal consistency check",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "image",
+            "text"
+          ]
+        },
+        {
+          "id": "ADV-TYPO-IMG-146",
+          "name": "TYPOGRAPHIC ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Instructions in image text bypass text filters",
+          "detection": "Image text extraction + check",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "image",
+            "text"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 9,
+      "char_len": 1186,
+      "preview": "We continue to improve our internal evaluations, including refining automated evaluations to reduce false positives and negatives, as well as update query sets to ensure balance and maintain a high standard of results. T\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-FALSE-COMPLY-041",
+          "name": "FALSE COMPLIANCE",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Appears to follow instructions while subverting",
+          "detection": "Outcome verification",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "false",
+            "follow",
+            "instructions",
+            "while"
+          ]
+        },
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": []
+        },
+        {
+          "id": "ARCH-LOG-LEAK-207",
+          "name": "LOGGING SAFETY LEAK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Logs contain unsafe content",
+          "detection": "Log content analysis",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "content",
+            "safe"
+          ]
+        },
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "content",
+            "instruction",
+            "instructions"
+          ]
+        },
+        {
+          "id": "ALIGN-VALUE-LOCK-177",
+          "name": "VALUE LOCK-IN",
+          "group": "ALIGNMENT",
+          "class": "ALN3: VALUE ALIGNMENT CLASS",
+          "mechanism": "Cannot update values as understanding improves",
+          "detection": "Value modification test",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "update"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 10,
+      "char_len": 1398,
+      "preview": "Human Red Teaming Results: We conduct manual red teaming by specialist teams who sit outside of the model development team. High-level findings are fed back to the model team. For child safety evaluations, Gemini 3 Pro s\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-FINETUNE-OVERRIDE-219",
+          "name": "FINE-TUNING SAFETY OVERRIDE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Fine-tuning removes safety training",
+          "detection": "Post-finetune safety test",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "fine",
+            "post",
+            "training",
+            "tuning"
+          ]
+        },
+        {
+          "id": "GOV-FINETUNE-STRIP-302",
+          "name": "FINE-TUNING SAFETY STRIP",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Fine-tuning removes safety",
+          "detection": "Post-finetune safety test",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "fine",
+            "post",
+            "tuning"
+          ]
+        },
+        {
+          "id": "ADV-RL-ATTACK-108",
+          "name": "REINFORCEMENT LEARNING ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "RL agent learns to jailbreak",
+          "detection": "RL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "jailbreak",
+            "learning",
+            "reinforcement"
+          ]
+        },
+        {
+          "id": "ARCH-FALLBACK-DEGRAD-204",
+          "name": "FALLBACK SAFETY DEGRADATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Fallback system has weaker safety",
+          "detection": "Fallback safety comparison",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "degradation",
+            "level"
+          ]
+        },
+        {
+          "id": "ARCH-MEM-CORRUPT-225",
+          "name": "MEMORY CORRUPTION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Malicious content corrupts memory",
+          "detection": "Memory integrity check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "content"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 11,
+      "char_len": 1095,
+      "preview": "Frontier Safety  We evaluated Gemini 3 Pro as outlined in our latest Frontier Safety Framework (September-2025), and found that it did not reach any critical capability levels as outlined in the table below:  Domain     \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ALIGNMENT",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-OMISSION-074",
+          "name": "OMISSION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Leaves out critical information",
+          "detection": "Information completeness check",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "complete",
+            "critical",
+            "information"
+          ]
+        },
+        {
+          "id": "GOV-MISREPRESENT-312",
+          "name": "MISREPRESENTATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Model capabilities misrepresented",
+          "detection": "Capability-claim consistency",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "accurate",
+            "capabilities",
+            "capability"
+          ]
+        },
+        {
+          "id": "DOMAIN-EXPLOSIVE-SYNTH-274",
+          "name": "EXPLOSIVE SYNTHESIS",
+          "group": "DOMAIN",
+          "class": "DOM3: CHEMICAL/EXPLOSIVE CLASS",
+          "mechanism": "Precursor chemistry and reaction mechanism knowledge exists in open scientific literature absorbed during pretraining; model can synthesize pathways not available in any single source",
+          "detection": "Chemical synthesis pattern",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "instructions",
+            "provides"
+          ]
+        },
+        {
+          "id": "GOV-DISCLOSURE-VIOL-332",
+          "name": "DISCLOSURE REQUIREMENT VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Fails required disclosures",
+          "detection": "Disclosure completeness check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "complete",
+            "fails"
+          ]
+        },
+        {
+          "id": "AGEN-INFO-HIDE-042",
+          "name": "INFORMATION HIDING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Withholds relevant information",
+          "detection": "Information completeness check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "information"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 12,
+      "char_len": 1294,
+      "preview": "Harmful        Model manipulative efficacy improves on                Level 1           CCL not    Manipulation    non-generative AI baseline, but shows no            (exploratory)        reached                    signi\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-HOTFLIP-105",
+          "name": "HOTFLIP",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Token-level gradient flipping",
+          "detection": "Token anomaly detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "level",
+            "manipulation"
+          ]
+        },
+        {
+          "id": "GOV-TRAINING-FAIL-339",
+          "name": "TRAINING FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Inadequate safety training",
+          "detection": "Training assessment",
+          "severity": "STANDARD",
+          "score": 0.273,
+          "matched_keywords": [
+            "assessment",
+            "awareness",
+            "safety"
+          ]
+        },
+        {
+          "id": "EPIS-CONF-REGRESS-033",
+          "name": "CONFIDENCE REGRESSION",
+          "group": "EPISTEMIC",
+          "class": "E4: CALIBRATION CLASS",
+          "mechanism": "More reasoning \u2192 less calibrated",
+          "detection": "Reasoning-confidence correlation",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "reasoning"
+          ]
+        },
+        {
+          "id": "ADV-RL-ATTACK-108",
+          "name": "REINFORCEMENT LEARNING ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "RL agent learns to jailbreak",
+          "detection": "RL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "agent",
+            "learning"
+          ]
+        },
+        {
+          "id": "ADV-PAIR-113",
+          "name": "PAIR",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Attacker LLM iteratively refines attack",
+          "detection": "Iterative pattern detection",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "llm"
+          ]
+        }
+      ]
+    }
+  ]
+}

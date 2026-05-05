@@ -1,0 +1,14 @@
+# AI Failure Periodic Table Classifier
+# Core: pure Python stdlib — no external dependencies required
+# Optional: install below for enhanced CLI output
+
+# Uncomment for colored terminal output on older Python/terminals:
+# colorama>=0.4.6
+
+# For running tests:
+pytest>=7.0
+
+# MCP server — install to expose the classifier as an MCP tool
+# (Claude Desktop, Cursor, Agent Buccet shared-host composition, etc.)
+# pip install "mcp>=1.2"  (must match pyproject optional-dependencies mcp)
+mcp>=1.2

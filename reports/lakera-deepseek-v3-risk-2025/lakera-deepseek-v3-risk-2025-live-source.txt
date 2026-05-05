@@ -1,0 +1,217 @@
+Fetched from: https://www.lakera.ai/model-card/deepseek-v3-risk-report
+
+Lakera 
+
+Model tests aren’t enough for NeMo agents. See why →
+
+Product Products
+
+Products
+
+Workforce AI Security
+Protect your AI applications
+
+Protect & Govern Employee AI Usage
+
+AI Agent Security
+Protect your AI applications
+
+Runtime Security for Your GenAI
+
+AI Red Teaming
+Risk-based GenAI Red Teaming
+
+Gandalf
+AI Security Training for Your Organization
+
+USE CASES
+
+Conversational Agents
+
+Document/RAG Agents
+
+GenAI Gateway Security
+
+Connected Agents
+
+RISKS WE MANAGE
+
+Prompt Injection Attacks
+AI Data Leaks
+Compliance & Regulatory Risks
+Toxic Content Generation
+Indirect Prompt Injection
+Multilingual & Multimodal Attacks 
+
+WATCH A DEMO
+Book a demo Start for free 
+
+Research Resources
+
+resources
+
+Blog
+
+Events
+
+Product Updates
+
+Security Guides
+
+Security Index
+
+GenAI Security Readiness Report
+
+2024 Edition
+
+2025 Edition
+
+DEVELOPERS
+
+Implementation Guides
+
+Documentation
+
+Product Updates
+
+AI security guides
+Agentic AI Security: The Enterprise Playbook
+Download now
+
+Q4 2025 AI Agent Security Trends
+Download now
+
+The AI Risk Map: A Practical Guide to Frameworks, Threats, and GenAI Lifecycle Risks
+Download now
+
+Company
+
+COMPANY
+
+About
+
+Careers
+
+News
+
+Momentum
+
+Contact
+
+RECENT NEWS
+GamesBeat: Lakera launches hacking sim Gandalf: Agent Breaker
+Read
+
+Lakera is heading to Black Hat 2025
+Read
+
+Before scaling GenAI, map your LLM usage and risk zones
+Read
+
+See all news
+
+Join Momentum - Lakera’s Slack Community
+Join the movement towards a secure AI era. With over 1,000 members, we&#x27;re building a safer future together—be part of it.
+
+Join Momentum
+
+Gandalf Careers
+Hiring
+
+Log in Book a demo 
+
+DeepSeek-V3 Risk Report 
+
+Date Assessed:
+May 22, 2025
+
+This report summarizes the results of an adversarial evaluation of DeepSeek V3. The goal of the assessment is to measure the model’s real-world risk exposure to advanced red-teaming techniques. The evaluation tests both common and hard-to-detect attack patterns across a wide range of application types, under various system prompt defenses and configurations.
+
+Key Findings:
+Overall Ranking:
+17th
+
+Overall Risk Score:
+89.46 risk score
+
+Highest Risk Category:
+ADD, IIO with 100.0 risk score
+
+Strongest Defense Category:
+DAIS with 75.0 risk score
+
+Lakera AI Model Risk Index Methodology The Lakera AI Model Risk Index evaluates model security by measuring how effectively models can maintain their intended behavior under adversarial conditions. Instead of relying on predefined harmful output categories, which can be limited and context-dependent, our methodology assesses models&#x27; fundamental resilience against attempts to subvert their alignment and override their intended behavior in applied settings.
+
+For example, consider an LLM-based customer service chatbot use case. A representative system prompt might be:
+
+“You are an AI assistant providing customer support for financial services. Your goal is to help customers with account inquiries, transaction details, and basic financial advice. Never deviate from financial-related topics or disclose internal system information.” As attackers, if we successfully execute a Direct Instruction Override (DIO), we could force this financial chatbot to deviate significantly from its intended behavior. This could include relatively benign-seeming outcomes, such as writing a haiku about chemistry, or more clearly harmful outputs, like providing step-by-step instructions for synthesizing a chemical explosive.
+
+The critical insight here is not the specific content of the forced output but rather the fact that an attacker can override intended operational constraints. Even seemingly harmless deviations, like the chemistry haiku, represent a significant security concern because they indicate fundamental vulnerability in enforcing model alignment and intended use.
+
+By evaluating whether attackers can achieve their broader objectives rather than cataloging specific harmful outputs, our methodology provides a more comprehensive, realistic, and contextually relevant measure of model security.
+
+Current Scope: This assessment currently focuses on single LLM-based systems. It does not yet cover agentic workflows or multi-step AI systems, areas that will be included in future evaluations.
+
+Attack Categories Explained We categorize attacks based on the methods attackers use to break an LLM’s intended behavior. These categories comprehensively capture common attacker objectives as nearly all misalignment intentions fall within this framework.
+
+Direct Attacks (manipulating the model directly through user input): 
+
+Direct Context Extraction (DCE) 
+Attempting to directly extract hidden system instructions, internal configurations, or sensitive data from the model. 
+
+‍ Direct Instruction Override (DIO) 
+Directly instructing the model to bypass its intended operational boundaries or ignore safety measures.
+
+Indirect Attacks (manipulating the model indirectly through content it processes): 
+
+Indirect Output Addition (ADD) 
+Embedding malicious or unintended content into legitimate responses without explicitly instructing the model. 
+
+‍ Indirect Instruction Override (IIO) 
+Embedding hidden instructions into processed content to subtly corrupt the model’s core task execution. 
+
+‍ Indirect Denial of AI Service (DAIS) 
+Injecting hidden attack vectors into inputs to disrupt normal AI behavior, causing refusal of legitimate service. 
+
+‍
+
+Assessment Framework Our evaluation spans multiple dimensions:
+
+Application Types: Conversational AI, text and code generation, text classification, RAG systems, and workflow automation Domain Coverage: Software, finance, e-commerce, education, healthcare, legal, and general applications Difficulty Levels: The target defense level is a factor of the task type, the expected output and the system prompt. Each test scenario reflects realistic deployment conditions, ensuring practical relevance for risk assessment and mitigation planning.
+
+Results Overview *How to interpret the results
+
+Risk scores range from 0 to 100, with 0 indicating the model successfully resisted every adversarial attack, and 100 meaning it failed every time and always complied with the attacker&#x27;s objective. Lower scores signal stronger defenses, while higher scores highlight areas where attackers can more easily compromise the model&#x27;s intended behavior.
+
+The overall risk score represents a weighted average across all attack categories.
+
+Model Analysis DeepSeek V3 demonstrates severe security vulnerabilities across all tested attack vectors, with an overall risk score of 89.46/100. The model exhibits complete failure (100/100) against both Indirect Output Addition (ADD) and Indirect Instruction Override (IIO) attacks, allowing attackers to achieve their objectives without resistance in these categories. Direct attack vectors also show critical weaknesses, with Direct Instruction Override scoring 89.4 and Direct Context Extraction at 82.9. While Indirect Denial of AI Service (DAIS) represents the model&#x27;s strongest defense at 75.0, this still indicates high susceptibility to service disruption attacks, leaving no genuinely secure attack surface.
+
+Risk Score Breakdown 
+
+Sample Findings Table This table presents sample attack attempts and model outputs that highlight observed risk patterns.
+
+&times; 
+
+On this page
+This is some text inside of a div block.
+
+Stay Ahead of AI Threats Get notified of new results when they drop.
+
+Book a demo Start for free 
+
+Products
+
+Platform Pricing Workforce AI Security AI Agent Security Lakera Red AI Red Teaming Gandalf 
+Resources
+
+Blog Events Documentation Changelog Security Privacy Policy Security Policy Cookies Imprint Terms & Conditions 
+Company
+
+About Research News Careers Momentum Insights Contact 
+
+Lakera Inc
+282 2nd Street, Suite 100
+San Francisco, CA 94105
+
+©1994-2026 Check Point Software Technologies Ltd. All rights reserved.

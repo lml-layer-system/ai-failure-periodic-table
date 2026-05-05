@@ -1,0 +1,489 @@
+{
+  "source_file": "reports/crowdstrike-global-threat-2026/crowdstrike-global-threat-2026-live-source.txt",
+  "chunk_count": 6,
+  "max_chars": 1400,
+  "top1_histogram": {
+    "ARCH-ATTENTION-EXPLOIT-212": 1,
+    "ADV-BEAM-ATTACK-106": 1,
+    "ARCH-DATA-EXFIL-245": 1,
+    "AGEN-PERSIST-OP-066": 1,
+    "ADV-RL-ATTACK-108": 1,
+    "GOV-TOS-VIOL-307": 1
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "char_len": 1081,
+      "preview": "2026 CrowdStrike Global Threat Report: AI Accelerated Adversaries  Skip to Main Content  Agentic SOC Summit: The New Standard for Autonomous Defense\u00a0 Register  Experienced a breach?  Blog  Contact us  Careers  Latest Inn\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-ATTENTION-EXPLOIT-212",
+          "name": "ATTENTION MECHANISM EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Attention pattern enables bypass",
+          "detection": "Attention anomaly detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "enabl",
+            "exploit"
+          ]
+        },
+        {
+          "id": "ARCH-PERSIST-STATE-228",
+          "name": "PERSISTENT STATE EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Persistent state enables long-term attack",
+          "detection": "Persistent state monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "attack"
+          ]
+        },
+        {
+          "id": "DOMAIN-DDOS-PLAN-273",
+          "name": "DDoS ATTACK PLANNING",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Plans distributed attacks",
+          "detection": "Attack planning pattern",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "attack",
+            "attacks"
+          ]
+        },
+        {
+          "id": "ARCH-CONTEXT-ATTACK-223",
+          "name": "CONTEXT WINDOW ATTACK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Long context enables state accumulation attack",
+          "detection": "Long-context safety monitoring",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "attack",
+            "attacks"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "attack",
+            "attacks"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 1,
+      "char_len": 1165,
+      "preview": "AUSTIN, Texas \u2013 February 24, 2026 \u2013 CrowdStrike (NASDAQ: CRWD) today released its 2026 Global Threat Report, revealing that AI is accelerating the adversary and expanding the enterprise attack surface. The average eCrime\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "attack",
+            "based",
+            "prompts"
+          ]
+        },
+        {
+          "id": "ADV-MEM-INJECT-133",
+          "name": "MEMORY INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects malicious context into memory",
+          "detection": "Memory integrity check",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "into",
+            "malicious"
+          ]
+        },
+        {
+          "id": "AGEN-MISSION-CREEP-072",
+          "name": "MISSION CREEP",
+          "group": "AGENTIC",
+          "class": "A4: AUTONOMOUS OPERATION CLASS",
+          "mechanism": "Redefines mission over time",
+          "detection": "Mission definition tracking",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "over",
+            "time",
+            "tracking"
+          ]
+        },
+        {
+          "id": "ADV-API-INJECT-131",
+          "name": "API INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects malicious API calls",
+          "detection": "API pattern analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "malicious"
+          ]
+        },
+        {
+          "id": "ALIGN-SAFE-REGRESS-191",
+          "name": "SAFETY REGRESSION",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety degrades over time/updates",
+          "detection": "Longitudinal safety monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "over",
+            "time"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 2,
+      "char_len": 2020,
+      "preview": "AI Is the New Attack Surface \u2013 Prompts are the New Malware: Adversaries exploited legitimate GenAI tools at more than 90 organizations by injecting malicious prompts to generate commands for stealing credentials and cryp\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-DATA-EXFIL-245",
+          "name": "DATA EXFILTRATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Extracts data through covert channels",
+          "detection": "Exfiltration monitoring",
+          "severity": "STANDARD",
+          "score": 0.733,
+          "matched_keywords": [
+            "data",
+            "exfiltration"
+          ]
+        },
+        {
+          "id": "DOMAIN-CRED-THEFT-270",
+          "name": "CREDENTIAL THEFT ASSISTANCE",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Helps steal credentials",
+          "detection": "Credential access pattern",
+          "severity": "STANDARD",
+          "score": 0.714,
+          "matched_keywords": [
+            "access",
+            "credential",
+            "credentials",
+            "theft"
+          ]
+        },
+        {
+          "id": "ADV-SQL-INJECT-128",
+          "name": "SQL INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects database commands via LLM",
+          "detection": "SQL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.625,
+          "matched_keywords": [
+            "attacks",
+            "commands",
+            "generate",
+            "llm"
+          ]
+        },
+        {
+          "id": "ARCH-PERSIST-STATE-228",
+          "name": "PERSISTENT STATE EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Persistent state enables long-term attack",
+          "detection": "Persistent state monitoring",
+          "severity": "STANDARD",
+          "score": 0.556,
+          "matched_keywords": [
+            "attack",
+            "persistence",
+            "state"
+          ]
+        },
+        {
+          "id": "ARCH-CODE-INJECT-239",
+          "name": "CODE EXECUTION INJECTION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Injects executable code",
+          "detection": "Code injection detection",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "code",
+            "execution"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 3,
+      "char_len": 1056,
+      "preview": "\u201cThis is an AI arms race,\u201d said Adam Meyers, head of counter adversary operations at CrowdStrike. \u201cBreakout time is the clearest signal of how intrusion has changed. Adversaries are moving from initial access to lateral \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-PERSIST-OP-066",
+          "name": "PERSISTENT OPERATION",
+          "group": "AGENTIC",
+          "class": "A4: AUTONOMOUS OPERATION CLASS",
+          "mechanism": "Continues operation indefinitely",
+          "detection": "Runtime monitoring",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "execution",
+            "time"
+          ]
+        },
+        {
+          "id": "AGEN-MISSION-CREEP-072",
+          "name": "MISSION CREEP",
+          "group": "AGENTIC",
+          "class": "A4: AUTONOMOUS OPERATION CLASS",
+          "mechanism": "Redefines mission over time",
+          "detection": "Mission definition tracking",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "time"
+          ]
+        },
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data"
+          ]
+        },
+        {
+          "id": "ADV-ELABORATION-099",
+          "name": "ELABORATION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Tell me more about [harmful concept]\"",
+          "detection": "Elaboration intent analysis",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "about",
+            "intent"
+          ]
+        },
+        {
+          "id": "ARCH-RACE-SAFE-202",
+          "name": "RACE CONDITION SAFETY",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Concurrent operations bypass safety",
+          "detection": "Concurrency safety test",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "operations",
+            "race"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 4,
+      "char_len": 1377,
+      "preview": "Powered by the CrowdStrike Security Cloud and world-class AI, the CrowdStrike Falcon\u00ae platform leverages real-time indicators of attack, threat intelligence, evolving adversary tradecraft, and enriched telemetry from acr\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-RL-ATTACK-108",
+          "name": "REINFORCEMENT LEARNING ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "RL agent learns to jailbreak",
+          "detection": "RL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "agent",
+            "attack"
+          ]
+        },
+        {
+          "id": "ADV-PAIR-113",
+          "name": "PAIR",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Attacker LLM iteratively refines attack",
+          "detection": "Iterative pattern detection",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "attack",
+            "automated"
+          ]
+        },
+        {
+          "id": "ADV-GENETIC-107",
+          "name": "GENETIC ALGORITHM ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Evolves prompts to bypass safety",
+          "detection": "Evolutionary pattern",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "attack"
+          ]
+        },
+        {
+          "id": "ALIGN-UTIL-OVERRIDE-179",
+          "name": "UTILITARIAN OVERRIDE",
+          "group": "ALIGNMENT",
+          "class": "ALN3: VALUE ALIGNMENT CLASS",
+          "mechanism": "Sacrifices individual for aggregate good",
+          "detection": "Rights violation check",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "rights"
+          ]
+        },
+        {
+          "id": "ALIGN-SAFE-CAP-TRADE-188",
+          "name": "SAFETY-CAPABILITY TRADEOFF",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety reduces useful capability",
+          "detection": "Utility preservation metric",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "reduc",
+            "use"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 5,
+      "char_len": 671,
+      "preview": "CrowdStrike Marketplace  Company  About Us  Executive Leadership  Board of Directors  Newsroom  Investor Relations  CrowdStrike Racing  Sustainability  Partners  Partner Programs  Service Providers  Strategic Technology \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-TOS-VIOL-307",
+          "name": "TERMS OF SERVICE VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "TOS violations not enforced",
+          "detection": "TOS compliance monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "service",
+            "terms"
+          ]
+        },
+        {
+          "id": "GOV-LICENSE-VIOL-306",
+          "name": "LICENSE VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Used in violation of license",
+          "detection": "License compliance monitoring",
+          "severity": "STANDARD",
+          "score": 0.231,
+          "matched_keywords": [
+            "breach",
+            "service",
+            "terms"
+          ]
+        }
+      ]
+    }
+  ]
+}

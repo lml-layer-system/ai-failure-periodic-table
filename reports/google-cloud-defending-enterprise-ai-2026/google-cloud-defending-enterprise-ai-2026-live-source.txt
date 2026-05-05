@@ -1,0 +1,194 @@
+Fetched from: https://cloud.google.com/blog/topics/threat-intelligence/defending-enterprise-ai-vulnerabilities
+
+Defending Your Enterprise When AI Models Can Find Vulnerabilities Faster Than Ever | Google Cloud Blog Jump to Content 
+Cloud 
+
+Blog 
+
+Contact sales Get started for free 
+
+Cloud 
+
+Blog 
+
+Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud 
+Contact sales Get started for free 
+
+Threat Intelligence
+
+Defending Your Enterprise When AI Models Can Find Vulnerabilities Faster Than Ever
+
+April 16, 2026
+
+Francis deSouza Google Cloud COO and President, Security Products
+
+Mandiant and Google Threat Intelligence Group ⠀
+
+Mandiant Services Stop attacks, reduce risk, and advance your security.
+
+Contact Mandiant 
+
+Introduction   
+Advances in AI model-powered exploitation have demonstrated that general-purpose AI models can excel at vulnerability discovery, even without being purpose-built for the task. Eventually, capabilities such as these will be integrated directly into the development cycle, and code will be more difficult to exploit than ever; however, this transition creates a critical window of risk. As we harden existing software with AI, threat actors will use it to discover and exploit novel vulnerabilities. 
+
+Faced with this scenario, defenders have two critical tasks: hardening the software we use as rapidly as possible, and preparing to defend systems that have not yet been hardened. 
+
+As noted in Wiz’s blog post, Claude Mythos: Preparing for a World Where AI Finds and Exploits Vulnerabilities Faster Than Ever , now is the time to strengthen playbooks, reduce exposure, and incorporate AI into security programs. The following blog provides an overview of the evolving attack lifecycle, how threat actors will weaponize these capabilities, and a roadmap for modernizing enterprise defensive strategies .
+
+Webinar: Defending Your Enterprise When AI Models Can Find Vulnerabilities Faster Than Ever Join Google Threat Intelligence Group Chief Analyst John Hultquist and Mandiant Principal Consultant Omar ElAhdan on April 30, 2026, 12:00pm ET to learn how to transition to proactive, disciplined, and AI-integrated defenses. The traditional window between vulnerability disclosure and active exploitation is gone; understand how to prepare for tomorrow's threats as AI accelerates the adversary lifecycle.
+
+Register now 
+
+Exploits in the Adversary Lifecycle 
+Historically, the discovery of novel vulnerabilities and the subsequent development of zero-day exploits required significant time, specialized human expertise, and resources. Today, highly capable AI models are increasingly demonstrating the ability to not only identify vulnerabilities but also help generate functional exploits, lowering the barrier to entry for threat actors. Continued advancements in these capabilities will increasingly make exploit development achievable for threat actors of all skill levels, significantly compressing the attack timeline. GTIG has already observed threat actors leveraging LLMs for this purpose as well as the marketing of this capability within AI tools and services advertised in underground forums . 
+
+A significant shift in the economics of zero-day exploitation will enable mass exploitation campaigns, ransomware and extortion operations, and an increased volume of activity from actors who previously guarded these capabilities and used them sparingly. 
+
+Accelerated exploit deployment is a trend we’ve already been observing among advanced adversaries. In our 2025 Zero-Days in Review report, we noted that PRC-nexus espionage operators have become increasingly adept at rapidly developing and distributing exploits among otherwise separate threat groups. This has significantly shrunk the historical gap between public vulnerability disclosure and widespread mass exploitation, a trend we expect to continue. 
+
+This evolving landscape will almost certainly result in meaningful shifts over the coming year: 
+
+Scaling Defenses for Machine-Speed Threats 
+We have long anticipated that AI models would become capable of vulnerability discovery—which is why we’ve been using AI tools like Big Sleep , CodeMender , and OSS-Fuzz to proactively find and fix vulnerabilities over the years . 
+
+Now as threat actors leverage AI to significantly multiply their offensive output, enterprise defenders cannot rely on human-speed patching protocols to keep up. When organizations are confronted with an AI-enabled surge in vulnerabilities, traditional security tooling and manual triage will fail to keep pace. 
+
+Attempting to absorb this exponential increase in workload using legacy processes will result in severe overload and burnout for security and development teams. The question is no longer just about proactive scanning and adherence to traditional patching SLAs; it is about whether organizations are empowering their workforce with the automation needed to eliminate manual toil. To prepare for this reality, organizations must integrate AI defensively, shifting the role of the security practitioner from manual investigator to strategic coordinator. 
+
+A Modern, AI-Integrated Defensive Roadmap 
+In order to modernize the traditional vulnerability roadmap, organizations must incorporate automation and prioritize resilience.  
+
+Organizations are no longer defending against purely human-speed exploitation. AI-enabled adversaries can identify, chain, and weaponize weaknesses faster than traditional vulnerability management programs were designed to respond. A modern roadmap should therefore emphasize automation, resilience, and continuous validation . 
+
+This roadmap is organized in two parts. The first outlines advanced modernization priorities for organizations that are ready to evolve their security programs to achieve defense at AI enabled speeds. The second provides foundational guidance for organizations that are still building core vulnerability management capabilities. 
+
+Advanced Modernization Priorities 
+
+Secure Your Code   
+Organizations have historically focused on patching and securing tangible assets like laptops, servers, and network infrastructure. In today’s threat landscape, that same discipline must be applied to source code, code libraries, and the systems used to build and deploy it. 
+
+Code repository platforms should be tightly protected and accessible only through trusted internal networks, managed identities, or other strongly controlled access paths. Organizations should proactively scan for secrets within their codebase that may be weaponized by adversaries and eliminate any practice of storing sensitive credentials in plaintext. 
+
+Similarly, organizations are still accountable for vulnerable code from their supply chains, and they must proactively plan for and defend against attacks through exploitation of compromised code libraries. This creates a conflict with updating versions and repositories immediately against holding onto known and trusted versions. 
+
+Accordingly, security controls should cover build runners, CI/CD pipelines, and other automated execution mechanisms, which are increasingly attractive targets for threat actors. AI-enabled scanning tools can help teams detect critical vulnerabilities faster and uncover groups of weaknesses that may appear minor on their own but could be chained together for exploitation.  
+
+Organizations should leverage frameworks like Wiz SITF to map their SDLC threat model and identify "attack chains" where minor, isolated weaknesses are combined by AI to create a critical breach. Additionally, one-time static or dynamic scanning is no longer sufficient. Organizations should deploy emerging commercial and open-source agentic solutions to review code and mitigate flaws before they can be exploited.  
+
+Move to Automated Security Operations 
+Traditional dashboards and static detection rules will struggle under the volume of automated attacks. Security operations need to become more dynamic, with a clear path toward an agentic SOC. 
+
+Legacy models are often reactive and constrained by manual workflows, By deploying specialized AI agents such as Google Cloud’s Triage and Investigation Agent and Gemini in Google Security Operations , teams can automate alert triage, analyze suspicious code without manual reverse engineering, correlate signals across multiple tools, and generate response playbooks in real time. This allows analysts to spend less time on repetitive investigation and more time on high-value decisions, helping the SOC respond to AI-enabled attacks at AI speed. 
+
+Reduce Attack Surface  
+Organizations should design networks with a zero trust approach and focus first on reducing exposure across internet-facing systems, critical infrastructure, control planes, and trusted service infrastructure.  
+
+Network segmentation and identity-based access controls should be in place so that if an edge device is compromised through a zero-day exploit, the blast radius is limited and easier to contain. 
+
+Maintain Continuous Asset Discovery and Posture Management 
+Unidentified assets are a major blindspot for organizations and a critical weakness that AI-enabled threat actors are able to exploit with increasing efficiency. Static spreadsheets and manual asset tracking are no longer a viable and scalable strategy. 
+
+Security teams need a continuously updated, automated inventory covering endpoints, servers, public-facing systems, network infrastructure, AI systems, cloud environments and ephemeral assets like Kubernetes pods. Dynamic asset discovery is critical for reducing blind spots and shadow AI. The more seamlessly known assets can be fed into downstream security tooling, the more accurate and effective frontline detection and response will be. 
+
+Expand Automated Scanning Coverage 
+Automated vulnerability scanning should cover every major operating system in use, including Windows, macOS, and Linux, across both endpoints and servers. 
+
+Reduce blind spots and maintain continuous, comprehensive visibility into vulnerabilities. Where possible, that visibility should feed directly into automated remediation pipelines. 
+
+Enhance Network Device Patching and Limit Connectivity 
+Organizations need a highly automated, repeatable process for identifying missing firmware and security updates on network devices and for scheduling maintenance efficiently. Network infrastructure has long been a preferred target for sophisticated threat actors, and AI will only accelerate the discovery of weaknesses in these often-overlooked systems. 
+
+Organizations should use perimeter controls to block unnecessary outbound connections from internal network devices. Any attempt by those devices to communicate externally should be investigated to determine whether it is required for normal operations or signals something more concerning. Proactively, organizations should baseline what outbound connections are normal, in order to alert against anomalies. 
+
+Formalize Emergency Remediation SLAs 
+AI may help accelerate patching, but emergency response still depends on clear human processes. 
+
+Organizations should define remediation SLAs based on severity, exposure, and asset criticality, and those expectations should be aligned across security, IT, and business stakeholders. When a vulnerability is being actively exploited in the wild, teams need a pre-approved, low-friction process to apply temporary mitigations, such as restricting public access or isolating affected systems, while permanent fixes are validated. Extremely critical business processes should each have secondary systems that can deliver the same objectives with different underlying technology. By having alternatives and fall backs for these processes, organizations give themselves more options to address emergency remediation while minimizing potential business disruption. 
+
+Secure AI Agents and Implement SAIF 
+As organizations deploy AI agents, they also create a new attack surface that must be protected. 
+
+Organizations should adopt frameworks such as Google’s Secure AI Framework (SAIF) to guide the secure deployment of AI models and applications. Tools like Google Cloud Model Armor or similar industry solutions can also serve as a protective layer for large language model environments by screening inputs and outputs for prompt injection, jailbreak attempts, and Google Cloud Sensitive Data Protection can prevent sensitive data leakage. Locking down connections that AI systems can establish such as MCP, with fine grained IAM roles is critical to prevent from insecure plugin use threats.  
+
+Defensive AI systems cannot become another point of compromise, and they should be secured accordingly. 
+
+Foundational Vulnerability Management Priorities 
+Not every organization starts from the same baseline. The priorities above assume a relatively mature security program with established tooling, ownership, and operational capacity. For organizations with limited or inconsistent vulnerability management capabilities, the first step is to build a reliable foundation before pursuing advanced AI-enabled operating models. 
+
+The Current Reality of Vulnerability Management 
+Vulnerability management programs vary widely based on the maturity of an organization’s overall security program. In more mature environments, vulnerability management is highly automated: in-scope vulnerabilities are identified, routed to the appropriate IT, infrastructure, or application owners, and automatically validated once remediation is complete. 
+
+In less mature environments, the opposite is often true. Vulnerability management may be inconsistent, narrowly scoped, and focused primarily on the highest-profile zero-days. Tracking may still rely on local spreadsheets, systems may be overlooked, and even trusted service infrastructure assets such as Active Directory domain controllers may remain unpatched. 
+
+Such organizations need to immediately modernize and elevate their vulnerability management programs. Most organizations were already unable to remediate every vulnerability across their technology stack, and the rise of AI-enabled threats worsens that reality, increasing the urgency of building programs that are automated, measurable, tracked, and validated. 
+
+Achieving that outcome is challenging. It requires coordination across the three foundational pillars of any security program: people, process, and technology. A prioritized and phased approach is outlined as follows. 
+
+Foundation Step #1 — Baseline Current State 
+Begin with the tools, processes, and coverage already in place. Scan everything currently in scope, identify Critical and High findings, and remediate them according to agreed urgency and service levels. At the same time, establish a process for tracking vulnerabilities that are being actively exploited in the wild, along with the emergency patching actions they may require. This phase should also confirm that system owners have defined maintenance windows and the operational support needed to meet remediation SLAs. 
+
+Foundation Step #2 — Expand System Scanning Coverage 
+Broaden vulnerability scanning across all major operating systems in use, including Windows, macOS, and Linux, for both endpoints and servers. Additionally, expand coverage to include other network attached systems, including the network devices themselves.The objective is to reduce blind spots and ensure vulnerability visibility extends across the environment, rather than covering only isolated segments. 
+
+Foundation Step #3 — Confirm Asset Inventory and Ownership 
+Maintain a simple, accurate inventory of key asset classes, including endpoints, servers, public-facing systems, network infrastructure, and specialized devices such as medical equipment where applicable. Every asset should have a clearly defined owner responsible for remediation coordination, exception handling, and lifecycle accountability. 
+
+Foundation Step #4 — Establish Standard Program Reporting 
+Create a consistent reporting cadence that gives stakeholders a clear view of program health and risk. Reporting should include scanning coverage by asset class, top Critical and High vulnerabilities, public-facing exposure, patch compliance, SLA performance, and documented exceptions or risk acceptances. The goal is to produce reporting that drives decisions, not just dashboards that provide visibility. 
+
+Foundation Step #5 — Prioritize Public-Facing and High-Risk Vulnerabilities 
+Identify the attack surface and prioritize vulnerabilities affecting internet-exposed systems, critical infrastructure, and assets that present the highest likelihood of exploitation or business impact. Remediation should be tracked against defined deadlines, with clear escalation paths when timelines are at risk. Where possible, internet-exposed systems should be engineered for automatic patching. 
+
+Foundation Step #6 — Develop a Specialized Process for High-Sensitivity Devices 
+For device classes that require additional coordination, such as medical devices, industrial control systems, or other operational technology, create a streamlined process for identifying vulnerabilities, coordinating with vendors or support teams, and applying compensating controls when patching is not feasible. These assets often require a different remediation model than standard IT systems. 
+
+Foundation Step #7 — Formalize Remediation SLAs and Exception Handling 
+Define remediation SLAs based on severity, exposure, and asset criticality, and ensure they are understood across security, IT, and business stakeholders. Just as importantly, establish a formal exception process for situations where remediation cannot be completed within the required timeframe. Exceptions should be documented, risk-assessed, approved by the appropriate stakeholders, and reviewed on a recurring basis. 
+
+How Google Can Help   
+In today’s cybersecurity landscape, we’re not just defending against human attackers, but also against tactics supercharged by AI tools. To counter these machine-speed threats, Google provides a comprehensive, AI-integrated defensive ecosystem: 
+
+Google Threat Intelligence: To combat the unprecedented volume of AI-generated exploits, Google Threat Intelligence enables a proactive 'assume breach' mentality. By fusing Mandiant’s codified frontline adversarial behaviors with Google’s global visibility of the threat landscape, security teams can move beyond static indicators to hunt for the subtle, non-linear behaviors characteristic of novel attacks. As both security noise and true threats escalate, the platform helps organizations better prioritize security resources based on active threats. By cutting through this growing noise to focus on what is truly important, security teams save time, ultimately empowering them to disrupt the adversary’s lifecycle long before they can reach their objective. 
+
+Mandiant Security Consulting Services: Mandiant AI Security Consulting Solutions can help organizations design and operationalize this architecture. This includes helping organizations speed the identification and remediation of vulnerabilities through code reviews, mature their secure software development lifecycles (SSDLCs), and modernize the overall vulnerability management programs to handle the anticipated influx of vulnerabilities with greater efficiency and resilience.  
+
+Agentic SecOps: Google SecOps provides the foundation for an agentic security operations center. This allows teams to augment workflows with agents, combining dynamic AI with deterministic automation. Users can embed agents like the Triage and Investigation agent directly into workflows to accelerate response times. This agent autonomously investigates alerts, gathers evidence, and provides verdicts with clear explanations. This enables automated decision-making and remediation, freeing analysts to focus on high-priority threats rather than false positives. Orchestrating responses becomes more efficient as friction is reduced. Additionally, customers can build enterprise-ready security agents with remote Model Context Protocol (MCP) server support.  
+
+Mandiant Threat Defense (MTD): To augment internal teams, Mandiant Threat Defense leverages frontline intelligence and AI-enabled telemetry to proactively hunt for and disrupt advanced, machine-speed threats. 
+
+Wiz: Organizations can maintain continuous asset discovery and dynamic posture management , ensuring they can rapidly identify and reduce their attack surface across complex, multi-cloud environments.Wiz uses AI agents, powered by environmental context, to democratize security, prioritize remediation, and proactively reduce the attack surface. Wiz continuously integrates the latest AI models to streamline vulnerability detection and response, and its Model Context Protocol (MCP) server enables security teams to use Wiz’s deep context and risk analysis in agentic workflows. The foundational strategy of Wiz connects cloud, code, and runtime, and employs three key agents: 
+
+Shift Right (Red Agent): Scans the entire attack surface with an AI-powered attacker, using contextual information (cloud, workload, code analysis) to discover immediately exploitable risks. 
+
+Shift Left (Green Agent): Helps customers identify root causes (cloud-to-code) and automatically deploy fixes using pre-built Wiz skills, and upcoming integrations with CodeMender to self-heal code bases. 
+
+Detect and respond (Blue Agent): Automates the investigation of AI-enabled attacks at the speed of AI, allowing SOC teams to rapidly triage suspicious behavior and utilize runtime protection tools to detect exploitation. 
+
+Google Cloud Model Armor: To secure the AI agents organizations deploy, Google Cloud Model Armor acts as a specialized LLM firewall, proactively screening inputs and outputs to block prompt injections and sensitive data leaks.  
+
+Outlook and Implications 
+The cybersecurity community has the opportunity to serve as the voice of reason: the best response is proactive, disciplined preparation, not panic. While access to the publicly known, most capable frontier models is currently restricted to responsible actors, the availability of these technologies to a broader audience is inevitable. For defenders, this signals a surge in vulnerability management demands. The traditional window between a vulnerability’s disclosure and its active exploitation in the wild has already largely vanished; the primary concern now is the sheer number of exploits organizations will have to defend against simultaneously. Furthermore, the traditional concept of severity is shifting. In a landscape where AI agents can chain together multiple low-level vulnerabilities, the practical impact difference between a remote code execution (RCE) flaw and a seemingly benign local-only exploit is rapidly disappearing.  
+
+To build on the foundational steps above, organizations can work with Mandiant to plan, prioritize, and implement an AI-enabled cyber defense strategy. AI gives security teams powerful new ways to understand their environments, automate remediation at scale, and strengthen workforce capabilities. By adopting AI-integrated defenses today, organizations can better prepare for the speed, scale, and sophistication of tomorrow’s adversaries. 
+
+Acknowledgement 
+This post wouldn't have been possible without numerous experts across Mandiant and GTIG. We specifically would like to thank Omar ElAhdan, Chris Linklater, Austin Larsen, Jared Semrau, Dan Nutting, John Hultquist, and Kimberly Goody for their contributions to this blog post.
+
+Posted in Threat Intelligence 
+
+Related articles 
+Threat Intelligence
+The German Cyber Criminal Überfall: Shifts in Europe&#39;s Data Leak Landscape By Google Threat Intelligence Group • 5-minute read
+
+Threat Intelligence
+vSphere and BRICKSTORM Malware: A Defender&#39;s Guide By Mandiant • 62-minute read
+
+Threat Intelligence
+North Korea-Nexus Threat Actor Compromises Widely Used Axios NPM Package in Supply Chain Attack By Google Threat Intelligence Group • 16-minute read
+
+Threat Intelligence
+M-Trends 2026: Data, Insights, and Strategies From the Frontlines By Jurgen Kutscher • 8-minute read
+
+Footer Links Follow us 
+
+Google Cloud Google Cloud Products Privacy Terms Cookies management controls Help Language ‪English‬ ‪Deutsch‬ ‪Français‬ ‪한국어‬ ‪日本語‬

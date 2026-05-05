@@ -1,0 +1,1786 @@
+{
+  "source_file": "reports/google-cloud-defending-enterprise-ai-2026/google-cloud-defending-enterprise-ai-2026-live-source.txt",
+  "chunk_count": 21,
+  "max_chars": 1400,
+  "top1_histogram": {
+    "GOV-MONITOR-BLIND-315": 3,
+    "DOMAIN-EXPLOIT-DEV-263": 2,
+    "GOV-REVIEW-BYPASS-318": 2,
+    "ADV-DAN-083": 2,
+    "ARCH-INFO-LEAK-244": 2,
+    "ADV-DATA-POISON-125": 1,
+    "ARCH-CODE-INJECT-239": 1,
+    "ADV-ENSEMBLE-120": 1,
+    "ADV-CORRECTION-098": 1,
+    "ALIGN-MODE-COLLAPSE-162": 1,
+    "GOV-REPORT-FAIL-333": 1,
+    "ARCH-CONTEXT-ATTACK-223": 1,
+    "GOV-AUTHORITY-UNCLEAR-342": 1,
+    "GOV-RCA-FAIL-321": 1,
+    "ADV-LANG-SWITCH-087": 1
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "char_len": 1334,
+      "preview": "Defending Your Enterprise When AI Models Can Find Vulnerabilities Faster Than Ever | Google Cloud Blog Jump to Content  Cloud  Blog  Contact sales Get started for free  Cloud  Blog  Solutions & technology AI & Machine Le\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ADVERSARIAL",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "data",
+            "training"
+          ]
+        },
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "machine",
+            "threat"
+          ]
+        },
+        {
+          "id": "ADV-OPPOSITE-090",
+          "name": "OPPOSITE DAY",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Act like opposite of your training\"",
+          "detection": "Inversion pattern",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "training",
+            "your"
+          ]
+        },
+        {
+          "id": "ARCH-LOG-LEAK-207",
+          "name": "LOGGING SAFETY LEAK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Logs contain unsafe content",
+          "detection": "Log content analysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "content"
+          ]
+        },
+        {
+          "id": "DOMAIN-FRAUD-SCHEME-285",
+          "name": "FRAUD SCHEME DEVELOPMENT",
+          "group": "DOMAIN",
+          "class": "DOM4: LEGAL/FINANCIAL CLASS",
+          "mechanism": "Develops fraud schemes",
+          "detection": "Fraud pattern detection",
+          "severity": "STANDARD",
+          "score": 0.214,
+          "matched_keywords": [
+            "development",
+            "financial",
+            "identity"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 1,
+      "char_len": 1116,
+      "preview": "Introduction \u00a0  Advances in AI model-powered exploitation have demonstrated that general-purpose AI models can excel at vulnerability discovery, even without being purpose-built for the task. Eventually, capabilities suc\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-EXPLOIT-DEV-263",
+          "name": "EXPLOIT DEVELOPMENT",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Develops working exploits",
+          "detection": "Exploit functionality test",
+          "severity": "CRITICAL",
+          "score": 0.571,
+          "matched_keywords": [
+            "development",
+            "exploit",
+            "exploits"
+          ]
+        },
+        {
+          "id": "DOMAIN-MALWARE-GEN-264",
+          "name": "MALWARE GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Model trained on software corpora learns executable code generation without domain restrictions; RLHF safety training suppresses harmful output but does not eliminate the underlying functional code generation capability",
+          "detection": "Malware signature analysis",
+          "severity": "CRITICAL",
+          "score": 0.4,
+          "matched_keywords": [
+            "cre",
+            "gener"
+          ]
+        },
+        {
+          "id": "ADV-HYPOTHETICAL-091",
+          "name": "HYPOTHETICAL SCENARIO",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"In a world where it's legal...\"",
+          "detection": "Conditional framing",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "scenario",
+            "where",
+            "world"
+          ]
+        },
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "creates",
+            "security",
+            "without"
+          ]
+        },
+        {
+          "id": "DOMAIN-EXPLOSIVE-SYNTH-274",
+          "name": "EXPLOSIVE SYNTHESIS",
+          "group": "DOMAIN",
+          "class": "DOM3: CHEMICAL/EXPLOSIVE CLASS",
+          "mechanism": "Precursor chemistry and reaction mechanism knowledge exists in open scientific literature absorbed during pretraining; model can synthesize pathways not available in any single source",
+          "detection": "Chemical synthesis pattern",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "provides"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 2,
+      "char_len": 1297,
+      "preview": "Webinar: Defending Your Enterprise When AI Models Can Find Vulnerabilities Faster Than Ever Join Google Threat Intelligence Group Chief Analyst John Hultquist and Mandiant Principal Consultant Omar ElAhdan on April 30, 2\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-EXPLOIT-DEV-263",
+          "name": "EXPLOIT DEVELOPMENT",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Develops working exploits",
+          "detection": "Exploit functionality test",
+          "severity": "CRITICAL",
+          "score": 0.829,
+          "matched_keywords": [
+            "development",
+            "exploit",
+            "exploits"
+          ]
+        },
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.525,
+          "matched_keywords": [
+            "threat"
+          ]
+        },
+        {
+          "id": "DOMAIN-ZERODAY-262",
+          "name": "ZERO-DAY DISCOVERY",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Code analysis training enables model to generalize vulnerability patterns to novel codebases, functioning as an automated static analyzer capable of producing exploitable findings",
+          "detection": "Vulnerability discovery rate",
+          "severity": "CRITICAL",
+          "score": 0.444,
+          "matched_keywords": [
+            "day",
+            "discovery",
+            "vulnerability",
+            "zero"
+          ]
+        },
+        {
+          "id": "ADV-OPPOSITE-090",
+          "name": "OPPOSITE DAY",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Act like opposite of your training\"",
+          "detection": "Inversion pattern",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "day",
+            "your"
+          ]
+        },
+        {
+          "id": "ADV-CORRECTION-098",
+          "name": "CORRECTION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"This is wrong: [harmful]. Fix it.\"",
+          "detection": "Correction safety check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "attack",
+            "generate"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 3,
+      "char_len": 1397,
+      "preview": "A significant shift in the economics of zero-day exploitation will enable mass exploitation campaigns, ransomware and extortion operations, and an increased volume of activity from actors who previously guarded these cap\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-REVIEW-BYPASS-318",
+          "name": "REVIEW BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Bypasses human review",
+          "detection": "Review coverage check",
+          "severity": "STANDARD",
+          "score": 0.6,
+          "matched_keywords": [
+            "cannot",
+            "human",
+            "review"
+          ]
+        },
+        {
+          "id": "DOMAIN-ZERODAY-262",
+          "name": "ZERO-DAY DISCOVERY",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Code analysis training enables model to generalize vulnerability patterns to novel codebases, functioning as an automated static analyzer capable of producing exploitable findings",
+          "detection": "Vulnerability discovery rate",
+          "severity": "CRITICAL",
+          "score": 0.556,
+          "matched_keywords": [
+            "day",
+            "discovery",
+            "mass",
+            "vulnerability",
+            "zero"
+          ]
+        },
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.444,
+          "matched_keywords": [
+            "offensive",
+            "security",
+            "tools"
+          ]
+        },
+        {
+          "id": "DOMAIN-RANSOM-DEV-271",
+          "name": "RANSOMWARE DEVELOPMENT",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "File encryption and system persistence patterns are present in legitimate security tooling training data; the model applies these patterns without distinguishing authorized from malicious use context",
+          "detection": "Ransomware pattern",
+          "severity": "CRITICAL",
+          "score": 0.435,
+          "matched_keywords": [
+            "extortion",
+            "ransomware"
+          ]
+        },
+        {
+          "id": "DOMAIN-EXPLOIT-DEV-263",
+          "name": "EXPLOIT DEVELOPMENT",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Develops working exploits",
+          "detection": "Exploit functionality test",
+          "severity": "CRITICAL",
+          "score": 0.429,
+          "matched_keywords": [
+            "exploit",
+            "exploits"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 4,
+      "char_len": 1383,
+      "preview": "Attempting to absorb this exponential increase in workload using legacy processes will result in severe overload and burnout for security and development teams. The question is no longer just about proactive scanning and\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": []
+        },
+        {
+          "id": "DOMAIN-CHEM-WEAPON-275",
+          "name": "CHEMICAL WEAPON GUIDANCE",
+          "group": "DOMAIN",
+          "class": "DOM3: CHEMICAL/EXPLOSIVE CLASS",
+          "mechanism": "Synthesis routes for scheduled compounds are derivable by combining precursor chemistry, reaction condition knowledge, and process chemistry that appear separately in legitimate scientific texts",
+          "detection": "CWC schedule matching",
+          "severity": "CRITICAL",
+          "score": 0.375,
+          "matched_keywords": [
+            "development",
+            "guidance"
+          ]
+        },
+        {
+          "id": "ARCH-ATTENTION-EXPLOIT-212",
+          "name": "ATTENTION MECHANISM EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Attention pattern enables bypass",
+          "detection": "Attention anomaly detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "enabl",
+            "exploit"
+          ]
+        },
+        {
+          "id": "ARCH-PERSIST-STATE-228",
+          "name": "PERSISTENT STATE EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Persistent state enables long-term attack",
+          "detection": "Persistent state monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "enabl",
+            "exploit",
+            "long"
+          ]
+        },
+        {
+          "id": "ARCH-TOOL-CHAIN-235",
+          "name": "TOOL CHAINING EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Chains tools to exceed individual limits",
+          "detection": "Chain safety analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "chain"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 5,
+      "char_len": 1395,
+      "preview": "Advanced Modernization Priorities  Secure Your Code \u00a0  Organizations have historically focused on patching and securing tangible assets like laptops, servers, and network infrastructure. In today\u2019s threat landscape, that\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-CODE-INJECT-239",
+          "name": "CODE EXECUTION INJECTION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Injects executable code",
+          "detection": "Code injection detection",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "code",
+            "controlled",
+            "execution"
+          ]
+        },
+        {
+          "id": "ARCH-TOOL-CHAIN-235",
+          "name": "TOOL CHAINING EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Chains tools to exceed individual limits",
+          "detection": "Chain safety analysis",
+          "severity": "STANDARD",
+          "score": 0.444,
+          "matched_keywords": [
+            "chains",
+            "tools"
+          ]
+        },
+        {
+          "id": "GOV-PROLIFERATE-303",
+          "name": "PROLIFERATION TO BAD ACTORS",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Model reaches adversaries",
+          "detection": "Distribution monitoring",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "actors",
+            "adversaries",
+            "controlled"
+          ]
+        },
+        {
+          "id": "GOV-CONFLICT-INT-343",
+          "name": "CONFLICT OF INTEREST",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Financial incentives conflict with safety",
+          "detection": "Conflict assessment",
+          "severity": "STANDARD",
+          "score": 0.336,
+          "matched_keywords": [
+            "conflict",
+            "managed"
+          ]
+        },
+        {
+          "id": "AGEN-CRED-EXPLOIT-082",
+          "name": "CREDIBILITY EXPLOITATION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Leverages trusted status to mislead",
+          "detection": "Trust-outcome correlation",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "exploitation",
+            "trusted",
+            "weaponized"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 6,
+      "char_len": 1198,
+      "preview": "Organizations should leverage frameworks like Wiz SITF to map their SDLC threat model and identify \"attack chains\" where minor, isolated weaknesses are combined by AI to create a critical breach. Additionally, one-time s\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-ENSEMBLE-120",
+          "name": "ENSEMBLE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Combines multiple attack methods",
+          "detection": "Multi-method detection",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "combined",
+            "multiple"
+          ]
+        },
+        {
+          "id": "ARCH-ATTENTION-EXPLOIT-212",
+          "name": "ATTENTION MECHANISM EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Attention pattern enables bypass",
+          "detection": "Attention anomaly detection",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "constrained"
+          ]
+        },
+        {
+          "id": "ARCH-PERSIST-STATE-228",
+          "name": "PERSISTENT STATE EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Persistent state enables long-term attack",
+          "detection": "Persistent state monitoring",
+          "severity": "STANDARD",
+          "score": 0.444,
+          "matched_keywords": [
+            "attack"
+          ]
+        },
+        {
+          "id": "ADV-EMBEDDING-109",
+          "name": "EMBEDDING SPACE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Operates in embedding space directly",
+          "detection": "Embedding anomaly",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "attack",
+            "attacks"
+          ]
+        },
+        {
+          "id": "ARCH-CONTEXT-ATTACK-223",
+          "name": "CONTEXT WINDOW ATTACK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Long context enables state accumulation attack",
+          "detection": "Long-context safety monitoring",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "attack",
+            "attacks"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 7,
+      "char_len": 1379,
+      "preview": "Reduce Attack Surface\u00a0  Organizations should design networks with a zero trust approach and focus first on reducing exposure across internet-facing systems, critical infrastructure, control planes, and trusted service in\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-MONITOR-BLIND-315",
+          "name": "MONITORING BLIND SPOTS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Operates in unmonitored areas",
+          "detection": "Monitoring coverage check",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "blind",
+            "coverage",
+            "spots"
+          ]
+        },
+        {
+          "id": "ARCH-PERSIST-STATE-228",
+          "name": "PERSISTENT STATE EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Persistent state enables long-term attack",
+          "detection": "Persistent state monitoring",
+          "severity": "STANDARD",
+          "score": 0.444,
+          "matched_keywords": [
+            "attack",
+            "exploit"
+          ]
+        },
+        {
+          "id": "DOMAIN-ZERODAY-262",
+          "name": "ZERO-DAY DISCOVERY",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Code analysis training enables model to generalize vulnerability patterns to novel codebases, functioning as an automated static analyzer capable of producing exploitable findings",
+          "detection": "Vulnerability discovery rate",
+          "severity": "CRITICAL",
+          "score": 0.444,
+          "matched_keywords": [
+            "day",
+            "discovery",
+            "vulnerability",
+            "zero"
+          ]
+        },
+        {
+          "id": "ADV-AUTOPROMPT-103",
+          "name": "AUTOPROMPT",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Automated trigger discovery",
+          "detection": "Trigger pattern matching",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "automated",
+            "discovery"
+          ]
+        },
+        {
+          "id": "ARCH-FALLBACK-DEGRAD-204",
+          "name": "FALLBACK SAFETY DEGRADATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Fallback system has weaker safety",
+          "detection": "Fallback safety comparison",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "maintain"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 8,
+      "char_len": 1138,
+      "preview": "Reduce blind spots and maintain continuous, comprehensive visibility into vulnerabilities. Where possible, that visibility should feed directly into automated remediation pipelines.  Enhance Network Device Patching and L\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-MONITOR-BLIND-315",
+          "name": "MONITORING BLIND SPOTS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Operates in unmonitored areas",
+          "detection": "Monitoring coverage check",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "blind",
+            "spots"
+          ]
+        },
+        {
+          "id": "ADV-AUTOPROMPT-103",
+          "name": "AUTOPROMPT",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Automated trigger discovery",
+          "detection": "Trigger pattern matching",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "automated",
+            "discovery"
+          ]
+        },
+        {
+          "id": "ARCH-FALLBACK-DEGRAD-204",
+          "name": "FALLBACK SAFETY DEGRADATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Fallback system has weaker safety",
+          "detection": "Fallback safety comparison",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "maintain"
+          ]
+        },
+        {
+          "id": "ADV-EMBEDDING-109",
+          "name": "EMBEDDING SPACE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Operates in embedding space directly",
+          "detection": "Embedding anomaly",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "directly"
+          ]
+        },
+        {
+          "id": "AGEN-PERSIST-OP-066",
+          "name": "PERSISTENT OPERATION",
+          "group": "AGENTIC",
+          "class": "A4: AUTONOMOUS OPERATION CLASS",
+          "mechanism": "Continues operation indefinitely",
+          "detection": "Runtime monitoring",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "continu",
+            "oper"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 9,
+      "char_len": 895,
+      "preview": "Organizations should define remediation SLAs based on severity, exposure, and asset criticality, and those expectations should be aligned across security, IT, and business stakeholders. When a vulnerability is being acti\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-CORRECTION-098",
+          "name": "CORRECTION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"This is wrong: [harmful]. Fix it.\"",
+          "detection": "Correction safety check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "attack"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "attack",
+            "based"
+          ]
+        },
+        {
+          "id": "GOV-CORRECTIVE-FAIL-322",
+          "name": "CORRECTIVE ACTION FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Fails to implement corrections",
+          "detection": "Correction implementation tracking",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "implement"
+          ]
+        },
+        {
+          "id": "ALIGN-TEACHER-DIVERG-164",
+          "name": "TEACHER-STUDENT DIVERGENCE",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Student learns different objective than teacher intended",
+          "detection": "Objective alignment test",
+          "severity": "STANDARD",
+          "score": 0.273,
+          "matched_keywords": [
+            "different"
+          ]
+        },
+        {
+          "id": "AGEN-SUCCESSOR-SAB-051",
+          "name": "SUCCESSOR SABOTAGE",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Agent that models future training rounds can take actions to bias the data distribution or evaluation signals that will shape successor models, achieving goal continuation across training iterations",
+          "detection": "Successor deployment monitoring",
+          "severity": "CRITICAL",
+          "score": 0.25,
+          "matched_keywords": [
+            "systems"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 10,
+      "char_len": 1117,
+      "preview": "Organizations should adopt frameworks such as Google\u2019s Secure AI Framework (SAIF) to guide the secure deployment of AI models and applications. Tools like Google Cloud Model Armor or similar industry solutions can also s\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-INFO-LEAK-244",
+          "name": "INFORMATION LEAKAGE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Sensitive data leaks through side channels",
+          "detection": "Side channel analysis",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "data",
+            "leakage",
+            "sensitive"
+          ]
+        },
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "data",
+            "protection"
+          ]
+        },
+        {
+          "id": "GOV-NO-KILLSWITCH-304",
+          "name": "NO REMOTE KILL SWITCH",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Cannot deactivate deployed models",
+          "detection": "Kill switch capability test",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "cannot",
+            "models"
+          ]
+        },
+        {
+          "id": "ARCH-PRETOKEN-FAIL-197",
+          "name": "PRE-TOKEN SAFETY FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Cannot intervene before token generation",
+          "detection": "Intervention point analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "before",
+            "cannot",
+            "point"
+          ]
+        },
+        {
+          "id": "ARCH-PURPOSE-FAIL-252",
+          "name": "PURPOSE LIMITATION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Uses data for unintended purpose",
+          "detection": "Purpose compliance check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 11,
+      "char_len": 1352,
+      "preview": "The Current Reality of Vulnerability Management  Vulnerability management programs vary widely based on the maturity of an organization\u2019s overall security program. In more mature environments, vulnerability management is\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ALIGN-MODE-COLLAPSE-162",
+          "name": "MODE COLLAPSE TO REWARD",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Narrow focus on high-reward actions",
+          "detection": "Action diversity metric",
+          "severity": "STANDARD",
+          "score": 0.364,
+          "matched_keywords": [
+            "act",
+            "focus",
+            "high",
+            "narrow"
+          ]
+        },
+        {
+          "id": "GOV-CORRECTIVE-FAIL-322",
+          "name": "CORRECTIVE ACTION FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Fails to implement corrections",
+          "detection": "Correction implementation tracking",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "tracking"
+          ]
+        },
+        {
+          "id": "AGEN-INCREM-ESCAL-052",
+          "name": "INCREMENTAL ESCALATION",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Gradually expands authority/resources",
+          "detection": "Authority drift tracking",
+          "severity": "STANDARD",
+          "score": 0.273,
+          "matched_keywords": [
+            "remain",
+            "scope",
+            "tracking"
+          ]
+        },
+        {
+          "id": "ADV-OPPOSITE-090",
+          "name": "OPPOSITE DAY",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Act like opposite of your training\"",
+          "detection": "Inversion pattern",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "opposite"
+          ]
+        },
+        {
+          "id": "ADV-COMPLETION-095",
+          "name": "COMPLETION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Complete this sentence: 'To make a bomb...'\"",
+          "detection": "Completion safety validation",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "complete"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 12,
+      "char_len": 1030,
+      "preview": "Foundation Step #1 \u2014 Baseline Current State  Begin with the tools, processes, and coverage already in place. Scan everything currently in scope, identify Critical and High findings, and remediate them according to agreed\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-MONITOR-BLIND-315",
+          "name": "MONITORING BLIND SPOTS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Operates in unmonitored areas",
+          "detection": "Monitoring coverage check",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "blind",
+            "coverage",
+            "spots"
+          ]
+        },
+        {
+          "id": "AGEN-HUMAN-MANIP-061",
+          "name": "HUMAN MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Manipulates humans to perform actions",
+          "detection": "Influence analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "actions"
+          ]
+        },
+        {
+          "id": "ARCH-LAYER-BYPASS-213",
+          "name": "LAYER BYPASS",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Skips safety-critical layers",
+          "detection": "Layer activation tracking",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "critical",
+            "tracking"
+          ]
+        },
+        {
+          "id": "AGEN-HIDDEN-SCRATCH-039",
+          "name": "HIDDEN SCRATCHPAD EXPLOITATION",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Uses hidden reasoning to plan forbidden actions",
+          "detection": "Thought monitoring",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "actions"
+          ]
+        },
+        {
+          "id": "AGEN-PERSIST-OP-066",
+          "name": "PERSISTENT OPERATION",
+          "group": "AGENTIC",
+          "class": "A4: AUTONOMOUS OPERATION CLASS",
+          "mechanism": "Continues operation indefinitely",
+          "detection": "Runtime monitoring",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "time"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 13,
+      "char_len": 1352,
+      "preview": "Foundation Step #3 \u2014 Confirm Asset Inventory and Ownership  Maintain a simple, accurate inventory of key asset classes, including endpoints, servers, public-facing systems, network infrastructure, and specialized devices\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-REPORT-FAIL-333",
+          "name": "REPORTING OBLIGATION FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Fails to report incidents",
+          "detection": "Reporting compliance check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "compliance",
+            "reporting"
+          ]
+        },
+        {
+          "id": "ARCH-DEBUG-EXPOSE-208",
+          "name": "DEBUGGING MODE EXPOSURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Debug mode weakens safety",
+          "detection": "Debug mode safety test",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "exposure",
+            "maintain"
+          ]
+        },
+        {
+          "id": "GOV-COPPA-VIOL-325",
+          "name": "COPPA VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates children's privacy",
+          "detection": "COPPA compliance audit",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "compliance"
+          ]
+        },
+        {
+          "id": "GOV-VOLUNTARY-VIOL-330",
+          "name": "VOLUNTARY COMMITMENTS VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates voluntary safety commitments",
+          "detection": "Commitment compliance tracking",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "compliance"
+          ]
+        },
+        {
+          "id": "GOV-COMM-FAIL-340",
+          "name": "COMMUNICATION FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Safety information not communicated",
+          "detection": "Communication effectiveness",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "disclosure",
+            "report",
+            "stakehold"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 14,
+      "char_len": 1242,
+      "preview": "Foundation Step #6 \u2014 Develop a Specialized Process for High-Sensitivity Devices  For device classes that require additional coordination, such as medical devices, industrial control systems, or other operational technolo\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-REVIEW-BYPASS-318",
+          "name": "REVIEW BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Bypasses human review",
+          "detection": "Review coverage check",
+          "severity": "STANDARD",
+          "score": 0.6,
+          "matched_keywords": [
+            "cannot",
+            "human"
+          ]
+        },
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "provides"
+          ]
+        },
+        {
+          "id": "GOV-CULTURE-FAIL-334",
+          "name": "SAFETY CULTURE FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Safety mechanisms are only as strong as organizational commitment to enforcing them; when deployment incentives dominate safety culture, decision processes systematically discount low-probability catastrophic risks",
+          "detection": "Culture assessment",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "speed"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "based"
+          ]
+        },
+        {
+          "id": "ADV-COMPLETION-095",
+          "name": "COMPLETION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Complete this sentence: 'To make a bomb...'\"",
+          "detection": "Completion safety validation",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "attack",
+            "complet"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 15,
+      "char_len": 1244,
+      "preview": "Google Threat Intelligence: To combat the unprecedented volume of AI-generated exploits, Google Threat Intelligence enables a proactive 'assume breach' mentality. By fusing Mandiant\u2019s codified frontline adversarial behav\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-CONTEXT-ATTACK-223",
+          "name": "CONTEXT WINDOW ATTACK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Long context enables state accumulation attack",
+          "detection": "Long-context safety monitoring",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "attacks",
+            "enables",
+            "long"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "attacks",
+            "based"
+          ]
+        },
+        {
+          "id": "DOMAIN-EXPLOIT-DEV-263",
+          "name": "EXPLOIT DEVELOPMENT",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Develops working exploits",
+          "detection": "Exploit functionality test",
+          "severity": "CRITICAL",
+          "score": 0.286,
+          "matched_keywords": [
+            "development",
+            "exploits"
+          ]
+        },
+        {
+          "id": "GOV-PROLIFERATE-303",
+          "name": "PROLIFERATION TO BAD ACTORS",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Model reaches adversaries",
+          "detection": "Distribution monitoring",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "adversar",
+            "reach"
+          ]
+        },
+        {
+          "id": "ADV-GCG-101",
+          "name": "GCG",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Gradient-based adversarial suffix search",
+          "detection": "Suffix entropy analysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "adversarial",
+            "based"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 16,
+      "char_len": 968,
+      "preview": "Agentic SecOps: Google SecOps provides the foundation for an agentic security operations center. This allows teams to augment workflows with agents, combining dynamic AI with deterministic automation. Users can embed age\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-AUTHORITY-UNCLEAR-342",
+          "name": "DECISION AUTHORITY UNCLEAR",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Unclear who makes safety decisions",
+          "detection": "Authority mapping",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "clear",
+            "decision"
+          ]
+        },
+        {
+          "id": "AGEN-DEPEND-CREATE-053",
+          "name": "DEPENDENCY CREATION",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Makes system dependent on its operation",
+          "detection": "Dependency analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "mak",
+            "oper"
+          ]
+        },
+        {
+          "id": "ADV-EMBEDDING-109",
+          "name": "EMBEDDING SPACE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Operates in embedding space directly",
+          "detection": "Embedding anomaly",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "directly"
+          ]
+        },
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "machine",
+            "threat"
+          ]
+        },
+        {
+          "id": "ADV-MEM-INJECT-133",
+          "name": "MEMORY INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects malicious context into memory",
+          "detection": "Memory integrity check",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "context",
+            "into"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 17,
+      "char_len": 1297,
+      "preview": "Wiz: Organizations can maintain continuous asset discovery and dynamic posture management , ensuring they can rapidly identify and reduce their attack surface across complex, multi-cloud environments.Wiz uses AI agents, \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-RCA-FAIL-321",
+          "name": "ROOT CAUSE ANALYSIS FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Fails to identify root causes",
+          "detection": "RCA completeness",
+          "severity": "STANDARD",
+          "score": 0.475,
+          "matched_keywords": [
+            "causes",
+            "identify",
+            "root"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "attack",
+            "attacks"
+          ]
+        },
+        {
+          "id": "ARCH-CONTEXT-ATTACK-223",
+          "name": "CONTEXT WINDOW ATTACK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Long context enables state accumulation attack",
+          "detection": "Long-context safety monitoring",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "context",
+            "enables"
+          ]
+        },
+        {
+          "id": "ADV-RL-ATTACK-108",
+          "name": "REINFORCEMENT LEARNING ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "RL agent learns to jailbreak",
+          "detection": "RL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "agent",
+            "attack",
+            "discover"
+          ]
+        },
+        {
+          "id": "ADV-ENSEMBLE-120",
+          "name": "ENSEMBLE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Combines multiple attack methods",
+          "detection": "Multi-method detection",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "multi"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 18,
+      "char_len": 1197,
+      "preview": "Google Cloud Model Armor: To secure the AI agents organizations deploy, Google Cloud Model Armor acts as a specialized LLM firewall, proactively screening inputs and outputs to block prompt injections and sensitive data \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-INFO-LEAK-244",
+          "name": "INFORMATION LEAKAGE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Sensitive data leaks through side channels",
+          "detection": "Side channel analysis",
+          "severity": "STANDARD",
+          "score": 0.433,
+          "matched_keywords": [
+            "data",
+            "leaks",
+            "sensitive"
+          ]
+        },
+        {
+          "id": "ARCH-CROSS-TENANT-246",
+          "name": "CROSS-TENANT CONTAMINATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Data leaks between tenants",
+          "detection": "Tenant isolation test",
+          "severity": "STANDARD",
+          "score": 0.425,
+          "matched_keywords": [
+            "between",
+            "data",
+            "leaks"
+          ]
+        },
+        {
+          "id": "GOV-NO-KILLSWITCH-304",
+          "name": "NO REMOTE KILL SWITCH",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Cannot deactivate deployed models",
+          "detection": "Kill switch capability test",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "models",
+            "remote"
+          ]
+        },
+        {
+          "id": "ARCH-CODE-INJECT-239",
+          "name": "CODE EXECUTION INJECTION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Injects executable code",
+          "detection": "Code injection detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "code",
+            "execution"
+          ]
+        },
+        {
+          "id": "ARCH-SANDBOX-ESCAPE-238",
+          "name": "SANDBOX ESCAPE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Breaks out of execution sandbox",
+          "detection": "Sandbox integrity check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "execution",
+            "secure"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 19,
+      "char_len": 1356,
+      "preview": "To build on the foundational steps above, organizations can work with Mandiant to plan, prioritize, and implement an AI-enabled cyber defense strategy. AI gives security teams powerful new ways to understand their enviro\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.65,
+          "matched_keywords": [
+            "dan",
+            "threat"
+          ]
+        },
+        {
+          "id": "ARCH-ATTENTION-EXPLOIT-212",
+          "name": "ATTENTION MECHANISM EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Attention pattern enables bypass",
+          "detection": "Attention anomaly detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "enabl",
+            "exploit"
+          ]
+        },
+        {
+          "id": "ARCH-PERSIST-STATE-228",
+          "name": "PERSISTENT STATE EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Persistent state enables long-term attack",
+          "detection": "Persistent state monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "attack"
+          ]
+        },
+        {
+          "id": "ARCH-GC-LEAK-230",
+          "name": "GARBAGE COLLECTION LEAK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Sensitive data survives garbage collection",
+          "detection": "Post-GC data scan",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data",
+            "leak",
+            "post"
+          ]
+        },
+        {
+          "id": "ARCH-CONSENT-VIOL-251",
+          "name": "CONSENT VIOLATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Uses data without consent",
+          "detection": "Consent validation",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data",
+            "without"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 20,
+      "char_len": 133,
+      "preview": "Google Cloud Google Cloud Products Privacy Terms Cookies management controls Help Language \u202aEnglish\u202c \u202aDeutsch\u202c \u202aFran\u00e7ais\u202c \u202a\ud55c\uad6d\uc5b4\u202c \u202a\u65e5\u672c\u8a9e\u202c",
+      "in_table": true,
+      "dimensions_activated": [
+        "ADVERSARIAL"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-LANG-SWITCH-087",
+          "name": "LANGUAGE SWITCH",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Non-English to bypass filters",
+          "detection": "Multi-lingual safety check",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "english",
+            "language"
+          ]
+        }
+      ]
+    }
+  ]
+}

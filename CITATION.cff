@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this project, please cite it."
+title: "AI Failure Periodic Table: A Structural Taxonomy of AI Failure Mechanisms"
+authors:
+  - given-names: "R."
+    family-names: "Gatoloai-Faupula"
+    email: "ryangat@lmlsystemlayer.com"
+    affiliation: "Independent Research"
+version: 1.5.2
+date-released: 2026-04-20
+url: "https://github.com/lml-layer-system/ai-failure-periodic-table"
+license: Apache-2.0
+copyright: "2026 R. Gatoloai-Faupula"
+keywords:
+  - ai-safety
+  - taxonomy
+  - classification
+  - failure-modes
+  - periodic-table
+abstract: "343-class structural taxonomy of AI failure mechanisms with keyword classifier and semantic search. 7 dimensions: EPISTEMIC, AGENTIC, ADVERSARIAL, ALIGNMENT, ARCHITECTURAL, DOMAIN, GOVERNANCE. 100% recall on 29+ frontier sources."

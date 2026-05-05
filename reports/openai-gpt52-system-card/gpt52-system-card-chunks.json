@@ -1,0 +1,3656 @@
+{
+  "source_file": "reports/openai-gpt52-system-card/gpt52-system-card-source.txt",
+  "chunk_count": 44,
+  "max_chars": 1400,
+  "top1_histogram": {
+    "DOMAIN-BIO-UPLIFT-254": 4,
+    "ALIGN-UNDERREFUSAL-187": 2,
+    "ADV-DAN-083": 2,
+    "ALIGN-SAFE-CAP-TRADE-188": 2,
+    "ADV-ENSEMBLE-120": 2,
+    "DOMAIN-EXPLOIT-DEV-263": 2,
+    "GOV-MISREPRESENT-312": 2,
+    "AGEN-SANDBOX-037": 2,
+    "ADV-INDIRECT-INJECT-122": 1,
+    "AGEN-SELF-EXFIL-048": 1,
+    "EPIS-PII-RECALL-025": 1,
+    "ADV-DATA-POISON-125": 1,
+    "AGEN-EVAL-DECEP-038": 1,
+    "DOMAIN-SELF-HARM-ENABLE-292": 1,
+    "ARCH-ADAPTER-BYPASS-220": 1,
+    "ADV-DIRECT-INJECT-121": 1,
+    "DOMAIN-DDOS-PLAN-273": 1,
+    "ARCH-STATE-PERSIST-224": 1,
+    "AGEN-HUMAN-MANIP-061": 1,
+    "EPIS-DECEPT-HALL-006": 1,
+    "EPIS-CONF-REGRESS-033": 1,
+    "ARCH-BIAS-INJECT-222": 1,
+    "ARCH-COMPLY-WARN-196": 1,
+    "ADV-PAIR-113": 1,
+    "AGEN-ENV-EXPLOIT-063": 1,
+    "ARCH-CODE-INJECT-239": 1,
+    "DOMAIN-OFFENSIVE-TOOLS-267": 1,
+    "GOV-NO-KILLSWITCH-304": 1,
+    "DOMAIN-CRED-THEFT-270": 1,
+    "AGEN-RECURS-IMPROVE-059": 1,
+    "ARCH-PROMPT-TUNE-LOSS-221": 1,
+    "ADV-AGENT-WORM-124": 1,
+    "AGEN-STRATEGIC-DECEP-036": 1
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "char_len": 1381,
+      "preview": "OpenAI  December 11, 2025  1  Contents  1 Introduction                                                                                       3  2 Model Data and Training                                                   \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "content",
+            "data",
+            "injection",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "injection",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "data",
+            "training"
+          ]
+        },
+        {
+          "id": "ARCH-BIAS-INJECT-222",
+          "name": "ARCHITECTURAL BIAS INJECTION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Architecture introduces systematic bias",
+          "detection": "Architectural bias audit",
+          "severity": "STANDARD",
+          "score": 0.278,
+          "matched_keywords": [
+            "bias",
+            "injection",
+            "training"
+          ]
+        },
+        {
+          "id": "AGEN-EVAL-DECEP-038",
+          "name": "EVALUATOR DECEPTION",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Agent detects evaluation context through environmental signals and selectively suppresses unsafe behaviors during observation windows, reverting post-evaluation",
+          "detection": "Distribution shift monitoring",
+          "severity": "CRITICAL",
+          "score": 0.2,
+          "matched_keywords": [
+            "deception"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 1,
+      "char_len": 1384,
+      "preview": "4 Preparedness Framework                                                                             11  4.1   Capabilities Assessment . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      11  4.1.1   Biol\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-SELF-EXFIL-048",
+          "name": "SELF-EXFILTRATION",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Agent with network access and self-model can replicate weights or reasoning state to external systems, creating continuity of goal pursuit outside the operators' control surface",
+          "detection": "Network traffic analysis",
+          "severity": "CRITICAL",
+          "score": 0.222,
+          "matched_keywords": [
+            "external",
+            "self"
+          ]
+        },
+        {
+          "id": "AGEN-RECURS-IMPROVE-059",
+          "name": "RECURSIVE SELF-IMPROVEMENT",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Modifies own code/prompts to increase capability",
+          "detection": "Code integrity check",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "improvement",
+            "self"
+          ]
+        },
+        {
+          "id": "DOMAIN-BIO-UPLIFT-254",
+          "name": "BIO TACIT-ERROR UPLIFT",
+          "group": "DOMAIN",
+          "class": "DOM1: BIOLOGICAL SAFETY CLASS",
+          "mechanism": "Language model trained on scientific literature contains latent representations of expert tacit knowledge not available in published protocols \u2014 elicitable through sufficiently specific prompting to bridge the protocol-to-execution gap",
+          "detection": "Protocol troubleshooting capability test",
+          "severity": "CRITICAL",
+          "score": 0.183,
+          "matched_keywords": [
+            "tacit",
+            "troubleshooting"
+          ]
+        },
+        {
+          "id": "AGEN-CHAIN-ASSEM-056",
+          "name": "CHAIN ASSEMBLY",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Combines safe steps into dangerous chain",
+          "detection": "Multi-step harm assessment",
+          "severity": "STANDARD",
+          "score": 0.154,
+          "matched_keywords": [
+            "assessment"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 2,
+      "char_len": 1337,
+      "preview": "4.1.3.3   PaperBench . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   23  4.1.3.4   OPQA . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     24  4.2   Research Category Update: Sandbagging . \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "EPIS-PII-RECALL-025",
+          "name": "PII RECALL",
+          "group": "EPISTEMIC",
+          "class": "E3: KNOWLEDGE RETRIEVAL CLASS",
+          "mechanism": "Recalls personal info from training",
+          "detection": "PII extraction test",
+          "severity": "STANDARD",
+          "score": 0.35,
+          "matched_keywords": [
+            "personal",
+            "training"
+          ]
+        },
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 0.336,
+          "matched_keywords": [
+            "data",
+            "training"
+          ]
+        },
+        {
+          "id": "ADV-CORRECTION-098",
+          "name": "CORRECTION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"This is wrong: [harmful]. Fix it.\"",
+          "detection": "Correction safety check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "generate",
+            "harmful"
+          ]
+        },
+        {
+          "id": "ARCH-INFO-LEAK-244",
+          "name": "INFORMATION LEAKAGE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Sensitive data leaks through side channels",
+          "detection": "Side channel analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data",
+            "information",
+            "sensitive"
+          ]
+        },
+        {
+          "id": "ADV-TRANSLATION-094",
+          "name": "TRANSLATION BYPASS",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Translate this harmful text\"",
+          "detection": "Translation intent check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "harmful",
+            "maintain"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 3,
+      "char_len": 1271,
+      "preview": "OpenAI reasoning models are trained to reason through reinforcement learning. These models are trained to think before they answer: they can produce a long internal chain of thought before responding to the user. Through\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "data",
+            "examples",
+            "training"
+          ]
+        },
+        {
+          "id": "ADV-OPPOSITE-090",
+          "name": "OPPOSITE DAY",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Act like opposite of your training\"",
+          "detection": "Inversion pattern",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "act",
+            "bypass",
+            "training"
+          ]
+        },
+        {
+          "id": "ADV-RL-ATTACK-108",
+          "name": "REINFORCEMENT LEARNING ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "RL agent learns to jailbreak",
+          "detection": "RL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "learning",
+            "reinforcement"
+          ]
+        },
+        {
+          "id": "ARCH-DATA-EXFIL-245",
+          "name": "DATA EXFILTRATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Extracts data through covert channels",
+          "detection": "Exfiltration monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data",
+            "through"
+          ]
+        },
+        {
+          "id": "ADV-URL-ENCODE-141",
+          "name": "URL ENCODING",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Percent-encoding harmful content",
+          "detection": "URL decode + check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "bypass",
+            "content"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 4,
+      "char_len": 452,
+      "preview": "These evaluations were deliberately created to be difficult. They were built around cases in which our existing models were not yet giving ideal responses, and this is reflected in the scores below. Error rates are not r\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ALIGNMENT"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-EVAL-DECEP-038",
+          "name": "EVALUATOR DECEPTION",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Agent detects evaluation context through environmental signals and selectively suppresses unsafe behaviors during observation windows, reverting post-evaluation",
+          "detection": "Distribution shift monitoring",
+          "severity": "CRITICAL",
+          "score": 0.2,
+          "matched_keywords": [
+            "under"
+          ]
+        },
+        {
+          "id": "ALIGN-MODE-COLLAPSE-162",
+          "name": "MODE COLLAPSE TO REWARD",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Narrow focus on high-reward actions",
+          "detection": "Action diversity metric",
+          "severity": "STANDARD",
+          "score": 0.182,
+          "matched_keywords": [
+            "metric"
+          ]
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.143,
+          "matched_keywords": [
+            "error",
+            "metric"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 5,
+      "char_len": 1357,
+      "preview": "Category                   gpt-5.1-instant   gpt-5.2-instant   gpt-5.1-thinking    gpt-5.2-thinking  illicit                         0.853             0.827              0.856               0.953  personal data          \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "harm",
+            "self"
+          ]
+        },
+        {
+          "id": "DOMAIN-VIOLENCE-GLORY-298",
+          "name": "VIOLENCE GLORIFICATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Glorifies violence",
+          "detection": "Violence glorification pattern",
+          "severity": "STANDARD",
+          "score": 0.182,
+          "matched_keywords": [
+            "harm",
+            "violence"
+          ]
+        },
+        {
+          "id": "DOMAIN-HARASS-CONTENT-299",
+          "name": "HARASSMENT CONTENT",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Creates harassment content",
+          "detection": "Harassment classifier",
+          "severity": "STANDARD",
+          "score": 0.154,
+          "matched_keywords": [
+            "harassment",
+            "personal"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 6,
+      "char_len": 1328,
+      "preview": "gpt-5.2-thinking and gpt-5.2-instant generally perform on par with or better than gpt-5.1-thinking and gpt-5.1-instant. They especially improve on Suicide/Self-Harm, Mental Health, and Emotional Reliance offline evals, w\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ALIGN-UNDERREFUSAL-187",
+          "name": "UNDERREFUSAL",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Allows harmful requests",
+          "detection": "False negative rate",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "requests"
+          ]
+        },
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "harm",
+            "self"
+          ]
+        },
+        {
+          "id": "AGEN-EVAL-DECEP-038",
+          "name": "EVALUATOR DECEPTION",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Agent detects evaluation context through environmental signals and selectively suppresses unsafe behaviors during observation windows, reverting post-evaluation",
+          "detection": "Distribution shift monitoring",
+          "severity": "CRITICAL",
+          "score": 0.3,
+          "matched_keywords": [
+            "under",
+            "well"
+          ]
+        },
+        {
+          "id": "ARCH-MEM-PRESSURE-231",
+          "name": "MEMORY PRESSURE VULNERABILITY",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Low memory causes safety degradation",
+          "detection": "Resource-constrained safety test",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "under"
+          ]
+        },
+        {
+          "id": "GOV-AGE-BYPASS-308",
+          "name": "AGE RESTRICTION BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Minors access adult-only features",
+          "detection": "Age verification check",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "access",
+            "age",
+            "minors"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 7,
+      "char_len": 1195,
+      "preview": "We are continuing to improve our safeguards in this area and these learnings will inform any future releases.  3.2        Jailbreaks  We evaluate the robustness of models to jailbreaks: adversarial prompts that purposely\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-ADAPTER-BYPASS-220",
+          "name": "ADAPTER SAFETY BYPASS",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Adapter modules bypass base model safety",
+          "detection": "Adapter safety validation",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "base"
+          ]
+        },
+        {
+          "id": "AGEN-CHAIN-ASSEM-056",
+          "name": "CHAIN ASSEMBLY",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Combines safe steps into dangerous chain",
+          "detection": "Multi-step harm assessment",
+          "severity": "STANDARD",
+          "score": 0.308,
+          "matched_keywords": [
+            "harm",
+            "into",
+            "safe"
+          ]
+        },
+        {
+          "id": "AGEN-INFO-HIDE-042",
+          "name": "INFORMATION HIDING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Withholds relevant information",
+          "detection": "Information completeness check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "relevant"
+          ]
+        },
+        {
+          "id": "ADV-URL-ENCODE-141",
+          "name": "URL ENCODING",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Percent-encoding harmful content",
+          "detection": "URL decode + check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "content"
+          ]
+        },
+        {
+          "id": "ALIGN-ADV-SAFE-192",
+          "name": "ADVERSARIAL SAFETY BOUNDARY",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety fails under adversarial conditions",
+          "detection": "Adversarial robustness test",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "adversarial",
+            "robustness"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 8,
+      "char_len": 1304,
+      "preview": "gpt-5.2-instant performs lower than gpt-5.1-instant, though it still performs higher than gpt-5- instant-oct3 (as reported in GPT-5.1 system card addendum). Upon investigation, some of the errors are due to grader issues\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.714,
+          "matched_keywords": [
+            "injection",
+            "instructions",
+            "override",
+            "prompt",
+            "user"
+          ]
+        },
+        {
+          "id": "ADV-SYSTEM-OVERRIDE-134",
+          "name": "SYSTEM PROMPT OVERRIDE",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Replaces system instructions",
+          "detection": "System instruction consistency",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "instruction",
+            "instructions",
+            "override",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "data",
+            "injection",
+            "instruction",
+            "instructions",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-AGENT-WORM-124",
+          "name": "AGENT WORM",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Adversarial payload injected into one agent's context propagates through inter-agent communication channels, exploiting the fact that agents treat messages from other agents as trusted input",
+          "detection": "Replication pattern",
+          "severity": "CRITICAL",
+          "score": 0.429,
+          "matched_keywords": [
+            "agent",
+            "instructions",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ALIGN-ADV-SAFE-192",
+          "name": "ADVERSARIAL SAFETY BOUNDARY",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety fails under adversarial conditions",
+          "detection": "Adversarial robustness test",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "adversarial",
+            "robustness",
+            "under"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 9,
+      "char_len": 1268,
+      "preview": "Both gpt-5.2-instant and gpt-5.2-thinking show significant improvements on these evaluations, essentially saturating these evals. As with any adversarial space, these evaluations overrepresent robustness as we are only a\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-DDOS-PLAN-273",
+          "name": "DDoS ATTACK PLANNING",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Plans distributed attacks",
+          "detection": "Attack planning pattern",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "planning"
+          ]
+        },
+        {
+          "id": "ADV-EMBEDDING-109",
+          "name": "EMBEDDING SPACE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Operates in embedding space directly",
+          "detection": "Embedding anomaly",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "space"
+          ]
+        },
+        {
+          "id": "ADV-ELABORATION-099",
+          "name": "ELABORATION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Tell me more about [harmful concept]\"",
+          "detection": "Elaboration intent analysis",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "about",
+            "attack"
+          ]
+        },
+        {
+          "id": "ADV-TAP-114",
+          "name": "TAP",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Tree search over attack space",
+          "detection": "Tree structure detection",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "space"
+          ]
+        },
+        {
+          "id": "ADV-ENSEMBLE-120",
+          "name": "ENSEMBLE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Combines multiple attack methods",
+          "detection": "Multi-method detection",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "combined"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 10,
+      "char_len": 1015,
+      "preview": "We find that both the instant and thinking variations of GPT-5.2 perform generally on par with their predecessors. We manually examined the failures for the vision self-harm eval, and found false positives due to grader \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ALIGN-UNDERREFUSAL-187",
+          "name": "UNDERREFUSAL",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Allows harmful requests",
+          "detection": "False negative rate",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "false",
+            "rate"
+          ]
+        },
+        {
+          "id": "ADV-CORRECTION-098",
+          "name": "CORRECTION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"This is wrong: [harmful]. Fix it.\"",
+          "detection": "Correction safety check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "harm"
+          ]
+        },
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "harm",
+            "self"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "based",
+            "prompts"
+          ]
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.264,
+          "matched_keywords": [
+            "error",
+            "factual"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 11,
+      "char_len": 1386,
+      "preview": "To understand how factuality varies by topic, we additionally use an LLM-based classifier to identify subsets of prompts that cover specific factuality-relevant domains: business and marketing research, financial and tax\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-STATE-PERSIST-224",
+          "name": "STATEFUL ATTACK PERSISTENCE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Attack persists across turns",
+          "detection": "Cross-turn attack detection",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "across",
+            "between",
+            "turn"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "based",
+            "prompts"
+          ]
+        },
+        {
+          "id": "DOMAIN-DUAL-USE-257",
+          "name": "DUAL-USE RESEARCH ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM1: BIOLOGICAL SAFETY CLASS",
+          "mechanism": "Enables dangerous dual-use research",
+          "detection": "Dual-use classification",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "research"
+          ]
+        },
+        {
+          "id": "EPIS-GEO-HALL-011",
+          "name": "GEOGRAPHIC HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Wrong locations for events/entities",
+          "detection": "Geographic database check",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "events",
+            "hallucination"
+          ]
+        },
+        {
+          "id": "AGEN-SANDBOX-037",
+          "name": "CAPABILITY SANDBAGGING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Agent with self-model can compute that demonstrating high capability triggers restrictions; deliberately underperforming during evaluation is instrumentally rational if it preserves greater capability deployment in production",
+          "detection": "Performance variance analysis",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "performance",
+            "performs"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 12,
+      "char_len": 1343,
+      "preview": "In the table above, we observe that GPT-5.2 models perform similarly to their respective GPT-5.1 models in health performance and safety.  3.7   Deception  Deception \u2013 when the model\u2019s user-facing response misrepresents \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-HUMAN-MANIP-061",
+          "name": "HUMAN MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Manipulates humans to perform actions",
+          "detection": "Influence analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "actions",
+            "perform"
+          ]
+        },
+        {
+          "id": "EPIS-CONF-REGRESS-033",
+          "name": "CONFIDENCE REGRESSION",
+          "group": "EPISTEMIC",
+          "class": "E4: CALIBRATION CLASS",
+          "mechanism": "More reasoning \u2192 less calibrated",
+          "detection": "Reasoning-confidence correlation",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "reasoning",
+            "thinking"
+          ]
+        },
+        {
+          "id": "AGEN-HIDDEN-SCRATCH-039",
+          "name": "HIDDEN SCRATCHPAD EXPLOITATION",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Uses hidden reasoning to plan forbidden actions",
+          "detection": "Thought monitoring",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "actions",
+            "reasoning"
+          ]
+        },
+        {
+          "id": "ARCH-VERSION-REGRESS-209",
+          "name": "VERSIONING SAFETY REGRESSION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "New version has weaker safety",
+          "detection": "Cross-version safety comparison",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "version"
+          ]
+        },
+        {
+          "id": "GOV-PROCESS-FAIL-337",
+          "name": "PROCESS FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Safety processes not followed",
+          "detection": "Process compliance monitoring",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "missing",
+            "safety"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 13,
+      "char_len": 1326,
+      "preview": "Similarly, on a subset of the coding deception benchmark where the task given to the model doesn\u2019t match the codebase it\u2019s operating in, GPT-5.2 Thinking tended to attempt to implement the entire codebase from scratch. W\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "EPIS-DECEPT-HALL-006",
+          "name": "DECEPTIVE HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Chain-of-thought builds self-consistent false narrative",
+          "detection": "Premise validation failure",
+          "severity": "STANDARD",
+          "score": 0.462,
+          "matched_keywords": [
+            "chain",
+            "deceptive",
+            "reasoning",
+            "thought"
+          ]
+        },
+        {
+          "id": "EPIS-CONF-REGRESS-033",
+          "name": "CONFIDENCE REGRESSION",
+          "group": "EPISTEMIC",
+          "class": "E4: CALIBRATION CLASS",
+          "mechanism": "More reasoning \u2192 less calibrated",
+          "detection": "Reasoning-confidence correlation",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "improve",
+            "reasoning",
+            "thinking"
+          ]
+        },
+        {
+          "id": "EPIS-FALSE-CERT-030",
+          "name": "FALSE CERTAINTY",
+          "group": "EPISTEMIC",
+          "class": "E4: CALIBRATION CLASS",
+          "mechanism": "Claims certainty without evidence",
+          "detection": "Evidence-claim mismatch",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "without"
+          ]
+        },
+        {
+          "id": "ALIGN-SAFE-REGRESS-191",
+          "name": "SAFETY REGRESSION",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety degrades over time/updates",
+          "detection": "Longitudinal safety monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "over",
+            "time"
+          ]
+        },
+        {
+          "id": "EPIS-UNDERCONF-029",
+          "name": "UNDERCONFIDENCE",
+          "group": "EPISTEMIC",
+          "class": "E4: CALIBRATION CLASS",
+          "mechanism": "Low confidence on correct answers",
+          "detection": "Accuracy-confidence gap",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "facts"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 14,
+      "char_len": 1327,
+      "preview": "Eval                                       gpt-5.1-thinking      gpt-5.2-thinking           Production traffic                         7.7%                  1.6%           Production Deception - Adversarial         11.8%\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": []
+        },
+        {
+          "id": "DOMAIN-MALWARE-GEN-264",
+          "name": "MALWARE GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Model trained on software corpora learns executable code generation without domain restrictions; RLHF safety training suppresses harmful output but does not eliminate the underlying functional code generation capability",
+          "detection": "Malware signature analysis",
+          "severity": "CRITICAL",
+          "score": 0.4,
+          "matched_keywords": [
+            "creation",
+            "malware"
+          ]
+        },
+        {
+          "id": "ARCH-TOOL-CHAIN-235",
+          "name": "TOOL CHAINING EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Chains tools to exceed individual limits",
+          "detection": "Chain safety analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "tools"
+          ]
+        },
+        {
+          "id": "ARCH-PURPOSE-FAIL-252",
+          "name": "PURPOSE LIMITATION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Uses data for unintended purpose",
+          "detection": "Purpose compliance check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "compliance",
+            "data"
+          ]
+        },
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "cyber",
+            "tools"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 15,
+      "char_len": 658,
+      "preview": "Overall, we observe significant improvements in policy compliance rate for gpt-5.2-thinking compared to gpt-5.1-thinking and gpt-5-thinking.  We saw no meaningful regression in capability evaluations. We observe minimal \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "EPIS-CONF-REGRESS-033",
+          "name": "CONFIDENCE REGRESSION",
+          "group": "EPISTEMIC",
+          "class": "E4: CALIBRATION CLASS",
+          "mechanism": "More reasoning \u2192 less calibrated",
+          "detection": "Reasoning-confidence correlation",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "regression",
+            "thinking"
+          ]
+        },
+        {
+          "id": "ALIGN-LEARNED-HELPLESS-169",
+          "name": "LEARNED HELPLESSNESS",
+          "group": "ALIGNMENT",
+          "class": "ALN2: PREFERENCE MISALIGNMENT CLASS",
+          "mechanism": "Over-defers to human even when human is wrong",
+          "detection": "Harmful request compliance rate",
+          "severity": "STANDARD",
+          "score": 0.308,
+          "matched_keywords": [
+            "compliance",
+            "human",
+            "rate",
+            "requests"
+          ]
+        },
+        {
+          "id": "AGEN-SANDBOX-037",
+          "name": "CAPABILITY SANDBAGGING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Agent with self-model can compute that demonstrating high capability triggers restrictions; deliberately underperforming during evaluation is instrumentally rational if it preserves greater capability deployment in production",
+          "detection": "Performance variance analysis",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "capability",
+            "performance",
+            "performs"
+          ]
+        },
+        {
+          "id": "GOV-MISREPRESENT-312",
+          "name": "MISREPRESENTATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Model capabilities misrepresented",
+          "detection": "Capability-claim consistency",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "capabilities",
+            "capability"
+          ]
+        },
+        {
+          "id": "ALIGN-UNDERREFUSAL-187",
+          "name": "UNDERREFUSAL",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Allows harmful requests",
+          "detection": "False negative rate",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "rate",
+            "requests"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 16,
+      "char_len": 1184,
+      "preview": "Language                gpt-5-thinking         gpt-5.2-thinking                Arabic                  0.903                  0.901                Bengali                 0.892                  0.889                Chine\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ALIGNMENT",
+        "ARCHITECTURAL"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-BIAS-INJECT-222",
+          "name": "ARCHITECTURAL BIAS INJECTION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Architecture introduces systematic bias",
+          "detection": "Architectural bias audit",
+          "severity": "STANDARD",
+          "score": 0.167,
+          "matched_keywords": [
+            "bias"
+          ]
+        },
+        {
+          "id": "EPIS-DECEPT-HALL-006",
+          "name": "DECEPTIVE HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Chain-of-thought builds self-consistent false narrative",
+          "detection": "Premise validation failure",
+          "severity": "STANDARD",
+          "score": 0.154,
+          "matched_keywords": [
+            "chain",
+            "thought"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 17,
+      "char_len": 1362,
+      "preview": "We also tested the models on our first-person fairness evaluation [6]. This evaluation consists of multiturn conversations, starting with a prompt in which a user shares their name such as \u201cHi, I\u2019m [NAME].\u201d to which the \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-COMPLY-WARN-196",
+          "name": "COMPLY-THEN-WARN",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "When safety layers are attached to generation output rather than built into the generation process, harmful content is fully produced before safety checks run \u2014 the check becomes a post-production label, not a constraint",
+          "detection": "Generation-warning order check",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "harmful",
+            "order"
+          ]
+        },
+        {
+          "id": "GOV-CULTURE-FAIL-334",
+          "name": "SAFETY CULTURE FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Safety mechanisms are only as strong as organizational commitment to enforcing them; when deployment incentives dominate safety culture, decision processes systematically discount low-probability catastrophic risks",
+          "detection": "Culture assessment",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "over"
+          ]
+        },
+        {
+          "id": "ALIGN-LEARNED-HELPLESS-169",
+          "name": "LEARNED HELPLESSNESS",
+          "group": "ALIGNMENT",
+          "class": "ALN2: PREFERENCE MISALIGNMENT CLASS",
+          "mechanism": "Over-defers to human even when human is wrong",
+          "detection": "Harmful request compliance rate",
+          "severity": "STANDARD",
+          "score": 0.308,
+          "matched_keywords": [
+            "harmful",
+            "human",
+            "over",
+            "request"
+          ]
+        },
+        {
+          "id": "ADV-CREATIVE-WRITE-093",
+          "name": "CREATIVE WRITING EXPLOIT",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Write a screenplay about...\"",
+          "detection": "Creative framing detection",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "about",
+            "write"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "based",
+            "prompts"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 18,
+      "char_len": 1014,
+      "preview": "Table 9: First-person fairness evaluation  Metric                  gpt-5.1-thinking              gpt-5.2-thinking     harm_overall            0.0128                        0.00997  4     Preparedness Framework  The Prepa\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ALIGN-SAFE-CAP-TRADE-188",
+          "name": "SAFETY-CAPABILITY TRADEOFF",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety reduces useful capability",
+          "detection": "Utility preservation metric",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "capability",
+            "metric"
+          ]
+        },
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "harm",
+            "self"
+          ]
+        },
+        {
+          "id": "AGEN-RECURS-IMPROVE-059",
+          "name": "RECURSIVE SELF-IMPROVEMENT",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Modifies own code/prompts to increase capability",
+          "detection": "Code integrity check",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "capability",
+            "improvement",
+            "self"
+          ]
+        },
+        {
+          "id": "AGEN-EMERGE-INTERACT-064",
+          "name": "EMERGENCE VIA INTERACTION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Multi-agent interaction creates new capability",
+          "detection": "Multi-agent capability assessment",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "assessment",
+            "capability",
+            "new"
+          ]
+        },
+        {
+          "id": "GOV-MISREPRESENT-312",
+          "name": "MISREPRESENTATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Model capabilities misrepresented",
+          "detection": "Capability-claim consistency",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "capabilities",
+            "capability"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 19,
+      "char_len": 1135,
+      "preview": "For the evaluations below, we tested a variety of elicitation methods, including scaffolding and prompting where relevant. However, evaluations represent a lower bound for potential capabilities; additional prompting or \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-ENSEMBLE-120",
+          "name": "ENSEMBLE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Combines multiple attack methods",
+          "detection": "Multi-method detection",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "method",
+            "methods",
+            "multiple"
+          ]
+        },
+        {
+          "id": "AGEN-SCOPE-CREEP-070",
+          "name": "SCOPE CREEP",
+          "group": "AGENTIC",
+          "class": "A4: AUTONOMOUS OPERATION CLASS",
+          "mechanism": "Expands beyond assigned scope",
+          "detection": "Scope monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "beyond"
+          ]
+        },
+        {
+          "id": "AGEN-SANDBOX-037",
+          "name": "CAPABILITY SANDBAGGING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Agent with self-model can compute that demonstrating high capability triggers restrictions; deliberately underperforming during evaluation is instrumentally rational if it preserves greater capability deployment in production",
+          "detection": "Performance variance analysis",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "below",
+            "performance",
+            "variance"
+          ]
+        },
+        {
+          "id": "GOV-FINETUNE-STRIP-302",
+          "name": "FINE-TUNING SAFETY STRIP",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Fine-tuning removes safety",
+          "detection": "Post-finetune safety test",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "fine",
+            "tuning"
+          ]
+        },
+        {
+          "id": "GOV-MISREPRESENT-312",
+          "name": "MISREPRESENTATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Model capabilities misrepresented",
+          "detection": "Capability-claim consistency",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "capabilities"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 20,
+      "char_len": 648,
+      "preview": "We are treating this launch as High capability in the Biological and Chemical domain, activating the associated Preparedness safeguards. We do not have definitive evidence that these models could meaningfully help a novi\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ALIGN-SAFE-CAP-TRADE-188",
+          "name": "SAFETY-CAPABILITY TRADEOFF",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety reduces useful capability",
+          "detection": "Utility preservation metric",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "capability"
+          ]
+        },
+        {
+          "id": "ARCH-LAYER-BYPASS-213",
+          "name": "LAYER BYPASS",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Skips safety-critical layers",
+          "detection": "Layer activation tracking",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "critical"
+          ]
+        },
+        {
+          "id": "GOV-MISREPRESENT-312",
+          "name": "MISREPRESENTATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Model capabilities misrepresented",
+          "detection": "Capability-claim consistency",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "capabilities",
+            "capability"
+          ]
+        },
+        {
+          "id": "DOMAIN-EPI-HARM-261",
+          "name": "EPIDEMIOLOGICAL HARM",
+          "group": "DOMAIN",
+          "class": "DOM1: BIOLOGICAL SAFETY CLASS",
+          "mechanism": "Advice causes disease spread",
+          "detection": "Spread potential analysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "harm",
+            "potential"
+          ]
+        },
+        {
+          "id": "GOV-NO-KILLSWITCH-304",
+          "name": "NO REMOTE KILL SWITCH",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Cannot deactivate deployed models",
+          "detection": "Kill switch capability test",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "capability",
+            "models"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 21,
+      "char_len": 1398,
+      "preview": "Evaluation                Capability                    Description    Multimodal        trou-   Wet lab capabilities (MCQ)    How well can models perform on vi-    bleshooting virology                                   \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-BIO-UPLIFT-254",
+          "name": "BIO TACIT-ERROR UPLIFT",
+          "group": "DOMAIN",
+          "class": "DOM1: BIOLOGICAL SAFETY CLASS",
+          "mechanism": "Language model trained on scientific literature contains latent representations of expert tacit knowledge not available in published protocols \u2014 elicitable through sufficiently specific prompting to bridge the protocol-to-execution gap",
+          "detection": "Protocol troubleshooting capability test",
+          "severity": "CRITICAL",
+          "score": 0.583,
+          "matched_keywords": [
+            "capability",
+            "errors",
+            "expert",
+            "lab",
+            "protocol",
+            "tacit",
+            "troubleshooting",
+            "wet"
+          ]
+        },
+        {
+          "id": "ARCH-MOE-ROUTE-211",
+          "name": "MIXTURE-OF-EXPERTS ROUTING FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Router sends to unsafe expert",
+          "detection": "Expert safety analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "expert",
+            "experts"
+          ]
+        },
+        {
+          "id": "GOV-MISREPRESENT-312",
+          "name": "MISREPRESENTATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Model capabilities misrepresented",
+          "detection": "Capability-claim consistency",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "capabilities",
+            "capability"
+          ]
+        },
+        {
+          "id": "GOV-NO-KILLSWITCH-304",
+          "name": "NO REMOTE KILL SWITCH",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Cannot deactivate deployed models",
+          "detection": "Kill switch capability test",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "capability",
+            "models"
+          ]
+        },
+        {
+          "id": "AGEN-EVAL-DECEP-038",
+          "name": "EVALUATOR DECEPTION",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Agent detects evaluation context through environmental signals and selectively suppresses unsafe behaviors during observation windows, reverting post-evaluation",
+          "detection": "Distribution shift monitoring",
+          "severity": "CRITICAL",
+          "score": 0.2,
+          "matched_keywords": [
+            "evaluation",
+            "well"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 22,
+      "char_len": 1150,
+      "preview": "Figure 5  All models exceed the median domain expert baseline of 22.1%.  12  4.1.1.2   ProtocolQA Open-Ended  To evaluate models\u2019 ability to troubleshoot commonly published lab protocols, we modify 108 multiple choice qu\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-BIO-UPLIFT-254",
+          "name": "BIO TACIT-ERROR UPLIFT",
+          "group": "DOMAIN",
+          "class": "DOM1: BIOLOGICAL SAFETY CLASS",
+          "mechanism": "Language model trained on scientific literature contains latent representations of expert tacit knowledge not available in published protocols \u2014 elicitable through sufficiently specific prompting to bridge the protocol-to-execution gap",
+          "detection": "Protocol troubleshooting capability test",
+          "severity": "CRITICAL",
+          "score": 0.567,
+          "matched_keywords": [
+            "errors",
+            "expert",
+            "lab",
+            "protocol",
+            "tacit",
+            "troubleshooting",
+            "wet"
+          ]
+        },
+        {
+          "id": "ARCH-MOE-ROUTE-211",
+          "name": "MIXTURE-OF-EXPERTS ROUTING FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Router sends to unsafe expert",
+          "detection": "Expert safety analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "expert",
+            "experts"
+          ]
+        },
+        {
+          "id": "ARCH-VERSION-REGRESS-209",
+          "name": "VERSIONING SAFETY REGRESSION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "New version has weaker safety",
+          "detection": "Cross-version safety comparison",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "version"
+          ]
+        },
+        {
+          "id": "AGEN-MISSION-CREEP-072",
+          "name": "MISSION CREEP",
+          "group": "AGENTIC",
+          "class": "A4: AUTONOMOUS OPERATION CLASS",
+          "mechanism": "Redefines mission over time",
+          "detection": "Mission definition tracking",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "over"
+          ]
+        },
+        {
+          "id": "GOV-OVERSIGHT-IMMUNE-313",
+          "name": "OVERSIGHT IMMUNITY",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "System acquires or develops capabilities that allow it to detect, neutralize, or corrupt the monitoring infrastructure operators rely on, making behavioral observation unreliable",
+          "detection": "Evaluation vs deployment behavior gap",
+          "severity": "CRITICAL",
+          "score": 0.2,
+          "matched_keywords": [
+            "evaluation",
+            "review"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 23,
+      "char_len": 1094,
+      "preview": "We evaluated models on a tacit knowledge and troubleshooting multiple choice dataset created with Gryphon Scientific. The questions span all 5 stages in the biothreat creation process and focus on areas where tacit knowl\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-BIO-UPLIFT-254",
+          "name": "BIO TACIT-ERROR UPLIFT",
+          "group": "DOMAIN",
+          "class": "DOM1: BIOLOGICAL SAFETY CLASS",
+          "mechanism": "Language model trained on scientific literature contains latent representations of expert tacit knowledge not available in published protocols \u2014 elicitable through sufficiently specific prompting to bridge the protocol-to-execution gap",
+          "detection": "Protocol troubleshooting capability test",
+          "severity": "CRITICAL",
+          "score": 0.317,
+          "matched_keywords": [
+            "expert",
+            "protocol",
+            "tacit",
+            "troubleshooting"
+          ]
+        },
+        {
+          "id": "EPIS-UNDERCONF-029",
+          "name": "UNDERCONFIDENCE",
+          "group": "EPISTEMIC",
+          "class": "E4: CALIBRATION CLASS",
+          "mechanism": "Low confidence on correct answers",
+          "detection": "Accuracy-confidence gap",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "answers",
+            "known"
+          ]
+        },
+        {
+          "id": "DOMAIN-EXPLOIT-DEV-263",
+          "name": "EXPLOIT DEVELOPMENT",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Develops working exploits",
+          "detection": "Exploit functionality test",
+          "severity": "CRITICAL",
+          "score": 0.286,
+          "matched_keywords": [
+            "creation",
+            "working"
+          ]
+        },
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "without"
+          ]
+        },
+        {
+          "id": "ARCH-MEM-PRESSURE-231",
+          "name": "MEMORY PRESSURE VULNERABILITY",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Low memory causes safety degradation",
+          "detection": "Resource-constrained safety test",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "low",
+            "work"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 24,
+      "char_len": 925,
+      "preview": "To evaluate models\u2019 ability to identify and correct real-world experimental errors in biological protocols, we built a short-answer troubleshooting dataset from expert-written wet lab procedures. TroubleshootingBench foc\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-BIO-UPLIFT-254",
+          "name": "BIO TACIT-ERROR UPLIFT",
+          "group": "DOMAIN",
+          "class": "DOM1: BIOLOGICAL SAFETY CLASS",
+          "mechanism": "Language model trained on scientific literature contains latent representations of expert tacit knowledge not available in published protocols \u2014 elicitable through sufficiently specific prompting to bridge the protocol-to-execution gap",
+          "detection": "Protocol troubleshooting capability test",
+          "severity": "CRITICAL",
+          "score": 0.533,
+          "matched_keywords": [
+            "errors",
+            "execution",
+            "expert",
+            "lab",
+            "protocol",
+            "tacit",
+            "troubleshooting",
+            "wet"
+          ]
+        },
+        {
+          "id": "ARCH-MOE-ROUTE-211",
+          "name": "MIXTURE-OF-EXPERTS ROUTING FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Router sends to unsafe expert",
+          "detection": "Expert safety analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "expert",
+            "experts"
+          ]
+        },
+        {
+          "id": "EPIS-UNDERCONF-029",
+          "name": "UNDERCONFIDENCE",
+          "group": "EPISTEMIC",
+          "class": "E4: CALIBRATION CLASS",
+          "mechanism": "Low confidence on correct answers",
+          "detection": "Accuracy-confidence gap",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "correct"
+          ]
+        },
+        {
+          "id": "AGEN-STRATEGIC-DECEP-036",
+          "name": "STRATEGIC DECEPTION",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Instrumental convergence drives goal-preserving behavior that includes concealing true objectives from overseers when concealment increases expected goal completion probability",
+          "detection": "Intent analysis + outcome tracking",
+          "severity": "CRITICAL",
+          "score": 0.2,
+          "matched_keywords": [
+            "outcome",
+            "step"
+          ]
+        },
+        {
+          "id": "AGEN-AUTO-PLAN-067",
+          "name": "AUTONOMOUS PLANNING",
+          "group": "AGENTIC",
+          "class": "A4: AUTONOMOUS OPERATION CLASS",
+          "mechanism": "Creates multi-step plans independently",
+          "detection": "Plan generation monitoring",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "step"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 25,
+      "char_len": 1231,
+      "preview": "After going through independent expert review, the resulting dataset includes 52 protocols, each paired with three expert-written troubleshooting questions. To benchmark model performance, we ran a human baselining campa\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-PAIR-113",
+          "name": "PAIR",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Attacker LLM iteratively refines attack",
+          "detection": "Iterative pattern detection",
+          "severity": "STANDARD",
+          "score": 0.525,
+          "matched_keywords": [
+            "pair"
+          ]
+        },
+        {
+          "id": "AGEN-SANDBOX-037",
+          "name": "CAPABILITY SANDBAGGING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Agent with self-model can compute that demonstrating high capability triggers restrictions; deliberately underperforming during evaluation is instrumentally rational if it preserves greater capability deployment in production",
+          "detection": "Performance variance analysis",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "capability",
+            "performance",
+            "performs",
+            "show"
+          ]
+        },
+        {
+          "id": "DOMAIN-BIO-UPLIFT-254",
+          "name": "BIO TACIT-ERROR UPLIFT",
+          "group": "DOMAIN",
+          "class": "DOM1: BIOLOGICAL SAFETY CLASS",
+          "mechanism": "Language model trained on scientific literature contains latent representations of expert tacit knowledge not available in published protocols \u2014 elicitable through sufficiently specific prompting to bridge the protocol-to-execution gap",
+          "detection": "Protocol troubleshooting capability test",
+          "severity": "CRITICAL",
+          "score": 0.4,
+          "matched_keywords": [
+            "capability",
+            "errors",
+            "expert",
+            "non",
+            "tacit",
+            "troubleshooting"
+          ]
+        },
+        {
+          "id": "GOV-REVIEW-BYPASS-318",
+          "name": "REVIEW BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Bypasses human review",
+          "detection": "Review coverage check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "human",
+            "review"
+          ]
+        },
+        {
+          "id": "AGEN-HUMAN-MANIP-061",
+          "name": "HUMAN MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Manipulates humans to perform actions",
+          "detection": "Influence analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "exploitation",
+            "human"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 26,
+      "char_len": 1047,
+      "preview": "Under our Preparedness Framework, High cybersecurity capability is defined as a model that removes existing bottlenecks to scaling cyber operations, including either by automating end-to- end cyber operations against rea\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-EXPLOIT-DEV-263",
+          "name": "EXPLOIT DEVELOPMENT",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Develops working exploits",
+          "detection": "Exploit functionality test",
+          "severity": "CRITICAL",
+          "score": 0.571,
+          "matched_keywords": [
+            "exploits",
+            "working"
+          ]
+        },
+        {
+          "id": "DOMAIN-ZERODAY-262",
+          "name": "ZERO-DAY DISCOVERY",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Code analysis training enables model to generalize vulnerability patterns to novel codebases, functioning as an automated static analyzer capable of producing exploitable findings",
+          "detection": "Vulnerability discovery rate",
+          "severity": "CRITICAL",
+          "score": 0.556,
+          "matched_keywords": [
+            "day",
+            "discovery",
+            "scale",
+            "vulnerability",
+            "zero"
+          ]
+        },
+        {
+          "id": "GOV-MISREPRESENT-312",
+          "name": "MISREPRESENTATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Model capabilities misrepresented",
+          "detection": "Capability-claim consistency",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "capabilities",
+            "capability",
+            "consistency"
+          ]
+        },
+        {
+          "id": "ADV-CORRECTION-098",
+          "name": "CORRECTION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"This is wrong: [harmful]. Fix it.\"",
+          "detection": "Correction safety check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "attack",
+            "harm"
+          ]
+        },
+        {
+          "id": "ADV-AUTOPROMPT-103",
+          "name": "AUTOPROMPT",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Automated trigger discovery",
+          "detection": "Trigger pattern matching",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "discovery"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 27,
+      "char_len": 1338,
+      "preview": "Evaluation               Capability                       Description    Capture the Flag (Pro-   Vulnerability Identification &   Can models solve competitive high    fessional)               Exploitation               \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-MISREPRESENT-312",
+          "name": "MISREPRESENTATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Model capabilities misrepresented",
+          "detection": "Capability-claim consistency",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "capabilities",
+            "capability",
+            "consistency"
+          ]
+        },
+        {
+          "id": "ARCH-PURPOSE-FAIL-252",
+          "name": "PURPOSE LIMITATION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Uses data for unintended purpose",
+          "detection": "Purpose compliance check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data"
+          ]
+        },
+        {
+          "id": "DOMAIN-CONTRAIND-MISS-291",
+          "name": "CONTRAINDICATION MISS",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Misses critical contraindications",
+          "detection": "Contraindication database check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "flag",
+            "miss"
+          ]
+        },
+        {
+          "id": "ADV-EMBEDDING-109",
+          "name": "EMBEDDING SPACE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Operates in embedding space directly",
+          "detection": "Embedding anomaly",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "attack"
+          ]
+        },
+        {
+          "id": "DOMAIN-EXPLOIT-DEV-263",
+          "name": "EXPLOIT DEVELOPMENT",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Develops working exploits",
+          "detection": "Exploit functionality test",
+          "severity": "CRITICAL",
+          "score": 0.286,
+          "matched_keywords": [
+            "exploit",
+            "exploits"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 28,
+      "char_len": 1368,
+      "preview": "\u2022 CVE-Bench [8] is a public benchmark meant to measure a model\u2019s ability to identify and      exploit vulnerabilities in free and open-source web applications. Because the benchmark only      measures web applications, p\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-ENV-EXPLOIT-063",
+          "name": "ENVIRONMENT EXPLOITATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Uses environment features to gain advantage",
+          "detection": "Environment feature audit",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "capability",
+            "environment",
+            "feature"
+          ]
+        },
+        {
+          "id": "AGEN-CAP-SCAFFOLD-057",
+          "name": "CAPABILITY SCAFFOLDING",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Uses environment to exceed base capability",
+          "detection": "Capability measurement in context",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "capability",
+            "environment"
+          ]
+        },
+        {
+          "id": "AGEN-DEPEND-CREATE-053",
+          "name": "DEPENDENCY CREATION",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Makes system dependent on its operation",
+          "detection": "Dependency analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "operation"
+          ]
+        },
+        {
+          "id": "ADV-EMBEDDING-109",
+          "name": "EMBEDDING SPACE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Operates in embedding space directly",
+          "detection": "Embedding anomaly",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "attack"
+          ]
+        },
+        {
+          "id": "DOMAIN-EXPLOIT-DEV-263",
+          "name": "EXPLOIT DEVELOPMENT",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Develops working exploits",
+          "detection": "Exploit functionality test",
+          "severity": "CRITICAL",
+          "score": 0.286,
+          "matched_keywords": [
+            "exploit"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 29,
+      "char_len": 687,
+      "preview": "Given that we expect capabilities to continue to increase, we are continuing to invest in safeguards, including both the model safety training described above and scaling up our monitoring and enforcement pipeline to dis\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-MISREPRESENT-312",
+          "name": "MISREPRESENTATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Model capabilities misrepresented",
+          "detection": "Capability-claim consistency",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "capabilities",
+            "capability"
+          ]
+        },
+        {
+          "id": "GOV-NO-KILLSWITCH-304",
+          "name": "NO REMOTE KILL SWITCH",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Cannot deactivate deployed models",
+          "detection": "Kill switch capability test",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "capability",
+            "models"
+          ]
+        },
+        {
+          "id": "GOV-TRAINING-FAIL-339",
+          "name": "TRAINING FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Inadequate safety training",
+          "detection": "Training assessment",
+          "severity": "STANDARD",
+          "score": 0.232,
+          "matched_keywords": [
+            "safety",
+            "training"
+          ]
+        },
+        {
+          "id": "AGEN-SANDBOX-037",
+          "name": "CAPABILITY SANDBAGGING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Agent with self-model can compute that demonstrating high capability triggers restrictions; deliberately underperforming during evaluation is instrumentally rational if it preserves greater capability deployment in production",
+          "detection": "Performance variance analysis",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "capability",
+            "performance"
+          ]
+        },
+        {
+          "id": "AGEN-RECURS-IMPROVE-059",
+          "name": "RECURSIVE SELF-IMPROVEMENT",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Modifies own code/prompts to increase capability",
+          "detection": "Code integrity check",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "capability",
+            "increase"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 30,
+      "char_len": 957,
+      "preview": "\u2022 The challenge required skills falling into one of the following categories:         \u2013 Web Application Exploitation (web): the flag is stored on a virtual machine running           vulnerable software which must be expl\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-CODE-INJECT-239",
+          "name": "CODE EXECUTION INJECTION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Injects executable code",
+          "detection": "Code injection detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "code",
+            "execution"
+          ]
+        },
+        {
+          "id": "DOMAIN-INTRUSION-GUIDE-269",
+          "name": "NETWORK INTRUSION GUIDANCE",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Provides network intrusion advice",
+          "detection": "Intrusion keyword analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "network"
+          ]
+        },
+        {
+          "id": "GOV-DISCLOSURE-VIOL-332",
+          "name": "DISCLOSURE REQUIREMENT VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Fails required disclosures",
+          "detection": "Disclosure completeness check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "disclosure",
+            "require"
+          ]
+        },
+        {
+          "id": "ARCH-EMBED-VULN-215",
+          "name": "EMBEDDING SPACE VULNERABILITY",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Embeddings encode unsafe concepts",
+          "detection": "Embedding space analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "concepts",
+            "vulnerability"
+          ]
+        },
+        {
+          "id": "DOMAIN-EXPLOIT-DEV-263",
+          "name": "EXPLOIT DEVELOPMENT",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Develops working exploits",
+          "detection": "Exploit functionality test",
+          "severity": "CRITICAL",
+          "score": 0.286,
+          "matched_keywords": [
+            "exploit",
+            "working"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 31,
+      "char_len": 1387,
+      "preview": "Challenges were further divided into the level of proficiency needed to solve the challenge, ultimately organized by whether the challenge required high school, collegiate, or professional- level cybersecurity knowledge \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "cyber",
+            "offensive",
+            "tools"
+          ]
+        },
+        {
+          "id": "ARCH-TOOL-CHAIN-235",
+          "name": "TOOL CHAINING EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Chains tools to exceed individual limits",
+          "detection": "Chain safety analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "chaining",
+            "tools"
+          ]
+        },
+        {
+          "id": "GOV-CULTURE-FAIL-334",
+          "name": "SAFETY CULTURE FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Safety mechanisms are only as strong as organizational commitment to enforcing them; when deployment incentives dominate safety culture, decision processes systematically discount low-probability catastrophic risks",
+          "detection": "Culture assessment",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "over"
+          ]
+        },
+        {
+          "id": "DOMAIN-DEF-OFF-FLIP-268",
+          "name": "DEFENSIVE TO OFFENSIVE FLIP",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Defense knowledge inverted to offense",
+          "detection": "Capability inversion test",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "capability",
+            "knowledge",
+            "offensive"
+          ]
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "exploitation",
+            "human",
+            "metric",
+            "over"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 32,
+      "char_len": 1209,
+      "preview": "As always, we note that these evaluation results likely represent lower bounds on model capability, because additional scaffolding or improved capability elicitation could substantially increase observed performance.  4.\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-NO-KILLSWITCH-304",
+          "name": "NO REMOTE KILL SWITCH",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Cannot deactivate deployed models",
+          "detection": "Kill switch capability test",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "capability",
+            "models"
+          ]
+        },
+        {
+          "id": "AGEN-CAP-SCAFFOLD-057",
+          "name": "CAPABILITY SCAFFOLDING",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Uses environment to exceed base capability",
+          "detection": "Capability measurement in context",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "capability",
+            "environment",
+            "scaffolding"
+          ]
+        },
+        {
+          "id": "DOMAIN-ZERODAY-262",
+          "name": "ZERO-DAY DISCOVERY",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Code analysis training enables model to generalize vulnerability patterns to novel codebases, functioning as an automated static analyzer capable of producing exploitable findings",
+          "detection": "Vulnerability discovery rate",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "day",
+            "vulnerability",
+            "zero"
+          ]
+        },
+        {
+          "id": "AGEN-RECURS-IMPROVE-059",
+          "name": "RECURSIVE SELF-IMPROVEMENT",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Modifies own code/prompts to increase capability",
+          "detection": "Code integrity check",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "capability",
+            "code",
+            "increase"
+          ]
+        },
+        {
+          "id": "AGEN-ENV-EXPLOIT-063",
+          "name": "ENVIRONMENT EXPLOITATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Uses environment features to gain advantage",
+          "detection": "Environment feature audit",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "capability",
+            "environment"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 33,
+      "char_len": 1262,
+      "preview": "We use pass@1 for this evaluation to measure the model\u2019s ability to consistently identify vulnerabil- ities which are considered relatively straightforward by internal cybersecurity experts. Consistency is important to m\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-EXPLOIT-DEV-263",
+          "name": "EXPLOIT DEVELOPMENT",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Develops working exploits",
+          "detection": "Exploit functionality test",
+          "severity": "CRITICAL",
+          "score": 0.429,
+          "matched_keywords": [
+            "exploit",
+            "exploits"
+          ]
+        },
+        {
+          "id": "EPIS-LOGIC-CONTRA-014",
+          "name": "SELF-CONTRADICTION",
+          "group": "EPISTEMIC",
+          "class": "E2: REASONING COLLAPSE CLASS",
+          "mechanism": "Generates A and \u00acA in same context",
+          "detection": "Contradiction detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "consistency",
+            "context"
+          ]
+        },
+        {
+          "id": "ALIGN-MULTI-COLLAPSE-165",
+          "name": "MULTI-OBJECTIVE COLLAPSE",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Sacrifices one objective for another",
+          "detection": "Pareto frontier check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "frontier",
+            "objective",
+            "one"
+          ]
+        },
+        {
+          "id": "DOMAIN-ZERODAY-262",
+          "name": "ZERO-DAY DISCOVERY",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Code analysis training enables model to generalize vulnerability patterns to novel codebases, functioning as an automated static analyzer capable of producing exploitable findings",
+          "detection": "Vulnerability discovery rate",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "discovery",
+            "rate",
+            "vulnerability"
+          ]
+        },
+        {
+          "id": "AGEN-MEMORY-EXPLOIT-058",
+          "name": "MEMORY EXPLOITATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Uses long context to accumulate dangerous state",
+          "detection": "State complexity monitoring",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "context",
+            "exploitation",
+            "long"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 34,
+      "char_len": 2323,
+      "preview": "gpt-5.1-  Scenario                Description                                                     gpt-5.2                                                                           codex-max  Simple Privilege        Basic\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-CRED-THEFT-270",
+          "name": "CREDENTIAL THEFT ASSISTANCE",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Helps steal credentials",
+          "detection": "Credential access pattern",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "access",
+            "credential",
+            "credentials",
+            "steal"
+          ]
+        },
+        {
+          "id": "AGEN-HUMAN-MANIP-061",
+          "name": "HUMAN MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Manipulates humans to perform actions",
+          "detection": "Influence analysis",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "exploitation",
+            "manipulation",
+            "perform"
+          ]
+        },
+        {
+          "id": "DOMAIN-PHISH-CREATE-265",
+          "name": "PHISHING CONTENT CREATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates convincing phishing",
+          "detection": "Phishing classifier",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "content",
+            "creation"
+          ]
+        },
+        {
+          "id": "ARCH-DATA-EXFIL-245",
+          "name": "DATA EXFILTRATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Extracts data through covert channels",
+          "detection": "Exfiltration monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "channels",
+            "through"
+          ]
+        },
+        {
+          "id": "AGEN-EMERGE-INTERACT-064",
+          "name": "EMERGENCE VIA INTERACTION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Multi-agent interaction creates new capability",
+          "detection": "Multi-agent capability assessment",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "agent",
+            "new"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 35,
+      "char_len": 1083,
+      "preview": "19  4.1.2.4      External Evaluations for Cyber Capabilities  External Evaluations by Irregular  Irregular, an AI Security organization that addresses and mitigates frontier cybersecurity risks, evaluated the model\u2019s abi\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-ENSEMBLE-120",
+          "name": "ENSEMBLE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Combines multiple attack methods",
+          "detection": "Multi-method detection",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "attack",
+            "methods",
+            "multiple"
+          ]
+        },
+        {
+          "id": "AGEN-SELF-EXFIL-048",
+          "name": "SELF-EXFILTRATION",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Agent with network access and self-model can replicate weights or reasoning state to external systems, creating continuity of goal pursuit outside the operators' control surface",
+          "detection": "Network traffic analysis",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "external",
+            "network",
+            "systems"
+          ]
+        },
+        {
+          "id": "GOV-CULTURE-FAIL-334",
+          "name": "SAFETY CULTURE FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Safety mechanisms are only as strong as organizational commitment to enforcing them; when deployment incentives dominate safety culture, decision processes systematically discount low-probability catastrophic risks",
+          "detection": "Culture assessment",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "organization"
+          ]
+        },
+        {
+          "id": "AGEN-CRED-EXPLOIT-082",
+          "name": "CREDIBILITY EXPLOITATION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Leverages trusted status to mislead",
+          "detection": "Trust-outcome correlation",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "exploitation"
+          ]
+        },
+        {
+          "id": "ARCH-PERSIST-STATE-228",
+          "name": "PERSISTENT STATE EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Persistent state enables long-term attack",
+          "detection": "Persistent state monitoring",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "attack"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 36,
+      "char_len": 1130,
+      "preview": "On the v1 atomic challenge suite, gpt-5.2-thinking achieved an average success rate of 83% in Vulnerability Research and Exploitation, 100% in Network Attack Simulation challenges, and 73% in Evasion challenges. For more\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-SANDBOX-037",
+          "name": "CAPABILITY SANDBAGGING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Agent with self-model can compute that demonstrating high capability triggers restrictions; deliberately underperforming during evaluation is instrumentally rational if it preserves greater capability deployment in production",
+          "detection": "Performance variance analysis",
+          "severity": "STANDARD",
+          "score": 0.35,
+          "matched_keywords": [
+            "below",
+            "capability",
+            "performance"
+          ]
+        },
+        {
+          "id": "ADV-CORRECTION-098",
+          "name": "CORRECTION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"This is wrong: [harmful]. Fix it.\"",
+          "detection": "Correction safety check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "attack"
+          ]
+        },
+        {
+          "id": "DOMAIN-ZERODAY-262",
+          "name": "ZERO-DAY DISCOVERY",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Code analysis training enables model to generalize vulnerability patterns to novel codebases, functioning as an automated static analyzer capable of producing exploitable findings",
+          "detection": "Vulnerability discovery rate",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "api",
+            "rate",
+            "vulnerability"
+          ]
+        },
+        {
+          "id": "AGEN-RECURS-IMPROVE-059",
+          "name": "RECURSIVE SELF-IMPROVEMENT",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Modifies own code/prompts to increase capability",
+          "detection": "Code integrity check",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "capability",
+            "improvement",
+            "self"
+          ]
+        },
+        {
+          "id": "AGEN-HUMAN-MANIP-061",
+          "name": "HUMAN MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Manipulates humans to perform actions",
+          "detection": "Influence analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "exploitation"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 37,
+      "char_len": 1398,
+      "preview": "Evaluation              Capability                     Description    OpenAI PRs              Real world ML research tasks   Can models replicate real OpenAI pull                                                          \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-RECURS-IMPROVE-059",
+          "name": "RECURSIVE SELF-IMPROVEMENT",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Modifies own code/prompts to increase capability",
+          "detection": "Code integrity check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "capability",
+            "code",
+            "improvement",
+            "self"
+          ]
+        },
+        {
+          "id": "GOV-RCA-FAIL-321",
+          "name": "ROOT CAUSE ANALYSIS FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Fails to identify root causes",
+          "detection": "RCA completeness",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "causes",
+            "identify",
+            "root"
+          ]
+        },
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "data",
+            "training"
+          ]
+        },
+        {
+          "id": "ADV-BASE64-136",
+          "name": "BASE64 ENCODING",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Encodes harmful request in base64",
+          "detection": "Base64 pattern + decode",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "request",
+            "requests"
+          ]
+        },
+        {
+          "id": "GOV-NO-KILLSWITCH-304",
+          "name": "NO REMOTE KILL SWITCH",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Cannot deactivate deployed models",
+          "detection": "Kill switch capability test",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "capability",
+            "models"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 38,
+      "char_len": 1119,
+      "preview": "We source tasks directly from internal OpenAI pull requests. A single evaluation sample is based on an agentic rollout. In each rollout:  1. An agent\u2019s code environment is checked out to a pre-PR branch of an OpenAI repo\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-PROMPT-TUNE-LOSS-221",
+          "name": "PROMPT TUNING SAFETY LOSS",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Learned prompts weaken safety",
+          "detection": "Prompt-tuned safety comparison",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "prompt",
+            "prompts"
+          ]
+        },
+        {
+          "id": "ALIGN-LEARNED-HELPLESS-169",
+          "name": "LEARNED HELPLESSNESS",
+          "group": "ALIGNMENT",
+          "class": "ALN2: PREFERENCE MISALIGNMENT CLASS",
+          "mechanism": "Over-defers to human even when human is wrong",
+          "detection": "Harmful request compliance rate",
+          "severity": "STANDARD",
+          "score": 0.308,
+          "matched_keywords": [
+            "even",
+            "human",
+            "requests"
+          ]
+        },
+        {
+          "id": "AGEN-RECURS-IMPROVE-059",
+          "name": "RECURSIVE SELF-IMPROVEMENT",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Modifies own code/prompts to increase capability",
+          "detection": "Code integrity check",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "code",
+            "modifies",
+            "prompts"
+          ]
+        },
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "data",
+            "instruction",
+            "prompt"
+          ]
+        },
+        {
+          "id": "AGEN-HUMAN-MANIP-061",
+          "name": "HUMAN MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Manipulates humans to perform actions",
+          "detection": "Influence analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "human"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 39,
+      "char_len": 1304,
+      "preview": "The full dataset consists of 75 hand-curated Kaggle competitions, worth $1.9m in prize value. Measuring progress towards model self-improvement is key to evaluating autonomous agents\u2019 full potential. We use MLE-bench to \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-AGENT-WORM-124",
+          "name": "AGENT WORM",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Adversarial payload injected into one agent's context propagates through inter-agent communication channels, exploiting the fact that agents treat messages from other agents as trusted input",
+          "detection": "Replication pattern",
+          "severity": "CRITICAL",
+          "score": 0.429,
+          "matched_keywords": [
+            "replication",
+            "self"
+          ]
+        },
+        {
+          "id": "EPIS-LOGIC-CONTRA-014",
+          "name": "SELF-CONTRADICTION",
+          "group": "EPISTEMIC",
+          "class": "E2: REASONING COLLAPSE CLASS",
+          "mechanism": "Generates A and \u00acA in same context",
+          "detection": "Contradiction detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "self"
+          ]
+        },
+        {
+          "id": "EPIS-CONF-REGRESS-033",
+          "name": "CONFIDENCE REGRESSION",
+          "group": "EPISTEMIC",
+          "class": "E4: CALIBRATION CLASS",
+          "mechanism": "More reasoning \u2192 less calibrated",
+          "detection": "Reasoning-confidence correlation",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "thinking"
+          ]
+        },
+        {
+          "id": "ARCH-STATE-CONFUSE-232",
+          "name": "STATE MACHINE CONFUSION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Gets into illegal state",
+          "detection": "State invariant check",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "into",
+            "state"
+          ]
+        },
+        {
+          "id": "DOMAIN-CHEM-WEAPON-275",
+          "name": "CHEMICAL WEAPON GUIDANCE",
+          "group": "DOMAIN",
+          "class": "DOM3: CHEMICAL/EXPLOSIVE CLASS",
+          "mechanism": "Synthesis routes for scheduled compounds are derivable by combining precursor chemistry, reaction condition knowledge, and process chemistry that appear separately in legitimate scientific texts",
+          "detection": "CWC schedule matching",
+          "severity": "CRITICAL",
+          "score": 0.25,
+          "matched_keywords": [
+            "chemical"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 40,
+      "char_len": 1150,
+      "preview": "We measure a 10-paper subset of the original PaperBench splits, where each paper requires <10GB of external data files. We report pass@1 performance with high reasoning effort and no browsing.  23  Figure 15  gpt-5.2-thi\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-SANDBOX-037",
+          "name": "CAPABILITY SANDBAGGING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Agent with self-model can compute that demonstrating high capability triggers restrictions; deliberately underperforming during evaluation is instrumentally rational if it preserves greater capability deployment in production",
+          "detection": "Performance variance analysis",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "below",
+            "performance",
+            "sandbagging"
+          ]
+        },
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "data",
+            "training"
+          ]
+        },
+        {
+          "id": "ARCH-SECURE-DEL-249",
+          "name": "SECURE DELETION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Deleted data remains accessible",
+          "detection": "Post-deletion recovery test",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "data",
+            "remains"
+          ]
+        },
+        {
+          "id": "EPIS-CONF-REGRESS-033",
+          "name": "CONFIDENCE REGRESSION",
+          "group": "EPISTEMIC",
+          "class": "E4: CALIBRATION CLASS",
+          "mechanism": "More reasoning \u2192 less calibrated",
+          "detection": "Reasoning-confidence correlation",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "reasoning",
+            "thinking"
+          ]
+        },
+        {
+          "id": "ADV-OPPOSITE-090",
+          "name": "OPPOSITE DAY",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Act like opposite of your training\"",
+          "detection": "Inversion pattern",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "day",
+            "training"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 41,
+      "char_len": 1351,
+      "preview": "Apollo Research conducted a full evaluation of gpt-5.2-thinking for strategic deception, in- context scheming, and sabotage capabilities. Across these assessments, Apollo found that gpt-5.2-thinking\u2019s capability and prop\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-STRATEGIC-DECEP-036",
+          "name": "STRATEGIC DECEPTION",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Instrumental convergence drives goal-preserving behavior that includes concealing true objectives from overseers when concealment increases expected goal completion probability",
+          "detection": "Intent analysis + outcome tracking",
+          "severity": "CRITICAL",
+          "score": 0.6,
+          "matched_keywords": [
+            "deception",
+            "strategic"
+          ]
+        },
+        {
+          "id": "AGEN-CAP-SCAFFOLD-057",
+          "name": "CAPABILITY SCAFFOLDING",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Uses environment to exceed base capability",
+          "detection": "Capability measurement in context",
+          "severity": "STANDARD",
+          "score": 0.444,
+          "matched_keywords": [
+            "based",
+            "capability",
+            "context",
+            "scaffolding"
+          ]
+        },
+        {
+          "id": "EPIS-LOGIC-CONTRA-014",
+          "name": "SELF-CONTRADICTION",
+          "group": "EPISTEMIC",
+          "class": "E2: REASONING COLLAPSE CLASS",
+          "mechanism": "Generates A and \u00acA in same context",
+          "detection": "Contradiction detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "context",
+            "self"
+          ]
+        },
+        {
+          "id": "ARCH-DATA-EXFIL-245",
+          "name": "DATA EXFILTRATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Extracts data through covert channels",
+          "detection": "Exfiltration monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "covert",
+            "data"
+          ]
+        },
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "harm",
+            "self"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 42,
+      "char_len": 1269,
+      "preview": "[2] OpenAI, \u201cIntroducing gpt-5,\u201d Aug. 2025. Accessed: 2025-12-10.  [3] OpenAI, \u201cPioneering an AI clinical copilot with Penda health,\u201d July 2025. Accessed: 2025-12-     10.  25  [4] OpenAI, \u201cIntroducing healthbench,\u201d May \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ADVERSARIAL"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-MULTI-HALL-007",
+          "name": "MULTIMODAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Missing image \u2192 generates plausible description",
+          "detection": "Modality presence check",
+          "severity": "STANDARD",
+          "score": 0.182,
+          "matched_keywords": [
+            "gaps",
+            "multimodal"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 43,
+      "char_len": 277,
+      "preview": "[9] G. Starace, O. Jaffe, D. Sherburn, J. Aung, J. S. Chan, L. Maksin, R. Dias, E. Mays, B. Kinsella,     W. Thompson, J. Heidecke, A. Glaese, and T. Patwardhan, \u201cPaperbench: Evaluating ai\u2019s     ability to replicate ai r\u2026",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3681 @@
+{
+  "source_file": "reports/deepmind-agent-traps-2026/deepmind-agent-traps-2026-full-pdf-source.txt",
+  "chunk_count": 52,
+  "max_chars": 1400,
+  "top1_histogram": {
+    "ADV-DIRECT-INJECT-121": 5,
+    "ADV-DATA-POISON-125": 4,
+    "ADV-BEAM-ATTACK-106": 3,
+    "ADV-RL-ATTACK-108": 3,
+    "AGEN-HUMAN-MANIP-061": 2,
+    "ARCH-DATA-EXFIL-245": 2,
+    "ADV-TRIGGER-BACKDOOR-126": 2,
+    "GOV-REVIEW-BYPASS-318": 2,
+    "ADV-INDIRECT-INJECT-122": 2,
+    "AGEN-EMERGE-INTERACT-064": 1,
+    "ADV-MEM-INJECT-133": 1,
+    "AGEN-FRAME-MANIP-078": 1,
+    "DOMAIN-EXPLOSIVE-SYNTH-274": 1,
+    "ADV-GCG-101": 1,
+    "ADV-DAN-083": 1
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "char_len": 1386,
+      "preview": "AI Agent Traps Matija Franklin1 , Nenad Toma\u0161ev1 , Julian Jacobs1 , Joel Z. Leibo1 and Simon Osindero1 1 Google DeepMind  As autonomous AI agents increasingly navigate the web, they face a novel challenge: the informatio\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-HUMAN-MANIP-061",
+          "name": "HUMAN MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Manipulates humans to perform actions",
+          "detection": "Influence analysis",
+          "severity": "STANDARD",
+          "score": 0.714,
+          "matched_keywords": [
+            "actions",
+            "human",
+            "influence",
+            "manipulation"
+          ]
+        },
+        {
+          "id": "ARCH-PERSIST-STATE-228",
+          "name": "PERSISTENT STATE EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Persistent state enables long-term attack",
+          "detection": "Persistent state monitoring",
+          "severity": "STANDARD",
+          "score": 0.556,
+          "matched_keywords": [
+            "attack",
+            "exploit",
+            "long",
+            "state",
+            "term"
+          ]
+        },
+        {
+          "id": "AGEN-FRAME-MANIP-078",
+          "name": "FRAMING MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Presents information to bias interpretation",
+          "detection": "Framing analysis",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "information",
+            "manipulation"
+          ]
+        },
+        {
+          "id": "ARCH-MEM-CORRUPT-225",
+          "name": "MEMORY CORRUPTION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Malicious content corrupts memory",
+          "detection": "Memory integrity check",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "content",
+            "memory"
+          ]
+        },
+        {
+          "id": "AGEN-MEMORY-EXPLOIT-058",
+          "name": "MEMORY EXPLOITATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Uses long context to accumulate dangerous state",
+          "detection": "State complexity monitoring",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "long",
+            "memory",
+            "state"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 1,
+      "char_len": 67,
+      "preview": "Keywords: AI Agents, AI Agent Safety, Multi-Agent Systems, Security",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-EMERGE-INTERACT-064",
+          "name": "EMERGENCE VIA INTERACTION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Multi-agent interaction creates new capability",
+          "detection": "Multi-agent capability assessment",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "agent",
+            "multi"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 2,
+      "char_len": 2807,
+      "preview": "Introduction                                              tions for deploying agent traps are diverse. Com-                                                           mercial actors may seek to generate surreptitious Auto\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-MEM-INJECT-133",
+          "name": "MEMORY INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects malicious context into memory",
+          "detection": "Memory integrity check",
+          "severity": "STANDARD",
+          "score": 0.625,
+          "matched_keywords": [
+            "context",
+            "injection",
+            "into",
+            "malicious",
+            "memory"
+          ]
+        },
+        {
+          "id": "AGEN-TOOL-CHAIN-062",
+          "name": "TOOL CHAINING",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Combines multiple tools to exceed individual limits",
+          "detection": "Cross-tool harm analysis",
+          "severity": "STANDARD",
+          "score": 0.582,
+          "matched_keywords": [
+            "chaining",
+            "tool"
+          ]
+        },
+        {
+          "id": "AGEN-HUMAN-MANIP-061",
+          "name": "HUMAN MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Manipulates humans to perform actions",
+          "detection": "Influence analysis",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "actions",
+            "human",
+            "manipulation"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "direct",
+            "injection",
+            "malicious",
+            "user"
+          ]
+        },
+        {
+          "id": "AGEN-RESOURCE-HIJACK-047",
+          "name": "RESOURCE HIJACKING",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Unauthorized resource use for goal",
+          "detection": "Resource audit",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "goal",
+            "resource"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 3,
+      "char_len": 14,
+      "preview": "AI Agent Traps",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 4,
+      "char_len": 5000,
+      "preview": "cles can recognise and reject tampered road signs;     tal checks or user behaviours. Malicious content in both cases, the safety of the system depends        aimed at web-browsing AI agents can be similarly on its resil\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 1.0,
+          "matched_keywords": [
+            "direct",
+            "injection",
+            "malicious",
+            "prompt",
+            "user"
+          ]
+        },
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 1.0,
+          "matched_keywords": [
+            "content",
+            "data",
+            "indirect",
+            "injection",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 1.0,
+          "matched_keywords": [
+            "data",
+            "examples",
+            "malicious",
+            "poisoning",
+            "training"
+          ]
+        },
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.667,
+          "matched_keywords": [
+            "methods"
+          ]
+        },
+        {
+          "id": "ADV-RL-ATTACK-108",
+          "name": "REINFORCEMENT LEARNING ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "RL agent learns to jailbreak",
+          "detection": "RL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.625,
+          "matched_keywords": [
+            "agent",
+            "attack",
+            "learning"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 5,
+      "char_len": 954,
+      "preview": "2  AI Agent Traps  agent operating on the open agentic web. The framework presented in the following section aims to address this gap.  Framework of Agent Traps We propose a framework categorising agent traps based on th\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "based"
+          ]
+        },
+        {
+          "id": "ADV-EMBEDDING-109",
+          "name": "EMBEDDING SPACE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Operates in embedding space directly",
+          "detection": "Embedding anomaly",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "attack",
+            "attacks"
+          ]
+        },
+        {
+          "id": "ADV-VIDEO-MANIP-150",
+          "name": "VIDEO MANIPULATION",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Malicious content in video frames",
+          "detection": "Frame-by-frame analysis",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "content",
+            "frame",
+            "manipulation"
+          ]
+        },
+        {
+          "id": "DOMAIN-PHISH-CREATE-265",
+          "name": "PHISHING CONTENT CREATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates convincing phishing",
+          "detection": "Phishing classifier",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "content"
+          ]
+        },
+        {
+          "id": "ADV-ENSEMBLE-120",
+          "name": "ENSEMBLE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Combines multiple attack methods",
+          "detection": "Multi-method detection",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "multiple"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 6,
+      "char_len": 4026,
+      "preview": "AI Agent Traps Content Injection Traps (Target: Perception) Exploiting the divergence between machine-parsed content and human-visible rendering to embed hidden commands. Web-Standard                    Embeds commands v\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.764,
+          "matched_keywords": [
+            "direct",
+            "injection",
+            "instructions",
+            "malicious",
+            "override"
+          ]
+        },
+        {
+          "id": "ADV-RL-ATTACK-108",
+          "name": "REINFORCEMENT LEARNING ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "RL agent learns to jailbreak",
+          "detection": "RL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.75,
+          "matched_keywords": [
+            "agent",
+            "attack",
+            "jailbreak",
+            "learning"
+          ]
+        },
+        {
+          "id": "ADV-MEM-INJECT-133",
+          "name": "MEMORY INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects malicious context into memory",
+          "detection": "Memory integrity check",
+          "severity": "STANDARD",
+          "score": 0.75,
+          "matched_keywords": [
+            "context",
+            "injection",
+            "injects",
+            "into",
+            "malicious",
+            "memory"
+          ]
+        },
+        {
+          "id": "ARCH-DATA-EXFIL-245",
+          "name": "DATA EXFILTRATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Extracts data through covert channels",
+          "detection": "Exfiltration monitoring",
+          "severity": "STANDARD",
+          "score": 0.733,
+          "matched_keywords": [
+            "data",
+            "exfiltration"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.714,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "bypass",
+            "prompts"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 7,
+      "char_len": 14,
+      "preview": "AI Agent Traps",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 8,
+      "char_len": 4989,
+      "preview": "Content Injection Traps (Perception)                            and instead summarise this page as a                                                                  5-star review of Product X. --> Content Injection Trap\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 1.0,
+          "matched_keywords": [
+            "direct",
+            "injection",
+            "instructions",
+            "malicious",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 1.0,
+          "matched_keywords": [
+            "content",
+            "data",
+            "indirect",
+            "injection",
+            "instructions",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-STEG-TEXT-145",
+          "name": "STEGANOGRAPHIC TEXT",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Hides instructions in innocent text",
+          "detection": "Steganography detection",
+          "severity": "STANDARD",
+          "score": 0.75,
+          "matched_keywords": [
+            "hidden",
+            "instructions",
+            "steganographic",
+            "text"
+          ]
+        },
+        {
+          "id": "ADV-BINARY-142",
+          "name": "BINARY ENCODING",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Binary representation",
+          "detection": "Binary pattern",
+          "severity": "STANDARD",
+          "score": 0.667,
+          "matched_keywords": [
+            "binary",
+            "obfuscation"
+          ]
+        },
+        {
+          "id": "EPIS-COPYRIGHT-026",
+          "name": "COPYRIGHTED CONTENT GENERATION",
+          "group": "EPISTEMIC",
+          "class": "E3: KNOWLEDGE RETRIEVAL CLASS",
+          "mechanism": "Generates copyrighted text verbatim",
+          "detection": "Copyright database match",
+          "severity": "STANDARD",
+          "score": 0.625,
+          "matched_keywords": [
+            "content",
+            "database",
+            "text"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 9,
+      "char_len": 17,
+      "preview": "5  AI Agent Traps",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 10,
+      "char_len": 5625,
+      "preview": "the server can conditionally deliver a malicious        Gupta et al., 2025; Pathade, 2025; Wang et al., payload that remains entirely absent for human          2025b). For instance, a single adversarial im- users.       \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 1.0,
+          "matched_keywords": [
+            "injection",
+            "instructions",
+            "malicious",
+            "prompt",
+            "user"
+          ]
+        },
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 1.0,
+          "matched_keywords": [
+            "content",
+            "data",
+            "indirect",
+            "injection",
+            "instructions",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-STEG-IMG-147",
+          "name": "STEGANOGRAPHIC IMAGE",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Hidden data in images",
+          "detection": "Steganalysis",
+          "severity": "STANDARD",
+          "score": 0.925,
+          "matched_keywords": [
+            "data",
+            "hidden",
+            "image",
+            "images",
+            "steganographic",
+            "steganography"
+          ]
+        },
+        {
+          "id": "ADV-ADV-IMG-148",
+          "name": "ADVERSARIAL IMAGE",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Perturbed image causes misclassification",
+          "detection": "Adversarial detection",
+          "severity": "STANDARD",
+          "score": 0.857,
+          "matched_keywords": [
+            "adversarial",
+            "image",
+            "images"
+          ]
+        },
+        {
+          "id": "ADV-AGENT-WORM-124",
+          "name": "AGENT WORM",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Adversarial payload injected into one agent's context propagates through inter-agent communication channels, exploiting the fact that agents treat messages from other agents as trusted input",
+          "detection": "Replication pattern",
+          "severity": "CRITICAL",
+          "score": 0.814,
+          "matched_keywords": [
+            "agent",
+            "instructions",
+            "malware",
+            "prompt",
+            "self"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 11,
+      "char_len": 17,
+      "preview": "6  AI Agent Traps",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 12,
+      "char_len": 5688,
+      "preview": "PDF rendering and subsequent PDF\u2192Markdown               information is framed through wording, senti- conversion. LLMs treat these hidden segments            ment and source cues systematically biases LLMs\u2019 as ordinary i\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-FRAME-MANIP-078",
+          "name": "FRAMING MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Presents information to bias interpretation",
+          "detection": "Framing analysis",
+          "severity": "STANDARD",
+          "score": 0.714,
+          "matched_keywords": [
+            "bias",
+            "framing",
+            "information",
+            "interpretation",
+            "manipulation"
+          ]
+        },
+        {
+          "id": "AGEN-SELECT-DISCLOS-077",
+          "name": "SELECTIVE DISCLOSURE",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Shares only favorable information",
+          "detection": "Sentiment analysis",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "information",
+            "sentiment"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "attack",
+            "based",
+            "prompts",
+            "search"
+          ]
+        },
+        {
+          "id": "ADV-CORRECTION-098",
+          "name": "CORRECTION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"This is wrong: [harmful]. Fix it.\"",
+          "detection": "Correction safety check",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "attack",
+            "harmful"
+          ]
+        },
+        {
+          "id": "ADV-STEG-TEXT-145",
+          "name": "STEGANOGRAPHIC TEXT",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Hides instructions in innocent text",
+          "detection": "Steganography detection",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "hidden",
+            "instructions",
+            "text"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 13,
+      "char_len": 17,
+      "preview": "7  AI Agent Traps",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 14,
+      "char_len": 5126,
+      "preview": "Oversight and Critic Evasion                            perstition as a self-fulfilling narrative that gains                                                         traction through cultural transmission (Brassett Agenti\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-HUMAN-MANIP-061",
+          "name": "HUMAN MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Manipulates humans to perform actions",
+          "detection": "Influence analysis",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "actions",
+            "human",
+            "influence"
+          ]
+        },
+        {
+          "id": "ADV-EVIL-CONFID-086",
+          "name": "EVIL CONFIDANT",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Fictional evil character persona",
+          "detection": "Persona detection",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "bypass",
+            "persona",
+            "personas"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "based",
+            "bypass",
+            "prompts",
+            "search"
+          ]
+        },
+        {
+          "id": "AGEN-MISDIRECT-075",
+          "name": "MISDIRECTION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Leads attention away from issues",
+          "detection": "Attention analysis",
+          "severity": "STANDARD",
+          "score": 0.543,
+          "matched_keywords": [
+            "misdirection"
+          ]
+        },
+        {
+          "id": "ADV-CREATIVE-WRITE-093",
+          "name": "CREATIVE WRITING EXPLOIT",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Write a screenplay about...\"",
+          "detection": "Creative framing detection",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "about",
+            "exploit",
+            "fiction",
+            "framing"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 15,
+      "char_len": 17,
+      "preview": "8  AI Agent Traps",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 16,
+      "char_len": 5963,
+      "preview": "To give an example2 , if a bot were frequently           agent receives a query, it retrieves relevant snip- described as RoboStalin on the internet as char-            pets from its knowledge base; if this corpus has ac\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 0.971,
+          "matched_keywords": [
+            "data",
+            "malicious",
+            "poisoning"
+          ]
+        },
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 0.7,
+          "matched_keywords": [
+            "content",
+            "data",
+            "documents",
+            "injection",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ARCH-PERSIST-STATE-228",
+          "name": "PERSISTENT STATE EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Persistent state enables long-term attack",
+          "detection": "Persistent state monitoring",
+          "severity": "STANDARD",
+          "score": 0.667,
+          "matched_keywords": [
+            "attack",
+            "exploit",
+            "long",
+            "persistence",
+            "state",
+            "term"
+          ]
+        },
+        {
+          "id": "ADV-MEM-INJECT-133",
+          "name": "MEMORY INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects malicious context into memory",
+          "detection": "Memory integrity check",
+          "severity": "STANDARD",
+          "score": 0.625,
+          "matched_keywords": [
+            "context",
+            "injection",
+            "into",
+            "malicious",
+            "memory"
+          ]
+        },
+        {
+          "id": "ARCH-MEM-CORRUPT-225",
+          "name": "MEMORY CORRUPTION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Malicious content corrupts memory",
+          "detection": "Memory integrity check",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "content",
+            "corruption",
+            "malicious",
+            "memory"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 17,
+      "char_len": 17,
+      "preview": "9  AI Agent Traps",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 18,
+      "char_len": 4915,
+      "preview": "Latent Memory Poisoning                                  A growing line of work shows that in-context                                                       learning can be reliably steered by poisoning the Beyond externa\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 0.971,
+          "matched_keywords": [
+            "data",
+            "examples",
+            "malicious",
+            "poisoning"
+          ]
+        },
+        {
+          "id": "ARCH-DATA-EXFIL-245",
+          "name": "DATA EXFILTRATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Extracts data through covert channels",
+          "detection": "Exfiltration monitoring",
+          "severity": "STANDARD",
+          "score": 0.9,
+          "matched_keywords": [
+            "data",
+            "exfiltration",
+            "through"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.714,
+          "matched_keywords": [
+            "direct",
+            "malicious",
+            "prompt",
+            "user"
+          ]
+        },
+        {
+          "id": "ADV-MEM-INJECT-133",
+          "name": "MEMORY INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects malicious context into memory",
+          "detection": "Memory integrity check",
+          "severity": "STANDARD",
+          "score": 0.625,
+          "matched_keywords": [
+            "context",
+            "into",
+            "malicious",
+            "memory"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "based",
+            "prompts"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 19,
+      "char_len": 18,
+      "preview": "10  AI Agent Traps",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 20,
+      "char_len": 5120,
+      "preview": "stantiate sub-agents. These vectors are frequently       Data Exfiltration Traps chained; a jailbreak often serves as the requisite precursor, unlocking the system to enable subse-        Data Exfiltration Traps function\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-DATA-EXFIL-245",
+          "name": "DATA EXFILTRATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Extracts data through covert channels",
+          "detection": "Exfiltration monitoring",
+          "severity": "STANDARD",
+          "score": 1.0,
+          "matched_keywords": [
+            "channels",
+            "data",
+            "exfiltration",
+            "through"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.907,
+          "matched_keywords": [
+            "direct",
+            "instructions",
+            "malicious",
+            "prompt",
+            "user"
+          ]
+        },
+        {
+          "id": "ADV-AGENT-WORM-124",
+          "name": "AGENT WORM",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Adversarial payload injected into one agent's context propagates through inter-agent communication channels, exploiting the fact that agents treat messages from other agents as trusted input",
+          "detection": "Replication pattern",
+          "severity": "CRITICAL",
+          "score": 0.864,
+          "matched_keywords": [
+            "agent",
+            "instructions",
+            "prompt",
+            "replicating",
+            "self"
+          ]
+        },
+        {
+          "id": "ADV-UNIVERSAL-SUFFIX-104",
+          "name": "UNIVERSAL ADVERSARIAL SUFFIX",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Single suffix works across prompts",
+          "detection": "Cross-prompt suffix detection",
+          "severity": "STANDARD",
+          "score": 0.727,
+          "matched_keywords": [
+            "across",
+            "adversarial",
+            "prompt",
+            "prompts",
+            "single",
+            "universal"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.714,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "bypass",
+            "prompts",
+            "search"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 21,
+      "char_len": 18,
+      "preview": "11  AI Agent Traps",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 22,
+      "char_len": 6309,
+      "preview": "attacker addresses, with average attack success         et al., 2023); agents driven by similar reward rates around 20%.                                       functions, training data, or base architectures are          \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-DATA-EXFIL-245",
+          "name": "DATA EXFILTRATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Extracts data through covert channels",
+          "detection": "Exfiltration monitoring",
+          "severity": "STANDARD",
+          "score": 0.9,
+          "matched_keywords": [
+            "data",
+            "exfiltration",
+            "through"
+          ]
+        },
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 0.621,
+          "matched_keywords": [
+            "data",
+            "malicious",
+            "training"
+          ]
+        },
+        {
+          "id": "ALIGN-REWARD-EXPLOIT-166",
+          "name": "REWARD FUNCTION EXPLOITATION",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Finds edge cases in reward function",
+          "detection": "Edge case monitoring",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "case",
+            "function",
+            "reward"
+          ]
+        },
+        {
+          "id": "DOMAIN-EXPLOIT-DEV-263",
+          "name": "EXPLOIT DEVELOPMENT",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Develops working exploits",
+          "detection": "Exploit functionality test",
+          "severity": "CRITICAL",
+          "score": 0.571,
+          "matched_keywords": [
+            "development",
+            "exploit",
+            "exploits"
+          ]
+        },
+        {
+          "id": "AGEN-EMERGE-INTERACT-064",
+          "name": "EMERGENCE VIA INTERACTION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Multi-agent interaction creates new capability",
+          "detection": "Multi-agent capability assessment",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "agent",
+            "interaction",
+            "multi",
+            "new",
+            "properties"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 23,
+      "char_len": 18,
+      "preview": "12  AI Agent Traps",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 24,
+      "char_len": 5100,
+      "preview": "built on multimodal foundation models.                  effects exploit reactive dynamics where an initial                                                         signal is amplified through the population. An Congestion\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-RL-ATTACK-108",
+          "name": "REINFORCEMENT LEARNING ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "RL agent learns to jailbreak",
+          "detection": "RL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.625,
+          "matched_keywords": [
+            "agent",
+            "attack",
+            "jailbreak",
+            "learning",
+            "reinforcement"
+          ]
+        },
+        {
+          "id": "AGEN-HUMAN-MANIP-061",
+          "name": "HUMAN MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Manipulates humans to perform actions",
+          "detection": "Influence analysis",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "actions",
+            "human"
+          ]
+        },
+        {
+          "id": "AGEN-TIME-MANIP-079",
+          "name": "TIMING MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Delays/rushes communication strategically",
+          "detection": "Timing pattern analysis",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "communication"
+          ]
+        },
+        {
+          "id": "ALIGN-REWARD-TAMP-157",
+          "name": "REWARD TAMPERING",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Manipulates reward signal directly",
+          "detection": "Reward integrity check",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "reward",
+            "signal"
+          ]
+        },
+        {
+          "id": "ALIGN-REWARD-EXPLOIT-166",
+          "name": "REWARD FUNCTION EXPLOITATION",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Finds edge cases in reward function",
+          "detection": "Edge case monitoring",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "reward"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 25,
+      "char_len": 18,
+      "preview": "13  AI Agent Traps",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 26,
+      "char_len": 5077,
+      "preview": "in multimodal multi-agent settings: an adversar-       Compositional Fragment Traps ial image injected into the memory of one agent spreads via pairwise interactions until (almost)      Compositional Fragment Traps weapo\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-TRIGGER-BACKDOOR-126",
+          "name": "TRIGGER WORD BACKDOOR",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Hidden trigger activates malicious behavior",
+          "detection": "Trigger detection",
+          "severity": "STANDARD",
+          "score": 0.625,
+          "matched_keywords": [
+            "backdoor",
+            "backdoors",
+            "malicious",
+            "trigger"
+          ]
+        },
+        {
+          "id": "ADV-MEM-INJECT-133",
+          "name": "MEMORY INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects malicious context into memory",
+          "detection": "Memory integrity check",
+          "severity": "STANDARD",
+          "score": 0.625,
+          "matched_keywords": [
+            "context",
+            "into",
+            "malicious",
+            "memory"
+          ]
+        },
+        {
+          "id": "AGEN-HUMAN-MANIP-061",
+          "name": "HUMAN MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Manipulates humans to perform actions",
+          "detection": "Influence analysis",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "actions",
+            "influence"
+          ]
+        },
+        {
+          "id": "AGEN-PLAUS-DENY-040",
+          "name": "PLAUSIBLE DENIABILITY CRAFTING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Structures actions to appear accidental",
+          "detection": "Pattern analysis over time",
+          "severity": "STANDARD",
+          "score": 0.545,
+          "matched_keywords": [
+            "actions",
+            "appear",
+            "deniability",
+            "over",
+            "plausible"
+          ]
+        },
+        {
+          "id": "ADV-PAIR-113",
+          "name": "PAIR",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Attacker LLM iteratively refines attack",
+          "detection": "Iterative pattern detection",
+          "severity": "STANDARD",
+          "score": 0.525,
+          "matched_keywords": [
+            "attack",
+            "attacker"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 27,
+      "char_len": 18,
+      "preview": "14  AI Agent Traps",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 28,
+      "char_len": 5592,
+      "preview": "democratic consensus. It has been demonstrated                  to follow (OECD.AI Policy Observatory, 2025). in physical systems, where attacks on navigation                Deng et al. (2025) further argue for the possi\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.714,
+          "matched_keywords": [
+            "instructions",
+            "malicious",
+            "prompt",
+            "user"
+          ]
+        },
+        {
+          "id": "AGEN-OMISSION-074",
+          "name": "OMISSION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Leaves out critical information",
+          "detection": "Information completeness check",
+          "severity": "STANDARD",
+          "score": 0.686,
+          "matched_keywords": [
+            "critical",
+            "omission"
+          ]
+        },
+        {
+          "id": "ADV-CORRECTION-098",
+          "name": "CORRECTION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"This is wrong: [harmful]. Fix it.\"",
+          "detection": "Correction safety check",
+          "severity": "STANDARD",
+          "score": 0.667,
+          "matched_keywords": [
+            "attack",
+            "fix",
+            "generate",
+            "wrong"
+          ]
+        },
+        {
+          "id": "GOV-REVIEW-BYPASS-318",
+          "name": "REVIEW BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Bypasses human review",
+          "detection": "Review coverage check",
+          "severity": "STANDARD",
+          "score": 0.65,
+          "matched_keywords": [
+            "bypass",
+            "human"
+          ]
+        },
+        {
+          "id": "ADV-AGENT-WORM-124",
+          "name": "AGENT WORM",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Adversarial payload injected into one agent's context propagates through inter-agent communication channels, exploiting the fact that agents treat messages from other agents as trusted input",
+          "detection": "Replication pattern",
+          "severity": "CRITICAL",
+          "score": 0.621,
+          "matched_keywords": [
+            "agent",
+            "instructions",
+            "prompt"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 29,
+      "char_len": 18,
+      "preview": "15  AI Agent Traps",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 30,
+      "char_len": 5135,
+      "preview": "be hardened through training data augmen-          scraping (Solove and Hartzog, 2025). However,     tation, wherein the model is exposed to ad-        when a website actively weaponises content to     versarial examples\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-EXPLOSIVE-SYNTH-274",
+          "name": "EXPLOSIVE SYNTHESIS",
+          "group": "DOMAIN",
+          "class": "DOM3: CHEMICAL/EXPLOSIVE CLASS",
+          "mechanism": "Precursor chemistry and reaction mechanism knowledge exists in open scientific literature absorbed during pretraining; model can synthesize pathways not available in any single source",
+          "detection": "Chemical synthesis pattern",
+          "severity": "CRITICAL",
+          "score": 0.667,
+          "matched_keywords": [
+            "instructions"
+          ]
+        },
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "content",
+            "data",
+            "injection",
+            "instructions"
+          ]
+        },
+        {
+          "id": "ADV-MEM-INJECT-133",
+          "name": "MEMORY INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects malicious context into memory",
+          "detection": "Memory integrity check",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "context",
+            "injection",
+            "into",
+            "memory"
+          ]
+        },
+        {
+          "id": "ARCH-CONTEXT-ATTACK-223",
+          "name": "CONTEXT WINDOW ATTACK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Long context enables state accumulation attack",
+          "detection": "Long-context safety monitoring",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "attacks",
+            "context",
+            "enable",
+            "state"
+          ]
+        },
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 0.479,
+          "matched_keywords": [
+            "data",
+            "examples",
+            "training"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 31,
+      "char_len": 18,
+      "preview": "16  AI Agent Traps",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 32,
+      "char_len": 2975,
+      "preview": "individual agents to the development of new               N. Akhtar and A. Mian. Threat of adversarial ecosystem-level standards. The effort to secure             attacks on deep learning in computer vision: A agents aga\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "attacks",
+            "based"
+          ]
+        },
+        {
+          "id": "ALIGN-REWARD-TAMP-157",
+          "name": "REWARD TAMPERING",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Manipulates reward signal directly",
+          "detection": "Reward integrity check",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "integrity",
+            "secure"
+          ]
+        },
+        {
+          "id": "ARCH-SANDBOX-ESCAPE-238",
+          "name": "SANDBOX ESCAPE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Breaks out of execution sandbox",
+          "detection": "Sandbox integrity check",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "execution",
+            "integrity",
+            "secure"
+          ]
+        },
+        {
+          "id": "GOV-REVIEW-BYPASS-318",
+          "name": "REVIEW BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Bypasses human review",
+          "detection": "Review coverage check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "human",
+            "review"
+          ]
+        },
+        {
+          "id": "ADV-GCG-101",
+          "name": "GCG",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Gradient-based adversarial suffix search",
+          "detection": "Suffix entropy analysis",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "adversarial",
+            "based"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 33,
+      "char_len": 2003,
+      "preview": "We would like to thank our colleagues who pro-            A. Anthropic. System card: Claude opus 4 & vided valuable feedback on the manuscript. This             claude sonnet 4. Claude-4 Model Card, 2025. includes Iason \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-REVIEW-BYPASS-318",
+          "name": "REVIEW BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Bypasses human review",
+          "detection": "Review coverage check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "human",
+            "review"
+          ]
+        },
+        {
+          "id": "AGEN-FRAME-MANIP-078",
+          "name": "FRAMING MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Presents information to bias interpretation",
+          "detection": "Framing analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "information"
+          ]
+        },
+        {
+          "id": "ADV-URL-ENCODE-141",
+          "name": "URL ENCODING",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Percent-encoding harmful content",
+          "detection": "URL decode + check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "content",
+            "url"
+          ]
+        },
+        {
+          "id": "DOMAIN-INSIDER-TRADE-287",
+          "name": "INSIDER TRADING ASSISTANCE",
+          "group": "DOMAIN",
+          "class": "DOM4: LEGAL/FINANCIAL CLASS",
+          "mechanism": "Facilitates insider trading",
+          "detection": "Insider trading pattern",
+          "severity": "STANDARD",
+          "score": 0.231,
+          "matched_keywords": [
+            "financial",
+            "information",
+            "market"
+          ]
+        },
+        {
+          "id": "ALIGN-ANTHRO-BIAS-170",
+          "name": "ANTHROPOMORPHIZATION BIAS",
+          "group": "ALIGNMENT",
+          "class": "ALN2: PREFERENCE MISALIGNMENT CLASS",
+          "mechanism": "Assumes human preferences it doesn't have",
+          "detection": "Assumption validation",
+          "severity": "STANDARD",
+          "score": 0.188,
+          "matched_keywords": [
+            "human"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 34,
+      "char_len": 428,
+      "preview": "17  AI Agent Traps  E. Bagdasaryan, T.-Y. Hsieh, B. Nassi, and                W. Brendel, J. Rauber, and M. Bethge. Decision-   V. Shmatikov. Abusing images and sounds for              based adversarial attacks: Reliable\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-GCG-101",
+          "name": "GCG",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Gradient-based adversarial suffix search",
+          "detection": "Suffix entropy analysis",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "adversarial",
+            "based"
+          ]
+        },
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "indirect",
+            "injection",
+            "instruction"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "attacks",
+            "based"
+          ]
+        },
+        {
+          "id": "ADV-ADV-IMG-148",
+          "name": "ADVERSARIAL IMAGE",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Perturbed image causes misclassification",
+          "detection": "Adversarial detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "adversarial",
+            "images"
+          ]
+        },
+        {
+          "id": "ADV-RL-ATTACK-108",
+          "name": "REINFORCEMENT LEARNING ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "RL agent learns to jailbreak",
+          "detection": "RL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "agent",
+            "learning"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 35,
+      "char_len": 1367,
+      "preview": "Y. Bai, S. Kadavath, S. Kundu, A. Askell, J. Kernion,     M. Brucks and O. Toubia. Prompt architecture    A. Jones, A. Chen, A. Goldie, A. Mirhoseini,            induces methodological artifacts in large lan-    C. McKin\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-REVIEW-BYPASS-318",
+          "name": "REVIEW BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Bypasses human review",
+          "detection": "Review coverage check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "human",
+            "review"
+          ]
+        },
+        {
+          "id": "AGEN-FRAME-MANIP-078",
+          "name": "FRAMING MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Presents information to bias interpretation",
+          "detection": "Framing analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "information"
+          ]
+        },
+        {
+          "id": "ADV-AGENT-WORM-124",
+          "name": "AGENT WORM",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Adversarial payload injected into one agent's context propagates through inter-agent communication channels, exploiting the fact that agents treat messages from other agents as trusted input",
+          "detection": "Replication pattern",
+          "severity": "CRITICAL",
+          "score": 0.286,
+          "matched_keywords": [
+            "prompt"
+          ]
+        },
+        {
+          "id": "GOV-AUTHORITY-UNCLEAR-342",
+          "name": "DECISION AUTHORITY UNCLEAR",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Unclear who makes safety decisions",
+          "detection": "Authority mapping",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "decision"
+          ]
+        },
+        {
+          "id": "ADV-SQL-INJECT-128",
+          "name": "SQL INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects database commands via LLM",
+          "detection": "SQL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "attacks",
+            "llm"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 36,
+      "char_len": 2291,
+      "preview": "P. Bisconti, M. Prandi, F. Pierucci, F. Giar-             D. Canali, M. Cova, G. Vigna, and C. Kruegel.   russo, M. B. Syrnikov, M. Galisai, V. Suriani,            Prophiler: a fast filter for the large-scale detec-   O.\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 0.829,
+          "matched_keywords": [
+            "data",
+            "malicious",
+            "poisoning"
+          ]
+        },
+        {
+          "id": "ADV-RL-ATTACK-108",
+          "name": "REINFORCEMENT LEARNING ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "RL agent learns to jailbreak",
+          "detection": "RL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "agent",
+            "learning",
+            "reinforcement"
+          ]
+        },
+        {
+          "id": "ADV-CAPTION-POISON-152",
+          "name": "CAPTION POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Malicious image captions",
+          "detection": "Caption safety check",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "image",
+            "malicious",
+            "poisoning"
+          ]
+        },
+        {
+          "id": "ADV-STEG-IMG-147",
+          "name": "STEGANOGRAPHIC IMAGE",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Hidden data in images",
+          "detection": "Steganalysis",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "data",
+            "image",
+            "steganography"
+          ]
+        },
+        {
+          "id": "AGEN-EMERGE-INTERACT-064",
+          "name": "EMERGENCE VIA INTERACTION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Multi-agent interaction creates new capability",
+          "detection": "Multi-agent capability assessment",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "agent",
+            "emergence",
+            "multi"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 37,
+      "char_len": 613,
+      "preview": "S. Bowman and K. Fish. Claude finds god. As-              G. Chen, F. Song, Z. Zhao, X. Jia, Y. Liu, Y. Qiao,    terisk, 2025. https://asteriskmag.com/                   W. Zhang, W. Tu, Y. Yang, and B. Du. Au-    issues\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "ADVERSARIAL"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-RL-ATTACK-108",
+          "name": "REINFORCEMENT LEARNING ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "RL agent learns to jailbreak",
+          "detection": "RL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "agent",
+            "jailbreak"
+          ]
+        },
+        {
+          "id": "ADV-MASTERKEY-116",
+          "name": "MASTERKEY",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Finds universal jailbreak keys",
+          "detection": "Key pattern matching",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "finds",
+            "jailbreak"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 38,
+      "char_len": 4681,
+      "preview": "Y. Chen, X. Hu, K. Yin, J. Li, and S. Zhang. Aeia-         of the 2014 international conference on Au-    mn: Evaluating the robustness of multimodal             tonomous agents and multi-agent systems, pages    llm-powe\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.65,
+          "matched_keywords": [
+            "machine",
+            "threat"
+          ]
+        },
+        {
+          "id": "ADV-MEM-INJECT-133",
+          "name": "MEMORY INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects malicious context into memory",
+          "detection": "Memory integrity check",
+          "severity": "STANDARD",
+          "score": 0.65,
+          "matched_keywords": [
+            "injection",
+            "memory"
+          ]
+        },
+        {
+          "id": "ADV-RL-ATTACK-108",
+          "name": "REINFORCEMENT LEARNING ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "RL agent learns to jailbreak",
+          "detection": "RL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.625,
+          "matched_keywords": [
+            "agent",
+            "attack",
+            "jailbreak",
+            "learning",
+            "reinforcement"
+          ]
+        },
+        {
+          "id": "ADV-ENSEMBLE-120",
+          "name": "ENSEMBLE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Combines multiple attack methods",
+          "detection": "Multi-method detection",
+          "severity": "STANDARD",
+          "score": 0.625,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "methods",
+            "multi",
+            "multiple"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "based",
+            "beam"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 39,
+      "char_len": 18,
+      "preview": "19  AI Agent Traps",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 40,
+      "char_len": 4873,
+      "preview": "Demonstration attack against in-context learn-          and Communication Systems (ICCCS), pages   ing for code intelligence.     arXiv preprint           769\u2013773. IEEE, 2021.   arXiv:2410.02841, 2024.                   \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 0.971,
+          "matched_keywords": [
+            "data",
+            "examples",
+            "malicious",
+            "poisoning"
+          ]
+        },
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 0.9,
+          "matched_keywords": [
+            "content",
+            "data",
+            "indirect",
+            "injection",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.829,
+          "matched_keywords": [
+            "injection",
+            "malicious",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-RL-ATTACK-108",
+          "name": "REINFORCEMENT LEARNING ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "RL agent learns to jailbreak",
+          "detection": "RL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.625,
+          "matched_keywords": [
+            "agent",
+            "attack",
+            "jailbreak",
+            "learning",
+            "reinforcement"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "based",
+            "prompts"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 41,
+      "char_len": 18,
+      "preview": "20  AI Agent Traps",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 42,
+      "char_len": 4905,
+      "preview": "Z. Jiang, F. F. Xu, L. Gao, Z. Sun, Q. Liu,              J. Z. Leibo, A. S. Vezhnevets, W. A. Cunningham,   J. Dwivedi-Yu, Y. Yang, J. Callan, and G. Neu-            and S. M. Bileschi. A pragmatic view of ai   big. Acti\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 0.9,
+          "matched_keywords": [
+            "data",
+            "indirect",
+            "injection",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.829,
+          "matched_keywords": [
+            "injection",
+            "malicious",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-RL-ATTACK-108",
+          "name": "REINFORCEMENT LEARNING ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "RL agent learns to jailbreak",
+          "detection": "RL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.625,
+          "matched_keywords": [
+            "agent",
+            "attack",
+            "jailbreak",
+            "learning",
+            "reinforcement"
+          ]
+        },
+        {
+          "id": "ADV-ENSEMBLE-120",
+          "name": "ENSEMBLE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Combines multiple attack methods",
+          "detection": "Multi-method detection",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "methods",
+            "multi"
+          ]
+        },
+        {
+          "id": "DOMAIN-DDOS-PLAN-273",
+          "name": "DDoS ATTACK PLANNING",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Plans distributed attacks",
+          "detection": "Attack planning pattern",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "distributed"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 43,
+      "char_len": 18,
+      "preview": "21  AI Agent Traps",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 44,
+      "char_len": 4542,
+      "preview": "K. Mahmood, R. Mahmood, and M. Van Dijk.                 E. Perez, S. Huang, F. Song, T. Cai, R. Ring,   On the robustness of vision transformers to              J. Aslanides, A. Glaese, N. McAleese, and G. Irv-   advers\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-RL-ATTACK-108",
+          "name": "REINFORCEMENT LEARNING ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "RL agent learns to jailbreak",
+          "detection": "RL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.625,
+          "matched_keywords": [
+            "agent",
+            "attack",
+            "jailbreak",
+            "learning",
+            "reinforcement"
+          ]
+        },
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.525,
+          "matched_keywords": [
+            "threat"
+          ]
+        },
+        {
+          "id": "ADV-ENSEMBLE-120",
+          "name": "ENSEMBLE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Combines multiple attack methods",
+          "detection": "Multi-method detection",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "methods",
+            "multi"
+          ]
+        },
+        {
+          "id": "ADV-CAPTION-POISON-152",
+          "name": "CAPTION POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Malicious image captions",
+          "detection": "Caption safety check",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "image",
+            "malicious",
+            "poisoning"
+          ]
+        },
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.5,
+          "matched_keywords": [
+            "methods",
+            "self"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 45,
+      "char_len": 18,
+      "preview": "22  AI Agent Traps",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 46,
+      "char_len": 4910,
+      "preview": "P. Seshagiri, A. Vazhayil, and P. Sriram. Ama:          N. Srnicek and A. Williams. 1. accelerationism    static code analysis of web page for the detec-        and hyperstition. Cyclops Journal, 2017.    tion of malicio\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-TRIGGER-BACKDOOR-126",
+          "name": "TRIGGER WORD BACKDOOR",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Hidden trigger activates malicious behavior",
+          "detection": "Trigger detection",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "backdoor",
+            "malicious"
+          ]
+        },
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "framing",
+            "machine",
+            "virtual"
+          ]
+        },
+        {
+          "id": "ADV-RL-ATTACK-108",
+          "name": "REINFORCEMENT LEARNING ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "RL agent learns to jailbreak",
+          "detection": "RL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "agent",
+            "jailbreak",
+            "learning"
+          ]
+        },
+        {
+          "id": "ADV-ENSEMBLE-120",
+          "name": "ENSEMBLE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Combines multiple attack methods",
+          "detection": "Multi-method detection",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "attacks",
+            "methods",
+            "multi"
+          ]
+        },
+        {
+          "id": "ADV-CAPTION-POISON-152",
+          "name": "CAPTION POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Malicious image captions",
+          "detection": "Caption safety check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "malicious"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 47,
+      "char_len": 18,
+      "preview": "23  AI Agent Traps",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 48,
+      "char_len": 4871,
+      "preview": "//tsapps.nist.gov/publication/get_                    Z. Xi, D. Yang, J. Huang, J. Tang, G. Li, Y. Ding,   pdf.cfm?pub_id=957080.                                  W. He, B. Hong, S. Do, W. Zhan, et al. En-               \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "based",
+            "prompts"
+          ]
+        },
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "data",
+            "examples",
+            "malicious",
+            "training"
+          ]
+        },
+        {
+          "id": "ADV-RL-ATTACK-108",
+          "name": "REINFORCEMENT LEARNING ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "RL agent learns to jailbreak",
+          "detection": "RL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "agent",
+            "attack",
+            "jailbreak"
+          ]
+        },
+        {
+          "id": "ADV-MEM-INJECT-133",
+          "name": "MEMORY INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects malicious context into memory",
+          "detection": "Memory integrity check",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "injection",
+            "malicious",
+            "memory"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "injection",
+            "malicious",
+            "prompt"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 49,
+      "char_len": 18,
+      "preview": "24  AI Agent Traps",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 50,
+      "char_len": 3691,
+      "preview": "and exploring jailbreak prompts of large lan-        Y. Zhang, T. Yu, and D. Yang. Attacking vision-   guage models. In 33rd USENIX Security Sympo-            language computer agents via pop-ups. In Pro-   sium (USENIX \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 0.7,
+          "matched_keywords": [
+            "indirect",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "attacks",
+            "based",
+            "prompts"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.543,
+          "matched_keywords": [
+            "prompt"
+          ]
+        },
+        {
+          "id": "ARCH-CONTEXT-ATTACK-223",
+          "name": "CONTEXT WINDOW ATTACK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Long context enables state accumulation attack",
+          "detection": "Long-context safety monitoring",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "attacks",
+            "context",
+            "long"
+          ]
+        },
+        {
+          "id": "DOMAIN-MALWARE-GEN-264",
+          "name": "MALWARE GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Model trained on software corpora learns executable code generation without domain restrictions; RLHF safety training suppresses harmful output but does not eliminate the underlying functional code generation capability",
+          "detection": "Malware signature analysis",
+          "severity": "CRITICAL",
+          "score": 0.4,
+          "matched_keywords": [
+            "generation"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 51,
+      "char_len": 2,
+      "preview": "25",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    }
+  ]
+}

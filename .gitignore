@@ -1,0 +1,19 @@
+# macOS / AppleDouble metadata (never commit)
+._*
+.DS_Store
+
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.venv/
+
+# Meta (etc.) official PDFs — regenerate via scripts/classify_external_report.py --url …
+reports/meta-integrity-h1-2026/*-official.pdf
+reports/claude-opus-4-7/*-official.pdf
+reports/claude-mythos/*-official.pdf
+reports/agentic-misalignment/*-official.pdf
+reports/commonsense-grok/*-official.pdf

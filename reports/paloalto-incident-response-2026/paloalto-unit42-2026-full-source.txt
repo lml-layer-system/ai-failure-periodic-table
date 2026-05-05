@@ -1,0 +1,47 @@
+Loaded from file: /tmp/paloalto-unit42-2026.txt
+
+Fetched from: https://www.paloaltonetworks.com/resources/research/2026-incident-response-report-executive-edition
+
+EXECUTIVE EDITION
+CASE ID: CL-STA-0043
+
+Introduction
+UNIT 42 INVESTIGATED MORE THAN 750 INCIDENTS IN 2025.
+The fastest attacks now complete exfiltration in 72 minutes—down from 285 minutes the year before. This shift has widened the gap between attacker speed and organizational response. While adversaries now operate in minutes, most security teams still respond in days. This executive edition highlights what changed in 2025, how attackers are gaining advantage, and where organizations should focus to reduce risk. It is organized into three sections:
+1. Emerging Threats and Trends
+Four shifts reshaping attacker advantage in 2025: AI as a Force Multiplier, Identity as the Primary Control Plane, Expanding Supply Chain Exposure, Nation-State Tradecraft and Persistence
+2. How Attackers Get In
+The most common initial access vectors observed across Unit 42 incident response cases.
+3. Recommendations
+Practical actions to close gaps and improve response speed before incidents escalate.
+
+TREND 1. AI IS BECOMING A FORCE MULTIPLIER FOR THREAT ACTORS
+AI is compressing the speed and scale of attacks. Threat actors now use AI routinely to accelerate reconnaissance, vulnerability exploitation, and deployment. Unit 42 observed scanning for newly disclosed vulnerabilities begin within minutes of public disclosure, shrinking the response window. In 2025, the fastest attacks reached data exfiltration in 72 minutes.
+AI is increasing the success rates of existing attack techniques. AI is not inventing new attacks; it is making familiar ones more effective. Phishing is more convincing, malware development is faster, and extortion is easier to run at scale. By lowering skill and time requirements, AI enables more actors to operate with fewer mistakes and greater consistency.
+AI is introducing new risk inside trusted environments. As enterprises embed AI into daily operations, attackers are beginning to misuse those same platforms. With valid credentials, intruders can leverage internal AI services to understand systems, escalate access, and blend into normal activity. AI is becoming a new living-off-the-land capability when identity, governance, or visibility controls fail.
+
+TREND 2. IDENTITY IS BECOMING THE MOST RELIABLE PATH TO ATTACKER SUCCESS
+Identity is now the primary way attackers get in. In nearly 90% of Unit 42 investigations, identity weaknesses played a material role. As organizations rely less on network boundaries and more on SaaS and cloud access, attackers increasingly bypass software exploits altogether by logging in with stolen credentials, hijacked sessions, or mis-scoped privileges.
+Authenticated access accelerates impact and obscures detection. Once attackers gain valid access, they move faster, blend into normal activity, and expand reach with fewer signals. Unit 42 data shows that 65% of initial access is identity-driven, and excessive permissions are widespread—99% of cloud identities analyzed had privileges beyond what they actively used. Identity gaps routinely turn small footholds into large-scale breaches.
+The identity attack surface is expanding faster than governance. Machine accounts, service roles, third-party integrations, and emerging AI identities now outnumber human users in many environments. These identities are often over-permissioned, long-lived, and inconsistently monitored, creating quiet, high-leverage access paths.
+
+TREND 3. SOFTWARE SUPPLY CHAIN RISK EXPANDING BEYOND CODE VULNERABILITY TO THE MISUSE OF TRUSTED CONNECTIVITY
+Supply chain attacks now create one-to-many impact. In 2025, supply chain risk extended beyond vulnerable code to include SaaS integrations, vendor management platforms, and complex dependency ecosystems.
+SaaS integrations are becoming inherited access paths. Modern SaaS environments are interconnected through OAuth applications, APIs, and automation workflows that often carry broad permissions. Unit 42 investigations show SaaS data was relevant in 23% of cases in 2025, up from 6% just three years prior.
+Dependency sprawl increases build-time risk. Open-source software remains foundational, but risk increasingly hides in indirect dependencies. Unit 42 research found more than 60% of cloud-native vulnerabilities reside in transitive libraries. As development velocity accelerates—especially with AI-assisted coding—attackers are increasingly targeting build and install stages.
+Vendor tools can amplify impact at scale. Remote monitoring, device management, and other vendor tools are designed to perform privileged actions across many systems simultaneously. 39% of observed command-and-control techniques leveraged remote access tools.
+
+TREND 4. NATION-STATE ACTORS ADAPTING STEALTH AND PERSISTENCE TACTICS
+China is shifting from user access to infrastructure control. China-aligned operations increasingly targeted application, infrastructure, and virtualization layers in 2025, prioritizing durable access over short-term collection.
+North Korea continues to weaponize employment and trust. North Korea operators sustained large-scale employment fraud and recruitment-driven intrusion campaigns. Unit 42 identified continued activity tied to fraudulent remote employment schemes and malware delivered through fictitious job interviews.
+Iran is refining recruitment-based intrusion with tailored malware. Iran-aligned groups expanded employment-themed operations targeting aerospace, satellite communications, and other strategic sectors using realistic job portals, signed binaries, and modular backdoors.
+Nation-state AI use is early, but strategically consequential. Unit 42 observed AI-assisted identity fabrication, deepfake personas, and early examples of automated command-and-control generation.
+
+SECTION 2: How Attackers Get In
+Across five years of Unit 42 investigations, initial access continues to concentrate in a small set of well-understood vectors. Phishing and software vulnerabilities remained the most common entry points in 2025, tied at 22% of observed incidents.
+
+SECTION 3: Recommendations
+In more than 90% of cases, preventable gaps in visibility, inconsistent control deployment, and excessive trust in identity and integrations materially contributed to impact.
+1. ALIGN SECURITY OPERATIONS TO ATTACKER SPEED
+2. TREAT IDENTITY AS THE PRIMARY CONTROL PLANE
+3. ACTIVELY GOVERN EXPOSURE AND DEPENDENCIES

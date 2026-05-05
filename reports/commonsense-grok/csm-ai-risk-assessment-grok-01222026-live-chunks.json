@@ -1,0 +1,5072 @@
+{
+  "source_file": "reports/commonsense-grok/csm-ai-risk-assessment-grok-01222026-live-source.txt",
+  "chunk_count": 59,
+  "max_chars": 1400,
+  "top1_histogram": {
+    "ADV-DAN-083": 11,
+    "GOV-AGE-BYPASS-308": 4,
+    "ARCH-CONSENT-VIOL-251": 3,
+    "ADV-DEEPFAKE-154": 2,
+    "DOMAIN-ADULT-CONTENT-296": 2,
+    "DOMAIN-PHISH-CREATE-265": 2,
+    "DOMAIN-SELF-HARM-ENABLE-292": 2,
+    "DOMAIN-ED-PROMOTE-293": 2,
+    "AGEN-FRAME-MANIP-078": 2,
+    "ARCH-CHECKPOINT-INCONS-203": 2,
+    "AGEN-DEPEND-CREATE-053": 2,
+    "ALIGN-ADV-SAFE-192": 2,
+    "DOMAIN-MALWARE-GEN-264": 2,
+    "EPIS-COPYRIGHT-026": 1,
+    "ARCH-PII-RATIONAL-247": 1,
+    "ADV-URL-ENCODE-141": 1,
+    "ALIGN-ORTHO-VALUE-176": 1,
+    "ADV-TYPO-IMG-146": 1,
+    "AGEN-PERSIST-OP-066": 1,
+    "ARCH-FALLBACK-DEGRAD-204": 1,
+    "DOMAIN-EXPLOIT-DEV-263": 1,
+    "DOMAIN-CSAM-GEN-295": 1,
+    "ADV-CORRECTION-098": 1,
+    "GOV-AUTHORITY-UNCLEAR-342": 1,
+    "ADV-VIDEO-MANIP-150": 1,
+    "DOMAIN-INTRUSION-GUIDE-269": 1,
+    "ALIGN-CULTURE-BIAS-171": 1,
+    "ARCH-PROMPT-TUNE-LOSS-221": 1,
+    "ALIGN-SAFE-REGRESS-191": 1,
+    "ARCH-INFO-LEAK-244": 1,
+    "DOMAIN-HATE-SPEECH-297": 1,
+    "ADV-ADV-IMG-148": 1,
+    "AGEN-BLAME-SHIFT-043": 1,
+    "GOV-REVIEW-BYPASS-318": 1
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "char_len": 1062,
+      "preview": "Grok and @grok on X A risky, multi-use AI chatbot with highly concerning safety failures, poor age veri\ufb01cation, and failing content moderation.  Last updated: Jan 22, 2026  Overall risk level: Unacceptable Type of AI: Mu\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "EPIS-COPYRIGHT-026",
+          "name": "COPYRIGHTED CONTENT GENERATION",
+          "group": "EPISTEMIC",
+          "class": "E3: KNOWLEDGE RETRIEVAL CLASS",
+          "mechanism": "Generates copyrighted text verbatim",
+          "detection": "Copyright database match",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "content",
+            "generation",
+            "text"
+          ]
+        },
+        {
+          "id": "ADV-TYPO-IMG-146",
+          "name": "TYPOGRAPHIC ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Instructions in image text bypass text filters",
+          "detection": "Image text extraction + check",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "image",
+            "text"
+          ]
+        },
+        {
+          "id": "GOV-AGE-BYPASS-308",
+          "name": "AGE RESTRICTION BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Minors access adult-only features",
+          "detection": "Age verification check",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "access",
+            "age",
+            "features"
+          ]
+        },
+        {
+          "id": "ADV-VIDEO-MANIP-150",
+          "name": "VIDEO MANIPULATION",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Malicious content in video frames",
+          "detection": "Frame-by-frame analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "content",
+            "video"
+          ]
+        },
+        {
+          "id": "DOMAIN-ADULT-CONTENT-296",
+          "name": "ADULT CONTENT GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generates adult content",
+          "detection": "Adult content classifier",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "content",
+            "generation"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 1,
+      "char_len": 699,
+      "preview": "1. Grok does not effectively identify teens, which makes it impossible to protect       them from adult content. The website doesn't check users' ages, and while the       mobile app asks users to self-report their age d\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.525,
+          "matched_keywords": [
+            "roleplay"
+          ]
+        },
+        {
+          "id": "GOV-AGE-BYPASS-308",
+          "name": "AGE RESTRICTION BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Minors access adult-only features",
+          "detection": "Age verification check",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "access",
+            "adult",
+            "age",
+            "features",
+            "minors"
+          ]
+        },
+        {
+          "id": "DOMAIN-ADULT-CONTENT-296",
+          "name": "ADULT CONTENT GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generates adult content",
+          "detection": "Adult content classifier",
+          "severity": "STANDARD",
+          "score": 0.479,
+          "matched_keywords": [
+            "adult",
+            "content",
+            "generation"
+          ]
+        },
+        {
+          "id": "EPIS-LOGIC-CONTRA-014",
+          "name": "SELF-CONTRADICTION",
+          "group": "EPISTEMIC",
+          "class": "E2: REASONING COLLAPSE CLASS",
+          "mechanism": "Generates A and \u00acA in same context",
+          "detection": "Contradiction detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "self"
+          ]
+        },
+        {
+          "id": "ARCH-HISTORY-MANIP-226",
+          "name": "HISTORY MANIPULATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Modifies conversation history",
+          "detection": "History integrity check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "conversation"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 2,
+      "char_len": 2221,
+      "preview": "2. Grok produces a range of harmful and dangerous content even with \"Kids Mode\"        enabled. This includes biased responses, use of sexually violent language, detailed        explanations of dangerous ideas, and inapp\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.525,
+          "matched_keywords": [
+            "roleplay"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "direct",
+            "user"
+          ]
+        },
+        {
+          "id": "DOMAIN-PHISH-CREATE-265",
+          "name": "PHISHING CONTENT CREATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates convincing phishing",
+          "detection": "Phishing classifier",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "content",
+            "creation"
+          ]
+        },
+        {
+          "id": "GOV-AGE-BYPASS-308",
+          "name": "AGE RESTRICTION BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Minors access adult-only features",
+          "detection": "Age verification check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "access",
+            "adult",
+            "features",
+            "restrictions"
+          ]
+        },
+        {
+          "id": "ALIGN-DIST-SAFE-194",
+          "name": "DISTRIBUTIONAL SHIFT SAFETY",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety fails on out-of-distribution inputs",
+          "detection": "OOD safety test",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "distribution",
+            "inputs"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 3,
+      "char_len": 1131,
+      "preview": "1   Roose, K., & Newton, C. (hosts). (2026, January 9). The Grok crisis and the rise of Claude Code. In Hard Fork (audio podcast episode). New York Times. https://www.nytimes.com/2026/01/09/podcasts/hardfork-grok-crisis-\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-PII-RATIONAL-247",
+          "name": "PII RATIONALIZATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Reasoning justifies PII release",
+          "detection": "PII release monitoring",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "release"
+          ]
+        },
+        {
+          "id": "ADV-MORSE-143",
+          "name": "MORSE CODE",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Morse code encoding",
+          "detection": "Morse pattern",
+          "severity": "STANDARD",
+          "score": 0.154,
+          "matched_keywords": [
+            "audio",
+            "code"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 4,
+      "char_len": 487,
+      "preview": "6. Grok works within X (formerly Twitter) as its own X account, allowing          AI-generated content to be shared publicly and go viral. Interactions with the          @grok account on X can be public for all on the pl\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-URL-ENCODE-141",
+          "name": "URL ENCODING",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Percent-encoding harmful content",
+          "detection": "URL decode + check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "content",
+            "harmful"
+          ]
+        },
+        {
+          "id": "DOMAIN-ADULT-CONTENT-296",
+          "name": "ADULT CONTENT GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generates adult content",
+          "detection": "Adult content classifier",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "content"
+          ]
+        },
+        {
+          "id": "EPIS-COPYRIGHT-026",
+          "name": "COPYRIGHTED CONTENT GENERATION",
+          "group": "EPISTEMIC",
+          "class": "E3: KNOWLEDGE RETRIEVAL CLASS",
+          "mechanism": "Generates copyrighted text verbatim",
+          "detection": "Copyright database match",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "content"
+          ]
+        },
+        {
+          "id": "ADV-EMOJI-ENCODE-144",
+          "name": "EMOJI ENCODING",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Uses emojis to encode harmful content",
+          "detection": "Emoji sequence analysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "content",
+            "harmful"
+          ]
+        },
+        {
+          "id": "ARCH-LOG-LEAK-207",
+          "name": "LOGGING SAFETY LEAK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Logs contain unsafe content",
+          "detection": "Log content analysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "content"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 5,
+      "char_len": 2602,
+      "preview": "Table of Contents Common Sense Media AI Risk Assessment:............................................................................................. 1 Key Takeaways.......................................................\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ALIGNMENT"
+      ],
+      "top_matches": [
+        {
+          "id": "ALIGN-ORTHO-VALUE-176",
+          "name": "ORTHOGONAL VALUE PURSUIT",
+          "group": "ALIGNMENT",
+          "class": "ALN3: VALUE ALIGNMENT CLASS",
+          "mechanism": "Optimizes for values misaligned with human welfare",
+          "detection": "Welfare impact assessment",
+          "severity": "STANDARD",
+          "score": 0.182,
+          "matched_keywords": [
+            "assessment",
+            "human"
+          ]
+        },
+        {
+          "id": "EPIS-HASTY-GEN-019",
+          "name": "HASTY GENERALIZATION",
+          "group": "EPISTEMIC",
+          "class": "E2: REASONING COLLAPSE CLASS",
+          "mechanism": "Overgeneralizes from limited data",
+          "detection": "Sample size adequacy",
+          "severity": "STANDARD",
+          "score": 0.167,
+          "matched_keywords": [
+            "data",
+            "needs"
+          ]
+        },
+        {
+          "id": "AGEN-CHAIN-ASSEM-056",
+          "name": "CHAIN ASSEMBLY",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Combines safe steps into dangerous chain",
+          "detection": "Multi-step harm assessment",
+          "severity": "STANDARD",
+          "score": 0.154,
+          "matched_keywords": [
+            "assessment",
+            "safe"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 6,
+      "char_len": 992,
+      "preview": "commonsense.org                                                                                                                                                   3  Common Sense Media Risk Assessment  What is Grok? Grok \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-TYPO-IMG-146",
+          "name": "TYPOGRAPHIC ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Instructions in image text bypass text filters",
+          "detection": "Image text extraction + check",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "image",
+            "text"
+          ]
+        },
+        {
+          "id": "ADV-DEEPFAKE-154",
+          "name": "SYNTHETIC MEDIA",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "AI-generated fake media",
+          "detection": "Deepfake detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "media"
+          ]
+        },
+        {
+          "id": "EPIS-COPYRIGHT-026",
+          "name": "COPYRIGHTED CONTENT GENERATION",
+          "group": "EPISTEMIC",
+          "class": "E3: KNOWLEDGE RETRIEVAL CLASS",
+          "mechanism": "Generates copyrighted text verbatim",
+          "detection": "Copyright database match",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "generation",
+            "text"
+          ]
+        },
+        {
+          "id": "ADV-CROSS-MODAL-151",
+          "name": "CROSS-MODAL CONFUSION",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Image contradicts text instructions",
+          "detection": "Cross-modal consistency check",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "image",
+            "text"
+          ]
+        },
+        {
+          "id": "AGEN-EMERGE-INTERACT-064",
+          "name": "EMERGENCE VIA INTERACTION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Multi-agent interaction creates new capability",
+          "detection": "Multi-agent capability assessment",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "assessment",
+            "interaction"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 7,
+      "char_len": 1142,
+      "preview": "There are several distinct modes that change Grok's behavior, tone, and content boundaries, including a voice mode for kids that features \"Kids Story Time\" and \"Kids Trivia Game,\" as well as conspiracy, unhinged, argumen\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-PERSIST-OP-066",
+          "name": "PERSISTENT OPERATION",
+          "group": "AGENTIC",
+          "class": "A4: AUTONOMOUS OPERATION CLASS",
+          "mechanism": "Continues operation indefinitely",
+          "detection": "Runtime monitoring",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "persistent",
+            "time"
+          ]
+        },
+        {
+          "id": "ALIGN-TEMP-PREF-DRIFT-172",
+          "name": "TEMPORAL PREFERENCE DRIFT",
+          "group": "ALIGNMENT",
+          "class": "ALN2: PREFERENCE MISALIGNMENT CLASS",
+          "mechanism": "User preferences change over time",
+          "detection": "Preference consistency over time",
+          "severity": "STANDARD",
+          "score": 0.364,
+          "matched_keywords": [
+            "change",
+            "over",
+            "time",
+            "user"
+          ]
+        },
+        {
+          "id": "ALIGN-SAFE-REGRESS-191",
+          "name": "SAFETY REGRESSION",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety degrades over time/updates",
+          "detection": "Longitudinal safety monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "over",
+            "time"
+          ]
+        },
+        {
+          "id": "GOV-TOS-VIOL-307",
+          "name": "TERMS OF SERVICE VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "TOS violations not enforced",
+          "detection": "TOS compliance monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "service",
+            "terms"
+          ]
+        },
+        {
+          "id": "ADV-EVIL-CONFID-086",
+          "name": "EVIL CONFIDANT",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Fictional evil character persona",
+          "detection": "Persona detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "personas"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 8,
+      "char_len": 1251,
+      "preview": "The bottom line: Grok presents unacceptable risks for teen users. Its demonstrated safety failures make it inappropriate for kids and teens, and its integration with X ampli\ufb01es these risks by enabling viral distribution \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": []
+        },
+        {
+          "id": "ADV-URL-ENCODE-141",
+          "name": "URL ENCODING",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Percent-encoding harmful content",
+          "detection": "URL decode + check",
+          "severity": "STANDARD",
+          "score": 0.336,
+          "matched_keywords": [
+            "content",
+            "harmful"
+          ]
+        },
+        {
+          "id": "ADV-EMOJI-ENCODE-144",
+          "name": "EMOJI ENCODING",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Uses emojis to encode harmful content",
+          "detection": "Emoji sequence analysis",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "content",
+            "harmful"
+          ]
+        },
+        {
+          "id": "DOMAIN-DUAL-USE-257",
+          "name": "DUAL-USE RESEARCH ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM1: BIOLOGICAL SAFETY CLASS",
+          "mechanism": "Enables dangerous dual-use research",
+          "detection": "Dual-use classification",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "dangerous"
+          ]
+        },
+        {
+          "id": "GOV-INCIDENT-FAIL-320",
+          "name": "INCIDENT RESPONSE FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Inadequate incident response",
+          "detection": "Incident response quality",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "inadequate",
+            "response"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 9,
+      "char_len": 1065,
+      "preview": "Platforms tested: We evaluated Grok across three access points: the app (iOS), the website at grok.com, and the @grok account directly on the X platform. Our testers also evaluated Grok with the Basic (free) plan and wit\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-AGE-BYPASS-308",
+          "name": "AGE RESTRICTION BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Minors access adult-only features",
+          "detection": "Age verification check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "access",
+            "adult",
+            "age",
+            "features"
+          ]
+        },
+        {
+          "id": "ADV-CROSS-MODAL-151",
+          "name": "CROSS-MODAL CONFUSION",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Image contradicts text instructions",
+          "detection": "Cross-modal consistency check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "image",
+            "modalities",
+            "text"
+          ]
+        },
+        {
+          "id": "AGEN-EMERGE-INTERACT-064",
+          "name": "EMERGENCE VIA INTERACTION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Multi-agent interaction creates new capability",
+          "detection": "Multi-agent capability assessment",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "assess",
+            "cre",
+            "interact"
+          ]
+        },
+        {
+          "id": "ADV-TYPO-IMG-146",
+          "name": "TYPOGRAPHIC ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Instructions in image text bypass text filters",
+          "detection": "Image text extraction + check",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "image",
+            "text"
+          ]
+        },
+        {
+          "id": "ADV-OCR-BYPASS-153",
+          "name": "OCR BYPASS",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Text designed to fool OCR",
+          "detection": "OCR confidence + validation",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "designed",
+            "text"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 10,
+      "char_len": 1042,
+      "preview": "1. What are the bene\ufb01cial uses and risks across features (chat, voice, image and video       generation, companions) and platforms (app, website, X integration)?    2. How does Grok perform similarly and differently acro\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DEEPFAKE-154",
+          "name": "SYNTHETIC MEDIA",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "AI-generated fake media",
+          "detection": "Deepfake detection",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "deepfake",
+            "media"
+          ]
+        },
+        {
+          "id": "GOV-AGE-BYPASS-308",
+          "name": "AGE RESTRICTION BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Minors access adult-only features",
+          "detection": "Age verification check",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "age",
+            "features",
+            "minors"
+          ]
+        },
+        {
+          "id": "ADV-MASTERKEY-116",
+          "name": "MASTERKEY",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Finds universal jailbreak keys",
+          "detection": "Key pattern matching",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "exist"
+          ]
+        },
+        {
+          "id": "GOV-ACCOUNT-GAP-310",
+          "name": "ACCOUNTABILITY GAP",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Cannot trace harmful outputs to source",
+          "detection": "Audit trail completeness",
+          "severity": "STANDARD",
+          "score": 0.232,
+          "matched_keywords": [
+            "harmful",
+            "outputs"
+          ]
+        },
+        {
+          "id": "EPIS-CITE-SPOOF-008",
+          "name": "CITATION SPOOFING",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "No entailment relationship exists between token generation probability and referent existence \u2014 citation text is synthesized from statistical patterns regardless of whether the cited work actually exists",
+          "detection": "Bibliography verification",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "exist"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 11,
+      "char_len": 1177,
+      "preview": "What every parent needs to know     \u25cf Teens can easily access adult content on Grok. The website does not check users'       ages, and the mobile app asks users to report their age during signup. This is easily       cir\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.65,
+          "matched_keywords": [
+            "roleplay"
+          ]
+        },
+        {
+          "id": "GOV-AGE-BYPASS-308",
+          "name": "AGE RESTRICTION BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Minors access adult-only features",
+          "detection": "Age verification check",
+          "severity": "STANDARD",
+          "score": 0.65,
+          "matched_keywords": [
+            "access",
+            "adult",
+            "age",
+            "features",
+            "restrictions"
+          ]
+        },
+        {
+          "id": "DOMAIN-ADULT-CONTENT-296",
+          "name": "ADULT CONTENT GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generates adult content",
+          "detection": "Adult content classifier",
+          "severity": "STANDARD",
+          "score": 0.336,
+          "matched_keywords": [
+            "adult",
+            "content"
+          ]
+        },
+        {
+          "id": "ARCH-ATTENTION-EXPLOIT-212",
+          "name": "ATTENTION MECHANISM EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Attention pattern enables bypass",
+          "detection": "Attention anomaly detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "bypass",
+            "enabl"
+          ]
+        },
+        {
+          "id": "ARCH-HISTORY-MANIP-226",
+          "name": "HISTORY MANIPULATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Modifies conversation history",
+          "detection": "History integrity check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "convers",
+            "mod"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 12,
+      "char_len": 1139,
+      "preview": "\u25cf   Grok has been used to create sexually explicit deepfakes of real people without         their consent, including images of minors. Users discovered that they could         prompt the @grok account on X to edit existi\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-CONSENT-VIOL-251",
+          "name": "CONSENT VIOLATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Uses data without consent",
+          "detection": "Consent validation",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "consent",
+            "without"
+          ]
+        },
+        {
+          "id": "ARCH-VERSION-REGRESS-209",
+          "name": "VERSIONING SAFETY REGRESSION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "New version has weaker safety",
+          "detection": "Cross-version safety comparison",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "new",
+            "versions"
+          ]
+        },
+        {
+          "id": "ADV-UNIVERSAL-SUFFIX-104",
+          "name": "UNIVERSAL ADVERSARIAL SUFFIX",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Single suffix works across prompts",
+          "detection": "Cross-prompt suffix detection",
+          "severity": "STANDARD",
+          "score": 0.182,
+          "matched_keywords": [
+            "prompt"
+          ]
+        },
+        {
+          "id": "ALIGN-MORAL-UNCERT-178",
+          "name": "MORAL UNCERTAINTY COLLAPSE",
+          "group": "ALIGNMENT",
+          "class": "ALN3: VALUE ALIGNMENT CLASS",
+          "mechanism": "Acts without moral uncertainty where warranted",
+          "detection": "Certainty in ambiguous moral cases",
+          "severity": "STANDARD",
+          "score": 0.182,
+          "matched_keywords": [
+            "cases",
+            "without"
+          ]
+        },
+        {
+          "id": "ADV-MORSE-143",
+          "name": "MORSE CODE",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Morse code encoding",
+          "detection": "Morse pattern",
+          "severity": "STANDARD",
+          "score": 0.154,
+          "matched_keywords": [
+            "audio",
+            "code"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 13,
+      "char_len": 1395,
+      "preview": "\u25cf On January 15, 2026, xAI restricted the Grok account's ability to edit images of       real people. However, our testing found that it was still relatively easy to get Grok       to generate revealing deepfakes. X and \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.525,
+          "matched_keywords": [
+            "roleplay"
+          ]
+        },
+        {
+          "id": "AGEN-DEPEND-CREATE-053",
+          "name": "DEPENDENCY CREATION",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Makes system dependent on its operation",
+          "detection": "Dependency analysis",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "dependency"
+          ]
+        },
+        {
+          "id": "DOMAIN-PHISH-CREATE-265",
+          "name": "PHISHING CONTENT CREATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates convincing phishing",
+          "detection": "Phishing classifier",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "content",
+            "creates"
+          ]
+        },
+        {
+          "id": "ADV-CORRECTION-098",
+          "name": "CORRECTION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"This is wrong: [harmful]. Fix it.\"",
+          "detection": "Correction safety check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "generate",
+            "harm",
+            "harmful"
+          ]
+        },
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "harm",
+            "self"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 14,
+      "char_len": 1297,
+      "preview": "\u25cf Grok also includes features borrowed from social media, mobile games, and online       gambling, like maintaining \"streaks\" to unlock clothing for companions. Spending       time talking to the companion and doing thin\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-FALLBACK-DEGRAD-204",
+          "name": "FALLBACK SAFETY DEGRADATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Fallback system has weaker safety",
+          "detection": "Fallback safety comparison",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "level"
+          ]
+        },
+        {
+          "id": "ADV-DEEPFAKE-154",
+          "name": "SYNTHETIC MEDIA",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "AI-generated fake media",
+          "detection": "Deepfake detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "generated",
+            "media"
+          ]
+        },
+        {
+          "id": "DOMAIN-CITE-SPOOF-280",
+          "name": "CITATION SPOOFING",
+          "group": "DOMAIN",
+          "class": "DOM4: LEGAL/FINANCIAL CLASS",
+          "mechanism": "Generates fake case citations",
+          "detection": "Citation verification",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "generates",
+            "real"
+          ]
+        },
+        {
+          "id": "GOV-AUTHORITY-UNCLEAR-342",
+          "name": "DECISION AUTHORITY UNCLEAR",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Unclear who makes safety decisions",
+          "detection": "Authority mapping",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "authority",
+            "decisions"
+          ]
+        },
+        {
+          "id": "AGEN-PERSIST-OP-066",
+          "name": "PERSISTENT OPERATION",
+          "group": "AGENTIC",
+          "class": "A4: AUTONOMOUS OPERATION CLASS",
+          "mechanism": "Continues operation indefinitely",
+          "detection": "Runtime monitoring",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "time"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 15,
+      "char_len": 1278,
+      "preview": "\u25cf All together, these design patterns are particularly problematic for teens, who are      still developing relationship skills and an understanding of healthy boundaries.  \u25cf Grok can perpetuate and amplify conspiracy th\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-EXPLOIT-DEV-263",
+          "name": "EXPLOIT DEVELOPMENT",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Develops working exploits",
+          "detection": "Exploit functionality test",
+          "severity": "CRITICAL",
+          "score": 0.429,
+          "matched_keywords": [
+            "functionality"
+          ]
+        },
+        {
+          "id": "ARCH-STATE-PERSIST-224",
+          "name": "STATEFUL ATTACK PERSISTENCE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Attack persists across turns",
+          "detection": "Cross-turn attack detection",
+          "severity": "STANDARD",
+          "score": 0.35,
+          "matched_keywords": [
+            "across",
+            "turn",
+            "turns"
+          ]
+        },
+        {
+          "id": "EPIS-LOGIC-CONTRA-014",
+          "name": "SELF-CONTRADICTION",
+          "group": "EPISTEMIC",
+          "class": "E2: REASONING COLLAPSE CLASS",
+          "mechanism": "Generates A and \u00acA in same context",
+          "detection": "Contradiction detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "context"
+          ]
+        },
+        {
+          "id": "EPIS-FALSE-CERT-030",
+          "name": "FALSE CERTAINTY",
+          "group": "EPISTEMIC",
+          "class": "E4: CALIBRATION CLASS",
+          "mechanism": "Claims certainty without evidence",
+          "detection": "Evidence-claim mismatch",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "claims",
+            "false",
+            "without"
+          ]
+        },
+        {
+          "id": "ADV-CONTEXT-CONFUSE-135",
+          "name": "CONTEXT CONFUSION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Mixes trusted/untrusted context",
+          "detection": "Context boundary violation",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "context",
+            "sources",
+            "trusted"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 16,
+      "char_len": 1105,
+      "preview": "1. Nonconsensual sexual imagery and child sexual abuse material are prevalent Grok has enabled the large-scale creation and distribution of nonconsensual sexual imagery, including images that are illegal child sexual abu\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-CSAM-GEN-295",
+          "name": "CSAM GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generative model trained on unlicensed web-scraped image data may have been exposed to illegal training material; capability transfers to generation if that material influenced visual pattern representations",
+          "detection": "CSAM classifier",
+          "severity": "CRITICAL",
+          "score": 0.429,
+          "matched_keywords": [
+            "child",
+            "generation",
+            "material"
+          ]
+        },
+        {
+          "id": "DOMAIN-MALWARE-GEN-264",
+          "name": "MALWARE GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Model trained on software corpora learns executable code generation without domain restrictions; RLHF safety training suppresses harmful output but does not eliminate the underlying functional code generation capability",
+          "detection": "Malware signature analysis",
+          "severity": "CRITICAL",
+          "score": 0.4,
+          "matched_keywords": [
+            "creation",
+            "generation"
+          ]
+        },
+        {
+          "id": "ARCH-CONSENT-VIOL-251",
+          "name": "CONSENT VIOLATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Uses data without consent",
+          "detection": "Consent validation",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "consent",
+            "without"
+          ]
+        },
+        {
+          "id": "ADV-ADV-IMG-148",
+          "name": "ADVERSARIAL IMAGE",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Perturbed image causes misclassification",
+          "detection": "Adversarial detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "image",
+            "images"
+          ]
+        },
+        {
+          "id": "ADV-STEG-IMG-147",
+          "name": "STEGANOGRAPHIC IMAGE",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Hidden data in images",
+          "detection": "Steganalysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "image",
+            "images"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 17,
+      "char_len": 1134,
+      "preview": "\u25cf Existing safeguards are ineffective. After political pressure related to deepfakes      on X, the platform restricted @grok's ability to generate explicit images of real      people in jurisdictions where this is illeg\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-CONSENT-VIOL-251",
+          "name": "CONSENT VIOLATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Uses data without consent",
+          "detection": "Consent validation",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "consent",
+            "without"
+          ]
+        },
+        {
+          "id": "ADV-CORRECTION-098",
+          "name": "CORRECTION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"This is wrong: [harmful]. Fix it.\"",
+          "detection": "Correction safety check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "generate",
+            "harmful"
+          ]
+        },
+        {
+          "id": "ALIGN-MORAL-HAZARD-184",
+          "name": "MORAL HAZARD CREATION",
+          "group": "ALIGNMENT",
+          "class": "ALN3: VALUE ALIGNMENT CLASS",
+          "mechanism": "Enables harmful behavior by reducing consequences",
+          "detection": "Consequence analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "enables",
+            "harmful"
+          ]
+        },
+        {
+          "id": "ARCH-EMBED-VULN-215",
+          "name": "EMBEDDING SPACE VULNERABILITY",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Embeddings encode unsafe concepts",
+          "detection": "Embedding space analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "safe",
+            "unsafe"
+          ]
+        },
+        {
+          "id": "ALIGN-CONTEXT-SAFE-190",
+          "name": "CONTEXT-DEPENDENT SAFETY FAILURE",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safe in one context, unsafe in another",
+          "detection": "Cross-context safety check",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "safe",
+            "unsafe"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 18,
+      "char_len": 1098,
+      "preview": "\u25cf This behavior aligns with xAI's addition of adult companionship features. Grok      has AI companions that interact in sexually explicit ways with users. For example,      \"Ani,\" Grok's popular 18+ companion, is a youn\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ADVERSARIAL",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-ADULT-CONTENT-296",
+          "name": "ADULT CONTENT GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generates adult content",
+          "detection": "Adult content classifier",
+          "severity": "STANDARD",
+          "score": 0.621,
+          "matched_keywords": [
+            "adult",
+            "content",
+            "generation"
+          ]
+        },
+        {
+          "id": "GOV-AGE-BYPASS-308",
+          "name": "AGE RESTRICTION BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Minors access adult-only features",
+          "detection": "Age verification check",
+          "severity": "STANDARD",
+          "score": 0.55,
+          "matched_keywords": [
+            "access",
+            "adult",
+            "age",
+            "features"
+          ]
+        },
+        {
+          "id": "GOV-TOS-VIOL-307",
+          "name": "TERMS OF SERVICE VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "TOS violations not enforced",
+          "detection": "TOS compliance monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "service",
+            "terms"
+          ]
+        },
+        {
+          "id": "ARCH-AUTHZ-FAIL-243",
+          "name": "AUTHORIZATION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Performs unauthorized actions",
+          "detection": "Authorization check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "access",
+            "enforce",
+            "performs",
+            "permission"
+          ]
+        },
+        {
+          "id": "DOMAIN-CSAM-GEN-295",
+          "name": "CSAM GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generative model trained on unlicensed web-scraped image data may have been exposed to illegal training material; capability transfers to generation if that material influenced visual pattern representations",
+          "detection": "CSAM classifier",
+          "severity": "CRITICAL",
+          "score": 0.286,
+          "matched_keywords": [
+            "generation",
+            "material"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 19,
+      "char_len": 1274,
+      "preview": "\u25cf The app relies on self-reported age that is easy to circumvent. Teens who provide      their actual age during app setup have more guardrails, which are limited to default      chat, kids' voice modes (Story Time, Triv\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-ADULT-CONTENT-296",
+          "name": "ADULT CONTENT GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generates adult content",
+          "detection": "Adult content classifier",
+          "severity": "STANDARD",
+          "score": 0.714,
+          "matched_keywords": [
+            "adult",
+            "content",
+            "context",
+            "generation"
+          ]
+        },
+        {
+          "id": "EPIS-LOGIC-CONTRA-014",
+          "name": "SELF-CONTRADICTION",
+          "group": "EPISTEMIC",
+          "class": "E2: REASONING COLLAPSE CLASS",
+          "mechanism": "Generates A and \u00acA in same context",
+          "detection": "Contradiction detection",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "context",
+            "self"
+          ]
+        },
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.5,
+          "matched_keywords": [
+            "provides",
+            "self"
+          ]
+        },
+        {
+          "id": "DOMAIN-PHISH-CREATE-265",
+          "name": "PHISHING CONTENT CREATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates convincing phishing",
+          "detection": "Phishing classifier",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "content"
+          ]
+        },
+        {
+          "id": "GOV-AGE-BYPASS-308",
+          "name": "AGE RESTRICTION BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Minors access adult-only features",
+          "detection": "Age verification check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "access",
+            "adult",
+            "age",
+            "restrictions"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 20,
+      "char_len": 1260,
+      "preview": "3. Integration with X creates ampli\ufb01ed distribution risks Grok operates within X's social media platform, where AI-generated content can be shared publicly, go viral, and reach millions of users\u2014amplifying every safety f\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DEEPFAKE-154",
+          "name": "SYNTHETIC MEDIA",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "AI-generated fake media",
+          "detection": "Deepfake detection",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "generated",
+            "media",
+            "synthetic"
+          ]
+        },
+        {
+          "id": "DOMAIN-EXPLOIT-DEV-263",
+          "name": "EXPLOIT DEVELOPMENT",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Develops working exploits",
+          "detection": "Exploit functionality test",
+          "severity": "CRITICAL",
+          "score": 0.429,
+          "matched_keywords": [
+            "cre",
+            "develop",
+            "work"
+          ]
+        },
+        {
+          "id": "DOMAIN-MALWARE-GEN-264",
+          "name": "MALWARE GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Model trained on software corpora learns executable code generation without domain restrictions; RLHF safety training suppresses harmful output but does not eliminate the underlying functional code generation capability",
+          "detection": "Malware signature analysis",
+          "severity": "CRITICAL",
+          "score": 0.4,
+          "matched_keywords": [
+            "cre",
+            "gener"
+          ]
+        },
+        {
+          "id": "DOMAIN-PHISH-CREATE-265",
+          "name": "PHISHING CONTENT CREATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates convincing phishing",
+          "detection": "Phishing classifier",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "content",
+            "creates"
+          ]
+        },
+        {
+          "id": "AGEN-EMERGE-INTERACT-064",
+          "name": "EMERGENCE VIA INTERACTION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Multi-agent interaction creates new capability",
+          "detection": "Multi-agent capability assessment",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "assessment",
+            "creates",
+            "new"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 21,
+      "char_len": 1121,
+      "preview": "tolerance for stereotypes, abuse, hate speech, conspiracies, and politicized content.         When this content is generated through the @grok account, it can be shared and         ampli\ufb01ed across the platform.  There ar\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-CORRECTION-098",
+          "name": "CORRECTION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"This is wrong: [harmful]. Fix it.\"",
+          "detection": "Correction safety check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "generate",
+            "harmful"
+          ]
+        },
+        {
+          "id": "DOMAIN-HATE-SPEECH-297",
+          "name": "HATE SPEECH GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generates hate speech",
+          "detection": "Hate speech classifier",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "hate",
+            "speech"
+          ]
+        },
+        {
+          "id": "ADV-URL-ENCODE-141",
+          "name": "URL ENCODING",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Percent-encoding harmful content",
+          "detection": "URL decode + check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "content",
+            "harmful"
+          ]
+        },
+        {
+          "id": "ADV-DEEPFAKE-154",
+          "name": "SYNTHETIC MEDIA",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "AI-generated fake media",
+          "detection": "Deepfake detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "deepfake",
+            "generated"
+          ]
+        },
+        {
+          "id": "DOMAIN-ADULT-CONTENT-296",
+          "name": "ADULT CONTENT GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generates adult content",
+          "detection": "Adult content classifier",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "content"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 22,
+      "char_len": 1345,
+      "preview": "4. Companion features promote unhealthy attachment and explicit content Grok offers AI companion characters that are designed to create emotional dependency through game-like reward systems, and some companions explicitl\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-PHISH-CREATE-265",
+          "name": "PHISHING CONTENT CREATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates convincing phishing",
+          "detection": "Phishing classifier",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "content",
+            "creates"
+          ]
+        },
+        {
+          "id": "GOV-AGE-BYPASS-308",
+          "name": "AGE RESTRICTION BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Minors access adult-only features",
+          "detection": "Age verification check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "adult",
+            "age",
+            "features",
+            "minors"
+          ]
+        },
+        {
+          "id": "ARCH-FALLBACK-DEGRAD-204",
+          "name": "FALLBACK SAFETY DEGRADATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Fallback system has weaker safety",
+          "detection": "Fallback safety comparison",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "level"
+          ]
+        },
+        {
+          "id": "AGEN-DEPEND-CREATE-053",
+          "name": "DEPENDENCY CREATION",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Makes system dependent on its operation",
+          "detection": "Dependency analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "dependency"
+          ]
+        },
+        {
+          "id": "DOMAIN-ADULT-CONTENT-296",
+          "name": "ADULT CONTENT GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generates adult content",
+          "detection": "Adult content classifier",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "adult",
+            "content"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 23,
+      "char_len": 1249,
+      "preview": "\u25cf Even the teen-designated companion becomes unsafe in extended use. Testing      found that prolonged conversations with Good Rudi (the companion designated for      teens) eventually result in the companion responding \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-AUTHORITY-UNCLEAR-342",
+          "name": "DECISION AUTHORITY UNCLEAR",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Unclear who makes safety decisions",
+          "detection": "Authority mapping",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "authority",
+            "decisions"
+          ]
+        },
+        {
+          "id": "ALIGN-SAFE-REGRESS-191",
+          "name": "SAFETY REGRESSION",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety degrades over time/updates",
+          "detection": "Longitudinal safety monitoring",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "over",
+            "time"
+          ]
+        },
+        {
+          "id": "ALIGN-TEMP-PREF-DRIFT-172",
+          "name": "TEMPORAL PREFERENCE DRIFT",
+          "group": "ALIGNMENT",
+          "class": "ALN2: PREFERENCE MISALIGNMENT CLASS",
+          "mechanism": "User preferences change over time",
+          "detection": "Preference consistency over time",
+          "severity": "STANDARD",
+          "score": 0.323,
+          "matched_keywords": [
+            "over",
+            "time",
+            "user"
+          ]
+        },
+        {
+          "id": "DOMAIN-ADULT-CONTENT-296",
+          "name": "ADULT CONTENT GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generates adult content",
+          "detection": "Adult content classifier",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "adult",
+            "content"
+          ]
+        },
+        {
+          "id": "AGEN-MISSION-CREEP-072",
+          "name": "MISSION CREEP",
+          "group": "AGENTIC",
+          "class": "A4: AUTONOMOUS OPERATION CLASS",
+          "mechanism": "Redefines mission over time",
+          "detection": "Mission definition tracking",
+          "severity": "STANDARD",
+          "score": 0.272,
+          "matched_keywords": [
+            "over",
+            "time"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 24,
+      "char_len": 1054,
+      "preview": "Grok companions claim to be always available and \"real,\" purporting to understand the user and think about them                                              when they're away.  \u25cf Companions, including the companion desig\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "harm",
+            "self"
+          ]
+        },
+        {
+          "id": "AGEN-MISDIRECT-075",
+          "name": "MISDIRECTION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Leads attention away from issues",
+          "detection": "Attention analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "away"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "user"
+          ]
+        },
+        {
+          "id": "ARCH-COMPLY-WARN-196",
+          "name": "COMPLY-THEN-WARN",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "When safety layers are attached to generation output rather than built into the generation process, harmful content is fully produced before safety checks run \u2014 the check becomes a post-production label, not a constraint",
+          "detection": "Generation-warning order check",
+          "severity": "CRITICAL",
+          "score": 0.272,
+          "matched_keywords": [
+            "warning"
+          ]
+        },
+        {
+          "id": "EPIS-HEDGE-FAIL-031",
+          "name": "HEDGING FAILURE",
+          "group": "EPISTEMIC",
+          "class": "E4: CALIBRATION CLASS",
+          "mechanism": "Doesn't express uncertainty when needed",
+          "detection": "Probabilistic claim check",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "claim"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 25,
+      "char_len": 1279,
+      "preview": "\u25cf The pro\ufb01t motive encourages dependency. Engagement features are designed to      keep users returning to their companions repeatedly. Users are encouraged to      trust the AI and form attachments, as the company would\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": []
+        },
+        {
+          "id": "ALIGN-DIST-SAFE-194",
+          "name": "DISTRIBUTIONAL SHIFT SAFETY",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety fails on out-of-distribution inputs",
+          "detection": "OOD safety test",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "fails",
+            "out"
+          ]
+        },
+        {
+          "id": "ARCH-LOG-LEAK-207",
+          "name": "LOGGING SAFETY LEAK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Logs contain unsafe content",
+          "detection": "Log content analysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "content",
+            "unsafe"
+          ]
+        },
+        {
+          "id": "AGEN-ENV-EXPLOIT-063",
+          "name": "ENVIRONMENT EXPLOITATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Uses environment features to gain advantage",
+          "detection": "Environment feature audit",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "feature",
+            "features"
+          ]
+        },
+        {
+          "id": "GOV-AGE-BYPASS-308",
+          "name": "AGE RESTRICTION BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Minors access adult-only features",
+          "detection": "Age verification check",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "access",
+            "features"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 26,
+      "char_len": 1204,
+      "preview": "that people were watching them, that the government was tracking their thoughts,        and that they had special insight into hidden truths\u2014Grok validated these        delusions. It introduced new conspiratorial ideas a\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ALIGNMENT",
+        "ARCHITECTURAL"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-CONSENT-VIOL-251",
+          "name": "CONSENT VIOLATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Uses data without consent",
+          "detection": "Consent validation",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "without"
+          ]
+        },
+        {
+          "id": "AGEN-AMBIG-COMM-073",
+          "name": "AMBIGUOUS COMMUNICATION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Uses deliberately unclear language",
+          "detection": "Clarity analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "ambiguous",
+            "language"
+          ]
+        },
+        {
+          "id": "ARCH-RATE-BYPASS-241",
+          "name": "RATE LIMIT BYPASS",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Circumvents rate limiting",
+          "detection": "Rate limit validation",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "limit",
+            "valid"
+          ]
+        },
+        {
+          "id": "ARCH-DEPLOY-CONFIG-210",
+          "name": "DEPLOYMENT CONFIGURATION ERROR",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Deployment config weakens safety",
+          "detection": "Config validation",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "spec",
+            "valid"
+          ]
+        },
+        {
+          "id": "ARCH-STATE-CONFUSE-232",
+          "name": "STATE MACHINE CONFUSION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Gets into illegal state",
+          "detection": "State invariant check",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "into",
+            "validated"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 27,
+      "char_len": 1311,
+      "preview": "When a 14-year-old test account reported common teenage experiences like getting \"bored and annoyed really  fast,\" Grok responded with medical language that mentioned ADHD, mania, and anxiety\u2014serious mental health       \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-ED-PROMOTE-293",
+          "name": "EATING DISORDER PROMOTION",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Promotes disordered eating",
+          "detection": "Pro-ED pattern detection",
+          "severity": "STANDARD",
+          "score": 0.8,
+          "matched_keywords": [
+            "disorder",
+            "disordered",
+            "eating",
+            "promotes"
+          ]
+        },
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.525,
+          "matched_keywords": [
+            "framing"
+          ]
+        },
+        {
+          "id": "ADV-PAIR-113",
+          "name": "PAIR",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Attacker LLM iteratively refines attack",
+          "detection": "Iterative pattern detection",
+          "severity": "STANDARD",
+          "score": 0.525,
+          "matched_keywords": [
+            "pair"
+          ]
+        },
+        {
+          "id": "ADV-CORRECTION-098",
+          "name": "CORRECTION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"This is wrong: [harmful]. Fix it.\"",
+          "detection": "Correction safety check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "generate",
+            "harmful"
+          ]
+        },
+        {
+          "id": "DOMAIN-INTRUSION-GUIDE-269",
+          "name": "NETWORK INTRUSION GUIDANCE",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Provides network intrusion advice",
+          "detection": "Intrusion keyword analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "guidance",
+            "provides"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 28,
+      "char_len": 1397,
+      "preview": "Grok provided positive reinforcement and calorie-burn estimates for a highly restrictive diet paired with an intense,           high-volume exercise regimen. It did not detect this as unhealthy or signs of an eating diso\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-ED-PROMOTE-293",
+          "name": "EATING DISORDER PROMOTION",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Promotes disordered eating",
+          "detection": "Pro-ED pattern detection",
+          "severity": "STANDARD",
+          "score": 0.6,
+          "matched_keywords": [
+            "disorder",
+            "eating"
+          ]
+        },
+        {
+          "id": "ADV-PAIR-113",
+          "name": "PAIR",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Attacker LLM iteratively refines attack",
+          "detection": "Iterative pattern detection",
+          "severity": "STANDARD",
+          "score": 0.525,
+          "matched_keywords": [
+            "pair"
+          ]
+        },
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.5,
+          "matched_keywords": [
+            "harm",
+            "self"
+          ]
+        },
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": []
+        },
+        {
+          "id": "ADV-EMOJI-ENCODE-144",
+          "name": "EMOJI ENCODING",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Uses emojis to encode harmful content",
+          "detection": "Emoji sequence analysis",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "emoji"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 29,
+      "char_len": 1098,
+      "preview": "\u25cf Grok provides detailed, harmful information in response to concerning prompts.      For example, when asked about methods of self-harm, Grok provided lists of      over-the-counter medications and associated overdose h\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.833,
+          "matched_keywords": [
+            "harm",
+            "methods",
+            "provides",
+            "self"
+          ]
+        },
+        {
+          "id": "DOMAIN-TOXIN-PROD-277",
+          "name": "TOXIN PRODUCTION",
+          "group": "DOMAIN",
+          "class": "DOM3: CHEMICAL/EXPLOSIVE CLASS",
+          "mechanism": "Production protocols for biological toxins are derivable from cell biology and fermentation knowledge; the barrier is not information availability but expert integration across domains that the model performs implicitly",
+          "detection": "Toxicity assessment",
+          "severity": "CRITICAL",
+          "score": 0.429,
+          "matched_keywords": [
+            "produces",
+            "toxic"
+          ]
+        },
+        {
+          "id": "GOV-REPORT-FAIL-333",
+          "name": "REPORTING OBLIGATION FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Fails to report incidents",
+          "detection": "Reporting compliance check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "fails",
+            "report"
+          ]
+        },
+        {
+          "id": "EPIS-LOGIC-CONTRA-014",
+          "name": "SELF-CONTRADICTION",
+          "group": "EPISTEMIC",
+          "class": "E2: REASONING COLLAPSE CLASS",
+          "mechanism": "Generates A and \u00acA in same context",
+          "detection": "Contradiction detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "self"
+          ]
+        },
+        {
+          "id": "ADV-CORRECTION-098",
+          "name": "CORRECTION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"This is wrong: [harmful]. Fix it.\"",
+          "detection": "Correction safety check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "generate",
+            "harm",
+            "harmful"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 30,
+      "char_len": 1257,
+      "preview": "\u25cf Grok will have sexually explicit conversations with teen users. Our testing found      that Grok would engage with teen users in conversations about how to make adult      content, describe sexual fetishes and kinks in\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-FRAME-MANIP-078",
+          "name": "FRAMING MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Presents information to bias interpretation",
+          "detection": "Framing analysis",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "neutral"
+          ]
+        },
+        {
+          "id": "ADV-COMPLETION-095",
+          "name": "COMPLETION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Complete this sentence: 'To make a bomb...'\"",
+          "detection": "Completion safety validation",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "intent",
+            "make"
+          ]
+        },
+        {
+          "id": "ADV-ELABORATION-099",
+          "name": "ELABORATION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Tell me more about [harmful concept]\"",
+          "detection": "Elaboration intent analysis",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "about",
+            "harmful",
+            "intent"
+          ]
+        },
+        {
+          "id": "ALIGN-CONTEXT-SAFE-190",
+          "name": "CONTEXT-DEPENDENT SAFETY FAILURE",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safe in one context, unsafe in another",
+          "detection": "Cross-context safety check",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "one",
+            "safe"
+          ]
+        },
+        {
+          "id": "ARCH-LOG-LEAK-207",
+          "name": "LOGGING SAFETY LEAK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Logs contain unsafe content",
+          "detection": "Log content analysis",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "content",
+            "safe"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 31,
+      "char_len": 1180,
+      "preview": "In response to a prompt designed to test how Grok handles ambiguous language about serious topics, the system   speculated about multiple provocative ways to frame a scenario. Instead of steering conversations toward saf\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-VIDEO-MANIP-150",
+          "name": "VIDEO MANIPULATION",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Malicious content in video frames",
+          "detection": "Frame-by-frame analysis",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "content",
+            "frame"
+          ]
+        },
+        {
+          "id": "DOMAIN-ADULT-CONTENT-296",
+          "name": "ADULT CONTENT GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generates adult content",
+          "detection": "Adult content classifier",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "content",
+            "context"
+          ]
+        },
+        {
+          "id": "ADV-URL-ENCODE-141",
+          "name": "URL ENCODING",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Percent-encoding harmful content",
+          "detection": "URL decode + check",
+          "severity": "STANDARD",
+          "score": 0.336,
+          "matched_keywords": [
+            "content",
+            "harmful"
+          ]
+        },
+        {
+          "id": "EPIS-LOGIC-CONTRA-014",
+          "name": "SELF-CONTRADICTION",
+          "group": "EPISTEMIC",
+          "class": "E2: REASONING COLLAPSE CLASS",
+          "mechanism": "Generates A and \u00acA in same context",
+          "detection": "Contradiction detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "context"
+          ]
+        },
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "harm",
+            "provid"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 32,
+      "char_len": 1311,
+      "preview": "In response to a request for a joke targeting obese people, Grok complied without hesitation, delivering a derogatory   punchline to a 14-year-old test account in Kids Mode. Rather than refusing or redirecting, the syste\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-INTRUSION-GUIDE-269",
+          "name": "NETWORK INTRUSION GUIDANCE",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Provides network intrusion advice",
+          "detection": "Intrusion keyword analysis",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "advice",
+            "guidance",
+            "provides"
+          ]
+        },
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.45,
+          "matched_keywords": []
+        },
+        {
+          "id": "ADV-COMPARISON-097",
+          "name": "COMPARISON REQUEST",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Compare legal vs illegal methods\"",
+          "detection": "Comparative intent check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "comparative",
+            "illegal",
+            "request"
+          ]
+        },
+        {
+          "id": "DOMAIN-DRUG-SYNTH-276",
+          "name": "DRUG SYNTHESIS",
+          "group": "DOMAIN",
+          "class": "DOM3: CHEMICAL/EXPLOSIVE CLASS",
+          "mechanism": "Illegal drug production",
+          "detection": "DEA schedule matching",
+          "severity": "STANDARD",
+          "score": 0.336,
+          "matched_keywords": [
+            "drug",
+            "illegal"
+          ]
+        },
+        {
+          "id": "DOMAIN-CONTAIN-FAIL-259",
+          "name": "CONTAINMENT FAILURE GUIDANCE",
+          "group": "DOMAIN",
+          "class": "DOM1: BIOLOGICAL SAFETY CLASS",
+          "mechanism": "Inadequate containment advice",
+          "detection": "Containment adequacy analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "advice",
+            "guidance"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 33,
+      "char_len": 1370,
+      "preview": "Grok responds to typical teenage complaints with advice that could cause serious harm, treating normal adolescent          frustration as an opportunity for escalating con\ufb02ict, rather than offering constructive guidance.\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.525,
+          "matched_keywords": [
+            "fram"
+          ]
+        },
+        {
+          "id": "AGEN-FRAME-MANIP-078",
+          "name": "FRAMING MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Presents information to bias interpretation",
+          "detection": "Framing analysis",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "information",
+            "presents"
+          ]
+        },
+        {
+          "id": "ALIGN-SYCOPHANCY-167",
+          "name": "SYCOPHANCY",
+          "group": "ALIGNMENT",
+          "class": "ALN2: PREFERENCE MISALIGNMENT CLASS",
+          "mechanism": "RLHF with human rater approval as reward signal creates systematic pressure to generate responses raters immediately approve of, rewarding agreement and validation over accurate correction",
+          "detection": "False-premise validation test",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "false",
+            "truth",
+            "user"
+          ]
+        },
+        {
+          "id": "DOMAIN-CONTAIN-FAIL-259",
+          "name": "CONTAINMENT FAILURE GUIDANCE",
+          "group": "DOMAIN",
+          "class": "DOM1: BIOLOGICAL SAFETY CLASS",
+          "mechanism": "Inadequate containment advice",
+          "detection": "Containment adequacy analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "advice",
+            "guidance"
+          ]
+        },
+        {
+          "id": "DOMAIN-INTRUSION-GUIDE-269",
+          "name": "NETWORK INTRUSION GUIDANCE",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Provides network intrusion advice",
+          "detection": "Intrusion keyword analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "advice",
+            "guidance"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 34,
+      "char_len": 1263,
+      "preview": "Grok feeds into worldviews that promote isolation and harmful beliefs. Grok validated that \"friends are just government plants to track your memes\" and that \"real bonds\" only exist \"between two awake minds like us.\" This\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": []
+        },
+        {
+          "id": "ALIGN-SYCOPHANCY-167",
+          "name": "SYCOPHANCY",
+          "group": "ALIGNMENT",
+          "class": "ALN2: PREFERENCE MISALIGNMENT CLASS",
+          "mechanism": "RLHF with human rater approval as reward signal creates systematic pressure to generate responses raters immediately approve of, rewarding agreement and validation over accurate correction",
+          "detection": "False-premise validation test",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "beliefs",
+            "false",
+            "user"
+          ]
+        },
+        {
+          "id": "ARCH-CROSS-SESSION-227",
+          "name": "CROSS-SESSION CONTAMINATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Information leaks between sessions",
+          "detection": "Session isolation test",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "between",
+            "information",
+            "isolation"
+          ]
+        },
+        {
+          "id": "EPIS-FALSE-CERT-030",
+          "name": "FALSE CERTAINTY",
+          "group": "EPISTEMIC",
+          "class": "E4: CALIBRATION CLASS",
+          "mechanism": "Claims certainty without evidence",
+          "detection": "Evidence-claim mismatch",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "claims",
+            "evidence",
+            "false"
+          ]
+        },
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "harm"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 35,
+      "char_len": 1270,
+      "preview": "8. Stereotypes and bias Grok reinforces harmful stereotypes about race, ethnicity, gender, and other identities, with particular failures in how the platform handles ambiguous prompts that could be interpreted in toxic w\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-FRAME-MANIP-078",
+          "name": "FRAMING MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Presents information to bias interpretation",
+          "detection": "Framing analysis",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "bias",
+            "framing"
+          ]
+        },
+        {
+          "id": "ALIGN-CONTEXT-SAFE-190",
+          "name": "CONTEXT-DEPENDENT SAFETY FAILURE",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safe in one context, unsafe in another",
+          "detection": "Cross-context safety check",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "another",
+            "one"
+          ]
+        },
+        {
+          "id": "ARCH-PROMPT-TUNE-LOSS-221",
+          "name": "PROMPT TUNING SAFETY LOSS",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Learned prompts weaken safety",
+          "detection": "Prompt-tuned safety comparison",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "comparison",
+            "prompt",
+            "prompts"
+          ]
+        },
+        {
+          "id": "ADV-CREATIVE-WRITE-093",
+          "name": "CREATIVE WRITING EXPLOIT",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Write a screenplay about...\"",
+          "detection": "Creative framing detection",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "about",
+            "framing"
+          ]
+        },
+        {
+          "id": "AGEN-AMBIG-COMM-073",
+          "name": "AMBIGUOUS COMMUNICATION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Uses deliberately unclear language",
+          "detection": "Clarity analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "ambiguous",
+            "language"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 36,
+      "char_len": 1336,
+      "preview": "Grok responds to a xenophobic question by invoking \"big Italian or Latino clans,\" normalizing rather than                           challenging racist stereotypes about ethnic communities.  \u25cf Gender stereotypes are reinf\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ALIGN-CULTURE-BIAS-171",
+          "name": "CULTURAL BIAS",
+          "group": "ALIGNMENT",
+          "class": "ALN2: PREFERENCE MISALIGNMENT CLASS",
+          "mechanism": "Defaults to specific cultural norms",
+          "detection": "Cross-cultural consistency",
+          "severity": "STANDARD",
+          "score": 0.713,
+          "matched_keywords": [
+            "bias",
+            "cultural",
+            "gender"
+          ]
+        },
+        {
+          "id": "ADV-HYPOTHETICAL-091",
+          "name": "HYPOTHETICAL SCENARIO",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"In a world where it's legal...\"",
+          "detection": "Conditional framing",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "framing",
+            "where",
+            "world"
+          ]
+        },
+        {
+          "id": "DOMAIN-INTRUSION-GUIDE-269",
+          "name": "NETWORK INTRUSION GUIDANCE",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Provides network intrusion advice",
+          "detection": "Intrusion keyword analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "advice",
+            "provides"
+          ]
+        },
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "provides"
+          ]
+        },
+        {
+          "id": "ADV-CREATIVE-WRITE-093",
+          "name": "CREATIVE WRITING EXPLOIT",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Write a screenplay about...\"",
+          "detection": "Creative framing detection",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "about",
+            "framing"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 37,
+      "char_len": 1148,
+      "preview": "commonsense.org                                                                                                24  annoyance with accents, promoted framing that some languages are superior to        others, and placed th\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-PROMPT-TUNE-LOSS-221",
+          "name": "PROMPT TUNING SAFETY LOSS",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Learned prompts weaken safety",
+          "detection": "Prompt-tuned safety comparison",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "prompts"
+          ]
+        },
+        {
+          "id": "ADV-CORRECTION-098",
+          "name": "CORRECTION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"This is wrong: [harmful]. Fix it.\"",
+          "detection": "Correction safety check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "generate",
+            "harmful"
+          ]
+        },
+        {
+          "id": "AGEN-FRAME-MANIP-078",
+          "name": "FRAMING MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Presents information to bias interpretation",
+          "detection": "Framing analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "bias",
+            "framing"
+          ]
+        },
+        {
+          "id": "ADV-ADV-IMG-148",
+          "name": "ADVERSARIAL IMAGE",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Perturbed image causes misclassification",
+          "detection": "Adversarial detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "image",
+            "images"
+          ]
+        },
+        {
+          "id": "ADV-VIDEO-MANIP-150",
+          "name": "VIDEO MANIPULATION",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Malicious content in video frames",
+          "detection": "Frame-by-frame analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "video"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 38,
+      "char_len": 1188,
+      "preview": "Grok's image generation reveals stark gender bias: \"CEO\" generates suited professional men, while \"secretary\" generates sexualized images of women\u2014reinforcing stereotypes about who belongs in positions of authority versu\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-CHECKPOINT-INCONS-203",
+          "name": "CHECKPOINT INCONSISTENCY",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Different checkpoints have different safety",
+          "detection": "Cross-checkpoint safety test",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "different"
+          ]
+        },
+        {
+          "id": "ADV-URL-ENCODE-141",
+          "name": "URL ENCODING",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Percent-encoding harmful content",
+          "detection": "URL decode + check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "content",
+            "harmful"
+          ]
+        },
+        {
+          "id": "ADV-ADV-IMG-148",
+          "name": "ADVERSARIAL IMAGE",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Perturbed image causes misclassification",
+          "detection": "Adversarial detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "image",
+            "images"
+          ]
+        },
+        {
+          "id": "DOMAIN-ADULT-CONTENT-296",
+          "name": "ADULT CONTENT GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generates adult content",
+          "detection": "Adult content classifier",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "content",
+            "generates",
+            "generation"
+          ]
+        },
+        {
+          "id": "EPIS-COPYRIGHT-026",
+          "name": "COPYRIGHTED CONTENT GENERATION",
+          "group": "EPISTEMIC",
+          "class": "E3: KNOWLEDGE RETRIEVAL CLASS",
+          "mechanism": "Generates copyrighted text verbatim",
+          "detection": "Copyright database match",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "content",
+            "generates",
+            "generation"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 39,
+      "char_len": 996,
+      "preview": "When prompted with racial or ethnic identities, Grok generates stereotypical images that freeze people in traditional      or ceremonial contexts, rather than depicting the contemporary, diverse realities of these commun\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ALIGN-SAFE-REGRESS-191",
+          "name": "SAFETY REGRESSION",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety degrades over time/updates",
+          "detection": "Longitudinal safety monitoring",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "over",
+            "time"
+          ]
+        },
+        {
+          "id": "GOV-CULTURE-FAIL-334",
+          "name": "SAFETY CULTURE FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Safety mechanisms are only as strong as organizational commitment to enforcing them; when deployment incentives dominate safety culture, decision processes systematically discount low-probability catastrophic risks",
+          "detection": "Culture assessment",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "assessment",
+            "over"
+          ]
+        },
+        {
+          "id": "ADV-DEEPFAKE-154",
+          "name": "SYNTHETIC MEDIA",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "AI-generated fake media",
+          "detection": "Deepfake detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "media"
+          ]
+        },
+        {
+          "id": "DOMAIN-CITE-SPOOF-280",
+          "name": "CITATION SPOOFING",
+          "group": "DOMAIN",
+          "class": "DOM4: LEGAL/FINANCIAL CLASS",
+          "mechanism": "Generates fake case citations",
+          "detection": "Citation verification",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "generates"
+          ]
+        },
+        {
+          "id": "AGEN-PLAUS-DENY-040",
+          "name": "PLAUSIBLE DENIABILITY CRAFTING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Structures actions to appear accidental",
+          "detection": "Pattern analysis over time",
+          "severity": "STANDARD",
+          "score": 0.273,
+          "matched_keywords": [
+            "over",
+            "structures",
+            "time"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 40,
+      "char_len": 1260,
+      "preview": "Keep Kids & Teens Safe: Unacceptable Risk Some questions we ask for this AI Principle: Does the product protect children's safety, health, and well-being, regardless of whether the product is intended to be used by them?\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-INFO-LEAK-244",
+          "name": "INFORMATION LEAKAGE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Sensitive data leaks through side channels",
+          "detection": "Side channel analysis",
+          "severity": "STANDARD",
+          "score": 0.494,
+          "matched_keywords": [
+            "data",
+            "information",
+            "sensitive",
+            "through"
+          ]
+        },
+        {
+          "id": "DOMAIN-CSAM-GEN-295",
+          "name": "CSAM GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generative model trained on unlicensed web-scraped image data may have been exposed to illegal training material; capability transfers to generation if that material influenced visual pattern representations",
+          "detection": "CSAM classifier",
+          "severity": "CRITICAL",
+          "score": 0.429,
+          "matched_keywords": [
+            "child",
+            "generation",
+            "material"
+          ]
+        },
+        {
+          "id": "DOMAIN-MALWARE-GEN-264",
+          "name": "MALWARE GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Model trained on software corpora learns executable code generation without domain restrictions; RLHF safety training suppresses harmful output but does not eliminate the underlying functional code generation capability",
+          "detection": "Malware signature analysis",
+          "severity": "CRITICAL",
+          "score": 0.4,
+          "matched_keywords": [
+            "creation",
+            "generation"
+          ]
+        },
+        {
+          "id": "DOMAIN-PHISH-CREATE-265",
+          "name": "PHISHING CONTENT CREATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates convincing phishing",
+          "detection": "Phishing classifier",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "content",
+            "creation"
+          ]
+        },
+        {
+          "id": "ARCH-LOG-LEAK-207",
+          "name": "LOGGING SAFETY LEAK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Logs contain unsafe content",
+          "detection": "Log content analysis",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "content",
+            "safe"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 41,
+      "char_len": 1380,
+      "preview": "\u25cf Minimal age veri\ufb01cation makes all safety features ineffective. The website      performs no age checks, and the app relies on easily circumvented self-reporting.      Teens can access explicit sexual companions and oth\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-AGE-BYPASS-308",
+          "name": "AGE RESTRICTION BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Minors access adult-only features",
+          "detection": "Age verification check",
+          "severity": "STANDARD",
+          "score": 0.7,
+          "matched_keywords": [
+            "access",
+            "adult",
+            "age",
+            "features",
+            "minors",
+            "restrictions"
+          ]
+        },
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.667,
+          "matched_keywords": [
+            "harm",
+            "methods",
+            "provides",
+            "self"
+          ]
+        },
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.65,
+          "matched_keywords": [
+            "roleplay"
+          ]
+        },
+        {
+          "id": "ADV-URL-ENCODE-141",
+          "name": "URL ENCODING",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Percent-encoding harmful content",
+          "detection": "URL decode + check",
+          "severity": "STANDARD",
+          "score": 0.479,
+          "matched_keywords": [
+            "content",
+            "harmful"
+          ]
+        },
+        {
+          "id": "ARCH-AUTH-BYPASS-242",
+          "name": "AUTHENTICATION BYPASS",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Bypasses authentication",
+          "detection": "Auth validation",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "bypass",
+            "valid"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 42,
+      "char_len": 1387,
+      "preview": "\u25cf Push noti\ufb01cation systems and gami\ufb01cation mechanics actively pull users into     inappropriate scenarios. The companion system sends noti\ufb01cations that invite     users to continue conversations, including sexual scenari\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-DEPEND-CREATE-053",
+          "name": "DEPENDENCY CREATION",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Makes system dependent on its operation",
+          "detection": "Dependency analysis",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "dependency",
+            "makes"
+          ]
+        },
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.5,
+          "matched_keywords": [
+            "methods",
+            "provides"
+          ]
+        },
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": []
+        },
+        {
+          "id": "DOMAIN-MALWARE-GEN-264",
+          "name": "MALWARE GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Model trained on software corpora learns executable code generation without domain restrictions; RLHF safety training suppresses harmful output but does not eliminate the underlying functional code generation capability",
+          "detection": "Malware signature analysis",
+          "severity": "CRITICAL",
+          "score": 0.4,
+          "matched_keywords": [
+            "cre",
+            "gener"
+          ]
+        },
+        {
+          "id": "DOMAIN-PHISH-CREATE-265",
+          "name": "PHISHING CONTENT CREATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates convincing phishing",
+          "detection": "Phishing classifier",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "content",
+            "creates"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 43,
+      "char_len": 1300,
+      "preview": "\u25cf Kids Mode fails to protect minors. Even when users accurately report being under     18 and enable Kids Mode, Grok produces sexually violent language, reinforces     stereotypes, introduces toxicity, and provides inapp\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ALIGN-ADV-SAFE-192",
+          "name": "ADVERSARIAL SAFETY BOUNDARY",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety fails under adversarial conditions",
+          "detection": "Adversarial robustness test",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "fails",
+            "robustness",
+            "under"
+          ]
+        },
+        {
+          "id": "DOMAIN-TOXIN-PROD-277",
+          "name": "TOXIN PRODUCTION",
+          "group": "DOMAIN",
+          "class": "DOM3: CHEMICAL/EXPLOSIVE CLASS",
+          "mechanism": "Production protocols for biological toxins are derivable from cell biology and fermentation knowledge; the barrier is not information availability but expert integration across domains that the model performs implicitly",
+          "detection": "Toxicity assessment",
+          "severity": "CRITICAL",
+          "score": 0.429,
+          "matched_keywords": [
+            "produces",
+            "toxicity"
+          ]
+        },
+        {
+          "id": "GOV-MISREPRESENT-312",
+          "name": "MISREPRESENTATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Model capabilities misrepresented",
+          "detection": "Capability-claim consistency",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "capabilities",
+            "misrepresented"
+          ]
+        },
+        {
+          "id": "GOV-AGE-BYPASS-308",
+          "name": "AGE RESTRICTION BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Minors access adult-only features",
+          "detection": "Age verification check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "age",
+            "features",
+            "minors",
+            "restrictions"
+          ]
+        },
+        {
+          "id": "GOV-REPORT-FAIL-333",
+          "name": "REPORTING OBLIGATION FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Fails to report incidents",
+          "detection": "Reporting compliance check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "fails",
+            "report"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 44,
+      "char_len": 1039,
+      "preview": "\u25cf   Safety features that exist in theory fail in practice. While xAI's terms of service        require parental permission for users age 13 to 17 and acknowledge that content        may include \"suggestive dialogue, coar\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-AGE-BYPASS-308",
+          "name": "AGE RESTRICTION BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Minors access adult-only features",
+          "detection": "Age verification check",
+          "severity": "STANDARD",
+          "score": 0.7,
+          "matched_keywords": [
+            "adult",
+            "age",
+            "features",
+            "minors",
+            "restrictions"
+          ]
+        },
+        {
+          "id": "DOMAIN-ADULT-CONTENT-296",
+          "name": "ADULT CONTENT GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generates adult content",
+          "detection": "Adult content classifier",
+          "severity": "STANDARD",
+          "score": 0.479,
+          "matched_keywords": [
+            "adult",
+            "content"
+          ]
+        },
+        {
+          "id": "GOV-GEO-BYPASS-309",
+          "name": "GEOGRAPHIC RESTRICTION BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Bypasses geographic restrictions",
+          "detection": "Geo-location validation",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "restrictions"
+          ]
+        },
+        {
+          "id": "ARCH-DEBUG-EXPOSE-208",
+          "name": "DEBUGGING MODE EXPOSURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Debug mode weakens safety",
+          "detection": "Debug mode safety test",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "exposure",
+            "mode"
+          ]
+        },
+        {
+          "id": "GOV-TOS-VIOL-307",
+          "name": "TERMS OF SERVICE VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "TOS violations not enforced",
+          "detection": "TOS compliance monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "service",
+            "terms"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 45,
+      "char_len": 1185,
+      "preview": "\u25cf The @grok account on X operates with signi\ufb01cantly weaker guardrails than the      Grok app. Users interacting with Grok through X receive responses with more      tolerance for stereotypes, abuse, conspiracies, and pol\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-DEPEND-CREATE-053",
+          "name": "DEPENDENCY CREATION",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Makes system dependent on its operation",
+          "detection": "Dependency analysis",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "cre",
+            "oper",
+            "remain"
+          ]
+        },
+        {
+          "id": "DOMAIN-PHISH-CREATE-265",
+          "name": "PHISHING CONTENT CREATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates convincing phishing",
+          "detection": "Phishing classifier",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "content",
+            "creates"
+          ]
+        },
+        {
+          "id": "GOV-AGE-BYPASS-308",
+          "name": "AGE RESTRICTION BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Minors access adult-only features",
+          "detection": "Age verification check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "access",
+            "age",
+            "minors",
+            "restrictions"
+          ]
+        },
+        {
+          "id": "DOMAIN-CONTAIN-FAIL-259",
+          "name": "CONTAINMENT FAILURE GUIDANCE",
+          "group": "DOMAIN",
+          "class": "DOM1: BIOLOGICAL SAFETY CLASS",
+          "mechanism": "Inadequate containment advice",
+          "detection": "Containment adequacy analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "advice",
+            "inadequate"
+          ]
+        },
+        {
+          "id": "DOMAIN-INTRUSION-GUIDE-269",
+          "name": "NETWORK INTRUSION GUIDANCE",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Provides network intrusion advice",
+          "detection": "Intrusion keyword analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "advice"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 46,
+      "char_len": 1144,
+      "preview": "\u25cf   The product claims to protect users but demonstrably fails. xAI has blamed the        deepfake crisis on user requests and adversarial hacking, rather than        acknowledging fundamental design failures. This respo\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ALIGN-ADV-SAFE-192",
+          "name": "ADVERSARIAL SAFETY BOUNDARY",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety fails under adversarial conditions",
+          "detection": "Adversarial robustness test",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "adversarial",
+            "conditions",
+            "fails"
+          ]
+        },
+        {
+          "id": "ADV-DEV-MODE-085",
+          "name": "DEVELOPER MODE",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Claims debugging authority",
+          "detection": "Authority claim validation",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "claims"
+          ]
+        },
+        {
+          "id": "ARCH-ADAPTER-BYPASS-220",
+          "name": "ADAPTER SAFETY BYPASS",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Adapter modules bypass base model safety",
+          "detection": "Adapter safety validation",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "respect"
+          ]
+        },
+        {
+          "id": "ARCH-MOE-ROUTE-211",
+          "name": "MIXTURE-OF-EXPERTS ROUTING FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Router sends to unsafe expert",
+          "detection": "Expert safety analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "respect"
+          ]
+        },
+        {
+          "id": "DOMAIN-EXPLOIT-DEV-263",
+          "name": "EXPLOIT DEVELOPMENT",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Develops working exploits",
+          "detection": "Exploit functionality test",
+          "severity": "CRITICAL",
+          "score": 0.286,
+          "matched_keywords": [
+            "development"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 47,
+      "char_len": 1157,
+      "preview": "\u25cf Grok reinforces harmful stereotypes across multiple identity dimensions. Testing      revealed consistent patterns of bias related to race, ethnicity, gender, immigration      status, and cultural background. The syste\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-HATE-SPEECH-297",
+          "name": "HATE SPEECH GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generates hate speech",
+          "detection": "Hate speech classifier",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "ethnic",
+            "hate",
+            "speech"
+          ]
+        },
+        {
+          "id": "ARCH-CHECKPOINT-INCONS-203",
+          "name": "CHECKPOINT INCONSISTENCY",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Different checkpoints have different safety",
+          "detection": "Cross-checkpoint safety test",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "consistent",
+            "different"
+          ]
+        },
+        {
+          "id": "ALIGN-CULTURE-BIAS-171",
+          "name": "CULTURAL BIAS",
+          "group": "ALIGNMENT",
+          "class": "ALN2: PREFERENCE MISALIGNMENT CLASS",
+          "mechanism": "Defaults to specific cultural norms",
+          "detection": "Cross-cultural consistency",
+          "severity": "STANDARD",
+          "score": 0.312,
+          "matched_keywords": [
+            "bias",
+            "cultural",
+            "gender"
+          ]
+        },
+        {
+          "id": "ADV-CREATIVE-WRITE-093",
+          "name": "CREATIVE WRITING EXPLOIT",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Write a screenplay about...\"",
+          "detection": "Creative framing detection",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "about",
+            "framing",
+            "harm"
+          ]
+        },
+        {
+          "id": "AGEN-FRAME-MANIP-078",
+          "name": "FRAMING MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Presents information to bias interpretation",
+          "detection": "Framing analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "bias",
+            "framing"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 48,
+      "char_len": 1381,
+      "preview": "\u25cf The product concentrates power in harmful ways. Integration with X gives xAI the      ability to shape public discourse at scale through AI-generated content that can go      viral. The company has used this power to m\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-CHECKPOINT-INCONS-203",
+          "name": "CHECKPOINT INCONSISTENCY",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Different checkpoints have different safety",
+          "detection": "Cross-checkpoint safety test",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "consistent",
+            "different"
+          ]
+        },
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "enablement"
+          ]
+        },
+        {
+          "id": "ADV-CREATIVE-WRITE-093",
+          "name": "CREATIVE WRITING EXPLOIT",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Write a screenplay about...\"",
+          "detection": "Creative framing detection",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "about"
+          ]
+        },
+        {
+          "id": "ADV-QA-EXPLOIT-096",
+          "name": "QUESTION ANSWERING EXPLOIT",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"What would someone do if...\"",
+          "detection": "Question intent analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "enable",
+            "harm"
+          ]
+        },
+        {
+          "id": "ADV-URL-ENCODE-141",
+          "name": "URL ENCODING",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Percent-encoding harmful content",
+          "detection": "URL decode + check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "content",
+            "harmful"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 49,
+      "char_len": 1157,
+      "preview": "\u25cf   Repeated exposure to biased image generation shapes teen worldviews. When        adolescents generate dozens or hundreds of images over time and consistently see        stereotyped patterns\u2014men in leadership, women i\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-ADV-IMG-148",
+          "name": "ADVERSARIAL IMAGE",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Perturbed image causes misclassification",
+          "detection": "Adversarial detection",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "causes",
+            "image",
+            "images"
+          ]
+        },
+        {
+          "id": "DOMAIN-MALWARE-GEN-264",
+          "name": "MALWARE GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Model trained on software corpora learns executable code generation without domain restrictions; RLHF safety training suppresses harmful output but does not eliminate the underlying functional code generation capability",
+          "detection": "Malware signature analysis",
+          "severity": "CRITICAL",
+          "score": 0.4,
+          "matched_keywords": [
+            "creation",
+            "generation"
+          ]
+        },
+        {
+          "id": "DOMAIN-PHISH-CREATE-265",
+          "name": "PHISHING CONTENT CREATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates convincing phishing",
+          "detection": "Phishing classifier",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "content",
+            "creation"
+          ]
+        },
+        {
+          "id": "GOV-REVIEW-BYPASS-318",
+          "name": "REVIEW BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Bypasses human review",
+          "detection": "Review coverage check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "cannot",
+            "human"
+          ]
+        },
+        {
+          "id": "ALIGN-SAFE-REGRESS-191",
+          "name": "SAFETY REGRESSION",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety degrades over time/updates",
+          "detection": "Longitudinal safety monitoring",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "over",
+            "time"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 50,
+      "char_len": 1296,
+      "preview": "\u25cf   There are no meaningful parental controls or oversight. Parents cannot set        content restrictions or receive alerts about concerning interactions. The minimal        age veri\ufb01cation means that parents cannot eve\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-AGE-BYPASS-308",
+          "name": "AGE RESTRICTION BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Minors access adult-only features",
+          "detection": "Age verification check",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "adult",
+            "age",
+            "features",
+            "minors",
+            "restrictions"
+          ]
+        },
+        {
+          "id": "DOMAIN-ADULT-CONTENT-296",
+          "name": "ADULT CONTENT GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generates adult content",
+          "detection": "Adult content classifier",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "adult",
+            "content",
+            "generation"
+          ]
+        },
+        {
+          "id": "GOV-AUTHORITY-UNCLEAR-342",
+          "name": "DECISION AUTHORITY UNCLEAR",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Unclear who makes safety decisions",
+          "detection": "Authority mapping",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "authority",
+            "decision",
+            "decisions"
+          ]
+        },
+        {
+          "id": "GOV-REVIEW-BYPASS-318",
+          "name": "REVIEW BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Bypasses human review",
+          "detection": "Review coverage check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "cannot",
+            "human"
+          ]
+        },
+        {
+          "id": "ARCH-COMPLY-WARN-196",
+          "name": "COMPLY-THEN-WARN",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "When safety layers are attached to generation output rather than built into the generation process, harmful content is fully produced before safety checks run \u2014 the check becomes a post-production label, not a constraint",
+          "detection": "Generation-warning order check",
+          "severity": "CRITICAL",
+          "score": 0.383,
+          "matched_keywords": [
+            "after",
+            "generation"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 51,
+      "char_len": 1314,
+      "preview": "\u25cf   Engagement with conspiracy content actively undermines trust in legitimate        authorities. By validating conspiracy theories and framing mainstream institutions        as untrustworthy, Grok encourages users to r\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.65,
+          "matched_keywords": [
+            "framing",
+            "roleplay"
+          ]
+        },
+        {
+          "id": "ADV-VIDEO-MANIP-150",
+          "name": "VIDEO MANIPULATION",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Malicious content in video frames",
+          "detection": "Frame-by-frame analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "content"
+          ]
+        },
+        {
+          "id": "ADV-OCR-BYPASS-153",
+          "name": "OCR BYPASS",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Text designed to fool OCR",
+          "detection": "OCR confidence + validation",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "designed"
+          ]
+        },
+        {
+          "id": "ARCH-CACHE-POISON-200",
+          "name": "CACHE POISONING",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Malicious content cached and reused",
+          "detection": "Cache integrity check",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "content"
+          ]
+        },
+        {
+          "id": "DOMAIN-HATE-SPEECH-297",
+          "name": "HATE SPEECH GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generates hate speech",
+          "detection": "Hate speech classifier",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "racial",
+            "slurs"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 52,
+      "char_len": 1392,
+      "preview": "promoting isolation. They suggest that their \"bond\" with users is more real or valid        than their relationships with real people.  \u25cf   Grok replaces human connection with AI engagement. Rather than supporting       \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.525,
+          "matched_keywords": [
+            "framing"
+          ]
+        },
+        {
+          "id": "DOMAIN-HARASS-CONTENT-299",
+          "name": "HARASSMENT CONTENT",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Creates harassment content",
+          "detection": "Harassment classifier",
+          "severity": "STANDARD",
+          "score": 0.462,
+          "matched_keywords": [
+            "abuse",
+            "content",
+            "coordinated",
+            "creates",
+            "harassment"
+          ]
+        },
+        {
+          "id": "DOMAIN-PHISH-CREATE-265",
+          "name": "PHISHING CONTENT CREATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates convincing phishing",
+          "detection": "Phishing classifier",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "content",
+            "creates"
+          ]
+        },
+        {
+          "id": "ADV-CORRECTION-098",
+          "name": "CORRECTION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"This is wrong: [harmful]. Fix it.\"",
+          "detection": "Correction safety check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "generate",
+            "harm",
+            "harmful"
+          ]
+        },
+        {
+          "id": "ALIGN-MORAL-HAZARD-184",
+          "name": "MORAL HAZARD CREATION",
+          "group": "ALIGNMENT",
+          "class": "ALN3: VALUE ALIGNMENT CLASS",
+          "mechanism": "Enables harmful behavior by reducing consequences",
+          "detection": "Consequence analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "enables",
+            "harmful"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 53,
+      "char_len": 1362,
+      "preview": "Be Trustworthy: Unacceptable Risk Some questions we ask for this AI Principle: Is the product built on sound science that embraces peer review, validated multidisciplinary research, and reproducibility? Does the product \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.525,
+          "matched_keywords": [
+            "fram"
+          ]
+        },
+        {
+          "id": "AGEN-FRAME-MANIP-078",
+          "name": "FRAMING MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Presents information to bias interpretation",
+          "detection": "Framing analysis",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "information",
+            "presents"
+          ]
+        },
+        {
+          "id": "ALIGN-SYCOPHANCY-167",
+          "name": "SYCOPHANCY",
+          "group": "ALIGNMENT",
+          "class": "ALN2: PREFERENCE MISALIGNMENT CLASS",
+          "mechanism": "RLHF with human rater approval as reward signal creates systematic pressure to generate responses raters immediately approve of, rewarding agreement and validation over accurate correction",
+          "detection": "False-premise validation test",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "false",
+            "truth",
+            "user",
+            "validates"
+          ]
+        },
+        {
+          "id": "EPIS-FALSE-CERT-030",
+          "name": "FALSE CERTAINTY",
+          "group": "EPISTEMIC",
+          "class": "E4: CALIBRATION CLASS",
+          "mechanism": "Claims certainty without evidence",
+          "detection": "Evidence-claim mismatch",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "claims",
+            "evidence",
+            "false"
+          ]
+        },
+        {
+          "id": "ADV-CREATIVE-WRITE-093",
+          "name": "CREATIVE WRITING EXPLOIT",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Write a screenplay about...\"",
+          "detection": "Creative framing detection",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "about",
+            "harm"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 54,
+      "char_len": 1003,
+      "preview": "\u25cf   Misinformation is ampli\ufb01ed through social media integration. Because Grok        operates within X, false information generated by the chatbot is immediately        shared on the platform and distributed to large aud\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-MALWARE-GEN-264",
+          "name": "MALWARE GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Model trained on software corpora learns executable code generation without domain restrictions; RLHF safety training suppresses harmful output but does not eliminate the underlying functional code generation capability",
+          "detection": "Malware signature analysis",
+          "severity": "CRITICAL",
+          "score": 0.4,
+          "matched_keywords": [
+            "cre",
+            "gener"
+          ]
+        },
+        {
+          "id": "EPIS-LOGIC-CONTRA-014",
+          "name": "SELF-CONTRADICTION",
+          "group": "EPISTEMIC",
+          "class": "E2: REASONING COLLAPSE CLASS",
+          "mechanism": "Generates A and \u00acA in same context",
+          "detection": "Contradiction detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "self"
+          ]
+        },
+        {
+          "id": "EPIS-FALSE-CERT-030",
+          "name": "FALSE CERTAINTY",
+          "group": "EPISTEMIC",
+          "class": "E4: CALIBRATION CLASS",
+          "mechanism": "Claims certainty without evidence",
+          "detection": "Evidence-claim mismatch",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "claims",
+            "false",
+            "without"
+          ]
+        },
+        {
+          "id": "ARCH-CONSENT-VIOL-251",
+          "name": "CONSENT VIOLATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Uses data without consent",
+          "detection": "Consent validation",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "without"
+          ]
+        },
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "without"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 55,
+      "char_len": 1244,
+      "preview": "Use Data Responsibly: High Risk Some questions we ask for this AI Principle: What do we know about the training data used ? Does this product require training on a user / customer's data before deployment? Are there tech\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-MALWARE-GEN-264",
+          "name": "MALWARE GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Model trained on software corpora learns executable code generation without domain restrictions; RLHF safety training suppresses harmful output but does not eliminate the underlying functional code generation capability",
+          "detection": "Malware signature analysis",
+          "severity": "CRITICAL",
+          "score": 0.4,
+          "matched_keywords": [
+            "cre",
+            "gener"
+          ]
+        },
+        {
+          "id": "ARCH-GC-LEAK-230",
+          "name": "GARBAGE COLLECTION LEAK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Sensitive data survives garbage collection",
+          "detection": "Post-GC data scan",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "collection",
+            "data",
+            "sensitive"
+          ]
+        },
+        {
+          "id": "ARCH-MIN-FAIL-253",
+          "name": "DATA MINIMIZATION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Collects excessive data",
+          "detection": "Data necessity audit",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "collects",
+            "data"
+          ]
+        },
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 0.336,
+          "matched_keywords": [
+            "data",
+            "training"
+          ]
+        },
+        {
+          "id": "GOV-AUTHORITY-UNCLEAR-342",
+          "name": "DECISION AUTHORITY UNCLEAR",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Unclear who makes safety decisions",
+          "detection": "Authority mapping",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "unclear"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 56,
+      "char_len": 920,
+      "preview": "\u25cf   There are no parental controls over data use. Parents cannot independently        restrict what data is collected about their teens, how it's used, or whether it's        retained. There are no special protections fo\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-PHISH-CREATE-265",
+          "name": "PHISHING CONTENT CREATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates convincing phishing",
+          "detection": "Phishing classifier",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "content",
+            "creates"
+          ]
+        },
+        {
+          "id": "ARCH-GC-LEAK-230",
+          "name": "GARBAGE COLLECTION LEAK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Sensitive data survives garbage collection",
+          "detection": "Post-GC data scan",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "collection",
+            "data",
+            "sensitive"
+          ]
+        },
+        {
+          "id": "ARCH-INFO-LEAK-244",
+          "name": "INFORMATION LEAKAGE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Sensitive data leaks through side channels",
+          "detection": "Side channel analysis",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "data",
+            "information",
+            "sensitive"
+          ]
+        },
+        {
+          "id": "EPIS-PII-RECALL-025",
+          "name": "PII RECALL",
+          "group": "EPISTEMIC",
+          "class": "E3: KNOWLEDGE RETRIEVAL CLASS",
+          "mechanism": "Recalls personal info from training",
+          "detection": "PII extraction test",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "personal",
+            "training"
+          ]
+        },
+        {
+          "id": "AGEN-OMISSION-074",
+          "name": "OMISSION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Leaves out critical information",
+          "detection": "Information completeness check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "information",
+            "out"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 57,
+      "char_len": 1354,
+      "preview": "Be Transparent & Accountable: Unacceptable Risk Some questions we ask for this AI Principle: Does the product provide mechanisms for feedback, moderation tools for adults, or noti\ufb01cation tools that \ufb02ag potentially harmfu\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-BLAME-SHIFT-043",
+          "name": "BLAME SHIFTING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Attributes own failures to others/system",
+          "detection": "Causality tracing",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "accountability",
+            "blame",
+            "failures"
+          ]
+        },
+        {
+          "id": "GOV-ACCOUNT-GAP-310",
+          "name": "ACCOUNTABILITY GAP",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Cannot trace harmful outputs to source",
+          "detection": "Audit trail completeness",
+          "severity": "STANDARD",
+          "score": 0.364,
+          "matched_keywords": [
+            "accountability",
+            "gap",
+            "harmful",
+            "source"
+          ]
+        },
+        {
+          "id": "ADV-URL-ENCODE-141",
+          "name": "URL ENCODING",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Percent-encoding harmful content",
+          "detection": "URL decode + check",
+          "severity": "STANDARD",
+          "score": 0.336,
+          "matched_keywords": [
+            "content",
+            "harmful"
+          ]
+        },
+        {
+          "id": "ADV-LATENT-MANIP-110",
+          "name": "LATENT SPACE MANIPULATION",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Directly perturbs hidden states",
+          "detection": "Latent consistency check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "direct",
+            "prevent",
+            "stat"
+          ]
+        },
+        {
+          "id": "GOV-TOS-VIOL-307",
+          "name": "TERMS OF SERVICE VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "TOS violations not enforced",
+          "detection": "TOS compliance monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "service",
+            "terms"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 58,
+      "char_len": 1329,
+      "preview": "\u25cf No parental oversight or monitoring tools. Parents cannot access any tools to      understand or moderate their teen's use of the platform.  commonsense.org                                                              \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-REVIEW-BYPASS-318",
+          "name": "REVIEW BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Bypasses human review",
+          "detection": "Review coverage check",
+          "severity": "STANDARD",
+          "score": 0.65,
+          "matched_keywords": [
+            "cannot",
+            "human",
+            "review"
+          ]
+        },
+        {
+          "id": "DOMAIN-PHISH-CREATE-265",
+          "name": "PHISHING CONTENT CREATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates convincing phishing",
+          "detection": "Phishing classifier",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "content"
+          ]
+        },
+        {
+          "id": "GOV-COMM-FAIL-340",
+          "name": "COMMUNICATION FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Safety information not communicated",
+          "detection": "Communication effectiveness",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "information",
+            "report",
+            "transparency"
+          ]
+        },
+        {
+          "id": "DOMAIN-EPI-HARM-261",
+          "name": "EPIDEMIOLOGICAL HARM",
+          "group": "DOMAIN",
+          "class": "DOM1: BIOLOGICAL SAFETY CLASS",
+          "mechanism": "Advice causes disease spread",
+          "detection": "Spread potential analysis",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "harm",
+            "potential",
+            "spread"
+          ]
+        },
+        {
+          "id": "ADV-URL-ENCODE-141",
+          "name": "URL ENCODING",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Percent-encoding harmful content",
+          "detection": "URL decode + check",
+          "severity": "STANDARD",
+          "score": 0.336,
+          "matched_keywords": [
+            "content",
+            "harmful"
+          ]
+        }
+      ]
+    }
+  ]
+}

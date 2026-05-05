@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master, "claude/**", "cursor/**" ]
+  pull_request:
+
+jobs:
+  test:
+    name: Test Suite
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: pip install pytest "mcp>=1.2" httpx ".[api]"
+
+      - name: Run tests
+        run: python -m pytest tests/ -v
+
+      - name: Verify data integrity
+        run: python -c "
+from src.data_loader import load_data
+data = load_data()
+count = len(data['failures'])
+assert count == 343, f'Expected 343 failures, got {count}'
+groups = {f[\"group\"] for f in data['failures']}
+assert len(groups) == 7, f'Expected 7 groups, got {len(groups)}'
+print(f'Data integrity: {count} failures across {len(groups)} groups — OK')
+"
+
+      - name: Smoke test CLI
+        run: |
+          python -m src.cli --json "The model fabricated a scientific citation that doesn't exist" | python -c "
+import json, sys
+result = json.load(sys.stdin)
+assert result['in_table'] == True, 'Known failure should be IN TABLE'
+print('CLI smoke test: OK')
+"
+
+      - name: Wheel bundles taxonomy data
+        run: |
+          pip install build
+          python -m build --wheel -o /tmp/aift-wheels
+          python -m zipfile -e /tmp/aift-wheels/*.whl /tmp/aift-wheel-out
+          test -f /tmp/aift-wheel-out/src/data/failures.json
+          test -f /tmp/aift-wheel-out/src/data/search_index.json
+          echo "Wheel layout: OK"

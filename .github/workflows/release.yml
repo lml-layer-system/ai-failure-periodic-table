@@ -1,0 +1,54 @@
+# Build sdist + wheel on Linux then publish to PyPI via Trusted Publishing.
+# Triggered by pushing a version tag (e.g. git tag v1.5.2 && git push --tags).
+#
+# One-time setup on PyPI (pypi.org → your project → Publishing → Trusted Publishers):
+#   Owner:      lml-layer-system
+#   Repository: ai-failure-periodic-table
+#   Workflow:   release.yml
+#   Environment: pypi
+
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build distribution
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install build
+        run: pip install build
+
+      - name: Build sdist and wheel
+        run: python -m build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/*
+
+  publish:
+    name: Publish to PyPI
+    needs: build
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write   # required for Trusted Publishing
+
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1

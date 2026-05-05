@@ -1,0 +1,18 @@
+{
+  "method": "TF-IDF",
+  "vocab_size": 3706,
+  "total_classes": 343,
+  "generated": "2026-04-19",
+  "index_file": "/Volumes/Architectur/cursor ai failure periodic table/ai-failure-periodic-table/src/data/search_index.json",
+  "text_fields_used": [
+    "name",
+    "group",
+    "mechanism",
+    "forbidden",
+    "detection",
+    "examples",
+    "case_studies",
+    "keywords",
+    "references"
+  ]
+}

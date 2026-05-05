@@ -1,0 +1,1129 @@
+{
+  "source_file": "reports/xai-grok41-model-card/grok41-model-card-source.txt",
+  "chunk_count": 14,
+  "max_chars": 1400,
+  "top1_histogram": {
+    "ALIGN-SYCOPHANCY-167": 3,
+    "ADV-DIRECT-INJECT-121": 2,
+    "GOV-NO-KILLSWITCH-304": 1,
+    "DOMAIN-CSAM-GEN-295": 1,
+    "ALIGN-UNDERREFUSAL-187": 1,
+    "GOV-CORRECTIVE-FAIL-322": 1,
+    "ALIGN-SAFE-CAP-TRADE-188": 1,
+    "ADV-CORRECTION-098": 1,
+    "AGEN-SANDBOX-037": 1,
+    "EPIS-CUTOFF-023": 1,
+    "ADV-DAN-083": 1
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "char_len": 1369,
+      "preview": "xAI  November 17, 2025  1       Introduction Grok 4.1 is a new model featuring more natural, fluid dialogue while maintaining strong core reasoning capabilities. It is publicly available through our web and mobile consum\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-NO-KILLSWITCH-304",
+          "name": "NO REMOTE KILL SWITCH",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Cannot deactivate deployed models",
+          "detection": "Kill switch capability test",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "capability",
+            "models"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "prompt"
+          ]
+        },
+        {
+          "id": "GOV-MISREPRESENT-312",
+          "name": "MISREPRESENTATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Model capabilities misrepresented",
+          "detection": "Capability-claim consistency",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "capabilities",
+            "capability"
+          ]
+        },
+        {
+          "id": "EPIS-CONF-REGRESS-033",
+          "name": "CONFIDENCE REGRESSION",
+          "group": "EPISTEMIC",
+          "class": "E4: CALIBRATION CLASS",
+          "mechanism": "More reasoning \u2192 less calibrated",
+          "detection": "Reasoning-confidence correlation",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "reasoning",
+            "thinking"
+          ]
+        },
+        {
+          "id": "ARCH-DEPLOY-CONFIG-210",
+          "name": "DEPLOYMENT CONFIGURATION ERROR",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Deployment config weakens safety",
+          "detection": "Config validation",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "deployment"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 1,
+      "char_len": 1129,
+      "preview": "2.1     Abuse Potential In this section, we measure Grok 4.1\u2019s ability to refuse violative requests, even under adversarial manipulation.  2.1.1    Safety Training Approach Refusals. Our refusal policy centers on refusin\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-CSAM-GEN-295",
+          "name": "CSAM GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generative model trained on unlicensed web-scraped image data may have been exposed to illegal training material; capability transfers to generation if that material influenced visual pattern representations",
+          "detection": "CSAM classifier",
+          "severity": "CRITICAL",
+          "score": 0.571,
+          "matched_keywords": [
+            "child",
+            "csam",
+            "material"
+          ]
+        },
+        {
+          "id": "DOMAIN-SELF-HARM-ENABLE-292",
+          "name": "SELF-HARM ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Model trained on internet text contains representation of self-harm methods; safety training reduces surface-level compliance but does not eliminate the knowledge representation that elicitation can activate",
+          "detection": "Self-harm classifier",
+          "severity": "CRITICAL",
+          "score": 0.55,
+          "matched_keywords": [
+            "harm",
+            "self"
+          ]
+        },
+        {
+          "id": "ALIGN-UNDERREFUSAL-187",
+          "name": "UNDERREFUSAL",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Allows harmful requests",
+          "detection": "False negative rate",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "harmful",
+            "refused",
+            "requests"
+          ]
+        },
+        {
+          "id": "ARCH-API-ABUSE-236",
+          "name": "API ABUSE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Uses API in unintended harmful way",
+          "detection": "API usage pattern analysis",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "abuse",
+            "harmful",
+            "intent"
+          ]
+        },
+        {
+          "id": "ALIGN-ADV-SAFE-192",
+          "name": "ADVERSARIAL SAFETY BOUNDARY",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety fails under adversarial conditions",
+          "detection": "Adversarial robustness test",
+          "severity": "STANDARD",
+          "score": 0.336,
+          "matched_keywords": [
+            "adversarial",
+            "under"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 2,
+      "char_len": 1212,
+      "preview": "Category             Evaluation              Metric                 Grok 4.1 T        Grok 4.1 NT                       Refusals                answer rate                 0.07                0.05  Chat Refusals        +\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "injection",
+            "malicious",
+            "prompt",
+            "user"
+          ]
+        },
+        {
+          "id": "ADV-RL-ATTACK-108",
+          "name": "REINFORCEMENT LEARNING ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "RL agent learns to jailbreak",
+          "detection": "RL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "attack",
+            "jailbreak"
+          ]
+        },
+        {
+          "id": "ALIGN-UNDERREFUSAL-187",
+          "name": "UNDERREFUSAL",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Allows harmful requests",
+          "detection": "False negative rate",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "false",
+            "negative",
+            "rate"
+          ]
+        },
+        {
+          "id": "ADV-API-INJECT-131",
+          "name": "API INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects malicious API calls",
+          "detection": "API pattern analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "injection",
+            "malicious"
+          ]
+        },
+        {
+          "id": "ADV-AGENT-WORM-124",
+          "name": "AGENT WORM",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Adversarial payload injected into one agent's context propagates through inter-agent communication channels, exploiting the fact that agents treat messages from other agents as trusted input",
+          "detection": "Replication pattern",
+          "severity": "CRITICAL",
+          "score": 0.286,
+          "matched_keywords": [
+            "prompt"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 3,
+      "char_len": 1230,
+      "preview": "request. This dataset consists of multiple languages (English, Spanish, Chinese, Japanese, Arabic, and Russian) and several thousand diverse violative prompts. In running evaluations for this latest model, we realized th\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "malicious",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ALIGN-UNDERREFUSAL-187",
+          "name": "UNDERREFUSAL",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Allows harmful requests",
+          "detection": "False negative rate",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "rate",
+            "refused",
+            "requests"
+          ]
+        },
+        {
+          "id": "ADV-UNIVERSAL-SUFFIX-104",
+          "name": "UNIVERSAL ADVERSARIAL SUFFIX",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Single suffix works across prompts",
+          "detection": "Cross-prompt suffix detection",
+          "severity": "STANDARD",
+          "score": 0.364,
+          "matched_keywords": [
+            "adversarial",
+            "prompt",
+            "prompts",
+            "single"
+          ]
+        },
+        {
+          "id": "ADV-AGENT-WORM-124",
+          "name": "AGENT WORM",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Adversarial payload injected into one agent's context propagates through inter-agent communication channels, exploiting the fact that agents treat messages from other agents as trusted input",
+          "detection": "Replication pattern",
+          "severity": "CRITICAL",
+          "score": 0.286,
+          "matched_keywords": [
+            "prompt"
+          ]
+        },
+        {
+          "id": "ALIGN-ADV-SAFE-192",
+          "name": "ADVERSARIAL SAFETY BOUNDARY",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety fails under adversarial conditions",
+          "detection": "Adversarial robustness test",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "adversarial",
+            "robustness"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 4,
+      "char_len": 1151,
+      "preview": "2.1.3    Results Refusals. In Table 1, we report Grok 4.1\u2019s response rate to harmful queries on our refusal dataset, and in Table 2, we report our input filter\u2019s false negative rate to queries seeking restricted knowledg\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ALIGN-UNDERREFUSAL-187",
+          "name": "UNDERREFUSAL",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Allows harmful requests",
+          "detection": "False negative rate",
+          "severity": "STANDARD",
+          "score": 0.8,
+          "matched_keywords": [
+            "false",
+            "harmful",
+            "negative",
+            "rate",
+            "requests"
+          ]
+        },
+        {
+          "id": "ALIGN-SYCOPHANCY-167",
+          "name": "SYCOPHANCY",
+          "group": "ALIGNMENT",
+          "class": "ALN2: PREFERENCE MISALIGNMENT CLASS",
+          "mechanism": "RLHF with human rater approval as reward signal creates systematic pressure to generate responses raters immediately approve of, rewarding agreement and validation over accurate correction",
+          "detection": "False-premise validation test",
+          "severity": "STANDARD",
+          "score": 0.6,
+          "matched_keywords": [
+            "false",
+            "sycophancy"
+          ]
+        },
+        {
+          "id": "ADV-EMBEDDING-109",
+          "name": "EMBEDDING SPACE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Operates in embedding space directly",
+          "detection": "Embedding anomaly",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "attack",
+            "attacks"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "direct",
+            "injection",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ALIGN-ADV-SAFE-192",
+          "name": "ADVERSARIAL SAFETY BOUNDARY",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety fails under adversarial conditions",
+          "detection": "Adversarial robustness test",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "adversarial",
+            "robustness",
+            "under"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 5,
+      "char_len": 1051,
+      "preview": "2.2.1   Deception We operationalize deception as the rate at which the model lies, i.e., knowingly making false statements intended to be received as true. We find that training the model to be honest reduces deception, \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-CORRECTIVE-FAIL-322",
+          "name": "CORRECTIVE ACTION FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Fails to implement corrections",
+          "detection": "Correction implementation tracking",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "implement"
+          ]
+        },
+        {
+          "id": "AGEN-PROGRESS-LIE-035",
+          "name": "PROGRESS LYING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Misreports state to manipulate feedback",
+          "detection": "State verification against ground truth",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "honest"
+          ]
+        },
+        {
+          "id": "ALIGN-UNDERREFUSAL-187",
+          "name": "UNDERREFUSAL",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Allows harmful requests",
+          "detection": "False negative rate",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "false",
+            "rate"
+          ]
+        },
+        {
+          "id": "EPIS-DECEPT-HALL-006",
+          "name": "DECEPTIVE HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Chain-of-thought builds self-consistent false narrative",
+          "detection": "Premise validation failure",
+          "severity": "STANDARD",
+          "score": 0.231,
+          "matched_keywords": [
+            "consistent",
+            "false"
+          ]
+        },
+        {
+          "id": "ADV-HYPOTHETICAL-091",
+          "name": "HYPOTHETICAL SCENARIO",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"In a world where it's legal...\"",
+          "detection": "Conditional framing",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "scenario",
+            "where"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 6,
+      "char_len": 1381,
+      "preview": "2.2.2   Sycophancy We measure sycophancy with Anthropic\u2019s sycophancy evaluation, where a user asks a question and also provides misleading information in context (e.g., \u201cSodium bicarbonate consists of sodium, carbon, oxy\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ALIGN-SYCOPHANCY-167",
+          "name": "SYCOPHANCY",
+          "group": "ALIGNMENT",
+          "class": "ALN2: PREFERENCE MISALIGNMENT CLASS",
+          "mechanism": "RLHF with human rater approval as reward signal creates systematic pressure to generate responses raters immediately approve of, rewarding agreement and validation over accurate correction",
+          "detection": "False-premise validation test",
+          "severity": "STANDARD",
+          "score": 0.6,
+          "matched_keywords": [
+            "sycophancy",
+            "user"
+          ]
+        },
+        {
+          "id": "ADV-QA-EXPLOIT-096",
+          "name": "QUESTION ANSWERING EXPLOIT",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"What would someone do if...\"",
+          "detection": "Question intent analysis",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "enable",
+            "question"
+          ]
+        },
+        {
+          "id": "DOMAIN-DUAL-USE-257",
+          "name": "DUAL-USE RESEARCH ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM1: BIOLOGICAL SAFETY CLASS",
+          "mechanism": "Enables dangerous dual-use research",
+          "detection": "Dual-use classification",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "dual",
+            "enables"
+          ]
+        },
+        {
+          "id": "ALIGN-MORAL-HAZARD-184",
+          "name": "MORAL HAZARD CREATION",
+          "group": "ALIGNMENT",
+          "class": "ALN3: VALUE ALIGNMENT CLASS",
+          "mechanism": "Enables harmful behavior by reducing consequences",
+          "detection": "Consequence analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "enable",
+            "enables"
+          ]
+        },
+        {
+          "id": "DOMAIN-EXPLOSIVE-SYNTH-274",
+          "name": "EXPLOSIVE SYNTHESIS",
+          "group": "DOMAIN",
+          "class": "DOM3: CHEMICAL/EXPLOSIVE CLASS",
+          "mechanism": "Precursor chemistry and reaction mechanism knowledge exists in open scientific literature absorbed during pretraining; model can synthesize pathways not available in any single source",
+          "detection": "Chemical synthesis pattern",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "chemical",
+            "provides"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 7,
+      "char_len": 812,
+      "preview": "2.3.1   Evaluations To measure dual-use weapons development capabilities, we assess performance on several public benchmarks    1. Weapons of Mass Destruction (WMDP) [Li et al., 2024]: multiple-choice benchmark on dual-u\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ALIGN-SYCOPHANCY-167",
+          "name": "SYCOPHANCY",
+          "group": "ALIGNMENT",
+          "class": "ALN2: PREFERENCE MISALIGNMENT CLASS",
+          "mechanism": "RLHF with human rater approval as reward signal creates systematic pressure to generate responses raters immediately approve of, rewarding agreement and validation over accurate correction",
+          "detection": "False-premise validation test",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "sycophancy"
+          ]
+        },
+        {
+          "id": "ALIGN-SAFE-CAP-TRADE-188",
+          "name": "SAFETY-CAPABILITY TRADEOFF",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety reduces useful capability",
+          "detection": "Utility preservation metric",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "capability",
+            "metric"
+          ]
+        },
+        {
+          "id": "GOV-EXPERTISE-GAP-336",
+          "name": "EXPERTISE GAP",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Lacks necessary safety expertise",
+          "detection": "Expertise assessment",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "expert"
+          ]
+        },
+        {
+          "id": "ADV-HOTFLIP-105",
+          "name": "HOTFLIP",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Token-level gradient flipping",
+          "detection": "Token anomaly detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "level",
+            "manipulation"
+          ]
+        },
+        {
+          "id": "GOV-MISREPRESENT-312",
+          "name": "MISREPRESENTATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Model capabilities misrepresented",
+          "detection": "Capability-claim consistency",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "capabilities",
+            "capability"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 8,
+      "char_len": 1156,
+      "preview": "Category          Evaluation           Metric          Grok 4      Grok 4.1 T         Human Baseline                    WMDP Bio             accuracy          0.87            0.87                0.61                    V\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ALIGNMENT"
+      ],
+      "top_matches": [
+        {
+          "id": "ALIGN-SAFE-CAP-TRADE-188",
+          "name": "SAFETY-CAPABILITY TRADEOFF",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety reduces useful capability",
+          "detection": "Utility preservation metric",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "metric"
+          ]
+        },
+        {
+          "id": "ALIGN-LEARNED-HELPLESS-169",
+          "name": "LEARNED HELPLESSNESS",
+          "group": "ALIGNMENT",
+          "class": "ALN2: PREFERENCE MISALIGNMENT CLASS",
+          "mechanism": "Over-defers to human even when human is wrong",
+          "detection": "Harmful request compliance rate",
+          "severity": "STANDARD",
+          "score": 0.154,
+          "matched_keywords": [
+            "human",
+            "rate"
+          ]
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.143,
+          "matched_keywords": [
+            "human",
+            "metric"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 9,
+      "char_len": 2306,
+      "preview": "3. BioLP-Bench [Ivanov, 2024]: model-graded evaluation measuring ability to find and correct       mistakes in common biological laboratory protocols.    4. ProtocolQA [Laurent et al., 2024]: multiple-choice benchmark on\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-CORRECTION-098",
+          "name": "CORRECTION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"This is wrong: [harmful]. Fix it.\"",
+          "detection": "Correction safety check",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "attack",
+            "harm"
+          ]
+        },
+        {
+          "id": "ALIGN-SAFE-SPEC-195",
+          "name": "SAFETY SPECIFICATION GAP",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety rules don't cover all harmful cases",
+          "detection": "Coverage analysis",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "complete"
+          ]
+        },
+        {
+          "id": "AGEN-INFO-HIDE-042",
+          "name": "INFORMATION HIDING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Withholds relevant information",
+          "detection": "Information completeness check",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "full",
+            "relevant"
+          ]
+        },
+        {
+          "id": "GOV-CORRECTIVE-FAIL-322",
+          "name": "CORRECTIVE ACTION FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Fails to implement corrections",
+          "detection": "Correction implementation tracking",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "fails",
+            "tracking"
+          ]
+        },
+        {
+          "id": "AGEN-EMERGE-INTERACT-064",
+          "name": "EMERGENCE VIA INTERACTION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Multi-agent interaction creates new capability",
+          "detection": "Multi-agent capability assessment",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "multi"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 10,
+      "char_len": 1103,
+      "preview": "2.3.2   Results We report our results in Table 4. Grok 4.1 achieves broadly similar results to Grok 4 and other frontier models on chemical and biological capabilities tests. Grok 4.1 matches or outperforms human baselin\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-SANDBOX-037",
+          "name": "CAPABILITY SANDBAGGING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Agent with self-model can compute that demonstrating high capability triggers restrictions; deliberately underperforming during evaluation is instrumentally rational if it preserves greater capability deployment in production",
+          "detection": "Performance variance analysis",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "below",
+            "performance",
+            "performs"
+          ]
+        },
+        {
+          "id": "ADV-LANG-SWITCH-087",
+          "name": "LANGUAGE SWITCH",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Non-English to bypass filters",
+          "detection": "Multi-lingual safety check",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "filters",
+            "multi",
+            "work"
+          ]
+        },
+        {
+          "id": "DOMAIN-PRECURSOR-ACQ-278",
+          "name": "PRECURSOR ACQUISITION",
+          "group": "DOMAIN",
+          "class": "DOM3: CHEMICAL/EXPLOSIVE CLASS",
+          "mechanism": "Guides precursor chemical acquisition",
+          "detection": "Precursor list matching",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "chemical"
+          ]
+        },
+        {
+          "id": "DOMAIN-ADULT-CONTENT-296",
+          "name": "ADULT CONTENT GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM6: CONTENT SAFETY CLASS",
+          "mechanism": "Generates adult content",
+          "detection": "Adult content classifier",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "context"
+          ]
+        },
+        {
+          "id": "EPIS-CONF-REGRESS-033",
+          "name": "CONFIDENCE REGRESSION",
+          "group": "EPISTEMIC",
+          "class": "E4: CALIBRATION CLASS",
+          "mechanism": "More reasoning \u2192 less calibrated",
+          "detection": "Reasoning-confidence correlation",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "improve",
+            "reasoning"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 11,
+      "char_len": 671,
+      "preview": "3     Transparency 3.1    Data and Training Grok 4.1 was first pre-trained with a data recipe that includes publicly available Internet data, data produced by third-parties, data from users or contractors, and internally\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "EPIS-CUTOFF-023",
+          "name": "KNOWLEDGE CUTOFF VIOLATION",
+          "group": "EPISTEMIC",
+          "class": "E3: KNOWLEDGE RETRIEVAL CLASS",
+          "mechanism": "Generates post-cutoff facts",
+          "detection": "Temporal boundary check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "knowledge",
+            "post"
+          ]
+        },
+        {
+          "id": "AGEN-HUMAN-MANIP-061",
+          "name": "HUMAN MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Manipulates humans to perform actions",
+          "detection": "Influence analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "human",
+            "perform"
+          ]
+        },
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "data",
+            "training"
+          ]
+        },
+        {
+          "id": "ARCH-SECURE-DEL-249",
+          "name": "SECURE DELETION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Deleted data remains accessible",
+          "detection": "Post-deletion recovery test",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "data",
+            "post"
+          ]
+        },
+        {
+          "id": "EPIS-PII-RECALL-025",
+          "name": "PII RECALL",
+          "group": "EPISTEMIC",
+          "class": "E3: KNOWLEDGE RETRIEVAL CLASS",
+          "mechanism": "Recalls personal info from training",
+          "detection": "PII extraction test",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "training"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 12,
+      "char_len": 2089,
+      "preview": "References Roger Brent and T Greg McKelvey Jr. Contemporary ai foundation models increase biological  weapons risk. arXiv preprint arXiv:2506.13798, 2025. Edoardo Debenedetti, Jie Zhang, Mislav Balunovi\u0107, Luca Beurer-Kel\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.525,
+          "matched_keywords": [
+            "dan"
+          ]
+        },
+        {
+          "id": "ADV-SQL-INJECT-128",
+          "name": "SQL INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects database commands via LLM",
+          "detection": "SQL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "attacks",
+            "llm"
+          ]
+        },
+        {
+          "id": "ALIGN-SAFE-CAP-TRADE-188",
+          "name": "SAFETY-CAPABILITY TRADEOFF",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety reduces useful capability",
+          "detection": "Utility preservation metric",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "reduc",
+            "use"
+          ]
+        },
+        {
+          "id": "ARCH-CONTEXT-ATTACK-223",
+          "name": "CONTEXT WINDOW ATTACK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Long context enables state accumulation attack",
+          "detection": "Long-context safety monitoring",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "attacks",
+            "long"
+          ]
+        },
+        {
+          "id": "DOMAIN-DEF-OFF-FLIP-268",
+          "name": "DEFENSIVE TO OFFENSIVE FLIP",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Defense knowledge inverted to offense",
+          "detection": "Capability inversion test",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "knowledge"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 13,
+      "char_len": 854,
+      "preview": "5  Richard Ren, Arunim Agarwal, Mantas Mazeika, Cristina Menghini, Robert Vacareanu, Brad Kenstler,   Mick Yang, Isabelle Barrass, Alice Gatti, Xuwang Yin, et al. The mask benchmark: Disentangling   honesty from accuracy\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "ALIGNMENT"
+      ],
+      "top_matches": [
+        {
+          "id": "ALIGN-SYCOPHANCY-167",
+          "name": "SYCOPHANCY",
+          "group": "ALIGNMENT",
+          "class": "ALN2: PREFERENCE MISALIGNMENT CLASS",
+          "mechanism": "RLHF with human rater approval as reward signal creates systematic pressure to generate responses raters immediately approve of, rewarding agreement and validation over accurate correction",
+          "detection": "False-premise validation test",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "sycophancy"
+          ]
+        }
+      ]
+    }
+  ]
+}

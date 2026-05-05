@@ -1,0 +1,51 @@
+{
+  "source_file": "reports/deepmind-agent-traps-2026/deepmind-agent-traps-2026-source.txt",
+  "chunk_count": 1,
+  "max_chars": 1400,
+  "top1_histogram": {},
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "char_len": 16,
+      "preview": "Just a moment...",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    }
+  ]
+}

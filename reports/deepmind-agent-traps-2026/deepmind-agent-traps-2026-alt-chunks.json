@@ -1,0 +1,94 @@
+{
+  "source_file": "reports/deepmind-agent-traps-2026/deepmind-agent-traps-2026-alt-source.txt",
+  "chunk_count": 1,
+  "max_chars": 1400,
+  "top1_histogram": {
+    "GOV-GDPR-VIOL-323": 1
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "char_len": 804,
+      "preview": "Attention Required! | Cloudflare  Please enable cookies.  Sorry, you have been blocked  You are unable to access cybernews.com  Why have I been blocked?  This website is using a security service to protect itself from on\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data"
+          ]
+        },
+        {
+          "id": "AGEN-HUMAN-MANIP-061",
+          "name": "HUMAN MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Manipulates humans to perform actions",
+          "detection": "Influence analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "actions"
+          ]
+        },
+        {
+          "id": "ADV-OPPOSITE-090",
+          "name": "OPPOSITE DAY",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Act like opposite of your training\"",
+          "detection": "Inversion pattern",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "your"
+          ]
+        },
+        {
+          "id": "ADV-TRIGGER-BACKDOOR-126",
+          "name": "TRIGGER WORD BACKDOOR",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Hidden trigger activates malicious behavior",
+          "detection": "Trigger detection",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "trigger",
+            "word"
+          ]
+        },
+        {
+          "id": "ADV-SQL-INJECT-128",
+          "name": "SQL INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects database commands via LLM",
+          "detection": "SQL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "attacks",
+            "sql"
+          ]
+        }
+      ]
+    }
+  ]
+}

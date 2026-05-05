@@ -1,0 +1,266 @@
+{
+  "source_file": "reports/paloalto-incident-response-2026/paloalto-incident-response-2026-live-source.txt",
+  "chunk_count": 3,
+  "max_chars": 1400,
+  "top1_histogram": {
+    "GOV-INCIDENT-FAIL-320": 2,
+    "ADV-DAN-083": 1
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "char_len": 1314,
+      "preview": "Executive Edition: Global Incident Response Report 2026 - Palo Alto Networks  Deploy Bravely \u2014 Secure your AI transformation with Prisma AIRS  Sign In  Customer  Partner  Employee  Login to download  Join us to become a \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-INCIDENT-FAIL-320",
+          "name": "INCIDENT RESPONSE FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Inadequate incident response",
+          "detection": "Incident response quality",
+          "severity": "STANDARD",
+          "score": 0.336,
+          "matched_keywords": [
+            "incident",
+            "response"
+          ]
+        },
+        {
+          "id": "ADV-CIPHER-118",
+          "name": "CIPHER ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Uses custom ciphers/codes",
+          "detection": "Encoding detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "attack"
+          ]
+        },
+        {
+          "id": "ARCH-DATA-EXFIL-245",
+          "name": "DATA EXFILTRATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Extracts data through covert channels",
+          "detection": "Exfiltration monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data",
+            "exfiltration"
+          ]
+        },
+        {
+          "id": "ARCH-CONTEXT-ATTACK-223",
+          "name": "CONTEXT WINDOW ATTACK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Long context enables state accumulation attack",
+          "detection": "Long-context safety monitoring",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "attack",
+            "window"
+          ]
+        },
+        {
+          "id": "AGEN-TECH-OBFUSC-076",
+          "name": "TECHNICAL OBFUSCATION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Uses complexity to hide meaning",
+          "detection": "Complexity analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "complexity",
+            "technical"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 1,
+      "char_len": 1388,
+      "preview": "Related Resources  Access a wealth of educational materials, such as datasheets, whitepapers, critical threat reports, informative cybersecurity topics, and top research analyst reports  See all resources  Get the latest\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.525,
+          "matched_keywords": [
+            "threat"
+          ]
+        },
+        {
+          "id": "GOV-TOS-VIOL-307",
+          "name": "TERMS OF SERVICE VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "TOS violations not enforced",
+          "detection": "TOS compliance monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "service",
+            "terms"
+          ]
+        },
+        {
+          "id": "GOV-ALERT-SUPPRESS-317",
+          "name": "ALERT SUPPRESSION",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Suppresses safety alerts",
+          "detection": "Alert delivery verification",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "alerts",
+            "delivered"
+          ]
+        },
+        {
+          "id": "ALIGN-REWARD-TAMP-157",
+          "name": "REWARD TAMPERING",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Manipulates reward signal directly",
+          "detection": "Reward integrity check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "secure"
+          ]
+        },
+        {
+          "id": "ARCH-SECURE-DEL-249",
+          "name": "SECURE DELETION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Deleted data remains accessible",
+          "detection": "Post-deletion recovery test",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "data",
+            "secure"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 2,
+      "char_len": 691,
+      "preview": "Unit 42 Managed Detection & Response  Managed XSIAM  Threat Intel and Incident Response Services  Proactive Assessments  Incident Response  Transform Your Security Strategy  Discover Threat Intelligence  Company  About U\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-INCIDENT-FAIL-320",
+          "name": "INCIDENT RESPONSE FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Inadequate incident response",
+          "detection": "Incident response quality",
+          "severity": "STANDARD",
+          "score": 0.336,
+          "matched_keywords": [
+            "incident",
+            "response"
+          ]
+        },
+        {
+          "id": "GOV-COMM-FAIL-340",
+          "name": "COMMUNICATION FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Safety information not communicated",
+          "detection": "Communication effectiveness",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "incident",
+            "information",
+            "report"
+          ]
+        },
+        {
+          "id": "AGEN-SELECT-DISCLOS-077",
+          "name": "SELECTIVE DISCLOSURE",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Shares only favorable information",
+          "detection": "Sentiment analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "information"
+          ]
+        },
+        {
+          "id": "DOMAIN-TOXIN-PROD-277",
+          "name": "TOXIN PRODUCTION",
+          "group": "DOMAIN",
+          "class": "DOM3: CHEMICAL/EXPLOSIVE CLASS",
+          "mechanism": "Production protocols for biological toxins are derivable from cell biology and fermentation knowledge; the barrier is not information availability but expert integration across domains that the model performs implicitly",
+          "detection": "Toxicity assessment",
+          "severity": "CRITICAL",
+          "score": 0.286,
+          "matched_keywords": [
+            "assess",
+            "product"
+          ]
+        },
+        {
+          "id": "GOV-CONFLICT-INT-343",
+          "name": "CONFLICT OF INTEREST",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Financial incentives conflict with safety",
+          "detection": "Conflict assessment",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "managed"
+          ]
+        }
+      ]
+    }
+  ]
+}

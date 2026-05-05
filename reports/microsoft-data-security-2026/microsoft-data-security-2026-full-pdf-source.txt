@@ -1,0 +1,862 @@
+Loaded from file: /tmp/microsoft-data-security-2026.txt
+
+Unifying Data Protection and AI Innovation
+
+
+ 2026 Report
+                                                    2026 Data Security Index                        2
+
+
+
+
+Foreword
+Over the past year, organizations have been         At Microsoft, we believe that visibility,
+strengthening their foundations to apply data       actionability, and integration are key to
+security and governance controls to new AI          unlocking the full potential of AI, facilitated
+apps and agents. The rise of generative AI          by a unified data security strategy. Integrated
+(GenAI) is reshaping how work gets done.            solutions that bring together visibility,
+According to the 2025 Work Trends Index,            protection, detection, and investigation
+the majority of global knowledge workers            capabilities make it possible to scale securely
+surveyed report using AI, and more than             while minimizing complexity. These capabilities
+70% say they are bringing their own AI tools        not only help detect and mitigate data risks
+to work1—highlighting a growing trend in            but also enable organizations to embrace AI
+AI adoption. But it has also introduced new         responsibly and accelerate innovation.
+urgency: visibility, governance, and protection
+                                                    The insights in this paper underscore
+of data are now essential prerequisites for safe
+                                                    a clear truth: the organizations best prepared
+and responsible innovation.
+                                                    for the future are those investing in integration,
+In this third edition of the Data Security Index,   intelligence, and responsible AI adoption.
+we explore how generative AI is reshaping           These principles form the backbone of a
+data security. Security leaders need a unified      data security strategy that protects today’s
+view of their data to adopt AI responsibly. In      digital ecosystems and paves the way for
+response, organizations are moving beyond           innovation tomorrow.
+fragmented tools toward integrated platforms
+                                                    We invite you to explore these insights and
+that deliver continuous visibility and consistent
+                                                    apply them to strengthen your security
+protection—making security and innovation
+                                                    posture while responsibly advancing AI
+inseparable. To adopt AI confidently,
+                                                    adoption. Together, we can create a security-
+organizations must first establish a unified
+                                                    first foundation for innovation, turning
+understanding of their data: where it resides,
+                                                    complexity into clarity and setting the stage
+who can access it, and how it’s protected.
+                                                    for a more adaptive, trusted future.
+Fragmented tools and siloed controls are
+giving way to the goal of integrated platforms      Rudra Mitra
+that provide continuous visibility and              Corporate Vice President
+consistent protection across environments.          Microsoft Data Security and Compliance
+
+
+
+
+1. Microsoft, 2025, Work Trends Index
+                                                 2026 Data Security Index                            3
+
+
+
+
+Introduction
+In today’s rapidly evolving digital              To that end, teams are increasingly using GenAI itself
+ecosystem, organizations must navigate an        to bolster their data security posture – leveraging
+increasingly complex data security landscape     it to uncover hidden risks, streamline operations,
+to keep their organization protected and         and effectively investigate their data risks – with AI
+stay ahead of emerging risks. Security           agents and automation playing a larger role.
+teams are under pressure to do more with
+limited time, resources, and talent, even as
+the volume of data they must secure grows           ABOUT THE RESEARCH
+
+exponentially. As fragmented tools lead to          For the third year, Microsoft commissioned
+gaps in visibility, introduce more complexity,      Hypothesis Group, an independent
+and heighten the risks of data exposure,            research and strategy agency, to conduct
+teams are shifting towards tool consolidation       a multi-national survey of over 1,700
+and stronger data security posture                  data security professionals.
+management to close blind spots, improve           This Data Security Index initiative has now
+efficiency, and build lasting resilience.          expanded to 10 markets spanning the US,
+                                                   LATAM (Brazil), EMEA (UK, Germany, France),
+Against this backdrop of rising complexity         and APAC (India, Australia, Korea, Singapore,
+and risk, the latest technologies and tools        UAE) to better understand the needs of
+are reshaping the data security conversation.      partners and customers across the globe
+Among them, generative AI (GenAI)                  as data security leaders develop their own
+stands out as a positive disruptor driving         strategies. Also new to the research this
+productivity and innovation. However,              year are 10 in-depth interviews with data
+as organizations accelerate their GenAI            security leaders in the US and UK to
+adoption, they’re also recognizing the need        contextualize insights with customer stories.
+for increased data controls and governance.
+                                                       2026 Data Security Index                                       4
+
+
+
+
+Key Findings
+
+ 01                                 02                                            03
+ From Fragmented Tools              Managing AI-Driven                            Strengthening Data
+ to Unified Data Security           Productivity Securely                         Security with GenAI
+ Customers are looking to           As organizations embrace                      Through agents and
+ consolidate solutions for          GenAI for productivity,                       automation, GenAI can be
+ improved data security,            the need for more robust                      leveraged to enhance
+ visibility, and governance.        data protection grows.                        data security programs.
+
+ Organizations are                  Organizations are                             Data security leaders are
+ prioritizing investments in        balancing AI innovation with                  increasingly utilizing GenAI
+ data security, shifting from       responsibility. Rising incidents              to fortify their data security
+ tool sprawl to integrated          linked to unauthorized AI use                 programs – automating
+ platforms. A growing               are driving stronger controls,                detection, streamlining
+ emphasis on Data Security          refined policies, and renewed                 investigations, and enhancing
+ Posture Management (DSPM)          focus on employee education                   protection. Human
+ is helping teams strengthen        and secure AI governance.                     oversight remains critical as
+ visibility, reduce complexity,                                                   organizations embrace AI
+
+                                    32%
+ and move toward proactive                                                        agents and automation to
+ data risk management.                                                            scale securely and intelligently.
+                                    of surveyed organizations’
+                                    data security incidents
+ 86%                                involve GenAI                                 82%
+ of surveyed leaders prefer                                                       of surveyed organizations
+ integrated platforms over
+ fragmented tools, citing           47%                                           have developed plans
+                                                                                  to use GenAI in their
+ better visibility, fewer alerts,   of surveyed organizations                     data security program
+ and improved efficiency            are implementing                              (+18pp increase vs. 2024)
+                                    GenAI controls
+                                    (+8pp increase vs. 2024)
+ 80%+                                                                             39%
+ of surveyed organizations are                                                    of surveyed organizations are
+ implementing or developing                                                       using GenAI agents for data
+ DSPM strategies                                                                  security and 58% of surveyed
+                                                                                  organizations say they are
+                                                                                  piloting/exploring
+1
+    2026 Data Security Index     5
+
+
+
+
+    From
+    Fragmented
+    Tools to Unified
+    Data Security
+    Customers are looking to
+    consolidate solutions for
+    improved data security and
+    visibility, and governance
+                             2026 Data Security Index                                  6
+
+
+
+
+Organizations are            88% percent of surveyed decision-
+                             makers anticipate their data security and
+prioritizing data security   compliance budgets will increase in the
+                             next year. Ultimately, the objective behind
+more than ever, directing    their investments is to stay ahead of data
+
+new investment toward        risks, protect sensitive data, and safeguard
+                             responsible GenAI usage – all while
+strengthening their          continuing to enable innovation.
+
+defenses and enabling
+                                  Top goals for increased
+secure innovation                 data security investments
+                                  Among surveyed data security decision-makers
+
+
+
+
+                                  Staying ahead of
+                                                                                 57%
+                                  evolving data security risks
+
+
+
+                                  Protecting sensitive data                      56%
+
+
+                                  Enabling secure innovation and
+                                                                                 53%
+                                  adoption of new tech
+
+
+                                  Ensuring safe and responsible
+                                                                                 52%
+                                  employee use of GenAI tools
+
+
+
+
+                                “If my team could do everything
+                                 in their day-to-day roles in one
+                                 ecosystem, that would make life
+                                 a lot easier for us.”
+
+                                 Head of IT in Manufacturing
+                                                      2026 Data Security Index                                  7
+
+
+
+
+Teams struggle with visibility and governance
+because they lack a unified view of their data estate
+Decision-makers cite that their top challenges
+with data visibility center around poor                    Top challenges with data visibility
+integration, lack of a unified view across                 Among surveyed data security decision-makers
+
+environments, and disparate tools. One
+data security leader in Finance and Banking                Poor integration with data security
+                                                                                                          29%
+                                                           & management platforms
+explains, “We have poor tool integration.
+The tools aren’t giving the oversight we need.
+                                                           Lack of a unified view
+There’s still a lot of false positives and alerts.”                                                       25%
+                                                           across environments
+
+These silos make it difficult for teams
+                                                           Disparate tools with
+to connect insights, correlate events, and                                                                23%
+                                                           no centralized dashboard
+maintain visibility across workloads.
+                                                2026 Data Security Index                                    8
+
+
+
+
+Leaders are responding
+by consolidating tools
+and investing in unified
+platforms that simplify
+operations while improving
+                                                                           86%
+                                                               of surveyed leaders
+visibility and control                                          prefer integrated
+                                                                    platforms
+
+86% of surveyed decision-makers agree
+that a comprehensive platform with
+integrated solutions outperforms managing
+multiple best-in-breed tools that have to be
+manually integrated and maintained.
+The benefits of consolidation are clear:
+having a unified approach enables                    Top benefits of consolidation
+improved data risk detection and response,           Among surveyed data security decision-makers
+
+simpler management for data security
+teams, and better visibility into data risks.
+                                                                            Improved threat detection
+                                                        64%                 and response
+  “We’re trying to use
+  fewer vendors. If we
+  need 15 tools, we’d rather
+  not manage 15 vendor                                  63%                 Easier for data security team
+                                                                            to manage and maintain
+  solutions. We’d prefer
+  to get that down to five,
+  with each vendor
+                                                        56%
+                                                                            Better visibility into
+  handling three tools.”                                                    data risks across workloads
+
+
+  Global Information Security Director
+  Hospitality & Travel
+                                                2026 Data Security Index                    9
+
+
+
+
+The drive for integration has
+accelerated the adoption of Data Security
+Posture Management (DSPM) strategies
+
+Most organizations surveyed report that
+they are already developing or implementing         “I would say we have a
+DSPM strategies (i.e. frameworks that unify
+                                                     pretty good DSPM strategy.
+visibility, continuous data risk assessment,
+and policy enforcement across data
+                                                    We’re integrating DSPM
+environments) including:                            with identity management
+                                                     so that not only do we
+                                                     know where the data is,
+Identifying and prioritizing data
+exposure risks or misconfigurations
+                                       82%           but we can ensure that
+                                                     only the right people have
+Detecting who accesses
+                                       81%
+                                                     access to it. For us, it’s about
+sensitive data, when, and how
+                                                     having a proactive, real-time
+                                                     capability to identify data
+Defining and enforcing
+data security policies
+                                       80%          that requires protection
+                                                     and then applying our
+Discovering and classifying                          control framework on it.
+                                       79%
+sensitive data across environments                   DSPM allows us to make
+                                                    the application and
+By building integrated ecosystems and                management of controls
+embedding DSPM into their core operations,           more automated.”
+organizations are moving toward a future
+where data visibility and protection are no          Global Information Security Director
+longer fragmented efforts, but part of a more        Hospitality & Travel
+cohesive data security strategy.
+                                                       2026 Data Security Index   10
+
+
+
+
+The Path Forward
+The proliferation of data and tools has made visibility
+and governance increasingly complex. To overcome
+these challenges, organizations must chart a path toward
+consolidation, integration, and proactive DSPM.
+
+
+
+01
+Integrate data security, visibility, and governance.
+Surveyed leaders overwhelmingly agree that integrated platforms
+outperform fragmented toolsets. Consolidation simplifies oversight,
+enhances visibility, and strengthens threat detection and response.
+Organizations should prioritize building ecosystems where data security,
+compliance, and IT functions operate from a single, unified framework.
+
+
+02
+Leverage Data Security Posture Management (DSPM)
+as a facilitator for greater visibility and protection.
+DSPM enables a shift from reactive protection to proactive data risk
+management. Investing in DSPM strategies allows teams to identify
+and prioritize data risks, monitor access to sensitive data, and enforce
+consistent policies across multi-cloud environments.
+
+
+03
+Build shared accountability for data security posture.
+Establish clear ownership across IT and security operations to
+protect sensitive data and coordinate its flow across business units.
+Collaboration among IT, compliance, and security teams is critical for
+building lasting resilience in an increasingly complex data landscape.
+2
+    2026 Data Security Index          11
+
+
+
+
+    Managing
+    AI-Driven
+    Productivity
+    Securely
+    As organizations embrace GenAI
+    for productivity, the need for more
+    robust data protection grows
+                                                2026 Data Security Index                    12
+
+
+
+
+Generative AI
+(GenAI) is rapidly
+transforming how
+                                                     70+%
+                                                     of surveyed global
+employees work,                                      knowledge workers say
+                                                     they are bringing their
+sparking a new wave of                               own AI tools to work1
+creativity, productivity,
+and innovation – but
+organizations aren’t naïve
+to the potential data
+risks, especially from
+                                                     32           %
+                                                     of surveyed organizations’
+unauthorized GenAI use                               data security incidents
+                                                     involve use of GenAI tools
+
+Employees are excited to use GenAI;
+according to the 2025 Work Trends Index,
+the majority of global knowledge workers
+surveyed report using AI, and more than
+                                                According to surveyed organizations,
+70% say they are bringing their own AI tools
+                                                a third (32%) of data security incidents
+to work1—signaling a rising trend in AI tool
+                                                involve use of GenAI tools, and 35% of
+usage at work.
+                                                surveyd organizations anticipate a higher
+But as adoption accelerates, the conversation   volume of incidents in the coming year
+is shifting from enablement to responsible      due to GenAI usage. The biggest concern
+use. Leaders understand that the same           isn’t the technology itself, but how and
+technologies driving productivity also          where employees use it. Many are turning
+introduce new data risks – especially when      to consumer-grade GenAI tools or logging
+employees experiment with GenAI in              in with personal credentials, bypassing
+unmonitored or unauthorized ways.               corporate protections and visibility.
+
+
+
+1. Microsoft, 2025, Work Trends Index
+                                              2026 Data Security Index                            13
+
+
+
+
+Surveyed data security decision-makers
+mention that:                                      % of employees
+                                                   using personal credentials
+ • Employees using personal credentials
+                                                   to access GenAI for work
+   to access GenAI for work has increased
+                                                   Among surveyed data security decision-makers
+   by 5 percentage points year over year.
+
+
+
+                                                                   53% 58%
+ • Employees using personal devices to
+   access GenAI for work has grown
+   by 9 percentage points year over year.
+
+
+
+ “We don’t
+ want confidential
+  or restricted data                                                 2024               2025
+ to leave the firewall
+ and it’s absolutely
+  doing that if they’re                            % of employees
+                                                   using personal devices
+  using unsanctioned                               to access GenAI for work
+
+ GenAI tools.”
+                                                   Among surveyed data security decision-makers
+
+
+
+
+  Global Information Security Director                                               57%
+  Hospitality & Travel
+                                                                  48%
+These behaviors can expose sensitive data
+to external systems, leaving organizations
+blind to where information flows and
+who can access it. The tradeoff between
+productivity and protection is real – teams
+want to empower innovation, but not at the                           2024               2025
+expense of data security or compliance.
+                                                  2026 Data Security Index                                  14
+
+
+
+
+Recognizing these                                      Top priorities for
+challenges, data security                              GenAI-related controls
+teams are taking decisive                              Among surveyed data security decision-makers
+
+
+
+
+action to strengthen                                   Preventing sensitive data from
+controls around                                        being uploaded into GenAI tools
+                                                                                                      42%
+
+employee GenAI usage                                   Training employees on
+                                                                                                      38%
+                                                       secure use of GenAI tools
+
+
+                                                       Detecting anomalous user activity
+                                                                                                      37%
+                                                       and identifying risky users
+Nearly half (47%) of surveyed organizations are
+implementing specific GenAI controls in 2025,
+                                                       Identifying sensitive data being
+up from 39% the previous year – a meaningful                                                          37%
+                                                       uploaded to or generated by GenAI tools
+jump that reflects growing urgency.
+
+
+                                                     “We’re working to
+   % of surveyed organizations                       block GenAI tools that are
+   implementing specific GenAI controls
+                                                     not authorized but also
+                                                     increase what is authorized
+                                                     and steer people to that.”
+                        47%
+             39%
+                                                      CISO in Healthcare and Pharmaceuticals
+
+
+
+                                                  Having these controls in place ultimately helps
+                                                  data security leaders feel more confident.
+                                                  Beyond the technology itself, decision-makers
+                                                  are encouraging employees to use sanctioned
+                                                  AI tools as well as reinforcing safe practices
+                                                  and building clear approval processes.
+               2024       2025                    The message is clear: the goal isn’t to slow
+                                                  innovation – it’s to enable it safely.
+                                                      2026 Data Security Index   15
+
+
+
+
+The Path Forward
+As GenAI becomes embedded in daily operations, organizations
+must balance the drive for productivity with robust governance
+and control. The future of secure AI adoption will depend on
+visibility, education, and proactive management of data risk.
+
+
+
+01
+Strengthen visibility and control over GenAI usage.
+Organizations should deploy data security tools that can detect and
+protect the use of GenAI apps across the enterprise, providing insight
+into which tools are being used, what data flows through them, and
+where potential risks lie. Continuous discovery ensures security teams
+can identify unauthorized usage before it escalates into a data incident.
+
+
+02
+Prevent data exposure through proactive protection policies.
+Preventing sensitive data from entering GenAI tools is one of the
+most effective safeguards. Establish policies that restrict what types
+of data can be processed by GenAI applications and implement
+automated controls that block risky uploads or actions in real time.
+
+
+03
+Educate and empower employees.
+Technology alone cannot solve the governance challenge. Continuous
+employee education – reinforced with clear guidance on approved
+tools and practices – helps foster a culture of responsible GenAI use.
+Transparency builds trust, enabling teams to harness GenAI’s full
+potential without compromising data security.
+3
+    2026 Data Security Index         16
+
+
+
+
+    Strengthening
+    Data Security
+    with GenAI
+
+    Through agents and automation,
+    GenAI can be leveraged to
+    enhance data security programs
+                                                    2026 Data Security Index                                  17
+
+
+
+
+Organizations are
+accelerating GenAI                                       82%
+adoption in data security                                of surveyed organizations
+                                                         report that they have developed
+programs to maximize                                     plans to use GenAI within their data
+
+productivity & efficiency                                security operations (vs. 64% in 2024)
+
+
+
+
+Increasingly, organizations are turning to
+GenAI to bolster their data security programs            Top areas GenAI is
+– using it to detect risks faster, manage greater        being used in data security
+volumes of data, and fine-tune protection                Among surveyed data security decision-makers
+
+policies. In 2025, 82% of surveyed organizations
+report that they have developed plans to use
+GenAI within their data security operations, a           Discover sensitive data                        44%
+significant increase from 64% in 2024.
+                                                         Detect critical data security risks            43%
+The rise in adoption signals growing
+confidence among leaders that GenAI can
+help strengthen, not weaken, their overall
+                                                         Investigate potential incidents                43%
+security posture. Many are deploying GenAI               Assess the security posture
+for both proactive use cases, such as assessing                                                         42%
+                                                         of data environments
+& securing data environments and refining
+data security policies, as well as reactive              Secure the data environment                    41%
+use cases, like discovering sensitive data,
+detecting critical risks, and investigating              Fine-tune data security policies               38%
+potential data security incidents.
+
+
+  “Our GenAI systems are constantly observing, learning, and making
+   recommendations for modifications with far more data than would be
+   possible with any kind of manual or quasi-manual process.”
+   Director of IT in Energy
+                                                        2026 Data Security Index                        18
+
+
+
+
+                                                           “I would say we reduced
+                                                            manual overhead around our
+                                                            data security program by at least
+                                                           40%. We improved our processes
+                                                            more than that, probably over
+                                                           50%. Our GenAI programs are
+                                                            automating routine tasks and
+                                                            learning from evolving risks.”
+
+                                                            SVP of Cyber, Cloud, and Third-Party Risk
+                                                            Management in Finance and Banking
+
+
+By automating routine data security tasks               Confidence in GenAI-driven security is
+and helping to accelerate risk detection and            rising fast. Ninety-two percent of surveyed
+response, GenAI empowers teams to do more               decision-makers say they feel confident
+with fewer resources. Decision-makers cite              using GenAI to strengthen data security – an
+key benefits including improved efficiency,             increase from 86% in 2024.
+adapting to evolving risks, freeing up teams
+for more strategic work, and analyzing more
+data than traditional tools could handle.
+
+
+
+
+                                                                                    92%
+   Where GenAI delivers the biggest
+   impact in data security programs
+   Among surveyed data security decision-makers
+
+                                                                     of surveyed decision-makers
+                                                                        say they feel confident
+   Automate routine security tasks to
+                                                  38%                 using GenAI to strengthen
+   improve efficiency
+                                                                             data security
+   Improve our ability to adapt and learn                                          (vs. 86% in 2024)
+                                                  36%
+   from evolving risks
+
+   Help our data security team spend
+                                                  35%
+   more time on strategic work
+
+   Analyze more data than would be
+                                                  35%
+   possible with other solutions
+                                                          2026 Data Security Index                                  19
+
+
+
+
+GenAI agents are seen                                          Top Agentic AI data security use cases
+as a key opportunity                                           Among surveyed data security decision-makers
+
+
+for data security programs                                     Detect critical risks                          40%
+but must include                                               Automatically protect,
+human oversight                                                block, flag, and classify data
+                                                                                                              36%
+
+                                                               Investigate potential
+                                                                                                              35%
+                                                               data security incidents
+The momentum around GenAI in data security
+programs extends to the rise of GenAI agents,                  Make recommendations to
+                                                                                                              35%
+intelligent systems capable of detecting critical              better secure data environments
+
+risks, automatically classifying or protecting                 Reduce false positive alerts                   35%
+data, and recommending controls in real time.
+39% of surveyed organizations say they’re
+already using GenAI agents for data security,             Still, even as organizations embrace these
+while another 58% report they are piloting or             capabilities, leaders emphasize the importance
+exploring them.                                           of keeping humans in the loop. 38% of
+                                                          surveyed decision-makers are concerned
+                                                          about employees using GenAI agents without
+                                                          proper approval or human oversight.
+       39%                            58%                 A Director of Global Cybersecurity in
+        of surveyed                    of surveyed
+     organizations are             organizations are      Manufacturing explains, “We have GenAI
+       already using              piloting or exploring
+     GenAI agents for               GenAI agents for      agents for different purposes, but there’s still
+       data security                  data security
+                                                          a human in the loop directing the activities
+                                                          and reviewing data that is output.”
+
+                                                          Automation and GenAI agents are already
+  “We have Agentic AI embedded in some                    reshaping data security—not by replacing
+   of our security tooling today. Our phishing            human judgment, but by amplifying it.
+   awareness and tester training solution                 They extend the reach of security teams to
+   uses Agentic AI to look at emerging                    empower them to respond faster and adapt
+   real-time threats, as well as user behaviors.”         to evolving risks. But as these capabilities
+   Global Information Security Director                   scale, strong guardrails are essential to ensure
+   Hospitality & Travel                                   speed doesn’t compromise security or trust.
+                                                     2026 Data Security Index   20
+
+
+
+
+The Path Forward
+Organizations are embedding GenAI into the foundation of their
+data security programs. The next phase of maturity lies in using GenAI
+to automate and enhance protection and accelerate investigations
+– helping teams scale securely and stay ahead of evolving risks.
+
+
+
+
+01
+Integrate GenAI into the data security workflow.
+Embedding GenAI into detection, investigation, and policy
+workflows enhances visibility, prioritization, and response speed.
+GenAI can prioritize alerts, correlate events, and surface
+insights that help teams focus on the most critical threats.
+
+
+02
+Use GenAI agents to accelerate response and reduce noise.
+GenAI agents offer scalable automation for data discovery, protection,
+and remediation. When deployed thoughtfully, they can help reduce
+manual effort and improve consistency without compromising control.
+
+
+03
+Maintain human oversight to stay in control.
+Human expertise remains essential for guiding, validating, and
+improving GenAI-driven outcomes. Clear governance frameworks
+and human review processes are critical to ensuring accuracy,
+fairness, and trust in GenAI-enabled data security operations.
+                           2026 Data Security Index                        21
+
+
+
+
+Final Recommendations
+Integration for Greater Visibility: Integrated platforms
+as the key to stronger protection
+As data volumes continue to expand, visibility remains one of the greatest
+challenges in protecting sensitive information. Organizations can no longer
+afford to manage dozens of disconnected tools that introduce blind spots
+and increase operational drag. Moving toward an integrated platform,
+supported by DSPM, provides the unified visibility and control needed to
+reduce complexity and strengthen protection. A consolidated, cohesive
+approach helps organizations not only streamline management but also
+helps improve detection and response – turning visibility into resilience.
+
+Stay Productive, Stay Protected: Mastering the GenAI security balance
+As GenAI becomes a fixture of everyday work, the challenge for
+organizations is not whether to use it, but how to use it securely. The
+rise in unauthorized or unmanaged GenAI usage highlights the need for
+greater oversight and governance. Implementing controls that prevent
+sensitive data from entering GenAI tools, identifying GenAI usage across
+environments, and training employees on secure practices are critical steps
+to mitigating risk. By putting the right controls in place, GenAI can continue
+to drive innovation without compromising data security or compliance.
+
+Smarter, Faster, Safer: Reinventing data security with GenAI
+GenAI is rapidly transforming how organizations detect, respond to,
+and prevent data risks. Integrating GenAI into security workflows allows
+teams to automate routine tasks, analyze complex data faster, and help
+perform more advanced investigations. As organizations adopt GenAI
+agents and automation to scale their data security programs, human
+oversight remains essential. The strongest data security strategies will
+combine GenAI’s analytical power with human judgment to move faster,
+cut through noise, and reduce exposure risks.
+                                                    2026 Data Security Index                                                      22
+
+
+
+
+Research Objectives                                 Audience Recruit
+Understand the data security landscape,             To meet the screening criteria, data security
+including priorities and mindsets, challenges,      leaders needed to be:
+and the cause and effect of data security
+                                                          • CISO and adjacent decision-makers
+incidents.
+                                                            (C-2 and above) with purview
+Explore the future of data security,                        over data security
+including what strategies and innovations are
+                                                          • Work at enterprise organizations
+emerging and how organizations intend to
+                                                            (500+ employees; range of sizes)
+invest in the future.
+                                                          • Mix of regulated and non-regulated
+Uncover how employee use of GenAI is
+                                                            industries (no education,
+impacting data security and how teams are
+                                                            government, or non-profit)
+using GenAI in their data security program.
+                                                    Of the 1,725 data security leaders surveyed
+                                                    for the research, completes by country were:
+Methodology                                               • US: 300
+A 25-minute multi-national online survey was              • UK: 300
+conducted from July 16–August 11, 2025 among              • India: 300
+1,725 data security leaders.                              • France: 150
+                                                          • Germany: 150
+Questions centered around the data security               • Brazil: 150
+landscape, data security incidents, securing              • Australia: 150
+employee use of GenAI, and the use of GenAI               • UAE: 75
+in data security programs to highlight                    • Korea: 75
+comparisons to 2024.                                      • Singapore: 75
+One-hour in-depth interviews were conducted
+with 10 data security leaders in the US and UK to   © Hypothesis Group 2025. © Microsoft Corporation 2025. All rights reserved.
+                                                    This document is provided “as-is.” Information and views expressed in this
+                                                    document, including URL and other Internet website references, may change
+garner stories about how they are approaching       without notice. You bear the risk of using it. This document does not provide you
+                                                    with any legal rights to any intellectual property in any Microsoft product. You
+data security in their organizations.               may copy and use this document for your internal, reference purposes. 10/25
+                                                                     2026 Data Security Index                              23
+
+
+
+
+Appendix
+
+Unifying Data Protection
+and AI Innovation by Region
+Across the globe there are unique differences in confidence,
+readiness, and expectations around GenAI and data security
+
+
+
+
+  US                                      LATAM                        EMEA                           APAC
+  Need support amid                       Embracing growth             Less mature in                 Grappling with
+  growing pressure                        with controls                governing GenAI                high incident rates
+                                                                       data risks and
+  +9%                                     +7%                                                         +45
+  Outsized pressure                       More likely to               leveraging Agentic AI          More data
+  to prove ROI of                         anticipate an increase                                      security incidents in
+                                                                       -5%
+  data security                           in data security budgets                                    past 12 months
+                                                                       Less concerned
+  +15%                                    +14%                         about inability to protect     +4 days
+  Anticipate more                         More likely to have          data that goes into            More time to detect
+  data security incidents                 a fully implemented          GenAI apps/tools               and respond
+  due to employee                         DSPM strategy
+                                                                       -4%                            +5%
+  use of GenAI
+                                          +7%                          Less likely to have controls   More demand for
+  +6%                                     More controls around         around identifying risky       data security staff to
+  More challenged with                    employee use of GenAI        users of GenAI apps/tools      effectively manage
+  inaccurate/incomplete                                                                               responsibilities
+                                                                       -4%
+  data classification
+                                                                       Less use of GenAI agents       +5%
+  +5%                                                                  for data security              GenAI apps more often
+  More challenged                                                                                     compromised in data
+  in managing DSPM                                                                                    security incidents
+  due to too many
+  disconnected tools
+
+
+
+
+Gaps shown represent regional vs. global data
+

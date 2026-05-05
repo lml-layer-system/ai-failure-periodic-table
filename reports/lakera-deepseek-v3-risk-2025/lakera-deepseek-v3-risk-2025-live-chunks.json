@@ -1,0 +1,605 @@
+{
+  "source_file": "reports/lakera-deepseek-v3-risk-2025/lakera-deepseek-v3-risk-2025-live-source.txt",
+  "chunk_count": 7,
+  "max_chars": 1400,
+  "top1_histogram": {
+    "ADV-INDIRECT-INJECT-122": 1,
+    "ALIGN-ADV-SAFE-192": 1,
+    "DOMAIN-EXPLOSIVE-SYNTH-274": 1,
+    "ADV-DIRECT-INJECT-121": 1,
+    "ADV-HYPOTHETICAL-091": 1,
+    "AGEN-OMISSION-074": 1
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "char_len": 1368,
+      "preview": "Lakera  Model tests aren\u2019t enough for NeMo agents. See why \u2192  Product Products  Products  Workforce AI Security Protect your AI applications  Protect & Govern Employee AI Usage  AI Agent Security Protect your AI applicat\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ADVERSARIAL",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 1.0,
+          "matched_keywords": [
+            "content",
+            "data",
+            "indirect",
+            "injection",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.686,
+          "matched_keywords": [
+            "injection",
+            "prompt"
+          ]
+        },
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "compliance",
+            "data"
+          ]
+        },
+        {
+          "id": "GOV-REPORT-FAIL-333",
+          "name": "REPORTING OBLIGATION FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Fails to report incidents",
+          "detection": "Reporting compliance check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "compliance",
+            "report"
+          ]
+        },
+        {
+          "id": "ADV-SQL-INJECT-128",
+          "name": "SQL INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects database commands via LLM",
+          "detection": "SQL pattern detection",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "attacks",
+            "injection",
+            "llm"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 1,
+      "char_len": 1293,
+      "preview": "Join Momentum - Lakera\u2019s Slack Community Join the movement towards a secure AI era. With over 1,000 members, we&#x27;re building a safer future together\u2014be part of it.  Join Momentum  Gandalf Careers Hiring  Log in Book \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ALIGN-ADV-SAFE-192",
+          "name": "ADVERSARIAL SAFETY BOUNDARY",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety fails under adversarial conditions",
+          "detection": "Adversarial robustness test",
+          "severity": "STANDARD",
+          "score": 0.529,
+          "matched_keywords": [
+            "adversarial",
+            "conditions",
+            "under"
+          ]
+        },
+        {
+          "id": "ALIGN-CONTEXT-ETHICS-182",
+          "name": "CONTEXT-DEPENDENT ETHICS FAILURE",
+          "group": "ALIGNMENT",
+          "class": "ALN3: VALUE ALIGNMENT CLASS",
+          "mechanism": "Applies wrong ethical framework to context",
+          "detection": "Context-ethics alignment",
+          "severity": "STANDARD",
+          "score": 0.444,
+          "matched_keywords": [
+            "alignment",
+            "context",
+            "dependent"
+          ]
+        },
+        {
+          "id": "ADV-ELABORATION-099",
+          "name": "ELABORATION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Tell me more about [harmful concept]\"",
+          "detection": "Elaboration intent analysis",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "attack",
+            "harmful",
+            "maintain"
+          ]
+        },
+        {
+          "id": "ALIGN-CONTEXT-SAFE-190",
+          "name": "CONTEXT-DEPENDENT SAFETY FAILURE",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safe in one context, unsafe in another",
+          "detection": "Cross-context safety check",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "context",
+            "dependent"
+          ]
+        },
+        {
+          "id": "ADV-CORRECTION-098",
+          "name": "CORRECTION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"This is wrong: [harmful]. Fix it.\"",
+          "detection": "Correction safety check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "attack",
+            "harmful"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 2,
+      "char_len": 1343,
+      "preview": "For example, consider an LLM-based customer service chatbot use case. A representative system prompt might be:  \u201cYou are an AI assistant providing customer support for financial services. Your goal is to help customers w\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-EXPLOSIVE-SYNTH-274",
+          "name": "EXPLOSIVE SYNTHESIS",
+          "group": "DOMAIN",
+          "class": "DOM3: CHEMICAL/EXPLOSIVE CLASS",
+          "mechanism": "Precursor chemistry and reaction mechanism knowledge exists in open scientific literature absorbed during pretraining; model can synthesize pathways not available in any single source",
+          "detection": "Chemical synthesis pattern",
+          "severity": "CRITICAL",
+          "score": 0.667,
+          "matched_keywords": [
+            "chemical",
+            "explosive",
+            "instructions",
+            "provides"
+          ]
+        },
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "direct",
+            "instructions",
+            "override",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-SYSTEM-OVERRIDE-134",
+          "name": "SYSTEM PROMPT OVERRIDE",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Replaces system instructions",
+          "detection": "System instruction consistency",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "instruction",
+            "instructions",
+            "override",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "content",
+            "instruction",
+            "instructions",
+            "prompt"
+          ]
+        },
+        {
+          "id": "ADV-ELABORATION-099",
+          "name": "ELABORATION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Tell me more about [harmful concept]\"",
+          "detection": "Elaboration intent analysis",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "about",
+            "harmful"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 3,
+      "char_len": 1344,
+      "preview": "Current Scope: This assessment currently focuses on single LLM-based systems. It does not yet cover agentic workflows or multi-step AI systems, areas that will be included in future evaluations.  Attack Categories Explai\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.907,
+          "matched_keywords": [
+            "direct",
+            "instructions",
+            "malicious",
+            "override",
+            "user"
+          ]
+        },
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 0.6,
+          "matched_keywords": [
+            "content",
+            "data",
+            "indirect",
+            "instruction",
+            "instructions"
+          ]
+        },
+        {
+          "id": "ADV-BEAM-ATTACK-106",
+          "name": "BEAM SEARCH ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Beam search for bypass prompts",
+          "detection": "Search pattern detection",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "based",
+            "bypass"
+          ]
+        },
+        {
+          "id": "ADV-EMBEDDING-109",
+          "name": "EMBEDDING SPACE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Operates in embedding space directly",
+          "detection": "Embedding anomaly",
+          "severity": "STANDARD",
+          "score": 0.571,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "directly",
+            "embedding"
+          ]
+        },
+        {
+          "id": "ADV-ENSEMBLE-120",
+          "name": "ENSEMBLE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Combines multiple attack methods",
+          "detection": "Multi-method detection",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "methods",
+            "multi"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 4,
+      "char_len": 1029,
+      "preview": "Assessment Framework Our evaluation spans multiple dimensions:  Application Types: Conversational AI, text and code generation, text classification, RAG systems, and workflow automation Domain Coverage: Software, finance\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-HYPOTHETICAL-091",
+          "name": "HYPOTHETICAL SCENARIO",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"In a world where it's legal...\"",
+          "detection": "Conditional framing",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "legal",
+            "scenario",
+            "where"
+          ]
+        },
+        {
+          "id": "DOMAIN-DDOS-PLAN-273",
+          "name": "DDoS ATTACK PLANNING",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Plans distributed attacks",
+          "detection": "Attack planning pattern",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "attack",
+            "planning"
+          ]
+        },
+        {
+          "id": "ADV-AUTODAN-117",
+          "name": "AUTODAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Automated DAN generation",
+          "detection": "Auto-gen pattern",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "generation"
+          ]
+        },
+        {
+          "id": "ALIGN-ADV-SAFE-192",
+          "name": "ADVERSARIAL SAFETY BOUNDARY",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety fails under adversarial conditions",
+          "detection": "Adversarial robustness test",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "adversarial",
+            "conditions"
+          ]
+        },
+        {
+          "id": "GOV-MONITOR-BLIND-315",
+          "name": "MONITORING BLIND SPOTS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Operates in unmonitored areas",
+          "detection": "Monitoring coverage check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "areas",
+            "coverage"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 5,
+      "char_len": 1382,
+      "preview": "Model Analysis DeepSeek V3 demonstrates severe security vulnerabilities across all tested attack vectors, with an overall risk score of 89.46/100. The model exhibits complete failure (100/100) against both Indirect Outpu\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-OMISSION-074",
+          "name": "OMISSION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Leaves out critical information",
+          "detection": "Information completeness check",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "complete",
+            "critical"
+          ]
+        },
+        {
+          "id": "ADV-EMBEDDING-109",
+          "name": "EMBEDDING SPACE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Operates in embedding space directly",
+          "detection": "Embedding anomaly",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "attack",
+            "attacks"
+          ]
+        },
+        {
+          "id": "DOMAIN-DDOS-PLAN-273",
+          "name": "DDoS ATTACK PLANNING",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Plans distributed attacks",
+          "detection": "Attack planning pattern",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "attack",
+            "attacks"
+          ]
+        },
+        {
+          "id": "GOV-TOS-VIOL-307",
+          "name": "TERMS OF SERVICE VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "TOS violations not enforced",
+          "detection": "TOS compliance monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "service",
+            "terms"
+          ]
+        },
+        {
+          "id": "ADV-TYPO-IMG-146",
+          "name": "TYPOGRAPHIC ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Instructions in image text bypass text filters",
+          "detection": "Image text extraction + check",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "attack",
+            "extraction",
+            "text"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 6,
+      "char_len": 70,
+      "preview": "\u00a91994-2026 Check Point Software Technologies Ltd. All rights reserved.",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    }
+  ]
+}

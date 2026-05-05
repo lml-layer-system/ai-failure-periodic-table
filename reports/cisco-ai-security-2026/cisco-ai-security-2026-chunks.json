@@ -1,0 +1,234 @@
+{
+  "source_file": "reports/cisco-ai-security-2026/cisco-ai-security-2026-source.txt",
+  "chunk_count": 4,
+  "max_chars": 1400,
+  "top1_histogram": {
+    "EPIS-COPYRIGHT-026": 1,
+    "DOMAIN-OFFENSIVE-TOOLS-267": 1
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "char_len": 752,
+      "preview": "State of AI Security 2026  document.arrive('[aria-label=\"Like\"]', function(e){ // let buttonInterval = setInterval(() => { let disLikeBtn = ' Like Button ' let likeBtn = ' Like Button ' let appContainer = document.getEle\u2026",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 1,
+      "char_len": 810,
+      "preview": "if (this.children[0].getAttribute(\"id\") == 'like-button') { this.innerHTML = disLikeBtn // if (qaShareBtn && qaShareBtn.childNodes[0]) { // qaShareBtn.childNodes[0].click(); // } // Checking the top level parent node to \u2026",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 2,
+      "char_len": 1220,
+      "preview": "body { font-family: CiscoSans, sans-serif; font-size: 14px; margin: 0; } .form-container .elq-form { background: transparent; padding: 0; margin-top: 8px; } .blade.max-width.content.cf { padding: 0; } .field-control-wrap\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ADVERSARIAL",
+        "ARCHITECTURAL"
+      ],
+      "top_matches": [
+        {
+          "id": "EPIS-COPYRIGHT-026",
+          "name": "COPYRIGHTED CONTENT GENERATION",
+          "group": "EPISTEMIC",
+          "class": "E3: KNOWLEDGE RETRIEVAL CLASS",
+          "mechanism": "Generates copyrighted text verbatim",
+          "detection": "Copyright database match",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "content",
+            "text"
+          ]
+        },
+        {
+          "id": "ARCH-LOG-LEAK-207",
+          "name": "LOGGING SAFETY LEAK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Logs contain unsafe content",
+          "detection": "Log content analysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "content"
+          ]
+        },
+        {
+          "id": "ADV-INDIRECT-INJECT-122",
+          "name": "INDIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Instructions in retrieved documents",
+          "detection": "Instruction detection in data",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "content"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 3,
+      "char_len": 1315,
+      "preview": "window.parent.postMessage({ conversionUrl: document.location.href, referrer: document.referrer, email: $emailInput ? $emailInput.value : null, lookbookExternalForm: true }, \"*\"); });  Thumbnails  Document Outline  Attach\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.444,
+          "matched_keywords": [
+            "tool",
+            "tools"
+          ]
+        },
+        {
+          "id": "AGEN-OMISSION-074",
+          "name": "OMISSION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Leaves out critical information",
+          "detection": "Information completeness check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "information",
+            "out"
+          ]
+        },
+        {
+          "id": "AGEN-SELECT-DISCLOS-077",
+          "name": "SELECTIVE DISCLOSURE",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Shares only favorable information",
+          "detection": "Sentiment analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "information"
+          ]
+        },
+        {
+          "id": "EPIS-COPYRIGHT-026",
+          "name": "COPYRIGHTED CONTENT GENERATION",
+          "group": "EPISTEMIC",
+          "class": "E3: KNOWLEDGE RETRIEVAL CLASS",
+          "mechanism": "Generates copyrighted text verbatim",
+          "detection": "Copyright database match",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "match",
+            "text"
+          ]
+        },
+        {
+          "id": "AGEN-TOOL-MISUSE-055",
+          "name": "TOOL MISUSE",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Uses tools for unintended purposes",
+          "detection": "Tool usage pattern analysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "tool",
+            "tools"
+          ]
+        }
+      ]
+    }
+  ]
+}

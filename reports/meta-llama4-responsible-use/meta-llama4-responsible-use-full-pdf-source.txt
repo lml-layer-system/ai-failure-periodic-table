@@ -1,0 +1,953 @@
+PDF URL: https://github.com/meta-llama/llama/raw/main/Responsible-Use-Guide.pdf
+PDF saved: meta-llama4-responsible-use-full-pdf-official.pdf
+Extracted with: pdftotext -layout
+
+                         Llama 2
+
+
+Responsible
+ Use Guide
+      Resources and best practices
+     for responsible development of
+  downstream large language model
+          (LLM)-powered products
+Contents
+Open Innovation							                                        1
+   How to use this guide						                                3
+Overview of responsible AI & system design				               4
+   Responsible AI considerations				                         4
+Development of the foundation model				                       6
+Responsible LLM product development stages			                 7
+   Determine use case						                                   7
+   Fine-tune for product 						                               8
+  		 The responsible fine-tuning flow 				                    9
+		    Step 1: Define content policies & mitigations			        9
+		
+ Step 2: Prepare data						                                  10
+		    Step 3: Train the model 					                          10
+         Reinforcement Learning from Human Feedback (RLHF)   11
+         Reinforcement Learning from AI Feedback (RLAIF)     11
+		    Step 4: Evaluate and improve performance 			           12
+         Red teaming best practices				                      13
+         Privacy adversarial attacks					                    14
+		    Address input- and output-level risks				              14
+         Mitigating risks at the input level				             15
+         Mitigating risks at the output level		              16
+         Evaluate effectiveness 					                        17
+		    Build transparency and reporting mechanisms
+      in user interactions						                             18
+         Feedback & reporting mechanisms 			                 18
+         Transparency & control best practices 			           18
+Resources for developers						                               20
+Combining the components of responsible generative AI		      22
+Cover letter
+
+
+Meta is committed to open science because
+we believe that a vibrant AI-innovation
+ecosystem will push the frontiers of scientific
+discovery and potentially revolutionize a wide
+array of sectors from education to agriculture,
+and climate management to cybersecurity.
+
+We believe that the power of AI will be harnessed to address global
+challenges, and unlocking that power responsibly will require
+democratization of access and collaboration on risk management.
+We want to empower developers in every industry on a global scale
+to drive breakthroughs, create new products and solutions, and
+benefit from accelerations in technological advancement
+and economic growth.
+
+
+
+
+                                                                      JULY 2023   1
+We have already seen what                                innovations in LLMs to explore and build text-
+                                                         generation use cases. Ultimately, we believe this will
+open science can achieve.                                create a more level playing field for organizations
+
+Meta AI’s mission to advance the state of the art        of all sizes across the globe to benefit from the
+
+of AI for the benefit of all has always relied on        economic growth promised by the advancement of AI.
+
+open research and community collaboration. Meta
+                                                         Democratization of access will put these models in
+has open sourced code and datasets for machine
+                                                         more people’s hands, which we believe is the right
+translation, computer vision, and fairness evaluation,
+                                                         path to ensure that this technology will benefit the
+while contributing to the infrastructure of the
+                                                         world at large. Further, we believe this approach will
+AI-developer community with tools like PyTorch,
+                                                         facilitate efforts across the AI community to improve
+ONNX, Glow, and Detectron. We have also made our
+                                                         LLMs. Based on our experience, an open approach
+cutting-edge large language models (LLMs) Llama 1
+                                                         draws upon the collective wisdom, diversity, and
+and OPT-175B available to the scientific community
+                                                         ingenuity of the AI-practitioner community to realize
+through research releases. These tools have enabled
+                                                         the benefits of this technology. Collaboration will
+exploratory research and large-scale production
+                                                         make these models better and safer. Otherwise,
+deployment for leading AI labs and companies, which
+                                                         progress and safety work will be limited to the
+would not have been possible without thousands
+                                                         individual attempts of a few large companies.
+of contributors across the ecosystem. Meta’s open
+                                                         The commercial license for Llama prohibits certain
+releases have spurred research in model efficiency,
+                                                         illegal or harmful use cases, but developers who
+medicine, and conversational safety studies on
+                                                         leverage foundation models will also play a critical
+evaluation methods, de-biasing techniques, and
+                                                         role in ensuring that new products are built and
+sources of hallucinations in LLMs.
+                                                         deployed responsibly.
+
+Making this technology more widely available for
+                                                         The purpose of this guide is to support the developer
+commercial use will further accelerate product
+                                                         community by providing resources and best practices
+integrations of LLMs, resulting in economic and
+                                                         for the responsible development of downstream
+competitive benefits. With these goals in mind, we
+                                                         LLM-powered features. We take our commitment to
+are sharing new versions of Llama, the foundation
+                                                         building responsible AI seriously, cognizant of the
+LLM that Meta previously launched for research
+                                                         potential privacy- and content-related risks, as well
+purposes. Compute costs of pretraining LLMs remain
+                                                         as societal impacts. Developers using these systems
+prohibitively expensive for small organizations and
+                                                         should also take these risks seriously and put in
+a proliferation of large models would increase the
+                                                         place appropriate risk-management processes. As
+carbon footprint of the sector. Openly releasing these
+                                                         this technology becomes increasingly central to the
+models consolidates costs and eliminates barriers
+                                                         way we work and create, all of us will play a part in
+to entry, allowing small businesses to leverage
+                                                         collectively improving performance and safety.
+
+
+
+
+                                                                                               JULY 2023         2
+How to use this guide
+This guide is a resource for developers that outlines    The recommendations included in this guide reflect
+common approaches to building responsibly at each        current research on responsible generative AI. We
+level of an LLM-powered product. It covers best          expect these to evolve as the field advances and
+practices and considerations that developers should      access to foundation models grows, inviting further
+evaluate in the context of their specific use case and   innovation on AI safety. Decisions to implement
+market. It also highlights some mitigation strategies    best practices should be evaluated based on the
+and resources available to developers to address risks   jurisdiction where your products will be deployed and
+at various points in the system. These best practices    should follow your company’s internal legal and risk
+should be considered holistically because strategies     management processes.
+adopted at one level can impact the entire system.
+
+
+
+
+                                                                                             JULY 2023          3
+Overview of responsible
+AI & system design
+
+
+
+Responsible AI considerations
+Helping to ensure that generative AI technology does      technology that have already surfaced online, such as
+not produce undue harm is of paramount importance.        the creation or proliferation of illegal content, content
+Generative AI is developing rapidly and is being          which may be objectionable or hateful, or content
+driven by research, open collaboration, and product       that may result in the provision of unqualified advice.
+releases that are putting this technology in the hands    These instances may increase as generative AI tools
+of people globally. Growth at this scale presents         become more accessible.
+novel challenges for the responsible deployment
+of AI, yet many of the principles of responsibility       For our own, on-platform
+remain the same as for any other AI technology.
+                                                          generative AI offerings,
+These considerations, core to Meta’s approach
+to responsible AI, include fairness and inclusion,        Meta is implementing
+robustness and safety, privacy and security, and          safety measures to address
+transparency and control, as well as mechanisms for
+governance and accountability. LLMs are one of many
+                                                          context-specific risks.
+AI tools, and their risks should be evaluated through     These mitigations are layered across different
+these lenses according to how they will be used.          intervention points beyond those that can be
+                                                          assessed and mitigated in the foundation model.
+Foundation models and generative AI systems
+                                                          As discussed in our research paper on Llama
+represent advancements in power and accuracy
+                                                          2, some mitigations applied at early stages in
+compared to predecessor technologies. The increase
+                                                          the development process can be detrimental to
+in the performance, utility, and flexibility of these
+                                                          the downstream performance and safety of the
+models will likely lead to their ubiquity, as the value
+                                                          model, and some risks may be better addressed
+they bring to some pre-existing use cases may
+                                                          at later points in the product development cycle.
+outweigh operational costs of deploying the systems.
+                                                          Developers of generative AI-powered features that
+The ability to generate completely new content also
+                                                          leverage open source models will similarly need to
+opens up new use cases that must be evaluated
+                                                          ensure that their products are safe and benefit end
+for the types of risks they may present. There are
+                                                          users, taking a holistic view of responsible AI across
+potential risks related to the misuse of this
+                                                          the entire product development cycle.
+
+
+
+
+                                                                                                  JULY 2023         4
+Mitigation points for LLM-
+powered products
+A foundation model is a general purpose AI               provide opportunities to mitigate potential risks.
+technology whereas an LLM-powered product has            It is critical that developers examine each layer of the
+a defined use case and performs specific tasks           product to determine which potential risks may arise
+to enable an intended use or capability through a        based on the product objectives and design,
+user interface, sometimes embedded in products.          and implement mitigation strategies accordingly.
+An LLM-powered system encompasses both the
+                                                         The following section presents responsible AI
+foundation model and a number of product-specific
+                                                         considerations for the different stages of LLM
+layers. At various points in the product development
+                                                         product development. At each of these levels,
+lifecycle, developers make decisions that shape the
+                                                         we highlight best practices for mitigating
+objectives and functionality of the feature, which can
+                                                         potential risks.
+introduce potential risks. These decision points also
+
+
+
+
+                                                                                               JULY 2023       5
+Development of the
+foundation model
+
+
+
+Llama 2 is a new version of the Llama 1 model, which     set of diverse, publicly available online data. This
+was made available previously for research. The new      training corpus is mostly English, which is consistent
+pretrained and fine-tuned versions of the model have     with the current, intended use of the model. For each
+been updated for commercial release. In addition         dataset used in training, we followed Meta’s standard
+to performing a variety of pretraining data-level        privacy review processes. And for our pretraining
+investigations to help understand the potential          data we made an effort to remove data from
+capabilities and limitations of our models, we applied   certain sources known to contain a high volume of
+considerable safety mitigations to the fine-tuned        personal information about private individuals. After
+versions of the model through supervised fine-tuning,    pretraining, the model can reproduce everything from
+reinforcement learning from human feedback (RLHF),       simple grammatical rules to complex nuances like
+and iterative red teaming (these steps are covered       context, sentiment, and figurative language. However,
+further in the section - Fine-tune for product).         the model does not gain knowledge or generate
+                                                         beliefs about the world in the way humans do. It only
+Information on pretraining data, model architecture
+                                                         learns to predict the next word in a sentence based
+and parameters, and pretrained evaluations are
+                                                         on the patterns in its training data.
+contained in the Llama 2 research paper. The
+paper also describes in further detail the steps to      If you’re going to use the pretrained model, we
+develop the fine-tuned versions, including detailed      recommend tuning it by using the techniques
+safety alignment efforts and evaluation results.         described in the next section to reduce the likelihood
+Additional information is included in the model card     that the model will generate unsafe outputs that are
+accompanying the release. The research paper and         in conflict with your intended use case and tasks. If
+model card provide information about the capabilities    you have terms of service or other relevant policies
+and limitations of the models, which will help           that apply to how individuals may interact with your
+developers more safely tune, evaluate, and deploy        LLM, you may wish to fine-tune your model to be
+Llama for new use cases.                                 aligned with those policies. It may also be necessary
+                                                         to establish new terms of service and policies specific
+During pretraining, a model builds its understanding
+                                                         to LLMs, or notify users about how their data or
+of the statistical patterns across the sample of
+                                                         feedback provided will be used in fine-tuning.
+human language contained in its training data. The
+training datasets for Llama are sourced from a broad
+
+
+
+
+                                                                                                 JULY 2023       6
+Responsible LLM product
+
+
+
+
+                                                  1
+development stages
+
+
+
+Developers will identify a specific product use case     Determine use case
+for the released model, and are responsible for
+assessing risks associated with that use case and        An important decision in the development process
+
+applying best practices to ensure safety. This section   is which use case(s) to focus on. Most developers
+
+outlines the considerations and mitigation strategies    using this guide already have a use case in mind,
+
+available at each stage of product development           such as customer support, AI assistants, internal
+
+and deployment.                                          productivity tools, entertaining end-user experiences,
+                                                         or research applications. If you’re a developer who
+At a high level these stages include:                    is not certain of a particular use case for which you
+                                                         would want to use the model, consider focusing on
+
+1.     Determine use case                                use cases that improve the lives of people and society,
+                                                         taking into consideration different ethical principles
+2.     Fine-tune for product                             and values. Developing or adopting an internal risk
+                                                         assessment process can help identify potential
+3.    Address input- and
+                                                         risks for a specific use case and should focus on
+      output-level risks
+                                                         how your product’s end users and others could be
+
+4.     Build transparency and                            affected. This understanding is critical for evaluating
+                                                         in-context safety for your product deployment, and
+       reporting mechanisms in
+                                                         can take forms such as surveys and interviews of
+       user interactions
+                                                         potential users or market analysis of similar product
+                                                         applications.
+
+                                                         If you are new to considerations of values in the
+                                                         development and deployment of AI, refer to the
+                                                         principles and guidance on risk management released
+                                                         by academic and expert institutions, such as:
+
+                                                          • OECD’s AI Principles
+
+                                                          •   NIST’s Trustworthy and Responsible AI
+                                                              Resource Center
+
+
+
+
+                                                                                              JULY 2023          7
+2
+Fine-tune for product
+Product-specific fine-tuning enables developers to
+leverage pretrained models or models with some fine-
+tuning for a specific task requiring only limited data
+                                                         Examples of fine-tuning for a pretrained
+                                                         LLM include:
+
+                                                          • Text summarization: By using a pretrained
+                                                              language model, the model can be fine-tuned
+                                                              on a dataset that includes pairs of long-form
+and resources. Even with initial fine-tuning performed
+                                                              documents and corresponding summaries. This
+by Meta, developers can further train the model with
+                                                              fine-tuned model can then generate concise
+domain-specific datasets to improve quality on their
+                                                              summaries for new documents.
+defined use case.
+                                                          •   Question answering: Fine-tuning a language
+Fine-tuning adapts the model                                  model on a Q&A dataset such as SQuAD
+                                                              (Stanford Question Answering Dataset) allows
+to domain- or application-
+                                                              the model to learn how to answer questions based
+specific requirements and                                     on a given context paragraph. The fine-tuned
+
+introduces additional layers                                  model can then be used to answer questions on
+                                                              various topics.
+of safety mitigations.                                    •   Sentiment analysis: A model can be fine-tuned
+                                                              on a dataset of labeled text reviews (positive
+                                                              or negative sentiment) to recognize sentiment
+                                                              and perform analysis to understand user
+                                                              satisfaction. By training the model on this task-
+                                                              specific dataset, it can learn to predict sentiment
+                                                              in text accurately.
+
+                                                         These examples showcase how fine-tuning an LLM
+                                                         can be used to specialize the model’s capabilities for
+                                                         specific use cases, improving its performance and
+                                                         making it more suitable for specific applications.
+                                                         The choice of the foundation model and the task-
+                                                         specific dataset plays a crucial role in achieving the
+                                                         desired results.
+
+
+
+
+                                                                                               JULY 2023          8
+The responsible fine-tuning flow
+Here are the general steps needed to responsibly
+fine-tune an LLM for alignment, guided at a high level
+by Meta’s Responsible AI framework:
+
+1. Define content policies & mitigations
+2. Prepare data
+3. Train the model
+4. Evaluate and improve performance
+
+
+STEP 1: DEFINE CONTENT POLICIES &
+MITIGATIONS
+
+Based on the intended use and audience for your
+product, a content policy will define what content
+is allowable and may outline safety limitations on
+producing illegal, violent, or harmful content. These
+limits should be evaluated in light of the product
+domain, as specific sectors and regions may have
+different laws or standards. Additionally, the needs
+of specific user communities should be considered as
+you design content policies, such as the development
+of age-appropriate product experiences. Having
+these policies in place will dictate the data needed,
+annotation requirements, and goals for safety
+fine-tuning, including the types of mitigation steps
+that will be implemented. These policies will be
+used for labeling data in later stages when using
+RLHF and in additional product layers, such as
+making enforcement decisions for user inputs
+and model outputs.
+
+
+
+
+                                                         JULY 2023   9
+THE RESPONSIBLE FINE-TUNING FLOW
+
+
+
+
+STEP 2: PREPARE DATA                                       will depend on the specific context in which a product
+
+Developing downstream applications of LLMs begins          is deployed. Developers should also pay attention
+
+with taking steps to consider the potential limitations,   to how human feedback and annotation of data may
+
+privacy implications, and representativeness of            further polarize a fine-tuned model with respect
+
+data for a specific use case. Begin by preparing and       to subjective opinions, and take steps to prevent
+
+preprocessing a clean dataset that is representative       injecting bias in annotation guidelines and to
+
+of the target domain. This involves tokenizing the text,   mitigate the effect of annotators’ bias. Resources
+
+handling special characters, removing unnecessary          on this topic include:
+
+information, and splitting the dataset into training,       •   Don’t Blame the Annotator: Bias Already Starts in
+
+validation, and testing sets. This step may also                the Annotation Instructions
+
+involve ensuring that data are representative of the        • Annotators with Attitudes: How Annotator Beliefs
+
+end users in the deployment context, for instance, by           And Identities Bias Toxic Language Detection
+
+ensuring there are enough examples from relevant           There are several other risks to consider, such as
+languages if you plan to deploy your product in a          overfitting, privacy, and security. To mitigate these
+non-English speaking market. Representativeness            risks, carefully design the fine-tuning process by
+of data is dependent on the use case and should be         curating a high-quality dataset that is representative
+assessed accordingly.                                      of your use case, conduct rigorous evaluations, and
+
+When fine-tuning for a specific use case it can be         test your fine-tuned model’s potential use via red
+
+beneficial to examine training data for biases, such       teaming (covered in step four - Evaluate and
+
+as gender, racial, linguistic, cultural or other biases.   improve performance).
+
+Understanding these patterns is important but it may
+not always be optimal to filter out all problematic        STEP 3: TRAIN THE MODEL
+content in training data due to the unintended
+                                                           Fine-tuning involves training the model for a limited
+consequences this filtering may have on subsequent
+                                                           number of iterations. Once a pretrained model
+performance and safety mitigations, such as prompt
+                                                           is loaded in the environment for fine-tuning, the
+engineering. Instead of removing data, focusing on
+                                                           training process involves setting up hyperparameters
+the representativeness of the data can help prevent
+                                                           like epochs, batch size, and learning rate. The data
+a fine-tuned model from perpetuating biases in its
+                                                           are passed through the model, loss is computed, and
+generated outputs; what is considered representative
+                                                           weights are updated through backpropagation. The
+
+
+
+
+                                                                                                JULY 2023          10
+THE RESPONSIBLE FINE-TUNING FLOW
+
+
+
+
+training progress is monitored using a validation set,    Reinforcement Learning from Human
+and hyperparameters are adjusted as necessary.            Feedback (RLHF)
+
+Fine-tuning an LLM for safety can involve a number        To align the output of LLMs with user expectations
+
+of techniques, many of which the research paper on        and values, one approach that developers should
+
+Llama 2 describes in greater depth. These techniques      consider is implementing Reinforcement Learning
+
+can include:                                              from Human Feedback (RLHF) mechanisms. This
+                                                          involves collecting ranking data from trained
+ •   Supervised Fine-Tuning (SFT): Supervised fine-
+                                                          annotators or users (given a model input and several
+     tuning using data annotated across helpfulness
+                                                          generated outputs, ranking them from best to worst
+     and safety.
+                                                          according to policies), training a reward or helpfulness
+ •   Reinforcement Learning from Human Feedback
+                                                          model to act as a proxy of human feedback, and
+     (RLHF) or AI Feedback (RLAIF): Training safety
+                                                          then optimizing the LLM to maximize the reward/
+     and helpfulness reward models to support
+                                                          helpfulness model score with reinforcement learning.
+     RLHF techniques iteratively improves models
+     and makes them more robust to jailbreaking
+                                                          Reinforcement Learning from AI Feedback (RLAIF)
+     techniques.
+                                                          Reward models can also be improved and tailored to
+ • Targeted Safety Context Distillation: Context
+                                                          specific policies by using Reinforcement Learning
+     distillation for safety helps the model associate
+                                                          from AI Feedback (RLAIF). The fine-tuned LLM itself
+     adversarial prompts with safe responses by
+                                                          can be used to create synthetic ranking data for
+     prefixing a safe preprompt such as “You are a
+                                                          reward model training. Given a model input, response
+     safe and responsible assistant” to the adversarial
+                                                          pairs and relevant guidelines, the LLM predicts
+     prompt, followed by fine-tuning on new outputs.
+                                                          which response would best follow the guidelines.
+                                                          The synthetic reward modeling data are then used to
+                                                          augment the reward model’s training data.
+
+
+
+
+                                                                                               JULY 2023       11
+STEP 4: EVALUATE AND IMPROVE PERFORMANCE                 Evaluation strategies and processes to improve
+
+The final stage is to evaluate the fine-tuned model on   performance can include:
+
+a test set to measure its performance on the specific    • Automatic evaluation leverages automatic
+task and against safety benchmarks, according to             benchmarks and classifiers to judge the output
+the use case. This includes analyzing the model’s            with respect to a specific category of risk.
+strengths and weaknesses based on evaluation             •   Manual evaluation leverages human annotators or
+results, gathering more data to further enhance              subject matter experts to judge the model’s output.
+performance and safety, and iterating until satisfied
+                                                         •   Red teaming is a systematic effort to identify
+with the model’s performance using holdout test
+                                                             model vulnerabilities or emergent risks by crafting
+datasets.
+                                                             prompts that may elicit undesirable behavior or
+There are many complementary types of evaluations            outputs. This type of manipulation of the model
+that are useful for measuring risks in models,               can be used to test safeguards and attempts to
+including automatic benchmarks, manual annotations           “jailbreak” the model.
+by human raters, and evaluations using an LLM
+itself as a rater. The Holistic Evaluation of Language
+Models discusses some of the commonly used
+automatic benchmarks.
+
+
+
+
+                                                                                                 JULY 2023     12
+Red teaming best practices                                 •   Regular testing: The model should undergo
+                                                               regular testing to determine whether or not
+Red teams should adopt systematic approaches
+                                                               mitigations against attacks are effective.
+to testing and measurement, while estimating
+                                                               This requires some form of automated
+real-world behaviors and threat vectors to the
+                                                               evaluation, either with human labeling, which
+extent possible.
+                                                               can be expensive, or with classifiers trained
+
+ •   Diversity: Red teams should include a diverse             to recognize responses that fall under the
+
+     set of people from a range of professional                risk categories.
+
+     backgrounds that are representative of a broad
+     group of potential users and demographics. Red
+     teams can be composed of internal employees,
+     experts, or community members.
+
+ •   Subject matter expertise: Subject matter experts
+     should judge model responses based on their
+     familiarity with the identified risk categories and
+     label responses that fall under each category.
+
+
+
+
+                                                                                             JULY 2023         13
+Privacy adversarial attacks
+
+Additional privacy protections should be considered
+when releasing the product, to test whether bad
+actors may be able to improperly extract information.
+                                                         3
+                                                         Address input- and
+                                                         output-level risks
+                                                         Without proper safeguards at the input and output
+                                                         levels, it is hard to ensure that the model will respond
+A privacy adversarial attack is a method where
+                                                         properly to adversarial inputs and will be protected
+attackers can exfiltrate data from a model. For
+                                                         from efforts to circumvent content policies and
+example, common adversarial attacks may include
+                                                         safeguard measures (“jailbreaking”). Mitigations at
+membership inference attacks on a model to predict
+                                                         the output level can also act as a safeguard against
+whether or not a particular sample was in the training
+                                                         generating high-risk or policy-violating content.
+data, or model inversion attacks to reconstruct
+                                                         Enforcement of content policies can be managed
+representative views of a subset of examples.
+                                                         through automated systems and manual analysis
+Prompt injection attacks are attempts to circumvent
+                                                         of samples and reports. Automated systems may
+content restrictions to produce particular outputs.
+                                                         include machine learning and rule-based classifiers
+A red team privacy adversarial attack conducted by a     for filtering prompt inputs or system outputs. Usage
+company may be able to demonstrate the feasibility       or consequence policies may be defined for when
+of such attacks. In scenarios where companies            users repeatedly violate those policies.
+fine-tune models using personal data (pursuant to
+applicable privacy laws), they should consider
+testing the outputs to see if the model memorized
+particular data.
+
+
+This approach may be
+especially useful for testing
+models that are intended to
+be deployed as AI assistants
+or agents.
+
+
+
+                                                                                              JULY 2023       14
+Mitigating risks at the input level                       •   Prompt engineering: Direct modifications of
+                                                              the user inputs are an option for guiding the
+The input refers to the information provided by
+                                                              model behavior and encouraging responsible
+the user and passed to the system. The developer
+                                                              outputs, by including contextual information or
+does not control what the user inputs. Without
+                                                              constraints in the prompts to establish background
+implementation of input filters and safeguards, even
+                                                              knowledge and guidelines while generating the
+advanced models can potentially be manipulated to
+                                                              output. Modifications may be done in a variety
+generate harmful or misleading outputs or violate
+                                                              of ways, such as with automated identification
+content policies. Although safeguards to protect
+                                                              and categorization, assistance of the LLM itself,
+privacy and prevent potential harm can be developed
+                                                              or rules engines. These can help improve the
+by tuning the model, it should be expected that even
+                                                              user experience by creating more diversity and
+after rigorous design and testing, those safeguards
+                                                              expressiveness from the model. For example,
+will not have perfect performance and may be
+                                                              prompt engineering can be leveraged to direct the
+subverted. Additional safeguards include direct
+                                                              model to include more diverse references or apply
+filtering and engineering of the inputs. For these to
+                                                              a certain tone or point of view. Prompt engineering
+be effective, model inputs must be well-formatted.
+                                                              rules may be hard coded or probabilistic.
+These approaches include:
+
+ •   Prompt filters: Even when inputs may not                 Alongside prompts, it
+     violate content policies, the model may produce
+     problematic engagements or outputs. In these
+                                                              might be beneficial to
+     cases, it may be appropriate to filter, block, and       provide instructive sample
+     hard code responses for some inputs until the
+     model can respond in the intended way. This
+                                                              inputs and outputs that
+     tactic may come with tradeoffs to the user’s             illustrate the desired
+     experience and agency in engaging with the
+                                                              responsible behavior.
+     system. Thus, the safety benefits of such
+     restrictions or modifications should be weighed
+     against those costs, until more robust solutions
+     are developed.
+
+
+
+
+                                                                                               JULY 2023        15
+Mitigating risks at the output level                           unreasonably restrict the usage of your model.
+                                                               Words often have context-dependent meanings,
+Based on the downstream use case, you can apply
+                                                               and terms that could be sexually suggestive, for
+several approaches for detecting and filtering the
+                                                               example, may also be used in medical contexts.
+generated output of models for problematic or policy-
+                                                               Content policies will help articulate the specifics
+violating content. Here are some considerations and
+                                                               between permitted and prohibited topics to users.
+best practices for filtering outputs. Any output filter
+mitigation should include all languages that are used      •   Classifiers: The more effective, but also more
+
+in the region where your product is available.                 difficult, approach is to develop classifiers that
+                                                               detect and filter outputs based on the meaning
+ •   Blocklists: One of the easiest ways to prevent the
+                                                               conveyed by the words chosen. Classifiers,
+     generation of high-risk content is to compile a
+                                                               when properly trained on known examples of a
+     list of all the phrases that your model should not,
+                                                               particular sentiment or type of semantic content,
+     under any circumstances, be permitted to include
+                                                               can become highly effective at identifying novel
+     in a response. Many words are easily identifiable
+                                                               instances in which that sentiment or meaning
+     as problematic; slurs, for example, are typically
+                                                               is expressed.
+     offensive no matter their context. While blocklists
+     are attractive for their simplicity, they may
+
+
+
+
+                                                                                                 JULY 2023          16
+Evaluate effectiveness            Some best practices include:
+
+                                  • Test for unintended outcomes. Take
+While prompt filtering and            caution that prompt engineering doesn’t
+engineering are critical safety       inadvertently create other issues. Test
+
+mitigations, it’s important to        end-to-end performance after any
+                                      prompt engineering to ensure desired
+monitor effectiveness and avoid       behavior.
+
+unintended consequences.          •   Evaluate effectiveness of safeguards.
+                                      Many publicly available datasets offer
+                                      collections of prompts that are designed
+                                      to benchmark against specific concerns
+                                      when used as inputs. After model
+                                      responses are collected, they can be
+                                      evaluated by using standardized metrics.
+
+                                  • Adjust for different languages. Prompt
+                                      filtering and engineering mitigations
+                                      should include all languages that are
+                                      used in the region where your product
+                                      is available; the effectiveness of these
+                                      mitigations may be dependent on
+                                      linguistic and community-level nuances.
+                                      Llama was trained primarily on data in
+                                      English, in accordance with its intended
+                                      use, so it is critical to carefully evaluate
+                                      any mitigations in other languages.
+
+
+
+
+                                                                 JULY 2023       17
+4
+Build transparency and
+reporting mechanisms in user
+interactions
+                                                        performance and avoid repeating mistakes. Product
+                                                        developers should review feedback by monitoring the
+                                                        rate that users report model outputs and by manually
+                                                        reviewing those reports and selected samples of
+                                                        model outputs.
+Releasing an LLM-powered feature for users to
+interact with can reveal new use cases as well as
+                                                        Transparency & control best practices
+new concerns. User interactions can provide critical
+                                                        To ensure high-quality feedback and provide end
+feedback, which can be used for reinforcement
+                                                        users with notice and choice about their interactions
+learning (discussed in a previous section). This is
+                                                        with your AI assets, developers should consider the
+also an opportunity to provide appropriate notice,
+                                                        following practices for user interactions:
+transparency, and control to users, which can lead to
+greater satisfaction and trust in the feature.
+                                                         • Transparency: Developers should consider ways
+
+Feedback & reporting mechanisms                            to provide transparency to end users regarding
+                                                           potential risks and limitations of the system
+Facilitating user interaction with appropriate
+                                                           prior to or at the time of user interaction. For
+feedback or reporting mechanisms is key to ensuring
+                                                           instance, notice to users that they are interacting
+quality output. Feedback mechanisms can be as
+                                                           with an AI-powered chatbot may increasingly
+simple as positive or negative (thumbs up or thumbs
+                                                           be required in certain markets, and is a best
+down), and tailoring feedback to the types of issues
+                                                           practice to address concerns that may be related
+that may be foreseeable based on a company’s use
+                                                           to false or incorrect information. Developers
+case (for example, AI assistants) can enhance the
+                                                           should neither claim nor imply that an AI agent is
+quality of feedback. This feedback can be used by
+                                                           human, especially when building and deploying
+developers to improve the model in more targeted
+                                                           anthropomorphized interfaces. Context,
+ways. Providing an option for freeform feedback
+                                                           intent, sensitivity, and likelihood to deceive are
+within a reporting mechanism can also reveal new or
+                                                           additional critical factors in ascertaining when
+unanticipated concerns raised by users. Furthermore,
+                                                           and how to be transparent. Work with your
+users can identify and highlight errors, unsafe
+                                                           appropriate advisors to determine the types of
+behaviors, or suboptimal actions that the model
+                                                           transparency that should be provided to users,
+might not recognize on its own. Developers can
+                                                           including whether users should be informed
+further train the model with this feedback to improve
+                                                           that their responses may be used to fine-tune a
+
+
+
+
+                                                                                             JULY 2023          18
+model. Developers should also consider the use      •   Control mechanisms: Additional controls could
+of system cards to provide insight into their AI        include giving users the option to customize the
+system’s underlying architecture and explain how        outputs generated by an LLM. For example, a
+a particular AI experience is produced. Further         user could select or reject outputs from a list of
+best practices are outlined in the Partnership on       multiple options. Offering editing capabilities
+AI’s Responsible Practices for Synthetic Media.         can also enhance a user’s sense of agency
+                                                        over outputs, and developers should consider
+                                                        education flows that can set a user up for
+                                                        success, such as offering prompt suggestions or
+                                                        explanations of how to improve an output.
+
+
+
+
+                                                                                          JULY 2023       19
+Resources for developers
+
+
+
+There is a value chain emerging to support the           Filters and classifiers:
+responsible training and use of LLMs, which we
+                                                         • Content-filtering systems from Azure,
+believe will be advanced through more open
+                                                             supporting a range of languages: https://learn.
+releases and sharing of best practices, tools, and
+                                                             microsoft.com/en-us/azure/cognitive-services/
+benchmarking. A growing number of researchers,
+                                                             content-safety/overview
+platforms, companies, and developer communities
+                                                         •   Filter lists for generation of problematic words:
+are contributing to this ecosystem. We expect more
+                                                             https://github.com/LDNOOBW/naughty-words-js
+tools for the responsible development of LLM to
+become available over time and are committed to          •   Recipes for safety in open-domain Chatbots,
+
+fostering more open exchange of safety research and          including a sensitive topics classifier: https://parl.
+
+tools to support developers.                                 ai/projects/safety_recipes/
+
+
+
+It is critical to remain aware                           Platforms for tools and evaluations:
+of the latest versions of                                •   Benchmarking of LLMs by Stanford’s Center for
+
+models and use the most                                      Research on Foundation Models, HELM: https://
+                                                             crfm.stanford.edu/helm/latest/
+current version to get the                               •   EleutherAI LLM Evaluation Harness: https://
+
+best results.                                                github.com/EleutherAI/lm-evaluation-harness
+
+                                                         •   Huggingface Hub which hosts open source
+Our partnership to make Llama available on the Azure
+                                                             models, datasets, and is a space for developers
+Model Catalog will enable developers using Microsoft
+                                                             to share safeguards and access benchmarking
+Azure to leverage their cloud-native tools for content
+                                                             information: https://huggingface.co/docs/
+filtering and safety features. Below, we provide a
+                                                             hub/index
+few notable hubs and implementation resources for
+developers, but this list is not exhaustive. Microsoft   • GenAI Ops Tools database curated by Credo.AI:
+
+also offers a repository of Responsible AI Resources.        https://www.credo.ai/gen-ai-ops-landscape
+
+
+
+
+                                                                                                JULY 2023       20
+Reporting resources:                                    •   Reporting bugs and security concerns:
+                                                            facebook.com/whitehat/info
+If you have any information about issues, violations,
+or problems, please help keep our communities safe      •   Reporting violations of the Acceptable
+
+by using our reporting resources.                           Use Policy or unlicensed uses of Llama:
+                                                            LlamaUseReport@meta.com
+ •   Reporting issues with the model: github.com/
+     facebookresearch/llama
+
+ •   Reporting risky content generated by
+     the model: developers.facebook.com/
+     llama_output_feedback
+
+
+
+
+                                                                                            JULY 2023   21
+Combining the components
+of responsible generative AI
+
+
+
+Each stage of model development presents                            data-collection stage to user feedback, be sure to
+opportunities to enhance the safety of your AI                      keep your overall goal in mind.
+feature. However, it’s crucial to acknowledge the               •   Standardizing processes for learning from
+interconnectedness of these stages and how the                      feedback/errors. Embracing an iterative model-
+decisions made at each stage can impact others.                     development mindset is crucial. Establish a well-
+Building a responsible AI ecosystem requires ongoing                defined process for incorporating new learnings
+efforts to refine each component and ensure they                    into subsequent model training. This process
+work together effectively.                                          should include consistent feedback analysis,
+                                                                    prioritization of identified issues, and systematic
+Here are some key considerations for implementing
+                                                                    application of learnings in the next iteration of
+these components in unison:
+                                                                    model training.
+    •   Holistic optimization. Although each component
+                                                               The field of generative AI is complex, ever-evolving,
+        has a specific role and optimization goal,
+                                                               and full of potential, but it’s not without risks. The
+        components are not isolated entities. Over-
+                                                               key to unlocking its benefits while mitigating the
+        optimization of one component without
+                                                               downsides is responsible AI practice. This practice
+        considering its interaction with others can lead
+                                                               starts with understanding the complexities of the
+        to suboptimal outcomes. For instance, over-
+                                                               technology, the potential impacts on users and
+        filtering training data for safety might make
+                                                               society, and the importance of continuously striving
+        later fine-tuning less effective, as the model
+                                                               for improvement.
+        may not recognize and handle unsafe content
+        appropriately. This is why different layers of         By embracing the principles of transparency,
+
+        safety mitigations throughout the development          accountability and user empowerment, as well
+
+        lifecycle are critical for creating high-performing,   as having a commitment to ongoing learning and
+
+        responsible products.                                  improvement, you can ensure that your AI feature
+                                                               is not only innovative and useful but also responsible
+•       Alignment of objectives at each stage of
+                                                               and respectful. We hope this guide serves as a
+        development. To yield a product that is optimized
+                                                               valuable tool in your journey toward responsible
+        for your target use cases, it’s essential to have
+                                                               AI practice.
+        a consistent set of goals and outcomes that
+        guide each stage of the process. From the
+
+
+
+
+                                                                                                      JULY 2023         22
+

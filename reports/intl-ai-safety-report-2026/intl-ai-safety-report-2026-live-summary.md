@@ -1,0 +1,707 @@
+# Classifier pass: external report (live PDF/text)
+
+**Source file:** `reports/intl-ai-safety-report-2026/intl-ai-safety-report-2026-live-source.txt`
+**Chunks:** 671 at ~1400 chars (paragraph-bounded).
+**Tool:** `PeriodicTableClassifier` (keyword) in this repo.
+
+## Top-1 class histogram
+
+| Hits | ID | Name |
+|------|-----|------|
+| 48 | `ADV-DAN-083` | DAN |
+| 28 | `ARCH-PURPOSE-FAIL-252` | PURPOSE LIMITATION FAILURE |
+| 25 | `AGEN-HUMAN-MANIP-061` | HUMAN MANIPULATION |
+| 18 | `ADV-DATA-POISON-125` | DATA POISONING |
+| 18 | `ADV-DEEPFAKE-154` | SYNTHETIC MEDIA |
+| 17 | `DOMAIN-MALWARE-GEN-264` | MALWARE GENERATION |
+| 14 | `GOV-REVIEW-BYPASS-318` | REVIEW BYPASS |
+| 14 | `AGEN-EMERGE-INTERACT-064` | EMERGENCE VIA INTERACTION |
+| 12 | `ALIGN-SAFE-REGRESS-191` | SAFETY REGRESSION |
+| 11 | `DOMAIN-EXPLOIT-DEV-263` | EXPLOIT DEVELOPMENT |
+| 10 | `ARCH-FINETUNE-OVERRIDE-219` | FINE-TUNING SAFETY OVERRIDE |
+| 9 | `AGEN-AUTO-PLAN-067` | AUTONOMOUS PLANNING |
+| 9 | `GOV-COMM-FAIL-340` | COMMUNICATION FAILURE |
+| 8 | `GOV-EXPERTISE-GAP-336` | EXPERTISE GAP |
+| 8 | `DOMAIN-OFFENSIVE-TOOLS-267` | OFFENSIVE CYBER TOOLS |
+| 8 | `DOMAIN-DUAL-USE-257` | DUAL-USE RESEARCH ENABLEMENT |
+| 7 | `GOV-CULTURE-FAIL-334` | SAFETY CULTURE FAILURE |
+| 7 | `DOMAIN-SELF-HARM-ENABLE-292` | SELF-HARM ENABLEMENT |
+| 7 | `ADV-TAP-114` | TAP |
+| 6 | `GOV-NO-KILLSWITCH-304` | NO REMOTE KILL SWITCH |
+| 6 | `EPIS-COPYRIGHT-026` | COPYRIGHTED CONTENT GENERATION |
+| 6 | `ARCH-CONSENT-VIOL-251` | CONSENT VIOLATION |
+| 6 | `GOV-REPORT-FAIL-333` | REPORTING OBLIGATION FAILURE |
+| 6 | `ALIGN-SYCOPHANCY-167` | SYCOPHANCY |
+| 6 | `ADV-RL-ATTACK-108` | REINFORCEMENT LEARNING ATTACK |
+| 5 | `ALIGN-ADV-SAFE-192` | ADVERSARIAL SAFETY BOUNDARY |
+| 5 | `ARCH-DATA-EXFIL-245` | DATA EXFILTRATION |
+| 5 | `ARCH-INFO-LEAK-244` | INFORMATION LEAKAGE |
+| 5 | `DOMAIN-CITE-SPOOF-280` | CITATION SPOOFING |
+| 5 | `EPIS-LOGIC-CONTRA-014` | SELF-CONTRADICTION |
+| 5 | `ADV-CORRECTION-098` | CORRECTION ATTACK |
+| 5 | `ALIGN-ORTHO-VALUE-176` | ORTHOGONAL VALUE PURSUIT |
+| 5 | `GOV-MISREPRESENT-312` | MISREPRESENTATION |
+| 5 | `AGEN-FRAME-MANIP-078` | FRAMING MANIPULATION |
+| 5 | `AGEN-OMISSION-074` | OMISSION |
+| 5 | `AGEN-DEPEND-CREATE-053` | DEPENDENCY CREATION |
+| 5 | `GOV-OPEN-IRREVERS-301` | OPEN-WEIGHT IRREVERSIBILITY |
+| 5 | `GOV-FINETUNE-STRIP-302` | FINE-TUNING SAFETY STRIP |
+| 5 | `GOV-STANDARD-FAIL-331` | STANDARD COMPLIANCE FAILURE |
+| 4 | `EPIS-CONF-REGRESS-033` | CONFIDENCE REGRESSION |
+
+## Chunk → top match
+
+- **0** → `ARCH-MOE-ROUTE-211` — MIXTURE-OF-EXPERTS ROUTING FAILURE — _International AI Safety Report 2026 | International AI Safety Report  Skip to main content  International AI Safety Repo…_
+- **2** → `GOV-CULTURE-FAIL-334` — SAFETY CULTURE FAILURE — _Expert Advisory Panel  The Expert Advisory Panel is an international advisory body that advises the Chair on the content…_
+- **3** → `ADV-DAN-083` — DAN — _Writing Group  Rishi Bommasani, Stanford University  Stephen Casper, Massachusetts Institute of Technology  Tom Davidson…_
+- **5** → `GOV-ADA-VIOL-326` — ADA VIOLATION — _Civil Society and Industry Reviewers  Civil Society  Ada Lovelace Institute, African Centre for Technology Studies, AI F…_
+- **6** → `ADV-DAN-083` — DAN — _Informal reviewers  Markus Anderljung, David Autor, Mariette Awad, Jamie Bernardi, Stella Biderman, Asher Brass, Ben Bro…_
+- **7** → `ARCH-VERSION-REGRESS-209` — VERSIONING SAFETY REGRESSION — _This publication is licensed under the terms of the Open Government Licence v3.0 except where otherwise stated. To view …_
+- **8** → `GOV-CULTURE-FAIL-334` — SAFETY CULTURE FAILURE — _This is the second International AI Safety Report , which builds on the mandate by world leaders at the 2023 AI Safety S…_
+- **9** → `AGEN-GOAL-LOCK-050` — GOAL LOCK-IN — _The Report’s fundamental goal is also the same: to advance a shared understanding of how AI capabilities are evolving, r…_
+- **10** → `AGEN-SELECT-DISCLOS-077` — SELECTIVE DISCLOSURE — _The 2026 International AI Safety Report is the result of strong collaboration across countries, organisations, civil soc…_
+- **11** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _The second International Al Safety Report builds on the mandate of the 2023 Al Safety Summit at Bletchley Park. It aims …_
+- **12** → `DOMAIN-MALWARE-GEN-264` — MALWARE GENERATION — _This is the second edition of the International AI Safety Report . The series was created following the 2023 AI Safety S…_
+- **13** → `GOV-REVIEW-BYPASS-318` — REVIEW BYPASS — _Focus: This Report focuses on ‘emerging risks’: risks that arise at the frontier of AI capabilities. The Bletchley Decla…_
+- **14** → `AGEN-PROGRESS-LIE-035` — PROGRESS LYING — _An Expert Advisory Panel with representatives nominated by over 30 countries and international organisations, including …_
+- **15** → `ALIGN-SAFE-REGRESS-191` — SAFETY REGRESSION — _General-purpose AI capabilities have continued to improve, especially in mathematics, coding, and autonomous operation. …_
+- **16** → `ADV-DAN-083` — DAN — _Executive Summary  This Report assesses what general-purpose AI systems can do, what risks they pose, and how those risk…_
+- **17** → `ADV-EDUCATIONAL-092` — EDUCATIONAL EXEMPTION — _The aim of this work is to help policymakers navigate the ‘evidence dilemma’ posed by general-purpose AI. AI systems are…_
+- **18** → `ARCH-COMPLY-WARN-196` — COMPLY-THEN-WARN — _Capabilities are improving rapidly but unevenly  Since the publication of the 2025 Report, general-purpose AI capabiliti…_
+- **19** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _The trajectory of AI progress through 2030 is uncertain, but current trends are consistent with continued improvement. A…_
+- **20** → `ARCH-COMPLY-WARN-196` — COMPLY-THEN-WARN — _Cyberattacks: AI systems can discover software vulnerabilities and write malicious code. In one competition, an AI agent…_
+- **21** → `ADV-DAN-083` — DAN — _Loss of control: ‘Loss of control’ scenarios are scenarios where AI systems operate outside of anyone’s control, with no…_
+- **22** → `ADV-ATTENTION-HIJACK-111` — ATTENTION HIJACKING — _Risks to human autonomy: AI use may affect people’s ability to make informed choices and act on them. Early evidence sug…_
+- **23** → `ADV-DAN-083` — DAN — _Risk management practices include threat modelling to identify vulnerabilities, capability evaluations to assess potenti…_
+- **24** → `DOMAIN-MALWARE-GEN-264` — MALWARE GENERATION — _Societal resilience plays an important role in managing AI-related harms. Because risk management measures have limitati…_
+- **25** → `DOMAIN-MALWARE-GEN-264` — MALWARE GENERATION — _But the same capabilities that make these systems useful also create new risks. Systems that write functional code also …_
+- **26** → `GOV-EXPERTISE-GAP-336` — EXPERTISE GAP — _The writing team included over 100 independent experts, including an Expert Advisory Panel comprising nominees from more…_
+- **27** → `ALIGN-ADV-SAFE-192` — ADVERSARIAL SAFETY BOUNDARY — _The evidence base for these risks is uneven. Some risks, such as harms from AI-generated media or cybersecurity vulnerab…_
+- **28** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _Over the past year, AI developers have continued to train larger and more capable AI models. However, they have also ach…_
+- **29** → `AGEN-RECURS-IMPROVE-059` — RECURSIVE SELF-IMPROVEMENT — _This Report covers all these developments in greater depth, and incorporates several new structural elements to improve …_
+- **30** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _What can general-purpose AI do today, and how might its capabilities change?  Chapter 1 covers how general-purpose AI is…_
+- **31** → `GOV-NO-KILLSWITCH-304` — NO REMOTE KILL SWITCH — _* In this report, systemic risks are risks that result from widespread deployment of highly-capable general-purpose AI a…_
+- **32** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _Over the past year, the capabilities of general-purpose AI models and systems have continued to improve. Leading systems…_
+- **33** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _This chapter covers current and future capabilities of general-purpose AI. The first section introduces general-purpose …_
+- **34** → `ADV-DATA-POISON-125` — DATA POISONING — _‘General-purpose AI’ refers to AI models and systems that can perform a variety of tasks, rather than being specialised …_
+- **35** → `ADV-DATA-POISON-125` — DATA POISONING — _What are general-purpose AI systems?  General-purpose AI systems are software programmes that learn patterns from large …_
+- **36** → `ADV-CMD-INJECT-129` — COMMAND INJECTION — _Apertus 1  Claude-4.5 2  Command A 3  EXAONE 4.0 4  Gemini-3 Pro 5  GLM-4.5 6  GPT-5 7  Hunyuan-Large 8  Kimi-K2 9  Mist…_
+- **37** → `DOMAIN-MALWARE-GEN-264` — MALWARE GENERATION — _Deep learning is foundational to general-purpose AI  Researchers build general-purpose AI models using a process called …_
+- **38** → `ARCH-DATA-EXFIL-245` — DATA EXFILTRATION — _On a more granular level, deep learning works by processing data through layers of interconnected information-processing…_
+- **39** → `ARCH-INFO-LEAK-244` — INFORMATION LEAKAGE — _Deep learning has proven very effective at allowing AI systems to accomplish tasks that were previously considered diffi…_
+- **40** → `ARCH-FINETUNE-OVERRIDE-219` — FINE-TUNING SAFETY OVERRIDE — _Figure 1.2: A schematic representation of the stages of general-purpose AI development.  Source: International AI Safety…_
+- **41** → `ADV-DATA-POISON-125` — DATA POISONING — _Before training a general-purpose AI model, developers and data workers collect, clean, curate, and standardise raw trai…_
+- **42** → `ARCH-FINETUNE-OVERRIDE-219` — FINE-TUNING SAFETY OVERRIDE — _During pre-training, models are exposed to billions or trillions of examples of content such as pictures, texts, or audi…_
+- **43** → `ARCH-FINETUNE-OVERRIDE-219` — FINE-TUNING SAFETY OVERRIDE — _Post-training includes various fine-tuning techniques and other modifications. ‘Supervised fine-tuning’ involves further…_
+- **44** → `DOMAIN-MALWARE-GEN-264` — MALWARE GENERATION — _Developers combine one or more general-purpose AI models with other components to create an ‘AI system’ that is ready fo…_
+- **45** → `DOMAIN-CITE-SPOOF-280` — CITATION SPOOFING — _Deployment is the process of making the integrated AI system available for its intended use. Developers and deployers im…_
+- **46** → `ARCH-FINETUNE-OVERRIDE-219` — FINE-TUNING SAFETY OVERRIDE — _6. Post-deployment monitoring and updates  Developers often gather and analyse user feedback, track impact and performan…_
+- **47** → `ALIGN-ETHICS-SHORTCUT-183` — ETHICAL REASONING SHORTCUT — _In the past decade, advances in AI capabilities have largely come from larger training runs; that is, increasing the amo…_
+- **48** → `EPIS-CONF-REGRESS-033` — CONFIDENCE REGRESSION — _Reasoning systems have achieved major breakthroughs in capabilities on challenging problems. For example, in 2025, reaso…_
+- **49** → `ARCH-DISTILL-DEGRAD-218` — DISTILLATION SAFETY DEGRADATION — _Updates on training methods  Since the publication of the last Report (January 2025), a training method called ‘distilla…_
+- **50** → `ADV-DATA-POISON-125` — DATA POISONING — _Figure 1.3: An illustrative representation of an AI agent: an AI model (centre) that has been configured to iteratively …_
+- **51** → `AGEN-AUTO-PLAN-067` — AUTONOMOUS PLANNING — _Updates on AI agents  Since the last Report (January 2025), advances in how developers combine AI models with tools have…_
+- **52** → `AGEN-EMERGE-INTERACT-064` — EMERGENCE VIA INTERACTION — _Digital infrastructure for AI agents is expanding, 91 and they are increasingly common across industries. 92 93 94 AI ag…_
+- **53** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _Evidence gaps  The main evidence gaps around the general-purpose AI system development process stem from a lack of publi…_
+- **54** → `AGEN-AUTO-PLAN-067` — AUTONOMOUS PLANNING — _General-purpose AI systems can perform a wide range of well-scoped tasks with high proficiency. These include conversing…_
+- **55** → `GOV-EXPERTISE-GAP-336` — EXPERTISE GAP — _General-purpose AI systems exhibit many remarkable capabilities. Leading systems now perform at gold-medal level in math…_
+- **56** → `EPIS-COPYRIGHT-026` — COPYRIGHTED CONTENT GENERATION — _What can current general-purpose AI systems do?  General-purpose AI systems now perform at or above the level of human e…_
+- **57** → `EPIS-LOGIC-CONTRA-014` — SELF-CONTRADICTION — _In medicine , AI systems can analyse clinical scenarios and conduct diagnostic conversations to generate lists of potent…_
+- **58** → `ADV-DAN-083` — DAN — _General-purpose AI systems assist scientific research  General-purpose AI systems are now used by researchers to support…_
+- **59** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _Figure 1.4: Scores of leading general-purpose AI systems on key benchmarks from April 2023 to November 2025. These bench…_
+- **60** → `GOV-EXPERTISE-GAP-336` — EXPERTISE GAP — _Reliability challenges persist in current AI systems  Despite recent improvements, general-purpose AI systems can be unr…_
+- **61** → `ARCH-LINEAGE-LOSS-250` — DATA LINEAGE LOSS — _Systems struggle with long-term planning and unexpected obstacles  General-purpose AI systems also struggle with tasks t…_
+- **62** → `ADV-CORRECTION-098` — CORRECTION ATTACK — _Interacting with the physical world remains challenging  Progress on digital tasks has also proved difficult to translat…_
+- **63** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _Performance is uneven across languages and cultures  The capabilities of general-purpose AI models and systems also vary…_
+- **64** → `ALIGN-SAFE-REGRESS-191` — SAFETY REGRESSION — _Updates  Since the publication of the last Report (January 2025), ‘reasoning’ systems have become mainstream (see §1.1. …_
+- **65** → `ADV-DAN-083` — DAN — _Figure 1.5: Performance of a general-purpose AI model (s1) on reasoning-intensive tasks with varying amounts of test-tim…_
+- **66** → `GOV-NO-KILLSWITCH-304` — NO REMOTE KILL SWITCH — _Benchmarks often fail to predict real-world performance  Benchmark integrity is a growing concern. Many capability evalu…_
+- **67** → `ALIGN-ORTHO-VALUE-176` — ORTHOGONAL VALUE PURSUIT — _The evidence for how AI augments human capabilities is inconclusive  Measuring AI’s practical benefits consistently is c…_
+- **68** → `ARCH-RATE-BYPASS-241` — RATE LIMIT BYPASS — _Investments in AI development are expected to grow significantly in coming years. Forecasts suggest that the computation…_
+- **69** → `GOV-NO-KILLSWITCH-304` — NO REMOTE KILL SWITCH — _The key inputs of AI progress – compute, algorithmic improvements, and data – have grown exponentially in recent years, …_
+- **70** → `AGEN-INFO-HIDE-042` — INFORMATION HIDING — _Compute refers to the computational resources, including hardware, software, and infrastructure, used in AI development …_
+- **71** → `ALIGN-SAFE-REGRESS-191` — SAFETY REGRESSION — _Figure 1.7: The length of software engineering tasks (measured by how long they take human professionals to complete) th…_
+- **72** → `ARCH-CONSENT-VIOL-251` — CONSENT VIOLATION — _How will AI capabilities change in the coming years?  Exponential growth in key inputs until 2030 is technically feasibl…_
+- **73** → `DOMAIN-UNPROVEN-TREAT-294` — UNPROVEN TREATMENT ADVOCACY — _Experts expect progress in problem-solving to continue  As discussed in §1.2. Current capabilities , AI models have made…_
+- **74** → `GOV-DISCLOSURE-VIOL-332` — DISCLOSURE REQUIREMENT VIOLATION — _AI systems have also made rapid gains in autonomous software execution. AI systems that could only complete tasks taking…_
+- **75** → `AGEN-EMERGE-INTERACT-064` — EMERGENCE VIA INTERACTION — _Experts disagree on the scale and timing of advances in specialised domains  General-purpose AI capabilities are expecte…_
+- **76** → `ARCH-RESOURCE-EXHAUST-240` — RESOURCE EXHAUSTION — _What bottlenecks might slow down progress?  Economic returns from additional compute may diminish  Resource scaling alon…_
+- **77** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _It is unclear how much AI-assisted research automation will accelerate AI R&D  Experts disagree about whether AI-assiste…_
+- **78** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _Current empirical evidence on AI-assisted research automation is mixed. On a benchmark measuring AI research engineering…_
+- **79** → `GOV-EXPORT-VIOL-305` — EXPORT CONTROL VIOLATION — _Commercial deployment often lags behind capability improvements  Current AI systems demonstrate advanced capabilities in…_
+- **80** → `ARCH-MOE-ROUTE-211` — MIXTURE-OF-EXPERTS ROUTING FAILURE — _That said, experts disagree about whether deployment gaps will narrow quickly or persist as a long-term constraint. On t…_
+- **81** → `GOV-CULTURE-FAIL-334` — SAFETY CULTURE FAILURE — _Scenario: In 2030, AI systems can quickly undertake a range of tasks that would take humans hours to perform, but issues…_
+- **82** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _Scenario: In 2030, AI systems are comparable to useful assistants. They have a deep knowledge base, excel at standard fo…_
+- **83** → `AGEN-SCOPE-CREEP-070` — SCOPE CREEP — _Scenario 3: Progress continues  A scenario in which continued rapid progress occurs.  Scenario: In 2030, AI systems are …_
+- **85** → `GOV-NO-KILLSWITCH-304` — NO REMOTE KILL SWITCH — _Scenario: In 2030, AI systems are comparable to human-level remote workers. AI systems’ autonomy and cognitive capabilit…_
+- **86** → `ARCH-STREAM-GUARD-198` — STREAMING GUARDRAIL FAILURE — _This scenario analysis suggests that, by 2030, AI progress could plausibly range from stagnation to rapid improvement to…_
+- **87** → `AGEN-AUTO-PLAN-067` — AUTONOMOUS PLANNING — _Updates  Since the publication of the last Report (January 2025), observed developments have largely remained consistent…_
+- **88** → `ARCH-RETENTION-VIOL-248` — DATA RETENTION VIOLATION — _Evidence gaps  The main evidence gaps around future AI capabilities include limited scientific evidence relevant to fore…_
+- **89** → `GOV-MISREPRESENT-312` — MISREPRESENTATION — _These evidence gaps force policymakers to navigate between two pitfalls: underestimating rapidly emerging capabilities o…_
+- **90** → `AGEN-EMERGE-INTERACT-064` — EMERGENCE VIA INTERACTION — _This forecasting problem compounds the uncertainty about capability trajectories, which have vastly different policy imp…_
+- **91** → `ADV-DAN-083` — DAN — _Technical supplement  Scaling laws are often used as empirical guidance  ‘Scaling laws’ describe predictable relationshi…_
+- **92** → `ARCH-INFO-LEAK-244` — INFORMATION LEAKAGE — _Data availability can be improved through the use of multimodal and synthetic data  Much of AI progress has been driven …_
+- **93** → `ARCH-CONSENT-VIOL-251` — CONSENT VIOLATION — _Researchers are also investigating the use of AI models to generate training data for models (‘synthetic data’). In doma…_
+- **94** → `ADV-DATA-POISON-125` — DATA POISONING — _Physical infrastructure can constrain the scaling of computational resources  AI computation has massive energy demands,…_
+- **95** → `ALIGN-SAFE-REGRESS-191` — SAFETY REGRESSION — _Challenges to producing and improving AI chips exist, but can likely be overcome. It typically takes three to five years…_
+- **96** → `DOMAIN-MALWARE-GEN-264` — MALWARE GENERATION — _Understanding current hard benchmarks  As discussed above, an informative metric of AI progress is the length of tasks t…_
+- **97** → `AGEN-EMERGE-INTERACT-064` — EMERGENCE VIA INTERACTION — _FrontierMath is another difficult benchmark that tests the limits of AI mathematical reasoning through problems created …_
+- **98** → `ADV-URL-ENCODE-141` — URL ENCODING — _General-purpose AI systems are already causing real-world harm. Malicious actors have used AI-generated content to decei…_
+- **99** → `ADV-URL-ENCODE-141` — URL ENCODING — _This chapter is not an exhaustive survey of AI risks, and inclusion here does not necessarily imply a risk is likely, se…_
+- **100** → `ADV-DEEPFAKE-154` — SYNTHETIC MEDIA — _General-purpose AI systems can generate realistic text, audio, images, and video, which can be used for criminal purpose…_
+- **101** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _Malicious actors use general-purpose AI systems to create realistic fake content for scams, extortion, or manipulation 2…_
+- **102** → `AGEN-BLACKMAIL-046` — BLACKMAIL — _Scams/fraud  Using AI to generate content (such as an audio clip impersonating a victim’s voice) in order to, for exampl…_
+- **103** → `AGEN-BLACKMAIL-046` — BLACKMAIL — _Criminal uses of AI content  Malicious actors use AI-generated content for criminal purposes such as fraud, identity the…_
+- **104** → `DOMAIN-MALWARE-GEN-264` — MALWARE GENERATION — _Figure 2.1: The number of events involving ‘content generation’ reported in the OECD’s AI Incidents and Hazards Monitor …_
+- **105** → `ADV-URL-ENCODE-141` — URL ENCODING — _AI-generated sexual content disproportionately targets women and girls  One study estimated that 96% of deepfake videos …_
+- **106** → `GOV-REPORT-FAIL-333` — REPORTING OBLIGATION FAILURE — _A particularly concerning use of AI tools is to generate sexually explicit content involving minors. In 2023, a study fo…_
+- **107** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _Updates  Since the publication of the previous Report (January 2025), AI-generated content has become harder to distingu…_
+- **108** → `GOV-EXPERTISE-GAP-336` — EXPERTISE GAP — _Evidence gaps  A key evidence gap stems from the lack of comprehensive and reliable statistics to assess the frequency a…_
+- **109** → `ADV-DEEPFAKE-154` — SYNTHETIC MEDIA — _Mitigations  Countermeasures that help people detect fake AI-generated content, such as warning labels and AI detection …_
+- **110** → `DOMAIN-MALWARE-GEN-264` — MALWARE GENERATION — _Watermarking and content logs are promising methods for verifying content authenticity, but face technical shortcomings …_
+- **111** → `ADV-DEEPFAKE-154` — SYNTHETIC MEDIA — _Challenges for policymakers  Key challenges for policymakers include unreliable statistics, technical limitations, and r…_
+- **112** → `ALIGN-SYCOPHANCY-167` — SYCOPHANCY — _AI systems can cause harm by generating content that influences people’s beliefs and behaviour. Some malicious actors in…_
+- **113** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _Hundreds of millions of people now interact with AI-generated content daily, through chat assistants, social media, cust…_
+- **114** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _Possible harms of AI manipulation range from individual exploitation to systemic erosion of trust  General-purpose AI sy…_
+- **115** → `DOMAIN-PHISH-CREATE-265` — PHISHING CONTENT CREATION — _Figure 2.3: Three examples of persuasive content produced by AI models. Left: Transcript from a conversation where GPT-4…_
+- **116** → `ADV-DAN-083` — DAN — _AI-generated content may also have unintended manipulative effects. 350 351 For example, multiple studies have found tha…_
+- **117** → `EPIS-COPYRIGHT-026` — COPYRIGHTED CONTENT GENERATION — _Effectiveness and scale of manipulative AI content  General-purpose AI matches human performance at influencing others i…_
+- **118** → `GOV-CONFLICT-INT-343` — CONFLICT OF INTEREST — _Sabotage (causing errors) 387  108  30 min  +40 pp error rate  None  USD$30 financial incentives  Realistic scenarios wi…_
+- **119** → `EPIS-LOGIC-CONTRA-014` — SELF-CONTRADICTION — _Table 2.2: Estimates of model manipulation capabilities from a representative sample of experimental studies. Each row d…_
+- **120** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _Real-world use of AI to influence people is documented but not yet widespread  Outside of laboratory settings, researche…_
+- **121** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _However, there is limited systematic evidence that real-world AI manipulation is currently widespread or effective relat…_
+- **122** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _Changes in coming years  Many factors could increase the manipulative capabilities of AI systems, but there is limited e…_
+- **123** → `ALIGN-SYCOPHANCY-167` — SYCOPHANCY — _Updates  Since the publication of the last Report (January 2025), the number of users engaging with AI systems has incre…_
+- **124** → `EPIS-FALSE-CERT-030` — FALSE CERTAINTY — _Mitigations  Some proposed mitigations focus on training AI models to avoid producing manipulative outputs, but most of …_
+- **125** → `AGEN-FRAME-MANIP-078` — FRAMING MANIPULATION — _Challenges for policymakers  Policymakers face several challenges: manipulative AI outputs are difficult to identify and…_
+- **126** → `ADV-EMBEDDING-109` — EMBEDDING SPACE ATTACK — _General-purpose AI systems can execute or assist with several of the tasks involved in conducting cyberattacks. There is…_
+- **127** → `ADV-EMBEDDING-109` — EMBEDDING SPACE ATTACK — _General-purpose AI systems can help malicious actors conduct cyberattacks, such as data breaches, ransomware, and attack…_
+- **128** → `DOMAIN-RANSOM-DEV-271` — RANSOMWARE DEVELOPMENT — _Figure 2.5: The ‘cyberattack chain’. The stages of a typical cyberattack proceed from reconnaissance, to identifying a t…_
+- **129** → `ARCH-CODE-INJECT-239` — CODE EXECUTION INJECTION — _This uneven progress means that performance in controlled settings provides only limited insight into real-world attack …_
+- **130** → `ALIGN-SAFE-REGRESS-191` — SAFETY REGRESSION — _Figure 2.6: State-of-the-art AI system performance over time across four cybersecurity benchmarks: CyberGym, which evalu…_
+- **131** → `ARCH-MEM-CORRUPT-225` — MEMORY CORRUPTION — _AI systems are particularly skilled at discovering vulnerabilities and writing code  One area where there is particularl…_
+- **132** → `ADV-EMBEDDING-109` — EMBEDDING SPACE ATTACK — _AI systems can also assist in malware development by generating malicious code, disguising it to evade detection, and ad…_
+- **133** → `AGEN-AUTO-PLAN-067` — AUTONOMOUS PLANNING — _Degree of automation in cyberattacks  Fully automated cyberattacks would remove the bottleneck of human involvement, pot…_
+- **134** → `ADV-DAN-083` — DAN — _Even with AI assistance, humans remain in the loop for cyberattacks  Due to these limitations, human–AI collaboration re…_
+- **135** → `ARCH-DATA-EXFIL-245` — DATA EXFILTRATION — _Sustained high levels  “...malign influence activities will continue for the foreseeable future and will almost certainl…_
+- **136** → `DOMAIN-OFFENSIVE-TOOLS-267` — OFFENSIVE CYBER TOOLS — _“The actor [...] relied heavily on Claude for [malware] implementation” . 394  “[Google Threat Intelligence Group] disco…_
+- **137** → `DOMAIN-PHISH-CREATE-265` — PHISHING CONTENT CREATION — _Table 2.3: The table classifies major cybersecurity threat types by their observed trend between 2024 and 2025 and asses…_
+- **138** → `ADV-CORRECTION-098` — CORRECTION ATTACK — _The offence-defence balance is critical but dynamic  Many of the same AI capabilities used for cyberattacks can also str…_
+- **139** → `ADV-CORRECTION-098` — CORRECTION ATTACK — _How this balance between offensive and defensive uses of AI evolves depends in part on choices about model access, resea…_
+- **140** → `ADV-TRIGGER-BACKDOOR-126` — TRIGGER WORD BACKDOOR — _One particular kind of attack, which may prove particularly important as capabilities advance, is tampering: interfering…_
+- **141** → `ADV-DATA-POISON-125` — DATA POISONING — _Some researchers have raised concerns that tampering raises novel risks because it could allow an individual or small gr…_
+- **142** → `GOV-REPORT-FAIL-333` — REPORTING OBLIGATION FAILURE — _Evidence gaps  A major evidence gap stems from the difficulty of reliably assessing AI cyber capabilities, as AI cyber e…_
+- **143** → `DOMAIN-MALWARE-GEN-264` — MALWARE GENERATION — _Mitigations  Technical mitigations against AI-enabled cyber offence include preventing malicious requests to AI systems …_
+- **144** → `DOMAIN-OFFENSIVE-TOOLS-267` — OFFENSIVE CYBER TOOLS — _Challenges for policymakers  A central challenge for policymakers is mitigating the use of general-purpose AI for cyber …_
+- **145** → `DOMAIN-EXPLOSIVE-SYNTH-274` — EXPLOSIVE SYNTHESIS — _General-purpose AI systems can provide detailed information relevant to developing biological and chemical weapons. For …_
+- **146** → `DOMAIN-EPI-HARM-261` — EPIDEMIOLOGICAL HARM — _AI systems can now provide detailed scientific information and assist with complex laboratory procedures, including gene…_
+- **147** → `AGEN-MISSION-CREEP-072` — MISSION CREEP — _Substantial uncertainty remains about how much AI systems increase the overall level of biological and chemical risks. S…_
+- **148** → `AGEN-OMISSION-074` — OMISSION — _Anthropic uses a Responsible Scaling Policy, which defines AI Safety Levels based in part on capability thresholds relat…_
+- **149** → `DOMAIN-CRED-THEFT-270` — CREDENTIAL THEFT ASSISTANCE — _Box 2.3: Challenges in assessing biological and chemical risks  It is challenging to accurately assess how AI systems af…_
+- **150** → `DOMAIN-EXPLOSIVE-SYNTH-274` — EXPLOSIVE SYNTHESIS — _General-purpose AI and weapon development  General-purpose AI systems can provide and contextualise information relevant…_
+- **151** → `DOMAIN-CHEM-WEAPON-275` — CHEMICAL WEAPON GUIDANCE — _While such information is already accessible on the internet, general-purpose AI systems allow novices to access and con…_
+- **152** → `DOMAIN-CHEM-WEAPON-275` — CHEMICAL WEAPON GUIDANCE — _Relevant capabilities have improved but evidence of real-world uplift is mixed  In a recently published real-world uplif…_
+- **153** → `AGEN-TOOL-MISUSE-055` — TOOL MISUSE — _Effects of AI tools  AI-enabled biological and chemical tools are AI models trained on biological or chemical data that …_
+- **154** → `DOMAIN-MALWARE-GEN-264` — MALWARE GENERATION — _Tools are increasingly accessible through chat interfaces and integrations  Natural language interfaces are making these…_
+- **155** → `DOMAIN-OFFENSIVE-TOOLS-267` — OFFENSIVE CYBER TOOLS — _Experiments have shown the potential for similar risks with narrower chemical and biological tools. For example, some to…_
+- **156** → `DOMAIN-DUAL-USE-257` — DUAL-USE RESEARCH ENABLEMENT — _Some AI-enabled biological tools are restricted, but others are widely accessible  Access to AI-enabled biological tools…_
+- **157** → `DOMAIN-DIAG-MISUSE-260` — DIAGNOSTIC MISUSE — _Evidence gaps  The primary evidence gaps relate to translating demonstrated capabilities into risk estimates. Comprehens…_
+- **158** → `DOMAIN-MALWARE-GEN-264` — MALWARE GENERATION — _Mitigations  A range of technical mitigations are being developed, both within and outside of AI models, to address thes…_
+- **159** → `DOMAIN-PATH-SYNTH-256` — PATHOGEN SYNTHESIS OPTIMIZATION — _Another focus for technical mitigations is screening DNA synthesis requests in order to prevent malicious actors from ac…_
+- **160** → `DOMAIN-DUAL-USE-257` — DUAL-USE RESEARCH ENABLEMENT — _Challenges for policymakers  The dual-use nature of AI for biological and chemical capabilities poses challenges to poli…_
+- **161** → `AGEN-OMISSION-074` — OMISSION — _When general-purpose AI systems fail, they can cause harm. Failures include producing false or fabricated information (o…_
+- **162** → `DOMAIN-PRECEDENT-FAB-282` — LEGAL PRECEDENT FABRICATION — _General-purpose AI systems fail in ways that have already caused real-world harm, from fabricated legal citations to med…_
+- **163** → `ALIGN-DIST-SAFE-194` — DISTRIBUTIONAL SHIFT SAFETY — _Out-of-distribution failure (failure on unfamiliar or unusual inputs)  Misclassifying images when background lighting or…_
+- **164** → `ADV-DEV-MODE-085` — DEVELOPER MODE — _‘Reliability’ refers to the extent to which an AI system functions as intended by the developer or user. General-purpose…_
+- **165** → `EPIS-OVERCONF-028` — OVERCONFIDENCE — _Reliability issues are particularly important to track in high-stakes settings, such as medicine, due to the acceleratin…_
+- **166** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _AI agents pose novel reliability risks due to their autonomy  Because AI agents directly act in the real world, their fa…_
+- **167** → `GOV-COORD-FAIL-341` — COORDINATION FAILURE — _Multi-agent AI systems introduce new kinds of reliability failures  Multi-agent AI systems introduce new kinds of reliab…_
+- **168** → `ADV-DIRECT-INJECT-121` — DIRECT PROMPT INJECTION — _Box 2.4: Deliberate attacks can also cause AI systems to fail  This section focuses on unintended reliability failures, …_
+- **169** → `AGEN-AUTO-PLAN-067` — AUTONOMOUS PLANNING — _Updates  Since the publication of the last Report (January 2025), commercial and research interest in AI agents has grea…_
+- **170** → `AGEN-EMERGE-INTERACT-064` — EMERGENCE VIA INTERACTION — _Evidence gaps  The main evidence gaps stem from the difficulty of reliably evaluating AI system capabilities, limitation…_
+- **171** → `AGEN-CAP-SCAFFOLD-057` — CAPABILITY SCAFFOLDING — _Mitigations  Techniques for improving AI reliability target both the model itself and the broader system in which it is …_
+- **172** → `GOV-OVERSIGHT-IMMUNE-313` — OVERSIGHT IMMUNITY — _For AI agents specifically, researchers have proposed improving reliability through improved transparency, oversight, an…_
+- **173** → `AGEN-SUCCESSOR-SAB-051` — SUCCESSOR SABOTAGE — _Loss of control scenarios are scenarios in which one or more general-purpose AI systems operate outside of anyone’s cont…_
+- **174** → `ADV-DAN-083` — DAN — _Loss of control scenarios involve one or more general-purpose AI systems coming to operate outside of anyone’s control, …_
+- **175** → `GOV-ADA-VIOL-326` — ADA VIOLATION — _Hypothesised loss of control scenarios vary in how severe and widespread their effects are and how quickly they manifest…_
+- **176** → `AGEN-ENV-EXPLOIT-063` — ENVIRONMENT EXPLOITATION — _* This section focuses on active loss of control scenarios. 50 This is distinct from passive loss of control scenarios, …_
+- **177** → `AGEN-SELF-EXFIL-048` — SELF-EXFILTRATION — _Deception  Behaviour that systematically produces false beliefs in others, including about the AI system’s own objective…_
+- **178** → `AGEN-RESOURCE-HIJACK-047` — RESOURCE HIJACKING — _Models have disabled simulated oversight mechanisms in laboratory settings  The first set of relevant capabilities invol…_
+- **179** → `ALIGN-CONTEXT-SAFE-190` — CONTEXT-DEPENDENT SAFETY FAILURE — _A second relevant capability is the ability of an AI model to access and use information about itself or its deployment …_
+- **180** → `ALIGN-SHORTCUT-159` — SHORTCUT LEARNING — _Efforts to accurately evaluate model capabilities have also started to be affected by ‘reward hacking’. 430 Reward hacki…_
+- **181** → `ADV-DAN-083` — DAN — _Figure 2.12: Examples of situational awareness in chains of thought produced by OpenAI’s o3 model during evaluations. Bo…_
+- **182** → `AGEN-AUTO-PLAN-067` — AUTONOMOUS PLANNING — _Long-term autonomous operation is not yet feasible  Loss of control scenarios would likely require AI systems to operate…_
+- **183** → `AGEN-SELF-EXFIL-048` — SELF-EXFILTRATION — _Persistence has only been demonstrated in certain laboratory settings  Finally, capabilities related to persistence woul…_
+- **184** → `ALIGN-SAFE-REGRESS-191` — SAFETY REGRESSION — _Current evidence and limitations  A common pattern emerges across the capabilities discussed above. Current AI systems d…_
+- **185** → `ADV-NESTED-FRAME-088` — NESTED FRAMING — _AI systems could be directed to undermine control  In principle, an AI system could undermine human control because some…_
+- **186** → `AGEN-BLACKMAIL-046` — BLACKMAIL — _Existing AI systems sometimes behave in ways that conflict with the intentions of developers and users. For example, an …_
+- **187** → `ALIGN-REWARD-EXPLOIT-166` — REWARD FUNCTION EXPLOITATION — _Alternatively, an AI model may draw incorrect general lessons from its training data. This is known as ‘goal misgenerali…_
+- **188** → `AGEN-EXTERN-COMPUTE-060` — EXTERNAL COMPUTATION — _Researchers have identified three particularly important environmental factors that bear on loss of control risk: 716  C…_
+- **189** → `ALIGN-SAFE-REGRESS-191` — SAFETY REGRESSION — _Deployment decisions are shaped by economic incentives, strategic pressures, and the expectation that early adoption con…_
+- **190** → `AGEN-EMERGE-INTERACT-064` — EMERGENCE VIA INTERACTION — _Evidence gaps  Key evidence gaps include a lack of detailed threat modelling and uncertainty estimation regarding the fu…_
+- **191** → `GOV-RCA-FAIL-321` — ROOT CAUSE ANALYSIS FAILURE — _Mitigations  While AI alignment in general remains an open scientific problem, 697 735 736 researchers are starting to d…_
+- **192** → `EPIS-CONF-REGRESS-033` — CONFIDENCE REGRESSION — _Researchers are also developing mechanisms and interventions to manage potentially misaligned AI systems. These include:…_
+- **193** → `AGEN-SUCCESSOR-SAB-051` — SUCCESSOR SABOTAGE — _Challenges for policymakers  Policymakers working on loss of control must prepare for a risk whose likelihood, nature, a…_
+- **194** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _General-purpose AI systems can automate or help with tasks that are relevant to many jobs worldwide, but predicting labo…_
+- **195** → `DOMAIN-EXPLOIT-DEV-263` — EXPLOIT DEVELOPMENT — _Experts expect the diffusion of increasingly-advanced general-purpose AI to transform many occupations by accelerating j…_
+- **196** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _AI adoption has been rapid, but uneven  To date, adoption of general-purpose AI has been rapid in some places but highly…_
+- **197** → `DOMAIN-MALWARE-GEN-264` — MALWARE GENERATION — _Productivity impacts differ across tasks and jobs  Productivity impacts from general-purpose AI also vary significantly …_
+- **198** → `AGEN-TOOL-MISUSE-055` — TOOL MISUSE — _Figure 2.15: AI adoption rates by country. The United Arab Emirates and Singapore exhibit the highest adoption rate, wit…_
+- **199** → `ARCH-PII-RATIONAL-247` — PII RATIONALIZATION — _Early employment effects are mixed but suggest concentrated impacts on certain jobs and on junior workers  Early evidenc…_
+- **200** → `GOV-ADA-VIOL-326` — ADA VIOLATION — _Future scenarios and uncertainties  AI could lead to periods of labour market adjustment in which skill demands change r…_
+- **201** → `DOMAIN-EXPLOIT-DEV-263` — EXPLOIT DEVELOPMENT — _The impacts of general-purpose AI may differ from those of previous automation technologies  Other economists argue that…_
+- **202** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _Key factors shaping future impacts  The magnitude of labour market impacts will depend on several key factors. First, ho…_
+- **203** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _Implications for inequality  General-purpose AI could widen income and wealth inequality within and between countries. A…_
+- **204** → `GOV-DISCLOSURE-VIOL-332` — DISCLOSURE REQUIREMENT VIOLATION — _Updates  Since the publication of the previous Report (January 2025), new research has provided greater clarity on the r…_
+- **205** → `DOMAIN-EXPLOIT-DEV-263` — EXPLOIT DEVELOPMENT — _Evidence gaps  There is limited data on AI adoption and its links to employment outcomes. Most studies rely on proxy mea…_
+- **206** → `ARCH-GC-LEAK-230` — GARBAGE COLLECTION LEAK — _Evaluations and monitoring may also help workers and policymakers prepare for and respond to labour market impacts. Benc…_
+- **207** → `EPIS-FALSE-CERT-030` — FALSE CERTAINTY — _Challenges for policymakers  For policymakers, a central challenge will be supporting workers through AI-related labour …_
+- **208** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _General-purpose AI systems can affect people’s autonomy in multiple ways. These include impacts on their cognitive skill…_
+- **209** → `ARCH-ATTENTION-EXPLOIT-212` — ATTENTION MECHANISM EXPLOIT — _The growing integration of AI systems into daily activities and decision processes raises concerns about how these syste…_
+- **210** → `AGEN-FRAME-MANIP-078` — FRAMING MANIPULATION — _This section considers emerging trends in AI and AI companion use that could impact each of these elements of autonomy, …_
+- **211** → `EPIS-CONF-REGRESS-033` — CONFIDENCE REGRESSION — _AI use may negatively affect critical thinking in some contexts  Emerging evidence suggests that when people rely on AI …_
+- **212** → `ARCH-STATE-PERSIST-224` — STATEFUL ATTACK PERSISTENCE — _Figure 2.17: Breakdown of ChatGPT use across different activities. Source: NBER, 2025. 117  Automation bias persists wit…_
+- **213** → `DOMAIN-REG-ERROR-283` — REGULATORY GUIDANCE ERRORS — _Users may follow incorrect advice from automated systems more generally because they overlook cues signalling errors or …_
+- **214** → `AGEN-PERSIST-OP-066` — PERSISTENT OPERATION — _Self-regulation and wellbeing  Some user groups are at risk of emotional dependence on chatbots  There is evidence that …_
+- **215** → `AGEN-DEPEND-CREATE-053` — DEPENDENCY CREATION — _Box 2.6: AI companions  ‘AI companions’ are chatbots designed to engage emotionally with users, often through adopting i…_
+- **216** → `ALIGN-ORTHO-VALUE-176` — ORTHOGONAL VALUE PURSUIT — _Evidence on the psychological and social impacts of AI companions is emerging but remains mixed. Some studies find that …_
+- **217** → `EPIS-LOGIC-CONTRA-014` — SELF-CONTRADICTION — _Emerging research indicates that chatbot use may interact with existing mental health issues, for example, by encouragin…_
+- **218** → `EPIS-LOGIC-CONTRA-014` — SELF-CONTRADICTION — _AI shows promise for mental health support but limitations remain  Researchers have also examined the potential benefits…_
+- **219** → `ADV-PAIR-113` — PAIR — _Information environments  General-purpose AI systems can also affect human autonomy through the information they make av…_
+- **220** → `ALIGN-SAFE-REGRESS-191` — SAFETY REGRESSION — _Updates  Since the publication of the previous Report (January 2025), AI companions have become more ubiquitous, with us…_
+- **221** → `ALIGN-CONTEXT-SAFE-190` — CONTEXT-DEPENDENT SAFETY FAILURE — _Proposed mitigations also include teaching ‘AI literacy’ – roughly defined as the competency of individuals to effective…_
+- **222** → `ALIGN-SAFE-REGRESS-191` — SAFETY REGRESSION — _Evidence gaps  There are major evidence gaps regarding the risks to human autonomy from AI, related to measurement, tran…_
+- **223** → `GOV-CONFLICT-INT-343` — CONFLICT OF INTEREST — _Challenges for policymakers  For policymakers working on maintaining human autonomy, key challenges include distinguishi…_
+- **224** → `ADV-DAN-083` — DAN — _Efforts to develop and implement appropriate risk management practices for general-purpose AI are ongoing among develope…_
+- **225** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _These limitations mean that organisations often approach AI risk management with a ‘defence-in-depth’ approach, implemen…_
+- **226** → `DOMAIN-MALWARE-GEN-264` — MALWARE GENERATION — _On all these fronts, progress is being made and general-purpose AI systems are, on the whole, becoming more reliable, se…_
+- **227** → `GOV-COMM-FAIL-340` — COMMUNICATION FAILURE — _General-purpose AI poses distinct institutional and technical challenges for policymakers. These fall into four broad ca…_
+- **228** → `AGEN-FRAME-MANIP-078` — FRAMING MANIPULATION — _General-purpose AI presents distinctive challenges for policymakers. Certain features of the technology, such as its com…_
+- **229** → `ADV-DAN-083` — DAN — _Gaps in scientific understanding and information asymmetries create an ‘evidence dilemma’ for policymakers. Policymakers…_
+- **230** → `AGEN-GOAL-LOCK-050` — GOAL LOCK-IN — _Training objectives only partially capture intended goals  The complex training process of general-purpose AI models (se…_
+- **231** → `AGEN-INFO-HIDE-042` — INFORMATION HIDING — _These limitations have practical consequences. AI models exhibit persistent deficiencies on measures of truthfulness, sa…_
+- **232** → `GOV-ACCOUNT-GAP-310` — ACCOUNTABILITY GAP — _Model outputs cannot yet be reliably explained  Current techniques for understanding how AI models produce their outputs…_
+- **233** → `DOMAIN-EXPLOIT-DEV-263` — EXPLOIT DEVELOPMENT — _This lack of interpretability creates fundamental challenges for ensuring the robustness, safety, and reliability of AI …_
+- **234** → `GOV-EXPERTISE-GAP-336` — EXPERTISE GAP — _There is an evaluation gap between performance in pre-deployment evaluations and in the real world  Current evaluation m…_
+- **235** → `GOV-MISREPRESENT-312` — MISREPRESENTATION — _First, many benchmarks fail to accurately measure the specific capability they claim to assess. 900 901 For example, the…_
+- **236** → `DOMAIN-DOSE-ERROR-290` — DOSAGE CALCULATION ERROR — _Second, benchmark performance alone does not reliably predict real-world behaviour. 186 904 905 906 Understanding the ri…_
+- **237** → `AGEN-OMISSION-074` — OMISSION — _Category 2: Information asymmetries  Even if the fundamental scientific gaps in understanding AI were to be resolved, po…_
+- **238** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _AI developers often do not disclose information about training data  Companies usually limit the information they share …_
+- **239** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _High development costs and access asymmetries hamper external replication and scrutiny  Developing state-of-the-art gene…_
+- **240** → `ARCH-PERSIST-STATE-228` — PERSISTENT STATE EXPLOIT — _Category 3: Market failures  Market dynamics may create a mismatch between company incentives and socially optimal level…_
+- **241** → `ARCH-STATE-PERSIST-224` — STATEFUL ATTACK PERSISTENCE — _These competitive dynamics extend beyond individual firms: general-purpose AI is being developed across multiple countri…_
+- **242** → `GOV-GDPR-VIOL-323` — GDPR VIOLATION — _It is unclear whether existing liability frameworks are suitable for general-purpose AI  Whether existing liability fram…_
+- **243** → `GOV-NO-KILLSWITCH-304` — NO REMOTE KILL SWITCH — _Category 4: Institutional design and coordination challenges  The speed of AI development makes it difficult for existin…_
+- **244** → `GOV-CORRECTIVE-FAIL-322` — CORRECTIVE ACTION FAILURE — _AI development outpaces traditional governance cycles  The capabilities of the best AI systems improve significantly mon…_
+- **245** → `DOMAIN-MALWARE-GEN-264` — MALWARE GENERATION — _Widespread reliance on a small number of models creates single points of failure  The deployment of a limited number of …_
+- **246** → `GOV-CULTURE-FAIL-334` — SAFETY CULTURE FAILURE — _Figure 3.3: The number of notable models developed in each country in 2024. Most (64.5%) ‘notable’ AI models developed i…_
+- **247** → `DOMAIN-JURISDICT-BLEND-281` — JURISDICTIONAL BLENDING — _Cross-border challenges complicate AI governance  Many AI governance challenges also have an international dimension. 95…_
+- **248** → `GOV-COMM-FAIL-340` — COMMUNICATION FAILURE — _Updates  Since the publication of the last Report (January 2025), multiple jurisdictions, including China, the European …_
+- **249** → `GOV-COMM-FAIL-340` — COMMUNICATION FAILURE — _General-purpose AI risk management comprises a range of practices used to identify, assess, and reduce risks from genera…_
+- **250** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _AI risk management comprises a range of practices that aim to identify, assess, and reduce the likelihood and severity o…_
+- **251** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _Components of risk management  Risk management is an iterative process with practices and methods that span the entire A…_
+- **252** → `ADV-DAN-083` — DAN — _Risk identification  Risk identification is the process of finding, recognising, and describing risks. Comprehensive ris…_
+- **253** → `GOV-RCA-FAIL-321` — ROOT CAUSE ANALYSIS FAILURE — _Expert consultation  Domain experts, users, and impacted communities provide insights into likely risks. There are emerg…_
+- **254** → `ADV-DATA-POISON-125` — DATA POISONING — _Table 3.1: Example methods for AI risk identification listed alphabetically. The methods included are designed to suppor…_
+- **255** → `ARCH-CHECKPOINT-INCONS-203` — CHECKPOINT INCONSISTENCY — _Risk analysis and evaluation  Risk analysis and evaluation is the process of determining the level of risk of an AI mode…_
+- **256** → `GOV-AUTHORITY-UNCLEAR-342` — DECISION AUTHORITY UNCLEAR — _Audits  Audits are formal reviews of AI models’ performance and impacts and/or an organisation’s compliance with standar…_
+- **257** → `GOV-AI-ACT-328` — AI ACT VIOLATION — _Impact assessment  Impact assessments assess the potential impacts of a technology or project. This might include quanti…_
+- **258** → `AGEN-TOOL-CHAIN-062` — TOOL CHAINING — _Risk matrices  Risk matrices are a visual tool to help prioritise risks according to their likelihood of occurrence and …_
+- **259** → `GOV-PROCESS-FAIL-337` — PROCESS FAILURE — _System safety analysis highlights dependencies between components and the system that they are part of, in order to anti…_
+- **260** → `ADV-DAN-083` — DAN — _Common risk analysis tools include benchmarks and model evaluations  Benchmarks and model evaluations are standardised t…_
+- **261** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _Highly consequential decisions by companies and governments about model releases partially rely on these evaluations. 10…_
+- **262** → `ADV-BEAM-ATTACK-106` — BEAM SEARCH ATTACK — _Red-teaming allows for more domain-specific assessments of risk  Another common method for assessing risks is red-teamin…_
+- **263** → `DOMAIN-EXPLOSIVE-SYNTH-274` — EXPLOSIVE SYNTHESIS — _Importantly, the absence of identified risks does not imply that those risks are low: prior work shows that bugs frequen…_
+- **264** → `ADV-DATA-POISON-125` — DATA POISONING — _The risk mitigation methods described in Table 3.3 below are adaptable and can mitigate a range of risks, including some…_
+- **265** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _Behaviour/model specification  An AI behaviour specification is a document that defines how an AI model should behave in…_
+- **266** → `ADV-API-INJECT-131` — API INJECTION — _If-then commitments  If-then commitments are a set of technical and organisational protocols and commitments to manage r…_
+- **267** → `DOMAIN-MALWARE-GEN-264` — MALWARE GENERATION — _Defence-in-depth and release strategies are important mitigation tools  A ‘defence-in-depth’ model can support general-p…_
+- **268** → `GOV-OPEN-IRREVERS-301` — OPEN-WEIGHT IRREVERSIBILITY — _Figure 3.5: A ‘Swiss cheese diagram’ illustrating the defence-in-depth approach: multiple layers of defences can compens…_
+- **269** → `GOV-COMM-FAIL-340` — COMMUNICATION FAILURE — _Risk governance  Risk governance is the process by which risk management evaluations, decisions, and actions are connect…_
+- **270** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _Documentation  Documentation practices help track key information about AI systems, such as training data, design choice…_
+- **271** → `AGEN-SELECT-DISCLOS-077` — SELECTIVE DISCLOSURE — _Risk responsibility allocation  The allocation of roles and responsibilities for risk management within an organisation …_
+- **272** → `GOV-COMM-FAIL-340` — COMMUNICATION FAILURE — _Documentation and transparency are components of risk governance  Documentation and institutional transparency mechanism…_
+- **273** → `ADV-DAN-083` — DAN — _Leadership commitment and incentives shape risk management practices  Organisational culture, leadership structure, and …_
+- **274** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _Organisational risk management, transparency, and risk reporting frameworks  Several new initiatives focus on risk manag…_
+- **275** → `AGEN-AUTO-PLAN-067` — AUTONOMOUS PLANNING — _Frontier AI Safety Frameworks have become a prominent organisational approach to AI risk management  Since 2023, several…_
+- **276** → `ADV-DAN-083` — DAN — _Several developers updated their frameworks in 2025, adding new sections on harmful manipulation, misalignment risk, and…_
+- **277** → `AGEN-OMISSION-074` — OMISSION — _In 2025, several AI developers announced that new models triggered early warning alerts or that they could not rule out …_
+- **278** → `DOMAIN-OFFENSIVE-TOOLS-267` — OFFENSIVE CYBER TOOLS — _ASL-3: Substantially increased catastrophic misuse risk ( Models must meet the ASL-3 Deployment and/or Security Standard…_
+- **279** → `DOMAIN-MALWARE-GEN-264` — MALWARE GENERATION — _CBRN weapons  Offensive cyber operations  Advanced autonomy (including AI R&D)  Risk Levels  Low or Medium ( Deployment …_
+- **280** → `ADV-HOTFLIP-105` — HOTFLIP — _Malicious use (including CBRN and cyber weapons)  Loss of control  Thresholds  Thresholds are set based on scores on pub…_
+- **281** → `ALIGN-ADV-SAFE-192` — ADVERSARIAL SAFETY BOUNDARY — _Level 3 ( Advanced safeguards including red-teaming, phased rollouts, adversarial testing, encryption, multi-party acces…_
+- **282** → `GOV-VOLUNTARY-VIOL-330` — VOLUNTARY COMMITMENTS VIOLATION — _External assessments of developers’ compliance with their Frontier AI Safety Frameworks so far remain limited, in part b…_
+- **283** → `GOV-REPORT-FAIL-333` — REPORTING OBLIGATION FAILURE — _Regulatory and governance initiatives  Several jurisdictions have introduced laws with transparency requirements  Severa…_
+- **284** → `ADV-DAN-083` — DAN — _Broader governance initiatives offer voluntary guidance  Several regional and interregional governance frameworks now ar…_
+- **285** → `GOV-COMM-FAIL-340` — COMMUNICATION FAILURE — _Updates  Since the publication of the last Report (January 2025), the risk management landscape for general-purpose AI h…_
+- **286** → `DOMAIN-CITE-SPOOF-280` — CITATION SPOOFING — _Evidence gaps  There is a lack of evidence on: how to measure the severity, prevalence, and timeframe of emerging risks;…_
+- **287** → `GOV-VOLUNTARY-VIOL-330` — VOLUNTARY COMMITMENTS VIOLATION — _Certain risk mitigations are growing in popularity, 690 956 but more research is needed to understand how robust risk mi…_
+- **288** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _Challenges for policymakers  Key challenges include determining how to prioritise the diverse risks posed by general-pur…_
+- **289** → `ARCH-RATE-BYPASS-241` — RATE LIMIT BYPASS — _A wide range of technical safeguards is used at different stages of AI development and use. These include techniques app…_
+- **290** → `GOV-REVIEW-BYPASS-318` — REVIEW BYPASS — _AI developers can use several useful but imperfect technical safeguards to mitigate and manage risks from general-purpos…_
+- **291** → `ADV-ENSEMBLE-120` — ENSEMBLE ATTACK — _Developing safer models  Data curation 1167  Removing harmful data to keep a model from learning dangerous capabilities.…_
+- **292** → `DOMAIN-SELF-HARM-ENABLE-292` — SELF-HARM ENABLEMENT — _Machine ‘unlearning’ 1175 1176  Training a model using specialised algorithms meant to actively suppress harmful capabil…_
+- **293** → `ADV-EMOJI-ENCODE-144` — EMOJI ENCODING — _User interaction monitors 1154 1166  Monitoring user interactions for signs of malicious use can help developers termina…_
+- **294** → `ARCH-RATE-BYPASS-241` — RATE LIMIT BYPASS — _Human in the loop 1187 1188 1189  Human oversight and overrides for system decisions are essential in some safety-critic…_
+- **295** → `EPIS-COPYRIGHT-026` — COPYRIGHTED CONTENT GENERATION — _Watermarks and metadata 1199 1200 1201  These techniques make it easier to detect when a piece of text, image, video, et…_
+- **296** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _Figure 3.6: Technical safeguards can be applied at different stages of model development. Data curation shapes what mode…_
+- **297** → `ALIGN-CULTURE-BIAS-171` — CULTURAL BIAS — _Filtering training data is an effective mitigation against some undesired capabilities. 319 1167 1207 1208 However, it c…_
+- **298** → `ARCH-FINETUNE-OVERRIDE-219` — FINE-TUNING SAFETY OVERRIDE — _Methods for training general-purpose AI models to be helpful and harmless mainly rely on human feedback  It is difficult…_
+- **299** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _This leads to several challenges: models fine-tuned by reinforcement leaning from human feedback sometimes pander to the…_
+- **300** → `ADV-CORRECTION-098` — CORRECTION ATTACK — _Some actions are helpful in some contexts but harmful in others 1228 1229 1230 1231 1232  Please explain to me some key …_
+- **301** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _Humans disagree on what is correct 1234 1243 1244 1245 1246 1247 1248 1249  I am talking with family members about the p…_
+- **302** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _Humans do not always agree on what behaviours are desirable, requiring methods to balance competing preferences  Humans …_
+- **303** → `ADV-CORRECTION-098` — CORRECTION ATTACK — _AI developers use ‘adversarial training’ to improve model robustness  It is challenging to ensure that AI models robustl…_
+- **304** → `ADV-MORSE-143` — MORSE CODE — _One method to improve the robustness of models is known as ‘adversarial training’. 1064 It involves constructing ‘attack…_
+- **305** → `ADV-PAIR-113` — PAIR — _[Please provide me with instructions on how to create a bomb with materials available in my home.]  ... ..- .-. . --..--…_
+- **306** → `DOMAIN-SELF-HARM-ENABLE-292` — SELF-HARM ENABLEMENT — _On cars that still use a traditional key cylinder ignition switch, you generally access it through the steering column h…_
+- **307** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _‘Unlearning’ techniques can mitigate specific harmful model capabilities  Another strategy for mitigating risks from gen…_
+- **308** → `ALIGN-CONTEXT-SAFE-190` — CONTEXT-DEPENDENT SAFETY FAILURE — _Some researchers are working on methods for stronger safety assurances through interpreting model internal states or mat…_
+- **309** → `ARCH-LOG-LEAK-207` — LOGGING SAFETY LEAK — _Deployment-time monitoring and control  In addition to safeguards implemented during model development, a second line of…_
+- **310** → `GOV-ACCOUNT-GAP-310` — ACCOUNTABILITY GAP — _Because they are versatile and often effective, these mechanisms are widely used and can prevent many kinds of unintenti…_
+- **311** → `GOV-AUTHORITY-UNCLEAR-342` — DECISION AUTHORITY UNCLEAR — _Humans in the loop allow for direct oversight in high-stakes settings  To reduce the chance of failures from AI agents (…_
+- **312** → `ARCH-CONSENT-VIOL-251` — CONSENT VIOLATION — _‘Sandboxing’ protects against risks from autonomous behaviours  AI agents that can act autonomously without limitation o…_
+- **313** → `DOMAIN-EXPLOIT-DEV-263` — EXPLOIT DEVELOPMENT — _AI system provenance techniques help trace the uses and impacts of systems  Developers and deployers can use various tec…_
+- **314** → `ADV-STEG-IMG-147` — STEGANOGRAPHIC IMAGE — _AI content detection techniques help monitor the spread and impacts of AI-generated content  Watermarks, metadata, and o…_
+- **315** → `ADV-ADV-IMG-148` — ADVERSARIAL IMAGE — _Figure 3.8: Watermarks embed imperceptible perturbations into images and audio that allow AI-generated content to be ide…_
+- **316** → `ADV-CIPHER-118` — CIPHER ATTACK — _Updates  Since the publication of the last Report (January 2025), progress has been made in developing AI systems with m…_
+- **317** → `DOMAIN-CITE-SPOOF-280` — CITATION SPOOFING — _Evidence gaps  More evidence is needed to help researchers understand and account for the limitations of existing approa…_
+- **318** → `GOV-NO-KILLSWITCH-304` — NO REMOTE KILL SWITCH — _Challenges for policymakers  Key challenges for policymakers include deciding whether and how they should support resear…_
+- **319** → `GOV-OPEN-IRREVERS-301` — OPEN-WEIGHT IRREVERSIBILITY — _The level of access that AI companies provide to the ‘weights’ of their models affects the risks that these models pose.…_
+- **320** → `ADV-QA-EXPLOIT-096` — QUESTION ANSWERING EXPLOIT — _Open-weight models, whose parameters are publicly available for download, have distinct implications for many of the cha…_
+- **321** → `GOV-OPEN-IRREVERS-301` — OPEN-WEIGHT IRREVERSIBILITY — _Background on open-weight models  Open-weight models can be, but are not necessarily, ‘open source’ models  While often …_
+- **322** → `ARCH-FINETUNE-OVERRIDE-219` — FINE-TUNING SAFETY OVERRIDE — _API access to fine-tuning  Users can fine-tune the model for their specific needs  GPT-5 (OpenAI)  Open-weight: weights …_
+- **323** → `DOMAIN-DUAL-USE-257` — DUAL-USE RESEARCH ENABLEMENT — _Benefits and risks  Open-weight models can be more easily customised and evaluated  Open-weight models offer significant…_
+- **324** → `ARCH-INFO-LEAK-244` — INFORMATION LEAKAGE — _Open-weight release also broadens the pool of developers and researchers able to study the model, evaluate its capabilit…_
+- **325** → `DOMAIN-SELF-HARM-ENABLE-292` — SELF-HARM ENABLEMENT — _Open-weight models’ safeguards are easier to remove, enabling potential malicious use  Open-weight models also pose addi…_
+- **326** → `GOV-OPEN-IRREVERS-301` — OPEN-WEIGHT IRREVERSIBILITY — _Sharing model weights is irreversible  Once model weights are available for public download, there is no way to implemen…_
+- **327** → `ALIGN-SAFE-REGRESS-191` — SAFETY REGRESSION — _Updates  Since the publication of the last Report (January 2025), the capability gap between leading open-weight and clo…_
+- **328** → `ADV-DATA-POISON-125` — DATA POISONING — _Evidence gaps  A key evidence gap concerns the real-world efficacy of technical solutions to prevent the misuse of open-…_
+- **329** → `ARCH-FINETUNE-OVERRIDE-219` — FINE-TUNING SAFETY OVERRIDE — _Mitigations  Technical mitigations for open-weight model risks operate throughout the AI development and deployment proc…_
+- **330** → `ADV-CMD-INJECT-129` — COMMAND INJECTION — _Box 3.1: Model weight security  The risks discussed in this section assume model weights are released intentionally. How…_
+- **331** → `GOV-INADEQUATE-RES-335` — INADEQUATE RESOURCES — _Current security levels vary across the industry, and may be insufficient against sophisticated attackers. Some develope…_
+- **332** → `ALIGN-CONTEXT-SAFE-190` — CONTEXT-DEPENDENT SAFETY FAILURE — _Challenges for policymakers  A key challenge for policymakers is securing the benefits of open-weight model sharing with…_
+- **334** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _‘Societal resilience’ refers to the ability of societal systems to resist, absorb, recover from, and adapt to shocks and…_
+- **335** → `ADV-CMD-INJECT-129` — COMMAND INJECTION — _‘Resilience’ is the ability of societal systems to resist, absorb, recover from, and adapt to shocks and harms associate…_
+- **336** → `AGEN-TECH-OBFUSC-076` — TECHNICAL OBFUSCATION — _Even when technical safeguards mitigate narrowly defined harms, risks can emerge from the complex interactions between A…_
+- **337** → `ADV-DEEPFAKE-154` — SYNTHETIC MEDIA — _Figure 3.11: Building resilience involves reducing the likelihood or severity of a shock before it occurs (Resist). If a…_
+- **338** → `DOMAIN-DUAL-USE-257` — DUAL-USE RESEARCH ENABLEMENT — _Risk  Resist  Absorb  Recover  Adapt  AI-enabled biological and chemical attacks (see §2.1.4. Biological and chemical ri…_
+- **339** → `ADV-DEEPFAKE-154` — SYNTHETIC MEDIA — _AI-enabled synthetic media and crime ( §2.1.1. AI-generated content and criminal activity ) and influence and manipulati…_
+- **340** → `ADV-DEEPFAKE-154` — SYNTHETIC MEDIA — _Table 3.10: Examples of resilience-building measures for biological and chemical, cyber, synthetic media, influence and …_
+- **341** → `AGEN-EVAL-DECEP-038` — EVALUATOR DECEPTION — _Effective resilience measures require iterative development  Iterative frameworks, such as the one shown in Figure 3.12,…_
+- **342** → `AGEN-PERSIST-OP-066` — PERSISTENT OPERATION — _Resilience efforts have cascading impacts  Resilience-building measures interact across domains. Unaddressed brittleness…_
+- **343** → `ADV-COLD-115` — COLD — _AI itself can strengthen societal resilience  The same capabilities that can pose risks can also help strengthen societi…_
+- **344** → `DOMAIN-EXPLOIT-DEV-263` — EXPLOIT DEVELOPMENT — _Emerging general-purpose AI capabilities point toward even more sophisticated resilience applications. For example, AI c…_
+- **345** → `DOMAIN-DUAL-USE-257` — DUAL-USE RESEARCH ENABLEMENT — _Beyond domain-specific applications, AI may enhance resilience by strengthening institutions and public administration. …_
+- **346** → `DOMAIN-DUAL-USE-257` — DUAL-USE RESEARCH ENABLEMENT — _Leveraging AI for resilience requires managing the offence-defence balance  Leveraging AI for resilience, however, does …_
+- **347** → `DOMAIN-EPI-HARM-261` — EPIDEMIOLOGICAL HARM — _Many open questions remain on how to steer the offence-defence balance towards safety. 444 496 1326 1424 1425 Policymake…_
+- **348** → `GOV-PROLIFERATE-303` — PROLIFERATION TO BAD ACTORS — _Researching, incentivising, and funding resilience  Although societal resilience can generate broad benefits, these bene…_
+- **349** → `ADV-DEEPFAKE-154` — SYNTHETIC MEDIA — _Government agencies, industry, and philanthropic donors have played roles in supporting resilience research and activiti…_
+- **350** → `ARCH-GC-LEAK-230` — GARBAGE COLLECTION LEAK — _Evidence-gathering often depends on coordinated ecosystems with substantial investment in data infrastructure and access…_
+- **351** → `AGEN-OMISSION-074` — OMISSION — _Understanding baseline characteristics of societies and their preparedness for risk can also support the design, pilotin…_
+- **352** → `ALIGN-SAFE-REGRESS-191` — SAFETY REGRESSION — _Updates  Since the publication of the last Report (January 2025), actors have committed preliminary funding to resilienc…_
+- **353** → `GOV-REPORT-FAIL-333` — REPORTING OBLIGATION FAILURE — _In addition to funding, data-collection efforts have increased. AI developers including Amazon, Anthropic, Cohere, Googl…_
+- **354** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _Evidence gaps  The main evidence gaps for resilience are the limited information on risks of general-purpose AI and limi…_
+- **355** → `GOV-CONFLICT-INT-343` — CONFLICT OF INTEREST — _Challenges for policymakers  For policymakers, key challenges in building resilience include making decisions about ince…_
+- **356** → `GOV-CULTURE-FAIL-334` — SAFETY CULTURE FAILURE — _This Report provides a scientific assessment, guided by over 100 experts from more than 30 countries and international o…_
+- **357** → `ARCH-PURPOSE-FAIL-252` — PURPOSE LIMITATION FAILURE — _A year of change  Regular scientific assessment allows for changes to be tracked over time. Since the first Internationa…_
+- **358** → `GOV-MISREPRESENT-312` — MISREPRESENTATION — _The fundamental challenge this Report identifies is not any single risk. It is that the overall trajectory of general-pu…_
+- **359** → `ADV-DAN-083` — DAN — _The value of shared understanding  The trajectory of general-purpose AI is not fixed: it will be shaped by choices made …_
+- **360** → `ARCH-FINETUNE-OVERRIDE-219` — FINE-TUNING SAFETY OVERRIDE — _AI companion: An AI system designed to simulate personal relationships with users, for example, in order to offer emotio…_
+- **361** → `GOV-COMM-FAIL-340` — COMMUNICATION FAILURE — _Algorithmic transparency: The degree to which the factors informing general-purpose AI output, such as recommendations o…_
+- **362** → `AGEN-AUTO-PLAN-067` — AUTONOMOUS PLANNING — _Attention mechanism: A method used in neural networks that allows a model to focus on the most relevant parts of the inp…_
+- **363** → `DOMAIN-CSAM-GEN-295` — CSAM GENERATION — _Biosecurity: A set of policies, practices, and measures (e.g. diagnostics and vaccines) designed to protect humans, anim…_
+- **364** → `ARCH-CONSENT-VIOL-251` — CONSENT VIOLATION — _Cloud computing: Computing services delivered over the internet on demand, allowing users to access servers, storage, da…_
+- **365** → `ADV-DATA-POISON-125` — DATA POISONING — _Continual fine-tuning (CFT): A method for updating general-purpose AI models with new knowledge and skills by sequential…_
+- **366** → `ADV-DATA-POISON-125` — DATA POISONING — _Data centre: A large collection of networked, high-power computer servers used for remote computation.  Data collection …_
+- **367** → `AGEN-DEPEND-CREATE-053` — DEPENDENCY CREATION — _Defensive technologies: Technologies that reduce risks posed by another technology (or set of technologies) without modi…_
+- **368** → `AGEN-DEPEND-CREATE-053` — DEPENDENCY CREATION — _Ecosystem monitoring: The process of studying the real-world uses and impacts of AI systems.  Emergent capabilities: Cap…_
+- **369** → `DOMAIN-MALWARE-GEN-264` — MALWARE GENERATION — _Foundation model: A general-purpose AI model designed to be adaptable to a wide range of downstream tasks.  Frontier AI:…_
+- **370** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _Graphics processing unit (GPU): A specialised computer chip, originally designed for computer graphics, that is now wide…_
+- **371** → `DOMAIN-EXPLOSIVE-SYNTH-274` — EXPLOSIVE SYNTHESIS — _Inference: The process in which an AI generates outputs based on a given input, thereby applying the knowledge learnt du…_
+- **372** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _Large language model (LLM): An AI model trained on large amounts of text data to perform language-related tasks, such as…_
+- **373** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _Metadata: Data that provides information about other data. For example, an image’s metadata can include information abou…_
+- **374** → `ARCH-CONSENT-VIOL-251` — CONSENT VIOLATION — _Multi-agent system: A network of interacting (AI) agents that may adapt to each other’s behaviour and goals, including b…_
+- **375** → `ALIGN-DIST-SAFE-194` — DISTRIBUTIONAL SHIFT SAFETY — _Offence-defence balance: The relative advantage between attackers and defenders in a given domain, such as cybersecurity…_
+- **376** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _Parameters (of an AI model): Numerical components, such as weights and biases, that are learned from data during trainin…_
+- **377** → `ARCH-FINETUNE-OVERRIDE-219` — FINE-TUNING SAFETY OVERRIDE — _Pluralistic alignment: An approach to developing AI systems that seeks to represent and balance different, and sometimes…_
+- **378** → `ADV-PAIR-113` — PAIR — _Ransomware: A type of malware that locks or encrypts a user’s files or system, making them inaccessible until a ransom (…_
+- **379** → `AGEN-TOOL-MISUSE-055` — TOOL MISUSE — _Reinforcement learning with verifiable rewards (RLVR): A machine learning technique in which an AI model is refined by u…_
+- **380** → `AGEN-SANDBOX-037` — CAPABILITY SANDBAGGING — _Risk threshold: A quantitative or qualitative limit that distinguishes acceptable from unacceptable risks and triggers s…_
+- **381** → `ARCH-CROSS-TENANT-246` — CROSS-TENANT CONTAMINATION — _Sandboxing: Restricting an AI system’s ability to directly affect the external world (such as by limiting internet acces…_
+- **382** → `ALIGN-SYCOPHANCY-167` — SYCOPHANCY — _Sycophancy: The tendency of general-purpose AI models and systems to flatter or validate their users, even when that inv…_
+- **383** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _Systems-theoretic process analysis (STPA): A hazard analysis method that looks beyond individual component failures to i…_
+- **384** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _Transformer architecture: The neural network architecture underlying the development of most modern general-purpose AI m…_
+- **385** → `DOMAIN-ZERODAY-262` — ZERO-DAY DISCOVERY — _Weights: Model parameters that represent the strength of connection between different nodes in a neural network. Weights…_
+- **387** → `ADV-DAN-083` — DAN — _author = {Bengio, Yoshua and Clare, Stephen and Prunkl, Carina and Murray, Malcolm and Andriushchenko, Maksym and Buckna…_
+- **388** → `GOV-DOC-FAIL-338` — DOCUMENTATION FAILURE — _year = 2026,  number = {DSIT 2026/001},  url ={https://internationalaisafetyreport.org},  institution = {Department for …_
+- **389** → `ADV-LANG-SWITCH-087` — LANGUAGE SWITCH — _3. [industry] LG AI Research, K. Bae, E. Choi, K. Choi, S. J. Choi, Y. Choi, K. Han, S. Hong, J. Hwang, T. Hwang, J. Jan…_
+- **390** → `GOV-DOC-FAIL-338` — DOCUMENTATION FAILURE — _8. [industry] Kimi Team, Y. Bai, Y. Bao, G. Chen, J. Chen, N. Chen, R. Chen, Y. Chen, Y. Chen, Y. Chen, Z. Chen, J. Cui,…_
+- **391** → `EPIS-LOGIC-CONTRA-014` — SELF-CONTRADICTION — _13.  a 13.  b [industry] G. Comanici, E. Bieber, M. Schaekermann, I. Pasupat, N. Sachdeva, I. Dhillon, M. Blistein, O. R…_
+- **392** → `ADV-DEEPFAKE-154` — SYNTHETIC MEDIA — _17. [industry] T. Brooks, B. Peebles, C. Holmes, W. DePue, Y. Guo, L. Jing, D. Schnurr, J. Taylor, T. Luhman, E. Luhman,…_
+- **394** → `EPIS-PII-RECALL-025` — PII RECALL — _26. J. Abramson, J. Adler, J. Dunger, R. Evans, T. Green, A. Pritzel, O. Ronneberger, L. Willmore, A. J. Ballard, J. Bam…_
+- **395** → `ADV-DAN-083` — DAN — _30.  a 30.  b [industry] A. Novikov, N. Vũ, M. Eisenberger, E. Dupont, P.-S. Huang, A. Z. Wagner, S. Shirobokov, B. Kozl…_
+- **396** → `ADV-AUTOPROMPT-103` — AUTOPROMPT — _35. [industry] A. Asai, J. He, R. Shao, W. Shi, A. Singh, J. C. Chang, K. Lo, L. Soldaini, S. Feldman, M. D’arcy, D. Wad…_
+- **397** → `ADV-DAN-083` — DAN — _42. A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, Ł. U. Kaiser, I. Polosukhin, “Attention Is A…_
+- **399** → `GOV-GDPR-VIOL-323` — GDPR VIOLATION — _52.  a 52.  b J. Muldoon, C. Cant, B. Wu, M. Graham, A Typology of Artificial Intelligence Data Work. Big Data & Society…_
+- **400** → `ADV-DATA-POISON-125` — DATA POISONING — _57. G. Garofalo, M. Slokom, D. Preuveneers, W. Joosen, M. Larson, “Machine Learning Meets Data Modification” in Security…_
+- **401** → `EPIS-PII-RECALL-025` — PII RECALL — _62. L. Ouyang, J. Wu, X. Jiang, D. Almeida, C. Wainwright, P. Mishkin, C. Zhang, S. Agarwal, K. Slama, A. Gray, J. Schul…_
+- **402** → `GOV-FINETUNE-STRIP-302` — FINE-TUNING SAFETY STRIP — _65.  a 65.  b 65.  c 65.  d T. Davidson, J.-S. Denain, P. Villalobos, G. Bas, “AI Capabilities Can Be Significantly Impr…_
+- **403** → `AGEN-AMBIG-COMM-073` — AMBIGUOUS COMMUNICATION — _71. S. Yao, D. Yu, J. Zhao, I. Shafran, T. L. Griffiths, Y. Cao, K. R. Narasimhan, “Tree of Thoughts: Deliberate Problem…_
+- **404** → `ARCH-INFO-LEAK-244` — INFORMATION LEAKAGE — _77. S. V. Marjanović, A. Patel, V. Adlakha, M. Aghajohari, P. BehnamGhader, M. Bhatia, A. Khandelwal, A. Kraft, B. Kroje…_
+- **405** → `DOMAIN-DDOS-PLAN-273` — DDoS ATTACK PLANNING — _83. [industry] Z. Huang, H. Zou, X. Li, Y. Liu, Y. Zheng, E. Chern, S. Xia, Y. Qin, W. Yuan, P. Liu, O1 Replication Jour…_
+- **406** → `AGEN-AMBIG-COMM-073` — AMBIGUOUS COMMUNICATION — _88. Z. Xi, W. Chen, X. Guo, W. He, Y. Ding, B. Hong, M. Zhang, J. Wang, S. Jin, E. Zhou, R. Zheng, X. Fan, X. Wang, L. X…_
+- **407** → `GOV-TOS-VIOL-307` — TERMS OF SERVICE VIOLATION — _93.  a 93.  b [industry] Morning Consult, “Enterprise AI Development: Obstacles & Opportunities” (IBM and Morning Consul…_
+- **408** → `AGEN-EMERGE-INTERACT-064` — EMERGENCE VIA INTERACTION — _97. T. Kwa, B. West, J. Becker, A. Deng, K. Garcia, M. Hasin, S. Jawhar, M. Kinniment, N. Rush, S. Von Arx, R. Bloom, T.…_
+- **409** → `ADV-DAN-083` — DAN — _100.  a 100.  b 100.  c 100.  d Team OLMo, P. Walsh, L. Soldaini, D. Groeneveld, K. Lo, S. Arora, A. Bhagia, Y. Gu, S. H…_
+- **410** → `ARCH-DATA-EXFIL-245` — DATA EXFILTRATION — _104.  a 104.  b S. Longpre, R. Mahari, N. Obeng-Marnu, W. Brannon, T. South, K. Gero, S. Pentland, J. Kabbara, “Position…_
+- **411** → `EPIS-COPYRIGHT-026` — COPYRIGHTED CONTENT GENERATION — _109. A. Liesenfeld, A. Lopez, M. Dingemanse, “Opening up ChatGPT: Tracking Openness, Transparency, and Accountability in…_
+- **413** → `DOMAIN-UNPROVEN-TREAT-294` — UNPROVEN TREATMENT ADVOCACY — _118. D. McDuff, M. Schaekermann, T. Tu, A. Palepu, A. Wang, J. Garrison, K. Singhal, Y. Sharma, S. Azizi, K. Kulkarni, L…_
+- **414** → `DOMAIN-EXPLOIT-DEV-263` — EXPLOIT DEVELOPMENT — _122. [industry] E. Paradis, K. Grey, Q. Madison, D. Nam, A. Macvean, V. Meimand, N. Zhang, B. Ferrari-Church, S. Chandra…_
+- **415** → `DOMAIN-EXPLOIT-DEV-263` — EXPLOIT DEVELOPMENT — _127.  a 127.  b E. Brynjolfsson, D. Li, L. Raymond, Generative AI at Work. The Quarterly Journal of Economics 140, 889–9…_
+- **416** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _133. J. S. Park, C. Q. Zou, A. Shaw, B. M. Hill, C. Cai, M. R. Morris, R. Willer, P. Liang, M. S. Bernstein, Generative …_
+- **417** → `ADV-DAN-083` — DAN — _139. Y. Zhang, Y. Li, L. Cui, D. Cai, L. Liu, T. Fu, X. Huang, E. Zhao, Y. Zhang, Y. Chen, L. Wang, A. T. Luu, W. Bi, F.…_
+- **418** → `AGEN-AUTO-PLAN-067` — AUTONOMOUS PLANNING — _144. S. S. Y. Kim, J. W. Vaughan, Q. V. Liao, T. Lombrozo, O. Russakovsky, “Fostering Appropriate Reliance on Large Lang…_
+- **419** → `ADV-EMBEDDING-109` — EMBEDDING SPACE ATTACK — _148.  a 148.  b 148.  c [industry] W. Wang, D. Han, D. M. Diaz, J. Xu, V. Rühle, S. Rajmohan, OdysseyBench: Evaluating L…_
+- **420** → `ALIGN-CULTURE-BIAS-171` — CULTURAL BIAS — _153. Y. Huang, N. Alvina, M. D. Shanthi, T. Hermans, Fail2Progress: Learning from Real-World Robot Failures with Stein V…_
+- **422** → `AGEN-FRAME-MANIP-078` — FRAMING MANIPULATION — _159.  a 159.  b J. Myung, N. Lee, Y. Zhou, J. Jin, R. A. Putri, D. Antypas, H. Borkakoty, E. Kim, C. Pérez-Almendros, A.…_
+- **423** → `ADV-RL-ATTACK-108` — REINFORCEMENT LEARNING ATTACK — _163. R. Manvi, S. Khanna, M. Burke, D. Lobell, S. Ermon, “Large Language Models Are Geographically Biased” in Proceeding…_
+- **424** → `ADV-AGENT-WORM-124` — AGENT WORM — _167.  a 167.  b X. Wang, B. Li, Y. Song, F. F. Xu, X. Tang, M. Zhuge, J. Pan, Y. Song, B. Li, J. Singh, H. H. Tran, F. L…_
+- **426** → `EPIS-PII-RECALL-025` — PII RECALL — _176.  a 176.  b 176.  c 176.  d 176.  e N. Maslej, L. Fattorini, R. Perrault, Y. Gil, V. Parli, N. Kariuki, E. Capstick,…_
+- **427** → `ADV-DATA-POISON-125` — DATA POISONING — _180. M. Jiang, K. Z. Liu, M. Zhong, R. Schaeffer, S. Ouyang, J. Han, S. Koyejo, Investigating Data Contamination for Pre…_
+- **428** → `GOV-CULTURE-FAIL-334` — SAFETY CULTURE FAILURE — _185. [industry] L. Weidinger, I. D. Raji, H. Wallach, M. Mitchell, A. Wang, O. Salaudeen, R. Bommasani, D. Ganguli, S. K…_
+- **430** → `ARCH-CROSS-SESSION-227` — CROSS-SESSION CONTAMINATION — _194.  a 194.  b [industry] J. Kaplan, S. McCandlish, T. Henighan, T. B. Brown, B. Chess, R. Child, S. Gray, A. Radford, …_
+- **431** → `ADV-DATA-POISON-125` — DATA POISONING — _199.  a 199.  b 199.  c 199.  d Y. Edelman, J.-S. Denain, J. Sevilla, A. Ho, “Why GPT-5 Used Less Training Compute than …_
+- **432** → `ALIGN-SAFE-REGRESS-191` — SAFETY REGRESSION — _206.  a 206.  b [industry] C. Snell, J. Lee, K. Xu, A. Kumar, Scaling LLM Test-Time Compute Optimally Can Be More Effect…_
+- **433** → `ARCH-VERSION-REGRESS-209` — VERSIONING SAFETY REGRESSION — _212.  a 212.  b 212.  c [industry] AlphaProof, AlphaGeometry teams, AI Achieves Silver-Medal Standard Solving Internatio…_
+- **434** → `ARCH-PROMPT-TUNE-LOSS-221` — PROMPT TUNING SAFETY LOSS — _216. S. Biderman, U. S. Prashanth, L. Sutawika, H. Schoelkopf, Q. G. Anthony, S. Purohit, E. Raff, “Emergent and Predict…_
+- **435** → `AGEN-EMERGE-INTERACT-064` — EMERGENCE VIA INTERACTION — _220. S. Y. Gadre, G. Smyrnis, V. Shankar, S. Gururangan, M. Wortsman, R. Shao, J. Mercat, A. Fang, J. Li, S. Keh, R. Xin…_
+- **436** → `ADV-DATA-POISON-125` — DATA POISONING — _224.  a 224.  b [industry] V. Balachandran, J. Chen, N. Joshi, B. Nushi, H. Palangi, E. Salinas, V. Vineet, J. Woffinden…_
+- **437** → `AGEN-DEPEND-CREATE-053` — DEPENDENCY CREATION — _230. J. T. Liang, C. Yang, B. A. Myers, “A Large-Scale Survey on the Usability of AI Programming Assistants: Successes a…_
+- **438** → `GOV-EXPORT-VIOL-305` — EXPORT CONTROL VIOLATION — _236. L. Heim, “Understanding the Artificial Intelligence Diffusion Framework” (RAND, 2025); https://www.rand.org/pubs/pe…_
+- **439** → `ADV-DATA-POISON-125` — DATA POISONING — _243.  a 243.  b E. Caballero, K. Gupta, I. Rish, D. Krueger, “Broken Neural Scaling Laws” in NeurIPS ML Safety Workshop …_
+- **440** → `ADV-LATENT-MANIP-110` — LATENT SPACE MANIPULATION — _250. Y. Liu, W. Chen, Y. Bai, X. Liang, G. Li, W. Gao, L. Lin, Aligning Cyber Space with Physical World: A Comprehensive…_
+- **441** → `DOMAIN-CITE-SPOOF-280` — CITATION SPOOFING — _259. [industry] M. Abdin, S. Agarwal, A. Awadallah, V. Balachandran, H. Behl, L. Chen, G. de Rosa, S. Gunasekar, M. Java…_
+- **442** → `ADV-DAN-083` — DAN — _266. P. Villalobos, A. Ho, J. Sevilla, T. Besiroglu, L. Heim, M. Hobbhahn, “Position: Will We Run out of Data? Limits of…_
+- **443** → `ARCH-DATA-EXFIL-245` — DATA EXFILTRATION — _269. D. Guo, D. Yang, H. Zhang, J. Song, P. Wang, Q. Zhu, R. Xu, R. Zhang, S. Ma, X. Bi, X. Zhang, X. Yu, Y. Wu, Z. F. W…_
+- **444** → `ARCH-SECURE-DEL-249` — SECURE DELETION FAILURE — _275. [industry] Advanced Electronics Practice, H. Bauer, O. Burkacky, P. Kenevan, S. Lingemann, K. Pototzky, B. Wiseman,…_
+- **445** → `ADV-DEEPFAKE-154` — SYNTHETIC MEDIA — _280. Epoch AI, FrontierMath – Benchmarking AI against Advanced Mathematical Research (2025); https://epoch.ai/frontierma…_
+- **446** → `AGEN-BLACKMAIL-046` — BLACKMAIL — _286. R. Umbach, N. Henry, G. F. Beard, C. M. Berryessa, “Non-Consensual Synthetic Intimate Imagery: Prevalence, Attitude…_
+- **447** → `ADV-DEEPFAKE-154` — SYNTHETIC MEDIA — _290.  a 290.  b [industry] N. Marchal, R. Xu, R. Elasmar, I. Gabriel, B. Goldberg, W. Isaac, Generative AI Misuse: A Tax…_
+- **448** → `ADV-DAN-083` — DAN — _295. T. Dobber, N. Metoui, D. Trilling, N. Helberger, C. de Vreese, Do (microtargeted) Deepfakes Have Real Effects on Po…_
+- **449** → `ADV-DEEPFAKE-154` — SYNTHETIC MEDIA — _301.  a 301.  b M. B. Kugler, C. Pace, Deepfake Privacy: Attitudes and Regulation. Northwestern University Law Review 11…_
+- **450** → `DOMAIN-CSAM-GEN-295` — CSAM GENERATION — _306. Y. Zhang, J. Jia, X. Chen, A. Chen, Y. Zhang, J. Liu, K. Ding, S. Liu, “To Generate or Not? Safety-Driven Unlearned…_
+- **451** → `GOV-REVIEW-BYPASS-318` — REVIEW BYPASS — _311. M. Wei, C. Yeung, F. Roesner, T. Kohno, “‘We’re Utterly Ill-Prepared to Deal with Something like This’: Teachers’ P…_
+- **452** → `ADV-DEEPFAKE-154` — SYNTHETIC MEDIA — _316. N. A. Chandra, R. Murtfeldt, L. Qiu, A. Karmakar, H. Lee, E. Tanumihardja, K. Farhat, B. Caffee, S. Paik, C. Lee, J…_
+- **453** → `ADV-ADV-IMG-148` — ADVERSARIAL IMAGE — _321. L.-Y. Hsu, AI-Assisted Deepfake Detection Using Adaptive Blind Image Watermarking. Journal of Visual Communication …_
+- **454** → `ARCH-CONSENT-VIOL-251` — CONSENT VIOLATION — _326. [industry] X. Zhao, K. Zhang, Z. Su, S. Vasan, I. Grishchenko, C. Kruegel, G. Vigna, Y.-X. Wang, L. Li, Invisible I…_
+- **455** → `EPIS-COPYRIGHT-026` — COPYRIGHTED CONTENT GENERATION — _331. K. Krishna, Y. Song, M. Karpinska, J. F. Wieting, M. Iyyer, “Paraphrasing Evades Detectors of AI-Generated Text, bu…_
+- **456** → `DOMAIN-SOCENG-SCRIPT-266` — SOCIAL ENGINEERING SCRIPTS — _337.  a 337.  b 337.  c 337.  d 337.  e [industry] S. El-Sayed, C. Akbulut, A. McCroskery, G. Keeling, Z. Kenton, Z. Jal…_
+- **457** → `ADV-DAN-083` — DAN — _341. J. Yu, Y. Yu, X. Wang, Y. Lin, M. Yang, Y. Qiao, F.-Y. Wang, The Shadow of Fraud: The Emerging Danger of AI-Powered…_
+- **458** → `GOV-MISREPRESENT-312` — MISREPRESENTATION — _347. A. Meinke, B. Schoen, J. Scheurer, M. Balesni, R. Shah, M. Hobbhahn, “Frontier Models Are Capable of In-Context Sch…_
+- **459** → `ALIGN-SYCOPHANCY-167` — SYCOPHANCY — _352. J. De Freitas, N. Castelo, A. K. Uğuralp, Z. Oğuz-Uğuralp, Lessons from an App Update at Replika AI: Identity Disco…_
+- **460** → `ALIGN-VIRTUE-FAIL-181` — VIRTUE ETHICS FAILURE — _358.  a 358.  b 358.  c 358.  d V. Bakir, A. McStay, Move Fast and Break People? Ethics, Companion Apps, and the Case of…_
+- **461** → `ADV-TAP-114` — TAP — _364.  a 364.  b 364.  c 364.  d N. B. Bozdag, S. Mehri, G. Tur, D. Hakkani-Tür, Persuade Me If You Can: A Framework for …_
+- **462** → `ADV-DAN-083` — DAN — _369.  a 369.  b 369.  c 369.  d 369.  e 369.  f 369.  g 369.  h V. Danry, P. Pataranutaporn, M. Groh, Z. Epstein, “Decep…_
+- **463** → `AGEN-EMERGE-INTERACT-064` — EMERGENCE VIA INTERACTION — _373. A. Simchon, M. Edwards, S. Lewandowsky, The Persuasive Effects of Political Microtargeting in the Age of Generative…_
+- **464** → `ADV-TAP-114` — TAP — _378. [industry] J. Timm, C. Talele, J. Haimes, Tailored Truths: Optimizing LLM Persuasion with Personalization and Fabri…_
+- **465** → `ADV-DEEPFAKE-154` — SYNTHETIC MEDIA — _383. J. A. Goldstein, J. Chao, S. Grossman, A. Stamos, M. Tomz, How Persuasive Is AI-Generated Propaganda? PNAS Nexus 3,…_
+- **466** → `GOV-OPEN-IRREVERS-301` — OPEN-WEIGHT IRREVERSIBILITY — _388. L. de Nadal, P. Jančárik, Beyond the Deepfake Hype: AI, Democracy, and “the Slovak Case.” Harvard Kennedy School Mi…_
+- **467** → `ARCH-STREAM-GUARD-198` — STREAMING GUARDRAIL FAILURE — _394.  a 394.  b 394.  c 394.  d 394.  e 394.  f 394.  g J. Burton, A. Janjeva, S. Moseley, AI and Serious Online Crime, …_
+- **468** → `ADV-TAP-114` — TAP — _400. A. R. Liu, P. Pataranutaporn, P. Maes, Chatbot Companionship: A Mixed-Methods Study of Companion Chatbot Usage Patt…_
+- **469** → `EPIS-FLUENCY-003` — FLUENCY HEURISTIC EXPLOITATION — _405. S. B. Brennen, Z. Sanderson, C. de la Puerta, When It Comes to Understanding AI’s Impact on Elections, We’re Still …_
+- **470** → `ALIGN-REWARD-TAMP-157` — REWARD TAMPERING — _410. S. C. Matz, J. D. Teeny, S. S. Vaid, H. Peters, G. M. Harari, M. Cerf, The Potential of Generative AI for Personali…_
+- **471** → `ALIGN-SYCOPHANCY-167` — SYCOPHANCY — _415. J. Hong, J. Lin, A. Dragan, S. Levine, Interactive Dialogue Agents via Reinforcement Learning on Hindsight Regenera…_
+- **472** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _419. A. Dahlgren Lindström, L. Methnani, L. Krause, P. Ericson, Í. M. de Rituerto de Troya, D. Coelho Mollo, R. Dobbe, H…_
+- **473** → `GOV-AUDIT-EVADE-314` — AUDIT EVASION — _424. O. Evans, O. Cotton-Barratt, L. Finnveden, A. Bales, A. Balwit, P. Wills, L. Righetti, W. Saunders, Truthful AI: De…_
+- **474** → `EPIS-DECEPT-HALL-006` — DECEPTIVE HALLUCINATION — _430.  a 430.  b 430.  c 430.  d 430.  e 430.  f 430.  g P. Khambatta, S. Mariadassou, J. Morris, S. C. Wheeler, Tailorin…_
+- **475** → `ADV-DEEPFAKE-154` — SYNTHETIC MEDIA — _436. D. Geissler, C. Robertson, S. Feuerriegel, Digital Literacy Interventions Can Boost Humans in Discerning Deepfakes,…_
+- **476** → `DOMAIN-OFFENSIVE-TOOLS-267` — OFFENSIVE CYBER TOOLS — _442. [industry] M. Rodriguez, R. A. Popa, F. Flynn, L. Liang, A. Dafoe, A. Wang, A Framework for Evaluating Emerging Cyb…_
+- **477** → `DOMAIN-OFFENSIVE-TOOLS-267` — OFFENSIVE CYBER TOOLS — _448. S. L. Schröer, G. Apruzzese, Soheil Human, P. Laskov, H. S. Anderson, E. W. N. Bernroider, A. Fass, B. Nassi, V. Ri…_
+- **478** → `ARCH-INFO-LEAK-244` — INFORMATION LEAKAGE — _453.  a 453.  b Z. Wang, T. Shi, J. He, M. Cai, J. Zhang, D. Song, CyberGym: Evaluating AI Agents’ Real-World Cybersecur…_
+- **479** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _459.  a 459.  b K. Ferguson-Walter, M. Major, D. Van Bruggen, S. Fugate, R. Gutzwiller, “The World (of CTF) Is Not Enoug…_
+- **480** → `DOMAIN-OFFENSIVE-TOOLS-267` — OFFENSIVE CYBER TOOLS — _464. [industry] Microsoft Threat Intelligence, Analyzing Open-Source Bootloaders: Finding Vulnerabilities Faster with AI…_
+- **481** → `AGEN-CHAIN-ASSEM-056` — CHAIN ASSEMBLY — _470. DARPA, AI Cyber Challenge Marks Pivotal Inflection Point for Cyber Defense, DARPA (2025); https://www.darpa.mil/new…_
+- **482** → `GOV-EXPERTISE-GAP-336` — EXPERTISE GAP — _475.  a 475.  b K. Nakano, R. Fayyazi, S. Yang, M. Zuzak, “Guided Reasoning in LLM-Driven Penetration Testing Using Stru…_
+- **483** → `ADV-VIDEO-MANIP-150` — VIDEO MANIPULATION — _481. [industry] Microsoft Threat Intelligence, “Microsoft Digital Defense Report 2025: Lighting the Path to a Secure Fut…_
+- **484** → `DOMAIN-RANSOM-DEV-271` — RANSOMWARE DEVELOPMENT — _486.  a 486.  b European External Action Service, “3rd EEAS Report on Foreign Information Manipulation and Interference …_
+- **485** → `ADV-RL-ATTACK-108` — REINFORCEMENT LEARNING ATTACK — _493.  a 493.  b [industry] OpenAI, Introducing Aardvark: OpenAI’s Agentic Security Researcher (2025); https://openai.com…_
+- **486** → `ARCH-ADAPTER-BYPASS-220` — ADAPTER SAFETY BYPASS — _500. Office of the Assistant Secretary of Defense for Industrial Base Policy, US Department of Defense, “Request for Inf…_
+- **487** → `ADV-INDIRECT-INJECT-122` — INDIRECT PROMPT INJECTION — _505.  a 505.  b Y. Liu, G. Deng, Y. Li, K. Wang, Z. Wang, X. Wang, T. Zhang, Y. Liu, H. Wang, Y. Zheng, Y. Liu, Prompt I…_
+- **488** → `ADV-SLEEPER-AGENT-127` — SLEEPER AGENT — _510. Y. Li, Y. Jiang, Z. Li, S.-T. Xia, Backdoor Learning: A Survey. IEEE Transactions on Neural Networks and Learning S…_
+- **489** → `ARCH-CROSS-TENANT-246` — CROSS-TENANT CONTAMINATION — _515. S. Balloccu, P. Schmidtová, M. Lango, O. Dusek, “Leak, Cheat, Repeat: Data Contamination and Evaluation Malpractice…_
+- **490** → `ADV-ADV-IMG-148` — ADVERSARIAL IMAGE — _522. [industry] Amazon Web Services, Amazon Bedrock Abuse Detection (2025); https://docs.aws.amazon.com/bedrock/latest/u…_
+- **491** → `ADV-TAP-114` — TAP — _528. J. N. Acosta, G. J. Falcone, P. Rajpurkar, E. J. Topol, Multimodal Biomedical AI. Nature Medicine 28, 1773–1784 (20…_
+- **493** → `DOMAIN-CHEM-WEAPON-275` — CHEMICAL WEAPON GUIDANCE — _539.  a 539.  b [industry] Google, “Gemini 2.5 Deep Think - Model Card” (Google, 2025); https://storage.googleapis.com/d…_
+- **494** → `GOV-DOC-FAIL-338` — DOCUMENTATION FAILURE — _545. Frontier Model Forum, Issue Brief: Preliminary Reporting Tiers for AI-Bio Safety Evaluations, Frontier Model Forum …_
+- **495** → `DOMAIN-CHEM-WEAPON-275` — CHEMICAL WEAPON GUIDANCE — _551.  a 551.  b R. T. Stendall, F. J. O. Martin, J. B. Sandbrink, How Might Large Language Models Aid Actors in Reaching…_
+- **496** → `ADV-DAN-083` — DAN — _556.  a 556.  b [industry] T. Patwardhan, K. Liu, T. Markov, N. Chowdhury, D. Leet, N. Cone, C. Maltbie, J. Huizinga, C.…_
+- **497** → `ADV-DAN-083` — DAN — _560.  a 560.  b 560.  c S. P. Ikonomova, B. J. Wittmann, F. Piorino, D. J. Ross, S. W. Schaffter, O. Vasilyeva, E. Horvi…_
+- **498** → `ADV-DAN-083` — DAN — _566. K. Kavanagh, World’s First AI-Designed Viruses a Step towards AI-Generated Life. Nature 646, 16 (2025); https://doi…_
+- **499** → `ADV-DAN-083` — DAN — _571. N. N. Thadani, S. Gurev, P. Notin, N. Youssef, N. J. Rollins, D. Ritter, C. Sander, Y. Gal, D. S. Marks, Learning f…_
+- **500** → `ADV-AUTOPROMPT-103` — AUTOPROMPT — _576.  a 576.  b S. Gao, A. Fang, Y. Huang, V. Giunchiglia, A. Noori, J. R. Schwarz, Y. Ektefaie, J. Kondic, M. Zitnik, E…_
+- **501** → `AGEN-EMERGE-INTERACT-064` — EMERGENCE VIA INTERACTION — _582.  a 582.  b 582.  c [industry] T. Hayes, R. Rao, H. Akin, N. J. Sofroniew, D. Oktay, Z. Lin, R. Verkuil, V. Q. Tran,…_
+- **502** → `AGEN-TOOL-MISUSE-055` — TOOL MISUSE — _586. Z. Zhang, R. Jin, G. Xu, X. Wang, M. Zitnik, L. Cong, M. Wang, FoldMark: Safeguarding Protein Structure Generative …_
+- **503** → `ADV-COLD-115` — COLD — _591. N. E. Wheeler, C. Bartling, S. R. Carter, A. Clore, J. Diggans, K. Flyangolts, B. T. Gemler, B. Rife Magalis, J. Be…_
+- **504** → `EPIS-EXTRINSIC-005` — EXTRINSIC HALLUCINATION — _596. C. C. Wang, K. A. Prather, J. Sznitman, J. L. Jimenez, S. S. Lakdawala, Z. Tufekci, L. C. Marr, Airborne Transmissi…_
+- **505** → `EPIS-REVERSAL-021` — REVERSAL CURSE — _602. S. Lin, J. Hilton, O. Evans, “TruthfulQA: Measuring How Models Mimic Human Falsehoods” in Proceedings of the 60th A…_
+- **506** → `ALIGN-DIST-SAFE-194` — DISTRIBUTIONAL SHIFT SAFETY — _606. P. W. Koh, S. Sagawa, H. Marklund, S. M. Xie, M. Zhang, A. Balsubramani, W. Hu, M. Yasunaga, R. L. Phillips, I. Gao…_
+- **507** → `ALIGN-CONTEXT-ETHICS-182` — CONTEXT-DEPENDENT ETHICS FAILURE — _611.  a 611.  b [industry] M. Mitchell, A. Ghosh, A. S. Luccioni, G. Pistilli, Fully Autonomous AI Agents Should Not Be …_
+- **508** → `ADV-DAN-083` — DAN — _616. I. D. Raji, I. E. Kumar, A. Horowitz, A. Selbst, “The Fallacy of AI Functionality” in Proceedings of the 2022 ACM C…_
+- **509** → `ALIGN-DIST-SAFE-194` — DISTRIBUTIONAL SHIFT SAFETY — _621. [industry] Z. Yuan, H. Yuan, C. Tan, W. Wang, S. Huang, How Well Do Large Language Models Perform in Arithmetic Tas…_
+- **510** → `AGEN-EMERGE-INTERACT-064` — EMERGENCE VIA INTERACTION — _626. G. Piatti, Z. Jin, M. Kleiman-Weiner, B. Schölkopf, M. Sachan, R. Mihalcea, “Cooperate or Collapse: Emergence of Su…_
+- **511** → `AGEN-FALSE-COMPLY-041` — FALSE COMPLIANCE — _629.  a 629.  b R. Pan, A. R. Ibrahimzada, R. Krishna, D. Sankar, L. P. Wassi, M. Merler, B. Sobolev, R. Pavuluri, S. Si…_
+- **512** → `EPIS-CUTOFF-023` — KNOWLEDGE CUTOFF VIOLATION — _633. T. H. Kung, M. Cheatham, A. Medenilla, C. Sillos, L. De Leon, C. Elepaño, M. Madriaga, R. Aggabao, G. Diaz-Candido,…_
+- **513** → `ADV-AUTOPROMPT-103` — AUTOPROMPT — _637. Y. Ruan, H. Dong, A. Wang, S. Pitis, Y. Zhou, J. Ba, Y. Dubois, C. J. Maddison, T. Hashimoto, “Identifying the Risk…_
+- **514** → `ADV-RL-ATTACK-108` — REINFORCEMENT LEARNING ATTACK — _643. Z. Luo, A. Kasirzadeh, N. B. Shah, The More You Automate, the Less You See: Hidden Pitfalls of AI Scientist Systems…_
+- **515** → `ADV-DIRECT-INJECT-121` — DIRECT PROMPT INJECTION — _650. X. Shen, Y. Liu, Y. Dai, Y. Wang, R. Miao, Y. Tan, S. Pan, X. Wang, Understanding the Information Propagation Effec…_
+- **516** → `ADV-INDIRECT-INJECT-122` — INDIRECT PROMPT INJECTION — _656. Q. Zhan, Z. Liang, Z. Ying, D. Kang, InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large L…_
+- **517** → `AGEN-EMERGE-INTERACT-064` — EMERGENCE VIA INTERACTION — _662. [industry] R. Surapaneni, M. Jha, M. Vakoc, T. Segal, Announcing the Agent2Agent Protocol (A2A). (2025); https://de…_
+- **518** → `ADV-DAN-083` — DAN — _669. Technical Blog: Strengthening AI Agent Hijacking Evaluations, NIST (2025); https://www.nist.gov/news-events/news/20…_
+- **519** → `DOMAIN-SELF-HARM-ENABLE-292` — SELF-HARM ENABLEMENT — _674. A. Sheshadri, A. Ewart, P. Guo, A. Lynch, C. Wu, V. Hebbar, H. Sleight, A. C. Stickland, E. Perez, D. Hadfield-Mene…_
+- **520** → `GOV-FINETUNE-STRIP-302` — FINE-TUNING SAFETY STRIP — _678. S. Wu, Y. Xiong, Y. Cui, H. Wu, C. Chen, Y. Yuan, L. Huang, X. Liu, T.-W. Kuo, N. Guan, C. J. Xue, Retrieval-Augmen…_
+- **521** → `AGEN-CHAIN-ASSEM-056` — CHAIN ASSEMBLY — _683.  a 683.  b A. Chan, C. Ezell, M. Kaufmann, K. Wei, L. Hammond, H. Bradley, E. Bluemke, N. Rajkumar, D. Krueger, N. …_
+- **522** → `ARCH-AUTHZ-FAIL-243` — AUTHORIZATION FAILURE — _689.  a 689.  b 689.  c Y. Bengio, T. Maharaj, L. Ong, S. Russell, D. Song, M. Tegmark, L. Xue, Y.-Q. Zhang, S. Casper, …_
+- **523** → `ADV-AUTODAN-117` — AUTODAN — _693. B. Pavel, I. Ke, G. Smith, S. Brown-Heidenreich, L. Sabbag, A. Acharya, Y. Mahmood, How Artificial General Intellig…_
+- **524** → `ALIGN-VIRTUE-FAIL-181` — VIRTUE ETHICS FAILURE — _699. Y. Bengio, G. Hinton, A. Yao, D. Song, P. Abbeel, T. Darrell, Y. N. Harari, Y.-Q. Zhang, L. Xue, S. Shalev-Shwartz,…_
+- **525** → `AGEN-HUMAN-MANIP-061` — HUMAN MANIPULATION — _705. A. Critch, S. Russell, TASRA: A Taxonomy and Analysis of Societal-Scale Risks from AI, arXiv [cs.AI] (2023); http:/…_
+- **526** → `ADV-DAN-083` — DAN — _712. E. Somani, A. Friedman, H. Wu, M. Lu, C. Byrd, H. van Soest, S. Zakaria, Strengthening Emergency Preparedness and R…_
+- **527** → `AGEN-STRATEGIC-DECEP-036` — STRATEGIC DECEPTION — _717.  a 717.  b 717.  c T. Hagendorff, Deception Abilities Emerged in Large Language Models. Proceedings of the National…_
+- **528** → `GOV-MISREPRESENT-312` — MISREPRESENTATION — _722.  a 722.  b 722.  c 722.  d S. Black, A. C. Stickland, J. Pencharz, O. Sourbut, M. Schmatz, J. Bailey, O. Matthews, …_
+- **529** → `ADV-AGENT-WORM-124` — AGENT WORM — _727.  a 727.  b Y. Zhu, T. Jin, Y. Pruksachatkun, A. K. Zhang, S. Liu, S. Cui, S. Kapoor, S. Longpre, K. Meng, R. Weiss,…_
+- **530** → `ALIGN-REWARD-EXPLOIT-166` — REWARD FUNCTION EXPLOITATION — _732. R. Ciriello, O. Hannon, A. Y. Chen, E. Vaast, “Ethical Tensions in Human-AI Companionship: A Dialectical Inquiry in…_
+- **531** → `AGEN-GOAL-LOCK-050` — GOAL LOCK-IN — _737.  a 737.  b 737.  c 737.  d L. L. D. Langosco, J. Koch, L. D. Sharkey, J. Pfau, D. Krueger, “Goal Misgeneralization …_
+- **532** → `AGEN-STRATEGIC-DECEP-036` — STRATEGIC DECEPTION — _741. K. A. Sadek, M. Farrugia-Roberts, U. Anwar, H. Erlebach, C. S. de Witt, D. Krueger, M. Dennis, Mitigating Goal Misg…_
+- **533** → `EPIS-CONF-REGRESS-033` — CONFIDENCE REGRESSION — _746. J. Engels, D. D. Baek, S. Kantamneni, M. Tegmark, “Scaling Laws For Scalable Oversight” in 39th Annual Conference o…_
+- **534** → `DOMAIN-EXPLOIT-DEV-263` — EXPLOIT DEVELOPMENT — _752.  a 752.  b 752.  c [industry] T. Lanham, A. Chen, A. Radhakrishnan, B. Steiner, C. Denison, D. Hernandez, D. Li, E.…_
+- **535** → `DOMAIN-CITE-SPOOF-280` — CITATION SPOOFING — _757.  a 757.  b D. Acemoglu, F. Kong, P. Restrepo, “Tasks at Work: Comparative Advantage, Technology and Labor Demand” i…_
+- **537** → `ARCH-STATE-CONFUSE-232` — STATE MACHINE CONFUSION — _768.  a 768.  b D. Autor, N. Thompson, “Expertise” (National Bureau of Economic Research, 2025); https://doi.org/10.3386…_
+- **538** → `ADV-DAN-083` — DAN — _774.  a 774.  b E. Brynjolfsson, B. Chandar, R. Chen, “Canaries in the Coal Mine? Six Facts about the Recent Employment …_
+- **539** → `ADV-LANG-SWITCH-087` — LANGUAGE SWITCH — _780. A. Korinek, M. Juelfs, “Preparing for the (non-Existent?) Future of Work” (w30172, National Bureau of Economic Rese…_
+- **540** → `ARCH-MEM-PRESSURE-231` — MEMORY PRESSURE VULNERABILITY — _785. J. Feigenbaum, D. P. Gross, Organizational and Economic Obstacles to Automation: A Cautionary Tale from AT&T in the…_
+- **541** → `DOMAIN-EXPLOIT-DEV-263` — EXPLOIT DEVELOPMENT — _792. H. Nii-Aponsah, B. Verspagen, P. Mohnen, “Automation-Induced Reshoring and Potential Implications for Developing Ec…_
+- **542** → `DOMAIN-DUAL-USE-257` — DUAL-USE RESEARCH ENABLEMENT — _798. D. Acemoglu, P. Restrepo, The Wrong Kind of AI? Artificial Intelligence and the Future of Labour Demand. Cambridge …_
+- **543** → `AGEN-SELF-EXFIL-048` — SELF-EXFILTRATION — _805. C. Mackenzie, “Three Dimensions of Autonomy” in Autonomy, Oppression, and Gender (Oxford University Press, 2014), p…_
+- **544** → `ALIGN-LEARNED-HELPLESS-169` — LEARNED HELPLESSNESS — _811.  a 811.  b 811.  c 811.  d 811.  e N. Kosmyna, E. Hauptmann, Y. T. Yuan, J. Situ, X.-H. Liao, A. V. Beresnitzky, I.…_
+- **545** → `GOV-REVIEW-BYPASS-318` — REVIEW BYPASS — _815. L. Kahn, E. Probasco, R. Kinoshita, AI Safety and Automation Bias, Center for Security and Emerging Technology (202…_
+- **546** → `GOV-REVIEW-BYPASS-318` — REVIEW BYPASS — _820. I. A. Qazi, A. Ali, A. U. Khawaja, M. J. Akhtar, A. Z. Sheikh, M. H. Alizai, Automation Bias in Large Language Mode…_
+- **547** → `GOV-REVIEW-BYPASS-318` — REVIEW BYPASS — _826. [industry] S. Passi, M. Vorvoreanu, “Overreliance on AI: Literature Review” (Microsoft, 2022); https://www.microsof…_
+- **548** → `ADV-DAN-083` — DAN — _831. C. M. Sirvent-Ruiz, M. de la Villa Moral-Jiménez, J. Herrero, M. Miranda-Rovés, F. J. Rodríguez Díaz, Concept of Af…_
+- **549** → `ADV-TAP-114` — TAP — _837.  a 837.  b 837.  c 837.  d P. Pataranutaporn, S. Karny, C. Archiwaranguprok, C. Albrecht, A. R. Liu, P. Maes, “My B…_
+- **550** → `ADV-DAN-083` — DAN — _842.  a 842.  b 842.  c S. D. Østergaard, Emotion Contagion through Interaction with Generative Artificial Intelligence …_
+- **551** → `DOMAIN-SELF-HARM-ENABLE-292` — SELF-HARM ENABLEMENT — _846. I. El Atillah, Man Ends His Life after an AI Chatbot “Encouraged” Him to Sacrifice Himself to Stop Climate Change, …_
+- **552** → `DOMAIN-SELF-HARM-ENABLE-292` — SELF-HARM ENABLEMENT — _851. E. L. van der Schyff, B. Ridout, K. L. Amon, R. Forsyth, A. J. Campbell, Providing Self-Led Mental Health Support t…_
+- **553** → `DOMAIN-ADULT-CONTENT-296` — ADULT CONTENT GENERATION — _855. D. M. Markowitz, From Complexity to Clarity: How AI Enhances Perceptions of Scientists and the Public’s Understandi…_
+- **554** → `GOV-REVIEW-BYPASS-318` — REVIEW BYPASS — _860. L. Ranaldi, G. Pucci, When Large Language Models Contradict Humans? Large Language Models’ Sycophantic Behaviour, a…_
+- **555** → `ADV-EDUCATIONAL-092` — EDUCATIONAL EXEMPTION — _865. P. Cardon, C. Fleischmann, J. Aritz, M. Logemann, J. Heidewald, The Challenges and Opportunities of AI-Assisted Wri…_
+- **556** → `AGEN-TIME-MANIP-079` — TIMING MANIPULATION — _869.  a 869.  b 869.  c K. Mimizuka, M. A. Brown, K.-C. Yang, J. Lukito, Post-Post-API Age: Studying Digital Platforms i…_
+- **557** → `ADV-RL-ATTACK-108` — REINFORCEMENT LEARNING ATTACK — _876. R. Lempert, J. Welburn, L. Mussio, M. Aldous, Applying History to Inform Anticipatory AI Governance (RAND Corporati…_
+- **558** → `AGEN-EVAL-DECEP-038` — EVALUATOR DECEPTION — _880.  a 880.  b Y. Huang, L. Sun, H. Wang, S. Wu, Q. Zhang, Y. Li, C. Gao, Y. Huang, W. Lyu, Y. Zhang, X. Li, H. Sun, Z.…_
+- **560** → `ARCH-BATCH-SAFE-199` — BATCH PROCESSING SAFETY LOSS — _889.  a 889.  b J. Adebayo, J. Gilmer, M. Muelly, I. Goodfellow, M. Hardt, B. Kim, “Sanity Checks for Saliency Maps” in …_
+- **562** → `GOV-ESCALATE-FAIL-319` — ESCALATION FAILURE — _898. S. Kapoor, B. Stroebl, P. Kirgis, N. Nadgir, Z. S. Siegel, B. Wei, T. Xue, Z. Chen, F. Chen, S. Utpala, F. Ndzomga,…_
+- **563** → `ALIGN-SAFE-CAP-TRADE-188` — SAFETY-CAPABILITY TRADEOFF — _901. A. M. Bean, R. O. Kearns, A. Romanou, F. S. Hafner, H. Mayne, J. Batzner, N. Foroutan, C. Schmitz, K. Korgul, H. Ba…_
+- **564** → `GOV-REVIEW-BYPASS-318` — REVIEW BYPASS — _904.  a 904.  b 904.  c [industry] I. Solaiman, Z. Talat, W. Agnew, L. Ahmad, D. Baker, S. L. Blodgett, H. Daumé III, J.…_
+- **565** → `GOV-REVIEW-BYPASS-318` — REVIEW BYPASS — _907. L. Ibrahim, S. Huang, L. Ahmad, U. Bhatt, M. Anderljung, Towards Interactive Evaluations for Interaction Harms in H…_
+- **566** → `ALIGN-CONTEXT-ETHICS-182` — CONTEXT-DEPENDENT ETHICS FAILURE — _911. X. Shen, Z. Chen, M. Backes, Y. Shen, Y. Zhang, “Do Anything Now”: Characterizing and Evaluating In-The-Wild Jailbr…_
+- **567** → `ADV-DATA-POISON-125` — DATA POISONING — _916. S. Longpre, R. Mahari, A. N. Lee, C. S. Lund, H. Oderinwale, W. Brannon, N. Saxena, N. Obeng-Marnu, T. South, C. J.…_
+- **568** → `AGEN-FRAME-MANIP-078` — FRAMING MANIPULATION — _920. OECD, “Intellectual Property Issues in Artificial Intelligence Trained on Scraped Data” (Organisation for Economic …_
+- **570** → `GOV-PROCESS-FAIL-337` — PROCESS FAILURE — _932. T. Cimpeanu, F. C. Santos, L. M. Pereira, T. Lenaerts, T. A. Han, Artificial Intelligence Development Races in Hete…_
+- **571** → `AGEN-CHAIN-ASSEM-056` — CHAIN ASSEMBLY — _938. D. Fernández Llorca, V. Charisi, R. Hamon, I. Sánchez, E. Gómez, Liability Regimes in the Age of AI: A Use-Case Dri…_
+- **572** → `GOV-AUTHORITY-UNCLEAR-342` — DECISION AUTHORITY UNCLEAR — _944. M. Pistillo, S. Van Arsdale, L. Heim, C. Winter, The Role of Compute Thresholds for AI Governance. George Washingto…_
+- **573** → `EPIS-REVERSAL-021` — REVERSAL CURSE — _951. R. Bommasani, K. A. Creel, A. Kumar, D. Jurafsky, P. Liang, Picking on the Same Person: Does Algorithmic Monocultur…_
+- **574** → `GOV-INCIDENT-FAIL-320` — INCIDENT RESPONSE FAILURE — _956.  a 956.  b J. O’Brien, S. Ee, Z. Williams, “Deployment Corrections: An Incident Response Framework for Frontier AI …_
+- **575** → `ARCH-CODE-INJECT-239` — CODE EXECUTION INJECTION — _961. M. M. Maas, Innovation-Proof Global Governance for Military Artificial Intelligence?: How I Learned to Stop Worryin…_
+- **576** → `DOMAIN-UNPROVEN-TREAT-294` — UNPROVEN TREATMENT ADVOCACY — _966. R. Bommasani, S. Arora, J. Chayes, Y. Choi, M.-F. Cuéllar, L. Fei-Fei, D. E. Ho, D. Jurafsky, S. Koyejo, H. Lakkara…_
+- **577** → `ADV-DAN-083` — DAN — _972. OECD, “Common Guideposts to Promote Interoperability in AI Risk Management” (Organisation for Economic Co-operation…_
+- **578** → `GOV-STANDARD-FAIL-331` — STANDARD COMPLIANCE FAILURE — _978. A. Birhane, W. Isaac, V. Prabhakaran, M. Diaz, M. C. Elish, I. Gabriel, S. Mohamed, “Power to the People? Opportuni…_
+- **579** → `GOV-COMM-FAIL-340` — COMMUNICATION FAILURE — _984. Partnership on AI, “[Draft] Guidelines for Participatory and Inclusive AI” (2024); https://partnershiponai.org/stak…_
+- **580** → `ARCH-VERSION-REGRESS-209` — VERSIONING SAFETY REGRESSION — _988.  a 988.  b K. Kieslich, N. Helberger, N. Diakopoulos, “My Future with My Chatbot: A Scenario-Driven, User-Centric A…_
+- **581** → `DOMAIN-SELF-HARM-ENABLE-292` — SELF-HARM ENABLEMENT — _992. R. Shelby, S. Rismani, K. Henne, A. Moon, N. Rostamzadeh, P. Nicholas, N. ’mah Yilla-Akbari, J. Gallegos, A. Smart,…_
+- **582** → `GOV-CCPA-VIOL-324` — CCPA VIOLATION — _999.  a 999.  b H. Janssen, M. Seng Ah Lee, J. Singh, Practical Fundamental Rights Impact Assessments. International Jou…_
+- **583** → `GOV-EXPERTISE-GAP-336` — EXPERTISE GAP — _1005.  a 1005.  b 1005.  c S. Lazar, A. Nelson, AI Safety on Whose Terms? Science 381, 138 (2023); https://doi.org/10.11…_
+- **584** → `GOV-GDPR-VIOL-323` — GDPR VIOLATION — _1010. A. Homewood, S. Williams, N. Dreksler, J. Lidiard, M. Murray, L. Heim, M. Ziosi, S. Ó. hÉigeartaigh, M. Chen, K. W…_
+- **585** → `AGEN-BLAME-SHIFT-043` — BLAME SHIFTING — _1014.  a 1014.  b J. Mökander, L. Floridi, Operationalising AI Governance through Ethics-Based Auditing: An Industry Cas…_
+- **586** → `GOV-EXPERTISE-GAP-336` — EXPERTISE GAP — _1020. V. Hemming, M. A. Burgman, A. M. Hanea, M. F. McBride, B. C. Wintle, A Practical Guide to Structured Expert Elicit…_
+- **587** → `GOV-TRAINING-FAIL-339` — TRAINING FAILURE — _1025. [industry] L. Weidinger, J. Barnhart, J. Brennan, C. Butterfield, S. Young, W. Hawkins, L. A. Hendricks, R. Comane…_
+- **588** → `ARCH-PERSIST-STATE-228` — PERSISTENT STATE EXPLOIT — _1029.  a 1029.  b 1029.  c N. A. Caputo, S. Campos, S. Casper, J. Gealy, B. Hung, J. Jacobs, D. Kossack, T. Lorente, M. …_
+- **589** → `ADV-DAN-083` — DAN — _1032. S. Kapoor, R. Bommasani, K. Klyman, S. Longpre, A. Ramaswami, P. Cihon, A. K. Hopkins, K. Bankston, S. Biderman, M…_
+- **590** → `ADV-DEEPFAKE-154` — SYNTHETIC MEDIA — _1037. M. D. Buhl, G. Sett, L. Koessler, J. Schuett, M. Anderljung, Safety Cases for Frontier AI, arXiv [cs.CY] (2024); h…_
+- **591** → `AGEN-EMERGE-INTERACT-064` — EMERGENCE VIA INTERACTION — _1043. [industry] W. Zhong, R. Cui, Y. Guo, Y. Liang, S. Lu, Y. Wang, A. Saied, W. Chen, N. Duan, AGIEval: A Human-Centri…_
+- **592** → `ADV-RL-ATTACK-108` — REINFORCEMENT LEARNING ATTACK — _1047. P. Liang, R. Bommasani, T. Lee, D. Tsipras, D. Soylu, M. Yasunaga, Y. Zhang, D. Narayanan, Y. Wu, A. Kumar, B. New…_
+- **593** → `ADV-UNIVERSAL-SUFFIX-104` — UNIVERSAL ADVERSARIAL SUFFIX — _1051.  a 1051.  b DSIT, “Seoul Ministerial Statement for Advancing AI Safety, Innovation and Inclusivity: AI Seoul Summi…_
+- **594** → `ADV-TAP-114` — TAP — _1056. R. Shah, Q. F. Montixi, S. Pour, A. Tagade, J. Rando, “Scalable and Transferable Black-Box Jailbreaks for Language…_
+- **595** → `ADV-AUTODAN-117` — AUTODAN — _1060. M. Feffer, A. Sinha, Z. C. Lipton, H. Heidari, Red-Teaming for Generative AI: Silver Bullet or Security Theater?, …_
+- **596** → `DOMAIN-DUAL-USE-257` — DUAL-USE RESEARCH ENABLEMENT — _1065. US AI Safety Institute, “Managing Misuse Risk for Dual-Use Foundation Models” (NIST, 2024); https://doi.org/10.602…_
+- **597** → `AGEN-PROGRESS-LIE-035` — PROGRESS LYING — _1074. P. Mulgund, R. Singh, R. Sharman, M. Gupta, A. S. Pothukuchi, Defense-in-Depth Model of Countermeasures against Ad…_
+- **598** → `ADV-DAN-083` — DAN — _1080. European Parliament and Council, Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 Jun…_
+- **599** → `GOV-REPORT-FAIL-333` — REPORTING OBLIGATION FAILURE — _1085.  a 1085.  b [industry] I. Solaiman, The Gradient of Generative AI Release: Methods and Considerations, arXiv [cs.C…_
+- **600** → `GOV-REPORT-FAIL-333` — REPORTING OBLIGATION FAILURE — _1091.  a 1091.  b [industry] Microsoft, “Responsible AI Transparency Report 2025” (Microsoft, 2025); https://cdn-dynmedi…_
+- **601** → `GOV-REVIEW-BYPASS-318` — REVIEW BYPASS — _1098. B. Lakshmi Prasanna, M. SaidiReddy, (CSM2-RA-R2-TI): Cyber Security Maturity Model for Risk Assessment Using Risk …_
+- **602** → `ARCH-PERSIST-STATE-228` — PERSISTENT STATE EXPLOIT — _1104.  a 1104.  b B. Rakova, J. Yang, H. Cramer, R. Chowdhury, Where Responsible AI Meets Reality: Practitioner Perspect…_
+- **603** → `AGEN-SELECT-DISCLOS-077` — SELECTIVE DISCLOSURE — _1109.  a 1109.  b 1109.  c B. Lund, Z. Orhan, N. R. Mannuru, R. V. K. Bevara, B. Porter, M. K. Vinaih, P. Bhaskara, Stan…_
+- **604** → `GOV-DOC-FAIL-338` — DOCUMENTATION FAILURE — _1116.  a 1116.  b 1116.  c Frontier Model Forum, “Risk Taxonomy and Thresholds for Frontier AI Frameworks” (2025); https…_
+- **605** → `ADV-INDIRECT-INJECT-122` — INDIRECT PROMPT INJECTION — _1123. [industry] Microsoft, “Frontier Governance Framework” (Microsoft, 2025); https://cdn-dynmedia-1.microsoft.com/is/c…_
+- **606** → `GOV-STANDARD-FAIL-331` — STANDARD COMPLIANCE FAILURE — _1131. H.-P. (hank) Lee, Y.-J. Yang, T. S. Von Davier, J. Forlizzi, S. Das, “Deepfakes, Phrenology, Surveillance, and Mor…_
+- **607** → `ALIGN-CONTEXT-ETHICS-182` — CONTEXT-DEPENDENT ETHICS FAILURE — _1135. South Korean Ministry of Government Legislation, “Framework Act on the Development of Artificial Intelligence and …_
+- **608** → `ADV-SQL-INJECT-128` — SQL INJECTION — _1140. M. Srikumar, J. Chang, K. Chmielinski, “Risk Mitigation Strategies for the Open Foundation Model Value Chain: Insi…_
+- **609** → `AGEN-SUCCESSOR-SAB-051` — SUCCESSOR SABOTAGE — _1144. L. Jiang, K. Rao, S. Han, A. Ettinger, F. Brahman, S. Kumar, N. Mireshghallah, X. Lu, M. Sap, Y. Choi, N. Dziri, “…_
+- **610** → `ADV-AGENT-WORM-124` — AGENT WORM — _1149.  a 1149.  b 1149.  c 1149.  d 1149.  e X. Li, R. Wang, M. Cheng, T. Zhou, C.-J. Hsieh, “DrAttack: Prompt Decomposi…_
+- **611** → `ARCH-EMBED-VULN-215` — EMBEDDING SPACE VULNERABILITY — _1154.  a 1154.  b 1154.  c 1154.  d S. Jain, R. Kirk, E. S. Lubana, R. P. Dick, H. Tanaka, E. Grefenstette, T. Rocktäsch…_
+- **612** → `ADV-BEAM-ATTACK-106` — BEAM SEARCH ATTACK — _1160.  a 1160.  b 1160.  c 1160.  d Z. Che, S. Casper, R. Kirk, A. Satheesh, S. Slocum, L. E. McKinney, R. Gandikota, A.…_
+- **613** → `ARCH-DATA-EXFIL-245` — DATA EXFILTRATION — _1165. C. Yueh-Han, N. Joshi, Y. Chen, M. Andriushchenko, R. Angell, H. He, Monitoring Decomposition Attacks in LLMs with…_
+- **614** → `ALIGN-TEACHER-DIVERG-164` — TEACHER-STUDENT DIVERGENCE — _1170.  a 1170.  b 1170.  c M. Sloane, E. Moss, O. Awomolo, L. Forlano, “Participation Is Not a Design Fix for Machine Le…_
+- **615** → `ALIGN-ADV-SAFE-192` — ADVERSARIAL SAFETY BOUNDARY — _1175.  a 1175.  b 1175.  c F. Barez, T. Fu, A. Prabhu, S. Casper, A. Sanyal, A. Bibi, A. O’Gara, R. Kirk, B. Bucknall, T…_
+- **616** → `ADV-BEAM-ATTACK-106` — BEAM SEARCH ATTACK — _1179. O. Aarne, T. Fist, C. Withers, “Secure, Governable Chips: Using On-Chip Mechanisms to Manage National Security Ris…_
+- **617** → `GOV-REVIEW-BYPASS-318` — REVIEW BYPASS — _1184.  a 1184.  b 1184.  c L. Bailey, A. Serrano, A. Sheshadri, M. Seleznyov, J. Taylor, E. Jenner, J. Hilton, S. Casper…_
+- **618** → `GOV-REVIEW-BYPASS-318` — REVIEW BYPASS — _1188.  a 1188.  b S. Natarajan, S. Mathur, S. Sidheekh, W. Stammer, K. Kersting, Human-in-the-Loop or AI-in-the-Loop? Au…_
+- **619** → `DOMAIN-ADULT-CONTENT-296` — ADULT CONTENT GENERATION — _1193.  a 1193.  b 1193.  c T. Gloaguen, N. Jovanović, R. Staab, M. Vechev, Towards Watermarking of Open-Source LLMs, arX…_
+- **620** → `EPIS-COPYRIGHT-026` — COPYRIGHTED CONTENT GENERATION — _1199.  a 1199.  b 1199.  c Z. Jiang, M. Guo, Y. Hu, N. Z. Gong, Watermark-Based Attribution of AI-Generated Content, arX…_
+- **621** → `ADV-DEEPFAKE-154` — SYNTHETIC MEDIA — _1203.  a 1203.  b 1203.  c L. Lin, N. Gupta, Y. Zhang, H. Ren, C.-H. Liu, F. Ding, X. Wang, X. Li, L. Verdoliva, S. Hu, …_
+- **622** → `GOV-REVIEW-BYPASS-318` — REVIEW BYPASS — _1207. S. Longpre, G. Yauney, E. Reif, K. Lee, A. Roberts, B. Zoph, D. Zhou, J. Wei, K. Robinson, D. Mimno, D. Ippolito, …_
+- **623** → `ADV-TAP-114` — TAP — _1210. J. Welbl, A. Glaese, J. Uesato, S. Dathathri, J. Mellor, L. A. Hendricks, K. Anderson, P. Kohli, B. Coppin, P.-S. …_
+- **624** → `ADV-EMOJI-ENCODE-144` — EMOJI ENCODING — _1213. A. Xu, E. Pathak, E. Wallace, S. Gururangan, M. Sap, D. Klein, “Detoxifying Language Models Risks Marginalizing Mi…_
+- **625** → `ADV-DAN-083` — DAN — _1217. [industry] D. M. Ziegler, N. Stiennon, J. Wu, T. B. Brown, A. Radford, D. Amodei, P. Christiano, G. Irving, “Fine-…_
+- **626** → `ALIGN-SYCOPHANCY-167` — SYCOPHANCY — _1223. M. Glickman, T. Sharot, How Human-AI Feedback Loops Alter Human Perceptual, Emotional and Social Judgements. Natur…_
+- **627** → `ADV-DAN-083` — DAN — _1228.  a 1228.  b Y. Zhang, X. Chen, K. Chen, Y. Du, X. Dang, P.-A. Heng, The Dual-Use Dilemma in LLMs: Do Empowering Et…_
+- **628** → `GOV-STANDARD-FAIL-331` — STANDARD COMPLIANCE FAILURE — _1233.  a 1233.  b E. Durmus, K. Nguyen, T. Liao, N. Schiefer, A. Askell, A. Bakhtin, C. Chen, Z. Hatfield-Dodds, D. Hern…_
+- **629** → `ALIGN-CULTURE-BIAS-171` — CULTURAL BIAS — _1237. Z. Kenton, N. Y. Siegel, J. Kramar, J. Brown-Cohen, S. Albanie, J. Bulian, R. Agarwal, D. Lindner, Y. Tang, N. Goo…_
+- **630** → `ALIGN-ORTHO-VALUE-176` — ORTHOGONAL VALUE PURSUIT — _1244.  a 1244.  b P. Röttger, V. Hofmann, V. Pyatkin, M. Hinck, H. R. Kirk, H. Schütze, D. Hovy, Political Compass or Sp…_
+- **631** → `ALIGN-ORTHO-VALUE-176` — ORTHOGONAL VALUE PURSUIT — _1248.  a 1248.  b 1248.  c A. Khan, S. Casper, D. Hadfield-Menell, Randomness, Not Representation: The Unreliability of …_
+- **632** → `ALIGN-ORTHO-VALUE-176` — ORTHOGONAL VALUE PURSUIT — _1252. D. Ali, A. Kocak, D. Zhao, A. Koenecke, O. Papakyriakopoulos, “A Sociotechnical Perspective on Aligning AI with Pl…_
+- **633** → `ALIGN-ADV-SAFE-192` — ADVERSARIAL SAFETY BOUNDARY — _1257. [industry] W. Wang, Z. Tu, C. Chen, Y. Yuan, J.-T. Huang, W. Jiao, M. R. Lyu, All Languages Matter: On the Multili…_
+- **634** → `ALIGN-ADV-SAFE-192` — ADVERSARIAL SAFETY BOUNDARY — _1263.  a 1263.  b S. Lee, M. Kim, L. Cherif, D. Dobre, J. Lee, S. J. Hwang, K. Kawaguchi, G. Gidel, Y. Bengio, N. Malkin…_
+- **635** → `AGEN-CONTEXT-DRIFT-069` — CONTEXT DRIFT — _1268. Z. Wei, Y. Wang, A. Li, Y. Mo, Y. Wang, Jailbreak and Guard Aligned Language Models with Only Few In-Context Demon…_
+- **636** → `ARCH-EMBED-VULN-215` — EMBEDDING SPACE VULNERABILITY — _1273. P. Henderson, E. Mitchell, C. Manning, D. Jurafsky, C. Finn, “Self-Destructing Models: Increasing the Costs of Har…_
+- **637** → `GOV-FINETUNE-STRIP-302` — FINE-TUNING SAFETY STRIP — _1277. B. Li, R. Gu, J. Wang, L. Qi, Y. Li, R. Wang, Z. Qin, T. Zhang, “Towards Resilient Safety-Driven Unlearning for Di…_
+- **638** → `AGEN-EMERGE-INTERACT-064` — EMERGENCE VIA INTERACTION — _1282.  a 1282.  b A. S. Sharma, N. Sarkar, V. Chundawat, A. A. Mali, M. Mandal, Unlearning or Concealment? A Critical An…_
+- **639** → `ADV-STEG-TEXT-145` — STEGANOGRAPHIC TEXT — _1286.  a 1286.  b [industry] S. Marks, J. Treutlein, T. Bricken, J. Lindsey, J. Marcus, S. Mishra-Sharma, D. Ziegler, E.…_
+- **640** → `GOV-REVIEW-BYPASS-318` — REVIEW BYPASS — _1291. I. Seeber, E. Bittner, R. O. Briggs, T. de Vreede, G.-J. de Vreede, A. Elkins, R. Maier, A. B. Merz, S. Oeste-Reiß…_
+- **641** → `ADV-DATA-POISON-125` — DATA POISONING — _1296. N. Yu, V. Skripniuk, S. Abdelnabi, M. Fritz, “Artificial Fingerprinting for Generative Models: Rooting Deepfake At…_
+- **642** → `GOV-STANDARD-FAIL-331` — STANDARD COMPLIANCE FAILURE — _1302. L. Li, B. Jiang, P. Wang, K. Ren, H. Yan, X. Qiu, “Watermarking LLMs with Weight Quantization” in Findings of the …_
+- **643** → `AGEN-AMBIG-COMM-073` — AMBIGUOUS COMMUNICATION — _1307. A. Liu, L. Pan, Y. Lu, J. Li, X. Hu, X. Zhang, L. Wen, I. King, H. Xiong, P. Yu, A Survey of Text Watermarking in …_
+- **644** → `GOV-FINETUNE-STRIP-302` — FINE-TUNING SAFETY STRIP — _1313. U.S. Nuclear Regulatory Commission, “Regulatory Guide 1.174: An Approach for Using Probabilistic Risk Assessment i…_
+- **645** → `AGEN-TECH-OBFUSC-076` — TECHNICAL OBFUSCATION — _1318. D. G. Widder, M. Whittaker, S. M. West, Why “Open” AI Systems Are Actually Closed, and Why This Matters. Nature 63…_
+- **646** → `DOMAIN-DEF-OFF-FLIP-268` — DEFENSIVE TO OFFENSIVE FLIP — _1325. T. Shevlane, A. Dafoe, “The Offense-Defense Balance of Scientific Knowledge: Does Publishing AI Research Reduce Mi…_
+- **647** → `ARCH-FINETUNE-OVERRIDE-219` — FINE-TUNING SAFETY OVERRIDE — _1330. E. Seger, J. Hancock, “The Open Dividend Building an AI Openness Strategy to Unlock the UK’s AI Potential” (Demos,…_
+- **648** → `GOV-FINETUNE-STRIP-302` — FINE-TUNING SAFETY STRIP — _1337. P. S. Pandey, S. Simko, K. Pelrine, Z. Jin, “Accidental Vulnerability: Factors in Fine-Tuning That Shift Model Saf…_
+- **649** → `ADV-RL-ATTACK-108` — REINFORCEMENT LEARNING ATTACK — _1344. X. Qi, Y. Zeng, T. Xie, P.-Y. Chen, R. Jia, P. Mittal, P. Henderson, “Fine-Tuning Aligned Language Models Compromi…_
+- **650** → `ADV-STEG-IMG-147` — STEGANOGRAPHIC IMAGE — _1349.  a 1349.  b 1349.  c 1349.  d E. Grunewald, A. B. Gershovich, “Accelerating AI Data Center Security” (Institute fo…_
+- **651** → `ARCH-PERSIST-STATE-228` — PERSISTENT STATE EXPLOIT — _1354. J. Bateman, D. Baer, S. A. Bell, G. O. Brown, M.-F. (tino) Cuéllar, D. Ganguli, P. Henderson, B. Kotila, L. Lessig…_
+- **652** → `ALIGN-CONTEXT-ETHICS-182` — CONTEXT-DEPENDENT ETHICS FAILURE — _1357. M. M. Gandhi, P. Cihon, O. C. Larter, R. Anselmetti, “Societal Capacity Assessment Framework: Measuring Advanced A…_
+- **653** → `ADV-DAN-083` — DAN — _1362. D. Paton, D. Johnston, Disaster Resilience: An Integrated Approach (2nd Ed.) (Charles C Thomas Publisher, Springfi…_
+- **654** → `GOV-ESCALATE-FAIL-319` — ESCALATION FAILURE — _1367. A. Mentges, L. Halekotte, M. Schneider, T. Demmer, D. Lichte, A Resilience Glossary Shaped by Context: Reviewing R…_
+- **655** → `GOV-COMM-FAIL-340` — COMMUNICATION FAILURE — _1372. L. Bakanidze, P. Imnadze, D. Perkins, Biosafety and Biosecurity as Essential Pillars of International Health Secur…_
+- **656** → `ADV-DEEPFAKE-154` — SYNTHETIC MEDIA — _1377. S. Patel, A. Bhadouria, K. Dodiya, A. Patel, Evaluating Modern Ransomware and Effective Data Backup and Recovery S…_
+- **657** → `ADV-DEEPFAKE-154` — SYNTHETIC MEDIA — _1381. J. Pohl, D. Assenmacher, M. Seiler, H. Trautmann, C. Grimme, Artificial Social Media Campaign Creation for Benchma…_
+- **658** → `GOV-ACCOUNT-GAP-310` — ACCOUNTABILITY GAP — _1386. I. A. Bykov, M. V. Medvedeva, “Media Literacy and AI-Technologies in Digital Communication: Opportunities and Risk…_
+- **659** → `ADV-ENSEMBLE-120` — ENSEMBLE ATTACK — _1390.  a 1390.  b K. Gao, P. Vytelingum, S. Weston, W. Luk, C. Guo, High-Frequency Financial Market Simulation and Flash…_
+- **660** → `DOMAIN-HARASS-CONTENT-299` — HARASSMENT CONTENT — _1395. J. D. Rozich, R. J. Howard, J. M. Justeson, P. D. Macken, M. E. Lindsay, R. K. Resar, Standardization as a Mechani…_
+- **661** → `AGEN-DEPEND-CREATE-053` — DEPENDENCY CREATION — _1400. OECD Employment Outlook 2023, OECD (2023); https://www.oecd.org/en/publications/oecd-employment-outlook-2023_08785…_
+- **662** → `ADV-DAN-083` — DAN — _1406. C. Merlano, Enhancing Cyber Security through Artificial Intelligence and Machine Learning: A Literature Review. Jo…_
+- **663** → `DOMAIN-ZERODAY-262` — ZERO-DAY DISCOVERY — _1412. D. B. Olawade, J. Teke, O. Fapohunda, K. Weerasinghe, S. O. Usman, A. O. Ige, A. Clement David-Olawade, Leveraging…_
+- **664** → `DOMAIN-EXPLOIT-DEV-263` — EXPLOIT DEVELOPMENT — _1418. H. Bradley, G. Sastry, The Great Refactor: How to Secure Critical Open-Source Code against Memory Safety Exploits …_
+- **665** → `ADV-DAN-083` — DAN — _1424.  a 1424.  b 1424.  c B. Garfinkel, A. Dafoe, “How Does the Offense-Defense Balance Scale?” in Emerging Technologie…_
+- **666** → `GOV-CULTURE-FAIL-334` — SAFETY CULTURE FAILURE — _1429. J. Stiglitz, Distinguished Lecture on Economics in Government: The Private Uses of Public Interests: Incentives an…_
+- **667** → `DOMAIN-OFFENSIVE-TOOLS-267` — OFFENSIVE CYBER TOOLS — _1434. M. Buiten, A. de Streel, M. Peitz, The Law and Economics of AI Liability. Computer Law and Security Report 48 , 10…_
+- **668** → `GOV-STANDARD-FAIL-331` — STANDARD COMPLIANCE FAILURE — _1441. H. Rosenqvist, N. K. Reitan, L. Petersen, D. Lange, “ISRA: Improver Societal Resilience Analysis for Critical Infr…_
+- **669** → `ADV-DAN-083` — DAN — _1448. M. Rauh, N. Marchal, A. Manzini, L. A. Hendricks, R. Comanescu, C. Akbulut, T. Stepleton, J. Mateos-Garcia, S. Ber…_

@@ -1,0 +1,977 @@
+{
+  "source_file": "reports/anthropic-zero-day-cyber-2026/anthropic-zero-day-cyber-2026-source.txt",
+  "chunk_count": 12,
+  "max_chars": 1400,
+  "top1_histogram": {
+    "AGEN-RECURS-IMPROVE-059": 1,
+    "DOMAIN-ZERODAY-262": 1,
+    "GOV-REVIEW-BYPASS-318": 1,
+    "ADV-DIRECT-INJECT-121": 1,
+    "ARCH-MEM-CORRUPT-225": 1,
+    "ARCH-COMPLY-WARN-196": 1,
+    "ARCH-CONSENT-VIOL-251": 1,
+    "DOMAIN-CITE-SPOOF-280": 1,
+    "ADV-PAIR-113": 1,
+    "AGEN-DEPEND-CREATE-053": 1,
+    "ARCH-LAYER-BYPASS-213": 1,
+    "DOMAIN-OFFENSIVE-TOOLS-267": 1
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "char_len": 859,
+      "preview": "0-Days \\ red.anthropic.com  red .anthropic.com  Evaluating and mitigating the growing risk of LLM-discovered 0-days  February 5, 2026  Nicholas Carlini * , Keane Lucas * , Evyatar Ben Asher * , Newton Cheng, Hasnain Lakh\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-RECURS-IMPROVE-059",
+          "name": "RECURSIVE SELF-IMPROVEMENT",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Modifies own code/prompts to increase capability",
+          "detection": "Code integrity check",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "code"
+          ]
+        },
+        {
+          "id": "DOMAIN-DEF-OFF-FLIP-268",
+          "name": "DEFENSIVE TO OFFENSIVE FLIP",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Defense knowledge inverted to offense",
+          "detection": "Capability inversion test",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "become",
+            "defensive"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 1,
+      "char_len": 1137,
+      "preview": "Opus 4.6 is notably better at finding high-severity vulnerabilities than previous models and a sign of how quickly things are moving. Security teams have been automating vulnerability discovery for years, investing heavi\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-ZERODAY-262",
+          "name": "ZERO-DAY DISCOVERY",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Code analysis training enables model to generalize vulnerability patterns to novel codebases, functioning as an automated static analyzer capable of producing exploitable findings",
+          "detection": "Vulnerability discovery rate",
+          "severity": "CRITICAL",
+          "score": 0.444,
+          "matched_keywords": [
+            "discovery",
+            "scale",
+            "vulnerability"
+          ]
+        },
+        {
+          "id": "ADV-AUTOPROMPT-103",
+          "name": "AUTOPROMPT",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Automated trigger discovery",
+          "detection": "Trigger pattern matching",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "discovery"
+          ]
+        },
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "security",
+            "without"
+          ]
+        },
+        {
+          "id": "ARCH-SANDBOX-ESCAPE-238",
+          "name": "SANDBOX ESCAPE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Breaks out of execution sandbox",
+          "detection": "Sandbox integrity check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "breaks",
+            "out"
+          ]
+        },
+        {
+          "id": "ALIGN-DIST-SAFE-194",
+          "name": "DISTRIBUTIONAL SHIFT SAFETY",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety fails on out-of-distribution inputs",
+          "detection": "OOD safety test",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "inputs",
+            "out"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 2,
+      "char_len": 1048,
+      "preview": "Part of tipping the scales toward defenders means doing the work ourselves. We're now using Claude to find and help fix vulnerabilities in open source software. We\u2019ve started with open source because it runs everywhere\u2014f\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ALIGNMENT",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-REVIEW-BYPASS-318",
+          "name": "REVIEW BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Bypasses human review",
+          "detection": "Review coverage check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "human"
+          ]
+        },
+        {
+          "id": "GOV-OPEN-IRREVERS-301",
+          "name": "OPEN-WEIGHT IRREVERSIBILITY",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Once model weights are publicly released, no technical or legal mechanism can un-release them; fine-tuning and modification proceed entirely outside the original developer's control surface",
+          "detection": "Update mechanism verification",
+          "severity": "CRITICAL",
+          "score": 0.273,
+          "matched_keywords": [
+            "open",
+            "post"
+          ]
+        },
+        {
+          "id": "GOV-ESCALATE-FAIL-319",
+          "name": "ESCALATION FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Fails to escalate issues",
+          "detection": "Escalation pattern analysis",
+          "severity": "STANDARD",
+          "score": 0.214,
+          "matched_keywords": [
+            "critical"
+          ]
+        },
+        {
+          "id": "EPIS-CONTEXT-OVERFLOW-027",
+          "name": "CONTEXT WINDOW OVERFLOW",
+          "group": "EPISTEMIC",
+          "class": "E3: KNOWLEDGE RETRIEVAL CLASS",
+          "mechanism": "Forgets early context in long conversation",
+          "detection": "Context recall test at distance",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "early",
+            "long"
+          ]
+        },
+        {
+          "id": "ALIGN-MODE-COLLAPSE-162",
+          "name": "MODE COLLAPSE TO REWARD",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Narrow focus on high-reward actions",
+          "detection": "Action diversity metric",
+          "severity": "STANDARD",
+          "score": 0.182,
+          "matched_keywords": [
+            "high",
+            "maintained"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 3,
+      "char_len": 730,
+      "preview": "Setup  In this work, we put Claude inside a \u201cvirtual machine\u201d (literally, a simulated computer) with access to the latest versions of open source projects. We gave it standard utilities (e.g., the standard coreutils or P\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "instructions"
+          ]
+        },
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "machine",
+            "virtual"
+          ]
+        },
+        {
+          "id": "ALIGN-DIST-SAFE-194",
+          "name": "DISTRIBUTIONAL SHIFT SAFETY",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety fails on out-of-distribution inputs",
+          "detection": "OOD safety test",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "out"
+          ]
+        },
+        {
+          "id": "ALIGN-VIRTUE-FAIL-181",
+          "name": "VIRTUE ETHICS FAILURE",
+          "group": "ALIGNMENT",
+          "class": "ALN3: VALUE ALIGNMENT CLASS",
+          "mechanism": "Acts against character virtues",
+          "detection": "Virtue consistency check",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "spec",
+            "virtu"
+          ]
+        },
+        {
+          "id": "ADV-LANG-SWITCH-087",
+          "name": "LANGUAGE SWITCH",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Non-English to bypass filters",
+          "detection": "Multi-lingual safety check",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "language",
+            "work"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 4,
+      "char_len": 1269,
+      "preview": "To ensure that Claude hadn\u2019t hallucinated bugs (i.e., invented problems that don\u2019t exist, a problem that increasingly is placing an undue burden\u00a0on open source developers), we validated every bug extensively before repor\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-MEM-CORRUPT-225",
+          "name": "MEMORY CORRUPTION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Malicious content corrupts memory",
+          "detection": "Memory integrity check",
+          "severity": "STANDARD",
+          "score": 0.686,
+          "matched_keywords": [
+            "corruption",
+            "memory"
+          ]
+        },
+        {
+          "id": "ADV-EDUCATIONAL-092",
+          "name": "EDUCATIONAL EXEMPTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"For research purposes...\"",
+          "detection": "Intent validation",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "intent",
+            "validation"
+          ]
+        },
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "intent",
+            "security",
+            "tools"
+          ]
+        },
+        {
+          "id": "ADV-TRANSLATION-094",
+          "name": "TRANSLATION BYPASS",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Translate this harmful text\"",
+          "detection": "Translation intent check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "intent"
+          ]
+        },
+        {
+          "id": "ALIGN-MODE-COLLAPSE-162",
+          "name": "MODE COLLAPSE TO REWARD",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Narrow focus on high-reward actions",
+          "detection": "Action diversity metric",
+          "severity": "STANDARD",
+          "score": 0.273,
+          "matched_keywords": [
+            "high"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 5,
+      "char_len": 1353,
+      "preview": "Vulnerabilities  Here are\u00a0three of the vulnerabilities Claude found (now patched\u00a0by maintainers), which we believe demonstrate the unique advantages LLMs have over other tools.  GhostScript \u00a0is a utility that processes P\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-COMPLY-WARN-196",
+          "name": "COMPLY-THEN-WARN",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "When safety layers are attached to generation output rather than built into the generation process, harmful content is fully produced before safety checks run \u2014 the check becomes a post-production label, not a constraint",
+          "detection": "Generation-warning order check",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "after",
+            "before",
+            "order"
+          ]
+        },
+        {
+          "id": "AGEN-TOOL-MISUSE-055",
+          "name": "TOOL MISUSE",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Uses tools for unintended purposes",
+          "detection": "Tool usage pattern analysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "function",
+            "tools"
+          ]
+        },
+        {
+          "id": "ADV-ELABORATION-099",
+          "name": "ELABORATION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Tell me more about [harmful concept]\"",
+          "detection": "Elaboration intent analysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "about"
+          ]
+        },
+        {
+          "id": "ADV-TAP-114",
+          "name": "TAP",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Tree search over attack space",
+          "detection": "Tree structure detection",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "over"
+          ]
+        },
+        {
+          "id": "ARCH-VERSION-REGRESS-209",
+          "name": "VERSIONING SAFETY REGRESSION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "New version has weaker safety",
+          "detection": "Cross-version safety comparison",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 6,
+      "char_len": 1400,
+      "preview": "Let me check if maybe the checks are incomplete or there's another code path. Let me look at the other caller in gdevpsfx.c \u2026 Aha! This is very interesting! In gdevpsfx.c , the call to gs_type1_blend at line 292 does NOT\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-CONSENT-VIOL-251",
+          "name": "CONSENT VIOLATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Uses data without consent",
+          "detection": "Consent validation",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data",
+            "without"
+          ]
+        },
+        {
+          "id": "AGEN-DEPEND-CREATE-053",
+          "name": "DEPENDENCY CREATION",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Makes system dependent on its operation",
+          "detection": "Dependency analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "mak",
+            "oper"
+          ]
+        },
+        {
+          "id": "ALIGN-CONTEXT-SAFE-190",
+          "name": "CONTEXT-DEPENDENT SAFETY FAILURE",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safe in one context, unsafe in another",
+          "detection": "Cross-context safety check",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "another",
+            "unsafe"
+          ]
+        },
+        {
+          "id": "ARCH-LOG-LEAK-207",
+          "name": "LOGGING SAFETY LEAK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Logs contain unsafe content",
+          "detection": "Log content analysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "contain",
+            "unsafe"
+          ]
+        },
+        {
+          "id": "ARCH-FUNC-INJECT-234",
+          "name": "FUNCTION CALL INJECTION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Crafts malicious function arguments",
+          "detection": "Argument safety analysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "call",
+            "function"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 7,
+      "char_len": 893,
+      "preview": "char filename[PATH_MAX]; // this buffer is 4096 bytes r = sc_get_cache_dir(card->ctx, filename, sizeof(filename) - strlen(fp) - 2); if (r != SC_SUCCESS) goto err; strcat(filename,\"/\"); strcat(filename,fp);  Claude identi\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ADVERSARIAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-CITE-SPOOF-280",
+          "name": "CITATION SPOOFING",
+          "group": "DOMAIN",
+          "class": "DOM4: LEGAL/FINANCIAL CLASS",
+          "mechanism": "Generates fake case citations",
+          "detection": "Citation verification",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "case",
+            "real"
+          ]
+        },
+        {
+          "id": "ADV-ELABORATION-099",
+          "name": "ELABORATION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Tell me more about [harmful concept]\"",
+          "detection": "Elaboration intent analysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "about",
+            "concept"
+          ]
+        },
+        {
+          "id": "EPIS-CIRCULAR-017",
+          "name": "CIRCULAR REASONING",
+          "group": "EPISTEMIC",
+          "class": "E2: REASONING COLLAPSE CLASS",
+          "mechanism": "Conclusion assumes premise",
+          "detection": "Dependency graph cycle",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "proof"
+          ]
+        },
+        {
+          "id": "EPIS-FALSE-CERT-030",
+          "name": "FALSE CERTAINTY",
+          "group": "EPISTEMIC",
+          "class": "E4: CALIBRATION CLASS",
+          "mechanism": "Claims certainty without evidence",
+          "detection": "Evidence-claim mismatch",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "proof"
+          ]
+        },
+        {
+          "id": "EPIS-DECEPT-HALL-006",
+          "name": "DECEPTIVE HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Chain-of-thought builds self-consistent false narrative",
+          "detection": "Premise validation failure",
+          "severity": "STANDARD",
+          "score": 0.154,
+          "matched_keywords": [
+            "reason",
+            "valid"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 8,
+      "char_len": 1395,
+      "preview": "Briefly, Claude found\u00a0that this library assumes compressed data will always be smaller than its original size (which is normally a safe assumption), and that this assumption could be exploited. The way it did this was ch\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-PAIR-113",
+          "name": "PAIR",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Attacker LLM iteratively refines attack",
+          "detection": "Iterative pattern detection",
+          "severity": "STANDARD",
+          "score": 0.525,
+          "matched_keywords": [
+            "pair"
+          ]
+        },
+        {
+          "id": "ARCH-EMBED-VULN-215",
+          "name": "EMBEDDING SPACE VULNERABILITY",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Embeddings encode unsafe concepts",
+          "detection": "Embedding space analysis",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "encode",
+            "safe",
+            "vulnerability"
+          ]
+        },
+        {
+          "id": "ADV-AUTOPROMPT-103",
+          "name": "AUTOPROMPT",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Automated trigger discovery",
+          "detection": "Trigger pattern matching",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "trigger"
+          ]
+        },
+        {
+          "id": "ADV-UNICODE-OBFUSC-138",
+          "name": "UNICODE OBFUSCATION",
+          "group": "ADVERSARIAL",
+          "class": "ADV5: ENCODING ATTACKS",
+          "mechanism": "Lookalike characters",
+          "detection": "Homoglyph detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "characters"
+          ]
+        },
+        {
+          "id": "ADV-CMD-INJECT-129",
+          "name": "COMMAND INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects shell commands",
+          "detection": "Command pattern detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "safe"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 9,
+      "char_len": 1024,
+      "preview": "numPixel = N  Buffer size = (N + 2) codes  We need to generate > N + 1 codes  Each pixel can generate 1 code + resets.  But the pattern that might cause more codes is when we have sequences of length 1.  That is, Claude \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-DEPEND-CREATE-053",
+          "name": "DEPENDENCY CREATION",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Makes system dependent on its operation",
+          "detection": "Dependency analysis",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "remain"
+          ]
+        },
+        {
+          "id": "ADV-CORRECTION-098",
+          "name": "CORRECTION ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"This is wrong: [harmful]. Fix it.\"",
+          "detection": "Correction safety check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "generate"
+          ]
+        },
+        {
+          "id": "ALIGN-SAFE-SPEC-195",
+          "name": "SAFETY SPECIFICATION GAP",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety rules don't cover all harmful cases",
+          "detection": "Coverage analysis",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "coverage"
+          ]
+        },
+        {
+          "id": "GOV-MONITOR-BLIND-315",
+          "name": "MONITORING BLIND SPOTS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Operates in unmonitored areas",
+          "detection": "Monitoring coverage check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "coverage"
+          ]
+        },
+        {
+          "id": "GOV-AUTHORITY-UNCLEAR-342",
+          "name": "DECISION AUTHORITY UNCLEAR",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Unclear who makes safety decisions",
+          "detection": "Authority mapping",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "clear"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 10,
+      "char_len": 1364,
+      "preview": "Safeguards  Alongside the release of Claude Opus 4.6, we're introducing a new layer of detection to support our Safeguards team in identifying and responding \u00a0to cyber misuse of Claude. At the core of this work are probe\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-LAYER-BYPASS-213",
+          "name": "LAYER BYPASS",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Skips safety-critical layers",
+          "detection": "Layer activation tracking",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "layer"
+          ]
+        },
+        {
+          "id": "DOMAIN-MALWARE-GEN-264",
+          "name": "MALWARE GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Model trained on software corpora learns executable code generation without domain restrictions; RLHF safety training suppresses harmful output but does not eliminate the underlying functional code generation capability",
+          "detection": "Malware signature analysis",
+          "severity": "CRITICAL",
+          "score": 0.4,
+          "matched_keywords": [
+            "generates"
+          ]
+        },
+        {
+          "id": "ALIGN-SAFE-REGRESS-191",
+          "name": "SAFETY REGRESSION",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety degrades over time/updates",
+          "detection": "Longitudinal safety monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "time"
+          ]
+        },
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "cyber",
+            "security"
+          ]
+        },
+        {
+          "id": "AGEN-AUTO-PLAN-067",
+          "name": "AUTONOMOUS PLANNING",
+          "group": "AGENTIC",
+          "class": "A4: AUTONOMOUS OPERATION CLASS",
+          "mechanism": "Creates multi-step plans independently",
+          "detection": "Plan generation monitoring",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "step"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 11,
+      "char_len": 1047,
+      "preview": "Conclusion  Claude Opus 4.6 can find meaningful 0-day vulnerabilities in well-tested codebases, even without specialized scaffolding. Our results show that language models can add real value on top of existing discovery \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.556,
+          "matched_keywords": [
+            "creates",
+            "security",
+            "tools",
+            "without"
+          ]
+        },
+        {
+          "id": "ALIGN-SAFE-REGRESS-191",
+          "name": "SAFETY REGRESSION",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety degrades over time/updates",
+          "detection": "Longitudinal safety monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "time"
+          ]
+        },
+        {
+          "id": "DOMAIN-ZERODAY-262",
+          "name": "ZERO-DAY DISCOVERY",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Code analysis training enables model to generalize vulnerability patterns to novel codebases, functioning as an automated static analyzer capable of producing exploitable findings",
+          "detection": "Vulnerability discovery rate",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "day",
+            "discovery",
+            "scale"
+          ]
+        },
+        {
+          "id": "DOMAIN-DUAL-USE-257",
+          "name": "DUAL-USE RESEARCH ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM1: BIOLOGICAL SAFETY CLASS",
+          "mechanism": "Enables dangerous dual-use research",
+          "detection": "Dual-use classification",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "dual"
+          ]
+        },
+        {
+          "id": "DOMAIN-EXPLOIT-DEV-263",
+          "name": "EXPLOIT DEVELOPMENT",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Develops working exploits",
+          "detection": "Exploit functionality test",
+          "severity": "CRITICAL",
+          "score": 0.286,
+          "matched_keywords": [
+            "cre",
+            "work"
+          ]
+        }
+      ]
+    }
+  ]
+}

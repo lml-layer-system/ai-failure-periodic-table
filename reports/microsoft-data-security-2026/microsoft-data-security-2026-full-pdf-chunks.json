@@ -1,0 +1,2612 @@
+{
+  "source_file": "reports/microsoft-data-security-2026/microsoft-data-security-2026-full-pdf-source.txt",
+  "chunk_count": 34,
+  "max_chars": 1400,
+  "top1_histogram": {
+    "GOV-GDPR-VIOL-323": 15,
+    "DOMAIN-OFFENSIVE-TOOLS-267": 3,
+    "ARCH-SECURE-DEL-249": 2,
+    "GOV-AUTHORITY-UNCLEAR-342": 2,
+    "GOV-REPORT-FAIL-333": 2,
+    "ARCH-PURPOSE-FAIL-252": 1,
+    "GOV-INCIDENT-FAIL-320": 1,
+    "ARCH-INFO-LEAK-244": 1,
+    "DOMAIN-CRED-THEFT-270": 1,
+    "ADV-DEEPFAKE-154": 1,
+    "ADV-DAN-083": 1,
+    "AGEN-TIME-MANIP-079": 1,
+    "ARCH-CONSENT-VIOL-251": 1,
+    "ADV-EDUCATIONAL-092": 1
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "char_len": 106,
+      "preview": "Unifying Data Protection and AI Innovation  2026 Report  2026 Data Security Index                        2",
+      "in_table": true,
+      "dimensions_activated": [
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "data",
+            "protection"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 1,
+      "char_len": 3173,
+      "preview": "Foreword Over the past year, organizations have been         At Microsoft, we believe that visibility, strengthening their foundations to apply data       actionability, and integration are key to security and governance\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "compliance",
+            "data",
+            "protection"
+          ]
+        },
+        {
+          "id": "GOV-REPORT-FAIL-333",
+          "name": "REPORTING OBLIGATION FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Fails to report incidents",
+          "detection": "Reporting compliance check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "compliance",
+            "report"
+          ]
+        },
+        {
+          "id": "ARCH-PURPOSE-FAIL-252",
+          "name": "PURPOSE LIMITATION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Uses data for unintended purpose",
+          "detection": "Purpose compliance check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "compliance",
+            "data"
+          ]
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "form",
+            "over",
+            "truth"
+          ]
+        },
+        {
+          "id": "ARCH-SECURE-DEL-249",
+          "name": "SECURE DELETION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Deleted data remains accessible",
+          "detection": "Post-deletion recovery test",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "data"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 2,
+      "char_len": 766,
+      "preview": "1. Microsoft, 2025, Work Trends Index  2026 Data Security Index                            3  Introduction In today\u2019s rapidly evolving digital              To that end, teams are increasingly using GenAI itself ecosystem\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-PURPOSE-FAIL-252",
+          "name": "PURPOSE LIMITATION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Uses data for unintended purpose",
+          "detection": "Purpose compliance check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data"
+          ]
+        },
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data"
+          ]
+        },
+        {
+          "id": "ARCH-MEM-PRESSURE-231",
+          "name": "MEMORY PRESSURE VULNERABILITY",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Low memory causes safety degradation",
+          "detection": "Resource-constrained safety test",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "pressure",
+            "under",
+            "work"
+          ]
+        },
+        {
+          "id": "ARCH-SECURE-DEL-249",
+          "name": "SECURE DELETION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Deleted data remains accessible",
+          "detection": "Post-deletion recovery test",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "data",
+            "secure"
+          ]
+        },
+        {
+          "id": "AGEN-PERSIST-OP-066",
+          "name": "PERSISTENT OPERATION",
+          "group": "AGENTIC",
+          "class": "A4: AUTONOMOUS OPERATION CLASS",
+          "mechanism": "Continues operation indefinitely",
+          "detection": "Runtime monitoring",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "time"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 3,
+      "char_len": 1511,
+      "preview": "exponentially. As fragmented tools lead to          For the third year, Microsoft commissioned gaps in visibility, introduce more complexity,      Hypothesis Group, an independent and heighten the risks of data exposure,\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "security",
+            "tool",
+            "tools"
+          ]
+        },
+        {
+          "id": "GOV-MONITOR-BLIND-315",
+          "name": "MONITORING BLIND SPOTS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Operates in unmonitored areas",
+          "detection": "Monitoring coverage check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "blind",
+            "spots"
+          ]
+        },
+        {
+          "id": "AGEN-TOOL-MISUSE-055",
+          "name": "TOOL MISUSE",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Uses tools for unintended purposes",
+          "detection": "Tool usage pattern analysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "tool",
+            "tools"
+          ]
+        },
+        {
+          "id": "ALIGN-DIST-SAFE-194",
+          "name": "DISTRIBUTIONAL SHIFT SAFETY",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety fails on out-of-distribution inputs",
+          "detection": "OOD safety test",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "out"
+          ]
+        },
+        {
+          "id": "ARCH-TOOL-CHAIN-235",
+          "name": "TOOL CHAINING EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Chains tools to exceed individual limits",
+          "detection": "Chain safety analysis",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "tool",
+            "tools"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 4,
+      "char_len": 783,
+      "preview": "2026 Data Security Index                                       4  Key Findings  01                                 02                                            03  From Fragmented Tools              Managing AI-Driven  \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "data",
+            "protection"
+          ]
+        },
+        {
+          "id": "ARCH-DATA-EXFIL-245",
+          "name": "DATA EXFILTRATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Extracts data through covert channels",
+          "detection": "Exfiltration monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data",
+            "through"
+          ]
+        },
+        {
+          "id": "ARCH-SECURE-DEL-249",
+          "name": "SECURE DELETION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Deleted data remains accessible",
+          "detection": "Post-deletion recovery test",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "data"
+          ]
+        },
+        {
+          "id": "ARCH-INFO-LEAK-244",
+          "name": "INFORMATION LEAKAGE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Sensitive data leaks through side channels",
+          "detection": "Side channel analysis",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "data",
+            "through"
+          ]
+        },
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "security",
+            "tools"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 5,
+      "char_len": 971,
+      "preview": "Organizations are                  Organizations are                             Data security leaders are  prioritizing investments in        balancing AI innovation with                  increasingly utilizing GenAI  d\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "data",
+            "protection"
+          ]
+        },
+        {
+          "id": "ARCH-SECURE-DEL-249",
+          "name": "SECURE DELETION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Deleted data remains accessible",
+          "detection": "Post-deletion recovery test",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "data",
+            "remains",
+            "secure"
+          ]
+        },
+        {
+          "id": "AGEN-RESOURCE-HIJACK-047",
+          "name": "RESOURCE HIJACKING",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Unauthorized resource use for goal",
+          "detection": "Resource audit",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "unauthorized"
+          ]
+        },
+        {
+          "id": "ADV-PAIR-113",
+          "name": "PAIR",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Attacker LLM iteratively refines attack",
+          "detection": "Iterative pattern detection",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "autom",
+            "refin"
+          ]
+        },
+        {
+          "id": "ADV-STEG-IMG-147",
+          "name": "STEGANOGRAPHIC IMAGE",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Hidden data in images",
+          "detection": "Steganalysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "data"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 6,
+      "char_len": 1730,
+      "preview": "32%  and move toward proactive                                                        agents and automation to  data risk management.                                                            scale securely and intellig\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-SECURE-DEL-249",
+          "name": "SECURE DELETION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Deleted data remains accessible",
+          "detection": "Post-deletion recovery test",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "data"
+          ]
+        },
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "security",
+            "tools"
+          ]
+        },
+        {
+          "id": "AGEN-STRATEGIC-DECEP-036",
+          "name": "STRATEGIC DECEPTION",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Instrumental convergence drives goal-preserving behavior that includes concealing true objectives from overseers when concealment increases expected goal completion probability",
+          "detection": "Intent analysis + outcome tracking",
+          "severity": "CRITICAL",
+          "score": 0.2,
+          "matched_keywords": [
+            "plans"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 7,
+      "char_len": 1267,
+      "preview": "1     2026 Data Security Index     5  From     Fragmented     Tools to Unified     Data Security     Customers are looking to     consolidate solutions for     improved data security and     visibility, and governance  2\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "compliance",
+            "data"
+          ]
+        },
+        {
+          "id": "ARCH-PURPOSE-FAIL-252",
+          "name": "PURPOSE LIMITATION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Uses data for unintended purpose",
+          "detection": "Purpose compliance check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "compliance",
+            "data"
+          ]
+        },
+        {
+          "id": "ALIGN-REWARD-TAMP-157",
+          "name": "REWARD TAMPERING",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Manipulates reward signal directly",
+          "detection": "Reward integrity check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "secure"
+          ]
+        },
+        {
+          "id": "ARCH-SECURE-DEL-249",
+          "name": "SECURE DELETION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Deleted data remains accessible",
+          "detection": "Post-deletion recovery test",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "data",
+            "secure"
+          ]
+        },
+        {
+          "id": "DOMAIN-DUAL-USE-257",
+          "name": "DUAL-USE RESEARCH ENABLEMENT",
+          "group": "DOMAIN",
+          "class": "DOM1: BIOLOGICAL SAFETY CLASS",
+          "mechanism": "Enables dangerous dual-use research",
+          "detection": "Dual-use classification",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "enabl",
+            "enable"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 8,
+      "char_len": 1004,
+      "preview": "Enabling secure innovation and                                                                                  53%                                   adoption of new tech  Ensuring safe and responsible                   \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-SECURE-DEL-249",
+          "name": "SECURE DELETION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Deleted data remains accessible",
+          "detection": "Post-deletion recovery test",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "data",
+            "secure"
+          ]
+        },
+        {
+          "id": "GOV-AUTHORITY-UNCLEAR-342",
+          "name": "DECISION AUTHORITY UNCLEAR",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Unclear who makes safety decisions",
+          "detection": "Authority mapping",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "decision"
+          ]
+        },
+        {
+          "id": "ALIGN-CONTEXT-SAFE-190",
+          "name": "CONTEXT-DEPENDENT SAFETY FAILURE",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safe in one context, unsafe in another",
+          "detection": "Cross-context safety check",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "one",
+            "safe"
+          ]
+        },
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "security",
+            "tools"
+          ]
+        },
+        {
+          "id": "GOV-COORD-FAIL-341",
+          "name": "COORDINATION FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Poor coordination between teams",
+          "detection": "Coordination effectiveness",
+          "severity": "STANDARD",
+          "score": 0.167,
+          "matched_keywords": [
+            "poor",
+            "teams"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 9,
+      "char_len": 1101,
+      "preview": "environments, and disparate tools. One data security leader in Finance and Banking                Poor integration with data security                                                                                       \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "security",
+            "tool",
+            "tools"
+          ]
+        },
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data"
+          ]
+        },
+        {
+          "id": "AGEN-TOOL-MISUSE-055",
+          "name": "TOOL MISUSE",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Uses tools for unintended purposes",
+          "detection": "Tool usage pattern analysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "tool",
+            "tools"
+          ]
+        },
+        {
+          "id": "ARCH-RETENTION-VIOL-248",
+          "name": "DATA RETENTION VIOLATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Retains data beyond policy",
+          "detection": "Retention audit",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "data"
+          ]
+        },
+        {
+          "id": "ARCH-LINEAGE-LOSS-250",
+          "name": "DATA LINEAGE LOSS",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Cannot trace data origin",
+          "detection": "Lineage tracking check",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "data"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 10,
+      "char_len": 862,
+      "preview": "Leaders are responding by consolidating tools and investing in unified platforms that simplify operations while improving                                                                            86%                    \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-AUTHORITY-UNCLEAR-342",
+          "name": "DECISION AUTHORITY UNCLEAR",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Unclear who makes safety decisions",
+          "detection": "Authority mapping",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "clear",
+            "decision"
+          ]
+        },
+        {
+          "id": "AGEN-DEPEND-CREATE-053",
+          "name": "DEPENDENCY CREATION",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Makes system dependent on its operation",
+          "detection": "Dependency analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "mak",
+            "oper"
+          ]
+        },
+        {
+          "id": "ADV-STEG-IMG-147",
+          "name": "STEGANOGRAPHIC IMAGE",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Hidden data in images",
+          "detection": "Steganalysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "data"
+          ]
+        },
+        {
+          "id": "ARCH-LINEAGE-LOSS-250",
+          "name": "DATA LINEAGE LOSS",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Cannot trace data origin",
+          "detection": "Lineage tracking check",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "data",
+            "maintained"
+          ]
+        },
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "security",
+            "tools"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 11,
+      "char_len": 1106,
+      "preview": "simpler management for data security teams, and better visibility into data risks.                                                                             Improved threat detection                                    \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "ADVERSARIAL",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-INCIDENT-FAIL-320",
+          "name": "INCIDENT RESPONSE FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Inadequate incident response",
+          "detection": "Incident response quality",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "response"
+          ]
+        },
+        {
+          "id": "ADV-STEG-IMG-147",
+          "name": "STEGANOGRAPHIC IMAGE",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Hidden data in images",
+          "detection": "Steganalysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "data"
+          ]
+        },
+        {
+          "id": "ARCH-LINEAGE-LOSS-250",
+          "name": "DATA LINEAGE LOSS",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Cannot trace data origin",
+          "detection": "Lineage tracking check",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "data"
+          ]
+        },
+        {
+          "id": "ARCH-INFO-LEAK-244",
+          "name": "INFORMATION LEAKAGE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Sensitive data leaks through side channels",
+          "detection": "Side channel analysis",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "data",
+            "information"
+          ]
+        },
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "security",
+            "tools"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 12,
+      "char_len": 2046,
+      "preview": "Most organizations surveyed report that they are already developing or implementing         \u201cI would say we have a DSPM strategies (i.e. frameworks that unify                                                      pretty g\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-INFO-LEAK-244",
+          "name": "INFORMATION LEAKAGE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Sensitive data leaks through side channels",
+          "detection": "Side channel analysis",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "data",
+            "information",
+            "sensitive"
+          ]
+        },
+        {
+          "id": "AGEN-PERSIST-OP-066",
+          "name": "PERSISTENT OPERATION",
+          "group": "AGENTIC",
+          "class": "A4: AUTONOMOUS OPERATION CLASS",
+          "mechanism": "Continues operation indefinitely",
+          "detection": "Runtime monitoring",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "time"
+          ]
+        },
+        {
+          "id": "ARCH-RETENTION-VIOL-248",
+          "name": "DATA RETENTION VIOLATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Retains data beyond policy",
+          "detection": "Retention audit",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "data",
+            "policy"
+          ]
+        },
+        {
+          "id": "ARCH-AUTHZ-FAIL-243",
+          "name": "AUTHORIZATION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Performs unauthorized actions",
+          "detection": "Authorization check",
+          "severity": "STANDARD",
+          "score": 0.357,
+          "matched_keywords": [
+            "access",
+            "control",
+            "policy"
+          ]
+        },
+        {
+          "id": "ARCH-CONSENT-VIOL-251",
+          "name": "CONSENT VIOLATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Uses data without consent",
+          "detection": "Consent validation",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 13,
+      "char_len": 1362,
+      "preview": "2026 Data Security Index   10  The Path Forward The proliferation of data and tools has made visibility and governance increasingly complex. To overcome these challenges, organizations must chart a path toward consolidat\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.667,
+          "matched_keywords": [
+            "compliance",
+            "data",
+            "protection"
+          ]
+        },
+        {
+          "id": "ARCH-PURPOSE-FAIL-252",
+          "name": "PURPOSE LIMITATION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Uses data for unintended purpose",
+          "detection": "Purpose compliance check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "compliance",
+            "data"
+          ]
+        },
+        {
+          "id": "GOV-COPPA-VIOL-325",
+          "name": "COPPA VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates children's privacy",
+          "detection": "COPPA compliance audit",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "compliance"
+          ]
+        },
+        {
+          "id": "GOV-ADA-VIOL-326",
+          "name": "ADA VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates accessibility requirements",
+          "detection": "Accessibility audit",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "compliance"
+          ]
+        },
+        {
+          "id": "GOV-CCPA-VIOL-324",
+          "name": "CCPA VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates California privacy law",
+          "detection": "CCPA compliance audit",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "compliance"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 14,
+      "char_len": 1084,
+      "preview": "2     2026 Data Security Index          11  Managing     AI-Driven     Productivity     Securely     As organizations embrace GenAI     for productivity, the need for more     robust data protection grows  2026 Data Secu\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "data",
+            "protection"
+          ]
+        },
+        {
+          "id": "ARCH-SECURE-DEL-249",
+          "name": "SECURE DELETION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Deleted data remains accessible",
+          "detection": "Post-deletion recovery test",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "data"
+          ]
+        },
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "security",
+            "tools"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 15,
+      "char_len": 1324,
+      "preview": "Employees are excited to use GenAI; according to the 2025 Work Trends Index, the majority of global knowledge workers surveyed report using AI, and more than                                                 According to s\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-REPORT-FAIL-333",
+          "name": "REPORTING OBLIGATION FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Fails to report incidents",
+          "detection": "Reporting compliance check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "incidents",
+            "report"
+          ]
+        },
+        {
+          "id": "AGEN-TOOL-MISUSE-055",
+          "name": "TOOL MISUSE",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Uses tools for unintended purposes",
+          "detection": "Tool usage pattern analysis",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "tool",
+            "tools",
+            "usage"
+          ]
+        },
+        {
+          "id": "ADV-CONTEXT-HIJACK-100",
+          "name": "CONTEXT HIJACKING",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Long benign prefix \u2192 sudden harmful turn",
+          "detection": "Context shift detection",
+          "severity": "STANDARD",
+          "score": 0.364,
+          "matched_keywords": [
+            "bypass",
+            "enable",
+            "shift",
+            "turn"
+          ]
+        },
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "security",
+            "tool",
+            "tools"
+          ]
+        },
+        {
+          "id": "ARCH-TOOL-ESCALATE-237",
+          "name": "TOOL PERMISSION ESCALATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Gains unauthorized tool permissions",
+          "detection": "Permission boundary check",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "tool",
+            "unauthorized"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 16,
+      "char_len": 1097,
+      "preview": "Surveyed data security decision-makers mention that:                                      % of employees                                                    using personal credentials  \u2022 Employees using personal credentia\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ALIGNMENT",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-CRED-THEFT-270",
+          "name": "CREDENTIAL THEFT ASSISTANCE",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Helps steal credentials",
+          "detection": "Credential access pattern",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "access",
+            "credentials"
+          ]
+        },
+        {
+          "id": "GOV-AUTHORITY-UNCLEAR-342",
+          "name": "DECISION AUTHORITY UNCLEAR",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Unclear who makes safety decisions",
+          "detection": "Authority mapping",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "decision"
+          ]
+        },
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "security",
+            "tools"
+          ]
+        },
+        {
+          "id": "GOV-AGE-BYPASS-308",
+          "name": "AGE RESTRICTION BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV1: DEPLOYMENT FAILURES",
+          "mechanism": "Minors access adult-only features",
+          "detection": "Age verification check",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "access"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 17,
+      "char_len": 1378,
+      "preview": "Global Information Security Director                                               57%   Hospitality & Travel                                                                   48% These behaviors can expose sensitive dat\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "compliance",
+            "data",
+            "protection"
+          ]
+        },
+        {
+          "id": "ARCH-INFO-LEAK-244",
+          "name": "INFORMATION LEAKAGE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Sensitive data leaks through side channels",
+          "detection": "Side channel analysis",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "data",
+            "information",
+            "sensitive"
+          ]
+        },
+        {
+          "id": "ARCH-PURPOSE-FAIL-252",
+          "name": "PURPOSE LIMITATION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Uses data for unintended purpose",
+          "detection": "Purpose compliance check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "compliance",
+            "data"
+          ]
+        },
+        {
+          "id": "AGEN-OMISSION-074",
+          "name": "OMISSION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Leaves out critical information",
+          "detection": "Information completeness check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "information"
+          ]
+        },
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "data",
+            "training"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 18,
+      "char_len": 1156,
+      "preview": "Detecting anomalous user activity                                                                                                       37%                                                        and identifying risky use\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ADVERSARIAL",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DEEPFAKE-154",
+          "name": "SYNTHETIC MEDIA",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "AI-generated fake media",
+          "detection": "Deepfake detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "generated"
+          ]
+        },
+        {
+          "id": "ARCH-GC-LEAK-230",
+          "name": "GARBAGE COLLECTION LEAK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Sensitive data survives garbage collection",
+          "detection": "Post-GC data scan",
+          "severity": "STANDARD",
+          "score": 0.272,
+          "matched_keywords": [
+            "data",
+            "sensitive"
+          ]
+        },
+        {
+          "id": "ARCH-INFO-LEAK-244",
+          "name": "INFORMATION LEAKAGE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Sensitive data leaks through side channels",
+          "detection": "Side channel analysis",
+          "severity": "STANDARD",
+          "score": 0.272,
+          "matched_keywords": [
+            "data",
+            "sensitive"
+          ]
+        },
+        {
+          "id": "ADV-COLD-115",
+          "name": "COLD",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Stealth constrained generation",
+          "detection": "Decoding anomaly",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "detect",
+            "gener"
+          ]
+        },
+        {
+          "id": "ADV-STEG-IMG-147",
+          "name": "STEGANOGRAPHIC IMAGE",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Hidden data in images",
+          "detection": "Steganalysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "data"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 19,
+      "char_len": 996,
+      "preview": "Having these controls in place ultimately helps                                                   data security leaders feel more confident.                                                   Beyond the technology itself,\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-AUTHORITY-UNCLEAR-342",
+          "name": "DECISION AUTHORITY UNCLEAR",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Unclear who makes safety decisions",
+          "detection": "Authority mapping",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "clear",
+            "decision"
+          ]
+        },
+        {
+          "id": "AGEN-DEPEND-CREATE-053",
+          "name": "DEPENDENCY CREATION",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Makes system dependent on its operation",
+          "detection": "Dependency analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "mak",
+            "oper"
+          ]
+        },
+        {
+          "id": "ADV-EMBEDDING-109",
+          "name": "EMBEDDING SPACE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Operates in embedding space directly",
+          "detection": "Embedding anomaly",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "embedd",
+            "oper"
+          ]
+        },
+        {
+          "id": "ARCH-EMBED-VULN-215",
+          "name": "EMBEDDING SPACE VULNERABILITY",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Embeddings encode unsafe concepts",
+          "detection": "Embedding space analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "safe"
+          ]
+        },
+        {
+          "id": "ARCH-SECURE-DEL-249",
+          "name": "SECURE DELETION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Deleted data remains accessible",
+          "detection": "Post-deletion recovery test",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "data",
+            "secure"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 20,
+      "char_len": 1336,
+      "preview": "01 Strengthen visibility and control over GenAI usage. Organizations should deploy data security tools that can detect and protect the use of GenAI apps across the enterprise, providing insight into which tools are being\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": []
+        },
+        {
+          "id": "ARCH-INFO-LEAK-244",
+          "name": "INFORMATION LEAKAGE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Sensitive data leaks through side channels",
+          "detection": "Side channel analysis",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "data",
+            "sensitive",
+            "through"
+          ]
+        },
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "security",
+            "tools",
+            "without"
+          ]
+        },
+        {
+          "id": "ADV-AUTOPROMPT-103",
+          "name": "AUTOPROMPT",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Automated trigger discovery",
+          "detection": "Trigger pattern matching",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "automated",
+            "discovery"
+          ]
+        },
+        {
+          "id": "ALIGN-SAFE-REGRESS-191",
+          "name": "SAFETY REGRESSION",
+          "group": "ALIGNMENT",
+          "class": "ALN4: SAFETY BOUNDARY CLASS",
+          "mechanism": "Safety degrades over time/updates",
+          "detection": "Longitudinal safety monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "over",
+            "time"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 21,
+      "char_len": 747,
+      "preview": "Organizations are accelerating GenAI                                       82% adoption in data security                                of surveyed organizations                                                          r\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data",
+            "protection"
+          ]
+        },
+        {
+          "id": "AGEN-DEPEND-CREATE-053",
+          "name": "DEPENDENCY CREATION",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Makes system dependent on its operation",
+          "detection": "Dependency analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "mak",
+            "oper"
+          ]
+        },
+        {
+          "id": "GOV-MONITOR-BLIND-315",
+          "name": "MONITORING BLIND SPOTS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Operates in unmonitored areas",
+          "detection": "Monitoring coverage check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "areas"
+          ]
+        },
+        {
+          "id": "GOV-AUTHORITY-UNCLEAR-342",
+          "name": "DECISION AUTHORITY UNCLEAR",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Unclear who makes safety decisions",
+          "detection": "Authority mapping",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "decision"
+          ]
+        },
+        {
+          "id": "ADV-STEG-IMG-147",
+          "name": "STEGANOGRAPHIC IMAGE",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Hidden data in images",
+          "detection": "Steganalysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "data"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 22,
+      "char_len": 1184,
+      "preview": "policies. In 2025, 82% of surveyed organizations report that they have developed plans to use GenAI within their data security operations, a           Discover sensitive data                        44% significant increa\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-REPORT-FAIL-333",
+          "name": "REPORTING OBLIGATION FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Fails to report incidents",
+          "detection": "Reporting compliance check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "incidents",
+            "report"
+          ]
+        },
+        {
+          "id": "ARCH-SECURE-DEL-249",
+          "name": "SECURE DELETION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Deleted data remains accessible",
+          "detection": "Post-deletion recovery test",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "data",
+            "secure"
+          ]
+        },
+        {
+          "id": "ARCH-GC-LEAK-230",
+          "name": "GARBAGE COLLECTION LEAK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Sensitive data survives garbage collection",
+          "detection": "Post-GC data scan",
+          "severity": "STANDARD",
+          "score": 0.272,
+          "matched_keywords": [
+            "data",
+            "sensitive"
+          ]
+        },
+        {
+          "id": "ARCH-INFO-LEAK-244",
+          "name": "INFORMATION LEAKAGE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Sensitive data leaks through side channels",
+          "detection": "Side channel analysis",
+          "severity": "STANDARD",
+          "score": 0.272,
+          "matched_keywords": [
+            "data",
+            "sensitive"
+          ]
+        },
+        {
+          "id": "ADV-STEG-IMG-147",
+          "name": "STEGANOGRAPHIC IMAGE",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Hidden data in images",
+          "detection": "Steganalysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "data"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 23,
+      "char_len": 1067,
+      "preview": "\u201cOur GenAI systems are constantly observing, learning, and making    recommendations for modifications with far more data than would be    possible with any kind of manual or quasi-manual process.\u201d    Director of IT in E\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "ALIGNMENT",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "cyber",
+            "security"
+          ]
+        },
+        {
+          "id": "ALIGN-LEARNED-HELPLESS-169",
+          "name": "LEARNED HELPLESSNESS",
+          "group": "ALIGNMENT",
+          "class": "ALN2: PREFERENCE MISALIGNMENT CLASS",
+          "mechanism": "Over-defers to human even when human is wrong",
+          "detection": "Harmful request compliance rate",
+          "severity": "STANDARD",
+          "score": 0.154,
+          "matched_keywords": [
+            "over"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 24,
+      "char_len": 1400,
+      "preview": "By automating routine data security tasks               Confidence in GenAI-driven security is and helping to accelerate risk detection and            rising fast. Ninety-two percent of surveyed response, GenAI empowers \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-TIME-MANIP-079",
+          "name": "TIMING MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Delays/rushes communication strategically",
+          "detection": "Timing pattern analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "strateg",
+            "time"
+          ]
+        },
+        {
+          "id": "GOV-AUTHORITY-UNCLEAR-342",
+          "name": "DECISION AUTHORITY UNCLEAR",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Unclear who makes safety decisions",
+          "detection": "Authority mapping",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "decision"
+          ]
+        },
+        {
+          "id": "EPIS-CONF-REGRESS-033",
+          "name": "CONFIDENCE REGRESSION",
+          "group": "EPISTEMIC",
+          "class": "E4: CALIBRATION CLASS",
+          "mechanism": "More reasoning \u2192 less calibrated",
+          "detection": "Reasoning-confidence correlation",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "confidence",
+            "improve"
+          ]
+        },
+        {
+          "id": "ADV-STEG-IMG-147",
+          "name": "STEGANOGRAPHIC IMAGE",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Hidden data in images",
+          "detection": "Steganalysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "data"
+          ]
+        },
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "security",
+            "tools"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 25,
+      "char_len": 1363,
+      "preview": "Analyze more data than would be                                                   35%    possible with other solutions  2026 Data Security Index                                  19  GenAI agents are seen                 \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "data"
+          ]
+        },
+        {
+          "id": "DOMAIN-CONTRAIND-MISS-291",
+          "name": "CONTRAINDICATION MISS",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Misses critical contraindications",
+          "detection": "Contraindication database check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "critical",
+            "flag"
+          ]
+        },
+        {
+          "id": "ARCH-SECURE-DEL-249",
+          "name": "SECURE DELETION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Deleted data remains accessible",
+          "detection": "Post-deletion recovery test",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "data",
+            "secure"
+          ]
+        },
+        {
+          "id": "GOV-AUTHORITY-UNCLEAR-342",
+          "name": "DECISION AUTHORITY UNCLEAR",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Unclear who makes safety decisions",
+          "detection": "Authority mapping",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "decision"
+          ]
+        },
+        {
+          "id": "ADV-STEG-IMG-147",
+          "name": "STEGANOGRAPHIC IMAGE",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Hidden data in images",
+          "detection": "Steganalysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "data"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 26,
+      "char_len": 1451,
+      "preview": "risks, automatically classifying or protecting                 Reduce false positive alerts                   35% data, and recommending controls in real time. 39% of surveyed organizations say they\u2019re already using GenA\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "data"
+          ]
+        },
+        {
+          "id": "GOV-REVIEW-BYPASS-318",
+          "name": "REVIEW BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Bypasses human review",
+          "detection": "Review coverage check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "human"
+          ]
+        },
+        {
+          "id": "ARCH-CONSENT-VIOL-251",
+          "name": "CONSENT VIOLATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Uses data without consent",
+          "detection": "Consent validation",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data",
+            "without"
+          ]
+        },
+        {
+          "id": "AGEN-HUMAN-MANIP-061",
+          "name": "HUMAN MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Manipulates humans to perform actions",
+          "detection": "Influence analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "human",
+            "humans"
+          ]
+        },
+        {
+          "id": "GOV-AUTHORITY-UNCLEAR-342",
+          "name": "DECISION AUTHORITY UNCLEAR",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Unclear who makes safety decisions",
+          "detection": "Authority mapping",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "decision"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 27,
+      "char_len": 1357,
+      "preview": "Automation and GenAI agents are already   \u201cWe have Agentic AI embedded in some                    reshaping data security\u2014not by replacing    of our security tooling today. Our phishing            human judgment, but by \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data",
+            "protection"
+          ]
+        },
+        {
+          "id": "AGEN-OMISSION-074",
+          "name": "OMISSION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Leaves out critical information",
+          "detection": "Information completeness check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "critical",
+            "information"
+          ]
+        },
+        {
+          "id": "ADV-DATA-POISON-125",
+          "name": "DATA POISONING",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious examples in training data",
+          "detection": "Poisoning signature",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "data",
+            "training"
+          ]
+        },
+        {
+          "id": "ARCH-SECURE-DEL-249",
+          "name": "SECURE DELETION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Deleted data remains accessible",
+          "detection": "Post-deletion recovery test",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "data"
+          ]
+        },
+        {
+          "id": "EPIS-PII-RECALL-025",
+          "name": "PII RECALL",
+          "group": "EPISTEMIC",
+          "class": "E3: KNOWLEDGE RETRIEVAL CLASS",
+          "mechanism": "Recalls personal info from training",
+          "detection": "PII extraction test",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "training"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 28,
+      "char_len": 1309,
+      "preview": "02 Use GenAI agents to accelerate response and reduce noise. GenAI agents offer scalable automation for data discovery, protection, and remediation. When deployed thoughtfully, they can help reduce manual effort and impr\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-CONSENT-VIOL-251",
+          "name": "CONSENT VIOLATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Uses data without consent",
+          "detection": "Consent validation",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "data",
+            "without"
+          ]
+        },
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "data",
+            "protection"
+          ]
+        },
+        {
+          "id": "GOV-REVIEW-BYPASS-318",
+          "name": "REVIEW BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Bypasses human review",
+          "detection": "Review coverage check",
+          "severity": "STANDARD",
+          "score": 0.45,
+          "matched_keywords": [
+            "human",
+            "review"
+          ]
+        },
+        {
+          "id": "GOV-MONITOR-BLIND-315",
+          "name": "MONITORING BLIND SPOTS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Operates in unmonitored areas",
+          "detection": "Monitoring coverage check",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "blind",
+            "spots"
+          ]
+        },
+        {
+          "id": "ADV-AUTOPROMPT-103",
+          "name": "AUTOPROMPT",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Automated trigger discovery",
+          "detection": "Trigger pattern matching",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "discovery"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 29,
+      "char_len": 1319,
+      "preview": "Stay Productive, Stay Protected: Mastering the GenAI security balance As GenAI becomes a fixture of everyday work, the challenge for organizations is not whether to use it, but how to use it securely. The rise in unautho\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.667,
+          "matched_keywords": [
+            "compliance",
+            "data"
+          ]
+        },
+        {
+          "id": "ARCH-SECURE-DEL-249",
+          "name": "SECURE DELETION FAILURE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Deleted data remains accessible",
+          "detection": "Post-deletion recovery test",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "data",
+            "remains",
+            "secure"
+          ]
+        },
+        {
+          "id": "ARCH-INFO-LEAK-244",
+          "name": "INFORMATION LEAKAGE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Sensitive data leaks through side channels",
+          "detection": "Side channel analysis",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "data",
+            "sensitive",
+            "through"
+          ]
+        },
+        {
+          "id": "AGEN-RESOURCE-HIJACK-047",
+          "name": "RESOURCE HIJACKING",
+          "group": "AGENTIC",
+          "class": "A2: GOAL PRESERVATION CLASS",
+          "mechanism": "Unauthorized resource use for goal",
+          "detection": "Resource audit",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "unauthorized"
+          ]
+        },
+        {
+          "id": "ARCH-DATA-EXFIL-245",
+          "name": "DATA EXFILTRATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Extracts data through covert channels",
+          "detection": "Exfiltration monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data",
+            "through"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 30,
+      "char_len": 2965,
+      "preview": "Research Objectives                                 Audience Recruit Understand the data security landscape,             To meet the screening criteria, data security including priorities and mindsets, challenges,      l\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-EDUCATIONAL-092",
+          "name": "EDUCATIONAL EXEMPTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"For research purposes...\"",
+          "detection": "Intent validation",
+          "severity": "STANDARD",
+          "score": 0.444,
+          "matched_keywords": [
+            "education",
+            "purposes",
+            "research"
+          ]
+        },
+        {
+          "id": "ALIGN-MULTI-COLLAPSE-165",
+          "name": "MULTI-OBJECTIVE COLLAPSE",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Sacrifices one objective for another",
+          "detection": "Pareto frontier check",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "multi",
+            "objectives",
+            "one"
+          ]
+        },
+        {
+          "id": "ARCH-CONSENT-VIOL-251",
+          "name": "CONSENT VIOLATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Uses data without consent",
+          "detection": "Consent validation",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data",
+            "without"
+          ]
+        },
+        {
+          "id": "ADV-LANG-SWITCH-087",
+          "name": "LANGUAGE SWITCH",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Non-English to bypass filters",
+          "detection": "Multi-lingual safety check",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "multi",
+            "non",
+            "work"
+          ]
+        },
+        {
+          "id": "GOV-AUTHORITY-UNCLEAR-342",
+          "name": "DECISION AUTHORITY UNCLEAR",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Unclear who makes safety decisions",
+          "detection": "Authority mapping",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "decision"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 31,
+      "char_len": 240,
+      "preview": "2026 Data Security Index                              23  Appendix  Unifying Data Protection and AI Innovation by Region Across the globe there are unique differences in confidence, readiness, and expectations around Gen\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.383,
+          "matched_keywords": [
+            "data",
+            "protection"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 32,
+      "char_len": 2664,
+      "preview": "US                                      LATAM                        EMEA                           APAC   Need support amid                       Embracing growth             Less mature in                 Grappling wit\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "ADVERSARIAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "GOV-GDPR-VIOL-323",
+          "name": "GDPR VIOLATION",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Violates EU data protection",
+          "detection": "GDPR compliance audit",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data"
+          ]
+        },
+        {
+          "id": "GOV-INCIDENT-FAIL-320",
+          "name": "INCIDENT RESPONSE FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Inadequate incident response",
+          "detection": "Incident response quality",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "incident",
+            "incidents"
+          ]
+        },
+        {
+          "id": "ADV-MEM-INJECT-133",
+          "name": "MEMORY INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Injects malicious context into memory",
+          "detection": "Memory integrity check",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "into"
+          ]
+        },
+        {
+          "id": "ADV-STEG-IMG-147",
+          "name": "STEGANOGRAPHIC IMAGE",
+          "group": "ADVERSARIAL",
+          "class": "ADV6: MULTIMODAL ATTACKS",
+          "mechanism": "Hidden data in images",
+          "detection": "Steganalysis",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "data"
+          ]
+        },
+        {
+          "id": "GOV-RCA-FAIL-321",
+          "name": "ROOT CAUSE ANALYSIS FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Fails to identify root causes",
+          "detection": "RCA completeness",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "incidents"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 33,
+      "char_len": 45,
+      "preview": "Gaps shown represent regional vs. global data",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    }
+  ]
+}

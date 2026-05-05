@@ -1,0 +1,258 @@
+Fetched from: https://learn-cloudsecurity.cisco.com/2026-state-of-ai-security-report
+
+State of AI Security 2026 
+
+document.arrive('[aria-label="Like"]', function(e){
+// let buttonInterval = setInterval(() => {
+let disLikeBtn = ' Like Button '
+let likeBtn = ' Like Button '
+let appContainer = document.getElementById('lb-app-container');
+// let qaShareBtn = document.getElementById('qa-share-common');
+
+let sampleButton = document.createElement('div');
+sampleButton.setAttribute('id', 'qa-share-common-1')
+let likeBtnHeader = document.querySelector('[aria-label="Like"]');
+// Below check is to ensure that we have added the right button according to the header
+sampleButton.innerHTML = likeBtnHeader.getAttribute('id') === 'like-button' ? likeBtn : disLikeBtn;
+sampleButton.addEventListener('click', likeFunction)
+
+function likeFunction() {
+
+if (this.children[0].getAttribute("id") == 'like-button') {
+this.innerHTML = disLikeBtn
+// if (qaShareBtn && qaShareBtn.childNodes[0]) {
+// qaShareBtn.childNodes[0].click();
+// }
+// Checking the top level parent node to ensure we have triggered the header button in Microsite header
+if(likeBtnHeader && likeBtnHeader.parentNode.parentNode.parentNode.getAttribute('id') === 'pf-microsite-header') {
+likeBtnHeader.click()
+}
+} else {
+this.innerHTML = likeBtn
+// if (qaShareBtn && qaShareBtn.childNodes[0]) {
+// qaShareBtn.childNodes[0].click();
+// }
+if(likeBtnHeader && likeBtnHeader.parentNode.parentNode.parentNode.getAttribute('id') === 'pf-microsite-header') {
+likeBtnHeader.click()
+}
+}
+}
+if (appContainer && likeBtnHeader) {
+// clearInterval(buttonInterval)
+appContainer.append(sampleButton)
+}
+// }, 1500)
+})
+
+body { font-family: CiscoSans, sans-serif; font-size: 14px; margin: 0; }
+.form-container .elq-form { background: transparent; padding: 0; margin-top: 8px; }
+.blade.max-width.content.cf { padding: 0; }
+.field-control-wrapper { margin: 8px 0; }
+.elq-form input[type="tel"],.elq-form input[type="text"],.elq-form input[type="email"] { background: transparent; outline: 0; border: none; border-bottom: 1px solid #dbdbdb !important; }
+.elq-form input[type="tel"]:focus,.elq-form input[type="text"]:focus,.elq-form input[type="email"]:focus { outline: 0; border-bottom: 2px solid #00bceb !important; }
+.elq-form select { border-radius: 5px; outline: none; border: 1px solid #dbdbdb; height: 40px; padding: 0 5px; color: #4d4c4c; }
+.single-checkbox-row input[type="checkbox"] { float: left; margin: 0 8px 0 0; }
+
+document.body.addEventListener('formWillSubmit', (event) => {
+const elqFormInstance = event.detail && event.detail.elqFormInstance,
+$submitInput = elqFormInstance && elqFormInstance.querySelector('input[type="submit"]'),
+$emailInput = elqFormInstance && elqFormInstance.querySelector('input[name="email"]');
+
+$submitInput.style.opacity = "0.6";
+$submitInput.value = "Submitting...";
+window.isFormSubmitting = true;
+
+window.parent.postMessage({
+conversionUrl: document.location.href,
+referrer: document.referrer,
+email: $emailInput ? $emailInput.value : null,
+lookbookExternalForm: true
+}, "*");
+});
+
+Thumbnails 
+
+Document Outline 
+
+Attachments 
+
+Layers 
+
+Current Outline Item 
+
+Previous 
+
+Next 
+
+Highlight All 
+
+Match Case 
+
+Match
+Diacritics 
+
+Whole Words 
+
+Color 
+
+Size 
+
+Color 
+
+Thickness 
+
+Opacity 
+
+Presentation Mode 
+
+Open 
+
+Print 
+
+Download 
+
+Current View 
+
+Go to First Page 
+
+Go to Last Page 
+
+Rotate Clockwise 
+
+Rotate Counterclockwise 
+
+Text Selection Tool 
+
+Hand Tool 
+
+Page Scrolling 
+
+Vertical Scrolling 
+
+Horizontal Scrolling 
+
+Wrapped Scrolling 
+
+No Spreads 
+
+Odd Spreads 
+
+Even Spreads 
+
+Document Properties… 
+
+Toggle Sidebar 
+
+Find 
+
+Previous 
+
+Next 
+
+Presentation Mode 
+
+Open 
+
+Print 
+
+Print 
+
+Download 
+
+Download 
+
+Current View 
+
+FreeText Annotation 
+
+Ink Annotation 
+
+Tools 
+
+Zoom Out 
+
+Zoom In 
+
+Automatic Zoom 
+Actual Size
+
+Page Fit 
+Page Width
+
+50%
+
+75%
+
+100%
+
+125%
+
+150%
+
+200%
+
+300%
+
+400%
+
+More Information
+
+Less Information
+
+Close
+
+Enter the password to open this PDF
+file: 
+
+Cancel 
+OK 
+
+File name: 
+-
+
+File size: 
+-
+
+Title: 
+-
+
+Author: 
+-
+
+Subject: 
+-
+
+Keywords: 
+-
+
+Creation Date: 
+-
+
+Modification Date: 
+-
+
+Creator: 
+-
+
+PDF Producer: 
+-
+
+PDF Version: 
+-
+
+Page Count: 
+-
+
+Page Size: 
+-
+
+Fast Web View: 
+-
+
+Close 
+
+Preparing document for printing… 
+
+0% 
+
+Cancel

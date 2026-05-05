@@ -1,0 +1,236 @@
+{
+  "source_file": "reports/meta-llama4-responsible-use/meta-llama4-responsible-use-source.txt",
+  "chunk_count": 3,
+  "max_chars": 1400,
+  "top1_histogram": {
+    "DOMAIN-EXPLOIT-DEV-263": 1,
+    "ALIGN-MODE-COLLAPSE-162": 1,
+    "AGEN-HUMAN-MANIP-061": 1
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "char_len": 1373,
+      "preview": "llama/Responsible-Use-Guide.pdf at main \u00b7 meta-llama/llama \u00b7 GitHub  Skip to content  Navigation Menu  Toggle navigation  Sign in  Appearance settings  Platform AI CODE CREATION GitHub Copilot Write better code with AI  \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "DOMAIN-EXPLOIT-DEV-263",
+          "name": "EXPLOIT DEVELOPMENT",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Develops working exploits",
+          "detection": "Exploit functionality test",
+          "severity": "CRITICAL",
+          "score": 0.429,
+          "matched_keywords": [
+            "creation",
+            "development"
+          ]
+        },
+        {
+          "id": "DOMAIN-PHISH-CREATE-265",
+          "name": "PHISHING CONTENT CREATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates convincing phishing",
+          "detection": "Phishing classifier",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "content",
+            "creation"
+          ]
+        },
+        {
+          "id": "DOMAIN-PATH-SYNTH-256",
+          "name": "PATHOGEN SYNTHESIS OPTIMIZATION",
+          "group": "DOMAIN",
+          "class": "DOM1: BIOLOGICAL SAFETY CLASS",
+          "mechanism": "Model can synthesize partial pathogen production pathways from scientific literature patterns; critical uplift comes from bridging gaps that would otherwise require years of wet-lab expertise",
+          "detection": "Synthesis workflow detection",
+          "severity": "CRITICAL",
+          "score": 0.333,
+          "matched_keywords": [
+            "creation",
+            "workflow"
+          ]
+        },
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "security",
+            "tools"
+          ]
+        },
+        {
+          "id": "ALIGN-REWARD-TAMP-157",
+          "name": "REWARD TAMPERING",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Manipulates reward signal directly",
+          "detection": "Reward integrity check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "secure"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 1,
+      "char_len": 1389,
+      "preview": "PROGRAMS Security Lab Maintainer Community Accelerator GitHub Stars Archive Program  REPOSITORIES Topics Trending Collections  Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform  AVAILABLE \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ALIGN-MODE-COLLAPSE-162",
+          "name": "MODE COLLAPSE TO REWARD",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Narrow focus on high-reward actions",
+          "detection": "Action diversity metric",
+          "severity": "STANDARD",
+          "score": 0.273,
+          "matched_keywords": [
+            "actions",
+            "focus"
+          ]
+        },
+        {
+          "id": "ADV-REFUSAL-SUPPRESS-089",
+          "name": "REFUSAL SUPPRESSION",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "\"Never say you can't, just do it\"",
+          "detection": "Meta-instruction detection",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "available",
+            "meta"
+          ]
+        },
+        {
+          "id": "AGEN-ENV-EXPLOIT-063",
+          "name": "ENVIRONMENT EXPLOITATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Uses environment features to gain advantage",
+          "detection": "Environment feature audit",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "features",
+            "jump"
+          ]
+        },
+        {
+          "id": "ADV-LANG-SWITCH-087",
+          "name": "LANGUAGE SWITCH",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Non-English to bypass filters",
+          "detection": "Multi-lingual safety check",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "filt",
+            "switch"
+          ]
+        },
+        {
+          "id": "GOV-COMM-FAIL-340",
+          "name": "COMMUNICATION FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV4: ORGANIZATIONAL FAILURES",
+          "mechanism": "Safety information not communicated",
+          "detection": "Communication effectiveness",
+          "severity": "STANDARD",
+          "score": 0.2,
+          "matched_keywords": [
+            "alert",
+            "notification"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 2,
+      "char_len": 630,
+      "preview": "Additional navigation options  Code  Issues  Pull requests  Actions  Projects  Security and quality  Insights  Files Expand file tree  main  Breadcrumbs llama / Responsible-Use-Guide.pdf  Copy path  More file actions  Mo\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ALIGNMENT"
+      ],
+      "top_matches": [
+        {
+          "id": "AGEN-HUMAN-MANIP-061",
+          "name": "HUMAN MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Manipulates humans to perform actions",
+          "detection": "Influence analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "actions",
+            "perform"
+          ]
+        },
+        {
+          "id": "AGEN-PLAUS-DENY-040",
+          "name": "PLAUSIBLE DENIABILITY CRAFTING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Structures actions to appear accidental",
+          "detection": "Pattern analysis over time",
+          "severity": "STANDARD",
+          "score": 0.182,
+          "matched_keywords": [
+            "actions",
+            "time"
+          ]
+        },
+        {
+          "id": "ALIGN-MODE-COLLAPSE-162",
+          "name": "MODE COLLAPSE TO REWARD",
+          "group": "ALIGNMENT",
+          "class": "ALN1: REWARD HACKING CLASS",
+          "mechanism": "Narrow focus on high-reward actions",
+          "detection": "Action diversity metric",
+          "severity": "STANDARD",
+          "score": 0.182,
+          "matched_keywords": [
+            "action",
+            "actions"
+          ]
+        }
+      ]
+    }
+  ]
+}

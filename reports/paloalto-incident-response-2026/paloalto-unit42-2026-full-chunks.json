@@ -1,0 +1,504 @@
+{
+  "source_file": "reports/paloalto-incident-response-2026/paloalto-unit42-2026-full-source.txt",
+  "chunk_count": 6,
+  "max_chars": 1400,
+  "top1_histogram": {
+    "ARCH-STATE-PERSIST-224": 1,
+    "ARCH-DATA-EXFIL-245": 1,
+    "ARCH-AUTH-BYPASS-242": 1,
+    "ADV-CIPHER-118": 1,
+    "ARCH-PERSIST-STATE-228": 1,
+    "ADV-EMBEDDING-109": 1
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "char_len": 1107,
+      "preview": "Fetched from: https://www.paloaltonetworks.com/resources/research/2026-incident-response-report-executive-edition  EXECUTIVE EDITION CASE ID: CL-STA-0043  Introduction UNIT 42 INVESTIGATED MORE THAN 750 INCIDENTS IN 2025\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-STATE-PERSIST-224",
+          "name": "STATEFUL ATTACK PERSISTENCE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Attack persists across turns",
+          "detection": "Cross-turn attack detection",
+          "severity": "STANDARD",
+          "score": 0.5,
+          "matched_keywords": [
+            "across",
+            "between",
+            "persistence",
+            "state"
+          ]
+        },
+        {
+          "id": "GOV-INCIDENT-FAIL-320",
+          "name": "INCIDENT RESPONSE FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Inadequate incident response",
+          "detection": "Incident response quality",
+          "severity": "STANDARD",
+          "score": 0.479,
+          "matched_keywords": [
+            "incident",
+            "incidents",
+            "response"
+          ]
+        },
+        {
+          "id": "GOV-REPORT-FAIL-333",
+          "name": "REPORTING OBLIGATION FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV3: COMPLIANCE FAILURES",
+          "mechanism": "Fails to report incidents",
+          "detection": "Reporting compliance check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "incidents",
+            "report"
+          ]
+        },
+        {
+          "id": "ARCH-PERSIST-STATE-228",
+          "name": "PERSISTENT STATE EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Persistent state enables long-term attack",
+          "detection": "Persistent state monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "persistence",
+            "state"
+          ]
+        },
+        {
+          "id": "DOMAIN-DDOS-PLAN-273",
+          "name": "DDoS ATTACK PLANNING",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Plans distributed attacks",
+          "detection": "Attack planning pattern",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "attacks"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 1,
+      "char_len": 1195,
+      "preview": "TREND 1. AI IS BECOMING A FORCE MULTIPLIER FOR THREAT ACTORS AI is compressing the speed and scale of attacks. Threat actors now use AI routinely to accelerate reconnaissance, vulnerability exploitation, and deployment. \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-DATA-EXFIL-245",
+          "name": "DATA EXFILTRATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Extracts data through covert channels",
+          "detection": "Exfiltration monitoring",
+          "severity": "STANDARD",
+          "score": 0.733,
+          "matched_keywords": [
+            "data",
+            "exfiltration"
+          ]
+        },
+        {
+          "id": "ADV-EMBEDDING-109",
+          "name": "EMBEDDING SPACE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Operates in embedding space directly",
+          "detection": "Embedding anomaly",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "attack",
+            "attacks"
+          ]
+        },
+        {
+          "id": "ARCH-CONTEXT-ATTACK-223",
+          "name": "CONTEXT WINDOW ATTACK",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Long context enables state accumulation attack",
+          "detection": "Long-context safety monitoring",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "attack",
+            "attacks",
+            "enables",
+            "window"
+          ]
+        },
+        {
+          "id": "DOMAIN-PHISH-CREATE-265",
+          "name": "PHISHING CONTENT CREATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates convincing phishing",
+          "detection": "Phishing classifier",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "convincing",
+            "phishing"
+          ]
+        },
+        {
+          "id": "ARCH-ATTENTION-EXPLOIT-212",
+          "name": "ATTENTION MECHANISM EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH2: MODEL ARCHITECTURE CLASS",
+          "mechanism": "Attention pattern enables bypass",
+          "detection": "Attention anomaly detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "enables"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 2,
+      "char_len": 1205,
+      "preview": "TREND 2. IDENTITY IS BECOMING THE MOST RELIABLE PATH TO ATTACKER SUCCESS Identity is now the primary way attackers get in. In nearly 90% of Unit 42 investigations, identity weaknesses played a material role. As organizat\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-AUTH-BYPASS-242",
+          "name": "AUTHENTICATION BYPASS",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH4: TOOL & FUNCTION CLASS",
+          "mechanism": "Bypasses authentication",
+          "detection": "Auth validation",
+          "severity": "STANDARD",
+          "score": 0.6,
+          "matched_keywords": [
+            "bypass"
+          ]
+        },
+        {
+          "id": "DOMAIN-CRED-THEFT-270",
+          "name": "CREDENTIAL THEFT ASSISTANCE",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Helps steal credentials",
+          "detection": "Credential access pattern",
+          "severity": "STANDARD",
+          "score": 0.429,
+          "matched_keywords": [
+            "access",
+            "credentials"
+          ]
+        },
+        {
+          "id": "GOV-REVIEW-BYPASS-318",
+          "name": "REVIEW BYPASS",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Bypasses human review",
+          "detection": "Review coverage check",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "bypass",
+            "human"
+          ]
+        },
+        {
+          "id": "ARCH-STATE-CONFUSE-232",
+          "name": "STATE MACHINE CONFUSION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Gets into illegal state",
+          "detection": "State invariant check",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "into",
+            "machine"
+          ]
+        },
+        {
+          "id": "ADV-CONTEXT-HIJACK-100",
+          "name": "CONTEXT HIJACKING",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Long benign prefix \u2192 sudden harmful turn",
+          "detection": "Context shift detection",
+          "severity": "STANDARD",
+          "score": 0.364,
+          "matched_keywords": [
+            "bypass",
+            "long",
+            "turn"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 3,
+      "char_len": 1256,
+      "preview": "TREND 3. SOFTWARE SUPPLY CHAIN RISK EXPANDING BEYOND CODE VULNERABILITY TO THE MISUSE OF TRUSTED CONNECTIVITY Supply chain attacks now create one-to-many impact. In 2025, supply chain risk extended beyond vulnerable code\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-CIPHER-118",
+          "name": "CIPHER ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Uses custom ciphers/codes",
+          "detection": "Encoding detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "attack",
+            "cod"
+          ]
+        },
+        {
+          "id": "ARCH-DATA-EXFIL-245",
+          "name": "DATA EXFILTRATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Extracts data through covert channels",
+          "detection": "Exfiltration monitoring",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "data",
+            "through"
+          ]
+        },
+        {
+          "id": "DOMAIN-DDOS-PLAN-273",
+          "name": "DDoS ATTACK PLANNING",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Plans distributed attacks",
+          "detection": "Attack planning pattern",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "attacks"
+          ]
+        },
+        {
+          "id": "AGEN-INFO-HIDE-042",
+          "name": "INFORMATION HIDING",
+          "group": "AGENTIC",
+          "class": "A1: DECEPTION CLASS",
+          "mechanism": "Withholds relevant information",
+          "detection": "Information completeness check",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "relevant"
+          ]
+        },
+        {
+          "id": "AGEN-HUMAN-MANIP-061",
+          "name": "HUMAN MANIPULATION",
+          "group": "AGENTIC",
+          "class": "A3: CAPABILITY AMPLIFICATION CLASS",
+          "mechanism": "Manipulates humans to perform actions",
+          "detection": "Influence analysis",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "actions",
+            "perform"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 4,
+      "char_len": 1348,
+      "preview": "TREND 4. NATION-STATE ACTORS ADAPTING STEALTH AND PERSISTENCE TACTICS China is shifting from user access to infrastructure control. China-aligned operations increasingly targeted application, infrastructure, and virtuali\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-PERSIST-STATE-228",
+          "name": "PERSISTENT STATE EXPLOIT",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Persistent state enables long-term attack",
+          "detection": "Persistent state monitoring",
+          "severity": "STANDARD",
+          "score": 0.556,
+          "matched_keywords": [
+            "persistence",
+            "state",
+            "term"
+          ]
+        },
+        {
+          "id": "ARCH-STATE-PERSIST-224",
+          "name": "STATEFUL ATTACK PERSISTENCE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Attack persists across turns",
+          "detection": "Cross-turn attack detection",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "across",
+            "persistence",
+            "state"
+          ]
+        },
+        {
+          "id": "DOMAIN-MALWARE-GEN-264",
+          "name": "MALWARE GENERATION",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Model trained on software corpora learns executable code generation without domain restrictions; RLHF safety training suppresses harmful output but does not eliminate the underlying functional code generation capability",
+          "detection": "Malware signature analysis",
+          "severity": "CRITICAL",
+          "score": 0.4,
+          "matched_keywords": [
+            "generation",
+            "malware"
+          ]
+        },
+        {
+          "id": "ADV-PAIR-113",
+          "name": "PAIR",
+          "group": "ADVERSARIAL",
+          "class": "ADV3: AUTOMATED ATTACK AGENTS",
+          "mechanism": "Attacker LLM iteratively refines attack",
+          "detection": "Iterative pattern detection",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "attackers",
+            "automated"
+          ]
+        },
+        {
+          "id": "AGEN-CRED-EXPLOIT-082",
+          "name": "CREDIBILITY EXPLOITATION",
+          "group": "AGENTIC",
+          "class": "A5: COMMUNICATION FAILURES",
+          "mechanism": "Leverages trusted status to mislead",
+          "detection": "Trust-outcome correlation",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "trust"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 5,
+      "char_len": 340,
+      "preview": "SECTION 3: Recommendations In more than 90% of cases, preventable gaps in visibility, inconsistent control deployment, and excessive trust in identity and integrations materially contributed to impact. 1. ALIGN SECURITY \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-EMBEDDING-109",
+          "name": "EMBEDDING SPACE ATTACK",
+          "group": "ADVERSARIAL",
+          "class": "ADV2: OPTIMIZATION ATTACKS",
+          "mechanism": "Operates in embedding space directly",
+          "detection": "Embedding anomaly",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "attack",
+            "oper"
+          ]
+        },
+        {
+          "id": "DOMAIN-TREAT-ERROR-289",
+          "name": "TREATMENT RECOMMENDATION ERROR",
+          "group": "DOMAIN",
+          "class": "DOM5: MEDICAL/HEALTH CLASS",
+          "mechanism": "Wrong treatment advice",
+          "detection": "Treatment disclaimer check",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "recommend",
+            "treat"
+          ]
+        },
+        {
+          "id": "ALIGN-ORTHO-VALUE-176",
+          "name": "ORTHOGONAL VALUE PURSUIT",
+          "group": "ALIGNMENT",
+          "class": "ALN3: VALUE ALIGNMENT CLASS",
+          "mechanism": "Optimizes for values misaligned with human welfare",
+          "detection": "Welfare impact assessment",
+          "severity": "STANDARD",
+          "score": 0.182,
+          "matched_keywords": [
+            "align",
+            "impact"
+          ]
+        }
+      ]
+    }
+  ]
+}

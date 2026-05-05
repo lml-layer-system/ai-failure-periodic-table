@@ -1,0 +1,235 @@
+Fetched from: https://arxiv.org/abs/2505.09388
+
+[2505.09388] Qwen3 Technical Report 
+
+Skip to main content 
+
+Learn about arXiv becoming an independent nonprofit. 
+
+We gratefully acknowledge support from the Simons Foundation, member institutions , and all contributors. 
+Donate 
+
+> cs > arXiv:2505.09388
+
+Help | Advanced Search 
+
+All fields 
+Title 
+Author 
+Abstract 
+Comments 
+Journal reference 
+ACM classification 
+MSC classification 
+Report number 
+arXiv identifier 
+DOI 
+ORCID 
+arXiv author ID 
+Help pages 
+Full text 
+
+Search 
+
+open search 
+
+GO 
+
+open navigation menu 
+
+quick links 
+
+Login 
+Help Pages 
+About 
+
+--> 
+
+Computer Science > Computation and Language 
+
+arXiv:2505.09388 (cs)
+
+[Submitted on 14 May 2025]
+
+Title: Qwen3 Technical Report 
+Authors: An Yang , Anfeng Li , Baosong Yang , Beichen Zhang , Binyuan Hui , Bo Zheng , Bowen Yu , Chang Gao , Chengen Huang , Chenxu Lv , Chujie Zheng , Dayiheng Liu , Fan Zhou , Fei Huang , Feng Hu , Hao Ge , Haoran Wei , Huan Lin , Jialong Tang , Jian Yang , Jianhong Tu , Jianwei Zhang , Jianxin Yang , Jiaxi Yang , Jing Zhou , Jingren Zhou , Junyang Lin , Kai Dang , Keqin Bao , Kexin Yang , Le Yu , Lianghao Deng , Mei Li , Mingfeng Xue , Mingze Li , Pei Zhang , Peng Wang , Qin Zhu , Rui Men , Ruize Gao , Shixuan Liu , Shuang Luo , Tianhao Li , Tianyi Tang , Wenbiao Yin , Xingzhang Ren , Xinyu Wang , Xinyu Zhang , Xuancheng Ren , Yang Fan , Yang Su , Yichang Zhang , Yinger Zhang , Yu Wan , Yuqiong Liu , Zekun Wang , Zeyu Cui , Zhenru Zhang , Zhipeng Zhou , Zihan Qiu 
+View a PDF of the paper titled Qwen3 Technical Report, by An Yang and 59 other authors
+
+View PDF 
+HTML (experimental) 
+
+Abstract: In this work, we present Qwen3, the latest version of the Qwen model family. Qwen3 comprises a series of large language models (LLMs) designed to advance performance, efficiency, and multilingual capabilities. The Qwen3 series includes models of both dense and Mixture-of-Expert (MoE) architectures, with parameter scales ranging from 0.6 to 235 billion. A key innovation in Qwen3 is the integration of thinking mode (for complex, multi-step reasoning) and non-thinking mode (for rapid, context-driven responses) into a unified framework. This eliminates the need to switch between different models--such as chat-optimized models (e.g., GPT-4o) and dedicated reasoning models (e.g., QwQ-32B)--and enables dynamic mode switching based on user queries or chat templates. Meanwhile, Qwen3 introduces a thinking budget mechanism, allowing users to allocate computational resources adaptively during inference, thereby balancing latency and performance based on task complexity. Moreover, by leveraging the knowledge from the flagship models, we significantly reduce the computational resources required to build smaller-scale models, while ensuring their highly competitive performance. Empirical evaluations demonstrate that Qwen3 achieves state-of-the-art results across diverse benchmarks, including tasks in code generation, mathematical reasoning, agent tasks, etc., competitive against larger MoE models and proprietary models. Compared to its predecessor Qwen2.5, Qwen3 expands multilingual support from 29 to 119 languages and dialects, enhancing global accessibility through improved cross-lingual understanding and generation capabilities. To facilitate reproducibility and community-driven research and development, all Qwen3 models are publicly accessible under Apache 2.0.
+
+Subjects: 
+
+Computation and Language (cs.CL) 
+
+Cite as: 
+arXiv:2505.09388 [cs.CL] 
+
+(or 
+arXiv:2505.09388v1 [cs.CL] for this version)
+
+https://doi.org/10.48550/arXiv.2505.09388 
+
+Focus to learn more 
+
+arXiv-issued DOI via DataCite
+
+Submission history From: Binyuan Hui [ view email ] 
+[v1] 
+Wed, 14 May 2025 13:41:34 UTC (2,293 KB)
+
+Full-text links: 
+Access Paper: 
+
+View a PDF of the paper titled Qwen3 Technical Report, by An Yang and 59 other authors
+View PDF HTML (experimental) TeX Source
+
+view license 
+
+Current browse context: cs.CL
+
+< prev 
+
+| 
+next > 
+
+new 
+| 
+recent 
+| 2025-05 
+
+Change to browse by:
+
+cs 
+
+References & Citations 
+
+NASA ADS Google Scholar 
+Semantic Scholar 
+
+export BibTeX citation 
+Loading... 
+
+BibTeX formatted citation 
+&times; 
+
+loading... 
+
+Data provided by: 
+
+Bookmark 
+
+Bibliographic Tools 
+
+Bibliographic and Citation Tools 
+
+Bibliographic Explorer Toggle 
+
+Bibliographic Explorer ( What is the Explorer? ) 
+
+Connected Papers Toggle 
+
+Connected Papers ( What is Connected Papers? ) 
+
+Litmaps Toggle 
+
+Litmaps ( What is Litmaps? ) 
+
+scite.ai Toggle 
+
+scite Smart Citations ( What are Smart Citations? ) 
+
+Code, Data, Media 
+
+Code, Data and Media Associated with this Article 
+
+alphaXiv Toggle 
+
+alphaXiv ( What is alphaXiv? ) 
+
+Links to Code Toggle 
+
+CatalyzeX Code Finder for Papers ( What is CatalyzeX? ) 
+
+DagsHub Toggle 
+
+DagsHub ( What is DagsHub? ) 
+
+GotitPub Toggle 
+
+Gotit.pub ( What is GotitPub? ) 
+
+Huggingface Toggle 
+
+Hugging Face ( What is Huggingface? ) 
+
+Links to Code Toggle 
+
+Papers with Code ( What is Papers with Code? ) 
+
+ScienceCast Toggle 
+
+ScienceCast ( What is ScienceCast? ) 
+
+Demos 
+
+Demos 
+
+Replicate Toggle 
+
+Replicate ( What is Replicate? ) 
+
+Spaces Toggle 
+
+Hugging Face Spaces ( What is Spaces? ) 
+
+Spaces Toggle 
+
+TXYZ.AI ( What is TXYZ.AI? ) 
+
+Related Papers 
+
+Recommenders and Search Tools 
+
+Link to Influence Flower 
+
+Influence Flower ( What are Influence Flowers? ) 
+
+Core recommender toggle 
+
+CORE Recommender ( What is CORE? ) 
+
+Author 
+Venue 
+Institution 
+Topic 
+
+About arXivLabs
+
+arXivLabs: experimental projects with community collaborators 
+arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.
+
+Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.
+
+Have an idea for a project that will add value for arXiv's community? Learn more about arXivLabs .
+
+Which authors of this paper are endorsers? |
+Disable MathJax ( What is MathJax? )
+
+About 
+Help 
+
+contact arXiv Click here to contact arXiv 
+Contact 
+
+subscribe to arXiv mailings Click here to subscribe 
+Subscribe 
+
+Copyright 
+Privacy Policy 
+
+Web Accessibility Assistance 
+
+arXiv Operational Status

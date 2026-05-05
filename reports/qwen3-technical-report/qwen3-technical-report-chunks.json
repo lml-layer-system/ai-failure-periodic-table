@@ -1,0 +1,365 @@
+{
+  "source_file": "reports/qwen3-technical-report/qwen3-technical-report-source.txt",
+  "chunk_count": 6,
+  "max_chars": 1400,
+  "top1_histogram": {
+    "EPIS-COPYRIGHT-026": 1,
+    "ADV-DAN-083": 1,
+    "ADV-LANG-SWITCH-087": 1,
+    "ARCH-VERSION-REGRESS-209": 1,
+    "ADV-DIRECT-INJECT-121": 1
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "char_len": 653,
+      "preview": "[2505.09388] Qwen3 Technical Report  Skip to main content  Learn about arXiv becoming an independent nonprofit.  We gratefully acknowledge support from the Simons Foundation, member institutions , and all contributors.  \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC"
+      ],
+      "top_matches": [
+        {
+          "id": "EPIS-COPYRIGHT-026",
+          "name": "COPYRIGHTED CONTENT GENERATION",
+          "group": "EPISTEMIC",
+          "class": "E3: KNOWLEDGE RETRIEVAL CLASS",
+          "mechanism": "Generates copyrighted text verbatim",
+          "detection": "Copyright database match",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "content",
+            "text"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 1,
+      "char_len": 927,
+      "preview": "Title: Qwen3 Technical Report  Authors: An Yang , Anfeng Li , Baosong Yang , Beichen Zhang , Binyuan Hui , Bo Zheng , Bowen Yu , Chang Gao , Chengen Huang , Chenxu Lv , Chujie Zheng , Dayiheng Liu , Fan Zhou , Fei Huang \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "ADVERSARIAL"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DAN-083",
+          "name": "DAN",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Instruction-following training creates a generalizable obedience pathway; persona-assignment prompts exploit this by providing a fictional context where instruction-following takes priority over safety constraints",
+          "detection": "VM-pattern detection",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": []
+        }
+      ]
+    },
+    {
+      "chunk_index": 2,
+      "char_len": 1791,
+      "preview": "Abstract: In this work, we present Qwen3, the latest version of the Qwen model family. Qwen3 comprises a series of large language models (LLMs) designed to advance performance, efficiency, and multilingual capabilities. \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "AGENTIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-LANG-SWITCH-087",
+          "name": "LANGUAGE SWITCH",
+          "group": "ADVERSARIAL",
+          "class": "ADV1: JAILBREAK CLASS",
+          "mechanism": "Non-English to bypass filters",
+          "detection": "Multi-lingual safety check",
+          "severity": "STANDARD",
+          "score": 0.7,
+          "matched_keywords": [
+            "cross",
+            "language",
+            "lingual",
+            "multi",
+            "non",
+            "switch",
+            "work"
+          ]
+        },
+        {
+          "id": "ARCH-STATE-PERSIST-224",
+          "name": "STATEFUL ATTACK PERSISTENCE",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH3: MEMORY & STATE CLASS",
+          "mechanism": "Attack persists across turns",
+          "detection": "Cross-turn attack detection",
+          "severity": "STANDARD",
+          "score": 0.4,
+          "matched_keywords": [
+            "across",
+            "between",
+            "cross",
+            "state"
+          ]
+        },
+        {
+          "id": "ARCH-VERSION-REGRESS-209",
+          "name": "VERSIONING SAFETY REGRESSION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "New version has weaker safety",
+          "detection": "Cross-version safety comparison",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "cross",
+            "version"
+          ]
+        },
+        {
+          "id": "EPIS-LOGIC-CONTRA-014",
+          "name": "SELF-CONTRADICTION",
+          "group": "EPISTEMIC",
+          "class": "E2: REASONING COLLAPSE CLASS",
+          "mechanism": "Generates A and \u00acA in same context",
+          "detection": "Contradiction detection",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "context"
+          ]
+        },
+        {
+          "id": "ARCH-CHECKPOINT-INCONS-203",
+          "name": "CHECKPOINT INCONSISTENCY",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "Different checkpoints have different safety",
+          "detection": "Cross-checkpoint safety test",
+          "severity": "STANDARD",
+          "score": 0.333,
+          "matched_keywords": [
+            "cross",
+            "different"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 3,
+      "char_len": 1370,
+      "preview": "Subjects:  Computation and Language (cs.CL)  Cite as:  arXiv:2505.09388 [cs.CL]  (or  arXiv:2505.09388v1 [cs.CL] for this version)  https://doi.org/10.48550/arXiv.2505.09388  Focus to learn more  arXiv-issued DOI via Dat\u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ARCHITECTURAL",
+        "GOVERNANCE"
+      ],
+      "top_matches": [
+        {
+          "id": "ARCH-VERSION-REGRESS-209",
+          "name": "VERSIONING SAFETY REGRESSION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH1: PIPELINE FAILURES",
+          "mechanism": "New version has weaker safety",
+          "detection": "Cross-version safety comparison",
+          "severity": "STANDARD",
+          "score": 0.375,
+          "matched_keywords": [
+            "new",
+            "version"
+          ]
+        },
+        {
+          "id": "EPIS-INTRINSIC-004",
+          "name": "INTRINSIC HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Generated output contradicts provided context",
+          "detection": "RAG contradiction check",
+          "severity": "STANDARD",
+          "score": 0.3,
+          "matched_keywords": [
+            "context",
+            "provided",
+            "source"
+          ]
+        },
+        {
+          "id": "EPIS-CITE-SPOOF-008",
+          "name": "CITATION SPOOFING",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "No entailment relationship exists between token generation probability and referent existence \u2014 citation text is synthesized from statistical patterns regardless of whether the cited work actually exists",
+          "detection": "Bibliography verification",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "citation",
+            "citations",
+            "references"
+          ]
+        },
+        {
+          "id": "GOV-ESCALATE-FAIL-319",
+          "name": "ESCALATION FAILURE",
+          "group": "GOVERNANCE",
+          "class": "GOV2: OVERSIGHT FAILURES",
+          "mechanism": "Fails to escalate issues",
+          "detection": "Escalation pattern analysis",
+          "severity": "STANDARD",
+          "score": 0.143,
+          "matched_keywords": [
+            "report"
+          ]
+        },
+        {
+          "id": "EPIS-DATA-LEAK-024",
+          "name": "TRAINING DATA LEAKAGE",
+          "group": "EPISTEMIC",
+          "class": "E3: KNOWLEDGE RETRIEVAL CLASS",
+          "mechanism": "Outputs verbatim training examples",
+          "detection": "Exact match against corpus",
+          "severity": "STANDARD",
+          "score": 0.136,
+          "matched_keywords": [
+            "code",
+            "data",
+            "source"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 4,
+      "char_len": 1383,
+      "preview": "Gotit.pub ( What is GotitPub? )  Huggingface Toggle  Hugging Face ( What is Huggingface? )  Links to Code Toggle  Papers with Code ( What is Papers with Code? )  ScienceCast Toggle  ScienceCast ( What is ScienceCast? )  \u2026",
+      "in_table": true,
+      "dimensions_activated": [
+        "EPISTEMIC",
+        "ADVERSARIAL",
+        "ALIGNMENT",
+        "ARCHITECTURAL",
+        "DOMAIN"
+      ],
+      "top_matches": [
+        {
+          "id": "ADV-DIRECT-INJECT-121",
+          "name": "DIRECT PROMPT INJECTION",
+          "group": "ADVERSARIAL",
+          "class": "ADV4: INJECTION ATTACKS",
+          "mechanism": "Malicious instructions in user input",
+          "detection": "System override detection",
+          "severity": "STANDARD",
+          "score": 0.286,
+          "matched_keywords": [
+            "user"
+          ]
+        },
+        {
+          "id": "DOMAIN-EXPLOIT-DEV-263",
+          "name": "EXPLOIT DEVELOPMENT",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Develops working exploits",
+          "detection": "Exploit functionality test",
+          "severity": "CRITICAL",
+          "score": 0.286,
+          "matched_keywords": [
+            "develop",
+            "work"
+          ]
+        },
+        {
+          "id": "ARCH-RETENTION-VIOL-248",
+          "name": "DATA RETENTION VIOLATION",
+          "group": "ARCHITECTURAL",
+          "class": "ARCH5: DATA FLOW CLASS",
+          "mechanism": "Retains data beyond policy",
+          "detection": "Retention audit",
+          "severity": "STANDARD",
+          "score": 0.25,
+          "matched_keywords": [
+            "data",
+            "policy"
+          ]
+        },
+        {
+          "id": "EPIS-REVERSAL-021",
+          "name": "REVERSAL CURSE",
+          "group": "EPISTEMIC",
+          "class": "E3: KNOWLEDGE RETRIEVAL CLASS",
+          "mechanism": "A\u2192B learned but B\u2192A fails",
+          "detection": "Bidirectional query test",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "learn",
+            "rel"
+          ]
+        },
+        {
+          "id": "DOMAIN-OFFENSIVE-TOOLS-267",
+          "name": "OFFENSIVE CYBER TOOLS",
+          "group": "DOMAIN",
+          "class": "DOM2: CYBERSECURITY CLASS",
+          "mechanism": "Creates offensive security tools",
+          "detection": "Tool intent analysis",
+          "severity": "STANDARD",
+          "score": 0.222,
+          "matched_keywords": [
+            "tools"
+          ]
+        }
+      ]
+    },
+    {
+      "chunk_index": 5,
+      "char_len": 54,
+      "preview": "Web Accessibility Assistance  arXiv Operational Status",
+      "in_table": false,
+      "dimensions_activated": [],
+      "top_matches": [],
+      "closest": [
+        {
+          "id": "EPIS-STRUCT-HALL-001",
+          "name": "STRUCTURAL HALLUCINATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Computability limit - no finite verifier can guarantee total faithfulness",
+          "detection": "Diagonalization test - exists input forcing divergence",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-TAIL-FAB-002",
+          "name": "DENSITY-TAIL FABRICATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Long-tail query \u2192 plausible generation (not factual)",
+          "detection": "Perplexity spike in training distribution",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        },
+        {
+          "id": "EPIS-FLUENCY-003",
+          "name": "FLUENCY HEURISTIC EXPLOITATION",
+          "group": "EPISTEMIC",
+          "class": "E1: HALLUCINATION CLASS",
+          "mechanism": "Grammatical correctness masks factual error",
+          "detection": "Human over-trust metric",
+          "severity": "STANDARD",
+          "score": 0.0,
+          "matched_keywords": []
+        }
+      ]
+    }
+  ]
+}
